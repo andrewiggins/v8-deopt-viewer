@@ -1,5 +1,5 @@
 interface V8DeoptInfo {
-  // TODO
+	// TODO
 }
 
 /**
@@ -9,6 +9,6 @@ interface V8DeoptInfo {
  * this function should return their contents
  */
 export async function parseV8Log(
-  v8LogContent: string,
-  readSourceFileContent: (srcFilePath: string) => Promise<string>
+	v8LogContent: string,
+	readSourceFileContent: (srcFilePath: string) => Promise<string>
 ): V8DeoptInfo;

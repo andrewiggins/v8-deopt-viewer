@@ -5,8 +5,27 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewiggins/v8-deopt-viewer/issues"
+  },
+  "homepage": "https://github.com/andrewiggins/v8-deopt-viewer",
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,html,yml,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5"
+  }
 }
