@@ -1,5 +1,6 @@
 import { parseString, parseVarArgs } from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
+import { MIN_SEVERITY } from "./utils.js";
 
 function parseOptimizationState(rawState) {
 	switch (rawState) {
@@ -33,17 +34,16 @@ export function nameOptimizationState(state) {
 	}
 }
 
-// TODO: Can we use MIN_SEVERITY here
 export function severityOfOptimizationState(state) {
 	switch (state) {
 		case Profile.CodeState.COMPILED:
-			return 3;
+			return MIN_SEVERITY + 2;
 		case Profile.CodeState.OPTIMIZABLE:
-			return 2;
+			return MIN_SEVERITY + 1;
 		case Profile.CodeState.OPTIMIZED:
-			return 1;
+			return MIN_SEVERITY;
 		case -1:
-			return 3;
+			return MIN_SEVERITY + 2;
 		default:
 			throw new Error("unknown code state: " + state);
 	}

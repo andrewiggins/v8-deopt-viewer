@@ -174,8 +174,13 @@ export class DeoptLogReader extends LogReader {
 		const { file, line, column } = deoptLocation;
 		const { functionName, optimizationState } = this.getInfoFromProfile(code);
 
-		// Deoptigate didn't use function name for location key here, so we won't either
-		// TODO: Determine why...
+		// Deopt doesn't use the functionName as the key because if funcA is inlined
+		// in funcB, any deopts related to the inlined funcA code would show up with
+		// the name funcB instead of funcA. This change in function name makes it
+		// harder to track deopts all related to funcA. So to keep track of deopts
+		// for funcA, we rely soley on the file, line, and column from the
+		// deoptLocation param (which is consistent across inlines) to track deopt
+		// status
 		const key = locationKey("", file, line, column);
 
 		if (!this.entriesDeopt.has(key)) {
