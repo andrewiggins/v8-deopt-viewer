@@ -1,4 +1,8 @@
-import { LogReader } from "./v8-tools-core/logreader.js";
+import {
+	LogReader,
+	parseString,
+	parseVarArgs,
+} from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
 import { parseSourcePosition } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
@@ -7,11 +11,10 @@ import {
 	severityIcState,
 } from "./propertyICParsers.js";
 import {
-	parseCodeCreateVarArgs,
-	codeCreationParsers,
 	nameOptimizationState,
 	severityOfOptimizationState,
-} from "./codeCreationParsers.js";
+	parseOptimizationState,
+} from "./optimizationStateParsers.js";
 
 /**
  * @param {string} functionName
@@ -53,7 +56,15 @@ export class DeoptLogReader extends LogReader {
 		this.dispatchTable_ = {
 			// Collect info about CRUD of code
 			"code-creation": {
-				parsers: codeCreationParsers,
+				parsers: [
+					parseString, // type
+					parseInt, // kind
+					parseInt, // timestamp
+					parseInt, // start
+					parseInt, // size
+					parseString, // name
+					parseVarArgs, // varArgs
+				],
 				processor: this._processCodeCreation.bind(this),
 			},
 			"code-move": {
@@ -105,7 +116,8 @@ export class DeoptLogReader extends LogReader {
 			return;
 		}
 
-		const { funcAddr, optimizationState } = parseCodeCreateVarArgs(varArgs);
+		const funcAddr = parseInt(varArgs[0]);
+		const optimizationState = parseOptimizationState(varArgs[1]);
 		this._profile.addFuncCode(
 			type,
 			name,
@@ -276,6 +288,7 @@ export class DeoptLogReader extends LogReader {
 	}
 
 	printError(msg) {
+		// TODO: Consider replacing with an actual throw or some better error logging mechanism
 		if (this.logErrors) {
 			console.error(msg);
 		}
