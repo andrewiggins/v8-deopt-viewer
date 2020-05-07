@@ -1,0 +1,7616 @@
+{
+  "ics": [
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 157,
+      "column": 35,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "startsWith",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "startsWith",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 178,
+      "column": 23,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "17",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 150,
+      "column": 17,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "filename",
+          "map": "37cdf3b4a751",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 151,
+      "column": 11,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "id",
+          "map": "37cdf3b4a891",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 152,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "exports",
+          "map": "37cdf3b4a8e1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 153,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "module",
+          "map": "37cdf3b4a931",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 154,
+      "column": 19,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "exportKeys",
+          "map": "37cdf3b4a981",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 155,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loaded",
+          "map": "37cdf3b4a9d1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 156,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loading",
+          "map": "37cdf3b4aa21",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 157,
+      "column": 29,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "canBeRequiredByUsers",
+          "map": "37cdf3b4aa71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 177,
+      "column": 31,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 180,
+      "column": 16,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "map",
+          "map": "37cdf3b4a701",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 180,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "set",
+          "map": "37cdf3b40ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 195,
+      "column": 21,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "exists",
+          "map": "37cdf3b4a701",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 199,
+      "column": 35,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "canBeRequiredByUsers",
+          "map": "37cdf3b4ab11",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 214,
+      "column": 47,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "compileForPublicLoader",
+          "map": "37cdf3b4a841",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 237,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "prototype",
+          "map": "37cdf3b4ab61",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 237,
+      "column": 31,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "getURL",
+          "map": "37cdf3b4abb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 241,
+      "column": 37,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "getESMFacade",
+          "map": "37cdf3b4ac01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 260,
+      "column": 36,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "syncExports",
+          "map": "37cdf3b4ac51",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 272,
+      "column": 32,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "compile",
+          "map": "37cdf3b4aca1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "E",
+      "file": "internal/errors.js",
+      "line": 301,
+      "column": 14,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "ERR_CHILD_CLOSED_BEFORE_REPLY",
+          "map": "37cdf3b4c781",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "ERR_CHILD_PROCESS_IPC_REQUIRED",
+          "map": "37cdf3b4c8c1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "ERR_CHILD_PROCESS_STDIO_MAXBUFFER",
+          "map": "37cdf3b4ca01",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "E",
+      "file": "internal/errors.js",
+      "line": 289,
+      "column": 12,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "set",
+          "map": "37cdf3b40ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "E",
+      "file": "internal/errors.js",
+      "line": 296,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "E",
+      "file": "internal/errors.js",
+      "line": 297,
+      "column": 18,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "forEach",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/util/inspect.js",
+      "line": 97,
+      "column": 71,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "test",
+          "map": "37cdf3b41561",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 273,
+      "column": 12,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loaded",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 274,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "exports",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 281,
+      "column": 31,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "startsWith",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "startsWith",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 273,
+      "column": 27,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loading",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 277,
+      "column": 19,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "id",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 278,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loading",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 281,
+      "column": 28,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "id",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 285,
+      "column": 13,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "exports",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 287,
+      "column": 17,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loaded",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 289,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "loading",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 292,
+      "column": 18,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "push",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 293,
+      "column": 15,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "exports",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "nativeModuleRequire",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 188,
+      "column": 28,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "map",
+          "map": "37cdf3b4ab61",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "nativeModuleRequire",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 188,
+      "column": 32,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "get",
+          "map": "37cdf3b40ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "nativeModuleRequire",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 192,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "compile",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 3,
+          "newState": 2,
+          "key": "compile",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "internalBinding",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 129,
+      "column": 25,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "util",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "async_wrap",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "task_queue",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "internalBinding",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 131,
+      "column": 32,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "async_wrap",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "task_queue",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "trace_events",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "internalBinding",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 132,
+      "column": 22,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "push",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 34,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b45ac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 30,
+      "column": 12,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 32,
+      "column": 24,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "getOwnPropertyDescriptor",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 32,
+      "column": 57,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "prototype",
+          "map": "37cdf3b6d891",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 34,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "bind",
+          "map": "37cdf3b403e1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "bind",
+          "map": "37cdf3b40751",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 34,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b45ac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 36,
+      "column": 11,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "defineProperty",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 39,
+      "column": 14,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "symbol(\"kBindStreamsLazy\" hash 1a80cdec)",
+          "map": "37cdf3b6e791",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 40,
+      "column": 14,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "symbol(\"kBindProperties\" hash 3b698c05)",
+          "map": "37cdf3b6e9c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/global.js",
+      "line": 44,
+      "column": 23,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "Console",
+          "map": "37cdf3b6f001",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 45,
+      "column": 60,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "clear",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "count",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "countReset",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 46,
+      "column": 62,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "clear",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "count",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "countReset",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 44,
+      "column": 28,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "clear",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "count",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "countReset",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 39,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 43,
+      "column": 25,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hasOwnProperty",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "hasOwnProperty",
+          "map": "37cdf3b6f911",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 44,
+      "column": 42,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "bind",
+          "map": "37cdf3b403e1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 49,
+      "column": 43,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "profile",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "profileEnd",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "timeStamp",
+          "map": "37cdf3b45071",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 49,
+      "column": 28,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "profile",
+          "map": "37cdf3b6f051",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "profileEnd",
+          "map": "37cdf3b6f911",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "timeStamp",
+          "map": "37cdf3b6f961",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 7,
+      "column": 48,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "toString",
+          "map": "70e2c100539",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "toString",
+          "map": "70e2c100539",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 7,
+      "column": 62,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "toUpperCase",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "toUpperCase",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 7,
+      "column": 15,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "14",
+          "map": "37cdf3b42cd1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 93,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "encodeStr",
+          "map": "37cdf3b6fbe1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 94,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "hexTable",
+          "map": "37cdf3b6fbe1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/querystring.js",
+      "line": 95,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "isHexTable",
+          "map": "37cdf3b6fbe1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 853,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "value",
+          "map": "37cdf3b6faf1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 858,
+      "column": 12,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "defineProperty",
+          "map": "37cdf3b446c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 862,
+      "column": 17,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "next",
+          "map": "37cdf3b728e1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "value",
+          "map": "37cdf3b6faf1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 857,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 870,
+      "column": 17,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "symbol(\"nodejs.util.inspect.custom\" hash 2b41401e)",
+          "map": "37cdf3b728e1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "value",
+          "map": "37cdf3b6faf1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 865,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 58,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 59,
+      "column": 18,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 60,
+      "column": 19,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "charCodeAt",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "charCodeAt",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 98,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "length",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 99,
+      "column": 38,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 144,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "return",
+          "map": "37cdf3b45ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 144,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "done",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "value",
+          "map": "37cdf3b46061",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "symbol(\"Symbol.iterator\" hash 2067e7b8)",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "next",
+          "map": "37cdf3b45ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 145,
+      "column": 11,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "canBeRequiredByUsers",
+          "map": "37cdf3b4aac1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 146,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "push",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 151,
+      "column": 23,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "builtinModules",
+          "map": "37cdf3b40751",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 153,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_cache",
+          "map": "37cdf3b7ba81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 154,
+      "column": 28,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "create",
+          "map": "37cdf3b446c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 154,
+      "column": 19,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_pathCache",
+          "map": "37cdf3b7bad1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 155,
+      "column": 20,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_extensions",
+          "map": "37cdf3b7bb21",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 157,
+      "column": 20,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "globalPaths",
+          "map": "37cdf3b7bb71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 172,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "set",
+          "map": "37cdf3b7bc61",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 177,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "defineProperty",
+          "map": "37cdf3b7bc61",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 184,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "get",
+          "map": "37cdf3b62cb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 188,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "set",
+          "map": "37cdf3b62cb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 194,
+      "column": 8,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "defineProperty",
+          "map": "37cdf3b446c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 195,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "get",
+          "map": "37cdf3b62cb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 199,
+      "column": 3,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "set",
+          "map": "37cdf3b62cb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 75,
+      "column": 10,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "prototype",
+          "map": "37cdf3b7bda1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "prototype",
+          "map": "37cdf3b727f1",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 79,
+      "column": 31,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "prototype",
+          "map": "37cdf3b7be41",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 79,
+      "column": 26,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "prototype",
+          "map": "37cdf3b7bd51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "prototype",
+          "map": "37cdf3b72751",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 206,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_debug",
+          "map": "37cdf3b7bd01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 460,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_findPath",
+          "map": "37cdf3b7be91",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 585,
+      "column": 27,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_nodeModulePaths",
+          "map": "37cdf3b7bee1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 622,
+      "column": 28,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_resolveLookupPaths",
+          "map": "37cdf3b7bf31",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 668,
+      "column": 14,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_load",
+          "map": "37cdf3b7bf81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 739,
+      "column": 25,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_resolveFilename",
+          "map": "37cdf3b7bfd1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 804,
+      "column": 8,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "prototype",
+          "map": "37cdf3b7c021",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 841,
+      "column": 8,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "prototype",
+          "map": "37cdf3b7c021",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 978,
+      "column": 8,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "_extensions",
+          "map": "37cdf3b7c021",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1011,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "runMain",
+          "map": "37cdf3b7c021",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1044,
+      "column": 30,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "createRequireFromPath",
+          "map": "37cdf3b7c0c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1068,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "createRequire",
+          "map": "37cdf3b7c111",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1070,
+      "column": 19,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_initPaths",
+          "map": "37cdf3b7c161",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1109,
+      "column": 24,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "_preloadModules",
+          "map": "37cdf3b7c1b1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1128,
+      "column": 30,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "syncBuiltinESMExports",
+          "map": "37cdf3b7c201",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1137,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "Module",
+          "map": "37cdf3b7c251",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 74,
+      "column": 40,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "lastIndexOf",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 79,
+      "column": 25,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "slice",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 80,
+      "column": 56,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "lastIndexOf",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "resolve",
+      "file": "path.js",
+      "line": 979,
+      "column": 33,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "1",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "resolve",
+      "file": "path.js",
+      "line": 984,
+      "column": 16,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "length",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "resolve",
+      "file": "path.js",
+      "line": 989,
+      "column": 31,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "charCodeAt",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "charCodeAt",
+          "map": "70e2c1008c9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "charCodeAt",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "resolve",
+      "file": "path.js",
+      "line": 978,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1494,
+      "column": 18,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1499,
+      "column": 22,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1502,
+      "column": 15,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1510,
+      "column": 18,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "/tmp",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "/tmp/deoptigate",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1519,
+      "column": 48,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "get",
+          "map": "37cdf3b40ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1527,
+      "column": 27,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "path",
+          "map": "37cdf3b7cbb1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "path",
+          "map": "37cdf3b7cbb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1532,
+      "column": 25,
+      "updates": [
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "/tmp/deoptigate/examples",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedStoreIC",
+          "oldState": 2,
+          "newState": 5,
+          "key": "/tmp/deoptigate/examples/two-modules",
+          "map": "37cdf3b42a51",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1578,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "set",
+          "map": "37cdf3b40ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1130,
+      "column": 14,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1132,
+      "column": 26,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "charCodeAt",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1135,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1136,
+      "column": 16,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "charCodeAt",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1151,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "slice",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "slice",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 600,
+      "column": 25,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "charCodeAt",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "charCodeAt",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 603,
+      "column": 27,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 607,
+      "column": 20,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "0",
+          "map": "37cdf3b42af1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 603,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "push",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "push",
+          "map": "37cdf3b42af1",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1460,
+      "column": 24,
+      "updates": [
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "symbol(\"realpathCacheKey\" hash 1fee3430)",
+          "map": "37cdf3b7cb61",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "KeyedLoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "symbol(\"realpathCacheKey\" hash 1fee3430)",
+          "map": "37cdf3b7cb61",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1467,
+      "column": 28,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "create",
+          "map": "37cdf3b446c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1481,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c100439",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1504,
+      "column": 20,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "slice",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1526,
+      "column": 35,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "toNamespacedPath",
+          "map": "37cdf3b70e01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1528,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "lstat",
+          "map": "37cdf3b77391",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 598,
+      "column": 21,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 599,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "70e2c101ed1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1458,
+      "column": 18,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "resolve",
+          "map": "37cdf3b70e01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 587,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "resolve",
+          "map": "37cdf3b70e01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "basename",
+      "file": "path.js",
+      "line": 1209,
+      "column": 19,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "length",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "basename",
+      "file": "path.js",
+      "line": 1210,
+      "column": 16,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "charCodeAt",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "charCodeAt",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "basename",
+      "file": "path.js",
+      "line": 1227,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 1,
+          "key": "slice",
+          "map": "70e2c101f71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "processResult",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 49,
+      "column": 11,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "push",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "push",
+          "map": "37cdf3b42af1",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "processResult",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 51,
+      "column": 15,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "length",
+          "map": "37cdf3b42c81",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "length",
+          "map": "37cdf3b42af1",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addNumbers",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 26,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "flag",
+          "map": "37cdf3b7cc01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 36,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "flag",
+          "map": "37cdf3b7cc01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addSmis",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 21,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "flag",
+          "map": "37cdf3b7cc01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addStrings",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 31,
+      "column": 23,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "flag",
+          "map": "37cdf3b7cc01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 38,
+      "column": 27,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b7a951",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "x",
+          "map": "37cdf3b77b61",
+          "optimizationState": 1,
+          "severity": 2
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 4,
+          "newState": 5,
+          "key": "x",
+          "map": "37cdf3b77021",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 38,
+      "column": 33,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b7a951",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "y",
+          "map": "37cdf3b77b61",
+          "optimizationState": 1,
+          "severity": 2
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 4,
+          "newState": 5,
+          "key": "y",
+          "map": "37cdf3b77021",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 3,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b7a811",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 4,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b7a901",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 10,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b7a9a1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 11,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b77b11",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 17,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b77bb1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 18,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b773e1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 19,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b77431",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 25,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b774d1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 26,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b76da1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 27,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b76df1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 33,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b76e91",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 34,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b76f81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 35,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b76fd1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 41,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hola",
+          "map": "37cdf3b77071",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 42,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b77161",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 43,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b771b1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 44,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b77201",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 50,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b772a1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 51,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hola",
+          "map": "37cdf3b76ad1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 52,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b76b21",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 53,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b76b71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 59,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "x",
+          "map": "37cdf3b75b31",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 60,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "y",
+          "map": "37cdf3b75c21",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 61,
+      "column": 15,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hola",
+          "map": "37cdf3b75c71",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 62,
+      "column": 16,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "hello",
+          "map": "37cdf3b75cc1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 47,
+      "column": 15,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "noDeprecation",
+          "map": "37cdf3b76a81",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 74,
+      "column": 10,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 1,
+          "newState": 2,
+          "key": "setPrototypeOf",
+          "map": "37cdf3b446c1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    }
+  ],
+  "deopts": [
+    {
+      "functionName": "<anonymous>",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 49,
+      "column": 11,
+      "updates": [
+        {
+          "timestamp": 81888,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+            "line": 57,
+            "column": 5
+          }
+        },
+        {
+          "timestamp": 81971,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 65,
+      "column": 19,
+      "updates": [
+        {
+          "timestamp": 326066,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 39,
+      "column": 12,
+      "updates": [
+        {
+          "timestamp": 326190,
+          "bailoutType": "eager",
+          "deoptReason": "not a Smi",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 371931,
+          "bailoutType": "eager",
+          "deoptReason": "not a Number or Oddball",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 72,
+      "column": 19,
+      "updates": [
+        {
+          "timestamp": 371823,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 86,
+      "column": 1,
+      "updates": [
+        {
+          "timestamp": 450757,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for call",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 38,
+      "column": 27,
+      "updates": [
+        {
+          "timestamp": 451114,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for generic named access",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        },
+        {
+          "timestamp": 581085,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+            "line": 82,
+            "column": 21
+          }
+        },
+        {
+          "timestamp": 581174,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 643519,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+            "line": 82,
+            "column": 21
+          }
+        },
+        {
+          "timestamp": 643612,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 705815,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+            "line": 82,
+            "column": 21
+          }
+        },
+        {
+          "timestamp": 705913,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "addObjects",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 82,
+      "column": 28,
+      "updates": [
+        {
+          "timestamp": 514196,
+          "bailoutType": "eager",
+          "deoptReason": "wrong call target",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    }
+  ],
+  "codes": [
+    {
+      "functionName": "SafeSet",
+      "file": "internal/per_context/primordials.js",
+      "line": 73,
+      "column": 3,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 16980,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "internalBinding",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 128,
+      "column": 45,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 17105,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 149,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 17275,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupPrepareStackTrace",
+      "file": "internal/bootstrap/node.js",
+      "line": 300,
+      "column": 32,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 18558,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "nativeModuleRequire",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 183,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 18640,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.compile",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 272,
+      "column": 42,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 18705,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "E",
+      "file": "internal/errors.js",
+      "line": 286,
+      "column": 11,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 20690,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeNodeErrorWithCode",
+      "file": "internal/errors.js",
+      "line": 212,
+      "column": 31,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 20748,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/errors.js",
+      "line": 297,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 21083,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeSystemErrorWithCode",
+      "file": "internal/errors.js",
+      "line": 204,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 21412,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupProcessObject",
+      "file": "internal/bootstrap/node.js",
+      "line": 319,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 23133,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "uncurryThis",
+      "file": "internal/per_context/primordials.js",
+      "line": 23,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 25365,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/util/inspect.js",
+      "line": 97,
+      "column": 45,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 25692,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "EventEmitter",
+      "file": "events.js",
+      "line": 43,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26121,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "EventEmitter.init",
+      "file": "events.js",
+      "line": 83,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26172,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupGlobalProxy",
+      "file": "internal/bootstrap/node.js",
+      "line": 364,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26261,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeGetter",
+      "file": "internal/bootstrap/node.js",
+      "line": 372,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26327,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "deprecate",
+      "file": "internal/util.js",
+      "line": 46,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26412,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeSetter",
+      "file": "internal/bootstrap/node.js",
+      "line": 378,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26468,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupBuffer",
+      "file": "internal/bootstrap/node.js",
+      "line": 403,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 26554,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "hideStackFrames",
+      "file": "internal/errors.js",
+      "line": 242,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 28092,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addBufferPrototypeMethods",
+      "file": "internal/buffer.js",
+      "line": 942,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 29226,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createPool",
+      "file": "buffer.js",
+      "line": 127,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 29374,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createUnsafeBuffer",
+      "file": "buffer.js",
+      "line": 118,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 29423,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "FastBuffer",
+      "file": "internal/buffer.js",
+      "line": 940,
+      "column": 1,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 29457,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapProcessMethods",
+      "file": "internal/process/main_thread_only.js",
+      "line": 22,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 30617,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapProcessMethods",
+      "file": "internal/process/per_thread.js",
+      "line": 33,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 30753,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapPosixCredentialSetters",
+      "file": "internal/process/main_thread_only.js",
+      "line": 53,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 30900,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapIdSetter",
+      "file": "internal/process/main_thread_only.js",
+      "line": 90,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 30948,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getMainThreadStdio",
+      "file": "internal/process/stdio.js",
+      "line": 21,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 31253,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupProcessStdio",
+      "file": "internal/bootstrap/node.js",
+      "line": 339,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 31324,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "emitHookFactory",
+      "file": "internal/async_hooks.js",
+      "line": 182,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 32175,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/per_context/primordials.js",
+      "line": 24,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 32216,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "FixedQueue",
+      "file": "internal/fixed_queue.js",
+      "line": 87,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 33140,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "FixedCircularBuffer",
+      "file": "internal/fixed_queue.js",
+      "line": 56,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 33183,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createGlobalConsole",
+      "file": "internal/bootstrap/node.js",
+      "line": 420,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 33282,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Console.<computed>",
+      "file": "internal/console/constructor.js",
+      "line": 141,
+      "column": 47,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 34412,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Console.<computed>",
+      "file": "internal/console/constructor.js",
+      "line": 166,
+      "column": 46,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 34526,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createWriteErrorHandler",
+      "file": "internal/console/constructor.js",
+      "line": 190,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 34587,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "set",
+      "file": "consoleFromVM",
+      "line": 63,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 34856,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "wrapConsole",
+      "file": "internal/util/inspector.js",
+      "line": 37,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 34926,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "exposeNamespace",
+      "file": "internal/bootstrap/node.js",
+      "line": 438,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 35630,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "defineIDLClass",
+      "file": "internal/url.js",
+      "line": 847,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 38688,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "exposeInterface",
+      "file": "internal/bootstrap/node.js",
+      "line": 448,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 38954,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeTextDecoderICU",
+      "file": "internal/encoding.js",
+      "line": 366,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 39913,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "debuglog",
+      "file": "internal/util/debuglog.js",
+      "line": 55,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 41367,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "ImmediateList",
+      "file": "internal/timers.js",
+      "line": 242,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 41442,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "PriorityQueue",
+      "file": "internal/priority_queue.js",
+      "line": 15,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 41513,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "defineOperation",
+      "file": "internal/bootstrap/node.js",
+      "line": 458,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 41706,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createOnGlobalUncaughtException",
+      "file": "internal/process/execution.js",
+      "line": 122,
+      "column": 41,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 42112,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupTaskQueue",
+      "file": "internal/process/task_queues.js",
+      "line": 172,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 43769,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "listenForRejections",
+      "file": "internal/process/promises.js",
+      "line": 247,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 43831,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getTimerCallbacks",
+      "file": "internal/timers.js",
+      "line": 390,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 43898,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "prepareMainThreadExecution",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 9,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 44945,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "patchProcessObject",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 66,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45033,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "resolve",
+      "file": "path.js",
+      "line": 974,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45241,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "validateString",
+      "file": "internal/validators.js",
+      "line": 110,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45290,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "cwd",
+      "file": "internal/process/main_thread_only.js",
+      "line": 41,
+      "column": 15,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45328,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeString",
+      "file": "path.js",
+      "line": 52,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45440,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isPosixPathSeparator",
+      "file": "path.js",
+      "line": 42,
+      "column": 30,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45480,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addReadOnlyProcessAlias",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 103,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45638,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getOptionValue",
+      "file": "internal/options.js",
+      "line": 6,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45677,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupTraceCategoryState",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 207,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45741,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "toggleTraceCategoryState",
+      "file": "internal/process/per_thread.js",
+      "line": 337,
+      "column": 34,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45793,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupInspectorHooks",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 213,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 45834,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupWarningHandler",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 115,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46043,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addListener",
+      "file": "events.js",
+      "line": 283,
+      "column": 58,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46090,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "_addListener",
+      "file": "events.js",
+      "line": 221,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46212,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "checkListener",
+      "file": "events.js",
+      "line": 62,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46251,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupDebugEnv",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 162,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46295,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeDebugEnv",
+      "file": "internal/util/debuglog.js",
+      "line": 12,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46345,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupSignalHandlers",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 169,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46387,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createSignalHandlers",
+      "file": "internal/process/main_thread_only.js",
+      "line": 125,
+      "column": 30,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46430,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "emit",
+      "file": "events.js",
+      "line": 160,
+      "column": 44,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46552,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "startListeningIfSignal",
+      "file": "internal/process/main_thread_only.js",
+      "line": 129,
+      "column": 34,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46616,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isSignal",
+      "file": "internal/process/main_thread_only.js",
+      "line": 120,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46651,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeReport",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 146,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46701,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeReportSignalHandlers",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 183,
+      "column": 40,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46740,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeHeapSnapshotSignalHandlers",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 193,
+      "column": 46,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46785,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setupChildProcessIpcChannel",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 318,
+      "column": 37,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46832,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializePolicy",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 342,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46944,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeClusterIPC",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 333,
+      "column": 30,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 46987,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeDeprecations",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 231,
+      "column": 32,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 47106,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeCJSLoader",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 391,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 47168,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "SafeMap",
+      "file": "internal/per_context/primordials.js",
+      "line": 65,
+      "column": 3,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 53190,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._initPaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1070,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 54634,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeESMLoader",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 395,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 54956,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "SafeWeakMap",
+      "file": "internal/per_context/primordials.js",
+      "line": 69,
+      "column": 3,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55057,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "loadPreloadModules",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 436,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55113,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._preloadModules",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1109,
+      "column": 34,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55176,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 132,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55227,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "dirname",
+      "file": "path.js",
+      "line": 1128,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55297,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "updateChildren",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 126,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55350,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._nodeModulePaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 585,
+      "column": 37,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55463,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module.require",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 841,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55543,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._load",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 668,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55648,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/util/debuglog.js",
+      "line": 57,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55690,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "debuglogImpl",
+      "file": "internal/util/debuglog.js",
+      "line": 34,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55740,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._resolveFilename",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 739,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 55961,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "NativeModule.canBeRequiredByUsers",
+      "file": "internal/bootstrap/loaders.js",
+      "line": 199,
+      "column": 45,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56003,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._resolveLookupPaths",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 622,
+      "column": 38,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56084,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._findPath",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 460,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56207,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isAbsolute",
+      "file": "path.js",
+      "line": 1029,
+      "column": 13,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56247,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "resolveExports",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 371,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56480,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "stat",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 115,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56549,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "toNamespacedPath",
+      "file": "path.js",
+      "line": 1123,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56581,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "tryExtensions",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 340,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56744,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "tryFile",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 325,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56791,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "toRealPath",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 333,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 56844,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "realpathSync",
+      "file": "fs.js",
+      "line": 1448,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57132,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getOptions",
+      "file": "internal/fs/utils.js",
+      "line": 196,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57219,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "assertEncoding",
+      "file": "internal/fs/utils.js",
+      "line": 73,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57258,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "toPathIfFileURL",
+      "file": "internal/url.js",
+      "line": 1385,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57295,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "hidden",
+      "file": "internal/errors.js",
+      "line": 243,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57346,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/fs/utils.js",
+      "line": 523,
+      "column": 38,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57394,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/fs/utils.js",
+      "line": 234,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57446,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isUint8Array",
+      "file": "internal/util/types.js",
+      "line": 19,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57481,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "splitRoot",
+      "file": "fs.js",
+      "line": 1410,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57593,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "nextPart",
+      "file": "fs.js",
+      "line": 1444,
+      "column": 31,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57630,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "handleErrorFromBinding",
+      "file": "internal/fs/utils.js",
+      "line": 215,
+      "column": 32,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57712,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isFileType",
+      "file": "fs.js",
+      "line": 165,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 57749,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "encodeRealpathResult",
+      "file": "fs.js",
+      "line": 1419,
+      "column": 30,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58004,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "loadNativeModule",
+      "file": "internal/modules/cjs/helpers.js",
+      "line": 19,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58059,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module.load",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 804,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58161,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "assert",
+      "file": "internal/assert.js",
+      "line": 10,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58203,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "findLongestRegisteredExtension",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 353,
+      "column": 40,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58443,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "basename",
+      "file": "path.js",
+      "line": 1154,
+      "column": 11,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58538,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._extensions..js",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 965,
+      "column": 37,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58594,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "readFileSync",
+      "file": "fs.js",
+      "line": 339,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58696,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isEncoding",
+      "file": "buffer.js",
+      "line": 505,
+      "column": 40,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58746,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "normalizeEncoding",
+      "file": "internal/util.js",
+      "line": 106,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58782,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isUint32",
+      "file": "internal/validators.js",
+      "line": 22,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58813,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "openSync",
+      "file": "fs.js",
+      "line": 431,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58864,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/fs/utils.js",
+      "line": 535,
+      "column": 42,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58903,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "stringToFlags",
+      "file": "internal/fs/utils.js",
+      "line": 422,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 58979,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "parseMode",
+      "file": "internal/validators.js",
+      "line": 41,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 59039,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "tryStatSync",
+      "file": "fs.js",
+      "line": 302,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 59859,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "tryCreateBuffer",
+      "file": "fs.js",
+      "line": 312,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 59950,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "allocUnsafe",
+      "file": "buffer.js",
+      "line": 345,
+      "column": 42,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 59990,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "buffer.js",
+      "line": 319,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60036,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "allocate",
+      "file": "buffer.js",
+      "line": 370,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60090,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "alignPool",
+      "file": "buffer.js",
+      "line": 134,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60133,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "tryReadSync",
+      "file": "fs.js",
+      "line": 327,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60186,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "readSync",
+      "file": "fs.js",
+      "line": 482,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60251,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/validators.js",
+      "line": 76,
+      "column": 3,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60325,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isInt32",
+      "file": "internal/validators.js",
+      "line": 18,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60361,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/validators.js",
+      "line": 134,
+      "column": 40,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60406,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/fs/utils.js",
+      "line": 498,
+      "column": 3,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60465,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "closeSync",
+      "file": "fs.js",
+      "line": 397,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60550,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "toString",
+      "file": "buffer.js",
+      "line": 741,
+      "column": 46,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60653,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getEncodingOps",
+      "file": "buffer.js",
+      "line": 644,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60745,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "slice",
+      "file": "buffer.js",
+      "line": 573,
+      "column": 12,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60784,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "stripBOM",
+      "file": "internal/modules/cjs/helpers.js",
+      "line": 107,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 60833,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module._compile",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 865,
+      "column": 37,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61014,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "stripShebang",
+      "file": "internal/modules/cjs/helpers.js",
+      "line": 117,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61074,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "maybeCacheSourceMap",
+      "file": "internal/source_map/source_map_cache.js",
+      "line": 23,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61178,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "makeRequireFunction",
+      "file": "internal/modules/cjs/helpers.js",
+      "line": 32,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61418,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "get",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 295,
+      "column": 8,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61471,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initializeFrozenIntrinsics",
+      "file": "internal/bootstrap/pre_execution.js",
+      "line": 428,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61644,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Module.runMain",
+      "file": "internal/modules/cjs/loader.js",
+      "line": 1011,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 61706,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "require",
+      "file": "internal/modules/cjs/helpers.js",
+      "line": 73,
+      "column": 31,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 63197,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addSmis",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 20,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 64554,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 75264,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "processResult",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 46,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 64603,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 69899,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 84450,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addNumbers",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 25,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 64640,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 71657,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addStrings",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 30,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 64685,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 70607,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 35,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 64724,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 72320,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 327432,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 373185,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 518027,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 582927,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 645085,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 1,
+      "column": 1,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 79727,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 95832,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 331073,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 376587,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addObjects",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 79,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 450975,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 458268,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 514018,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 521652,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 580846,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 585692,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 643262,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 647877,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 705568,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 709845,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 777697,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 2,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 451045,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 9,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 514360,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 522493,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 16,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 581019,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 583577,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 24,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 643446,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 648017,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 32,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 705742,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 710583,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 40,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 777869,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 779674,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 49,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 845220,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 847174,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "/tmp/deoptigate/examples/two-modules/objects.js",
+      "line": 58,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 910451,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 912413,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "log",
+      "file": "/tmp/deoptigate/examples/two-modules/adders.js",
+      "line": 95,
+      "column": 13,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 974958,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "log",
+      "file": "internal/console/constructor.js",
+      "line": 281,
+      "column": 6,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 975082,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Console.<computed>",
+      "file": "internal/console/constructor.js",
+      "line": 270,
+      "column": 47,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 975127,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "get",
+      "file": "internal/console/constructor.js",
+      "line": 148,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 975166,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getStdout",
+      "file": "internal/process/stdio.js",
+      "line": 26,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 975218,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createWritableStdioStream",
+      "file": "internal/process/stdio.js",
+      "line": 149,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 975308,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "protoGetter",
+      "file": "net.js",
+      "line": 691,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 981355,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "WriteStream",
+      "file": "tty.js",
+      "line": 80,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 981939,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Socket",
+      "file": "net.js",
+      "line": 252,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982103,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Duplex",
+      "file": "_stream_duplex.js",
+      "line": 49,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982162,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Readable",
+      "file": "_stream_readable.js",
+      "line": 154,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982260,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Stream",
+      "file": "internal/streams/legacy.js",
+      "line": 7,
+      "column": 16,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982293,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "ReadableState",
+      "file": "_stream_readable.js",
+      "line": 75,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982530,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getHighWaterMark",
+      "file": "internal/streams/state.js",
+      "line": 16,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982599,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "highWaterMarkFrom",
+      "file": "internal/streams/state.js",
+      "line": 7,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982636,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getDefaultHighWaterMark",
+      "file": "internal/streams/state.js",
+      "line": 12,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982668,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "BufferList",
+      "file": "internal/streams/buffer_list.js",
+      "line": 7,
+      "column": 14,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982719,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Writable",
+      "file": "_stream_writable.js",
+      "line": 208,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982844,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "WritableState",
+      "file": "_stream_writable.js",
+      "line": 59,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 982938,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "set",
+      "file": "net.js",
+      "line": 1657,
+      "column": 6,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983072,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "get",
+      "file": "net.js",
+      "line": 1656,
+      "column": 6,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983118,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getNewAsyncId",
+      "file": "net.js",
+      "line": 135,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983156,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Readable.on",
+      "file": "_stream_readable.js",
+      "line": 866,
+      "column": 33,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983239,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initSocketHandle",
+      "file": "net.js",
+      "line": 223,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983305,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "undestroy",
+      "file": "internal/streams/destroy.js",
+      "line": 72,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983354,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Console.<computed>",
+      "file": "internal/console/constructor.js",
+      "line": 251,
+      "column": 49,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983514,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getColorDepth",
+      "file": "internal/tty.js",
+      "line": 94,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983660,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "formatWithOptions",
+      "file": "internal/util/inspect.js",
+      "line": 1569,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 983952,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "inspect",
+      "file": "internal/util/inspect.js",
+      "line": 172,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984069,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "formatValue",
+      "file": "internal/util/inspect.js",
+      "line": 530,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984217,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "formatPrimitive",
+      "file": "internal/util/inspect.js",
+      "line": 1110,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984291,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "formatNumber",
+      "file": "internal/util/inspect.js",
+      "line": 1101,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984338,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "stylizeWithColor",
+      "file": "internal/util/inspect.js",
+      "line": 336,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984387,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Console.<computed>",
+      "file": "internal/console/constructor.js",
+      "line": 210,
+      "column": 46,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984464,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "listenerCount",
+      "file": "events.js",
+      "line": 464,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984512,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "once",
+      "file": "events.js",
+      "line": 312,
+      "column": 44,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984549,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "_onceWrap",
+      "file": "events.js",
+      "line": 304,
+      "column": 19,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984593,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Writable.write",
+      "file": "_stream_writable.js",
+      "line": 278,
+      "column": 36,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984687,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "validChunk",
+      "file": "_stream_writable.js",
+      "line": 262,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984741,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "writeOrBuffer",
+      "file": "_stream_writable.js",
+      "line": 381,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984827,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "decodeChunk",
+      "file": "_stream_writable.js",
+      "line": 349,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984868,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "doWrite",
+      "file": "_stream_writable.js",
+      "line": 421,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984922,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Socket._write",
+      "file": "net.js",
+      "line": 781,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 984963,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Socket._writeGeneric",
+      "file": "net.js",
+      "line": 744,
+      "column": 42,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985025,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "_unrefTimer",
+      "file": "net.js",
+      "line": 378,
+      "column": 52,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985069,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "writeGeneric",
+      "file": "internal/stream_base_commons.js",
+      "line": 137,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985120,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "createWriteWrap",
+      "file": "internal/stream_base_commons.js",
+      "line": 99,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985158,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "handleWriteReq",
+      "file": "internal/stream_base_commons.js",
+      "line": 40,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985242,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "afterWriteDispatched",
+      "file": "internal/stream_base_commons.js",
+      "line": 145,
+      "column": 30,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985710,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "onwrite",
+      "file": "_stream_writable.js",
+      "line": 459,
+      "column": 17,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985831,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "needFinish",
+      "file": "_stream_writable.js",
+      "line": 619,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985882,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "get",
+      "file": "_stream_duplex.js",
+      "line": 141,
+      "column": 6,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 985923,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "nextTick",
+      "file": "internal/process/task_queues.js",
+      "line": 101,
+      "column": 18,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986016,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isEmpty",
+      "file": "internal/fixed_queue.js",
+      "line": 91,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986108,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isEmpty",
+      "file": "internal/fixed_queue.js",
+      "line": 63,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986272,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setHasTickScheduled",
+      "file": "internal/process/task_queues.js",
+      "line": 49,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986333,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "newAsyncId",
+      "file": "internal/async_hooks.js",
+      "line": 262,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986384,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "getDefaultTriggerAsyncId",
+      "file": "internal/async_hooks.js",
+      "line": 278,
+      "column": 34,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986428,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "initHooksExist",
+      "file": "internal/async_hooks.js",
+      "line": 308,
+      "column": 24,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986472,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "push",
+      "file": "internal/fixed_queue.js",
+      "line": 95,
+      "column": 7,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986512,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "isFull",
+      "file": "internal/fixed_queue.js",
+      "line": 67,
+      "column": 9,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986544,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "push",
+      "file": "internal/fixed_queue.js",
+      "line": 71,
+      "column": 7,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986579,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Readable.removeListener",
+      "file": "_stream_readable.js",
+      "line": 896,
+      "column": 45,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986654,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "removeListener",
+      "file": "events.js",
+      "line": 329,
+      "column": 28,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986749,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "processTicksAndRejections",
+      "file": "internal/process/task_queues.js",
+      "line": 65,
+      "column": 35,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986839,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "shift",
+      "file": "internal/fixed_queue.js",
+      "line": 104,
+      "column": 8,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986890,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "shift",
+      "file": "internal/fixed_queue.js",
+      "line": 76,
+      "column": 8,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986931,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "emitBeforeScript",
+      "file": "internal/async_hooks.js",
+      "line": 345,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 986976,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "validateAsyncId",
+      "file": "internal/async_hooks.js",
+      "line": 114,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987016,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "pushAsyncIds",
+      "file": "internal/async_hooks.js",
+      "line": 394,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987068,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "afterWrite",
+      "file": "_stream_writable.js",
+      "line": 493,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987123,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "internal/console/constructor.js",
+      "line": 191,
+      "column": 10,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987172,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "finishMaybe",
+      "file": "_stream_writable.js",
+      "line": 650,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987228,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "destroyHooksExist",
+      "file": "internal/async_hooks.js",
+      "line": 316,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987259,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "emitAfterScript",
+      "file": "internal/async_hooks.js",
+      "line": 359,
+      "column": 25,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987294,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "popAsyncIds",
+      "file": "internal/async_hooks.js",
+      "line": 407,
+      "column": 21,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987352,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "processPromiseRejections",
+      "file": "internal/process/promises.js",
+      "line": 163,
+      "column": 34,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987459,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "setHasRejectionToWarn",
+      "file": "internal/process/promises.js",
+      "line": 48,
+      "column": 31,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 987495,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    }
+  ]
+}

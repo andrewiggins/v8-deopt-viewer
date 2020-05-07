@@ -1,3 +1,16 @@
+const MIN_SEVERITY = 0;
+
+type CodeState = "compiled" | "optimizable" | "optimized" | "unknown";
+
+type ICState =
+	| "unintialized"
+	| "premonomorphic"
+	| "monomorphic"
+	| "recompute_handler"
+	| "polymorphic"
+	| "megamorphic"
+	| "generic";
+
 interface V8DeoptInfo {
 	// TODO
 }
@@ -11,4 +24,4 @@ interface V8DeoptInfo {
 export async function parseV8Log(
 	v8LogContent: string,
 	readSourceFileContent: (srcFilePath: string) => Promise<string>
-): V8DeoptInfo;
+): Promise<V8DeoptInfo>;

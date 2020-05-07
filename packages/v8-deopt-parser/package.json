@@ -2,7 +2,9 @@
   "name": "v8-deopt-parser",
   "version": "0.1.0",
   "description": "Parse a v8.log file for deoptimizations",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT"

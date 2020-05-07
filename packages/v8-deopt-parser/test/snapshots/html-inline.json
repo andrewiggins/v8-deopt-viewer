@@ -1,0 +1,1220 @@
+{
+  "ics": [
+    {
+      "functionName": "processResult",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 109,
+      "column": 17,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "push",
+          "map": "14cd08281139",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "push",
+          "map": "14cd08281049",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "processResult",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 111,
+      "column": 21,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "length",
+          "map": "14cd08281139",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "length",
+          "map": "14cd08281049",
+          "optimizationState": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "addNumbers",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 86,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "flag",
+          "map": "14cd08283f01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 96,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "flag",
+          "map": "14cd08283f01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addSmis",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 81,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "flag",
+          "map": "14cd08283f01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addStrings",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 91,
+      "column": 29,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "flag",
+          "map": "14cd08283f01",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 33,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08283fc9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "x",
+          "map": "14cd08284091",
+          "optimizationState": 1,
+          "severity": 2
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 4,
+          "newState": 5,
+          "key": "x",
+          "map": "14cd08284361",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 39,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08283fc9",
+          "optimizationState": 1,
+          "severity": 1
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 2,
+          "newState": 4,
+          "key": "y",
+          "map": "14cd08284091",
+          "optimizationState": 1,
+          "severity": 2
+        },
+        {
+          "type": "LoadIC",
+          "oldState": 4,
+          "newState": 5,
+          "key": "y",
+          "map": "14cd08284361",
+          "optimizationState": 1,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 12,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08283f29",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 13,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08283fa1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 19,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08283ff1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 20,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08284069",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 26,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd082840b9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 27,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08284131",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 28,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284159",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 34,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd082841a9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 35,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd08284221",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 36,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284249",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 42,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08284299",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 43,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284311",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 44,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd08284339",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 50,
+      "column": 21,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hola",
+          "map": "14cd08284389",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 51,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd08284401",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 52,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284429",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 53,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd08284451",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 59,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd082844a1",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 60,
+      "column": 21,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hola",
+          "map": "14cd08284519",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 61,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284541",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 62,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd08284569",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 68,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "x",
+          "map": "14cd082845b9",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 69,
+      "column": 18,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "y",
+          "map": "14cd08284631",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 70,
+      "column": 21,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hola",
+          "map": "14cd08284659",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 71,
+      "column": 22,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": 0,
+          "newState": 2,
+          "key": "hello",
+          "map": "14cd08284681",
+          "optimizationState": 1,
+          "severity": 1
+        }
+      ]
+    }
+  ],
+  "deopts": [
+    {
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 109,
+      "column": 17,
+      "updates": [
+        {
+          "timestamp": 295137,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 117,
+            "column": 11
+          }
+        },
+        {
+          "timestamp": 295545,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 125,
+      "column": 25,
+      "updates": [
+        {
+          "timestamp": 464507,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 99,
+      "column": 18,
+      "updates": [
+        {
+          "timestamp": 464605,
+          "bailoutType": "eager",
+          "deoptReason": "not a Smi",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 487768,
+          "bailoutType": "eager",
+          "deoptReason": "not a Number or Oddball",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 132,
+      "column": 25,
+      "updates": [
+        {
+          "timestamp": 487666,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 33,
+      "updates": [
+        {
+          "timestamp": 563989,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for generic named access",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 1
+        },
+        {
+          "timestamp": 641896,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 711737,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 711918,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 714252,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 775629,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 775747,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 779035,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 829965,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 830068,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 831392,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": 2,
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        }
+      ]
+    },
+    {
+      "functionName": "addObjects",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 142,
+      "column": 34,
+      "updates": [
+        {
+          "timestamp": 645553,
+          "bailoutType": "eager",
+          "deoptReason": "wrong call target",
+          "optimizationState": 2,
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    }
+  ],
+  "codes": [
+    {
+      "functionName": "addSmis",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 80,
+      "column": 23,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 234096,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 282043,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "processResult",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 106,
+      "column": 29,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 234586,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 280296,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 298104,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addNumbers",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 85,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 235580,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 280422,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addStrings",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 90,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 236234,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 282271,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addAny",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 95,
+      "column": 22,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 236381,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 280139,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 466062,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 489164,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 584137,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 645005,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 715922,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 777623,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 832395,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 9,
+      "column": 27,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 294878,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 325692,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 471113,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 495338,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "addObjects",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 139,
+      "column": 26,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 553072,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 584013,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 650699,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 711343,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 719093,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 775331,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 782580,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 829773,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 835281,
+          "state": 2,
+          "severity": 1
+        },
+        {
+          "timestamp": 894375,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 11,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 557134,
+          "state": 1,
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "functionName": "Object2",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 18,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 641763,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 646718,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object3",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 25,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 711577,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 716075,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object4",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 33,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 775520,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 779214,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object5",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 41,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 829880,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 832705,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object6",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 49,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 894478,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 896534,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object7",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 58,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 950275,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 952650,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object8",
+      "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+      "line": 67,
+      "column": 20,
+      "isScript": false,
+      "updates": [
+        {
+          "timestamp": 1003289,
+          "state": 1,
+          "severity": 2
+        },
+        {
+          "timestamp": 1005371,
+          "state": 2,
+          "severity": 1
+        }
+      ]
+    }
+  ]
+}

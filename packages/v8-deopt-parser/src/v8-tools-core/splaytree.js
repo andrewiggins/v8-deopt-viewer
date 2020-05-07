@@ -34,7 +34,7 @@
  *
  * @constructor
  */
-export function SplayTree() {
+export default function SplayTree() {
 };
 
 

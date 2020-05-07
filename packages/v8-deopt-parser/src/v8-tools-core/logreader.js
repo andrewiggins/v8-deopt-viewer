@@ -35,7 +35,7 @@ import CsvParser from './csvparser.js';
 /**
  * Base class for processing log files.
  *
- * @param {Array.<Object>} dispatchTable A table used for parsing and processing
+ * @param {Object} dispatchTable A table used for parsing and processing
  *     log records.
  * @param {boolean} timedRange Ignore ticks outside timed range.
  * @param {boolean} pairwiseTimedRange Ignore ticks outside pairs of timer
@@ -44,7 +44,7 @@ import CsvParser from './csvparser.js';
  */
 export function LogReader(dispatchTable, timedRange, pairwiseTimedRange) {
   /**
-   * @type {Array.<Object>}
+   * @type {Object}
    */
   this.dispatchTable_ = dispatchTable;
 
