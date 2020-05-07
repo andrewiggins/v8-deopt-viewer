@@ -8,20 +8,20 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "push",
           "map": "420708281139",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         },
         {
           "type": "LoadIC",
-          "oldState": 2,
-          "newState": 4,
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
           "key": "push",
           "map": "420708281049",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 2
         }
       ]
@@ -34,20 +34,20 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "length",
           "map": "420708281139",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         },
         {
           "type": "LoadIC",
-          "oldState": 2,
-          "newState": 4,
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
           "key": "length",
           "map": "420708281049",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 2
         }
       ]
@@ -60,11 +60,11 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "flag",
           "map": "420708283e61",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -77,11 +77,11 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "flag",
           "map": "420708283e61",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -94,11 +94,11 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "flag",
           "map": "420708283e61",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -111,45 +111,11 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "flag",
           "map": "420708283e61",
-          "optimizationState": 1,
-          "severity": 1
-        }
-      ]
-		},
-		{
-      "functionName": "Object1",
-      "file": "file:///tmp/deoptigate/examples/html-external/objects.js",
-      "line": 5,
-      "column": 12,
-      "updates": [
-        {
-          "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
-          "key": "x",
-          "map": "420708283eb1",
-          "optimizationState": 1,
-          "severity": 1
-        }
-      ]
-    },
-    {
-      "functionName": "Object1",
-      "file": "file:///tmp/deoptigate/examples/html-external/objects.js",
-      "line": 6,
-      "column": 12,
-      "updates": [
-        {
-          "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
-          "key": "y",
-          "map": "420708283f29",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -162,29 +128,29 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708283f51",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         },
         {
           "type": "LoadIC",
-          "oldState": 2,
-          "newState": 4,
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
           "key": "x",
           "map": "420708284019",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 2
         },
         {
           "type": "LoadIC",
-          "oldState": 4,
-          "newState": 5,
+          "oldState": "polymorphic",
+          "newState": "megamorphic",
           "key": "x",
           "map": "4207082842e9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 3
         }
       ]
@@ -197,30 +163,64 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "420708283f51",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         },
         {
           "type": "LoadIC",
-          "oldState": 2,
-          "newState": 4,
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
           "key": "y",
           "map": "420708284019",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 2
         },
         {
           "type": "LoadIC",
-          "oldState": 4,
-          "newState": 5,
+          "oldState": "polymorphic",
+          "newState": "megamorphic",
           "key": "y",
           "map": "4207082842e9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 3
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "file:///tmp/deoptigate/examples/html-external/objects.js",
+      "line": 5,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "420708283eb1",
+          "optimizationState": "optimizable",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "functionName": "Object1",
+      "file": "file:///tmp/deoptigate/examples/html-external/objects.js",
+      "line": 6,
+      "column": 12,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "420708283f29",
+          "optimizationState": "optimizable",
+          "severity": 1
         }
       ]
     },
@@ -232,11 +232,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "420708283f79",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -249,11 +249,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708283ff1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -266,11 +266,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "420708284041",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -283,11 +283,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "4207082840b9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -300,11 +300,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "4207082840e1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -317,11 +317,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708284131",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -334,11 +334,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "4207082841a9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -351,11 +351,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "4207082841d1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -368,11 +368,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708284221",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -385,11 +385,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "420708284299",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -402,11 +402,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "4207082842c1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -419,11 +419,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hola",
           "map": "420708284311",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -436,11 +436,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708284389",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -453,11 +453,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "4207082843b1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -470,11 +470,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "4207082843d9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -487,11 +487,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708284429",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -504,11 +504,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hola",
           "map": "4207082844a1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -521,11 +521,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "4207082844c9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -538,11 +538,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "4207082844f1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -555,11 +555,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "x",
           "map": "420708284541",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -572,11 +572,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "y",
           "map": "4207082845b9",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -589,11 +589,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hola",
           "map": "4207082845e1",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -606,11 +606,11 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": 0,
-          "newState": 2,
+          "oldState": "unintialized",
+          "newState": "monomorphic",
           "key": "hello",
           "map": "420708284609",
-          "optimizationState": 1,
+          "optimizationState": "optimizable",
           "severity": 1
         }
       ]
@@ -627,7 +627,7 @@
           "timestamp": 89327,
           "bailoutType": "lazy",
           "deoptReason": "(unknown)",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 2,
           "inlinedAt": {
@@ -648,7 +648,7 @@
           "timestamp": 208902,
           "bailoutType": "soft",
           "deoptReason": "Insufficient type feedback for compare operation",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 1
         }
@@ -664,7 +664,7 @@
           "timestamp": 209118,
           "bailoutType": "eager",
           "deoptReason": "not a Smi",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         },
@@ -672,7 +672,7 @@
           "timestamp": 234008,
           "bailoutType": "eager",
           "deoptReason": "not a Number or Oddball",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         }
@@ -688,7 +688,7 @@
           "timestamp": 233901,
           "bailoutType": "soft",
           "deoptReason": "Insufficient type feedback for compare operation",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 1
         }
@@ -704,7 +704,7 @@
           "timestamp": 296493,
           "bailoutType": "soft",
           "deoptReason": "Insufficient type feedback for generic named access",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 1
         },
@@ -712,7 +712,7 @@
           "timestamp": 374124,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -725,7 +725,7 @@
           "timestamp": 374230,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         },
@@ -733,7 +733,7 @@
           "timestamp": 376193,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -746,7 +746,7 @@
           "timestamp": 422831,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -759,7 +759,7 @@
           "timestamp": 422989,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         },
@@ -767,7 +767,7 @@
           "timestamp": 425150,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -780,7 +780,7 @@
           "timestamp": 469424,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -793,7 +793,7 @@
           "timestamp": 469542,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         },
@@ -801,7 +801,7 @@
           "timestamp": 471285,
           "bailoutType": "eager",
           "deoptReason": "wrong map",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": true,
           "severity": 3,
           "inlinedAt": {
@@ -822,7 +822,7 @@
           "timestamp": 322375,
           "bailoutType": "eager",
           "deoptReason": "wrong call target",
-          "optimizationState": 2,
+          "optimizationState": "optimized",
           "inlined": false,
           "severity": 3
         }
@@ -839,7 +839,7 @@
       "updates": [
         {
           "timestamp": 60147,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         }
       ]
@@ -853,27 +853,27 @@
       "updates": [
         {
           "timestamp": 61544,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 85376,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 102874,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 215187,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 244770,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -887,12 +887,12 @@
       "updates": [
         {
           "timestamp": 61873,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 76744,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -906,17 +906,17 @@
       "updates": [
         {
           "timestamp": 61958,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 69748,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 91656,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -930,12 +930,12 @@
       "updates": [
         {
           "timestamp": 62089,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 72774,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -949,12 +949,12 @@
       "updates": [
         {
           "timestamp": 62284,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 77209,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -968,42 +968,42 @@
       "updates": [
         {
           "timestamp": 62401,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 74671,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 211705,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 234997,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 324235,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 377431,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 424707,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 471833,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1017,52 +1017,52 @@
       "updates": [
         {
           "timestamp": 296340,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 300773,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 327198,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 373874,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 380337,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 422572,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 428330,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 469137,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 474764,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         },
         {
           "timestamp": 541386,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1076,7 +1076,7 @@
       "updates": [
         {
           "timestamp": 296422,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         }
       ]
@@ -1090,12 +1090,12 @@
       "updates": [
         {
           "timestamp": 319547,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 327928,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1109,12 +1109,12 @@
       "updates": [
         {
           "timestamp": 374035,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 377560,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1128,12 +1128,12 @@
       "updates": [
         {
           "timestamp": 422739,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 425432,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1147,12 +1147,12 @@
       "updates": [
         {
           "timestamp": 469336,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 474852,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1166,12 +1166,12 @@
       "updates": [
         {
           "timestamp": 541596,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 545280,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1185,12 +1185,12 @@
       "updates": [
         {
           "timestamp": 629675,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 634360,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]
@@ -1204,12 +1204,12 @@
       "updates": [
         {
           "timestamp": 752072,
-          "state": 1,
+          "state": "optimizable",
           "severity": 2
         },
         {
           "timestamp": 759709,
-          "state": 2,
+          "state": "optimized",
           "severity": 1
         }
       ]

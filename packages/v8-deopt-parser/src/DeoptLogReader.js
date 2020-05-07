@@ -1,18 +1,17 @@
-import {
-	LogReader,
-	parseString,
-	parseVarArgs,
-} from "./v8-tools-core/logreader.js";
+import { LogReader } from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
-import { IcEntry } from "./InlineCacheEntry.js";
-import { CodeEntry } from "./CodeEntry.js";
-import { DeoptEntry } from "./DeoptEntry.js";
-import { parseSourcePosition } from "./parseSourcePosition.js";
+import { parseSourcePosition } from "./utils.js";
+import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
-	deoptFieldParsers,
 	propertyICFieldParsers,
+	severityIcState,
+} from "./propertyICParsers.js";
+import {
 	parseCodeCreateVarArgs,
-} from "./fieldParsers.js";
+	codeCreationParsers,
+	nameOptimizationState,
+	severityOfOptimizationState,
+} from "./codeCreationParsers.js";
 
 function locationKey(file, line, column) {
 	return `${file}:${line}:${column}`;
@@ -28,16 +27,17 @@ function locationKey(file, line, column) {
  */
 export class DeoptLogReader extends LogReader {
 	constructor({ logErrors = false } = {}) {
+		// @ts-ignore
 		super();
 		this.logErrors = logErrors;
 
 		this._profile = new Profile();
 
-		/** @type {Map<string, IcEntry>} */
+		/** @type {Map<string, import('./').ICEntry>} */
 		this.entriesIC = new Map();
-		/** @type {Map<string, DeoptEntry>} */
+		/** @type {Map<string, import('./').DeoptEntry>} */
 		this.entriesDeopt = new Map();
-		/** @type {Map<string, CodeEntry>} */
+		/** @type {Map<string, import('./').CodeEntry>} */
 		this.entriesCode = new Map();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
@@ -47,15 +47,7 @@ export class DeoptLogReader extends LogReader {
 		this.dispatchTable_ = {
 			// Collect info about CRUD of code
 			"code-creation": {
-				parsers: [
-					parseString,
-					parseInt,
-					parseInt,
-					parseInt,
-					parseInt,
-					parseString,
-					parseVarArgs,
-				],
+				parsers: codeCreationParsers,
 				processor: this._processCodeCreation.bind(this),
 			},
 			"code-move": {
@@ -107,9 +99,7 @@ export class DeoptLogReader extends LogReader {
 			return;
 		}
 
-		// const funcAddr = parseInt(var[0]);
-		// const state = parseOptimizationState(maybe_func[1]);
-		const { funcAddr, state } = parseCodeCreateVarArgs(varArgs);
+		const { funcAddr, optimizationState } = parseCodeCreateVarArgs(varArgs);
 		this._profile.addFuncCode(
 			type,
 			name,
@@ -117,8 +107,9 @@ export class DeoptLogReader extends LogReader {
 			start,
 			size,
 			funcAddr,
-			state
+			optimizationState
 		);
+
 		const isScript = type === "Script";
 		const isUserFunction = type === "LazyCompile";
 		if (isUserFunction || isScript) {
@@ -131,13 +122,23 @@ export class DeoptLogReader extends LogReader {
 
 			const key = locationKey(fnFile, line, column);
 			if (!this.entriesCode.has(key)) {
-				this.entriesCode.set(
-					key,
-					new CodeEntry({ fnFile, line, column, isScript })
-				);
+				const [functionName, sourceLocation] = fnFile.split(" ");
+				this.entriesCode.set(key, {
+					functionName,
+					file: parseSourcePosition(sourceLocation).file,
+					line,
+					column,
+					isScript,
+					updates: [],
+				});
 			}
+
 			const code = this.entriesCode.get(key);
-			code.addUpdate(timestamp, state);
+			code.updates.push({
+				timestamp,
+				state: nameOptimizationState(optimizationState),
+				severity: severityOfOptimizationState(optimizationState),
+			});
 		}
 	}
 
@@ -163,25 +164,32 @@ export class DeoptLogReader extends LogReader {
 		scriptOffset,
 		bailoutType,
 		deoptLocation,
-		deoptReasonText
+		deoptReason
 	) {
-		const { fnFile, state } = this.getInfoFromProfile(code);
+		const { fnFile, optimizationState } = this.getInfoFromProfile(code);
 		const { file, line, column } = deoptLocation;
 
 		const key = locationKey(file, line, column);
 		if (!this.entriesDeopt.has(key)) {
-			const entry = new DeoptEntry(fnFile, file, line, column);
-			this.entriesDeopt.set(key, entry);
+			this.entriesDeopt.set(key, {
+				functionName: fnFile.split(" ")[0],
+				file,
+				line,
+				column,
+				updates: [],
+			});
 		}
+
 		const deoptEntry = this.entriesDeopt.get(key);
-		deoptEntry.addUpdate(
+		deoptEntry.updates.push({
 			timestamp,
 			bailoutType,
-			deoptReasonText,
-			state,
-			inliningId,
-			deoptLocation.inlinedAt
-		);
+			deoptReason,
+			optimizationState,
+			inlined: inliningId !== -1,
+			severity: getOptimizationSeverity(bailoutType),
+			inlinedAt: deoptLocation.inlinedAt,
+		});
 	}
 
 	_processPropertyIC(
@@ -189,36 +197,67 @@ export class DeoptLogReader extends LogReader {
 		pc,
 		line,
 		column,
-		old_state,
-		new_state,
+		oldState,
+		newState,
 		map,
 		propertyKey,
 		modifier,
 		slow_reason
 	) {
 		// Skip IC entries that don't contain changes
-		if (old_state == new_state) {
+		if (oldState == newState) {
 			return;
 		}
 
-		const { fnFile, state } = this.getInfoFromProfile(pc);
+		const { fnFile, optimizationState } = this.getInfoFromProfile(pc);
 		const key = locationKey(fnFile, line, column);
 		if (!this.entriesIC.has(key)) {
-			const entry = new IcEntry(fnFile, line, column);
-			this.entriesIC.set(key, entry);
+			const [functionName, sourcePosition] = fnFile.split(" ");
+			this.entriesIC.set(key, {
+				functionName,
+				file: parseSourcePosition(sourcePosition).file,
+				line,
+				column,
+				updates: [],
+			});
 		}
+
 		const icEntry = this.entriesIC.get(key);
-		icEntry.addUpdate(type, old_state, new_state, propertyKey, map, state);
+		icEntry.updates.push({
+			type,
+			oldState,
+			newState,
+			key: propertyKey,
+			map: map.toString(16), // TODO: Perhaps skip original parseInt
+			optimizationState,
+			severity: severityIcState(newState),
+		});
 	}
 
+	/**
+	 * @param {any} code
+	 * @returns {{ fnFile: string; line: number; column: number; optimizationState: import('./').CodeState }}
+	 */
 	getInfoFromProfile(code) {
 		const entry = this._profile.findEntry(code);
-		if (entry == null) return { fnFile: "", state: -1 };
+		if (entry == null) {
+			return {
+				fnFile: "",
+				line: null,
+				column: null,
+				optimizationState: "unknown",
+			};
+		}
 
 		const name = entry.func.getName();
 		const { file: fnFile, line, column } = parseSourcePosition(name);
 
-		return { fnFile, line, column, state: entry.state };
+		return {
+			fnFile,
+			line,
+			column,
+			optimizationState: nameOptimizationState(entry.state),
+		};
 	}
 
 	printError(msg) {
@@ -227,21 +266,28 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
+	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
+		/** @type {import('./').ICEntry[]} */
 		const ics = [];
 		for (const entry of this.entriesIC.values()) {
 			if (entry.updates.length > 0) {
-				ics.push(entry.toJSON());
+				ics.push(entry);
 			}
 		}
+
+		/** @type {import('./').DeoptEntry[]} */
 		const deopts = [];
 		for (const entry of this.entriesDeopt.values()) {
-			deopts.push(entry.toJSON());
+			deopts.push(entry);
 		}
+
+		/** @type {import('./').CodeEntry[]} */
 		const codes = [];
 		for (const entry of this.entriesCode.values()) {
-			codes.push(entry.toJSON());
+			codes.push(entry);
 		}
+
 		return { ics, deopts, codes };
 	}
 }
