@@ -256,13 +256,7 @@ export class DeoptLogReader extends LogReader {
 	getInfoFromProfile(code) {
 		const entry = this._profile.findEntry(code);
 		if (entry == null) {
-			return {
-				functionName: "",
-				file: "",
-				line: null,
-				column: null,
-				optimizationState: "unknown",
-			};
+			throw new Error(`Could not find entry in Profile with code "${code}"`);
 		}
 
 		const name = entry.func.getName();
@@ -289,26 +283,12 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
-		/** @type {import('./').ICEntry[]} */
-		const ics = [];
-		for (const entry of this.entriesIC.values()) {
-			if (entry.updates.length > 0) {
-				ics.push(entry);
-			}
-		}
-
-		/** @type {import('./').DeoptEntry[]} */
-		const deopts = [];
-		for (const entry of this.entriesDeopt.values()) {
-			deopts.push(entry);
-		}
-
-		/** @type {import('./').CodeEntry[]} */
-		const codes = [];
-		for (const entry of this.entriesCode.values()) {
-			codes.push(entry);
-		}
-
-		return { ics, deopts, codes };
+		return {
+			ics: Array.from(this.entriesIC.values()).filter(
+				(entry) => entry.updates.length > 0
+			),
+			deopts: Array.from(this.entriesDeopt.values()),
+			codes: Array.from(this.entriesCode.values()),
+		};
 	}
 }
