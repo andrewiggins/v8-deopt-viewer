@@ -4448,8 +4448,8 @@
       ]
     },
     {
-      "functionName": "set",
-      "file": "consoleFromVM",
+      "functionName": "set consoleFromVM",
+      "file": "internal/util/inspector.js",
       "line": 63,
       "column": 20,
       "isScript": false,

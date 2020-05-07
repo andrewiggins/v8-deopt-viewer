@@ -13,8 +13,14 @@ import {
 	severityOfOptimizationState,
 } from "./codeCreationParsers.js";
 
-function locationKey(file, line, column) {
-	return `${file}:${line}:${column}`;
+/**
+ * @param {string} functionName
+ * @param {string} file
+ * @param {number} line
+ * @param {number} column
+ */
+function locationKey(functionName, file, line, column) {
+	return `${functionName} ${file}:${line}:${column}`;
 }
 
 /**
@@ -113,19 +119,18 @@ export class DeoptLogReader extends LogReader {
 		const isScript = type === "Script";
 		const isUserFunction = type === "LazyCompile";
 		if (isUserFunction || isScript) {
-			let { fnFile, line, column } = this.getInfoFromProfile(start);
+			let { functionName, file, line, column } = this.getInfoFromProfile(start);
 
 			// only interested in Node.js anonymous wrapper function
 			// (function (exports, require, module, __filename, __dirname) {
 			const isNodeWrapperFunction = line === 1 && column === 1;
 			if (isScript && !isNodeWrapperFunction) return;
 
-			const key = locationKey(fnFile, line, column);
+			const key = locationKey(functionName, file, line, column);
 			if (!this.entriesCode.has(key)) {
-				const [functionName, sourceLocation] = fnFile.split(" ");
 				this.entriesCode.set(key, {
 					functionName,
-					file: parseSourcePosition(sourceLocation).file,
+					file,
 					line,
 					column,
 					isScript,
@@ -166,13 +171,16 @@ export class DeoptLogReader extends LogReader {
 		deoptLocation,
 		deoptReason
 	) {
-		const { fnFile, optimizationState } = this.getInfoFromProfile(code);
 		const { file, line, column } = deoptLocation;
+		const { functionName, optimizationState } = this.getInfoFromProfile(code);
 
-		const key = locationKey(file, line, column);
+		// Deoptigate didn't use function name for location key here, so we won't either
+		// TODO: Determine why...
+		const key = locationKey("", file, line, column);
+
 		if (!this.entriesDeopt.has(key)) {
 			this.entriesDeopt.set(key, {
-				functionName: fnFile.split(" ")[0],
+				functionName,
 				file,
 				line,
 				column,
@@ -194,7 +202,7 @@ export class DeoptLogReader extends LogReader {
 
 	_processPropertyIC(
 		type,
-		pc,
+		code,
 		line,
 		column,
 		oldState,
@@ -209,13 +217,15 @@ export class DeoptLogReader extends LogReader {
 			return;
 		}
 
-		const { fnFile, optimizationState } = this.getInfoFromProfile(pc);
-		const key = locationKey(fnFile, line, column);
+		const { functionName, file, optimizationState } = this.getInfoFromProfile(
+			code
+		);
+
+		const key = locationKey(functionName, file, line, column);
 		if (!this.entriesIC.has(key)) {
-			const [functionName, sourcePosition] = fnFile.split(" ");
 			this.entriesIC.set(key, {
 				functionName,
-				file: parseSourcePosition(sourcePosition).file,
+				file,
 				line,
 				column,
 				updates: [],
@@ -236,13 +246,14 @@ export class DeoptLogReader extends LogReader {
 
 	/**
 	 * @param {any} code
-	 * @returns {{ fnFile: string; line: number; column: number; optimizationState: import('./').CodeState }}
+	 * @returns {{ functionName: string; file: string; line: number; column: number; optimizationState: import('./').CodeState }}
 	 */
 	getInfoFromProfile(code) {
 		const entry = this._profile.findEntry(code);
 		if (entry == null) {
 			return {
-				fnFile: "",
+				functionName: "",
+				file: "",
 				line: null,
 				column: null,
 				optimizationState: "unknown",
@@ -252,8 +263,13 @@ export class DeoptLogReader extends LogReader {
 		const name = entry.func.getName();
 		const { file: fnFile, line, column } = parseSourcePosition(name);
 
+		const lastSpace = fnFile.lastIndexOf(" ");
+		const functionName = fnFile.slice(0, lastSpace);
+		const file = fnFile.slice(lastSpace + 1);
+
 		return {
-			fnFile,
+			functionName,
+			file,
 			line,
 			column,
 			optimizationState: nameOptimizationState(entry.state),
