@@ -25,5 +25,6 @@ export function parseSourcePosition(sourcePosition) {
 			column: safeToInt(match[2]),
 		};
 	}
-	return { file: sourcePosition, line: 0, column: 0 };
+
+	throw new Error("Could not parse source position: " + sourcePosition);
 }
