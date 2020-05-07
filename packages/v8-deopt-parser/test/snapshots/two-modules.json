@@ -11,7 +11,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "startsWith",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -20,7 +20,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "startsWith",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -37,7 +37,7 @@
           "oldState": "unintialized",
           "newState": "monomorphic",
           "key": "17",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -54,7 +54,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "filename",
-          "map": "37cdf3b4a751",
+          "map": "0x37cdf3b4a751",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -71,7 +71,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "id",
-          "map": "37cdf3b4a891",
+          "map": "0x37cdf3b4a891",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -88,7 +88,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "exports",
-          "map": "37cdf3b4a8e1",
+          "map": "0x37cdf3b4a8e1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -105,7 +105,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "module",
-          "map": "37cdf3b4a931",
+          "map": "0x37cdf3b4a931",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -122,7 +122,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "exportKeys",
-          "map": "37cdf3b4a981",
+          "map": "0x37cdf3b4a981",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -139,7 +139,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loaded",
-          "map": "37cdf3b4a9d1",
+          "map": "0x37cdf3b4a9d1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -156,7 +156,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loading",
-          "map": "37cdf3b4aa21",
+          "map": "0x37cdf3b4aa21",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -173,7 +173,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "canBeRequiredByUsers",
-          "map": "37cdf3b4aa71",
+          "map": "0x37cdf3b4aa71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -190,7 +190,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -207,7 +207,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "map",
-          "map": "37cdf3b4a701",
+          "map": "0x37cdf3b4a701",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -224,7 +224,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "set",
-          "map": "37cdf3b40ed1",
+          "map": "0x37cdf3b40ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -241,7 +241,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "exists",
-          "map": "37cdf3b4a701",
+          "map": "0x37cdf3b4a701",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -258,7 +258,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "canBeRequiredByUsers",
-          "map": "37cdf3b4ab11",
+          "map": "0x37cdf3b4ab11",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -275,7 +275,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "compileForPublicLoader",
-          "map": "37cdf3b4a841",
+          "map": "0x37cdf3b4a841",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -292,7 +292,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "prototype",
-          "map": "37cdf3b4ab61",
+          "map": "0x37cdf3b4ab61",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -309,7 +309,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "getURL",
-          "map": "37cdf3b4abb1",
+          "map": "0x37cdf3b4abb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -326,7 +326,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "getESMFacade",
-          "map": "37cdf3b4ac01",
+          "map": "0x37cdf3b4ac01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -343,7 +343,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "syncExports",
-          "map": "37cdf3b4ac51",
+          "map": "0x37cdf3b4ac51",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -360,7 +360,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "compile",
-          "map": "37cdf3b4aca1",
+          "map": "0x37cdf3b4aca1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -377,7 +377,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "ERR_CHILD_CLOSED_BEFORE_REPLY",
-          "map": "37cdf3b4c781",
+          "map": "0x37cdf3b4c781",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -386,7 +386,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "ERR_CHILD_PROCESS_IPC_REQUIRED",
-          "map": "37cdf3b4c8c1",
+          "map": "0x37cdf3b4c8c1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -395,7 +395,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "ERR_CHILD_PROCESS_STDIO_MAXBUFFER",
-          "map": "37cdf3b4ca01",
+          "map": "0x37cdf3b4ca01",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -412,7 +412,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "set",
-          "map": "37cdf3b40ed1",
+          "map": "0x37cdf3b40ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -429,7 +429,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -446,7 +446,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "forEach",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -463,7 +463,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "test",
-          "map": "37cdf3b41561",
+          "map": "0x37cdf3b41561",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -480,7 +480,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loaded",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -497,7 +497,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "exports",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -514,7 +514,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "startsWith",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -523,7 +523,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "startsWith",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -540,7 +540,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loading",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -557,7 +557,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "id",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -574,7 +574,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loading",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -591,7 +591,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "id",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -608,7 +608,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "exports",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -625,7 +625,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loaded",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -642,7 +642,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "loading",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -659,7 +659,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "push",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -676,7 +676,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "exports",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -693,7 +693,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "map",
-          "map": "37cdf3b4ab61",
+          "map": "0x37cdf3b4ab61",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -710,7 +710,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "get",
-          "map": "37cdf3b40ed1",
+          "map": "0x37cdf3b40ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -727,7 +727,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "compile",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -736,7 +736,7 @@
           "oldState": "recompute_handler",
           "newState": "monomorphic",
           "key": "compile",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -753,7 +753,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "util",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -762,7 +762,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "async_wrap",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -771,7 +771,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "task_queue",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -788,7 +788,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "async_wrap",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -797,7 +797,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "task_queue",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -806,7 +806,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "trace_events",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -823,7 +823,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "push",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -840,7 +840,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b45ac1",
+          "map": "0x37cdf3b45ac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -857,7 +857,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -866,7 +866,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -883,7 +883,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "getOwnPropertyDescriptor",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -900,7 +900,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "prototype",
-          "map": "37cdf3b6d891",
+          "map": "0x37cdf3b6d891",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -917,7 +917,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "bind",
-          "map": "37cdf3b403e1",
+          "map": "0x37cdf3b403e1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -926,7 +926,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "bind",
-          "map": "37cdf3b40751",
+          "map": "0x37cdf3b40751",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -943,7 +943,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b45ac1",
+          "map": "0x37cdf3b45ac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -960,7 +960,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "defineProperty",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -977,7 +977,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "symbol(\"kBindStreamsLazy\" hash 1a80cdec)",
-          "map": "37cdf3b6e791",
+          "map": "0x37cdf3b6e791",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -994,7 +994,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "symbol(\"kBindProperties\" hash 3b698c05)",
-          "map": "37cdf3b6e9c1",
+          "map": "0x37cdf3b6e9c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1011,7 +1011,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "Console",
-          "map": "37cdf3b6f001",
+          "map": "0x37cdf3b6f001",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1028,7 +1028,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "clear",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1037,7 +1037,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "count",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1046,7 +1046,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "countReset",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -1063,7 +1063,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "clear",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1072,7 +1072,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "count",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1081,7 +1081,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "countReset",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -1098,7 +1098,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "clear",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1107,7 +1107,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "count",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1116,7 +1116,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "countReset",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -1133,7 +1133,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1142,7 +1142,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1159,7 +1159,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hasOwnProperty",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1168,7 +1168,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "hasOwnProperty",
-          "map": "37cdf3b6f911",
+          "map": "0x37cdf3b6f911",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -1185,7 +1185,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "bind",
-          "map": "37cdf3b403e1",
+          "map": "0x37cdf3b403e1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1202,7 +1202,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "profile",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1211,7 +1211,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "profileEnd",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1220,7 +1220,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "timeStamp",
-          "map": "37cdf3b45071",
+          "map": "0x37cdf3b45071",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -1237,7 +1237,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "profile",
-          "map": "37cdf3b6f051",
+          "map": "0x37cdf3b6f051",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1246,7 +1246,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "profileEnd",
-          "map": "37cdf3b6f911",
+          "map": "0x37cdf3b6f911",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1255,7 +1255,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "timeStamp",
-          "map": "37cdf3b6f961",
+          "map": "0x37cdf3b6f961",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -1272,7 +1272,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "toString",
-          "map": "70e2c100539",
+          "map": "0x070e2c100539",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1281,7 +1281,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "toString",
-          "map": "70e2c100539",
+          "map": "0x070e2c100539",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1298,7 +1298,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "toUpperCase",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1307,7 +1307,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "toUpperCase",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1324,7 +1324,7 @@
           "oldState": "unintialized",
           "newState": "monomorphic",
           "key": "14",
-          "map": "37cdf3b42cd1",
+          "map": "0x37cdf3b42cd1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1341,7 +1341,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "encodeStr",
-          "map": "37cdf3b6fbe1",
+          "map": "0x37cdf3b6fbe1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1358,7 +1358,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "hexTable",
-          "map": "37cdf3b6fbe1",
+          "map": "0x37cdf3b6fbe1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1375,7 +1375,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "isHexTable",
-          "map": "37cdf3b6fbe1",
+          "map": "0x37cdf3b6fbe1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1392,7 +1392,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "value",
-          "map": "37cdf3b6faf1",
+          "map": "0x37cdf3b6faf1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1409,7 +1409,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "defineProperty",
-          "map": "37cdf3b446c1",
+          "map": "0x37cdf3b446c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1426,7 +1426,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "next",
-          "map": "37cdf3b728e1",
+          "map": "0x37cdf3b728e1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1435,7 +1435,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "value",
-          "map": "37cdf3b6faf1",
+          "map": "0x37cdf3b6faf1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1452,7 +1452,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1469,7 +1469,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "symbol(\"nodejs.util.inspect.custom\" hash 2b41401e)",
-          "map": "37cdf3b728e1",
+          "map": "0x37cdf3b728e1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1478,7 +1478,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "value",
-          "map": "37cdf3b6faf1",
+          "map": "0x37cdf3b6faf1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1495,7 +1495,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1512,7 +1512,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1529,7 +1529,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1546,7 +1546,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1555,7 +1555,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1572,7 +1572,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "length",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -1589,7 +1589,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1598,7 +1598,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1615,7 +1615,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1624,7 +1624,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1633,7 +1633,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "return",
-          "map": "37cdf3b45ed1",
+          "map": "0x37cdf3b45ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1650,7 +1650,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "done",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1659,7 +1659,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "value",
-          "map": "37cdf3b46061",
+          "map": "0x37cdf3b46061",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1668,7 +1668,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "symbol(\"Symbol.iterator\" hash 2067e7b8)",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1677,7 +1677,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "next",
-          "map": "37cdf3b45ed1",
+          "map": "0x37cdf3b45ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1694,7 +1694,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "canBeRequiredByUsers",
-          "map": "37cdf3b4aac1",
+          "map": "0x37cdf3b4aac1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1711,7 +1711,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "push",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1728,7 +1728,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "builtinModules",
-          "map": "37cdf3b40751",
+          "map": "0x37cdf3b40751",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1745,7 +1745,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_cache",
-          "map": "37cdf3b7ba81",
+          "map": "0x37cdf3b7ba81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1762,7 +1762,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "create",
-          "map": "37cdf3b446c1",
+          "map": "0x37cdf3b446c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1779,7 +1779,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_pathCache",
-          "map": "37cdf3b7bad1",
+          "map": "0x37cdf3b7bad1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1796,7 +1796,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_extensions",
-          "map": "37cdf3b7bb21",
+          "map": "0x37cdf3b7bb21",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1813,7 +1813,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "globalPaths",
-          "map": "37cdf3b7bb71",
+          "map": "0x37cdf3b7bb71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1830,7 +1830,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "set",
-          "map": "37cdf3b7bc61",
+          "map": "0x37cdf3b7bc61",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1847,7 +1847,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "defineProperty",
-          "map": "37cdf3b7bc61",
+          "map": "0x37cdf3b7bc61",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1864,7 +1864,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "get",
-          "map": "37cdf3b62cb1",
+          "map": "0x37cdf3b62cb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1881,7 +1881,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "set",
-          "map": "37cdf3b62cb1",
+          "map": "0x37cdf3b62cb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1898,7 +1898,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "defineProperty",
-          "map": "37cdf3b446c1",
+          "map": "0x37cdf3b446c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1915,7 +1915,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "get",
-          "map": "37cdf3b62cb1",
+          "map": "0x37cdf3b62cb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1932,7 +1932,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "set",
-          "map": "37cdf3b62cb1",
+          "map": "0x37cdf3b62cb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1949,7 +1949,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "prototype",
-          "map": "37cdf3b7bda1",
+          "map": "0x37cdf3b7bda1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -1958,7 +1958,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "prototype",
-          "map": "37cdf3b727f1",
+          "map": "0x37cdf3b727f1",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -1975,7 +1975,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "prototype",
-          "map": "37cdf3b7be41",
+          "map": "0x37cdf3b7be41",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -1992,7 +1992,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "prototype",
-          "map": "37cdf3b7bd51",
+          "map": "0x37cdf3b7bd51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2001,7 +2001,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "prototype",
-          "map": "37cdf3b72751",
+          "map": "0x37cdf3b72751",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2018,7 +2018,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_debug",
-          "map": "37cdf3b7bd01",
+          "map": "0x37cdf3b7bd01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2035,7 +2035,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_findPath",
-          "map": "37cdf3b7be91",
+          "map": "0x37cdf3b7be91",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2052,7 +2052,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_nodeModulePaths",
-          "map": "37cdf3b7bee1",
+          "map": "0x37cdf3b7bee1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2069,7 +2069,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_resolveLookupPaths",
-          "map": "37cdf3b7bf31",
+          "map": "0x37cdf3b7bf31",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2086,7 +2086,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_load",
-          "map": "37cdf3b7bf81",
+          "map": "0x37cdf3b7bf81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2103,7 +2103,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_resolveFilename",
-          "map": "37cdf3b7bfd1",
+          "map": "0x37cdf3b7bfd1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2120,7 +2120,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "prototype",
-          "map": "37cdf3b7c021",
+          "map": "0x37cdf3b7c021",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2137,7 +2137,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "prototype",
-          "map": "37cdf3b7c021",
+          "map": "0x37cdf3b7c021",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2154,7 +2154,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "_extensions",
-          "map": "37cdf3b7c021",
+          "map": "0x37cdf3b7c021",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2171,7 +2171,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "runMain",
-          "map": "37cdf3b7c021",
+          "map": "0x37cdf3b7c021",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2188,7 +2188,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "createRequireFromPath",
-          "map": "37cdf3b7c0c1",
+          "map": "0x37cdf3b7c0c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2205,7 +2205,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "createRequire",
-          "map": "37cdf3b7c111",
+          "map": "0x37cdf3b7c111",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2222,7 +2222,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_initPaths",
-          "map": "37cdf3b7c161",
+          "map": "0x37cdf3b7c161",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2239,7 +2239,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "_preloadModules",
-          "map": "37cdf3b7c1b1",
+          "map": "0x37cdf3b7c1b1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2256,7 +2256,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "syncBuiltinESMExports",
-          "map": "37cdf3b7c201",
+          "map": "0x37cdf3b7c201",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2273,7 +2273,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "Module",
-          "map": "37cdf3b7c251",
+          "map": "0x37cdf3b7c251",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2290,7 +2290,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "lastIndexOf",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2307,7 +2307,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "slice",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -2324,7 +2324,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "lastIndexOf",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2341,7 +2341,7 @@
           "oldState": "unintialized",
           "newState": "monomorphic",
           "key": "1",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2358,7 +2358,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2367,7 +2367,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2376,7 +2376,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "length",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -2393,7 +2393,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "charCodeAt",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2402,7 +2402,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "charCodeAt",
-          "map": "70e2c1008c9",
+          "map": "0x070e2c1008c9",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2411,7 +2411,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "charCodeAt",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -2428,7 +2428,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2445,7 +2445,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2462,7 +2462,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2479,7 +2479,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2496,7 +2496,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2505,7 +2505,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "/tmp",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2514,7 +2514,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "/tmp/deoptigate",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -2531,7 +2531,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "get",
-          "map": "37cdf3b40ed1",
+          "map": "0x37cdf3b40ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2548,7 +2548,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "path",
-          "map": "37cdf3b7cbb1",
+          "map": "0x37cdf3b7cbb1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2557,7 +2557,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "path",
-          "map": "37cdf3b7cbb1",
+          "map": "0x37cdf3b7cbb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2574,7 +2574,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2583,7 +2583,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "/tmp/deoptigate/examples",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2592,7 +2592,7 @@
           "oldState": "monomorphic",
           "newState": "megamorphic",
           "key": "/tmp/deoptigate/examples/two-modules",
-          "map": "37cdf3b42a51",
+          "map": "0x37cdf3b42a51",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -2609,7 +2609,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "set",
-          "map": "37cdf3b40ed1",
+          "map": "0x37cdf3b40ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2626,7 +2626,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2643,7 +2643,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2660,7 +2660,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2677,7 +2677,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2694,7 +2694,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "slice",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2703,7 +2703,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "slice",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2720,7 +2720,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2729,7 +2729,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2746,7 +2746,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2755,7 +2755,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2772,7 +2772,7 @@
           "oldState": "unintialized",
           "newState": "monomorphic",
           "key": "0",
-          "map": "37cdf3b42af1",
+          "map": "0x37cdf3b42af1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2789,7 +2789,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "push",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2798,7 +2798,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "push",
-          "map": "37cdf3b42af1",
+          "map": "0x37cdf3b42af1",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -2815,7 +2815,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "symbol(\"realpathCacheKey\" hash 1fee3430)",
-          "map": "37cdf3b7cb61",
+          "map": "0x37cdf3b7cb61",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2824,7 +2824,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "symbol(\"realpathCacheKey\" hash 1fee3430)",
-          "map": "37cdf3b7cb61",
+          "map": "0x37cdf3b7cb61",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2841,7 +2841,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "create",
-          "map": "37cdf3b446c1",
+          "map": "0x37cdf3b446c1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2858,7 +2858,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -2867,7 +2867,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c100439",
+          "map": "0x070e2c100439",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2884,7 +2884,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "slice",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2901,7 +2901,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "toNamespacedPath",
-          "map": "37cdf3b70e01",
+          "map": "0x37cdf3b70e01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2918,7 +2918,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "lstat",
-          "map": "37cdf3b77391",
+          "map": "0x37cdf3b77391",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2935,7 +2935,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2952,7 +2952,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "70e2c101ed1",
+          "map": "0x070e2c101ed1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2969,7 +2969,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "resolve",
-          "map": "37cdf3b70e01",
+          "map": "0x37cdf3b70e01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -2986,7 +2986,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "resolve",
-          "map": "37cdf3b70e01",
+          "map": "0x37cdf3b70e01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3003,7 +3003,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "length",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3020,7 +3020,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -3029,7 +3029,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "charCodeAt",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3046,7 +3046,7 @@
           "oldState": "unintialized",
           "newState": "premonomorphic",
           "key": "slice",
-          "map": "70e2c101f71",
+          "map": "0x070e2c101f71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3063,7 +3063,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "push",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -3072,7 +3072,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "push",
-          "map": "37cdf3b42af1",
+          "map": "0x37cdf3b42af1",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -3089,7 +3089,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "length",
-          "map": "37cdf3b42c81",
+          "map": "0x37cdf3b42c81",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -3098,7 +3098,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "length",
-          "map": "37cdf3b42af1",
+          "map": "0x37cdf3b42af1",
           "optimizationState": "optimizable",
           "severity": 2
         }
@@ -3115,7 +3115,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "flag",
-          "map": "37cdf3b7cc01",
+          "map": "0x37cdf3b7cc01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3132,7 +3132,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "flag",
-          "map": "37cdf3b7cc01",
+          "map": "0x37cdf3b7cc01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3149,7 +3149,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "flag",
-          "map": "37cdf3b7cc01",
+          "map": "0x37cdf3b7cc01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3166,7 +3166,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "flag",
-          "map": "37cdf3b7cc01",
+          "map": "0x37cdf3b7cc01",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3183,7 +3183,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b7a951",
+          "map": "0x37cdf3b7a951",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -3192,7 +3192,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "x",
-          "map": "37cdf3b77b61",
+          "map": "0x37cdf3b77b61",
           "optimizationState": "optimizable",
           "severity": 2
         },
@@ -3201,7 +3201,7 @@
           "oldState": "polymorphic",
           "newState": "megamorphic",
           "key": "x",
-          "map": "37cdf3b77021",
+          "map": "0x37cdf3b77021",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -3218,7 +3218,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b7a951",
+          "map": "0x37cdf3b7a951",
           "optimizationState": "optimizable",
           "severity": 1
         },
@@ -3227,7 +3227,7 @@
           "oldState": "monomorphic",
           "newState": "polymorphic",
           "key": "y",
-          "map": "37cdf3b77b61",
+          "map": "0x37cdf3b77b61",
           "optimizationState": "optimizable",
           "severity": 2
         },
@@ -3236,7 +3236,7 @@
           "oldState": "polymorphic",
           "newState": "megamorphic",
           "key": "y",
-          "map": "37cdf3b77021",
+          "map": "0x37cdf3b77021",
           "optimizationState": "optimizable",
           "severity": 3
         }
@@ -3253,7 +3253,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b7a811",
+          "map": "0x37cdf3b7a811",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3270,7 +3270,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b7a901",
+          "map": "0x37cdf3b7a901",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3287,7 +3287,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b7a9a1",
+          "map": "0x37cdf3b7a9a1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3304,7 +3304,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b77b11",
+          "map": "0x37cdf3b77b11",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3321,7 +3321,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b77bb1",
+          "map": "0x37cdf3b77bb1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3338,7 +3338,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b773e1",
+          "map": "0x37cdf3b773e1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3355,7 +3355,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b77431",
+          "map": "0x37cdf3b77431",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3372,7 +3372,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b774d1",
+          "map": "0x37cdf3b774d1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3389,7 +3389,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b76da1",
+          "map": "0x37cdf3b76da1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3406,7 +3406,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b76df1",
+          "map": "0x37cdf3b76df1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3423,7 +3423,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b76e91",
+          "map": "0x37cdf3b76e91",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3440,7 +3440,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b76f81",
+          "map": "0x37cdf3b76f81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3457,7 +3457,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b76fd1",
+          "map": "0x37cdf3b76fd1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3474,7 +3474,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hola",
-          "map": "37cdf3b77071",
+          "map": "0x37cdf3b77071",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3491,7 +3491,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b77161",
+          "map": "0x37cdf3b77161",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3508,7 +3508,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b771b1",
+          "map": "0x37cdf3b771b1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3525,7 +3525,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b77201",
+          "map": "0x37cdf3b77201",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3542,7 +3542,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b772a1",
+          "map": "0x37cdf3b772a1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3559,7 +3559,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hola",
-          "map": "37cdf3b76ad1",
+          "map": "0x37cdf3b76ad1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3576,7 +3576,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b76b21",
+          "map": "0x37cdf3b76b21",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3593,7 +3593,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b76b71",
+          "map": "0x37cdf3b76b71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3610,7 +3610,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "x",
-          "map": "37cdf3b75b31",
+          "map": "0x37cdf3b75b31",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3627,7 +3627,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "y",
-          "map": "37cdf3b75c21",
+          "map": "0x37cdf3b75c21",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3644,7 +3644,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hola",
-          "map": "37cdf3b75c71",
+          "map": "0x37cdf3b75c71",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3661,7 +3661,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "hello",
-          "map": "37cdf3b75cc1",
+          "map": "0x37cdf3b75cc1",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3678,7 +3678,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "noDeprecation",
-          "map": "37cdf3b76a81",
+          "map": "0x37cdf3b76a81",
           "optimizationState": "optimizable",
           "severity": 1
         }
@@ -3695,7 +3695,7 @@
           "oldState": "premonomorphic",
           "newState": "monomorphic",
           "key": "setPrototypeOf",
-          "map": "37cdf3b446c1",
+          "map": "0x37cdf3b446c1",
           "optimizationState": "optimizable",
           "severity": 1
         }

@@ -255,7 +255,7 @@ export class DeoptLogReader extends LogReader {
 			oldState,
 			newState,
 			key: propertyKey,
-			map: map.toString(16), // TODO: Perhaps skip original parseInt
+			map,
 			optimizationState,
 			severity: severityIcState(newState),
 		});
