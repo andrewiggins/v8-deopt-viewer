@@ -69,6 +69,8 @@ interface ICEntryUpdate {
 	severity: number;
 }
 
+type Entry = ICEntry | DeoptEntry | CodeEntry;
+
 interface V8DeoptInfo {
 	ics: ICEntry[];
 	deopts: DeoptEntry[];
