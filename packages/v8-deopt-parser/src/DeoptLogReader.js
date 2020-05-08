@@ -4,7 +4,7 @@ import {
 	parseVarArgs,
 } from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
-import { parseSourcePosition, isAbsolute } from "./utils.js";
+import { parseSourcePosition, isAbsolutePath } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
 	propertyICFieldParsers,
@@ -314,7 +314,7 @@ export class DeoptLogReader extends LogReader {
 	filterInternals(entry) {
 		return (
 			this.options.keepInternals ||
-			(isAbsolute(entry.file) && !ispawnRegex.test(entry.file))
+			(isAbsolutePath(entry.file) && !ispawnRegex.test(entry.file))
 		);
 	}
 }

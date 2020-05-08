@@ -13,7 +13,12 @@ async function main() {
 	);
 
 	for (let testFile of testFiles) {
-		await import(pathToFileURL(pkgRoot("test", testFile)).toString());
+		try {
+			await import(pathToFileURL(pkgRoot("test", testFile)).toString());
+		} catch (e) {
+			console.error(e);
+			process.exit(1);
+		}
 	}
 }
 

@@ -55,8 +55,8 @@ function isWindowsDeviceRoot(code) {
 /**
  * @param {string} path
  */
-export function isAbsolute(path) {
-	const length = path.length;
+export function isAbsolutePath(path) {
+	const length = path && path.length;
 	if (path == null || length == 0) {
 		return false;
 	}
@@ -77,5 +77,7 @@ export function isAbsolute(path) {
 		path.startsWith("https://")
 	) {
 		return true;
+	} else {
+		return false;
 	}
 }
