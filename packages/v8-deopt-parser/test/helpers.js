@@ -12,7 +12,12 @@ export const getDirname = (metaUrl) => path.dirname(fileURLToPath(metaUrl));
 // @ts-ignore
 const __dirname = getDirname(import.meta.url);
 
-export async function runParser(t, logFileName) {
+/**
+ * @param {import('tape').Test} t
+ * @param {string} logFileName
+ * @param {import('../').Options} [options]
+ */
+export async function runParser(t, logFileName, options) {
 	const logPath = path.join(__dirname, "logs", logFileName);
 	const logContents = await readFile(logPath, "utf8");
 
@@ -25,7 +30,7 @@ export async function runParser(t, logFileName) {
 
 	let result;
 	try {
-		result = await parseV8Log(logContents);
+		result = await parseV8Log(logContents, options);
 	} finally {
 		console.error = origConsoleError;
 	}

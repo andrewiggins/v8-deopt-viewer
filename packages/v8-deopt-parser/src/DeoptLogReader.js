@@ -4,7 +4,7 @@ import {
 	parseVarArgs,
 } from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
-import { parseSourcePosition } from "./utils.js";
+import { parseSourcePosition, isAbsolute } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
 	propertyICFieldParsers,
@@ -15,6 +15,9 @@ import {
 	severityOfOptimizationState,
 	parseOptimizationState,
 } from "./optimizationStateParsers.js";
+
+// Ignore files that were used by ispawn to control the process
+const ispawnRegex = /ispawn\/preload\/\S+\.js$/;
 
 /**
  * @param {string} functionName
@@ -39,10 +42,10 @@ export class DeoptLogReader extends LogReader {
 	// LogReader to track IC state:
 	// https://github.com/v8/v8/blob/4b9b23521e6fd42373ebbcb20ebe03bf445494f9/tools/ic-processor.js
 
-	constructor({ logErrors = false } = {}) {
+	constructor(options = {}) {
 		// @ts-ignore
 		super();
-		this.logErrors = logErrors;
+		this.options = options;
 
 		this._profile = new Profile();
 
@@ -297,12 +300,21 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
+		// TODO: Add test that option does indeed filter out the noise
+		const filterInternals = this.filterInternals.bind(this);
 		return {
-			ics: Array.from(this.entriesIC.values()).filter(
-				(entry) => entry.updates.length > 0
-			),
-			deopts: Array.from(this.entriesDeopt.values()),
-			codes: Array.from(this.entriesCode.values()),
+			ics: Array.from(this.entriesIC.values())
+				.filter((entry) => entry.updates.length > 0)
+				.filter(filterInternals),
+			deopts: Array.from(this.entriesDeopt.values()).filter(filterInternals),
+			codes: Array.from(this.entriesCode.values()).filter(filterInternals),
 		};
+	}
+
+	filterInternals(entry) {
+		return (
+			this.options.keepInternals ||
+			(isAbsolute(entry.file) && !ispawnRegex.test(entry.file))
+		);
 	}
 }

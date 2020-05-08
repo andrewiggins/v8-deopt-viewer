@@ -5,9 +5,9 @@ test("runParser(adders.v8.log)", async (t) => {
 	const logFileName = "adders.v8.log";
 	const result = await runParser(t, logFileName);
 
-	t.equal(result.codes.length, 253, "Number of codes");
+	t.equal(result.codes.length, 16, "Number of codes");
 	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 182, "Number of ics");
+	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
 		functionName: "addAny",
@@ -90,9 +90,9 @@ test("runParser(two-modules.v8.log)", async (t) => {
 	const logFileName = "two-modules.v8.log";
 	const result = await runParser(t, logFileName);
 
-	t.equal(result.codes.length, 254, "Number of codes");
+	t.equal(result.codes.length, 16, "Number of codes");
 	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 187, "Number of ics");
+	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
 		functionName: "addAny",
@@ -339,4 +339,40 @@ test("runParser(html-external.v8.log)", async (t) => {
 	});
 
 	await writeSnapshot(logFileName, result);
+});
+
+test("runParser(adders.v8.log, keepInternals)", async (t) => {
+	const logFileName = "adders.v8.log";
+	const result = await runParser(t, logFileName, { keepInternals: true });
+
+	t.equal(result.codes.length, 253, "Number of codes");
+	t.equal(result.deopts.length, 7, "Number of deopts");
+	t.equal(result.ics.length, 182, "Number of ics");
+});
+
+test("runParser(two-modules.v8.log, keepInternals)", async (t) => {
+	const logFileName = "two-modules.v8.log";
+	const result = await runParser(t, logFileName, { keepInternals: true });
+
+	t.equal(result.codes.length, 254, "Number of codes");
+	t.equal(result.deopts.length, 7, "Number of deopts");
+	t.equal(result.ics.length, 187, "Number of ics");
+});
+
+test("runParser(html-inline.v8.log, keepInternals)", async (t) => {
+	const logFileName = "html-inline.v8.log";
+	const result = await runParser(t, logFileName, { keepInternals: true });
+
+	t.equal(result.codes.length, 15, "Number of codes");
+	t.equal(result.deopts.length, 6, "Number of deopts");
+	t.equal(result.ics.length, 33, "Number of ics");
+});
+
+test("runParser(html-external.v8.log, keepInternals)", async (t) => {
+	const logFileName = "html-external.v8.log";
+	const result = await runParser(t, logFileName, { keepInternals: true });
+
+	t.equal(result.codes.length, 16, "Number of codes");
+	t.equal(result.deopts.length, 6, "Number of deopts");
+	t.equal(result.ics.length, 33, "Number of ics");
 });
