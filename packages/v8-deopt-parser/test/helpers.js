@@ -7,10 +7,9 @@ const {
 	promises: { readFile, writeFile },
 } = fs;
 
-export const getDirname = (metaUrl) => path.dirname(fileURLToPath(metaUrl));
-
 // @ts-ignore
-const __dirname = getDirname(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+export const pkgRoot = (...args) => path.join(__dirname, "..", ...args);
 
 /**
  * @param {import('tape').Test} t
@@ -18,7 +17,7 @@ const __dirname = getDirname(import.meta.url);
  * @param {import('../').Options} [options]
  */
 export async function runParser(t, logFileName, options) {
-	const logPath = path.join(__dirname, "logs", logFileName);
+	const logPath = pkgRoot("test", "logs", logFileName);
 	const logContents = await readFile(logPath, "utf8");
 
 	const origConsoleError = console.error;
