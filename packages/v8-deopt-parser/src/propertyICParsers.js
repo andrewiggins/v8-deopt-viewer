@@ -14,7 +14,7 @@ const GENERIC = "generic";
  * @returns {import('./index').ICState}
  */
 function parseIcState(rawState) {
-	// ICState mapping in V8: https://github.com/v8/v8/blob/4b9b23521e6fd42373ebbcb20ebe03bf445494f9/src/ic/ic.cc#L42
+	// ICState mapping in V8: https://github.com/v8/v8/blob/23dace88f658c44b5346eb0858fdc2c6b52e9089/src/ic/ic.cc#L44
 	switch (rawState) {
 		case "0":
 			return UNINITIALIZED;

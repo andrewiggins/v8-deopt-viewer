@@ -35,6 +35,10 @@ function locationKey(functionName, file, line, column) {
  * This implementation is forked from thlorenz/deoptigate
  */
 export class DeoptLogReader extends LogReader {
+	// Check out v8/tools/ic-processor.js for a sample implementation of using
+	// LogReader to track IC state:
+	// https://github.com/v8/v8/blob/4b9b23521e6fd42373ebbcb20ebe03bf445494f9/tools/ic-processor.js
+
 	constructor({ logErrors = false } = {}) {
 		// @ts-ignore
 		super();
@@ -103,10 +107,12 @@ export class DeoptLogReader extends LogReader {
 				parsers: propertyICFieldParsers,
 				processor: this._processPropertyIC.bind(this, "KeyedStoreIC"),
 			},
-			StoreInArrayLiteralIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
-			},
+			// Skip StoreInArrayLiteralIC for now since all lines throw an error in
+			// parseICState since its state is 'X'
+			// StoreInArrayLiteralIC: {
+			// 	parsers: propertyICFieldParsers,
+			// 	processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
+			// },
 		};
 	}
 
@@ -288,10 +294,7 @@ export class DeoptLogReader extends LogReader {
 	}
 
 	printError(msg) {
-		// TODO: Consider replacing with an actual throw or some better error logging mechanism
-		if (this.logErrors) {
-			console.error(msg);
-		}
+		console.error(`v8-deopt-parser - Error parsing V8 log file: ${msg}`);
 	}
 
 	/** @returns {import('./').V8DeoptInfo} */
