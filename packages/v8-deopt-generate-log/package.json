@@ -1,0 +1,16 @@
+{
+  "name": "v8-deopt-generate-log",
+  "version": "0.1.0",
+  "description": "Generate a V8 log given a JS or HTML file",
+  "type": "module",
+  "main": "src/index.js",
+  "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
+  "author": "Andre Wiggins",
+  "license": "MIT",
+  "peerDependencies": {
+    "puppeteer": "^3.0.4"
+  },
+  "devDependencies": {
+    "puppeteer": "^3.0.4"
+  }
+}
