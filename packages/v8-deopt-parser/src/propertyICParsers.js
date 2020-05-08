@@ -8,6 +8,7 @@ const RECOMPUTE_HANDLER = "recompute_handler";
 const POLYMORPHIC = "polymorphic";
 const MEGAMORPHIC = "megamorphic";
 const GENERIC = "generic";
+const UNKNOWN = "unknown";
 
 /**
  * @param {string} rawState Raw Inline Cache state from V8
@@ -30,6 +31,8 @@ function parseIcState(rawState) {
 			return MEGAMORPHIC;
 		case "G":
 			return GENERIC;
+		case "X":
+			return UNKNOWN;
 		default:
 			throw new Error("parse: unknown ic code state: " + rawState);
 	}

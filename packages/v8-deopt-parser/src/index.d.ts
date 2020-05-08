@@ -48,7 +48,8 @@ type ICState =
 	| "recompute_handler"
 	| "polymorphic"
 	| "megamorphic"
-	| "generic";
+	| "generic"
+	| "unknown";
 
 interface ICEntry {
 	functionName: string;

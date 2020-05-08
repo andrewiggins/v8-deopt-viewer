@@ -107,12 +107,10 @@ export class DeoptLogReader extends LogReader {
 				parsers: propertyICFieldParsers,
 				processor: this._processPropertyIC.bind(this, "KeyedStoreIC"),
 			},
-			// Skip StoreInArrayLiteralIC for now since all lines throw an error in
-			// parseICState since its state is 'X'
-			// StoreInArrayLiteralIC: {
-			// 	parsers: propertyICFieldParsers,
-			// 	processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
-			// },
+			StoreInArrayLiteralIC: {
+				parsers: propertyICFieldParsers,
+				processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
+			},
 		};
 	}
 
