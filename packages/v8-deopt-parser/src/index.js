@@ -11,3 +11,11 @@ export async function parseV8Log(v8LogContent) {
 	logReader.processLogChunk(v8LogContent);
 	return logReader.toJSON();
 }
+
+// TODO: Add tests for these functions
+export {
+	locationKey,
+	parseLocationKey,
+	groupByFile,
+	groupByFileAndLocation,
+} from "./groupBy.js";

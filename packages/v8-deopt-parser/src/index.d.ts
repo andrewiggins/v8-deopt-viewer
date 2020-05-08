@@ -77,6 +77,16 @@ interface V8DeoptInfo {
 	codes: CodeEntry[];
 }
 
+interface PerFileV8DeoptInfo {
+	[filePath: string]: V8DeoptInfo;
+}
+
+interface PerFilePerLocationV8DeoptInfo {
+	[filePath: string]: {
+		[locationKey: string]: V8DeoptInfo;
+	};
+}
+
 /**
  * Parse the deoptimizations from a v8.log file
  * @param v8LogContent The contents of a v8.log file
@@ -84,3 +94,10 @@ interface V8DeoptInfo {
  * this function should return their contents
  */
 export async function parseV8Log(v8LogContent: string): Promise<V8DeoptInfo>;
+
+export function locationKey(entry: Entry): string;
+export function parseLocationKey(key: string): [string, number, number];
+export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
+export function groupByFileAndLocation(
+	rawDeoptInfo: V8DeoptInfo
+): PerFilePerLocationV8DeoptInfo;
