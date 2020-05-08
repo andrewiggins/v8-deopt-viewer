@@ -80,7 +80,4 @@ interface V8DeoptInfo {
  * @param readSourceFileContent Given paths to source files from the v8.log,
  * this function should return their contents
  */
-export async function parseV8Log(
-	v8LogContent: string,
-	readSourceFileContent: (srcFilePath: string) => Promise<string>
-): Promise<V8DeoptInfo>;
+export async function parseV8Log(v8LogContent: string): Promise<V8DeoptInfo>;
