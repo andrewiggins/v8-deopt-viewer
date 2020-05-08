@@ -13,7 +13,6 @@ export async function parseV8Log(v8LogContent, options = {}) {
 	return logReader.toJSON();
 }
 
-// TODO: Add tests for these functions
 export {
 	locationKey,
 	parseLocationKey,

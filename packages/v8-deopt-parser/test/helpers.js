@@ -18,6 +18,9 @@ export const pkgRoot = (...args) => path.join(__dirname, "..", ...args);
  */
 export async function runParser(t, logFileName, options) {
 	const logPath = pkgRoot("test", "logs", logFileName);
+
+	// TODO: Consider replacing paths in log with comparable native paths
+	// to test logs generated on Windows and Linux
 	const logContents = await readFile(logPath, "utf8");
 
 	const origConsoleError = console.error;

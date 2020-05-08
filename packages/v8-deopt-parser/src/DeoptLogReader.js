@@ -300,7 +300,6 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
-		// TODO: Add test that option does indeed filter out the noise
 		const filterInternals = this.filterInternals.bind(this);
 		return {
 			ics: Array.from(this.entriesIC.values())

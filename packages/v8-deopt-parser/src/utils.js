@@ -29,7 +29,6 @@ export function parseSourcePosition(sourcePosition) {
 	throw new Error("Could not parse source position: " + sourcePosition);
 }
 
-// TODO: Add tests for this file?
 // Inspired by Node.JS isAbsolute algorithm. Copied here to be compatible with URLs
 // https://github.com/nodejs/node/blob/bcdbd57134558e3bea730f8963881e8865040f6f/lib/path.js#L352
 
