@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { execFile } from "child_process";
 import { promisify } from "util";
+import { pathToFileURL } from "url";
 
 const execFileAsync = promisify(execFile);
 const {
@@ -45,47 +46,54 @@ async function getPuppeteer() {
 		});
 }
 
-async function generateForRemoteURL(srcPath, options) {
-	return getLogFilePath(options);
-}
-
-async function generateForLocalHTML(srcPath, options) {
+/**
+ * @param {string} srcUrl
+ * @param {import('../').Options} options
+ */
+async function runPuppeteer(srcUrl, options) {
+	const puppeteer = await getPuppeteer();
 	const logFilePath = await getLogFilePath(options);
-	const htmlFile = makeAbsolute(srcPath);
-
 	const v8Flags = [
 		"--trace-ic",
 		`--logfile=${logFilePath}`,
 		"--no-logfile-per-isolate",
 	];
-
-	const puppeteer = await getPuppeteer();
+	const args = [
+		"--disable-extensions",
+		`--js-flags=${v8Flags.join(" ")}`,
+		`--no-sandbox`,
+		srcUrl,
+	];
 
 	let browser;
 	try {
 		browser = await puppeteer.launch({
 			ignoreDefaultArgs: ["about:blank"],
-			args: [
-				"--disable-extensions",
-				"--no-sandbox",
-				`--js-flags=${v8Flags.join(" ")}`,
-				htmlFile,
-			],
+			args,
 		});
 
 		await browser.pages();
 
 		// Wait 5s to allow page to load
-		await delay(5000);
+		await delay(options.browserTimeoutMs);
 	} finally {
 		if (browser) {
 			await browser.close();
 			// Give the browser 1s to release v8.log
-			await delay(1000);
+			await delay(100);
 		}
 	}
 
 	return logFilePath;
+}
+
+async function generateForRemoteURL(srcUrl, options) {
+	return runPuppeteer(srcUrl, options);
+}
+
+async function generateForLocalHTML(srcPath, options) {
+	const srcUrl = pathToFileURL(makeAbsolute(srcPath)).toString();
+	return runPuppeteer(srcUrl, options);
 }
 
 async function generateForNodeJS(srcPath, options) {
@@ -102,12 +110,18 @@ async function generateForNodeJS(srcPath, options) {
 	return logFilePath;
 }
 
+/** @type {import('.').Options} */
+const defaultOptions = {
+	browserTimeoutMs: 5000,
+};
+
 /**
  * @param {string} srcPath
  * @param {import('.').Options} options
  * @returns {Promise<string>}
  */
 export async function generateV8Log(srcPath, options = {}) {
+	options = Object.assign({}, defaultOptions, options);
 	if (srcPath.startsWith("http://") || srcPath.startsWith("https://")) {
 		return generateForRemoteURL(srcPath, options);
 	} else if (srcPath.endsWith(".html")) {

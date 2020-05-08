@@ -1,5 +1,6 @@
 interface Options {
 	logFilePath?: string;
+	browserTimeoutMs?: number;
 }
 
 export async function generateV8Log(
