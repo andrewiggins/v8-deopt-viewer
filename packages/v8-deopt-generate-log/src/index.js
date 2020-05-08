@@ -14,20 +14,6 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const makeAbsolute = (filePath) =>
 	path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath);
 
-/**
- * @param {import('.').Options} options
- */
-async function getLogFilePath(options) {
-	const logFilePath = options.logFilePath
-		? makeAbsolute(options.logFilePath)
-		: `${tmpdir()}/v8-deopt-generate-log/v8.log`;
-
-	const logDir = path.dirname(logFilePath);
-	await mkdir(logDir, { recursive: true });
-
-	return logFilePath;
-}
-
 async function getPuppeteer() {
 	return import("puppeteer")
 		.then((module) => module.default)
@@ -52,7 +38,7 @@ async function getPuppeteer() {
  */
 async function runPuppeteer(srcUrl, options) {
 	const puppeteer = await getPuppeteer();
-	const logFilePath = await getLogFilePath(options);
+	const logFilePath = options.logFilePath;
 	const v8Flags = [
 		"--trace-ic",
 		`--logfile=${logFilePath}`,
@@ -96,8 +82,12 @@ async function generateForLocalHTML(srcPath, options) {
 	return runPuppeteer(srcUrl, options);
 }
 
+/**
+ * @param {string} srcPath
+ * @param {import('.').Options} options
+ */
 async function generateForNodeJS(srcPath, options) {
-	const logFilePath = await getLogFilePath(options);
+	const logFilePath = options.logFilePath;
 	const args = [
 		"--trace-ic",
 		`--logfile=${logFilePath}`,
@@ -112,6 +102,7 @@ async function generateForNodeJS(srcPath, options) {
 
 /** @type {import('.').Options} */
 const defaultOptions = {
+	logFilePath: `${tmpdir()}/v8-deopt-generate-log/v8.log`,
 	browserTimeoutMs: 5000,
 };
 
@@ -122,6 +113,10 @@ const defaultOptions = {
  */
 export async function generateV8Log(srcPath, options = {}) {
 	options = Object.assign({}, defaultOptions, options);
+	options.logFilePath = makeAbsolute(options.logFilePath);
+
+	await mkdir(path.dirname(options.logFilePath), { recursive: true });
+
 	if (srcPath.startsWith("http://") || srcPath.startsWith("https://")) {
 		return generateForRemoteURL(srcPath, options);
 	} else if (srcPath.endsWith(".html")) {
