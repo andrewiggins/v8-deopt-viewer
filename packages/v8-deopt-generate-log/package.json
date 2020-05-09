@@ -7,6 +7,9 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "scripts": {
+    "test": "node test/index.test.js"
+  },
   "peerDependencies": {
     "puppeteer": "^3.0.4"
   },
