@@ -1,11 +1,7 @@
 import { fileURLToPath } from "url";
 import * as path from "path";
-import * as fs from "fs";
+import { readFile, writeFile } from "fs/promises";
 import { parseV8Log } from "../src/index.js";
-
-const {
-	promises: { readFile, writeFile },
-} = fs;
 
 // @ts-ignore
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

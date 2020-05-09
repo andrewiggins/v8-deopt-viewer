@@ -1,15 +1,11 @@
 import { tmpdir } from "os";
-import * as fs from "fs";
+import { mkdir } from "fs/promises";
 import * as path from "path";
 import { execFile } from "child_process";
 import { promisify } from "util";
 import { pathToFileURL } from "url";
 
 const execFileAsync = promisify(execFile);
-const {
-	promises: { mkdir },
-} = fs;
-
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const makeAbsolute = (filePath) =>
 	path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath);

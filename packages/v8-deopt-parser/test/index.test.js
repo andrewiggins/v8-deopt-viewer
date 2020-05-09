@@ -1,10 +1,6 @@
-import * as fs from "fs";
+import { readdir } from "fs/promises";
 import { pathToFileURL } from "url";
 import { pkgRoot } from "./helpers.js";
-
-const {
-	promises: { readdir },
-} = fs;
 
 async function main() {
 	const dirContents = await readdir(pkgRoot("test"));
