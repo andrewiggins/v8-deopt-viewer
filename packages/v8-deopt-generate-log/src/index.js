@@ -37,6 +37,7 @@ async function runPuppeteer(srcUrl, options) {
 	const logFilePath = options.logFilePath;
 	const v8Flags = [
 		"--trace-ic",
+		// Chrome won't pipe v8 logs to a non-TTY pipe it seems :(
 		`--logfile=${logFilePath}`,
 		"--no-logfile-per-isolate",
 	];
@@ -86,7 +87,7 @@ async function generateForNodeJS(srcPath, options) {
 	const logFilePath = options.logFilePath;
 	const args = [
 		"--trace-ic",
-		`--logfile=${logFilePath}`,
+		`--logfile=${logFilePath}`, // Could pipe log to stdout ("-" value) but doesn't work very well with Chromium
 		"--no-logfile-per-isolate",
 		srcPath,
 	];
