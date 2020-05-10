@@ -1,0 +1,30 @@
+{
+  "name": "v8-deopt-webapp",
+  "version": "0.1.0",
+  "description": "View the deoptimizations in a V8 log",
+  "main": "src/index.js",
+  "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
+  "author": "Andre Wiggins",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js",
+    "dev": "rollup -w -c ./rollup.config.js",
+    "start": "run-p dev serve",
+    "serve": "http-server ."
+  },
+  "workspaces": {
+    "nohoist": [
+      "preact"
+    ]
+  },
+  "dependencies": {
+    "preact": "^10.4.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-sucrase": "^3.0.0",
+    "http-server": "^0.12.3",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.9.0"
+  }
+}
