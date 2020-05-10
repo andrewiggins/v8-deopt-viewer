@@ -114,7 +114,11 @@ export async function generateV8Log(srcPath, options = {}) {
 
 	await mkdir(path.dirname(options.logFilePath), { recursive: true });
 
-	if (srcPath.startsWith("http://") || srcPath.startsWith("https://")) {
+	if (srcPath.startsWith("http://")) {
+		throw new Error(
+			"Please use an https URL. This script runs websites without a sandbox and untrusted URLs could compromise your machine."
+		);
+	} else if (srcPath.startsWith("https://")) {
 		return generateForRemoteURL(srcPath, options);
 	} else if (srcPath.endsWith(".html")) {
 		return generateForLocalHTML(srcPath, options);
