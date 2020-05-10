@@ -56,6 +56,14 @@ test("generateV8Log(simple/adders.js)", async (t) => {
 	verifySrcFiles(t, logContent, [srcFilePath]);
 });
 
+test("generateV8Log(simple/adders.js) relative path", async (t) => {
+	const fullPath = repoRoot("examples/simple/adders.js");
+	const srcFilePath = path.relative(process.cwd(), fullPath);
+	const logContent = await runGenerateV8Log(srcFilePath);
+
+	verifySrcFiles(t, logContent, [fullPath]);
+});
+
 test("generateV8Log(two-modules/adders.js)", async (t) => {
 	const srcFilePath = repoRoot("examples/two-modules/adders.js");
 	const logContent = await runGenerateV8Log(srcFilePath);
