@@ -8,6 +8,7 @@ interface CodeEntry {
 	line: number;
 	column: number;
 	isScript: boolean;
+	severity: number;
 	updates: CodeEntryUpdate[];
 }
 
@@ -22,6 +23,7 @@ interface DeoptEntry {
 	file: string;
 	line: number;
 	column: number;
+	severity: number;
 	updates: DeoptEntryUpdate[];
 }
 
@@ -56,6 +58,7 @@ interface ICEntry {
 	file: string;
 	line: number;
 	column: number;
+	severity: number;
 	updates: ICEntryUpdate[];
 }
 

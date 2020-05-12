@@ -145,6 +145,7 @@ export class DeoptLogReader extends LogReader {
 			const isNodeWrapperFunction = line === 1 && column === 1;
 			if (isScript && !isNodeWrapperFunction) return;
 
+			const severity = severityOfOptimizationState(optimizationState);
 			const key = locationKey(functionName, file, line, column);
 			if (!this.entriesCode.has(key)) {
 				this.entriesCode.set(key, {
@@ -153,6 +154,7 @@ export class DeoptLogReader extends LogReader {
 					line,
 					column,
 					isScript,
+					severity,
 					updates: [],
 				});
 			}
@@ -161,8 +163,22 @@ export class DeoptLogReader extends LogReader {
 			code.updates.push({
 				timestamp,
 				state: nameOptimizationState(optimizationState),
-				severity: severityOfOptimizationState(optimizationState),
+				severity,
 			});
+
+			if (code.updates.length > 3) {
+				// From Deoptigate: If there are lots of updates that means the function
+				// was optimized a lot which could point to an issue.
+				code.severity = Math.max(code.severity, 3);
+			} else if (severity < code.severity) {
+				// Since these entries track optimizations (a good thing), set the
+				// severity to the best state this entry achieved (lowest severity). In
+				// other words, code that was optimizable (sev 2) but never optimized
+				// (sev 1) is at a worse severity than code that was eventually
+				// optimized. So once code gets optimized, track that the code entry
+				// achieved optimized state (the lowest severity).
+				code.severity = severity;
+			}
 		}
 	}
 
@@ -202,12 +218,14 @@ export class DeoptLogReader extends LogReader {
 		// status
 		const key = locationKey("", file, line, column);
 
+		const severity = getOptimizationSeverity(bailoutType);
 		if (!this.entriesDeopt.has(key)) {
 			this.entriesDeopt.set(key, {
 				functionName,
 				file,
 				line,
 				column,
+				severity,
 				updates: [],
 			});
 		}
@@ -219,9 +237,13 @@ export class DeoptLogReader extends LogReader {
 			deoptReason,
 			optimizationState,
 			inlined: inliningId !== -1,
-			severity: getOptimizationSeverity(bailoutType),
+			severity,
 			inlinedAt: deoptLocation.inlinedAt,
 		});
+
+		if (severity > deoptEntry.severity) {
+			deoptEntry.severity = severity;
+		}
 	}
 
 	_processPropertyIC(
@@ -245,6 +267,7 @@ export class DeoptLogReader extends LogReader {
 			code
 		);
 
+		const severity = severityIcState(newState);
 		const key = locationKey(functionName, file, line, column);
 		if (!this.entriesIC.has(key)) {
 			this.entriesIC.set(key, {
@@ -252,6 +275,7 @@ export class DeoptLogReader extends LogReader {
 				file,
 				line,
 				column,
+				severity,
 				updates: [],
 			});
 		}
@@ -264,8 +288,12 @@ export class DeoptLogReader extends LogReader {
 			key: propertyKey,
 			map,
 			optimizationState,
-			severity: severityIcState(newState),
+			severity,
 		});
+
+		if (severity > icEntry.severity) {
+			icEntry.severity = severity;
+		}
 	}
 
 	/**
