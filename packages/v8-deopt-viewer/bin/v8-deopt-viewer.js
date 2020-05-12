@@ -2,13 +2,16 @@ import * as path from "path";
 import sade from "sade";
 import run from "../src/index.js";
 
-sade("v8-deopt-viewer <file>", true)
+sade("v8-deopt-viewer [file]", true)
 	.describe(
 		"Generate and view deoptimizations in JavaScript code running in V8"
 	)
 	.example("examples/simple/adder.js")
 	.example("examples/html-inline/adders.html -o /tmp/directory")
 	.example("https://google.com")
+	.example("-i v8.log")
+	.example("-i v8.log -o /tmp/directory")
+	.option("-i --input", "Path to an already generated v8.log file")
 	.option(
 		"-o --out",
 		"The directory to output files too",

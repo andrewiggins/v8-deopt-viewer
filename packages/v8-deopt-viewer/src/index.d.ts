@@ -5,6 +5,7 @@ interface Options {
 	timeout: number;
 	["keep-internals"]: boolean;
 	open: boolean;
+	input: string;
 }
 
 interface V8DeoptInfoWithSources extends V8DeoptInfo {

@@ -64,17 +64,28 @@ async function addSources(deoptInfo) {
  * @param {import('.').Options} options
  */
 export default async function run(srcFile, options) {
-	if (srcFile.startsWith("http://")) {
+	let logFilePath;
+	if (srcFile) {
+		if (srcFile.startsWith("http://")) {
+			throw new Error(
+				"Please use an https URL. This script runs websites without a sandbox and untrusted URLs could compromise your machine."
+			);
+		}
+
+		console.log("Running and generating log...");
+		logFilePath = await generateV8Log(srcFile, {
+			logFilePath: path.join(options.out, "v8.log"),
+			browserTimeoutMs: options.timeout,
+		});
+	} else if (options.input) {
+		logFilePath = path.isAbsolute(options.input)
+			? options.input
+			: path.join(process.cwd(), options.input);
+	} else {
 		throw new Error(
-			"Please use an https URL. This script runs websites without a sandbox and untrusted URLs could compromise your machine."
+			'Either a file/url to generate a log or the "--input" flag pointing to a v8.log must be provided'
 		);
 	}
-
-	console.log("Running and generating log...");
-	const logFilePath = await generateV8Log(srcFile, {
-		logFilePath: path.join(options.out, "v8.log"),
-		browserTimeoutMs: options.timeout,
-	});
 
 	console.log("Parsing log...");
 	const logContents = await readFile(logFilePath, "utf8");
