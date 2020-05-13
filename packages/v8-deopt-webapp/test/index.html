@@ -4,16 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>V8 Deopt Webapp Test Page</title>
+		<link href="../dist/index.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div id="root"></div>
 		<script type="module">
-			import {
-				createElement,
-				render,
-			} from "../node_modules/preact/dist/preact.module.js";
-			import { App } from "../dist/index.js";
-			render(createElement(App), document.getElementById("root"));
+			import { renderIntoDom } from "../dist/index.js";
+
+			fetch("./deoptInfo.json")
+				.then((res) => res.json())
+				.then((deoptInfo) => {
+					renderIntoDom(deoptInfo, document.getElementById("root"));
+				});
 		</script>
 	</body>
 </html>

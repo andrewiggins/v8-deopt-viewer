@@ -1,5 +1,6 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import sucrase from "@rollup/plugin-sucrase";
+import postcss from "rollup-plugin-postcss";
 
 /** @type {import('rollup').RollupOptions} */
 const config = {
@@ -11,8 +12,14 @@ const config = {
 	plugins: [
 		nodeResolve(),
 		sucrase({
+			include: [/.js$/],
+			production: true,
 			transforms: ["jsx"],
 			jsxPragma: "createElement",
+		}),
+		postcss({
+			extract: true,
+			modules: true,
 		}),
 	],
 };

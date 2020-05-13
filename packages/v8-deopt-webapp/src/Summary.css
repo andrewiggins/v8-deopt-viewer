@@ -1,0 +1,64 @@
+/*
+Table styles adapted from Spectre.css
+https://github.com/picturepan2/spectre
+MIT License
+*/
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+	width: 100%;
+}
+
+/* .table.table-scroll { */
+.table {
+	display: block;
+	overflow-x: auto;
+	padding-bottom: 0.75rem;
+	white-space: nowrap;
+}
+
+.table td,
+.table th {
+	border-bottom: 0.05rem solid #dadee4;
+	padding: 0.6rem 0.4rem;
+}
+
+/* .table.table-striped tbody tr:nth-of-type(odd) { */
+.table tbody tr:nth-of-type(odd) {
+	background: #f7f8f9;
+}
+
+/* .table.table-hover tbody tr:hover { */
+.table tbody tr:hover {
+	background: #eef0f3;
+}
+
+.table th {
+	border-bottom-width: 0.1rem;
+}
+
+.summaryTable {
+	text-align: center;
+}
+
+.summaryTable td {
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+}
+
+.headers {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+}
+
+.subheaders {
+	font-size: 0.9rem;
+}
+
+.fileName {
+	text-align: left;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
