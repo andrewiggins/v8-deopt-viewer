@@ -5,6 +5,7 @@ import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
 import { generateV8Log } from "v8-deopt-generate-log";
 import { parseV8Log, groupByFile } from "v8-deopt-parser";
+import { determineCommonRoot } from "./determineCommonRoot.js";
 
 /**
  * @param {import('v8-deopt-parser').PerFileV8DeoptInfo} deoptInfo
@@ -12,8 +13,10 @@ import { parseV8Log, groupByFile } from "v8-deopt-parser";
  */
 async function addSources(deoptInfo) {
 	const files = Object.keys(deoptInfo);
+	const root = determineCommonRoot(files);
+	console.log(root);
 
-	/** @type {Record<string, import('./').V8DeoptInfoWithSources>} */
+	/** @type {Record<string, import('v8-deopt-webapp').V8DeoptInfoWithSources>} */
 	const result = Object.create(null);
 	for (let file of files) {
 		let srcPath;
@@ -41,15 +44,18 @@ async function addSources(deoptInfo) {
 			}
 		}
 
+		const relativePath = root ? file.slice(root.length) : file;
 		if (error) {
 			result[file] = {
 				...deoptInfo[file],
+				relativePath,
 				srcPath,
 				error,
 			};
 		} else {
 			result[file] = {
 				...deoptInfo[file],
+				relativePath,
 				srcPath,
 				src,
 			};
