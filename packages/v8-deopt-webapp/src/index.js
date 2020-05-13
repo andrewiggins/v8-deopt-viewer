@@ -1,12 +1,5 @@
 import { render, createElement } from "preact";
-import { Summary } from "./Summary";
-
-/**
- * @param {import('.').AppProps} props
- */
-function App({ deoptInfo }) {
-	return <Summary deoptInfo={deoptInfo} />;
-}
+import { App } from "./components/App";
 
 /**
  * @param {Element} container

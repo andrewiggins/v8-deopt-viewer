@@ -1,12 +1,12 @@
 import { createElement, Fragment } from "preact";
 import { useMemo } from "preact/hooks";
-import spectre from "./spectre.scss";
+import spectre from "../spectre.scss";
 import styles from "./Summary.scss";
 
 /**
  * @typedef {[number, number, number]} SeveritySummary
  * @typedef {{ codes: SeveritySummary; deopts: SeveritySummary; ics: SeveritySummary }} FileSeverities
- * @param {import('.').DeoptInfo} deoptInfo
+ * @param {import('..').DeoptInfo} deoptInfo
  * @returns {Record<string, FileSeverities>}
  */
 function getPerFileStats(deoptInfo) {
@@ -34,7 +34,7 @@ function getPerFileStats(deoptInfo) {
 }
 
 /**
- * @param {{ deoptInfo: import('.').DeoptInfo}} props
+ * @param {{ deoptInfo: import('..').DeoptInfo}} props
  */
 export function Summary({ deoptInfo }) {
 	const perFileStats = useMemo(() => getPerFileStats(deoptInfo), [deoptInfo]);
