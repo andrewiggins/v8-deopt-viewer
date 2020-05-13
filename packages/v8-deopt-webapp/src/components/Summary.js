@@ -6,7 +6,7 @@ import styles from "./Summary.scss";
 /**
  * @typedef {[number, number, number]} SeveritySummary
  * @typedef {{ codes: SeveritySummary; deopts: SeveritySummary; ics: SeveritySummary }} FileSeverities
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
+ * @param {import('..').AppProps["deoptInfo"]} deoptInfo
  * @returns {Record<string, FileSeverities>}
  */
 function getPerFileStats(deoptInfo) {
@@ -34,7 +34,7 @@ function getPerFileStats(deoptInfo) {
 }
 
 /**
- * @param {{ deoptInfo: import('..').V8DeoptInfoWithSources }} props
+ * @param {import('..').AppProps} props
  */
 export function Summary({ deoptInfo }) {
 	const perFileStats = useMemo(() => getPerFileStats(deoptInfo), [deoptInfo]);
@@ -70,7 +70,7 @@ export function Summary({ deoptInfo }) {
 					return (
 						<tr class={styles.fileRow}>
 							<td class={styles.fileName}>
-								<a>{fileName}</a>
+								<a>{deoptInfo[fileName].relativePath}</a>
 							</td>
 							<SeveritySummary class="codes" severities={summaryInfo.codes} />
 							<SeveritySummary class="deopts" severities={summaryInfo.deopts} />

@@ -1265,6 +1265,7 @@
         ]
       }
     ],
+    "relativePath": "adders.js",
     "srcPath": "/tmp/deoptigate/examples/simple/adders.js",
     "error": {
       "errno": -4058,
