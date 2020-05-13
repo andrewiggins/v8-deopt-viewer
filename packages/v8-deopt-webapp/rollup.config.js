@@ -20,6 +20,7 @@ const config = {
 		postcss({
 			extract: true,
 			modules: true,
+			minimize: true,
 		}),
 	],
 };

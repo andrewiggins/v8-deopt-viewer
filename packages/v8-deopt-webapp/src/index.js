@@ -1,6 +1,5 @@
 import { render, createElement } from "preact";
 import { Summary } from "./Summary";
-import "./index.css";
 
 /**
  * @param {import('.').AppProps} props

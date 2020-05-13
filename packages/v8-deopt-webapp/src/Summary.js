@@ -1,8 +1,7 @@
 import { createElement, Fragment } from "preact";
 import { useMemo } from "preact/hooks";
-import styles from "./Summary.css";
-
-console.log(styles);
+import spectre from "./spectre.scss";
+import styles from "./Summary.scss";
 
 /**
  * @typedef {[number, number, number]} SeveritySummary
@@ -41,7 +40,15 @@ export function Summary({ deoptInfo }) {
 	const perFileStats = useMemo(() => getPerFileStats(deoptInfo), [deoptInfo]);
 
 	return (
-		<table class={[styles.summaryTable, styles.table].join(" ")}>
+		<table
+			class={[
+				spectre.table,
+				spectre["table-scroll"],
+				spectre["table-stripped"],
+				spectre["table-hover"],
+				styles.summaryTable,
+			].join(" ")}
+		>
 			<thead>
 				<tr class={styles.headers}>
 					<th>File</th>
@@ -81,7 +88,7 @@ function CodeHeaders() {
 		<Fragment>
 			<th>Optimized</th>
 			<th>Optimizable</th>
-			<th>Complied/Sev 3</th>
+			<th>Sev 3</th>
 		</Fragment>
 	);
 }
@@ -89,9 +96,9 @@ function CodeHeaders() {
 function SeverityHeaders() {
 	return (
 		<Fragment>
-			<th>Severity 1</th>
-			<th>Severity 2</th>
-			<th>Severity 3</th>
+			<th>Sev 1</th>
+			<th>Sev 2</th>
+			<th>Sev 3</th>
 		</Fragment>
 	);
 }
