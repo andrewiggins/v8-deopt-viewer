@@ -1,15 +1,43 @@
-.summaryTable {
+#summaryTable {
+	display: grid;
+	grid-template-columns: minmax(120px, 1fr) repeat(9, 1fr);
 	text-align: center;
+
+	> thead,
+	> tbody,
+	tr {
+		display: contents;
+	}
+
+	td:first-child {
+		grid-column: 1 / 2;
+	}
+
+	.headers {
+		font-size: 1.1rem;
+		// text-transform: uppercase;
+
+		th {
+			font-weight: normal;
+		}
+
+		.codes {
+			grid-column: 2 / 5;
+		}
+
+		.deopts {
+			grid-column: 5 / 8;
+		}
+
+		.ics {
+			grid-column: 8 / 12;
+		}
+	}
+
+	.subheaders {
+		font-size: 0.7rem;
+	}
 }
-
-// .headers {
-// 	font-size: 1.1rem;
-// 	text-transform: uppercase;
-// }
-
-// .subheaders {
-// 	font-size: 0.9rem;
-// }
 
 .fileName {
 	text-align: left;

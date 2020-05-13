@@ -41,20 +41,26 @@ export function Summary({ deoptInfo }) {
 
 	return (
 		<table
+			id={styles.summaryTable}
 			class={[
 				spectre.table,
 				spectre["table-scroll"],
 				spectre["table-stripped"],
 				spectre["table-hover"],
-				styles.summaryTable,
 			].join(" ")}
 		>
 			<thead>
 				<tr class={styles.headers}>
 					<th>File</th>
-					<th colspan="3">Optimizations</th>
-					<th colspan="3">Deoptimizations</th>
-					<th colspan="3">Inline Caches</th>
+					<th class={styles.codes} colspan="3">
+						Optimizations
+					</th>
+					<th class={styles.deopts} colspan="3">
+						Deoptimizations
+					</th>
+					<th class={styles.ics} colspan="3">
+						Inline Caches
+					</th>
 				</tr>
 				<tr class={styles.subheaders}>
 					<th></th>
