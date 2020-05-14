@@ -1,7 +1,23 @@
-#summaryTable {
+.summaryTable {
+	text-align: center;
+
+	.headers {
+		font-size: 1.1rem;
+		// text-transform: uppercase;
+
+		th {
+			font-weight: normal;
+		}
+	}
+
+	.subheaders {
+		font-size: 0.7rem;
+	}
+}
+
+.summaryTable.grid {
 	display: grid;
 	grid-template-columns: minmax(120px, 1fr) repeat(9, 1fr);
-	text-align: center;
 
 	> thead,
 	> tbody,
@@ -14,13 +30,6 @@
 	}
 
 	.headers {
-		font-size: 1.1rem;
-		// text-transform: uppercase;
-
-		th {
-			font-weight: normal;
-		}
-
 		.codes {
 			grid-column: 2 / 5;
 		}
@@ -33,12 +42,21 @@
 			grid-column: 8 / 12;
 		}
 	}
-
-	.subheaders {
-		font-size: 0.7rem;
-	}
 }
 
 .fileName {
 	text-align: left;
+}
+
+.sev1 {
+	color: #5ac878;
+}
+
+.sev2 {
+	color: #4cb5ff;
+}
+
+.sev3 {
+	font-weight: 600;
+	color: #ff6040;
 }

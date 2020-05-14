@@ -1,9 +1,14 @@
-import { createElement } from "preact";
-import { SummaryTable } from "./SummaryTable";
+import { createElement, Fragment } from "preact";
+import { Summary } from "./Summary";
 
 /**
  * @param {import('..').AppProps} props
  */
 export function App({ deoptInfo }) {
-	return <SummaryTable deoptInfo={deoptInfo} />;
+	return (
+		<Fragment>
+			<h1>V8 Deopt Viewer</h1>
+			<Summary deoptInfo={deoptInfo} />
+		</Fragment>
+	);
 }

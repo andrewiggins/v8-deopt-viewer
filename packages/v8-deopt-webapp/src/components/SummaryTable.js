@@ -1,48 +1,16 @@
 import { createElement, Fragment } from "preact";
-import { useMemo } from "preact/hooks";
 import spectre from "../spectre.scss";
 import styles from "./SummaryTable.scss";
 
 /**
- * @typedef {[number, number, number]} SeveritySummary
- * @typedef {{ codes: SeveritySummary; deopts: SeveritySummary; ics: SeveritySummary }} FileSeverities
- * @param {import('..').AppProps["deoptInfo"]} deoptInfo
- * @returns {Record<string, FileSeverities>}
+ * @param {import('./Summary').SummaryProps} props
  */
-function getPerFileStats(deoptInfo) {
-	/** @type {Record<string, FileSeverities>} */
-	const results = {};
-
-	const files = Object.keys(deoptInfo);
-	for (let fileName of files) {
-		const fileDepotInfo = deoptInfo[fileName];
-		results[fileName] = {
-			codes: [0, 0, 0],
-			deopts: [0, 0, 0],
-			ics: [0, 0, 0],
-		};
-
-		for (let kind of ["codes", "deopts", "ics"]) {
-			const entries = fileDepotInfo[kind];
-			for (let entry of entries) {
-				results[fileName][kind][entry.severity - 1]++;
-			}
-		}
-	}
-
-	return results;
-}
-
-/**
- * @param {import('..').AppProps} props
- */
-export function SummaryTable({ deoptInfo }) {
-	const perFileStats = useMemo(() => getPerFileStats(deoptInfo), [deoptInfo]);
-
+export function SummaryTable({ deoptInfo, perFileStats }) {
 	return (
 		<table
-			id={styles.summaryTable}
 			class={[
+				styles.summaryTable,
+				styles.grid,
 				spectre.table,
 				spectre["table-scroll"],
 				spectre["table-stripped"],
@@ -64,9 +32,9 @@ export function SummaryTable({ deoptInfo }) {
 				</tr>
 				<tr class={styles.subheaders}>
 					<th></th>
-					<CodeHeaders />
-					<SeverityHeaders />
-					<SeverityHeaders />
+					<CodeTableHeaders class={styles.codes} />
+					<SeverityTableHeaders class={styles.deopts} />
+					<SeverityTableHeaders class={styles.ics} />
 				</tr>
 			</thead>
 			<tbody>
@@ -78,9 +46,18 @@ export function SummaryTable({ deoptInfo }) {
 							<td class={styles.fileName}>
 								<a>{deoptInfo[fileName].relativePath}</a>
 							</td>
-							<SeveritySummary class="codes" severities={summaryInfo.codes} />
-							<SeveritySummary class="deopts" severities={summaryInfo.deopts} />
-							<SeveritySummary class="ics" severities={summaryInfo.ics} />
+							<SeverityTableSummary
+								class={styles.codes}
+								severities={summaryInfo.codes}
+							/>
+							<SeverityTableSummary
+								class={styles.deopts}
+								severities={summaryInfo.deopts}
+							/>
+							<SeverityTableSummary
+								class={styles.ics}
+								severities={summaryInfo.ics}
+							/>
 						</tr>
 					);
 				})}
@@ -89,32 +66,51 @@ export function SummaryTable({ deoptInfo }) {
 	);
 }
 
-function CodeHeaders() {
+export function CodeTableHeaders(props) {
 	return (
 		<Fragment>
-			<th>Optimized</th>
-			<th>Optimizable</th>
-			<th>Sev 3</th>
+			<th class={props.class}>Optimized</th>
+			<th class={props.class}>Optimizable</th>
+			<th class={props.class}>Sev 3</th>
 		</Fragment>
 	);
 }
 
-function SeverityHeaders() {
+export function SeverityTableHeaders(props) {
 	return (
 		<Fragment>
-			<th>Sev 1</th>
-			<th>Sev 2</th>
-			<th>Sev 3</th>
+			<th class={props.class}>Sev 1</th>
+			<th class={props.class}>Sev 2</th>
+			<th class={props.class}>Sev 3</th>
 		</Fragment>
 	);
 }
 
-function SeveritySummary(props) {
+export function SeverityTableSummary(props) {
 	return (
 		<Fragment>
-			{props.severities.map((severityCount) => {
-				return <td>{severityCount}</td>;
+			{props.severities.map((severityCount, i) => {
+				return (
+					<td
+						class={[
+							props.class,
+							severityCount > 0 ? severityClass(i + 1) : null,
+						].join(" ")}
+					>
+						{severityCount}
+					</td>
+				);
 			})}
 		</Fragment>
 	);
+}
+
+function severityClass(severity) {
+	if (severity == 1) {
+		return styles.sev1;
+	} else if (severity == 2) {
+		return styles.sev2;
+	} else {
+		return styles.sev3;
+	}
 }

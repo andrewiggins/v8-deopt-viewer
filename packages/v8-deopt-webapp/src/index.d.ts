@@ -1,7 +1,9 @@
 import { V8DeoptInfo } from "v8-deopt-parser";
 
+type PerFileDeoptInfoWithSources = Record<string, V8DeoptInfoWithSources>;
+
 interface AppProps {
-	deoptInfo: Record<string, V8DeoptInfoWithSources>;
+	deoptInfo: PerFileDeoptInfoWithSources;
 }
 
 interface V8DeoptInfoWithSources extends V8DeoptInfo {
