@@ -1,9 +1,9 @@
 import { createElement } from "preact";
-import { Summary } from "./Summary";
+import { SummaryTable } from "./SummaryTable";
 
 /**
  * @param {import('..').AppProps} props
  */
 export function App({ deoptInfo }) {
-	return <Summary deoptInfo={deoptInfo} />;
+	return <SummaryTable deoptInfo={deoptInfo} />;
 }

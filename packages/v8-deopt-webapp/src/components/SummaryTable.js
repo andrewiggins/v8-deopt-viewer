@@ -1,7 +1,7 @@
 import { createElement, Fragment } from "preact";
 import { useMemo } from "preact/hooks";
 import spectre from "../spectre.scss";
-import styles from "./Summary.scss";
+import styles from "./SummaryTable.scss";
 
 /**
  * @typedef {[number, number, number]} SeveritySummary
@@ -36,7 +36,7 @@ function getPerFileStats(deoptInfo) {
 /**
  * @param {import('..').AppProps} props
  */
-export function Summary({ deoptInfo }) {
+export function SummaryTable({ deoptInfo }) {
 	const perFileStats = useMemo(() => getPerFileStats(deoptInfo), [deoptInfo]);
 
 	return (
