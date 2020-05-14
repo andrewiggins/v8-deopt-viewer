@@ -49,14 +49,14 @@
 }
 
 .sev1 {
-	color: #5ac878;
+	color: var(--sev1-color);
 }
 
 .sev2 {
-	color: #4cb5ff;
+	color: var(--sev2-color);
 }
 
 .sev3 {
 	font-weight: 600;
-	color: #ff6040;
+	color: var(--sev3-color);
 }

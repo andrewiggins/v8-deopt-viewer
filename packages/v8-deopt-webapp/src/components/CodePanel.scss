@@ -1,0 +1,35 @@
+:global {
+	@import "~prismjs/themes/prism.css";
+	@import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+	//*******************************
+	// Prism overrides
+	//*******************************
+
+	code[class*="language-"],
+	pre[class*="language-"] {
+		tab-size: 2; //  Override Prism default tab-size
+	}
+
+	code[class*="language-"] {
+		padding: 0; // Override spectre styles to not conflict with Prism
+		padding-top: 0.1rem;
+	}
+
+	// Custom overrides for line-numbers to work with our SSR rendering
+	.line-numbers .line-numbers-rows {
+		top: 1em;
+		left: 0;
+	}
+
+	// Hide line-numbers in small screens
+	// @media (max-width: 600px) {
+	// 	pre[class*="language-"].line-numbers {
+	// 		padding-left: 1em;
+	// 	}
+	//
+	// 	.line-numbers .line-numbers-rows {
+	// 		display: none;
+	// 	}
+	// }
+}

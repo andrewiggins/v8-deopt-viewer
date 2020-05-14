@@ -1,0 +1,39 @@
+.deoptMarker {
+	mark {
+		border: 0.05rem solid transparent;
+		border-bottom: 0.05rem solid #ffd367;
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+@mixin severity($sevColor) {
+	color: var($sevColor);
+
+	mark {
+		color: var($sevColor);
+	}
+
+	&:focus mark {
+		border: 1px solid var($sevColor);
+	}
+
+	&.active mark {
+		background-color: yellow;
+		border: 2px solid var($sevColor);
+	}
+}
+
+.deoptMarker.sev1 {
+	@include severity(--sev1-color);
+}
+
+.deoptMarker.sev2 {
+	@include severity(--sev2-color);
+}
+
+.deoptMarker.sev3 {
+	@include severity(--sev3-color);
+}

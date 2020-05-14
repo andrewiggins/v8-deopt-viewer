@@ -1,4 +1,5 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import sucrase from "@rollup/plugin-sucrase";
 import postcss from "rollup-plugin-postcss";
 import visualizer from "rollup-plugin-visualizer";
@@ -23,6 +24,7 @@ const config = {
 			modules: true,
 			minimize: true,
 		}),
+		commonjs(),
 		visualizer({
 			filename: "dist/stats.html",
 			gzipSize: true,

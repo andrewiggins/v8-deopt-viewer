@@ -1,5 +1,6 @@
 import { render, createElement } from "preact";
 import { App } from "./components/App";
+import "./index.scss";
 
 /**
  * @param {import('.').AppProps["deoptInfo"]} deoptInfo

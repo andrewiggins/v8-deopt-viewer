@@ -17,7 +17,7 @@ export function App({ deoptInfo }) {
 				<Route path="/">
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
-				<Route path="/file/:index?">
+				<Route path="/file/:index?/:line?/:column?">
 					{(params) => (
 						<FileViewer fileDeoptInfo={deoptInfo[files[params.index || 0]]} />
 					)}
