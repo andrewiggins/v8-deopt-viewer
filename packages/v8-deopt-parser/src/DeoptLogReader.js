@@ -47,6 +47,7 @@ export class DeoptLogReader extends LogReader {
 		super();
 		this.options = options;
 
+		this._id = 0;
 		this._profile = new Profile();
 
 		/** @type {Map<string, import('./').ICEntry>} */
@@ -150,6 +151,7 @@ export class DeoptLogReader extends LogReader {
 			if (!this.entriesCode.has(key)) {
 				this.entriesCode.set(key, {
 					type: "code",
+					id: `${this._id++}`,
 					functionName,
 					file,
 					line,
@@ -223,6 +225,7 @@ export class DeoptLogReader extends LogReader {
 		if (!this.entriesDeopt.has(key)) {
 			this.entriesDeopt.set(key, {
 				type: "deopt",
+				id: `${this._id++}`,
 				functionName,
 				file,
 				line,
@@ -274,6 +277,7 @@ export class DeoptLogReader extends LogReader {
 		if (!this.entriesIC.has(key)) {
 			this.entriesIC.set(key, {
 				type: "ics",
+				id: `${this._id++}`,
 				functionName,
 				file,
 				line,

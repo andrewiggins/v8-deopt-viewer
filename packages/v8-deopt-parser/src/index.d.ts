@@ -4,6 +4,7 @@ type CodeState = "compiled" | "optimizable" | "optimized" | "unknown";
 
 interface CodeEntry {
 	type: "code";
+	id: string;
 	functionName: string;
 	file: string;
 	line: number;
@@ -21,6 +22,7 @@ interface CodeEntryUpdate {
 
 interface DeoptEntry {
 	type: "deopt";
+	id: string;
 	functionName: string;
 	file: string;
 	line: number;
@@ -57,6 +59,7 @@ type ICState =
 
 interface ICEntry {
 	type: "ics";
+	id: string;
 	functionName: string;
 	file: string;
 	line: number;
