@@ -4159,6 +4159,11 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
+wouter-preact@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/wouter-preact/-/wouter-preact-2.4.0.tgz#7e9bef3293408b1fc2fe1346da08152dffbce850"
+  integrity sha512-QdqZpG3F5C3MHrQf04sGyEF9ZbTeD+ShnlxiOzc33XTRri3hXe+eVXlvyem4IOr4YnKwhx3klu8ti3ItQiQGVQ==
+
 wrap-ansi@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-5.1.0.tgz#1fd1f67235d5b6d0fee781056001bfb694c03b09"

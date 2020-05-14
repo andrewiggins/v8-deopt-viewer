@@ -1,4 +1,5 @@
 import { createElement, Fragment } from "preact";
+import { FileLink } from "./Summary";
 import {
 	CodeTableHeaders,
 	SeverityTableHeaders,
@@ -20,13 +21,13 @@ export function SummaryList({ deoptInfo, perFileStats }) {
 		<Fragment>
 			<div class={styles.globalHeaders}></div>
 			<ul class={styles.summaryList}>
-				{Object.keys(perFileStats).map((fileName) => {
+				{Object.keys(perFileStats).map((fileName, i) => {
 					const summaryInfo = perFileStats[fileName];
 
 					return (
-						<li>
+						<li key={fileName}>
 							<div>
-								<a>{deoptInfo[fileName].relativePath}</a>
+								<FileLink index={i} fileDeoptInfo={deoptInfo[fileName]} />
 							</div>
 							<InlineSeverityTable
 								class={styles.codes}

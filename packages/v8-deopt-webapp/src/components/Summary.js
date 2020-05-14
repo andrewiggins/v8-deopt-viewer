@@ -35,6 +35,13 @@ function getPerFileStats(deoptInfo) {
 }
 
 /**
+ * @param {{index: number; fileDeoptInfo: import('..').V8DeoptInfoWithSources}} props
+ */
+export function FileLink({ index, fileDeoptInfo }) {
+	return <a href={`#/file/${index}`}>{fileDeoptInfo.relativePath}</a>;
+}
+
+/**
  * @typedef {{ deoptInfo: import('..').PerFileDeoptInfoWithSources; perFileStats: PerFileStats }} SummaryProps
  * @param {import('..').AppProps} props
  */

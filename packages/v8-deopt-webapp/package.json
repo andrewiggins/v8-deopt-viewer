@@ -12,18 +12,17 @@
     "start": "run-p dev serve",
     "serve": "http-server ."
   },
-  "dependencies": {
-    "preact": "^10.4.1"
-  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
     "@rollup/plugin-sucrase": "^3.0.0",
     "http-server": "^0.12.3",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "preact": "^10.4.1",
     "rollup": "^2.9.0",
     "rollup-plugin-postcss": "^3.1.1",
     "rollup-plugin-visualizer": "^4.0.4",
-    "spectre.css": "^0.5.8"
+    "spectre.css": "^0.5.8",
+    "wouter-preact": "^2.4.0"
   }
 }
