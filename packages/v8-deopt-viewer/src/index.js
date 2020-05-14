@@ -14,7 +14,6 @@ import { determineCommonRoot } from "./determineCommonRoot.js";
 async function addSources(deoptInfo) {
 	const files = Object.keys(deoptInfo);
 	const root = determineCommonRoot(files);
-	console.log(root);
 
 	/** @type {Record<string, import('v8-deopt-webapp').V8DeoptInfoWithSources>} */
 	const result = Object.create(null);
