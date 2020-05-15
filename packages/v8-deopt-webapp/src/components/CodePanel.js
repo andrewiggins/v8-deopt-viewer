@@ -3,7 +3,7 @@ import { useMemo, useRef, useLayoutEffect } from "preact/hooks";
 import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers } from "../utils/deoptMarkers";
-import "./CodePanel.scss";
+import styles from "./CodePanel.scss";
 
 /**
  * @param {string} path
@@ -58,7 +58,7 @@ export function CodePanel({ routeParams, fileDeoptInfo }) {
 	}, [routeParams.fileId, fileDeoptInfo]);
 
 	return (
-		<div>
+		<div class={styles.codePanel}>
 			<PrismCode
 				src={fileDeoptInfo.src}
 				lang={lang}

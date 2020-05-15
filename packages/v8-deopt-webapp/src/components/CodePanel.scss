@@ -5,6 +5,10 @@
 	//*******************************
 	// Prism overrides
 	//*******************************
+	pre[class*="language-"] {
+		display: inline-block; // Enable background color of pre to extend into overflow
+		overflow: visible; // Allow CodePanel styles to handle overflow
+	}
 
 	code[class*="language-"],
 	pre[class*="language-"] {
@@ -36,4 +40,16 @@
 	.line-numbers .line-numbers-rows .active {
 		background-color: yellow;
 	}
+}
+
+.codePanel {
+	overflow: auto;
+	border: 0.05rem solid #dadee4;
+	border-right: none;
+	border-radius: 0.1rem;
+	scroll-padding-top: 50%;
+}
+
+.codePanel > pre {
+	margin: 0;
 }

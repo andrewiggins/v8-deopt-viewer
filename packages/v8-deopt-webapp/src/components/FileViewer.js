@@ -1,6 +1,7 @@
 import { createElement } from "preact";
 import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
+import styles from "./FileViewer.scss";
 
 /**
  * @typedef {{ fileId: string; entryId: string; }} RouteParams
@@ -9,7 +10,7 @@ import { CodePanel } from "./CodePanel";
  */
 export const FileViewer = (props) => {
 	return (
-		<div>
+		<div class={styles.fileViewer}>
 			<CodePanel {...props} />
 			<DeoptsList {...props} />
 		</div>

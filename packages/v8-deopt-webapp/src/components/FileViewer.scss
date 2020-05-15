@@ -1,0 +1,14 @@
+@import "../variables";
+
+.fileViewer {
+	display: flex;
+	max-height: calc(100% - #{$headerHeight});
+
+	@media (max-width: $headerViewportSm) {
+		max-height: calc(100% - #{$headerHeightSm})
+	}
+}
+
+.fileViewer > * {
+	flex: 1 0 50%;
+}

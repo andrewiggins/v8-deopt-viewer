@@ -1,0 +1,10 @@
+$headerLineHeight: 1.2;
+$headerMargin: 1rem;
+
+$headerFontSize: 2rem;
+$headerFontSizeSm: 1.5rem;
+
+$headerHeight: ($headerFontSize * $headerLineHeight) + $headerMargin;
+$headerHeightSm: ($headerFontSizeSm * $headerLineHeight) + $headerMargin;
+
+$headerViewportSm: 768px;

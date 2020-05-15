@@ -68,3 +68,15 @@
 // @import "~spectre.css/src/sliders";
 // @import "~spectre.css/src/timelines";
 // @import "~spectre.css/src/viewer-360";
+
+// ==========================
+// Spectre Overrides
+// ==========================
+
+body {
+	overflow-x: initial !important;
+}
+
+a:visited {
+	color: #5755d9;
+}
