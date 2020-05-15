@@ -1,5 +1,5 @@
 import { createElement, Fragment } from "preact";
-import { useState, useEffect, useRef } from "preact/hooks";
+import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser";
 import spectre from "../spectre.scss";
 import styles from "./DeoptsList.scss";
@@ -14,13 +14,16 @@ const defaultEntryKind = "codes";
  * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
  */
 export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
-	const [entryKind, setEntryKind] = useState(defaultEntryKind);
+	const [entryKind, setEntryKind] = useState(
+		selectedEntry?.type ?? defaultEntryKind
+	);
 	const selectedId = selectedEntry?.id;
 
-	// TODO: Still need to figure out how to sync this state...
-	// if (selectedEntry.type !== entryKind) {
-	// 	setEntryKind(selectedEntry.type);
-	// }
+	useLayoutEffect(() => {
+		if (selectedEntry.type !== entryKind) {
+			setEntryKind(selectedEntry.type);
+		}
+	}, [selectedEntry.type]);
 
 	// TODO: sort entries
 	let entries;
