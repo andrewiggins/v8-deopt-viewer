@@ -9,13 +9,16 @@ import styles from "./CodePanel.scss";
  * @param {string} path
  */
 function determineLanguage(path) {
-	if (path.endsWith(".js")) {
-		return "javascript";
-	} else if (path.endsWith(".html")) {
+	if (path.endsWith(".html")) {
+		return "html";
+	} else if (
+		(path.startsWith("http:") || path.startsWith("https:")) &&
+		!path.endsWith(".js")
+	) {
+		// Assume URLs without .js extensions are HTML pages
 		return "html";
 	} else {
-		// TODO: is this good enough?
-		return "html";
+		return "javascript";
 	}
 }
 
