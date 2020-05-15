@@ -145,7 +145,7 @@ function CodeEntry({ entry, selected, title }) {
 				<tbody>
 					{entry.updates.map((update, i) => (
 						<tr>
-							<td>{update.timestamp}</td>
+							<td>{microToMilli(update.timestamp)}</td>
 							<td class={severityClass(update.severity)}>{update.state}</td>
 						</tr>
 					))}
@@ -185,7 +185,7 @@ function DeoptEntry({ entry, selected, title }) {
 				<tbody>
 					{entry.updates.map((update) => (
 						<tr>
-							<td>{update.timestamp}</td>
+							<td>{microToMilli(update.timestamp)}</td>
 							<td class={severityClass(update.severity)}>
 								{update.bailoutType}
 							</td>
@@ -285,4 +285,8 @@ function useScrollIntoView(selected) {
 	}, [selected]);
 
 	return selected ? ref : null;
+}
+
+function microToMilli(micro) {
+	return (micro / 1000).toFixed(0) + "ms";
 }
