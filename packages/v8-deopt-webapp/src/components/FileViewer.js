@@ -2,8 +2,12 @@ import { createElement } from "preact";
 import { useState, useCallback, useMemo } from "preact/hooks";
 import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
+import {
+	defaultShowLowSevs,
+	defaultHideLineNum,
+	CodeSettings,
+} from "./CodeSettings";
 import styles from "./FileViewer.scss";
-import { CodeSettings } from "./CodeSettings";
 
 // TODO: Consider moving findEntry and filterEntries into v8-deopt-parser
 
@@ -35,8 +39,8 @@ function findEntry(deoptInfo, entryId) {
  */
 export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
-	const [showLowSevs, setShowLowSevs] = useState(false);
-	const [hideLineNums, setHideLineNums] = useState(false);
+	const [showLowSevs, setShowLowSevs] = useState(defaultShowLowSevs);
+	const [hideLineNums, setHideLineNums] = useState(defaultHideLineNum);
 
 	return (
 		<div class={styles.fileViewer}>

@@ -2,13 +2,26 @@ import { createElement } from "preact";
 import spectre from "../spectre.scss";
 import styles from "./CodeSettings.scss";
 
+export const defaultShowLowSevs = false;
+export const defaultHideLineNum = false;
+
 /**
  * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; hideLineNums: boolean; toggleHideLineNums: () => void; }} CodeSettingsProps
  * @param {CodeSettingsProps} props
  */
 export function CodeSettings(props) {
+	const dirty =
+		props.showLowSevs !== defaultShowLowSevs ||
+		props.hideLineNums !== defaultHideLineNum;
+
 	return (
-		<details class={[styles.codeSettings, props.class].join(" ")}>
+		<details
+			class={[
+				styles.codeSettings,
+				props.class,
+				(dirty && styles.dirty) || null,
+			].join(" ")}
+		>
 			<summary aria-label="Settings">
 				<SettingsCog />
 			</summary>
