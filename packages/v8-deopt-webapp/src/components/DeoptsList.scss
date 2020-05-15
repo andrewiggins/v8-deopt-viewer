@@ -1,0 +1,34 @@
+.deoptsListPanel {
+	.tabLink {
+		white-space: nowrap;
+	}
+}
+
+.entryTable {
+	margin: 1rem auto;
+	padding: 0.5rem;
+	// border: 0.125rem solid black;
+	border: 0.05rem solid #dadee4;
+	border-radius: 0.25rem;
+
+	> table {
+		background: white;
+	}
+
+	> table > caption {
+		text-align: left;
+		padding-bottom: 0.5rem;
+	}
+
+	.entryId {
+		margin-right: 0.5rem;
+	}
+
+	.entryLink {
+		font-style: italic;
+	}
+}
+
+.entryTable.selected {
+	background-color: #fbf1a9;
+}

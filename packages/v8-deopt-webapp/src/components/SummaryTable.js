@@ -14,7 +14,7 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 				styles.grid,
 				spectre.table,
 				spectre["table-scroll"],
-				spectre["table-stripped"],
+				spectre["table-striped"],
 				spectre["table-hover"],
 			].join(" ")}
 		>

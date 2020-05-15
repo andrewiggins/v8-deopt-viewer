@@ -3,6 +3,7 @@ import { Router, Route } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
 import { FileViewer } from "./FileViewer";
+import styles from "./App.scss";
 
 /**
  * @param {import('..').AppProps} props
@@ -12,7 +13,7 @@ export function App({ deoptInfo }) {
 
 	return (
 		<Fragment>
-			<h1>V8 Deopt Viewer</h1>
+			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
 			<Router hook={useHashLocation}>
 				<Route path="/">
 					<Summary deoptInfo={deoptInfo} />
