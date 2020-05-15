@@ -1,6 +1,6 @@
 import { createElement, Fragment } from "preact";
 import { useMemo } from "preact/hooks";
-import { SummaryList } from "./SummaryList";
+// import { SummaryList } from "./SummaryList";
 import { SummaryTable } from "./SummaryTable";
 
 /**
@@ -32,13 +32,6 @@ function getPerFileStats(deoptInfo) {
 	}
 
 	return results;
-}
-
-/**
- * @param {{index: number; fileDeoptInfo: import('..').V8DeoptInfoWithSources}} props
- */
-export function FileLink({ index, fileDeoptInfo }) {
-	return <a href={`#/file/${index}`}>{fileDeoptInfo.relativePath}</a>;
 }
 
 /**

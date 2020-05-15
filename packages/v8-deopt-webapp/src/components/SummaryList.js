@@ -1,5 +1,4 @@
 import { createElement, Fragment } from "preact";
-import { FileLink } from "./Summary";
 import {
 	CodeTableHeaders,
 	SeverityTableHeaders,
@@ -27,7 +26,7 @@ export function SummaryList({ deoptInfo, perFileStats }) {
 					return (
 						<li key={fileName}>
 							<div>
-								<FileLink index={i} fileDeoptInfo={deoptInfo[fileName]} />
+								<a href={`#/file/${i}`}>{deoptInfo[fileName].relativePath}</a>
 							</div>
 							<InlineSeverityTable
 								class={styles.codes}

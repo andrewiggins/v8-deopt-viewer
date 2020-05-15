@@ -1,5 +1,4 @@
 import { createElement, Fragment } from "preact";
-import { FileLink } from "./Summary";
 import spectre from "../spectre.scss";
 import styles from "./SummaryTable.scss";
 
@@ -45,7 +44,7 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 					return (
 						<tr class={styles.fileRow} key={fileName}>
 							<td class={styles.fileName}>
-								<FileLink index={i} fileDeoptInfo={deoptInfo[fileName]} />
+								<a href={`#/file/${i}`}>{deoptInfo[fileName].relativePath}</a>
 							</td>
 							<SeverityTableSummary
 								class={styles.codes}
