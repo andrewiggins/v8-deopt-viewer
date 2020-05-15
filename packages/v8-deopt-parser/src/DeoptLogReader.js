@@ -297,6 +297,8 @@ export class DeoptLogReader extends LogReader {
 			map,
 			optimizationState,
 			severity,
+			modifier,
+			slowReason: slow_reason,
 		});
 
 		if (severity > icEntry.severity) {

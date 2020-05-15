@@ -76,6 +76,8 @@ interface ICEntryUpdate {
 	map: string;
 	optimizationState: string;
 	severity: number;
+	modifier: string;
+	slowReason: string;
 }
 
 type Entry = ICEntry | DeoptEntry | CodeEntry;
