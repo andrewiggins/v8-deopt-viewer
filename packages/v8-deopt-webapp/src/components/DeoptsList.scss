@@ -12,14 +12,13 @@
 }
 
 .entryTable {
-	display: inline-block; // So the border extends over the whole table, even when it overflows
 	margin: 1rem auto;
 	padding: 0.5rem;
 	border: 0.05rem solid #dadee4;
 	border-radius: 0.25rem;
-	border-top-right-radius: 0;
 
 	> table {
+		width: auto;
 		background: white;
 	}
 
