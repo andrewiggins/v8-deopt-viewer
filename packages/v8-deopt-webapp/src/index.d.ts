@@ -10,5 +10,5 @@ interface V8DeoptInfoWithSources extends V8DeoptInfo {
 	relativePath: string;
 	srcPath: string;
 	src?: string;
-	error?: string;
+	srcError?: string;
 }

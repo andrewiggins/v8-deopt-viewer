@@ -60,3 +60,8 @@
 .codePanel > pre {
 	margin: 0;
 }
+
+.codePanel.error {
+	padding: 0.5rem;
+	padding-right: 60px;
+}

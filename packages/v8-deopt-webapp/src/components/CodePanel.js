@@ -3,7 +3,7 @@ import { useMemo, useRef, useLayoutEffect } from "preact/hooks";
 import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers } from "../utils/deoptMarkers";
-import { codePanel } from "./CodePanel.scss";
+import { codePanel, error as errorClass } from "./CodePanel.scss";
 import { showLowSevs as showLowSevsClass } from "../utils/deoptMarkers.scss";
 
 /**
@@ -34,7 +34,7 @@ export function CodePanel({
 	showLowSevs,
 }) {
 	if (!fileDeoptInfo.src) {
-		return <CodeError error={fileDeoptInfo.error} />;
+		return <CodeError srcError={fileDeoptInfo.srcError} />;
 	}
 
 	const lang = determineLanguage(fileDeoptInfo.srcPath);
@@ -100,11 +100,10 @@ const LineNumbers = memo(({ selectedLine, contents }) => {
 	);
 });
 
-function CodeError({ error }) {
-	// TODO: Improve
+function CodeError({ srcError }) {
 	return (
-		<div class={codePanel}>
-			Error! {error instanceof Error ? error.toString() : JSON.stringify(error)}
+		<div class={[codePanel, errorClass].join(" ")}>
+			Error! {srcError instanceof Error ? srcError.toString() : srcError}
 		</div>
 	);
 }

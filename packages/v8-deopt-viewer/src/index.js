@@ -20,14 +20,14 @@ async function addSources(deoptInfo) {
 	for (let file of files) {
 		let srcPath;
 
-		let src, error;
+		let src, srcError;
 		if (file.startsWith("https://")) {
 			try {
 				srcPath = file;
 				const { data } = await get(file);
 				src = data;
 			} catch (e) {
-				error = e;
+				srcError = e;
 			}
 		} else {
 			let filePath = file.startsWith("file://") ? fileURLToPath(file) : file;
@@ -36,20 +36,20 @@ async function addSources(deoptInfo) {
 					srcPath = filePath;
 					src = await readFile(filePath, "utf8");
 				} catch (e) {
-					error = e;
+					srcError = e;
 				}
 			} else {
-				error = new Error("File path is not absolute");
+				srcError = new Error("File path is not absolute");
 			}
 		}
 
 		const relativePath = root ? file.slice(root.length) : file;
-		if (error) {
+		if (srcError) {
 			result[file] = {
 				...deoptInfo[file],
 				relativePath,
 				srcPath,
-				error,
+				srcError: srcError.toString(),
 			};
 		} else {
 			result[file] = {

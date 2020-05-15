@@ -18,7 +18,8 @@
 		<script type="module">
 			import { renderIntoDom } from "../dist/index.debug.js";
 
-			fetch("./deoptInfo.json")
+			// fetch("./deoptInfo.json")
+			fetch("./deoptInfoError.json")
 				.then((res) => res.json())
 				.then((deoptInfo) => {
 					renderIntoDom(deoptInfo, document.getElementById("root"));
