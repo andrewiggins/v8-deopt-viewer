@@ -5,7 +5,19 @@ import {
 	table_striped,
 	table_hover,
 } from "../spectre.scss";
-import styles from "./SummaryTable.scss";
+import {
+	summaryTable,
+	grid,
+	headers,
+	codes,
+	deopts,
+	ics,
+	subheaders,
+	fileName as fileNameClass,
+	sev1,
+	sev2,
+	sev3,
+} from "./SummaryTable.scss";
 
 /**
  * @param {import('./Summary').SummaryProps} props
@@ -14,8 +26,8 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 	return (
 		<table
 			class={[
-				styles.summaryTable,
-				styles.grid,
+				summaryTable,
+				grid,
 				table,
 				table_scroll,
 				table_striped,
@@ -23,23 +35,23 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 			].join(" ")}
 		>
 			<thead>
-				<tr class={styles.headers}>
+				<tr class={headers}>
 					<th>File</th>
-					<th class={styles.codes} colspan="3">
+					<th class={codes} colspan="3">
 						Optimizations
 					</th>
-					<th class={styles.deopts} colspan="3">
+					<th class={deopts} colspan="3">
 						Deoptimizations
 					</th>
-					<th class={styles.ics} colspan="3">
+					<th class={ics} colspan="3">
 						Inline Caches
 					</th>
 				</tr>
-				<tr class={styles.subheaders}>
+				<tr class={subheaders}>
 					<th></th>
-					<CodeTableHeaders class={styles.codes} />
-					<SeverityTableHeaders class={styles.deopts} />
-					<SeverityTableHeaders class={styles.ics} />
+					<CodeTableHeaders class={codes} />
+					<SeverityTableHeaders class={deopts} />
+					<SeverityTableHeaders class={ics} />
 				</tr>
 			</thead>
 			<tbody>
@@ -47,22 +59,19 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 					const summaryInfo = perFileStats[fileName];
 
 					return (
-						<tr class={styles.fileRow} key={fileName}>
-							<td class={styles.fileName}>
+						<tr key={fileName}>
+							<td class={fileNameClass}>
 								<a href={`#/file/${i}`}>{deoptInfo[fileName].relativePath}</a>
 							</td>
 							<SeverityTableSummary
-								class={styles.codes}
+								class={codes}
 								severities={summaryInfo.codes}
 							/>
 							<SeverityTableSummary
-								class={styles.deopts}
+								class={deopts}
 								severities={summaryInfo.deopts}
 							/>
-							<SeverityTableSummary
-								class={styles.ics}
-								severities={summaryInfo.ics}
-							/>
+							<SeverityTableSummary class={ics} severities={summaryInfo.ics} />
 						</tr>
 					);
 				})}
@@ -112,10 +121,10 @@ export function SeverityTableSummary(props) {
 
 function severityClass(severity) {
 	if (severity == 1) {
-		return styles.sev1;
+		return sev1;
 	} else if (severity == 2) {
-		return styles.sev2;
+		return sev2;
 	} else {
-		return styles.sev3;
+		return sev3;
 	}
 }

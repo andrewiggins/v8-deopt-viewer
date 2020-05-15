@@ -13,7 +13,18 @@ import {
 	table_striped,
 	table_hover,
 } from "../spectre.scss";
-import styles from "./DeoptsList.scss";
+import {
+	deoptsListPanel,
+	showLowSevs as showLowSevsClass,
+	tabLink,
+	entryTable,
+	selected as selectedClass,
+	entryId as entryIdClass,
+	entryLink,
+	sev1,
+	sev2,
+	sev3,
+} from "./DeoptsList.scss";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
@@ -108,8 +119,8 @@ export function DeoptsList({
 		<div
 			class={[
 				panel,
-				styles.deoptsListPanel,
-				(showLowSevs && styles.showLowSevs) || null,
+				deoptsListPanel,
+				(showLowSevs && showLowSevsClass) || null,
 			].join(" ")}
 		>
 			<nav class={panel_nav}>
@@ -123,7 +134,7 @@ export function DeoptsList({
 						return (
 							<li class={liClass}>
 								<a
-									class={styles.tabLink}
+									class={tabLink}
 									href="#"
 									onClick={(e) => {
 										e.preventDefault();
@@ -154,9 +165,9 @@ function CodeEntry({ entry, selected, title }) {
 		<div
 			ref={ref}
 			class={[
-				styles.entryTable,
+				entryTable,
 				severityClass(entry.severity),
-				selected ? styles.selected : null,
+				selected ? selectedClass : null,
 			].join(" ")}
 		>
 			<table class={[table, table_striped, table_hover].join(" ")}>
@@ -190,9 +201,9 @@ function DeoptEntry({ entry, selected, title }) {
 		<div
 			ref={ref}
 			class={[
-				styles.entryTable,
+				entryTable,
 				severityClass(entry.severity),
-				selected ? styles.selected : null,
+				selected ? selectedClass : null,
 			].join(" ")}
 		>
 			<table class={[table, table_striped, table_hover].join(" ")}>
@@ -232,9 +243,9 @@ function ICEntry({ entry, selected, title }) {
 		<div
 			ref={ref}
 			class={[
-				styles.entryTable,
+				entryTable,
 				severityClass(entry.severity),
-				selected ? styles.selected : null,
+				selected ? selectedClass : null,
 			].join(" ")}
 		>
 			<table class={[table, table_striped, table_hover].join(" ")}>
@@ -274,8 +285,8 @@ function EntryTitle({ entry, relativePath, fileId }) {
 	const linkText = `${entry.functionName} at ${relativePath}:${entry.line}:${entry.column}`;
 	return (
 		<Fragment>
-			<span class={styles.entryId}>{entry.id} </span>
-			<a href={href} class={styles.entryLink}>
+			<span class={entryIdClass}>{entry.id} </span>
+			<a href={href} class={entryLink}>
 				{linkText}
 			</a>
 		</Fragment>
@@ -284,11 +295,11 @@ function EntryTitle({ entry, relativePath, fileId }) {
 
 function severityClass(severity) {
 	if (severity == 1) {
-		return styles.sev1;
+		return sev1;
 	} else if (severity == 2) {
-		return styles.sev2;
+		return sev2;
 	} else {
-		return styles.sev3;
+		return sev3;
 	}
 }
 

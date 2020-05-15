@@ -4,7 +4,7 @@ import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
 import { FileViewer } from "./FileViewer";
 import { btn, icon, icon_back } from "../spectre.scss";
-import styles from "./App.scss";
+import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
 
 /**
  * @param {import('..').AppProps} props
@@ -39,16 +39,11 @@ function Header() {
 	const [isRootRoute] = useRoute("/");
 
 	return (
-		<div
-			class={[
-				styles.pageHeader,
-				(!isRootRoute && styles.subRoute) || null,
-			].join(" ")}
-		>
-			<a href="#/" class={[btn, styles.backButton].join(" ")}>
+		<div class={[pageHeader, (!isRootRoute && subRoute) || null].join(" ")}>
+			<a href="#/" class={[btn, backButton].join(" ")}>
 				<i class={[icon, icon_back].join(" ")}></i>
 			</a>
-			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
+			<h1 class={pageTitle}>V8 Deopt Viewer</h1>
 		</div>
 	);
 }

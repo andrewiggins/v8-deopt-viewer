@@ -5,7 +5,14 @@ import {
 	SeverityTableSummary,
 } from "./SummaryTable";
 import { table } from "../spectre.scss";
-import styles from "./SummaryList.scss";
+import {
+	globalHeaders,
+	summaryList,
+	codes,
+	deopts,
+	ics,
+	severityTable,
+} from "./SummaryList.scss";
 
 // TODO:
 // - Consider putting each file into a Spectre Panel.
@@ -18,8 +25,8 @@ import styles from "./SummaryList.scss";
 export function SummaryList({ deoptInfo, perFileStats }) {
 	return (
 		<Fragment>
-			<div class={styles.globalHeaders}></div>
-			<ul class={styles.summaryList}>
+			<div class={globalHeaders}></div>
+			<ul class={summaryList}>
 				{Object.keys(perFileStats).map((fileName, i) => {
 					const summaryInfo = perFileStats[fileName];
 
@@ -29,19 +36,19 @@ export function SummaryList({ deoptInfo, perFileStats }) {
 								<a href={`#/file/${i}`}>{deoptInfo[fileName].relativePath}</a>
 							</div>
 							<InlineSeverityTable
-								class={styles.codes}
+								class={codes}
 								caption="Optimizations"
 								severities={summaryInfo.codes}
 								header={<CodeTableHeaders />}
 							/>
 							<InlineSeverityTable
-								class={styles.deopts}
+								class={deopts}
 								caption="Deoptimizations"
 								severities={summaryInfo.deopts}
 								header={<SeverityTableHeaders />}
 							/>
 							<InlineSeverityTable
-								class={styles.ics}
+								class={ics}
 								caption="Inline Caches"
 								severities={summaryInfo.ics}
 								header={<SeverityTableHeaders />}
@@ -56,7 +63,7 @@ export function SummaryList({ deoptInfo, perFileStats }) {
 
 function InlineSeverityTable(props) {
 	return (
-		<table class={[props.class, styles.severityTable, table].join(" ")}>
+		<table class={[props.class, severityTable, table].join(" ")}>
 			<caption>{props.caption}</caption>
 			<thead>
 				<tr>{props.header}</tr>

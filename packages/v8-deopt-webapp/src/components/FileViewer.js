@@ -7,7 +7,7 @@ import {
 	defaultHideLineNum,
 	CodeSettings,
 } from "./CodeSettings";
-import styles from "./FileViewer.scss";
+import { fileViewer, codeSettings } from "./FileViewer.scss";
 
 // TODO: Consider moving findEntry into v8-deopt-parser
 
@@ -43,9 +43,9 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const [hideLineNums, setHideLineNums] = useState(defaultHideLineNum);
 
 	return (
-		<div class={styles.fileViewer}>
+		<div class={fileViewer}>
 			<CodeSettings
-				class={styles.codeSettings}
+				class={codeSettings}
 				showLowSevs={showLowSevs}
 				toggleShowLowSevs={() => setShowLowSevs((prev) => !prev)}
 				hideLineNums={hideLineNums}

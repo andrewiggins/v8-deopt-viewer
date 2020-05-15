@@ -3,8 +3,8 @@ import { useMemo, useRef, useLayoutEffect } from "preact/hooks";
 import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers } from "../utils/deoptMarkers";
-import styles from "./CodePanel.scss";
-import markerStyles from "../utils/deoptMarkers.scss";
+import { codePanel } from "./CodePanel.scss";
+import { showLowSevs as showLowSevsClass } from "../utils/deoptMarkers.scss";
 
 /**
  * @param {string} path
@@ -47,10 +47,7 @@ export function CodePanel({
 
 	return (
 		<div
-			class={[
-				styles.codePanel,
-				(showLowSevs && markerStyles.showLowSevs) || null,
-			].join(" ")}
+			class={[codePanel, (showLowSevs && showLowSevsClass) || null].join(" ")}
 		>
 			<PrismCode
 				src={fileDeoptInfo.src}

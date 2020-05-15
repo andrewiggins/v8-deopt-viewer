@@ -1,6 +1,6 @@
 import Prism from "prismjs";
 import { sortEntries } from "v8-deopt-parser/src/sortEntries";
-import styles from "./deoptMarkers.scss";
+import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.scss";
 
 /**
  * @param {Node} element
@@ -59,9 +59,9 @@ function createMarkerElement(fileId, marker) {
 
 	const link = document.createElement("a");
 	const linkId = `/file/${fileId}/${marker.id}`;
-	const classes = [styles.deoptMarker, severityClass(marker.severity)];
+	const classes = [deoptMarker, severityClass(marker.severity)];
 	if (location.hash == "#" + linkId) {
-		classes.push(styles.active);
+		classes.push("active");
 		setTimeout(() => link.scrollIntoView(), 0);
 	}
 
@@ -156,10 +156,10 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 
 function severityClass(severity) {
 	if (severity == 1) {
-		return styles.sev1;
+		return sev1;
 	} else if (severity == 2) {
-		return styles.sev2;
+		return sev2;
 	} else {
-		return styles.sev3;
+		return sev3;
 	}
 }

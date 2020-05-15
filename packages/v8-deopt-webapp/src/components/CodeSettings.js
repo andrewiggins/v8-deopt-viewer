@@ -1,6 +1,11 @@
 import { createElement } from "preact";
 import { menu, menu_item, form_icon, form_switch } from "../spectre.scss";
-import styles from "./CodeSettings.scss";
+import {
+	codeSettings,
+	dirty as dirtyClass,
+	settingsBody,
+	settingsMenu,
+} from "./CodeSettings.scss";
 
 export const defaultShowLowSevs = false;
 export const defaultHideLineNum = false;
@@ -16,17 +21,15 @@ export function CodeSettings(props) {
 
 	return (
 		<details
-			class={[
-				styles.codeSettings,
-				props.class,
-				(dirty && styles.dirty) || null,
-			].join(" ")}
+			class={[codeSettings, props.class, (dirty && dirtyClass) || null].join(
+				" "
+			)}
 		>
 			<summary aria-label="Settings">
 				<SettingsCog />
 			</summary>
-			<div class={styles.settingsBody}>
-				<ul class={[menu, styles.settingsMenu].join(" ")}>
+			<div class={settingsBody}>
+				<ul class={[menu, settingsMenu].join(" ")}>
 					<li class={menu_item}>
 						<label class={form_switch}>
 							<input
