@@ -2,7 +2,7 @@ import { createElement } from "preact";
 import { useMemo, useCallback } from "preact/hooks";
 import { memo } from "preact/compat";
 import Prism from "prismjs";
-import { addFileDeoptDataForHighlight } from "../utils/deoptMarkers";
+import { addDeoptMarkers } from "../utils/deoptMarkers";
 import "./CodePanel.scss";
 
 /**
@@ -51,9 +51,7 @@ export function CodePanel({ routeParams, fileDeoptInfo }) {
 	const lang = determineLanguage(fileDeoptInfo.srcPath);
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
 	const onBeforeHighlight = useCallback(
-		(codeEl) => {
-			addFileDeoptDataForHighlight(codeEl, routeParams.fileId, fileDeoptInfo);
-		},
+		(rawHtml) => addDeoptMarkers(rawHtml, routeParams.fileId, fileDeoptInfo),
 		[routeParams.fileId, fileDeoptInfo]
 	);
 
@@ -63,7 +61,7 @@ export function CodePanel({ routeParams, fileDeoptInfo }) {
 				src={fileDeoptInfo.src}
 				lang={lang}
 				class="line-numbers"
-				onBeforeHighlight={onBeforeHighlight}
+				postProcessHighlight={onBeforeHighlight}
 			>
 				<LineNumbers
 					selectedLine={selectedEntry?.line ?? -1}
@@ -75,32 +73,35 @@ export function CodePanel({ routeParams, fileDeoptInfo }) {
 }
 
 /**
- * @param {{ lang: string; src: string; class?: string; onBeforeHighlight?: (code: HTMLElement) => void; children?: any }} props
+ * @param {{ lang: string; src: string; class?: string; postProcessHighlight?: (code: string) => string; children?: any }} props
  */
 function PrismCode(props) {
 	const className = [`language-${props.lang}`, props.class].join(" ");
 
-	const { __html, preClass, codeClass } = useMemo(() => {
-		const code = document.createElement("code");
-		code.className = className;
-		code.textContent = props.src;
+	const __html = useMemo(() => {
+		let html = Prism.highlight(
+			props.src,
+			Prism.languages[props.lang],
+			props.lang
+		);
 
-		const pre = document.createElement("pre");
-		pre.className = className;
+		// TODO: This postProcess pattern is leads to 3 expensive operations:
+		// 1. Parse initial Prism html in addDeoptMarks `root.innerHtml = rawHtml`
+		// 2. Re-serialize markup after markers have been added
+		// 3. Preact sets final markup to innerHTML of real element
+		//
+		// Perhaps we should manually muck up Prism markup in parent component
+		// after Prism has set innerHTML on its own element to avoid 1 & 2
+		if (props.postProcessHighlight) {
+			html = props.postProcessHighlight(html);
+		}
 
-		props.onBeforeHighlight(code);
-		Prism.highlightElement(code);
-
-		return {
-			__html: code.innerHTML,
-			preClass: pre.className,
-			codeClass: code.className,
-		};
-	}, [props.src, props.lang, props.class, props.onBeforeHighlight]);
+		return html;
+	}, [props.src, props.lang, props.postProcessHighlight]);
 
 	return (
-		<pre class={preClass}>
-			<code class={codeClass} dangerouslySetInnerHTML={{ __html }} />
+		<pre class={className}>
+			<code class={className} dangerouslySetInnerHTML={{ __html }} />
 			{props.children}
 		</pre>
 	);

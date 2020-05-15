@@ -2,21 +2,6 @@ import Prism from "prismjs";
 import styles from "./deoptMarkers.scss";
 
 /**
- * @typedef {{ fileId: string; deoptInfo: import('..').V8DeoptInfoWithSources; }} HighlightInfo
- * @type {WeakMap<Node, HighlightInfo>}
- */
-const deoptData = new WeakMap();
-
-/**
- * @param {Node} element
- * @param {string} fileId
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
- */
-export function addFileDeoptDataForHighlight(element, fileId, deoptInfo) {
-	deoptData.set(element, { fileId, deoptInfo });
-}
-
-/**
  * @param {Node} element
  * @param {Node} root
  */
@@ -138,12 +123,14 @@ function getMarkers(deoptInfo) {
 	]);
 }
 
-Prism.hooks.add("after-highlight", (env) => {
-	const root = env.element;
-	const { fileId, deoptInfo } = deoptData.get(root) || {};
-	if (!deoptInfo) {
-		return;
-	}
+/**
+ * @param {string} rawHtml
+ * @param {string} fileId
+ * @param {import('..').V8DeoptInfoWithSources} deoptInfo
+ */
+export function addDeoptMarkers(rawHtml, fileId, deoptInfo) {
+	const root = document.createElement("code");
+	root.innerHTML = rawHtml;
 
 	const markers = getMarkers(deoptInfo);
 
@@ -184,7 +171,9 @@ Prism.hooks.add("after-highlight", (env) => {
 
 		element = nextElement(element, root);
 	}
-});
+
+	return root.innerHTML;
+}
 
 function severityClass(severity) {
 	if (severity == 1) {
