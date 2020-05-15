@@ -25,9 +25,9 @@ function nextElement(element, root) {
  * @param {import('v8-deopt-parser').Entry["type"]} type
  */
 function getIcon(type) {
-	if (type == "code") {
+	if (type == "codes") {
 		return "▲";
-	} else if (type == "deopt") {
+	} else if (type == "deopts") {
 		return "▼";
 	} else {
 		return "☎";

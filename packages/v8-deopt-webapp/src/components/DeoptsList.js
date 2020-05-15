@@ -1,5 +1,5 @@
 import { createElement, Fragment } from "preact";
-import { useState } from "preact/hooks";
+import { useState, useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser";
 import spectre from "../spectre.scss";
 import styles from "./DeoptsList.scss";
@@ -11,21 +11,27 @@ import styles from "./DeoptsList.scss";
 const defaultEntryKind = "deopts";
 
 /**
- * @param {import("./FileViewer").FileViewerProps} props
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
  */
-export function DeoptsList({ routeParams, fileDeoptInfo }) {
+export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 	const [entryKind, setEntryKind] = useState(defaultEntryKind);
 
+	// TODO: Still need to figure out how to sync this state...
+	// if (selectedEntry.type !== entryKind) {
+	// 	setEntryKind(selectedEntry.type);
+	// }
+
+	// TODO: sort entries
 	let entries;
 	if (entryKind == "codes") {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<CodeEntry
 				entry={entry}
-				selected={entry.id == routeParams.entryId}
+				selected={entry.id == selectedEntry.id}
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={routeParams.fileId}
+						fileId={fileId}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -35,11 +41,11 @@ export function DeoptsList({ routeParams, fileDeoptInfo }) {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<DeoptEntry
 				entry={entry}
-				selected={entry.id == routeParams.entryId}
+				selected={entry.id == selectedEntry.id}
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={routeParams.fileId}
+						fileId={fileId}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -49,11 +55,11 @@ export function DeoptsList({ routeParams, fileDeoptInfo }) {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<ICEntry
 				entry={entry}
-				selected={entry.id == routeParams.entryId}
+				selected={entry.id == selectedEntry.id}
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={routeParams.fileId}
+						fileId={fileId}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -115,8 +121,11 @@ export function DeoptsList({ routeParams, fileDeoptInfo }) {
  * @param {{ entry: import("v8-deopt-parser").CodeEntry; selected: boolean; title: any }} props
  */
 function CodeEntry({ entry, selected, title }) {
+	const ref = useScrollIntoView(selected);
+
 	return (
 		<div
+			ref={ref}
 			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
 		>
 			<table
@@ -150,8 +159,11 @@ function CodeEntry({ entry, selected, title }) {
  * @param {{ entry: import("v8-deopt-parser").DeoptEntry; selected: boolean; title: any }} props
  */
 function DeoptEntry({ entry, selected, title }) {
+	const ref = useScrollIntoView(selected);
+
 	return (
 		<div
+			ref={ref}
 			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
 		>
 			<table
@@ -191,8 +203,11 @@ function DeoptEntry({ entry, selected, title }) {
  * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; }} props
  */
 function ICEntry({ entry, selected, title }) {
+	const ref = useScrollIntoView(selected);
+
 	return (
 		<div
+			ref={ref}
 			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
 		>
 			<table
@@ -254,4 +269,20 @@ function severityClass(severity) {
 	} else {
 		return styles.sev3;
 	}
+}
+
+/**
+ * @param {boolean} selected
+ * @returns {import("preact").RefObject<HTMLDivElement>}
+ */
+function useScrollIntoView(selected) {
+	/** @type {import("preact").RefObject<HTMLDivElement>} */
+	const ref = useRef(null);
+	useEffect(() => {
+		if (selected) {
+			ref.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [selected]);
+
+	return selected ? ref : null;
 }

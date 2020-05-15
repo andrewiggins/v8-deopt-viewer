@@ -20,42 +20,20 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {import('..').V8DeoptInfoWithSources} fileDeoptInfo
- * @param {string} entryId
- * @returns {import('v8-deopt-parser').Entry}
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
  */
-function findEntry(fileDeoptInfo, entryId) {
-	if (!entryId) {
-		return null;
-	}
-
-	/** @type {Array<keyof import('v8-deopt-parser').V8DeoptInfo>} */
-	const kinds = ["codes", "deopts", "ics"];
-	for (let kind of kinds) {
-		for (let entry of fileDeoptInfo[kind]) {
-			if (entry.id == entryId) {
-				return entry;
-			}
-		}
-	}
-}
-
-/**
- * @param {import("./FileViewer").FileViewerProps} props
- */
-export function CodePanel({ routeParams, fileDeoptInfo }) {
+export function CodePanel({ fileDeoptInfo, selectedEntry, fileId }) {
 	if (!fileDeoptInfo.src) {
 		return <CodeError error={fileDeoptInfo.error} />;
 	}
 
 	const lang = determineLanguage(fileDeoptInfo.srcPath);
-	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
 
 	/** @type {import('preact').RefObject<HTMLElement>} */
 	const codeRef = useRef(null);
 	useLayoutEffect(() => {
-		addDeoptMarkers(codeRef.current, routeParams.fileId, fileDeoptInfo);
-	}, [routeParams.fileId, fileDeoptInfo]);
+		addDeoptMarkers(codeRef.current, fileId, fileDeoptInfo);
+	}, [fileId, fileDeoptInfo]);
 
 	return (
 		<div class={styles.codePanel}>

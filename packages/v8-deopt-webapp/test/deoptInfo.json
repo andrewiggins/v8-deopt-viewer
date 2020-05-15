@@ -718,7 +718,7 @@
     ],
     "deopts": [
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "319",
         "functionName": "<anonymous>",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -750,7 +750,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "320",
         "functionName": "<anonymous>",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -769,7 +769,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "321",
         "functionName": "addAny",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -796,7 +796,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "322",
         "functionName": "<anonymous>",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -815,7 +815,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "323",
         "functionName": "<anonymous>",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -834,7 +834,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "326",
         "functionName": "addAny",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -924,7 +924,7 @@
         ]
       },
       {
-        "type": "deopt",
+        "type": "deopts",
         "id": "331",
         "functionName": "addObjects",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -945,7 +945,7 @@
     ],
     "codes": [
       {
-        "type": "code",
+        "type": "codes",
         "id": "307",
         "functionName": "addSmis",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -967,7 +967,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "308",
         "functionName": "processResult",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -994,7 +994,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "309",
         "functionName": "addNumbers",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1016,7 +1016,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "310",
         "functionName": "addStrings",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1038,7 +1038,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "311",
         "functionName": "addAny",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1090,7 +1090,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "318",
         "functionName": "<anonymous>",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1122,7 +1122,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "324",
         "functionName": "addObjects",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1189,7 +1189,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "325",
         "functionName": "Object1",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1206,7 +1206,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "332",
         "functionName": "Object2",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1228,7 +1228,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "335",
         "functionName": "Object3",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1250,7 +1250,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "339",
         "functionName": "Object4",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1272,7 +1272,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "343",
         "functionName": "Object5",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1294,7 +1294,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "347",
         "functionName": "Object6",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1316,7 +1316,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "352",
         "functionName": "Object7",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1338,7 +1338,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "357",
         "functionName": "Object8",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -1360,7 +1360,7 @@
         ]
       },
       {
-        "type": "code",
+        "type": "codes",
         "id": "362",
         "functionName": "log",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
