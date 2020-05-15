@@ -1,5 +1,5 @@
 import Prism from "prismjs";
-import { sortEntries } from "v8-deopt-parser";
+import { sortEntries } from "v8-deopt-parser/src/sortEntries";
 import styles from "./deoptMarkers.scss";
 
 /**

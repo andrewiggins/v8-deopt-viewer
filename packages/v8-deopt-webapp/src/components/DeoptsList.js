@@ -1,6 +1,6 @@
 import { createElement, Fragment } from "preact";
 import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
-import { severityIcState } from "v8-deopt-parser";
+import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
 import spectre from "../spectre.scss";
 import styles from "./DeoptsList.scss";
 
