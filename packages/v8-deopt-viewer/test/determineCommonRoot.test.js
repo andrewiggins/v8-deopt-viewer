@@ -46,7 +46,7 @@ test("determineCommonRoot(absolute paths)", (t) => {
 });
 
 test("determineCommonRoot(mixed paths and URLs)", (t) => {
-	// Windows & Linux .... TODO: What to do here??
+	// Windows & Linux
 	let result = determineCommonRoot([
 		"/a/b/c/d/e/",
 		"/a/b/c/",
