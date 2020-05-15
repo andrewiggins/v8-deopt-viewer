@@ -146,7 +146,7 @@ export class DeoptLogReader extends LogReader {
 			const isNodeWrapperFunction = line === 1 && column === 1;
 			if (isScript && !isNodeWrapperFunction) return;
 
-			const severity = severityOfOptimizationState(optimizationState);
+			let severity = severityOfOptimizationState(optimizationState);
 			const key = locationKey(functionName, file, line, column);
 			if (!this.entriesCode.has(key)) {
 				this.entriesCode.set(key, {
@@ -173,6 +173,7 @@ export class DeoptLogReader extends LogReader {
 				// From Deoptigate: If there are lots of updates that means the function
 				// was optimized a lot which could point to an issue.
 				code.severity = Math.max(code.severity, 3);
+				code.updates[code.updates.length - 1].severity = 3;
 			} else if (severity < code.severity) {
 				// Since these entries track optimizations (a good thing), set the
 				// severity to the best state this entry achieved (lowest severity). In
