@@ -3,7 +3,7 @@ import spectre from "../spectre.scss";
 import styles from "./CodeSettings.scss";
 
 /**
- * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; showLineNums: boolean; toggleShowLineNums: () => void; }} CodeSettingsProps
+ * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; hideLineNums: boolean; toggleHideLineNums: () => void; }} CodeSettingsProps
  * @param {CodeSettingsProps} props
  */
 export function CodeSettings(props) {
@@ -28,10 +28,10 @@ export function CodeSettings(props) {
 						<label class={spectre["form-switch"]}>
 							<input
 								type="checkbox"
-								checked={props.showLineNums}
-								onInput={() => props.toggleShowLineNums()}
+								checked={props.hideLineNums}
+								onInput={() => props.toggleHideLineNums()}
 							/>
-							<i class={spectre["form-icon"]}></i> Display Line Numbers
+							<i class={spectre["form-icon"]}></i> Hide Line Numbers
 						</label>
 					</li>
 				</ul>

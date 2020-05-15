@@ -24,13 +24,13 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; showLineNums: boolean; showLowSevs: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; hideLineNums: boolean; showLowSevs: boolean; }} props
  */
 export function CodePanel({
 	fileDeoptInfo,
 	selectedEntry,
 	fileId,
-	showLineNums,
+	hideLineNums,
 	showLowSevs,
 }) {
 	if (!fileDeoptInfo.src) {
@@ -55,7 +55,7 @@ export function CodePanel({
 			<PrismCode
 				src={fileDeoptInfo.src}
 				lang={lang}
-				class={(showLineNums && "line-numbers") || null}
+				class={(!hideLineNums && "line-numbers") || null}
 				ref={codeRef}
 			>
 				<LineNumbers

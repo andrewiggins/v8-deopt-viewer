@@ -36,7 +36,7 @@ function findEntry(deoptInfo, entryId) {
 export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
 	const [showLowSevs, setShowLowSevs] = useState(false);
-	const [showLineNums, setShowLineNums] = useState(true);
+	const [hideLineNums, setHideLineNums] = useState(false);
 
 	return (
 		<div class={styles.fileViewer}>
@@ -44,14 +44,14 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				class={styles.codeSettings}
 				showLowSevs={showLowSevs}
 				toggleShowLowSevs={() => setShowLowSevs((prev) => !prev)}
-				showLineNums={showLineNums}
-				toggleShowLineNums={() => setShowLineNums((prev) => !prev)}
+				hideLineNums={hideLineNums}
+				toggleHideLineNums={() => setHideLineNums((prev) => !prev)}
 			/>
 			<CodePanel
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
-				showLineNums={showLineNums}
+				hideLineNums={hideLineNums}
 				showLowSevs={showLowSevs}
 			/>
 			<DeoptsList
