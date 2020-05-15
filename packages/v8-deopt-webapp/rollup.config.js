@@ -23,6 +23,9 @@ const config = {
 			extract: true,
 			modules: true,
 			minimize: true,
+			namedExports(name) {
+				return name.replace(/-/g, "_");
+			},
 		}),
 		commonjs(),
 		visualizer({

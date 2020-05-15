@@ -4,7 +4,7 @@ import {
 	SeverityTableHeaders,
 	SeverityTableSummary,
 } from "./SummaryTable";
-import spectre from "../spectre.scss";
+import { table } from "../spectre.scss";
 import styles from "./SummaryList.scss";
 
 // TODO:
@@ -56,7 +56,7 @@ export function SummaryList({ deoptInfo, perFileStats }) {
 
 function InlineSeverityTable(props) {
 	return (
-		<table class={[props.class, styles.severityTable, spectre.table].join(" ")}>
+		<table class={[props.class, styles.severityTable, table].join(" ")}>
 			<caption>{props.caption}</caption>
 			<thead>
 				<tr>{props.header}</tr>

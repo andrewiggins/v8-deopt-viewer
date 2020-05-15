@@ -1,7 +1,18 @@
 import { createElement, Fragment } from "preact";
 import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
-import spectre from "../spectre.scss";
+import {
+	panel,
+	panel_nav,
+	tab,
+	tab_block,
+	tab_item,
+	active,
+	panel_body,
+	table,
+	table_striped,
+	table_hover,
+} from "../spectre.scss";
 import styles from "./DeoptsList.scss";
 
 /**
@@ -96,17 +107,17 @@ export function DeoptsList({
 	return (
 		<div
 			class={[
-				spectre.panel,
+				panel,
 				styles.deoptsListPanel,
 				(showLowSevs && styles.showLowSevs) || null,
 			].join(" ")}
 		>
-			<nav class={spectre["panel-nav"]}>
-				<ul class={[spectre["tab"], spectre["tab-block"]].join(" ")}>
+			<nav class={panel_nav}>
+				<ul class={[tab, tab_block].join(" ")}>
 					{tabLinks.map((link) => {
 						const liClass = [
-							spectre["tab-item"],
-							link.entryKind == entryKind ? spectre.active : null,
+							tab_item,
+							link.entryKind == entryKind ? active : null,
 						].join(" ");
 
 						return (
@@ -126,7 +137,7 @@ export function DeoptsList({
 					})}
 				</ul>
 			</nav>
-			<div class={spectre["panel-body"]}>
+			<div class={panel_body}>
 				{entries.length == 0 ? <p>None!</p> : entries}
 			</div>
 		</div>
@@ -148,13 +159,7 @@ function CodeEntry({ entry, selected, title }) {
 				selected ? styles.selected : null,
 			].join(" ")}
 		>
-			<table
-				class={[
-					spectre.table,
-					spectre["table-striped"],
-					spectre["table-hover"],
-				].join(" ")}
-			>
+			<table class={[table, table_striped, table_hover].join(" ")}>
 				<caption>{title}</caption>
 				<thead>
 					<tr>
@@ -190,13 +195,7 @@ function DeoptEntry({ entry, selected, title }) {
 				selected ? styles.selected : null,
 			].join(" ")}
 		>
-			<table
-				class={[
-					spectre.table,
-					spectre["table-striped"],
-					spectre["table-hover"],
-				].join(" ")}
-			>
+			<table class={[table, table_striped, table_hover].join(" ")}>
 				<caption>{title}</caption>
 				<thead>
 					<tr>
@@ -238,13 +237,7 @@ function ICEntry({ entry, selected, title }) {
 				selected ? styles.selected : null,
 			].join(" ")}
 		>
-			<table
-				class={[
-					spectre.table,
-					spectre["table-striped"],
-					spectre["table-hover"],
-				].join(" ")}
-			>
+			<table class={[table, table_striped, table_hover].join(" ")}>
 				<caption>{title}</caption>
 				<thead>
 					<tr>

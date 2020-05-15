@@ -1,5 +1,10 @@
 import { createElement, Fragment } from "preact";
-import spectre from "../spectre.scss";
+import {
+	table,
+	table_scroll,
+	table_striped,
+	table_hover,
+} from "../spectre.scss";
 import styles from "./SummaryTable.scss";
 
 /**
@@ -11,10 +16,10 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 			class={[
 				styles.summaryTable,
 				styles.grid,
-				spectre.table,
-				spectre["table-scroll"],
-				spectre["table-striped"],
-				spectre["table-hover"],
+				table,
+				table_scroll,
+				table_striped,
+				table_hover,
 			].join(" ")}
 		>
 			<thead>

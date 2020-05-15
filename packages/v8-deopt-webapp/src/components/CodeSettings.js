@@ -1,5 +1,5 @@
 import { createElement } from "preact";
-import spectre from "../spectre.scss";
+import { menu, menu_item, form_icon, form_switch } from "../spectre.scss";
 import styles from "./CodeSettings.scss";
 
 export const defaultShowLowSevs = false;
@@ -26,25 +26,25 @@ export function CodeSettings(props) {
 				<SettingsCog />
 			</summary>
 			<div class={styles.settingsBody}>
-				<ul class={[spectre.menu, styles.settingsMenu].join(" ")}>
-					<li class={spectre["menu-item"]}>
-						<label class={spectre["form-switch"]}>
+				<ul class={[menu, styles.settingsMenu].join(" ")}>
+					<li class={menu_item}>
+						<label class={form_switch}>
 							<input
 								type="checkbox"
 								checked={props.showLowSevs}
 								onInput={() => props.toggleShowLowSevs()}
 							/>
-							<i class={spectre["form-icon"]}></i> Display Low Severities
+							<i class={form_icon}></i> Display Low Severities
 						</label>
 					</li>
-					<li class={spectre["menu-item"]}>
-						<label class={spectre["form-switch"]}>
+					<li class={menu_item}>
+						<label class={form_switch}>
 							<input
 								type="checkbox"
 								checked={props.hideLineNums}
 								onInput={() => props.toggleHideLineNums()}
 							/>
-							<i class={spectre["form-icon"]}></i> Hide Line Numbers
+							<i class={form_icon}></i> Hide Line Numbers
 						</label>
 					</li>
 				</ul>

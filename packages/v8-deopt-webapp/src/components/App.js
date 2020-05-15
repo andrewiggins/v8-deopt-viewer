@@ -3,7 +3,7 @@ import { Router, Route, useRoute } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
 import { FileViewer } from "./FileViewer";
-import spectre from "../spectre.scss";
+import { btn, icon, icon_back } from "../spectre.scss";
 import styles from "./App.scss";
 
 /**
@@ -45,8 +45,8 @@ function Header() {
 				(!isRootRoute && styles.subRoute) || null,
 			].join(" ")}
 		>
-			<a href="#/" class={[spectre.btn, styles.backButton].join(" ")}>
-				<i class={[spectre.icon, spectre["icon-back"]].join(" ")}></i>
+			<a href="#/" class={[btn, styles.backButton].join(" ")}>
+				<i class={[icon, icon_back].join(" ")}></i>
 			</a>
 			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
 		</div>
