@@ -1,5 +1,6 @@
 import { createElement } from "preact";
 import { useState, useCallback, useMemo } from "preact/hooks";
+import { findEntry } from "v8-deopt-parser/src/findEntry";
 import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
 import {
@@ -8,29 +9,6 @@ import {
 	CodeSettings,
 } from "./CodeSettings";
 import { fileViewer, codeSettings } from "./FileViewer.scss";
-
-// TODO: Consider moving findEntry into v8-deopt-parser
-
-/**
- * @param {import('v8-deopt-parser').V8DeoptInfo} deoptInfo
- * @param {string} entryId
- * @returns {import('v8-deopt-parser').Entry}
- */
-function findEntry(deoptInfo, entryId) {
-	if (!entryId) {
-		return null;
-	}
-
-	/** @type {Array<keyof import('v8-deopt-parser').V8DeoptInfo>} */
-	const kinds = ["codes", "deopts", "ics"];
-	for (let kind of kinds) {
-		for (let entry of deoptInfo[kind]) {
-			if (entry.id == entryId) {
-				return entry;
-			}
-		}
-	}
-}
 
 /**
  * @typedef {{ fileId: string; entryId: string; }} RouteParams

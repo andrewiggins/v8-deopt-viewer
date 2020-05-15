@@ -110,6 +110,11 @@ export async function parseV8Log(
 
 export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
 
+export function findEntry(
+	deoptInfo: V8DeoptInfo,
+	entryId: string
+): Entry | null;
+
 export function sortEntries(entries: Entries[]): Entries[];
 
 export function severityIcState(state: ICState): number;

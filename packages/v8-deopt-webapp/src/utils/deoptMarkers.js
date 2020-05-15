@@ -123,7 +123,8 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 			const text = element.data;
 
 			// Handle of text node contains multiple lines
-			// TODO - Inserting markers in the middle of a text node doesn't work
+			// Inserting markers in the middle of a text node doesn't work since that would
+			// require parsing the text into tokens, which is what we assume has already happened
 			const lines = text.split("\n");
 			for (let i = 0; i < lines.length; i++) {
 				if (i > 0) {

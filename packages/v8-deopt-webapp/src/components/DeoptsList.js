@@ -51,7 +51,6 @@ export function DeoptsList({
 		}
 	}, [selectedEntryType]);
 
-	// TODO: sort entries
 	let entries;
 	if (entryKind == "codes") {
 		entries = fileDeoptInfo[entryKind].map((entry) => (

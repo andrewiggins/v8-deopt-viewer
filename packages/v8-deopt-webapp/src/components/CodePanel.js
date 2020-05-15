@@ -103,7 +103,7 @@ const LineNumbers = memo(({ selectedLine, contents }) => {
 function CodeError({ error }) {
 	// TODO: Improve
 	return (
-		<div>
+		<div class={codePanel}>
 			Error! {error instanceof Error ? error.toString() : JSON.stringify(error)}
 		</div>
 	);
