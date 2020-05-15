@@ -50,6 +50,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
+				showLineNums={showLineNums}
 			/>
 			<DeoptsList
 				fileDeoptInfo={fileDeoptInfo}

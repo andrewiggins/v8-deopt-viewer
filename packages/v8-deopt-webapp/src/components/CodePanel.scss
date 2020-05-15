@@ -19,8 +19,13 @@
 		padding-top: 0.1rem;
 	}
 
+	.line-number-rows {
+		display: none; // By default don't show the rows unless the parent "line-numbers" class is presents
+	}
+
 	// Custom overrides for line-numbers to work with our SSR rendering
 	.line-numbers .line-numbers-rows {
+		display: block;
 		top: 1em;
 		left: 0;
 	}
