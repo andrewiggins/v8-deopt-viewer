@@ -1,8 +1,9 @@
 import { createElement, Fragment } from "preact";
-import { Router, Route } from "wouter-preact";
+import { Router, Route, useRoute } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
 import { FileViewer } from "./FileViewer";
+import spectre from "../spectre.scss";
 import styles from "./App.scss";
 
 /**
@@ -13,17 +14,13 @@ export function App({ deoptInfo }) {
 
 	return (
 		<Fragment>
-			{/* TODO: Finish header
-			- Style header
-			- Add back button to return to summary
-			 */}
 			{/*
 			TODO: Add settings cog
 			- Show/hide line numbers
 			- Show/hide low severities
 			 */}
-			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
 			<Router hook={useHashLocation}>
+				<Header />
 				<Route path="/">
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
@@ -40,5 +37,23 @@ export function App({ deoptInfo }) {
 				</Route>
 			</Router>
 		</Fragment>
+	);
+}
+
+function Header() {
+	const [isRootRoute] = useRoute("/");
+
+	return (
+		<div
+			class={[
+				styles.pageHeader,
+				(!isRootRoute && styles.subRoute) || null,
+			].join(" ")}
+		>
+			<a href="#/" class={[spectre.btn, styles.backButton].join(" ")}>
+				<i class={[spectre.icon, spectre["icon-back"]].join(" ")}></i>
+			</a>
+			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
+		</div>
 	);
 }

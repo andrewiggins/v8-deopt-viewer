@@ -1,10 +1,17 @@
-$headerLineHeight: 1.2;
-$headerMargin: 1rem;
+@function getHeaderMargin($headerFontSize) {
+	@return $headerFontSize / 2; // From Spectre for all headers (.5em)
+}
 
-$headerFontSize: 2rem;
-$headerFontSizeSm: 1.5rem;
+@function getHeaderHeight($headerFontSize) {
+	@return ($headerFontSize * $headerLineHeight) + getHeaderMargin($headerFontSize);
+}
 
-$headerHeight: ($headerFontSize * $headerLineHeight) + $headerMargin;
-$headerHeightSm: ($headerFontSizeSm * $headerLineHeight) + $headerMargin;
+$headerLineHeight: 1.2; // From Spectre for .h1
 
-$headerViewportSm: 768px;
+$headerFontSize: 2rem; // From Spectre for .h1
+$headerFontSizeSm: 1.5rem; // Custom override
+
+$headerHeight: getHeaderHeight($headerFontSize);
+$headerHeightSm: getHeaderHeight($headerFontSizeSm);
+
+$headerViewportSm: 768px; // Custom override

@@ -10,7 +10,7 @@
 @import "~spectre.css/src/typography";
 // @import "~spectre.css/src/asian";
 @import "~spectre.css/src/tables";
-// @import "~spectre.css/src/buttons";
+@import "~spectre.css/src/buttons";
 // @import "~spectre.css/src/forms";
 // @import "~spectre.css/src/labels";
 // @import "~spectre.css/src/codes";
@@ -49,8 +49,8 @@
 
 /*! Spectre.css Icons | MIT License | github.com/picturepan2/spectre */
 // Icons
-// @import "~spectre.css/src/icons/icons-core";
-// @import "~spectre.css/src/icons/icons-navigation";
+@import "~spectre.css/src/icons/icons-core";
+@import "~spectre.css/src/icons/icons-navigation";
 // @import "~spectre.css/src/icons/icons-action";
 // @import "~spectre.css/src/icons/icons-object";
 

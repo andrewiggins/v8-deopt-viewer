@@ -1,7 +1,40 @@
 @import "../variables";
 
+.pageHeader {
+	display: flex;
+	align-items: center;
+	margin-bottom: getHeaderMargin($headerFontSize);
+	padding-left: 0.5rem;
+
+	transform: translate3d(calc(-34px - 0.7rem), 0, 0);
+	transition: transform 0.25s ease-out;
+}
+
+.pageTitle {
+	margin-bottom: 0;
+}
+
+.backButton {
+	position: relative;
+	top: 3px;
+	margin-right: 0.6rem;
+	border-radius: 50%;
+}
+
+.pageHeader.subRoute {
+	transform: none;
+}
+
 @media (max-width: $headerViewportSm) {
 	.pageTitle {
 		font-size: $headerFontSizeSm;
+	}
+
+	.pageHeader {
+		margin-bottom: getHeaderMargin($headerFontSizeSm);
+	}
+
+	.backButton {
+		top: 1px;
 	}
 }
