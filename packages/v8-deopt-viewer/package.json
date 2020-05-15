@@ -8,6 +8,9 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "scripts": {
+    "test": "node ./test/determineCommonRoot.test.js"
+  },
   "dependencies": {
     "httpie": "^1.1.2",
     "open": "^7.0.3",
