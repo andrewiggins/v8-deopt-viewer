@@ -1,7 +1,9 @@
 import { createElement } from "preact";
+import { useState, useCallback, useMemo } from "preact/hooks";
 import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
 import styles from "./FileViewer.scss";
+import { CodeSettings } from "./CodeSettings";
 
 /**
  * @param {import('..').V8DeoptInfoWithSources} fileDeoptInfo
@@ -31,9 +33,19 @@ function findEntry(fileDeoptInfo, entryId) {
  */
 export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
+	const [showLowSevs, setShowLowSevs] = useState(false);
+	const [showLineNums, setShowLineNums] = useState(true);
+	const filteredDeoptInfo = useMemo(() => {}, [fileDeoptInfo, showLowSevs]);
 
 	return (
 		<div class={styles.fileViewer}>
+			<CodeSettings
+				class={styles.codeSettings}
+				showLowSevs={showLowSevs}
+				toggleShowLowSevs={() => setShowLowSevs((prev) => !prev)}
+				showLineNums={showLineNums}
+				toggleShowLineNums={() => setShowLineNums((prev) => !prev)}
+			/>
 			<CodePanel
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}

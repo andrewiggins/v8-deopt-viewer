@@ -11,7 +11,7 @@
 // @import "~spectre.css/src/asian";
 @import "~spectre.css/src/tables";
 @import "~spectre.css/src/buttons";
-// @import "~spectre.css/src/forms";
+@import "~spectre.css/src/forms";
 // @import "~spectre.css/src/labels";
 // @import "~spectre.css/src/codes";
 // @import "~spectre.css/src/media";
@@ -31,7 +31,7 @@
 // @import "~spectre.css/src/chips";
 // @import "~spectre.css/src/dropdowns";
 // @import "~spectre.css/src/empty";
-// @import "~spectre.css/src/menus";
+@import "~spectre.css/src/menus";
 // @import "~spectre.css/src/modals";
 // @import "~spectre.css/src/navs";
 // @import "~spectre.css/src/pagination";
@@ -68,6 +68,14 @@
 // @import "~spectre.css/src/sliders";
 // @import "~spectre.css/src/timelines";
 // @import "~spectre.css/src/viewer-360";
+
+// ==========================
+// Spectre fixes
+// ==========================
+
+.form-switch .form-icon {
+	box-sizing: border-box; // Not sure why this isn't always inherited properly
+}
 
 // ==========================
 // Spectre Overrides

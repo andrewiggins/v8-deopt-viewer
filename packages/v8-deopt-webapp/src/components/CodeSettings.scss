@@ -1,0 +1,75 @@
+:global {
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+}
+
+.codeSettings > summary {
+	position: relative;
+	z-index: 400; // So it is above the dropdown menu
+
+	width: 32px;
+	height: 32px;
+	list-style: none;
+
+	background: radial-gradient(#fff, #0000);
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	svg {
+		transition: transform 0.5s ease-out;
+		fill: #ccc;
+	}
+
+	// .form-switch .form-icon {
+	// 	box-sizing: border-box; // Not sure why this isn't inherited
+	// }
+
+	&:hover,
+	&:focus {
+		background-color: #f1f1fc;
+
+		svg {
+			fill: #5755d9;
+		}
+	}
+
+	&:focus {
+		outline: rgba(87, 85, 217, 0.2) solid 0.1rem;
+	}
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+}
+
+.codeSettings[open] {
+	summary svg {
+		transform: rotate(270deg);
+		fill: #5755d9;
+	}
+
+	> .menu {
+		display: block;
+	}
+}
+
+.codeSettings.dirty {
+	summary svg {
+		fill: #5755d9;
+	}
+}
+
+.settingsBody {
+	position: absolute;
+	right: 0;
+}
+
+.settingsMenu {
+	min-width: 224px;
+
+	@media (max-width: 580px) {
+		min-width: 130px;
+	}
+}
