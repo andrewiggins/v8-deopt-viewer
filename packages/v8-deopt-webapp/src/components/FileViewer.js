@@ -3,13 +3,15 @@ import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
 
 /**
- * @param {{ fileDeoptInfo: import('..').V8DeoptInfoWithSources }} props
+ * @typedef {{ fileId: string; entryId: string; }} RouteParams
+ * @typedef {{ routeParams: RouteParams, fileDeoptInfo: import('..').V8DeoptInfoWithSources }} FileViewerProps
+ * @param {FileViewerProps} props
  */
-export function FileViewer({ fileDeoptInfo }) {
+export const FileViewer = (props) => {
 	return (
 		<div>
-			<CodePanel fileDeoptInfo={fileDeoptInfo} />
-			<DeoptsList fileDeoptInfo={fileDeoptInfo} />
+			<CodePanel {...props} />
+			<DeoptsList {...props} />
 		</div>
 	);
-}
+};

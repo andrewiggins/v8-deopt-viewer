@@ -1,3 +1,9 @@
+@import "theme.scss";
+
+html {
+	scroll-padding-top: 5rem;
+}
+
 body {
 	overflow-x: initial !important;
 }

@@ -1,15 +1,19 @@
 import Prism from "prismjs";
 import styles from "./deoptMarkers.scss";
 
-/** @type {WeakMap<Node, import('..').V8DeoptInfoWithSources>} */
+/**
+ * @typedef {{ fileId: string; deoptInfo: import('..').V8DeoptInfoWithSources; }} HighlightInfo
+ * @type {WeakMap<Node, HighlightInfo>}
+ */
 const deoptData = new WeakMap();
 
 /**
  * @param {Node} element
+ * @param {string} fileId
  * @param {import('..').V8DeoptInfoWithSources} deoptInfo
  */
-export function addFileDeoptDataForHighlight(element, deoptInfo) {
-	deoptData.set(element, deoptInfo);
+export function addFileDeoptDataForHighlight(element, fileId, deoptInfo) {
+	deoptData.set(element, { fileId, deoptInfo });
 }
 
 /**
@@ -63,14 +67,21 @@ function locHasMarker(markers, curLine, curColumn) {
  * @param {import('v8-deopt-parser').Entry} marker
  * @returns {HTMLElement}
  */
-function createMarkerElement(marker) {
+function createMarkerElement(fileId, marker) {
 	const mark = document.createElement("mark");
 	mark.textContent = getIcon(marker.type);
 
 	const link = document.createElement("a");
+	const linkId = `/file/${fileId}/${marker.id}`;
 	const classes = [styles.deoptMarker, severityClass(marker.severity)];
+	if (location.hash == "#" + linkId) {
+		classes.push(styles.active);
+		setTimeout(() => link.scrollIntoView(), 0);
+	}
+
+	link.id = linkId;
+	link.href = "#" + link.id;
 	link.className = classes.join(" ");
-	link.href = location.hash + `/${marker.line}/${marker.column}`;
 	link.appendChild(mark);
 
 	return link;
@@ -82,11 +93,11 @@ function createMarkerElement(marker) {
  * @param {number} curLine
  * @param {number} curColumn
  */
-function consumeMarkers(element, markers, curLine, curColumn) {
+function consumeMarkers(element, fileId, markers, curLine, curColumn) {
 	let refChild = element;
 	while (locHasMarker(markers, curLine, curColumn)) {
 		const marker = markers.shift();
-		const lastMark = createMarkerElement(marker);
+		const lastMark = createMarkerElement(fileId, marker);
 
 		element.parentNode.insertBefore(lastMark, refChild.nextSibling);
 		refChild = lastMark;
@@ -129,7 +140,7 @@ function getMarkers(deoptInfo) {
 
 Prism.hooks.add("after-highlight", (env) => {
 	const root = env.element;
-	const deoptInfo = deoptData.get(root);
+	const { fileId, deoptInfo } = deoptData.get(root) || {};
 	if (!deoptInfo) {
 		return;
 	}
@@ -158,7 +169,13 @@ Prism.hooks.add("after-highlight", (env) => {
 				curColumn += line.length;
 
 				if (locHasMarker(markers, curLine, curColumn)) {
-					const lastMark = consumeMarkers(element, markers, curLine, curColumn);
+					const lastMark = consumeMarkers(
+						element,
+						fileId,
+						markers,
+						curLine,
+						curColumn
+					);
 
 					element = nextElement(lastMark, root);
 				}
