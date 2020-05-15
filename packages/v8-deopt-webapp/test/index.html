@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>V8 Deopt Webapp Test Page</title>
-		<link href="../dist/index.css" rel="stylesheet" />
+		<link href="../dist/index.debug.css" rel="stylesheet" />
 		<style type="text/css">
 			html,
 			body,
@@ -16,7 +16,7 @@
 	<body>
 		<div id="root"></div>
 		<script type="module">
-			import { renderIntoDom } from "../dist/index.js";
+			import { renderIntoDom } from "../dist/index.debug.js";
 
 			fetch("./deoptInfo.json")
 				.then((res) => res.json())

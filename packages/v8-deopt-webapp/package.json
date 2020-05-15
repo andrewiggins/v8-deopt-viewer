@@ -23,6 +23,7 @@
     "prismjs": "^1.20.0",
     "rollup": "^2.9.0",
     "rollup-plugin-postcss": "^3.1.1",
+    "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-visualizer": "^4.0.4",
     "spectre.css": "^0.5.8",
     "wouter-preact": "^2.4.0"
