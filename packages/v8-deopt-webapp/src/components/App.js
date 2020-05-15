@@ -14,11 +14,6 @@ export function App({ deoptInfo }) {
 
 	return (
 		<Fragment>
-			{/*
-			TODO: Add settings cog
-			- Show/hide line numbers
-			- Show/hide low severities
-			 */}
 			<Router hook={useHashLocation}>
 				<Header />
 				<Route path="/">

@@ -5,12 +5,14 @@ import { CodePanel } from "./CodePanel";
 import styles from "./FileViewer.scss";
 import { CodeSettings } from "./CodeSettings";
 
+// TODO: Consider moving findEntry and filterEntries into v8-deopt-parser
+
 /**
- * @param {import('..').V8DeoptInfoWithSources} fileDeoptInfo
+ * @param {import('v8-deopt-parser').V8DeoptInfo} deoptInfo
  * @param {string} entryId
  * @returns {import('v8-deopt-parser').Entry}
  */
-function findEntry(fileDeoptInfo, entryId) {
+function findEntry(deoptInfo, entryId) {
 	if (!entryId) {
 		return null;
 	}
@@ -18,7 +20,7 @@ function findEntry(fileDeoptInfo, entryId) {
 	/** @type {Array<keyof import('v8-deopt-parser').V8DeoptInfo>} */
 	const kinds = ["codes", "deopts", "ics"];
 	for (let kind of kinds) {
-		for (let entry of fileDeoptInfo[kind]) {
+		for (let entry of deoptInfo[kind]) {
 			if (entry.id == entryId) {
 				return entry;
 			}
@@ -35,7 +37,6 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
 	const [showLowSevs, setShowLowSevs] = useState(false);
 	const [showLineNums, setShowLineNums] = useState(true);
-	const filteredDeoptInfo = useMemo(() => {}, [fileDeoptInfo, showLowSevs]);
 
 	return (
 		<div class={styles.fileViewer}>
@@ -51,11 +52,13 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
 				showLineNums={showLineNums}
+				showLowSevs={showLowSevs}
 			/>
 			<DeoptsList
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
+				showLowSevs={showLowSevs}
 			/>
 		</div>
 	);

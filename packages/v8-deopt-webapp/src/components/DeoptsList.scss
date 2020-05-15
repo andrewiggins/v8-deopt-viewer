@@ -12,6 +12,7 @@
 }
 
 .entryTable {
+	display: block;
 	margin: 1rem auto;
 	padding: 0.5rem;
 	border: 0.05rem solid #dadee4;
@@ -40,15 +41,23 @@
 	background-color: #fbf1a9;
 }
 
-.sev1 {
+.entryTable.sev1 {
+	display: none;
+}
+
+.showLowSevs .entryTable.sev1 {
+	display: block;
+}
+
+td.sev1 {
 	color: var(--sev1-color);
 }
 
-.sev2 {
+td.sev2 {
 	color: var(--sev2-color);
 }
 
-.sev3 {
+td.sev3 {
 	font-weight: 600;
 	color: var(--sev3-color);
 }

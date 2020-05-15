@@ -11,9 +11,14 @@ import styles from "./DeoptsList.scss";
 const defaultEntryKind = "codes";
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; }} props
  */
-export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
+export function DeoptsList({
+	selectedEntry,
+	fileDeoptInfo,
+	fileId,
+	showLowSevs,
+}) {
 	const selectedEntryType = selectedEntry?.type ?? defaultEntryKind;
 	const [entryKind, setEntryKind] = useState(selectedEntryType);
 	const selectedId = selectedEntry?.id;
@@ -89,7 +94,13 @@ export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 	];
 
 	return (
-		<div class={[spectre.panel, styles.deoptsListPanel].join(" ")}>
+		<div
+			class={[
+				spectre.panel,
+				styles.deoptsListPanel,
+				(showLowSevs && styles.showLowSevs) || null,
+			].join(" ")}
+		>
 			<nav class={spectre["panel-nav"]}>
 				<ul class={[spectre["tab"], spectre["tab-block"]].join(" ")}>
 					{tabLinks.map((link) => {
@@ -131,7 +142,11 @@ function CodeEntry({ entry, selected, title }) {
 	return (
 		<div
 			ref={ref}
-			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
+			class={[
+				styles.entryTable,
+				severityClass(entry.severity),
+				selected ? styles.selected : null,
+			].join(" ")}
 		>
 			<table
 				class={[
@@ -169,7 +184,11 @@ function DeoptEntry({ entry, selected, title }) {
 	return (
 		<div
 			ref={ref}
-			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
+			class={[
+				styles.entryTable,
+				severityClass(entry.severity),
+				selected ? styles.selected : null,
+			].join(" ")}
 		>
 			<table
 				class={[
@@ -213,7 +232,11 @@ function ICEntry({ entry, selected, title }) {
 	return (
 		<div
 			ref={ref}
-			class={[styles.entryTable, selected ? styles.selected : null].join(" ")}
+			class={[
+				styles.entryTable,
+				severityClass(entry.severity),
+				selected ? styles.selected : null,
+			].join(" ")}
 		>
 			<table
 				class={[

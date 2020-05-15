@@ -27,7 +27,12 @@
 }
 
 .deoptMarker.sev1 {
+	display: none;
 	@include severity(--sev1-color);
+}
+
+.showLowSevs .deoptMarker.sev1 {
+	display: inline;
 }
 
 .deoptMarker.sev2 {

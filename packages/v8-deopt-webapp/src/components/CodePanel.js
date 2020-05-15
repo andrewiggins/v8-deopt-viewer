@@ -4,6 +4,7 @@ import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers } from "../utils/deoptMarkers";
 import styles from "./CodePanel.scss";
+import markerStyles from "../utils/deoptMarkers.scss";
 
 /**
  * @param {string} path
@@ -23,13 +24,14 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; showLineNums: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; showLineNums: boolean; showLowSevs: boolean; }} props
  */
 export function CodePanel({
 	fileDeoptInfo,
 	selectedEntry,
 	fileId,
 	showLineNums,
+	showLowSevs,
 }) {
 	if (!fileDeoptInfo.src) {
 		return <CodeError error={fileDeoptInfo.error} />;
@@ -44,7 +46,12 @@ export function CodePanel({
 	}, [fileId, fileDeoptInfo]);
 
 	return (
-		<div class={styles.codePanel}>
+		<div
+			class={[
+				styles.codePanel,
+				(showLowSevs && markerStyles.showLowSevs) || null,
+			].join(" ")}
+		>
 			<PrismCode
 				src={fileDeoptInfo.src}
 				lang={lang}
