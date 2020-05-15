@@ -14,16 +14,15 @@ const defaultEntryKind = "codes";
  * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
  */
 export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
-	const [entryKind, setEntryKind] = useState(
-		selectedEntry?.type ?? defaultEntryKind
-	);
+	const selectedEntryType = selectedEntry?.type ?? defaultEntryKind;
+	const [entryKind, setEntryKind] = useState(selectedEntryType);
 	const selectedId = selectedEntry?.id;
 
 	useLayoutEffect(() => {
-		if (selectedEntry.type !== entryKind) {
-			setEntryKind(selectedEntry.type);
+		if (selectedEntryType !== entryKind) {
+			setEntryKind(selectedEntryType);
 		}
-	}, [selectedEntry.type]);
+	}, [selectedEntryType]);
 
 	// TODO: sort entries
 	let entries;
