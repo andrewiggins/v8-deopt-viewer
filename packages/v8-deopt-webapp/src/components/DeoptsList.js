@@ -8,13 +8,14 @@ import styles from "./DeoptsList.scss";
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
  * @type {EntryKind}
  */
-const defaultEntryKind = "deopts";
+const defaultEntryKind = "codes";
 
 /**
  * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;}} props
  */
 export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 	const [entryKind, setEntryKind] = useState(defaultEntryKind);
+	const selectedId = selectedEntry?.id;
 
 	// TODO: Still need to figure out how to sync this state...
 	// if (selectedEntry.type !== entryKind) {
@@ -27,7 +28,7 @@ export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<CodeEntry
 				entry={entry}
-				selected={entry.id == selectedEntry.id}
+				selected={entry.id == selectedId}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -41,7 +42,7 @@ export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<DeoptEntry
 				entry={entry}
-				selected={entry.id == selectedEntry.id}
+				selected={entry.id == selectedId}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -55,7 +56,7 @@ export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<ICEntry
 				entry={entry}
-				selected={entry.id == selectedEntry.id}
+				selected={entry.id == selectedId}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -112,7 +113,9 @@ export function DeoptsList({ selectedEntry, fileDeoptInfo, fileId }) {
 					})}
 				</ul>
 			</nav>
-			<div class={spectre["panel-body"]}>{entries}</div>
+			<div class={spectre["panel-body"]}>
+				{entries.length == 0 ? <p>None!</p> : entries}
+			</div>
 		</div>
 	);
 }

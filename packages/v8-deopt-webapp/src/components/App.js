@@ -13,6 +13,15 @@ export function App({ deoptInfo }) {
 
 	return (
 		<Fragment>
+			{/* TODO: Finish header
+			- Style header
+			- Add back button to return to summary
+			 */}
+			{/*
+			TODO: Add settings cog
+			- Show/hide line numbers
+			- Show/hide low severities
+			 */}
 			<h1 class={styles.pageTitle}>V8 Deopt Viewer</h1>
 			<Router hook={useHashLocation}>
 				<Route path="/">
