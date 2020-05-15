@@ -13,9 +13,7 @@ export async function parseV8Log(v8LogContent, options = {}) {
 	return logReader.toJSON();
 }
 
-export {
-	locationKey,
-	parseLocationKey,
-	groupByFile,
-	groupByFileAndLocation,
-} from "./groupBy.js";
+export { groupByFile } from "./groupBy.js";
+
+// TODO: Consider rewriting v8-tools-core to be tree-shakeable
+export { severityIcState } from "./propertyICParsers.js";

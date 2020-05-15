@@ -16,7 +16,7 @@ interface CodeEntry {
 
 interface CodeEntryUpdate {
 	timestamp: number;
-	state: string;
+	state: CodeState;
 	severity: number;
 }
 
@@ -70,8 +70,8 @@ interface ICEntry {
 
 interface ICEntryUpdate {
 	type: string;
-	oldState: string;
-	newState: string;
+	oldState: ICState;
+	newState: ICState;
 	key: string;
 	map: string;
 	optimizationState: string;
@@ -90,12 +90,6 @@ interface PerFileV8DeoptInfo {
 	[filePath: string]: V8DeoptInfo;
 }
 
-interface PerFilePerLocationV8DeoptInfo {
-	[filePath: string]: {
-		[locationKey: string]: V8DeoptInfo;
-	};
-}
-
 interface Options {
 	keepInternals?: boolean;
 }
@@ -111,9 +105,6 @@ export async function parseV8Log(
 	keepInternals?: Options
 ): Promise<V8DeoptInfo>;
 
-export function locationKey(entry: Entry): string;
-export function parseLocationKey(key: string): [string, number, number];
 export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
-export function groupByFileAndLocation(
-	rawDeoptInfo: V8DeoptInfo
-): PerFilePerLocationV8DeoptInfo;
+
+export function severityIcState(state: ICState): number;
