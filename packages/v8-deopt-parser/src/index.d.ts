@@ -3,7 +3,7 @@ const MIN_SEVERITY = 0;
 type CodeState = "compiled" | "optimizable" | "optimized" | "unknown";
 
 interface CodeEntry {
-	type: "code";
+	type: "codes";
 	id: string;
 	functionName: string;
 	file: string;
@@ -21,7 +21,7 @@ interface CodeEntryUpdate {
 }
 
 interface DeoptEntry {
-	type: "deopt";
+	type: "deopts";
 	id: string;
 	functionName: string;
 	file: string;

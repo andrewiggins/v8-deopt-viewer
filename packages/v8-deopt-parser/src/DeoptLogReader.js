@@ -150,7 +150,7 @@ export class DeoptLogReader extends LogReader {
 			const key = locationKey(functionName, file, line, column);
 			if (!this.entriesCode.has(key)) {
 				this.entriesCode.set(key, {
-					type: "code",
+					type: "codes",
 					id: `${this._id++}`,
 					functionName,
 					file,
@@ -225,7 +225,7 @@ export class DeoptLogReader extends LogReader {
 		const severity = getOptimizationSeverity(bailoutType);
 		if (!this.entriesDeopt.has(key)) {
 			this.entriesDeopt.set(key, {
-				type: "deopt",
+				type: "deopts",
 				id: `${this._id++}`,
 				functionName,
 				file,
