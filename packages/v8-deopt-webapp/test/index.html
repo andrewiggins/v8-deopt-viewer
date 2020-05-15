@@ -18,8 +18,11 @@
 		<script type="module">
 			import { renderIntoDom } from "../dist/index.debug.js";
 
-			// fetch("./deoptInfo.json")
-			fetch("./deoptInfoError.json")
+			const dataUrl = location.search.includes("error")
+				? "./deoptInfoError.json"
+				: "./deoptInfo.json";
+
+			fetch(dataUrl)
 				.then((res) => res.json())
 				.then((deoptInfo) => {
 					renderIntoDom(deoptInfo, document.getElementById("root"));
