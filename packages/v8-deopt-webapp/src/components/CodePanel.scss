@@ -6,7 +6,6 @@
 	// Prism overrides
 	//*******************************
 	pre[class*="language-"] {
-		display: inline-block; // Enable background color of pre to extend into overflow
 		overflow: visible; // Allow CodePanel styles to handle overflow
 	}
 
@@ -49,6 +48,8 @@
 	border-radius: 0.1rem;
 	border-top-right-radius: 0;
 	scroll-padding-top: 50%;
+
+	background-color: #f5f2f0; // Make sure background is consistent on very small and very large screens.
 }
 
 .codePanel > pre {
