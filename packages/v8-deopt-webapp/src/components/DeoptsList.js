@@ -1,5 +1,6 @@
 import { createElement, Fragment } from "preact";
 import { useState } from "preact/hooks";
+import { severityIcState } from "v8-deopt-parser";
 import spectre from "../spectre.scss";
 import styles from "./DeoptsList.scss";
 
@@ -136,7 +137,7 @@ function CodeEntry({ entry, selected, title }) {
 					{entry.updates.map((update, i) => (
 						<tr>
 							<td>{update.timestamp}</td>
-							<td>{update.state}</td>
+							<td class={severityClass(update.severity)}>{update.state}</td>
 						</tr>
 					))}
 				</tbody>
@@ -173,7 +174,9 @@ function DeoptEntry({ entry, selected, title }) {
 					{entry.updates.map((update) => (
 						<tr>
 							<td>{update.timestamp}</td>
-							<td>{update.bailoutType}</td>
+							<td class={severityClass(update.severity)}>
+								{update.bailoutType}
+							</td>
 							<td>{update.deoptReason}</td>
 							<td>{update.inlined ? "yes" : "no"}</td>
 						</tr>
@@ -211,8 +214,12 @@ function ICEntry({ entry, selected, title }) {
 				<tbody>
 					{entry.updates.map((update) => (
 						<tr>
-							<td>{update.oldState}</td>
-							<td>{update.newState}</td>
+							<td class={severityClass(severityIcState(update.oldState))}>
+								{update.oldState}
+							</td>
+							<td class={severityClass(severityIcState(update.newState))}>
+								{update.newState}
+							</td>
 							<td>{update.key}</td>
 							<td>{update.map}</td>
 						</tr>
@@ -237,4 +244,14 @@ function EntryTitle({ entry, relativePath, fileId }) {
 			</a>
 		</Fragment>
 	);
+}
+
+function severityClass(severity) {
+	if (severity == 1) {
+		return styles.sev1;
+	} else if (severity == 2) {
+		return styles.sev2;
+	} else {
+		return styles.sev3;
+	}
 }

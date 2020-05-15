@@ -40,3 +40,16 @@
 .entryTable.selected {
 	background-color: #fbf1a9;
 }
+
+.sev1 {
+	color: var(--sev1-color);
+}
+
+.sev2 {
+	color: var(--sev2-color);
+}
+
+.sev3 {
+	font-weight: 600;
+	color: var(--sev3-color);
+}

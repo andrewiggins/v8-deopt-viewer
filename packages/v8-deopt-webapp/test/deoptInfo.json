@@ -1065,27 +1065,27 @@
           {
             "timestamp": 382580,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 457017,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 497892,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 562240,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 624110,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           }
         ]
       },
@@ -1117,7 +1117,7 @@
           {
             "timestamp": 387073,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           }
         ]
       },
@@ -1149,42 +1149,42 @@
           {
             "timestamp": 499940,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 558235,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 562103,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 621979,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 626612,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 686551,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 691542,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           },
           {
             "timestamp": 759149,
             "state": "optimized",
-            "severity": 1
+            "severity": 3
           }
         ]
       },
