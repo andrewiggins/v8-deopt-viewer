@@ -124,14 +124,11 @@ function getMarkers(deoptInfo) {
 }
 
 /**
- * @param {string} rawHtml
+ * @param {HTMLElement} root
  * @param {string} fileId
  * @param {import('..').V8DeoptInfoWithSources} deoptInfo
  */
-export function addDeoptMarkers(rawHtml, fileId, deoptInfo) {
-	const root = document.createElement("code");
-	root.innerHTML = rawHtml;
-
+export function addDeoptMarkers(root, fileId, deoptInfo) {
 	const markers = getMarkers(deoptInfo);
 
 	/** @type {Node} */
