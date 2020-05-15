@@ -1,4 +1,5 @@
 import Prism from "prismjs";
+import { sortEntries } from "v8-deopt-parser";
 import styles from "./deoptMarkers.scss";
 
 /**
@@ -91,32 +92,13 @@ function consumeMarkers(element, fileId, markers, curLine, curColumn) {
 	return refChild;
 }
 
-const typeOrder = ["code", "deopt", "ics"];
-
-/**
- * @param {Markers} markers
- */
-function sortMarkers(markers) {
-	return markers.sort((loc1, loc2) => {
-		if (loc1.line != loc2.line) {
-			return loc1.line - loc2.line;
-		} else if (loc1.column != loc2.column) {
-			return loc1.column - loc2.column;
-		} else if (loc1.type != loc2.type) {
-			return typeOrder.indexOf(loc1.type) - typeOrder.indexOf(loc2.type);
-		} else {
-			return 0;
-		}
-	});
-}
-
 /**
  * @typedef {Array<import('v8-deopt-parser').Entry>} Markers
  * @param {import('..').V8DeoptInfoWithSources} deoptInfo
  * @returns {Markers}
  */
 function getMarkers(deoptInfo) {
-	return sortMarkers([
+	return sortEntries([
 		...deoptInfo.codes,
 		...deoptInfo.deopts,
 		...deoptInfo.ics,

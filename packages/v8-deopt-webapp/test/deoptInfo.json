@@ -3,220 +3,6 @@
     "ics": [
       {
         "type": "ics",
-        "id": "312",
-        "functionName": "processResult",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 104,
-        "column": 11,
-        "severity": 2,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "push",
-            "map": "0x017b76602c81",
-            "optimizationState": "optimizable",
-            "severity": 1
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "monomorphic",
-            "newState": "polymorphic",
-            "key": "push",
-            "map": "0x017b76602af1",
-            "optimizationState": "optimizable",
-            "severity": 2
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "313",
-        "functionName": "processResult",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 106,
-        "column": 15,
-        "severity": 2,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "length",
-            "map": "0x017b76602c81",
-            "optimizationState": "optimizable",
-            "severity": 1
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "monomorphic",
-            "newState": "polymorphic",
-            "key": "length",
-            "map": "0x017b76602af1",
-            "optimizationState": "optimizable",
-            "severity": 2
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "314",
-        "functionName": "addNumbers",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 81,
-        "column": 23,
-        "severity": 1,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "flag",
-            "map": "0x017b7663cc01",
-            "optimizationState": "optimizable",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "315",
-        "functionName": "addAny",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 91,
-        "column": 23,
-        "severity": 1,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "flag",
-            "map": "0x017b7663cc01",
-            "optimizationState": "optimizable",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "316",
-        "functionName": "addSmis",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 76,
-        "column": 23,
-        "severity": 1,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "flag",
-            "map": "0x017b7663cc01",
-            "optimizationState": "optimizable",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "317",
-        "functionName": "addStrings",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 86,
-        "column": 23,
-        "severity": 1,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "flag",
-            "map": "0x017b7663cc01",
-            "optimizationState": "optimizable",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "327",
-        "functionName": "addAny",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 93,
-        "column": 27,
-        "severity": 3,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "x",
-            "map": "0x017b7663a951",
-            "optimizationState": "optimizable",
-            "severity": 1
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "monomorphic",
-            "newState": "polymorphic",
-            "key": "x",
-            "map": "0x017b76637b61",
-            "optimizationState": "optimizable",
-            "severity": 2
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "polymorphic",
-            "newState": "megamorphic",
-            "key": "x",
-            "map": "0x017b76637021",
-            "optimizationState": "optimizable",
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "328",
-        "functionName": "addAny",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 93,
-        "column": 33,
-        "severity": 3,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "y",
-            "map": "0x017b7663a951",
-            "optimizationState": "optimizable",
-            "severity": 1
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "monomorphic",
-            "newState": "polymorphic",
-            "key": "y",
-            "map": "0x017b76637b61",
-            "optimizationState": "optimizable",
-            "severity": 2
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "polymorphic",
-            "newState": "megamorphic",
-            "key": "y",
-            "map": "0x017b76637021",
-            "optimizationState": "optimizable",
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "ics",
         "id": "329",
         "functionName": "Object1",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -231,7 +17,9 @@
             "key": "x",
             "map": "0x017b7663a811",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -251,7 +39,9 @@
             "key": "y",
             "map": "0x017b7663a901",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -271,7 +61,9 @@
             "key": "y",
             "map": "0x017b7663a9a1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -291,7 +83,9 @@
             "key": "x",
             "map": "0x017b76637b11",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -311,7 +105,9 @@
             "key": "hello",
             "map": "0x017b76637bb1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -331,7 +127,9 @@
             "key": "x",
             "map": "0x017b766373e1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -351,7 +149,9 @@
             "key": "y",
             "map": "0x017b76637431",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -371,7 +171,9 @@
             "key": "x",
             "map": "0x017b766374d1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -391,7 +193,9 @@
             "key": "hello",
             "map": "0x017b76636da1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -411,7 +215,9 @@
             "key": "y",
             "map": "0x017b76636df1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -431,7 +237,9 @@
             "key": "x",
             "map": "0x017b76636e91",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -451,7 +259,9 @@
             "key": "y",
             "map": "0x017b76636f81",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -471,7 +281,9 @@
             "key": "hello",
             "map": "0x017b76636fd1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -491,7 +303,9 @@
             "key": "hola",
             "map": "0x017b76637071",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -511,7 +325,9 @@
             "key": "x",
             "map": "0x017b76637161",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -531,7 +347,9 @@
             "key": "y",
             "map": "0x017b766371b1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -551,7 +369,9 @@
             "key": "hello",
             "map": "0x017b76637201",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -571,7 +391,9 @@
             "key": "x",
             "map": "0x017b766372a1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -591,7 +413,9 @@
             "key": "hola",
             "map": "0x017b76636ad1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -611,7 +435,9 @@
             "key": "y",
             "map": "0x017b76636b21",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -631,7 +457,9 @@
             "key": "hello",
             "map": "0x017b76636b71",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -651,7 +479,9 @@
             "key": "x",
             "map": "0x017b76635b31",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -671,7 +501,9 @@
             "key": "y",
             "map": "0x017b76635c21",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -691,7 +523,9 @@
             "key": "hola",
             "map": "0x017b76635c71",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       },
@@ -711,128 +545,256 @@
             "key": "hello",
             "map": "0x017b76635cc1",
             "optimizationState": "optimizable",
-            "severity": 1
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "316",
+        "functionName": "addSmis",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 76,
+        "column": 23,
+        "severity": 1,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "flag",
+            "map": "0x017b7663cc01",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "314",
+        "functionName": "addNumbers",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 81,
+        "column": 23,
+        "severity": 1,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "flag",
+            "map": "0x017b7663cc01",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "317",
+        "functionName": "addStrings",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 86,
+        "column": 23,
+        "severity": 1,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "flag",
+            "map": "0x017b7663cc01",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "315",
+        "functionName": "addAny",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 91,
+        "column": 23,
+        "severity": 1,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "flag",
+            "map": "0x017b7663cc01",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "327",
+        "functionName": "addAny",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 93,
+        "column": 27,
+        "severity": 3,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "x",
+            "map": "0x017b7663a951",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "monomorphic",
+            "newState": "polymorphic",
+            "key": "x",
+            "map": "0x017b76637b61",
+            "optimizationState": "optimizable",
+            "severity": 2,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "polymorphic",
+            "newState": "megamorphic",
+            "key": "x",
+            "map": "0x017b76637021",
+            "optimizationState": "optimizable",
+            "severity": 3,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "328",
+        "functionName": "addAny",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 93,
+        "column": 33,
+        "severity": 3,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "y",
+            "map": "0x017b7663a951",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "monomorphic",
+            "newState": "polymorphic",
+            "key": "y",
+            "map": "0x017b76637b61",
+            "optimizationState": "optimizable",
+            "severity": 2,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "polymorphic",
+            "newState": "megamorphic",
+            "key": "y",
+            "map": "0x017b76637021",
+            "optimizationState": "optimizable",
+            "severity": 3,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "312",
+        "functionName": "processResult",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 104,
+        "column": 11,
+        "severity": 2,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "push",
+            "map": "0x017b76602c81",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "monomorphic",
+            "newState": "polymorphic",
+            "key": "push",
+            "map": "0x017b76602af1",
+            "optimizationState": "optimizable",
+            "severity": 2,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "313",
+        "functionName": "processResult",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 106,
+        "column": 15,
+        "severity": 2,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "premonomorphic",
+            "newState": "monomorphic",
+            "key": "length",
+            "map": "0x017b76602c81",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "monomorphic",
+            "newState": "polymorphic",
+            "key": "length",
+            "map": "0x017b76602af1",
+            "optimizationState": "optimizable",
+            "severity": 2,
+            "modifier": "",
+            "slowReason": ""
           }
         ]
       }
     ],
     "deopts": [
-      {
-        "type": "deopts",
-        "id": "319",
-        "functionName": "<anonymous>",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 104,
-        "column": 11,
-        "severity": 3,
-        "updates": [
-          {
-            "timestamp": 84325,
-            "bailoutType": "eager",
-            "deoptReason": "wrong map",
-            "optimizationState": "optimized",
-            "inlined": true,
-            "severity": 3,
-            "inlinedAt": {
-              "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-              "line": 112,
-              "column": 5
-            }
-          },
-          {
-            "timestamp": 84440,
-            "bailoutType": "eager",
-            "deoptReason": "wrong map",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "deopts",
-        "id": "320",
-        "functionName": "<anonymous>",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 120,
-        "column": 19,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 334037,
-            "bailoutType": "soft",
-            "deoptReason": "Insufficient type feedback for compare operation",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "deopts",
-        "id": "321",
-        "functionName": "addAny",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 94,
-        "column": 12,
-        "severity": 3,
-        "updates": [
-          {
-            "timestamp": 334372,
-            "bailoutType": "eager",
-            "deoptReason": "not a Smi",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 3
-          },
-          {
-            "timestamp": 381893,
-            "bailoutType": "eager",
-            "deoptReason": "not a Number or Oddball",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "deopts",
-        "id": "322",
-        "functionName": "<anonymous>",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 127,
-        "column": 19,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 381799,
-            "bailoutType": "soft",
-            "deoptReason": "Insufficient type feedback for compare operation",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "deopts",
-        "id": "323",
-        "functionName": "<anonymous>",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 141,
-        "column": 1,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 453322,
-            "bailoutType": "soft",
-            "deoptReason": "Insufficient type feedback for call",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 1
-          }
-        ]
-      },
       {
         "type": "deopts",
         "id": "326",
@@ -925,6 +887,103 @@
       },
       {
         "type": "deopts",
+        "id": "321",
+        "functionName": "addAny",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 94,
+        "column": 12,
+        "severity": 3,
+        "updates": [
+          {
+            "timestamp": 334372,
+            "bailoutType": "eager",
+            "deoptReason": "not a Smi",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 3
+          },
+          {
+            "timestamp": 381893,
+            "bailoutType": "eager",
+            "deoptReason": "not a Number or Oddball",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 3
+          }
+        ]
+      },
+      {
+        "type": "deopts",
+        "id": "319",
+        "functionName": "<anonymous>",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 104,
+        "column": 11,
+        "severity": 3,
+        "updates": [
+          {
+            "timestamp": 84325,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": true,
+            "severity": 3,
+            "inlinedAt": {
+              "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+              "line": 112,
+              "column": 5
+            }
+          },
+          {
+            "timestamp": 84440,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 3
+          }
+        ]
+      },
+      {
+        "type": "deopts",
+        "id": "320",
+        "functionName": "<anonymous>",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 120,
+        "column": 19,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 334037,
+            "bailoutType": "soft",
+            "deoptReason": "Insufficient type feedback for compare operation",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "deopts",
+        "id": "322",
+        "functionName": "<anonymous>",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 127,
+        "column": 19,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 381799,
+            "bailoutType": "soft",
+            "deoptReason": "Insufficient type feedback for compare operation",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "deopts",
         "id": "331",
         "functionName": "addObjects",
         "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
@@ -941,154 +1000,28 @@
             "severity": 3
           }
         ]
+      },
+      {
+        "type": "deopts",
+        "id": "323",
+        "functionName": "<anonymous>",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 141,
+        "column": 1,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 453322,
+            "bailoutType": "soft",
+            "deoptReason": "Insufficient type feedback for call",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 1
+          }
+        ]
       }
     ],
     "codes": [
-      {
-        "type": "codes",
-        "id": "307",
-        "functionName": "addSmis",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 75,
-        "column": 17,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66307,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 77074,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "308",
-        "functionName": "processResult",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 101,
-        "column": 23,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66359,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 71467,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 86627,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "309",
-        "functionName": "addNumbers",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 80,
-        "column": 20,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66399,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 72377,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "310",
-        "functionName": "addStrings",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 85,
-        "column": 20,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66438,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 76440,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "311",
-        "functionName": "addAny",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 90,
-        "column": 16,
-        "isScript": false,
-        "severity": 3,
-        "updates": [
-          {
-            "timestamp": 66479,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 74392,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 336092,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 382580,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 457017,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 497892,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 562240,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 624110,
-            "state": "optimized",
-            "severity": 3
-          }
-        ]
-      },
       {
         "type": "codes",
         "id": "318",
@@ -1116,73 +1049,6 @@
           },
           {
             "timestamp": 387073,
-            "state": "optimized",
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "324",
-        "functionName": "addObjects",
-        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
-        "line": 134,
-        "column": 20,
-        "isScript": false,
-        "severity": 3,
-        "updates": [
-          {
-            "timestamp": 453509,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 456884,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 496055,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 499940,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 558235,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 562103,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 621979,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 626612,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 686551,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 691542,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 759149,
             "state": "optimized",
             "severity": 3
           }
@@ -1356,6 +1222,218 @@
             "timestamp": 894683,
             "state": "optimized",
             "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "307",
+        "functionName": "addSmis",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 75,
+        "column": 17,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 66307,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 77074,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "309",
+        "functionName": "addNumbers",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 80,
+        "column": 20,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 66399,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 72377,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "310",
+        "functionName": "addStrings",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 85,
+        "column": 20,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 66438,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 76440,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "311",
+        "functionName": "addAny",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 90,
+        "column": 16,
+        "isScript": false,
+        "severity": 3,
+        "updates": [
+          {
+            "timestamp": 66479,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 74392,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 336092,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 382580,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 457017,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 497892,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 562240,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 624110,
+            "state": "optimized",
+            "severity": 3
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "308",
+        "functionName": "processResult",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 101,
+        "column": 23,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 66359,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 71467,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 86627,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "324",
+        "functionName": "addObjects",
+        "file": "C:\\code\\github\\andrewiggins\\v8-deopt-viewer\\examples\\simple\\adders.js",
+        "line": 134,
+        "column": 20,
+        "isScript": false,
+        "severity": 3,
+        "updates": [
+          {
+            "timestamp": 453509,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 456884,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 496055,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 499940,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 558235,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 562103,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 621979,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 626612,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 686551,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 691542,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 759149,
+            "state": "optimized",
+            "severity": 3
           }
         ]
       },

@@ -15,6 +15,13 @@ import {
 	severityOfOptimizationState,
 	parseOptimizationState,
 } from "./optimizationStateParsers.js";
+import { sortEntries } from "./sortEntries.js";
+
+/** @type {import('.').Options} */
+const defaultOptions = {
+	keepInternals: false,
+	sortEntries: true,
+};
 
 // Ignore files that were used by ispawn to control the process
 const ispawnRegex = /ispawn\/preload\/\S+\.js$/;
@@ -42,10 +49,12 @@ export class DeoptLogReader extends LogReader {
 	// LogReader to track IC state:
 	// https://github.com/v8/v8/blob/4b9b23521e6fd42373ebbcb20ebe03bf445494f9/tools/ic-processor.js
 
-	constructor(options = {}) {
+	constructor(options = null) {
 		// @ts-ignore
 		super();
-		this.options = options;
+
+		/** @type {import('.').Options} */
+		this.options = Object.assign({}, defaultOptions, options);
 
 		this._id = 0;
 		this._profile = new Profile();
@@ -340,11 +349,17 @@ export class DeoptLogReader extends LogReader {
 	toJSON() {
 		const filterInternals = this.filterInternals.bind(this);
 		return {
-			ics: Array.from(this.entriesIC.values())
-				.filter((entry) => entry.updates.length > 0)
-				.filter(filterInternals),
-			deopts: Array.from(this.entriesDeopt.values()).filter(filterInternals),
-			codes: Array.from(this.entriesCode.values()).filter(filterInternals),
+			ics: this.sortEntries(
+				Array.from(this.entriesIC.values())
+					.filter((entry) => entry.updates.length > 0)
+					.filter(filterInternals)
+			),
+			deopts: this.sortEntries(
+				Array.from(this.entriesDeopt.values()).filter(filterInternals)
+			),
+			codes: this.sortEntries(
+				Array.from(this.entriesCode.values()).filter(filterInternals)
+			),
 		};
 	}
 
@@ -353,5 +368,13 @@ export class DeoptLogReader extends LogReader {
 			this.options.keepInternals ||
 			(isAbsolutePath(entry.file) && !ispawnRegex.test(entry.file))
 		);
+	}
+
+	sortEntries(entries) {
+		if (this.options.sortEntries) {
+			return sortEntries(entries);
+		} else {
+			return entries;
+		}
 	}
 }

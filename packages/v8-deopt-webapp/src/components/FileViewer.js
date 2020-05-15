@@ -9,7 +9,7 @@ import {
 } from "./CodeSettings";
 import styles from "./FileViewer.scss";
 
-// TODO: Consider moving findEntry and filterEntries into v8-deopt-parser
+// TODO: Consider moving findEntry into v8-deopt-parser
 
 /**
  * @param {import('v8-deopt-parser').V8DeoptInfo} deoptInfo

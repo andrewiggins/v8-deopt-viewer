@@ -94,6 +94,7 @@ interface PerFileV8DeoptInfo {
 
 interface Options {
 	keepInternals?: boolean;
+	sortEntries?: boolean;
 }
 
 /**
@@ -108,5 +109,7 @@ export async function parseV8Log(
 ): Promise<V8DeoptInfo>;
 
 export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
+
+export function sortEntries(entries: Entries[]): Entries[];
 
 export function severityIcState(state: ICState): number;
