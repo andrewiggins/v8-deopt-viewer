@@ -15,17 +15,14 @@
 	</head>
 	<body>
 		<div id="root"></div>
-		<script src="../dist/index.debug.js" type="module"></script>
+		<script src="deoptInfo.js" type="text/javascript"></script>
+		<script src="deoptInfoError.js" type="text/javascript"></script>
+		<script src="../dist/index.debug.js" type="text/javascript"></script>
 		<script type="module">
-			const dataUrl = location.search.includes("error")
-				? "./deoptInfoError.json"
-				: "./deoptInfo.json";
-
-			fetch(dataUrl)
-				.then((res) => res.json())
-				.then((deoptInfo) => {
-					V8DeoptViewer.renderIntoDom(deoptInfo, document.getElementById("root"));
-				});
+			V8DeoptViewer.renderIntoDom(
+				location.search.includes("error") ? window.V8ErrorData : window.V8Data,
+				document.getElementById("root")
+			);
 		</script>
 	</body>
 </html>

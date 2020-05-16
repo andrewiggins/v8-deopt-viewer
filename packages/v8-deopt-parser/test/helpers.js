@@ -55,7 +55,7 @@ const logPathReplacements = {
  * @param {string} logPath
  * @returns {Promise<string>}
  */
-async function readLogFile(logFilename, logPath) {
+export async function readLogFile(logFilename, logPath) {
 	const replacements = logPathReplacements[logFilename];
 
 	let contents = await readFile(logPath, "utf8");

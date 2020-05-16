@@ -108,7 +108,7 @@ export default async function run(srcFile, options) {
 	console.log("Adding sources...");
 	const deoptInfo = await addSources(groupByFile(rawDeoptInfo));
 	const deoptInfoString = JSON.stringify(deoptInfo, null, 2);
-	const jsContents = `window.v8Data = ${deoptInfoString};`;
+	const jsContents = `window.V8Data = ${deoptInfoString};`;
 	await writeFile(path.join(options.out, "v8-data.js"), jsContents, "utf8");
 
 	console.log("Generating webapp...");
