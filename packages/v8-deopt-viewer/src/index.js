@@ -1,6 +1,6 @@
 import * as path from "path";
 import { readFile, writeFile, copyFile } from "fs/promises";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
 import { generateV8Log } from "v8-deopt-generate-log";
@@ -139,7 +139,7 @@ export default async function run(srcFile, options) {
 	);
 
 	if (options.open) {
-		await open(indexPath, { url: true });
+		await open(pathToFileURL(indexPath).toString(), { url: true });
 		console.log(
 			`Done! Opening ${path.join(options.out, "index.html")} in your browser...`
 		);

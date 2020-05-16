@@ -17,7 +17,7 @@
 
 .summaryTable.grid {
 	display: grid;
-	grid-template-columns: minmax(120px, 1fr) repeat(9, 1fr);
+	grid-template-columns: auto repeat(9, 1fr);
 
 	> thead,
 	> tbody,

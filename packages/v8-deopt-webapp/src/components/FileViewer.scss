@@ -2,11 +2,11 @@
 
 .fileViewer {
 	display: flex;
-	max-height: calc(100% - #{$headerHeight});
+	height: calc(100% - #{$headerHeight});
 	position: relative;
 
 	@media (max-width: $headerViewportSm) {
-		max-height: calc(100% - #{$headerHeightSm});
+		height: calc(100% - #{$headerHeightSm});
 	}
 }
 
