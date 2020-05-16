@@ -98,6 +98,59 @@ test("runParser(adders.v8.log)", async (t) => {
 		],
 	});
 
+	validateEntry(t, "Matching Sev 3 Code entry", result.codes, {
+		type: "codes",
+		id: "311",
+		functionName: "addAny",
+		file: "/tmp/deoptigate/examples/simple/adders.js",
+		line: 90,
+		column: 16,
+		isScript: false,
+		severity: 3,
+		updates: [
+			{
+				timestamp: 66479,
+				state: "optimizable",
+				severity: 2,
+			},
+			{
+				timestamp: 74392,
+				state: "optimized",
+				severity: 1,
+			},
+			{
+				timestamp: 336092,
+				state: "optimized",
+				severity: 1,
+			},
+			{
+				timestamp: 382580,
+				state: "optimized",
+				severity: 3,
+			},
+			{
+				timestamp: 457017,
+				state: "optimized",
+				severity: 3,
+			},
+			{
+				timestamp: 497892,
+				state: "optimized",
+				severity: 3,
+			},
+			{
+				timestamp: 562240,
+				state: "optimized",
+				severity: 3,
+			},
+			{
+				timestamp: 624110,
+				state: "optimized",
+				severity: 3,
+			},
+		],
+	});
+
 	await writeSnapshot(logFileName, result);
 });
 
