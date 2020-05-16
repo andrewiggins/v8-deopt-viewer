@@ -24,7 +24,7 @@
 			fetch(dataUrl)
 				.then((res) => res.json())
 				.then((deoptInfo) => {
-					V8DeoptViewer.renderWebApp(deoptInfo, document.getElementById("root"));
+					V8DeoptViewer.renderIntoDom(deoptInfo, document.getElementById("root"));
 				});
 		</script>
 	</body>
