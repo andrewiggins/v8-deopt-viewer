@@ -2,6 +2,8 @@ import Prism from "prismjs";
 import { sortEntries } from "v8-deopt-parser/src/sortEntries";
 import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.scss";
 
+const DEBUG = location.search.includes("debug");
+
 /**
  * @param {Node} element
  * @param {Node} root
@@ -18,7 +20,7 @@ function nextElement(element, root) {
 			element = element.parentNode;
 		} while (element && element != root && !element.nextSibling);
 
-		return element ? element.nextSibling : null;
+		return element === root ? null : element.nextSibling;
 	}
 }
 
@@ -113,6 +115,9 @@ function getMarkers(deoptInfo) {
 export function addDeoptMarkers(root, fileId, deoptInfo) {
 	const markers = getMarkers(deoptInfo);
 
+	let code = "";
+	let fullText = DEBUG ? root.textContent : "";
+
 	/** @type {Node} */
 	let element = root.firstChild;
 	let curLine = 1;
@@ -121,6 +126,9 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 		if (element.nodeType == 3 /* TEXT_NODE */) {
 			// @ts-ignore
 			const text = element.data;
+			if (DEBUG) {
+				code += text;
+			}
 
 			// Handle of text node contains multiple lines
 			// Inserting markers in the middle of a text node doesn't work since that would
@@ -128,6 +136,11 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 			const lines = text.split("\n");
 			for (let i = 0; i < lines.length; i++) {
 				if (i > 0) {
+					// Reached end of line
+					if (DEBUG) {
+						validateLoc(curLine, curColumn, fullText, element, root);
+					}
+
 					curLine += 1;
 					curColumn = 1;
 				}
@@ -136,7 +149,7 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 				curColumn += line.length;
 
 				if (locHasMarker(markers, curLine, curColumn)) {
-					const lastMark = consumeMarkers(
+					element = consumeMarkers(
 						element,
 						fileId,
 						markers,
@@ -144,12 +157,19 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 						curColumn
 					);
 
-					element = nextElement(lastMark, root);
+					// Set element to the deepest last child of the marker
+					while (element.lastChild != null) {
+						element = element.lastChild;
+					}
 				}
 			}
 		}
 
 		element = nextElement(element, root);
+	}
+
+	if (DEBUG) {
+		console.log("code == fullText:", code == fullText);
 	}
 }
 
@@ -160,5 +180,30 @@ function severityClass(severity) {
 		return sev2;
 	} else {
 		return sev3;
+	}
+}
+
+/**
+ * @param {number} lineCount
+ * @param {number} columnCount
+ * @param {string} fullText
+ * @param {Node} element
+ * @param {HTMLElement} root
+ */
+function validateLoc(lineCount, columnCount, fullText, element, root) {
+	const lineLengths = fullText.split("\n").map((l) => l.length);
+	const expectedColCount = lineLengths[lineCount - 1] + 1;
+	if (!root.contains(element)) {
+		console.error(
+			"Element is not inside root.",
+			"Root:",
+			root,
+			"Element:",
+			element
+		);
+	}
+
+	if (expectedColCount !== columnCount) {
+		console.error(`${lineCount}:`, expectedColCount, columnCount);
 	}
 }
