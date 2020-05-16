@@ -37,7 +37,19 @@ async function addSources(deoptInfo) {
 				srcError = e;
 			}
 		} else {
-			let filePath = file.startsWith("file://") ? fileURLToPath(file) : file;
+			let filePath = file;
+			if (file.startsWith("file://")) {
+				// Convert Linux-like file URLs for Windows and assume C: root. Useful for testing
+				if (
+					process.platform == "win32" &&
+					!file.match(/^file:\/\/\/[a-zA-z]:/)
+				) {
+					filePath = fileURLToPath(file.replace(/^file:\/\/\//, "file:///C:/"));
+				} else {
+					filePath = fileURLToPath(file);
+				}
+			}
+
 			if (path.isAbsolute(filePath)) {
 				try {
 					srcPath = filePath;
@@ -121,7 +133,10 @@ export default async function run(srcFile, options) {
 	const webAppIndexPath = require.resolve("v8-deopt-webapp");
 	const webAppStylesPath = webAppIndexPath.replace(/.js$/g, ".css");
 	await copyFile(webAppIndexPath, path.join(options.out, "v8-deopt-webapp.js"));
-	await copyFile(webAppStylesPath, path.join(options.out, "v8-deopt-webapp.css"));
+	await copyFile(
+		webAppStylesPath,
+		path.join(options.out, "v8-deopt-webapp.css")
+	);
 
 	if (options.open) {
 		await open(indexPath, { url: true });

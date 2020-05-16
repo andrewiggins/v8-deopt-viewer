@@ -4,6 +4,10 @@ import { readFile, writeFile, copyFile, mkdir } from "fs/promises";
 import { fileURLToPath } from "url";
 import { readLogFile } from "../../v8-deopt-parser/test/helpers.js";
 
+// const logFileName = "adders.v8.log";
+const logFileName = "html-inline.v8.log";
+// const logFileName = "html-external.v8.log";
+
 // @ts-ignore
 const __dirname = path.join(fileURLToPath(import.meta.url));
 const pkgRoot = (...args) => path.join(__dirname, "..", "..", ...args);
@@ -13,20 +17,21 @@ const outDir = (...args) => pkgRoot("test/logs", ...args);
 async function main() {
 	await mkdir(outDir(), { recursive: true });
 
-	const addersFileName = "adders.v8.log";
-	const addersLogPath = repoRoot(
-		`packages/v8-deopt-parser/test/logs/${addersFileName}`
-	);
+	const logPath = repoRoot(`packages/v8-deopt-parser/test/logs/${logFileName}`);
 
-	// Generate log using raw adders.v8.log which has invalid paths (/tmp/deoptigate)
+	// Generate log using raw log which has invalid paths (/tmp/deoptigate)
 	// to simulate error output
-	spawnSync(process.execPath, [
-		repoRoot("packages/v8-deopt-viewer/bin/v8-deopt-viewer.js"),
-		"-i",
-		addersLogPath,
-		"-o",
-		outDir(),
-	]);
+	spawnSync(
+		process.execPath,
+		[
+			repoRoot("packages/v8-deopt-viewer/bin/v8-deopt-viewer.js"),
+			"-i",
+			logPath,
+			"-o",
+			outDir(),
+		],
+		{ stdio: "inherit" }
+	);
 
 	const errorContents = await readFile(outDir("v8-data.js"), "utf8");
 	const newErrorContents = errorContents.replace(
@@ -35,19 +40,23 @@ async function main() {
 	);
 	await writeFile(pkgRoot("test/deoptInfoError.js"), newErrorContents, "utf8");
 
-	// Now generate log using modified adders.v8.log with correct src paths
-	const newContents = await readLogFile(addersFileName, addersLogPath);
+	// Now generate log using modified log with correct src paths
+	const newContents = await readLogFile(logFileName, logPath);
 
 	const updatedLogPath = outDir("adders.v8.log");
 	await writeFile(updatedLogPath, newContents, "utf8");
 
-	spawnSync(process.execPath, [
-		repoRoot("packages/v8-deopt-viewer/bin/v8-deopt-viewer.js"),
-		"-i",
-		updatedLogPath,
-		"-o",
-		outDir(),
-	]);
+	spawnSync(
+		process.execPath,
+		[
+			repoRoot("packages/v8-deopt-viewer/bin/v8-deopt-viewer.js"),
+			"-i",
+			updatedLogPath,
+			"-o",
+			outDir(),
+		],
+		{ stdio: "inherit" }
+	);
 
 	await copyFile(outDir("v8-data.js"), pkgRoot("test/deoptInfo.js"));
 }

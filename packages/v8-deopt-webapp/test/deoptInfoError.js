@@ -1,21 +1,21 @@
 window.V8ErrorData = {
-  "/tmp/deoptigate/examples/simple/adders.js": {
+  "file:///tmp/deoptigate/examples/html-inline/adders.html": {
     "ics": [
       {
         "type": "ics",
-        "id": "329",
+        "id": "21",
         "functionName": "Object1",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 7,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 12,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b7663a811",
+            "map": "0x14cd08283f29",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -25,19 +25,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "330",
+        "id": "22",
         "functionName": "Object1",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 8,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 13,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b7663a901",
+            "map": "0x14cd08283fa1",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -47,19 +47,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "333",
+        "id": "24",
         "functionName": "Object2",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 14,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 19,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b7663a9a1",
+            "map": "0x14cd08283ff1",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -69,19 +69,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "334",
+        "id": "25",
         "functionName": "Object2",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 15,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 20,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b76637b11",
+            "map": "0x14cd08284069",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -91,19 +91,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "336",
+        "id": "28",
         "functionName": "Object3",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 21,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 26,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76637bb1",
+            "map": "0x14cd082840b9",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -113,19 +113,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "337",
+        "id": "29",
         "functionName": "Object3",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 22,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 27,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b766373e1",
+            "map": "0x14cd08284131",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -135,19 +135,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "338",
+        "id": "30",
         "functionName": "Object3",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 23,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 28,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b76637431",
+            "map": "0x14cd08284159",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -157,19 +157,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "340",
+        "id": "32",
         "functionName": "Object4",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 29,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 34,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b766374d1",
+            "map": "0x14cd082841a9",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -179,19 +179,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "341",
+        "id": "33",
         "functionName": "Object4",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 30,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 35,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76636da1",
+            "map": "0x14cd08284221",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -201,19 +201,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "342",
+        "id": "34",
         "functionName": "Object4",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 31,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 36,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b76636df1",
+            "map": "0x14cd08284249",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -223,19 +223,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "344",
+        "id": "36",
         "functionName": "Object5",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 37,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 42,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b76636e91",
+            "map": "0x14cd08284299",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -245,19 +245,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "345",
+        "id": "37",
         "functionName": "Object5",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 38,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 43,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b76636f81",
+            "map": "0x14cd08284311",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -267,19 +267,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "346",
+        "id": "38",
         "functionName": "Object5",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 39,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 44,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76636fd1",
+            "map": "0x14cd08284339",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -289,19 +289,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "348",
+        "id": "40",
         "functionName": "Object6",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 45,
-        "column": 15,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 50,
+        "column": 21,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hola",
-            "map": "0x017b76637071",
+            "map": "0x14cd08284389",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -311,19 +311,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "349",
+        "id": "41",
         "functionName": "Object6",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 46,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 51,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b76637161",
+            "map": "0x14cd08284401",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -333,19 +333,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "350",
+        "id": "42",
         "functionName": "Object6",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 47,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 52,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b766371b1",
+            "map": "0x14cd08284429",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -355,19 +355,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "351",
+        "id": "43",
         "functionName": "Object6",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 48,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 53,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76637201",
+            "map": "0x14cd08284451",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -377,19 +377,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "353",
+        "id": "45",
         "functionName": "Object7",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 54,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 59,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b766372a1",
+            "map": "0x14cd082844a1",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -399,19 +399,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "354",
+        "id": "46",
         "functionName": "Object7",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 55,
-        "column": 15,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 60,
+        "column": 21,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hola",
-            "map": "0x017b76636ad1",
+            "map": "0x14cd08284519",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -421,19 +421,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "355",
+        "id": "47",
         "functionName": "Object7",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 56,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 61,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b76636b21",
+            "map": "0x14cd08284541",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -443,19 +443,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "356",
+        "id": "48",
         "functionName": "Object7",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 57,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 62,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76636b71",
+            "map": "0x14cd08284569",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -465,19 +465,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "358",
+        "id": "50",
         "functionName": "Object8",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 63,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 68,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "x",
-            "map": "0x017b76635b31",
+            "map": "0x14cd082845b9",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -487,19 +487,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "359",
+        "id": "51",
         "functionName": "Object8",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 64,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 69,
+        "column": 18,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b76635c21",
+            "map": "0x14cd08284631",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -509,19 +509,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "360",
+        "id": "52",
         "functionName": "Object8",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 65,
-        "column": 15,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 70,
+        "column": 21,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hola",
-            "map": "0x017b76635c71",
+            "map": "0x14cd08284659",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -531,19 +531,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "361",
+        "id": "53",
         "functionName": "Object8",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 66,
-        "column": 16,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 71,
+        "column": 22,
         "severity": 1,
         "updates": [
           {
             "type": "StoreIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "hello",
-            "map": "0x017b76635cc1",
+            "map": "0x14cd08284681",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -553,41 +553,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "316",
+        "id": "9",
         "functionName": "addSmis",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 76,
-        "column": 23,
-        "severity": 1,
-        "updates": [
-          {
-            "type": "LoadIC",
-            "oldState": "premonomorphic",
-            "newState": "monomorphic",
-            "key": "flag",
-            "map": "0x017b7663cc01",
-            "optimizationState": "optimizable",
-            "severity": 1,
-            "modifier": "",
-            "slowReason": ""
-          }
-        ]
-      },
-      {
-        "type": "ics",
-        "id": "314",
-        "functionName": "addNumbers",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
         "line": 81,
-        "column": 23,
+        "column": 29,
         "severity": 1,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "flag",
-            "map": "0x017b7663cc01",
+            "map": "0x14cd08283f01",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -597,19 +575,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "317",
-        "functionName": "addStrings",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
+        "id": "7",
+        "functionName": "addNumbers",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
         "line": 86,
-        "column": 23,
+        "column": 29,
         "severity": 1,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "flag",
-            "map": "0x017b7663cc01",
+            "map": "0x14cd08283f01",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -619,19 +597,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "315",
-        "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
+        "id": "10",
+        "functionName": "addStrings",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
         "line": 91,
-        "column": 23,
+        "column": 29,
         "severity": 1,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "flag",
-            "map": "0x017b7663cc01",
+            "map": "0x14cd08283f01",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -641,43 +619,21 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "327",
+        "id": "8",
         "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 93,
-        "column": 27,
-        "severity": 3,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 96,
+        "column": 29,
+        "severity": 1,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
-            "key": "x",
-            "map": "0x017b7663a951",
+            "key": "flag",
+            "map": "0x14cd08283f01",
             "optimizationState": "optimizable",
             "severity": 1,
-            "modifier": "",
-            "slowReason": ""
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "monomorphic",
-            "newState": "polymorphic",
-            "key": "x",
-            "map": "0x017b76637b61",
-            "optimizationState": "optimizable",
-            "severity": 2,
-            "modifier": "",
-            "slowReason": ""
-          },
-          {
-            "type": "LoadIC",
-            "oldState": "polymorphic",
-            "newState": "megamorphic",
-            "key": "x",
-            "map": "0x017b76637021",
-            "optimizationState": "optimizable",
-            "severity": 3,
             "modifier": "",
             "slowReason": ""
           }
@@ -685,19 +641,63 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "328",
+        "id": "19",
         "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 93,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 98,
         "column": 33,
         "severity": 3,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
+            "newState": "monomorphic",
+            "key": "x",
+            "map": "0x14cd08283fc9",
+            "optimizationState": "optimizable",
+            "severity": 1,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "monomorphic",
+            "newState": "polymorphic",
+            "key": "x",
+            "map": "0x14cd08284091",
+            "optimizationState": "optimizable",
+            "severity": 2,
+            "modifier": "",
+            "slowReason": ""
+          },
+          {
+            "type": "LoadIC",
+            "oldState": "polymorphic",
+            "newState": "megamorphic",
+            "key": "x",
+            "map": "0x14cd08284361",
+            "optimizationState": "optimizable",
+            "severity": 3,
+            "modifier": "",
+            "slowReason": ""
+          }
+        ]
+      },
+      {
+        "type": "ics",
+        "id": "20",
+        "functionName": "addAny",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 98,
+        "column": 39,
+        "severity": 3,
+        "updates": [
+          {
+            "type": "LoadIC",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "y",
-            "map": "0x017b7663a951",
+            "map": "0x14cd08283fc9",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -708,7 +708,7 @@ window.V8ErrorData = {
             "oldState": "monomorphic",
             "newState": "polymorphic",
             "key": "y",
-            "map": "0x017b76637b61",
+            "map": "0x14cd08284091",
             "optimizationState": "optimizable",
             "severity": 2,
             "modifier": "",
@@ -719,7 +719,7 @@ window.V8ErrorData = {
             "oldState": "polymorphic",
             "newState": "megamorphic",
             "key": "y",
-            "map": "0x017b76637021",
+            "map": "0x14cd08284361",
             "optimizationState": "optimizable",
             "severity": 3,
             "modifier": "",
@@ -729,19 +729,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "312",
+        "id": "5",
         "functionName": "processResult",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 104,
-        "column": 11,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 109,
+        "column": 17,
         "severity": 2,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "push",
-            "map": "0x017b76602c81",
+            "map": "0x14cd08281139",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -752,7 +752,7 @@ window.V8ErrorData = {
             "oldState": "monomorphic",
             "newState": "polymorphic",
             "key": "push",
-            "map": "0x017b76602af1",
+            "map": "0x14cd08281049",
             "optimizationState": "optimizable",
             "severity": 2,
             "modifier": "",
@@ -762,19 +762,19 @@ window.V8ErrorData = {
       },
       {
         "type": "ics",
-        "id": "313",
+        "id": "6",
         "functionName": "processResult",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 106,
-        "column": 15,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 111,
+        "column": 21,
         "severity": 2,
         "updates": [
           {
             "type": "LoadIC",
-            "oldState": "premonomorphic",
+            "oldState": "unintialized",
             "newState": "monomorphic",
             "key": "length",
-            "map": "0x017b76602c81",
+            "map": "0x14cd08281139",
             "optimizationState": "optimizable",
             "severity": 1,
             "modifier": "",
@@ -785,7 +785,7 @@ window.V8ErrorData = {
             "oldState": "monomorphic",
             "newState": "polymorphic",
             "key": "length",
-            "map": "0x017b76602af1",
+            "map": "0x14cd08281049",
             "optimizationState": "optimizable",
             "severity": 2,
             "modifier": "",
@@ -797,15 +797,15 @@ window.V8ErrorData = {
     "deopts": [
       {
         "type": "deopts",
-        "id": "326",
+        "id": "18",
         "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 93,
-        "column": 27,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 98,
+        "column": 33,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 453611,
+            "timestamp": 563989,
             "bailoutType": "soft",
             "deoptReason": "Insufficient type feedback for generic named access",
             "optimizationState": "optimized",
@@ -813,7 +813,7 @@ window.V8ErrorData = {
             "severity": 1
           },
           {
-            "timestamp": 496380,
+            "timestamp": 641896,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
@@ -821,20 +821,20 @@ window.V8ErrorData = {
             "severity": 3
           },
           {
-            "timestamp": 558484,
+            "timestamp": 711737,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
             "inlined": true,
             "severity": 3,
             "inlinedAt": {
-              "file": "/tmp/deoptigate/examples/simple/adders.js",
-              "line": 137,
-              "column": 21
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
             }
           },
           {
-            "timestamp": 558574,
+            "timestamp": 711918,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
@@ -842,60 +842,99 @@ window.V8ErrorData = {
             "severity": 3
           },
           {
-            "timestamp": 622219,
+            "timestamp": 714252,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
             "inlined": true,
             "severity": 3,
             "inlinedAt": {
-              "file": "/tmp/deoptigate/examples/simple/adders.js",
-              "line": 137,
-              "column": 21
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
             }
           },
           {
-            "timestamp": 622311,
-            "bailoutType": "eager",
-            "deoptReason": "wrong map",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 3
-          },
-          {
-            "timestamp": 686797,
+            "timestamp": 775629,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
             "inlined": true,
             "severity": 3,
             "inlinedAt": {
-              "file": "/tmp/deoptigate/examples/simple/adders.js",
-              "line": 137,
-              "column": 21
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
             }
           },
           {
-            "timestamp": 686897,
+            "timestamp": 775747,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
             "inlined": false,
             "severity": 3
+          },
+          {
+            "timestamp": 779035,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": true,
+            "severity": 3,
+            "inlinedAt": {
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
+            }
+          },
+          {
+            "timestamp": 829965,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": true,
+            "severity": 3,
+            "inlinedAt": {
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
+            }
+          },
+          {
+            "timestamp": 830068,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": false,
+            "severity": 3
+          },
+          {
+            "timestamp": 831392,
+            "bailoutType": "eager",
+            "deoptReason": "wrong map",
+            "optimizationState": "optimized",
+            "inlined": true,
+            "severity": 3,
+            "inlinedAt": {
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 142,
+              "column": 27
+            }
           }
         ]
       },
       {
         "type": "deopts",
-        "id": "321",
+        "id": "14",
         "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 94,
-        "column": 12,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 99,
+        "column": 18,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 334372,
+            "timestamp": 464605,
             "bailoutType": "eager",
             "deoptReason": "not a Smi",
             "optimizationState": "optimized",
@@ -903,7 +942,7 @@ window.V8ErrorData = {
             "severity": 3
           },
           {
-            "timestamp": 381893,
+            "timestamp": 487768,
             "bailoutType": "eager",
             "deoptReason": "not a Number or Oddball",
             "optimizationState": "optimized",
@@ -914,28 +953,28 @@ window.V8ErrorData = {
       },
       {
         "type": "deopts",
-        "id": "319",
+        "id": "12",
         "functionName": "<anonymous>",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 104,
-        "column": 11,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 109,
+        "column": 17,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 84325,
+            "timestamp": 295137,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
             "inlined": true,
             "severity": 3,
             "inlinedAt": {
-              "file": "/tmp/deoptigate/examples/simple/adders.js",
-              "line": 112,
-              "column": 5
+              "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+              "line": 117,
+              "column": 11
             }
           },
           {
-            "timestamp": 84440,
+            "timestamp": 295545,
             "bailoutType": "eager",
             "deoptReason": "wrong map",
             "optimizationState": "optimized",
@@ -946,15 +985,15 @@ window.V8ErrorData = {
       },
       {
         "type": "deopts",
-        "id": "320",
+        "id": "13",
         "functionName": "<anonymous>",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 120,
-        "column": 19,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 125,
+        "column": 25,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 334037,
+            "timestamp": 464507,
             "bailoutType": "soft",
             "deoptReason": "Insufficient type feedback for compare operation",
             "optimizationState": "optimized",
@@ -965,15 +1004,15 @@ window.V8ErrorData = {
       },
       {
         "type": "deopts",
-        "id": "322",
+        "id": "15",
         "functionName": "<anonymous>",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 127,
-        "column": 19,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 132,
+        "column": 25,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 381799,
+            "timestamp": 487666,
             "bailoutType": "soft",
             "deoptReason": "Insufficient type feedback for compare operation",
             "optimizationState": "optimized",
@@ -984,15 +1023,15 @@ window.V8ErrorData = {
       },
       {
         "type": "deopts",
-        "id": "331",
+        "id": "26",
         "functionName": "addObjects",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 137,
-        "column": 28,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 142,
+        "column": 34,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 496191,
+            "timestamp": 645553,
             "bailoutType": "eager",
             "deoptReason": "wrong call target",
             "optimizationState": "optimized",
@@ -1000,55 +1039,36 @@ window.V8ErrorData = {
             "severity": 3
           }
         ]
-      },
-      {
-        "type": "deopts",
-        "id": "323",
-        "functionName": "<anonymous>",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 141,
-        "column": 1,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 453322,
-            "bailoutType": "soft",
-            "deoptReason": "Insufficient type feedback for call",
-            "optimizationState": "optimized",
-            "inlined": false,
-            "severity": 1
-          }
-        ]
       }
     ],
     "codes": [
       {
         "type": "codes",
-        "id": "318",
+        "id": "11",
         "functionName": "<anonymous>",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 1,
-        "column": 1,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 9,
+        "column": 27,
         "isScript": false,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 82879,
+            "timestamp": 294878,
             "state": "optimized",
             "severity": 1
           },
           {
-            "timestamp": 99880,
+            "timestamp": 325692,
             "state": "optimized",
             "severity": 1
           },
           {
-            "timestamp": 340030,
+            "timestamp": 471113,
             "state": "optimized",
             "severity": 1
           },
           {
-            "timestamp": 387073,
+            "timestamp": 495338,
             "state": "optimized",
             "severity": 3
           }
@@ -1056,16 +1076,16 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "325",
+        "id": "17",
         "functionName": "Object1",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 6,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 11,
+        "column": 20,
         "isScript": false,
         "severity": 2,
         "updates": [
           {
-            "timestamp": 453557,
+            "timestamp": 557134,
             "state": "optimizable",
             "severity": 2
           }
@@ -1073,21 +1093,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "332",
+        "id": "23",
         "functionName": "Object2",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 13,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 18,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 496316,
+            "timestamp": 641763,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 500552,
+            "timestamp": 646718,
             "state": "optimized",
             "severity": 1
           }
@@ -1095,21 +1115,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "335",
+        "id": "27",
         "functionName": "Object3",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 20,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 25,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 558411,
+            "timestamp": 711577,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 562896,
+            "timestamp": 716075,
             "state": "optimized",
             "severity": 1
           }
@@ -1117,21 +1137,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "339",
+        "id": "31",
         "functionName": "Object4",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 28,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 33,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 622145,
+            "timestamp": 775520,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 624468,
+            "timestamp": 779214,
             "state": "optimized",
             "severity": 1
           }
@@ -1139,21 +1159,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "343",
+        "id": "35",
         "functionName": "Object5",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 36,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 41,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 686720,
+            "timestamp": 829880,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 692540,
+            "timestamp": 832705,
             "state": "optimized",
             "severity": 1
           }
@@ -1161,21 +1181,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "347",
+        "id": "39",
         "functionName": "Object6",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 44,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 49,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 759321,
+            "timestamp": 894478,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 761161,
+            "timestamp": 896534,
             "state": "optimized",
             "severity": 1
           }
@@ -1183,21 +1203,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "352",
+        "id": "44",
         "functionName": "Object7",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 53,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 58,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 828327,
+            "timestamp": 950275,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 830548,
+            "timestamp": 952650,
             "state": "optimized",
             "severity": 1
           }
@@ -1205,21 +1225,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "357",
+        "id": "49",
         "functionName": "Object8",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 62,
-        "column": 14,
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 67,
+        "column": 20,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 892741,
+            "timestamp": 1003289,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 894683,
+            "timestamp": 1005371,
             "state": "optimized",
             "severity": 1
           }
@@ -1227,144 +1247,21 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "307",
+        "id": "0",
         "functionName": "addSmis",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 75,
-        "column": 17,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66307,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 77074,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "309",
-        "functionName": "addNumbers",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
         "line": 80,
-        "column": 20,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66399,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 72377,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "310",
-        "functionName": "addStrings",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 85,
-        "column": 20,
-        "isScript": false,
-        "severity": 1,
-        "updates": [
-          {
-            "timestamp": 66438,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 76440,
-            "state": "optimized",
-            "severity": 1
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "311",
-        "functionName": "addAny",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 90,
-        "column": 16,
-        "isScript": false,
-        "severity": 3,
-        "updates": [
-          {
-            "timestamp": 66479,
-            "state": "optimizable",
-            "severity": 2
-          },
-          {
-            "timestamp": 74392,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 336092,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 382580,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 457017,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 497892,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 562240,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 624110,
-            "state": "optimized",
-            "severity": 3
-          }
-        ]
-      },
-      {
-        "type": "codes",
-        "id": "308",
-        "functionName": "processResult",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 101,
         "column": 23,
         "isScript": false,
         "severity": 1,
         "updates": [
           {
-            "timestamp": 66359,
+            "timestamp": 234096,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 71467,
-            "state": "optimized",
-            "severity": 1
-          },
-          {
-            "timestamp": 86627,
+            "timestamp": 282043,
             "state": "optimized",
             "severity": 1
           }
@@ -1372,66 +1269,100 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "324",
-        "functionName": "addObjects",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 134,
-        "column": 20,
+        "id": "2",
+        "functionName": "addNumbers",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 85,
+        "column": 26,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 235580,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 280422,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "3",
+        "functionName": "addStrings",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 90,
+        "column": 26,
+        "isScript": false,
+        "severity": 1,
+        "updates": [
+          {
+            "timestamp": 236234,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 282271,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "4",
+        "functionName": "addAny",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 95,
+        "column": 22,
         "isScript": false,
         "severity": 3,
         "updates": [
           {
-            "timestamp": 453509,
+            "timestamp": 236381,
             "state": "optimizable",
             "severity": 2
           },
           {
-            "timestamp": 456884,
+            "timestamp": 280139,
             "state": "optimized",
             "severity": 1
           },
           {
-            "timestamp": 496055,
+            "timestamp": 466062,
             "state": "optimized",
             "severity": 1
           },
           {
-            "timestamp": 499940,
+            "timestamp": 489164,
             "state": "optimized",
             "severity": 3
           },
           {
-            "timestamp": 558235,
+            "timestamp": 584137,
             "state": "optimized",
             "severity": 3
           },
           {
-            "timestamp": 562103,
+            "timestamp": 645005,
             "state": "optimized",
             "severity": 3
           },
           {
-            "timestamp": 621979,
+            "timestamp": 715922,
             "state": "optimized",
             "severity": 3
           },
           {
-            "timestamp": 626612,
+            "timestamp": 777623,
             "state": "optimized",
             "severity": 3
           },
           {
-            "timestamp": 686551,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 691542,
-            "state": "optimized",
-            "severity": 3
-          },
-          {
-            "timestamp": 759149,
+            "timestamp": 832395,
             "state": "optimized",
             "severity": 3
           }
@@ -1439,24 +1370,96 @@ window.V8ErrorData = {
       },
       {
         "type": "codes",
-        "id": "362",
-        "functionName": "log",
-        "file": "/tmp/deoptigate/examples/simple/adders.js",
-        "line": 151,
-        "column": 13,
+        "id": "1",
+        "functionName": "processResult",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 106,
+        "column": 29,
         "isScript": false,
-        "severity": 2,
+        "severity": 1,
         "updates": [
           {
-            "timestamp": 959957,
+            "timestamp": 234586,
             "state": "optimizable",
             "severity": 2
+          },
+          {
+            "timestamp": 280296,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 298104,
+            "state": "optimized",
+            "severity": 1
+          }
+        ]
+      },
+      {
+        "type": "codes",
+        "id": "16",
+        "functionName": "addObjects",
+        "file": "file:///tmp/deoptigate/examples/html-inline/adders.html",
+        "line": 139,
+        "column": 26,
+        "isScript": false,
+        "severity": 3,
+        "updates": [
+          {
+            "timestamp": 553072,
+            "state": "optimizable",
+            "severity": 2
+          },
+          {
+            "timestamp": 584013,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 650699,
+            "state": "optimized",
+            "severity": 1
+          },
+          {
+            "timestamp": 711343,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 719093,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 775331,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 782580,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 829773,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 835281,
+            "state": "optimized",
+            "severity": 3
+          },
+          {
+            "timestamp": 894375,
+            "state": "optimized",
+            "severity": 3
           }
         ]
       }
     ],
-    "relativePath": "adders.js",
-    "srcPath": "/tmp/deoptigate/examples/simple/adders.js",
-    "srcError": "Error: ENOENT: no such file or directory, open 'C:\\tmp\\deoptigate\\examples\\simple\\adders.js'"
+    "relativePath": "adders.html",
+    "srcPath": "C:\\tmp\\deoptigate\\examples\\html-inline\\adders.html",
+    "srcError": "Error: ENOENT: no such file or directory, open 'C:\\tmp\\deoptigate\\examples\\html-inline\\adders.html'"
   }
 };
