@@ -1,11 +1,18 @@
 import * as path from "path";
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile, copyFile } from "fs/promises";
 import { fileURLToPath } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
 import { generateV8Log } from "v8-deopt-generate-log";
 import { parseV8Log, groupByFile } from "v8-deopt-parser";
 import { determineCommonRoot } from "./determineCommonRoot.js";
+
+// TODO: Replace with import.meta.resolve when stable
+import { createRequire } from "module";
+
+// @ts-ignore
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const templatePath = path.join(__dirname, "template.html");
 
 /**
  * @param {import('v8-deopt-parser').PerFileV8DeoptInfo} deoptInfo
@@ -100,15 +107,21 @@ export default async function run(srcFile, options) {
 
 	console.log("Adding sources...");
 	const deoptInfo = await addSources(groupByFile(rawDeoptInfo));
-	await writeFile(
-		path.join(options.out, "v8.json"),
-		JSON.stringify(deoptInfo, null, 2),
-		"utf8"
-	);
+	const deoptInfoString = JSON.stringify(deoptInfo, null, 2);
+	const jsContents = `window.v8Data = ${deoptInfoString};`;
+	await writeFile(path.join(options.out, "v8-data.js"), jsContents, "utf8");
 
 	console.log("Generating webapp...");
-	const indexPath = "";
-	// TODO: Generate webapp
+	const template = await readFile(templatePath, "utf8");
+	const indexPath = path.join(options.out, "index.html");
+	await writeFile(indexPath, template, "utf8");
+
+	// @ts-ignore
+	const require = createRequire(import.meta.url);
+	const webAppIndexPath = require.resolve("v8-deopt-webapp");
+	const webAppStylesPath = webAppIndexPath.replace(/.js$/g, ".css");
+	await copyFile(webAppIndexPath, path.join(options.out, "v8-deopt-webapp.js"));
+	await copyFile(webAppStylesPath, path.join(options.out, "v8-deopt-webapp.css"));
 
 	if (options.open) {
 		await open(indexPath, { url: true });

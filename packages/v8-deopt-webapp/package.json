@@ -2,7 +2,7 @@
   "name": "v8-deopt-webapp",
   "version": "0.1.0",
   "description": "View the deoptimizations in a V8 log",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",

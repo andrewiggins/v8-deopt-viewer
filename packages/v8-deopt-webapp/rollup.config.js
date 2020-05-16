@@ -15,7 +15,8 @@ function getConfig(outputFile, customPlugins) {
 		input: "./src/index.js",
 		output: {
 			file: outputFile,
-			format: "esm",
+			format: "umd",
+			name: "V8DeoptViewer",
 		},
 		plugins: [
 			nodeResolve(),

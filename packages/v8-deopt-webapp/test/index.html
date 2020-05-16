@@ -15,9 +15,8 @@
 	</head>
 	<body>
 		<div id="root"></div>
+		<script src="../dist/index.debug.js" type="module"></script>
 		<script type="module">
-			import { renderIntoDom } from "../dist/index.debug.js";
-
 			const dataUrl = location.search.includes("error")
 				? "./deoptInfoError.json"
 				: "./deoptInfo.json";
@@ -25,7 +24,7 @@
 			fetch(dataUrl)
 				.then((res) => res.json())
 				.then((deoptInfo) => {
-					renderIntoDom(deoptInfo, document.getElementById("root"));
+					V8DeoptViewer.renderWebApp(deoptInfo, document.getElementById("root"));
 				});
 		</script>
 	</body>
