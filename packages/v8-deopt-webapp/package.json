@@ -9,8 +9,7 @@
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "dev": "rollup -w -c ./rollup.config.js",
-    "start": "run-p dev serve",
-    "serve": "sirv .",
+    "start": "run-p dev",
     "test": "node -e \"console.log('No tests')\""
   },
   "devDependencies": {
@@ -25,7 +24,6 @@
     "rollup-plugin-postcss": "^3.1.1",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-visualizer": "^4.0.4",
-    "sirv-cli": "^0.4.5",
     "spectre.css": "^0.5.8",
     "v8-deopt-parser": "^0.1.0",
     "wouter-preact": "^2.4.0"
