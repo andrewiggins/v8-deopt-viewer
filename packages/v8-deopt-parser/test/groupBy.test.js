@@ -1,6 +1,6 @@
 import test from "tape";
 import { groupByFile } from "../src/index.js";
-import { runParser } from "./helpers.js";
+import { runParser, repoRoot, repoFileURL } from "./helpers.js";
 
 test("groupByFile(adders.v8.log)", async (t) => {
 	const rawData = await runParser(t, "adders.v8.log");
@@ -22,12 +22,12 @@ test("groupByFile(two-modules.v8.log)", async (t) => {
 	const files = Object.keys(result);
 	t.equal(files.length, 2, "Number of files");
 
-	let fileData = result["/tmp/deoptigate/examples/two-modules/adders.js"];
+	let fileData = result[repoRoot("examples/two-modules/adders.js")];
 	t.equal(fileData.codes.length, 8, "File 1: number of codes");
 	t.equal(fileData.deopts.length, 7, "File 1: number of deopts");
 	t.equal(fileData.ics.length, 8, "File 1: number of ics");
 
-	fileData = result["/tmp/deoptigate/examples/two-modules/objects.js"];
+	fileData = result[repoRoot("examples/two-modules/objects.js")];
 	t.equal(fileData.codes.length, 8, "File 2: number of codes");
 	t.equal(fileData.deopts.length, 0, "File 2: number of deopts");
 	t.equal(fileData.ics.length, 25, "File 2: number of ics");
@@ -53,12 +53,12 @@ test("groupByFile(html-external.v8.log)", async (t) => {
 	const files = Object.keys(result);
 	t.equal(files.length, 2, "Number of files");
 
-	let fileData = result["file:///tmp/deoptigate/examples/html-external/adders.js"];
+	let fileData = result[repoFileURL("examples/html-external/adders.js")];
 	t.equal(fileData.codes.length, 7, "File 1: number of codes");
 	t.equal(fileData.deopts.length, 6, "File 1: number of deopts");
 	t.equal(fileData.ics.length, 8, "File 1: number of ics");
 
-	fileData = result["file:///tmp/deoptigate/examples/html-external/objects.js"];
+	fileData = result[repoFileURL("examples/html-external/objects.js")];
 	t.equal(fileData.codes.length, 9, "File 2: number of codes");
 	t.equal(fileData.deopts.length, 0, "File 2: number of deopts");
 	t.equal(fileData.ics.length, 25, "File 2: number of ics");

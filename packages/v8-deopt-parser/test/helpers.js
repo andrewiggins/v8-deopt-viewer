@@ -1,11 +1,78 @@
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import * as path from "path";
 import { readFile, writeFile } from "fs/promises";
+import escapeRegex from "escape-string-regexp";
 import { parseV8Log } from "../src/index.js";
 
 // @ts-ignore
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const pkgRoot = (...args) => path.join(__dirname, "..", ...args);
+export const repoRoot = (...args) => pkgRoot("..", "..", ...args);
+export const repoFileURL = (...args) =>
+	pathToFileURL(repoRoot(...args)).toString();
+
+// Mapping of test paths in test logs to real paths
+const logPathReplacements = {
+	["adders.v8.log"]: [
+		[
+			"/tmp/deoptigate/examples/simple/adders.js",
+			repoRoot("examples/simple/adders.js"),
+		],
+	],
+	["two-modules.v8.log"]: [
+		[
+			"/tmp/deoptigate/examples/two-modules/adders.js",
+			repoRoot("examples/two-modules/adders.js"),
+		],
+		[
+			"/tmp/deoptigate/examples/two-modules/objects.js",
+			repoRoot("examples/two-modules/objects.js"),
+		],
+	],
+	["html-inline.v8.log"]: [
+		[
+			"file:///tmp/deoptigate/examples/html-inline/adders.html",
+			pathToFileURL(repoRoot("examples/html-inline/adders.html")).toString(),
+		],
+	],
+	["html-external.v8.log"]: [
+		[
+			"file:///tmp/deoptigate/examples/html-external/adders.js",
+			pathToFileURL(repoRoot("examples/html-external/adders.js")).toString(),
+		],
+		[
+			"file:///tmp/deoptigate/examples/html-external/objects.js",
+			pathToFileURL(repoRoot("examples/html-external/objects.js")).toString(),
+		],
+	],
+};
+
+/**
+ * Replace the fake paths in the example test log files with paths to real files
+ * to test handling paths on the OS the tests are running on. Our cloud tests
+ * run these tests on Linux and Window
+ * @param {string} logFilename
+ * @param {string} logPath
+ * @returns {Promise<string>}
+ */
+async function readLogFile(logFilename, logPath) {
+	const replacements = logPathReplacements[logFilename];
+
+	let contents = await readFile(logPath, "utf8");
+
+	// Windows + Git shenanigans - make sure log files end in only '\n'
+	// as required by v8 tooling
+	contents = contents.replace(/\r\n/g, "\n");
+	for (const [template, realPath] of replacements) {
+		contents = contents.replace(
+			new RegExp(escapeRegex(template), "g"),
+			// Windows paths need to be double escaped in the logs
+			realPath.replace(/\\/g, "\\\\")
+		);
+	}
+
+	return contents;
+}
 
 /**
  * @param {import('tape').Test} t
@@ -15,9 +82,7 @@ export const pkgRoot = (...args) => path.join(__dirname, "..", ...args);
 export async function runParser(t, logFileName, options) {
 	const logPath = pkgRoot("test", "logs", logFileName);
 
-	// TODO: Consider replacing paths in log with comparable native paths
-	// to test logs generated on Windows and Linux
-	const logContents = await readFile(logPath, "utf8");
+	const logContents = await readLogFile(logFileName, logPath);
 
 	const origConsoleError = console.error;
 	const errorArgs = [];
@@ -39,9 +104,19 @@ export async function runParser(t, logFileName, options) {
 }
 
 export async function writeSnapshot(logFileName, result) {
+	// Undo replacements when writing snapshots so they are consistent
+	const replacements = logPathReplacements[logFileName];
+	let contents = JSON.stringify(result, null, 2);
+	for (const [snapshotPath, template] of replacements) {
+		contents = contents.replace(
+			new RegExp(escapeRegex(template.replace(/\\/g, "\\\\")), "g"),
+			snapshotPath
+		);
+	}
+
 	const outFileName = logFileName.replace(".v8.log", ".json");
 	const outPath = path.join(__dirname, "snapshots", outFileName);
-	await writeFile(outPath, JSON.stringify(result, null, 2), "utf8");
+	await writeFile(outPath, contents, "utf8");
 }
 
 /**
