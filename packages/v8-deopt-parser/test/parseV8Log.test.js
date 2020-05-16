@@ -10,10 +10,13 @@ test("runParser(adders.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
+		type: "ics",
+		id: "327",
 		functionName: "addAny",
 		file: "/tmp/deoptigate/examples/simple/adders.js",
 		line: 93,
 		column: 27,
+		severity: 3,
 		updates: [
 			{
 				type: "LoadIC",
@@ -23,6 +26,8 @@ test("runParser(adders.v8.log)", async (t) => {
 				map: "0x017b7663a951",
 				optimizationState: "optimizable",
 				severity: 1,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -32,6 +37,8 @@ test("runParser(adders.v8.log)", async (t) => {
 				map: "0x017b76637b61",
 				optimizationState: "optimizable",
 				severity: 2,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -41,15 +48,20 @@ test("runParser(adders.v8.log)", async (t) => {
 				map: "0x017b76637021",
 				optimizationState: "optimizable",
 				severity: 3,
+				modifier: "",
+				slowReason: "",
 			},
 		],
 	});
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
+		type: "deopts",
+		id: "331",
 		functionName: "addObjects",
 		file: "/tmp/deoptigate/examples/simple/adders.js",
 		line: 137,
 		column: 28,
+		severity: 3,
 		updates: [
 			{
 				timestamp: 496191,
@@ -64,11 +76,14 @@ test("runParser(adders.v8.log)", async (t) => {
 	});
 
 	validateEntry(t, "Matching Code entry", result.codes, {
+		type: "codes",
+		id: "309",
 		functionName: "addNumbers",
 		file: "/tmp/deoptigate/examples/simple/adders.js",
 		line: 80,
 		column: 20,
 		isScript: false,
+		severity: 1,
 		updates: [
 			{
 				timestamp: 66399,
@@ -95,10 +110,13 @@ test("runParser(two-modules.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
+		type: "ics",
+		id: "333",
 		functionName: "addAny",
 		file: "/tmp/deoptigate/examples/two-modules/adders.js",
 		line: 38,
 		column: 27,
+		severity: 3,
 		updates: [
 			{
 				type: "LoadIC",
@@ -108,6 +126,8 @@ test("runParser(two-modules.v8.log)", async (t) => {
 				map: "0x37cdf3b7a951",
 				optimizationState: "optimizable",
 				severity: 1,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -117,6 +137,8 @@ test("runParser(two-modules.v8.log)", async (t) => {
 				map: "0x37cdf3b77b61",
 				optimizationState: "optimizable",
 				severity: 2,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -126,15 +148,20 @@ test("runParser(two-modules.v8.log)", async (t) => {
 				map: "0x37cdf3b77021",
 				optimizationState: "optimizable",
 				severity: 3,
+				modifier: "",
+				slowReason: "",
 			},
 		],
 	});
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
+		type: "deopts",
+		id: "337",
 		functionName: "addObjects",
 		file: "/tmp/deoptigate/examples/two-modules/adders.js",
 		line: 82,
 		column: 28,
+		severity: 3,
 		updates: [
 			{
 				timestamp: 514196,
@@ -149,11 +176,14 @@ test("runParser(two-modules.v8.log)", async (t) => {
 	});
 
 	validateEntry(t, "Matching Code entry", result.codes, {
+		type: "codes",
+		id: "315",
 		functionName: "addNumbers",
 		file: "/tmp/deoptigate/examples/two-modules/adders.js",
 		line: 25,
 		column: 20,
 		isScript: false,
+		severity: 1,
 		updates: [
 			{
 				timestamp: 64640,
@@ -180,10 +210,13 @@ test("runParser(html-inline.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
+		type: "ics",
+		id: "19",
 		functionName: "addAny",
 		file: "file:///tmp/deoptigate/examples/html-inline/adders.html",
 		line: 98,
 		column: 33,
+		severity: 3,
 		updates: [
 			{
 				type: "LoadIC",
@@ -193,6 +226,8 @@ test("runParser(html-inline.v8.log)", async (t) => {
 				map: "0x14cd08283fc9",
 				optimizationState: "optimizable",
 				severity: 1,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -202,6 +237,8 @@ test("runParser(html-inline.v8.log)", async (t) => {
 				map: "0x14cd08284091",
 				optimizationState: "optimizable",
 				severity: 2,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -211,15 +248,20 @@ test("runParser(html-inline.v8.log)", async (t) => {
 				map: "0x14cd08284361",
 				optimizationState: "optimizable",
 				severity: 3,
+				modifier: "",
+				slowReason: "",
 			},
 		],
 	});
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
+		type: "deopts",
+		id: "26",
 		functionName: "addObjects",
 		file: "file:///tmp/deoptigate/examples/html-inline/adders.html",
 		line: 142,
 		column: 34,
+		severity: 3,
 		updates: [
 			{
 				timestamp: 645553,
@@ -234,11 +276,14 @@ test("runParser(html-inline.v8.log)", async (t) => {
 	});
 
 	validateEntry(t, "Matching Code entry", result.codes, {
+		type: "codes",
+		id: "2",
 		functionName: "addNumbers",
 		file: "file:///tmp/deoptigate/examples/html-inline/adders.html",
 		line: 85,
 		column: 26,
 		isScript: false,
+		severity: 1,
 		updates: [
 			{
 				timestamp: 235580,
@@ -265,10 +310,13 @@ test("runParser(html-external.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(t, "Matching ICS Entry", result.ics, {
+		type: "ics",
+		id: "20",
 		functionName: "addAny",
 		file: "file:///tmp/deoptigate/examples/html-external/adders.js",
 		line: 38,
 		column: 27,
+		severity: 3,
 		updates: [
 			{
 				type: "LoadIC",
@@ -278,6 +326,8 @@ test("runParser(html-external.v8.log)", async (t) => {
 				map: "0x420708283f51",
 				optimizationState: "optimizable",
 				severity: 1,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -287,6 +337,8 @@ test("runParser(html-external.v8.log)", async (t) => {
 				map: "0x420708284019",
 				optimizationState: "optimizable",
 				severity: 2,
+				modifier: "",
+				slowReason: "",
 			},
 			{
 				type: "LoadIC",
@@ -296,15 +348,20 @@ test("runParser(html-external.v8.log)", async (t) => {
 				map: "0x4207082842e9",
 				optimizationState: "optimizable",
 				severity: 3,
+				modifier: "",
+				slowReason: "",
 			},
 		],
 	});
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
+		type: "deopts",
+		id: "27",
 		functionName: "addObjects",
 		file: "file:///tmp/deoptigate/examples/html-external/adders.js",
 		line: 82,
 		column: 28,
+		severity: 3,
 		updates: [
 			{
 				timestamp: 322375,
@@ -319,11 +376,14 @@ test("runParser(html-external.v8.log)", async (t) => {
 	});
 
 	validateEntry(t, "Matching Code entry", result.codes, {
+		type: "codes",
+		id: "4",
 		functionName: "addNumbers",
 		file: "file:///tmp/deoptigate/examples/html-external/adders.js",
 		line: 25,
 		column: 20,
 		isScript: false,
+		severity: 1,
 		updates: [
 			{
 				timestamp: 62089,
