@@ -151,8 +151,6 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 
 		element = nextElement(element, root);
 	}
-
-	return root.innerHTML;
 }
 
 function severityClass(severity) {

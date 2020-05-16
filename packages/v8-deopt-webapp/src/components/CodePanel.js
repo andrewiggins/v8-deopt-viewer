@@ -6,6 +6,9 @@ import { addDeoptMarkers } from "../utils/deoptMarkers";
 import { codePanel, error as errorClass } from "./CodePanel.scss";
 import { showLowSevs as showLowSevsClass } from "../utils/deoptMarkers.scss";
 
+// Turn on auto highlighting by Prism
+Prism.manual = true;
+
 /**
  * @param {string} path
  */
