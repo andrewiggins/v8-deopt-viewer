@@ -4,10 +4,14 @@
   "description": "Generate and view a log of deoptimizations in V8",
   "type": "module",
   "main": "src/index.js",
-  "bin": "bin/v8-deopt-viewer",
+  "bin": "bin/v8-deopt-viewer.js",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "files": [
+    "src",
+    "bin"
+  ],
   "scripts": {
     "test": "node ./test/determineCommonRoot.test.js"
   },
@@ -16,6 +20,7 @@
     "open": "^7.0.3",
     "sade": "^1.7.3",
     "v8-deopt-generate-log": "^0.1.0",
-    "v8-deopt-parser": "^0.1.0"
+    "v8-deopt-parser": "^0.1.0",
+    "v8-deopt-webapp": "^0.1.0"
   }
 }

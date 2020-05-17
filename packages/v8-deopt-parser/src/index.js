@@ -18,3 +18,4 @@ export { groupByFile } from "./groupBy.js";
 export { findEntry } from "./findEntry.js";
 export { sortEntries } from "./sortEntries.js";
 export { severityIcState } from "./propertyICParsers.js";
+export { MIN_SEVERITY } from "./utils.js";

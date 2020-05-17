@@ -16,7 +16,7 @@ const templatePath = path.join(__dirname, "template.html");
 
 /**
  * @param {import('v8-deopt-parser').PerFileV8DeoptInfo} deoptInfo
- * @returns {Promise<Record<string, import('./').V8DeoptInfoWithSources>>}
+ * @returns {Promise<Record<string, import('v8-deopt-webapp').V8DeoptInfoWithSources>>}
  */
 async function addSources(deoptInfo) {
 	const files = Object.keys(deoptInfo);

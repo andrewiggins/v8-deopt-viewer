@@ -22,7 +22,11 @@ sade("v8-deopt-viewer [file]", true)
 		"How long in milliseconds to keep the browser open while the webpage runs",
 		5e3
 	)
-	.option("--keep-internals", "Don't remove NodeJS internals from the log")
-	.option("--open", "Open the resulting webapp in a web browser")
+	.option(
+		"--keep-internals",
+		"Don't remove NodeJS internals from the log",
+		false
+	)
+	.option("--open", "Open the resulting webapp in a web browser", false)
 	.action(run)
 	.parse(process.argv);

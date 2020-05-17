@@ -1,5 +1,3 @@
-const MIN_SEVERITY = 0;
-
 type CodeState = "compiled" | "optimizable" | "optimized" | "unknown";
 
 interface CodeEntry {
@@ -100,21 +98,42 @@ interface Options {
 /**
  * Parse the deoptimizations from a v8.log file
  * @param v8LogContent The contents of a v8.log file
- * @param readSourceFileContent Given paths to source files from the v8.log,
- * this function should return their contents
+ * @param options Options to influence the parsing of the V8 log
  */
-export async function parseV8Log(
+export function parseV8Log(
 	v8LogContent: string,
-	keepInternals?: Options
+	options?: Options
 ): Promise<V8DeoptInfo>;
 
+/**
+ * Group the V8 deopt information into an object mapping files to the relevant
+ * data
+ * @param rawDeoptInfo A V8DeoptInfo object from `parseV8Log`
+ */
 export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
 
+/**
+ * Find an entry in a V8DeoptInfo object
+ * @param deoptInfo A V8DeoptInfo object from `parseV8Log`
+ * @param entryId The ID of the entry to find
+ */
 export function findEntry(
 	deoptInfo: V8DeoptInfo,
 	entryId: string
 ): Entry | null;
 
-export function sortEntries(entries: Entries[]): Entries[];
+/**
+ * Sort V8 Deopt entries by line, number, and type. Modifies the original array.
+ * @param entries A list of V8 Deopt Entries
+ * @returns The sorted entries
+ */
+export function sortEntries(entries: Entry[]): Entry[];
 
+/**
+ * Get the severity of an Inline Cache state
+ * @param state An Inline Cache state
+ */
 export function severityIcState(state: ICState): number;
+
+/** The minimum severity an update or entry can be. */
+export const MIN_SEVERITY = 1;

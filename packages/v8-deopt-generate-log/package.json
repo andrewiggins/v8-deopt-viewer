@@ -4,9 +4,13 @@
   "description": "Generate a V8 log given a JS or HTML file",
   "type": "module",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node test/index.test.js"
   },

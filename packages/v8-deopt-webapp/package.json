@@ -6,11 +6,15 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "dev": "rollup -w -c ./rollup.config.js",
     "start": "run-p dev",
-    "test": "node -e \"console.log('No tests')\""
+    "test": "node -e \"console.log('No tests')\"",
+    "prepare": "run-s build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
