@@ -61,7 +61,9 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 					return (
 						<tr key={fileName}>
 							<td class={fileNameClass}>
-								<a href={`#/file/${i}`}>{deoptInfo[fileName].relativePath}</a>
+								<a href={`#/file/${i}`} title={fileName}>
+									{deoptInfo[fileName].relativePath}
+								</a>
 							</td>
 							<SeverityTableSummary
 								class={codes}
