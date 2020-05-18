@@ -1,5 +1,13 @@
 # v8-deopt-viewer
 
+## 0.1.2
+
+### Patch Changes
+
+- Remove http restrictions and warnings about the "--no-sandbox" flag. See commit for details
+- Updated dependencies [undefined]
+  - v8-deopt-generate-log@0.1.1
+
 ## 0.1.1
 
 ### Patch Changes
