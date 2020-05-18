@@ -13,6 +13,7 @@
     "bin"
   ],
   "scripts": {
+    "prepare": "node ./scripts/prepare.js",
     "test": "node ./test/determineCommonRoot.test.js"
   },
   "dependencies": {
