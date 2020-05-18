@@ -1,5 +1,11 @@
 # v8-deopt-viewer
 
+## 0.1.1
+
+### Patch Changes
+
+- Fix v8-deopt-viewer bin field
+
 ## 0.1.0
 
 ### Minor Changes
