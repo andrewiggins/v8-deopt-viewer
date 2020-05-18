@@ -2,9 +2,6 @@
 
 Given a JavaScript file or URL, run the file or webpage and save a log of V8 optimizations and deoptimizations.
 
-<div style="text-align: center; font-weight: bold">⚠ WARNING: DO NOT USE THIS TOOL WITH URLS YOU DON'T TRUST ⚠</div>
-<div style="text-align: center;">In order to collect logs for websites, this tool must run Chromium in "no-sandbox" mode which a malicious website could use to compromise your machine. Only use this tool on URLs you trust</div>
-
 ## Installation
 
 > Check out [`v8-deopt-viewer`](https://npmjs.com/package/v8-deopt-viewer) for a CLI that automates this for you!
