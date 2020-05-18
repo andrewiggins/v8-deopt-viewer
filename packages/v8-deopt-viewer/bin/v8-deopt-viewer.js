@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as path from "path";
 import sade from "sade";
 import run from "../src/index.js";

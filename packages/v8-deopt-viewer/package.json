@@ -4,7 +4,9 @@
   "description": "Generate and view a log of deoptimizations in V8",
   "type": "module",
   "main": "src/index.js",
-  "bin": "bin/v8-deopt-viewer.js",
+  "bin": {
+    "v8-deopt-viewer": "./bin/v8-deopt-viewer.js"
+  },
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
