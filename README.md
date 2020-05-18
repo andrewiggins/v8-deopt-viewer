@@ -2,14 +2,11 @@
 
 View deoptimizations of your JavaScript in V8
 
-<div style="text-align: center; font-weight: bold">⚠ WARNING: DO NOT USE THIS TOOL WITH URLS YOU DON'T TRUST ⚠</div>
-<div style="text-align: center;">In order to collect logs for websites, this tool must run Chromium in "no-sandbox" mode which a malicious website could use to compromise your machine. Only use this tool on URLs you trust</div>
-
 ![Sample image of the results of running v8-deopt-viewer](examples/v8-deopt-webapp.png)
 
 ## You may not need this tool...
 
-V8 only optimizes code that runs repeatedly. Often for websites this code is your framework's code and not your app code. If you are looking to improve your website's performance, first check out tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) or [webhint](https://webhint.io/), and follow other general website performance guidance. 
+V8 only optimizes code that runs repeatedly. Often for websites this code is your framework's code and not your app code. If you are looking to improve your website's performance, first check out tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) or [webhint](https://webhint.io/), and follow other general website performance guidance.
 
 ## Usage
 

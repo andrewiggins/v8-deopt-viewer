@@ -28,7 +28,7 @@ async function addSources(deoptInfo) {
 		let srcPath;
 
 		let src, srcError;
-		if (file.startsWith("https://")) {
+		if (file.startsWith("https://") || file.startsWith("http://")) {
 			try {
 				srcPath = file;
 				const { data } = await get(file);
@@ -90,12 +90,6 @@ async function addSources(deoptInfo) {
 export default async function run(srcFile, options) {
 	let logFilePath;
 	if (srcFile) {
-		if (srcFile.startsWith("http://")) {
-			throw new Error(
-				"Please use an https URL. This script runs websites without a sandbox and untrusted URLs could compromise your machine."
-			);
-		}
-
 		console.log("Running and generating log...");
 		logFilePath = await generateV8Log(srcFile, {
 			logFilePath: path.join(options.out, "v8.log"),
