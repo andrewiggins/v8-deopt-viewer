@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-viewer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generate and view a log of deoptimizations in V8",
   "type": "module",
   "main": "src/index.js",
@@ -20,8 +20,8 @@
     "httpie": "^1.1.2",
     "open": "^7.0.3",
     "sade": "^1.7.3",
-    "v8-deopt-generate-log": "^0.0.0",
-    "v8-deopt-parser": "^0.0.0",
-    "v8-deopt-webapp": "^0.0.0"
+    "v8-deopt-generate-log": "^0.1.0",
+    "v8-deopt-parser": "^0.1.0",
+    "v8-deopt-webapp": "^0.1.0"
   }
 }
