@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-viewer",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "View deoptimizations of your JavaScript in V8",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
