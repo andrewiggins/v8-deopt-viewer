@@ -4,8 +4,7 @@ Basic process for contributing:
 
 1. Fork repo and create local branch
 2. Make and commit changes
-3. Run `yarn changeset` and answer the questions about the changes you are
-   making
+3. If you think a change you make should have a changelog entry (can run multiple times for multiple entries), run `yarn changeset` and answer the questions about the changes you are making
 4. Open a pull request with your changes
 
 ## Organization
