@@ -1,4 +1,3 @@
-import Prism from "prismjs";
 import { sortEntries } from "v8-deopt-parser/src/sortEntries";
 import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.scss";
 
