@@ -21,3 +21,17 @@ npm i v8-deopt-webapp
 4. Call `V8DeoptViewer.renderIntoDom(object, container)` with the object and the DOM Node you want the app to render into
 
 Currently, we only produce a UMD build, but would consider publishing an ESM build if it's useful to people
+
+## Contributing
+
+See the `Contributing.md` guide at the root of the repo for general guidance you should follow.
+
+To run the webapp locally:
+
+1. `cd` into this packages directory (e.g. `packages/v8-deopt-webapp`)
+1. Run `node test/generateTestData.mjs`
+1. Open `test/index.html` in your favorite web browser
+
+By default, the test page (`test/index.html`) loads the data from `test/deoptInfo.js`. If you want to simulate a log that doesn't have sources, add `?error` to the URL to load `deoptInfoError.js`.
+
+If you make changes to `v8-deopt-generate-log`, you'll need to rerun `generateTestData.mjs` to re-generate `deoptInfo.js` & `deoptInfoError.js`.
