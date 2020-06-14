@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
 import {
 	panel,
+	panel_header,
 	panel_nav,
 	tab,
 	tab_block,
@@ -15,6 +16,7 @@ import {
 } from "../spectre.scss";
 import {
 	deoptsListPanel,
+	panel_title,
 	showLowSevs as showLowSevsClass,
 	tabLink,
 	entryTable,
@@ -122,6 +124,9 @@ export function DeoptsList({
 				(showLowSevs && showLowSevsClass) || null,
 			].join(" ")}
 		>
+			<div class={panel_header}>
+				<h2 class={panel_title}>{fileDeoptInfo.relativePath}</h2>
+			</div>
 			<nav class={panel_nav}>
 				<ul class={[tab, tab_block].join(" ")}>
 					{tabLinks.map((link) => {

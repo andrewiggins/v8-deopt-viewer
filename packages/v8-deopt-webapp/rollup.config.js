@@ -37,6 +37,9 @@ function getConfig(outputFile, customPlugins) {
 			commonjs(),
 			...customPlugins,
 		],
+		watch: {
+			clearScreen: false,
+		},
 	};
 }
 

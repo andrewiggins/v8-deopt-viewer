@@ -14,12 +14,10 @@
 	flex: 1 0 50%;
 }
 
-$scrollBarWidth: 16px;
-
 .codeSettings {
 	position: absolute;
 	top: 0;
-	right: calc(50% + #{$scrollBarWidth});
+	right: 0;
 	z-index: 1;
 	margin: 0.25rem;
 }
