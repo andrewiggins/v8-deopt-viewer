@@ -9,6 +9,7 @@ import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
 	propertyICFieldParsers,
 	severityIcState,
+	UNKNOWN,
 } from "./propertyICParsers.js";
 import {
 	nameOptimizationState,
@@ -273,8 +274,8 @@ export class DeoptLogReader extends LogReader {
 		modifier,
 		slow_reason
 	) {
-		// Skip IC entries that don't contain changes
-		if (oldState == newState) {
+		// Skip unknown IC entries whose maps are 0. Not sure what these mean...
+		if (oldState == UNKNOWN && newState == UNKNOWN && parseInt(map) == 0) {
 			return;
 		}
 
@@ -282,8 +283,16 @@ export class DeoptLogReader extends LogReader {
 			code
 		);
 
+		// PropertyIC doesn't use the functionName as the key because if funcA is
+		// inlined in funcB, any propertyIC related to the inlined funcA code would
+		// show up with the name funcB instead of funcA. This change in function
+		// name makes it harder to track PropertyIC all related to funcA. So to keep
+		// track of inline caches for funcA, we rely soley on the file, line, and
+		// column from the profile (which is consistent across inlines) to track
+		// property inline caches
+		const key = locationKey("", file, line, column);
+
 		const severity = severityIcState(newState);
-		const key = locationKey(functionName, file, line, column);
 		if (!this.entriesIC.has(key)) {
 			this.entriesIC.set(key, {
 				type: "ics",

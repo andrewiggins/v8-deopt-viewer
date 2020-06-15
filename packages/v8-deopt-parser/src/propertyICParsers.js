@@ -8,7 +8,7 @@ const RECOMPUTE_HANDLER = "recompute_handler";
 const POLYMORPHIC = "polymorphic";
 const MEGAMORPHIC = "megamorphic";
 const GENERIC = "generic";
-const UNKNOWN = "unknown";
+export const UNKNOWN = "unknown";
 
 /**
  * @param {string} rawState Raw Inline Cache state from V8

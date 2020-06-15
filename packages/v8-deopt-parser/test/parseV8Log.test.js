@@ -6,6 +6,7 @@ import {
 	repoRoot,
 	repoFileURL,
 } from "./helpers.js";
+import { expectedICSLogs } from "./constants.js";
 
 test("runParser(adders.v8.log)", async (t) => {
 	const logFileName = "adders.v8.log";
@@ -15,50 +16,7 @@ test("runParser(adders.v8.log)", async (t) => {
 	t.equal(result.deopts.length, 7, "Number of deopts");
 	t.equal(result.ics.length, 33, "Number of ics");
 
-	validateEntry(t, "Matching ICS Entry", result.ics, {
-		type: "ics",
-		id: "327",
-		functionName: "addAny",
-		file: repoRoot("examples/simple/adders.js"),
-		line: 93,
-		column: 27,
-		severity: 3,
-		updates: [
-			{
-				type: "LoadIC",
-				oldState: "premonomorphic",
-				newState: "monomorphic",
-				key: "x",
-				map: "0x017b7663a951",
-				optimizationState: "optimizable",
-				severity: 1,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "monomorphic",
-				newState: "polymorphic",
-				key: "x",
-				map: "0x017b76637b61",
-				optimizationState: "optimizable",
-				severity: 2,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "polymorphic",
-				newState: "megamorphic",
-				key: "x",
-				map: "0x017b76637021",
-				optimizationState: "optimizable",
-				severity: 3,
-				modifier: "",
-				slowReason: "",
-			},
-		],
-	});
+	validateEntry(t, "Matching ICS Entry", result.ics, expectedICSLogs.adders);
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
 		type: "deopts",
@@ -168,50 +126,12 @@ test("runParser(two-modules.v8.log)", async (t) => {
 	t.equal(result.deopts.length, 7, "Number of deopts");
 	t.equal(result.ics.length, 33, "Number of ics");
 
-	validateEntry(t, "Matching ICS Entry", result.ics, {
-		type: "ics",
-		id: "333",
-		functionName: "addAny",
-		file: repoRoot("examples/two-modules/adders.js"),
-		line: 38,
-		column: 27,
-		severity: 3,
-		updates: [
-			{
-				type: "LoadIC",
-				oldState: "premonomorphic",
-				newState: "monomorphic",
-				key: "x",
-				map: "0x37cdf3b7a951",
-				optimizationState: "optimizable",
-				severity: 1,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "monomorphic",
-				newState: "polymorphic",
-				key: "x",
-				map: "0x37cdf3b77b61",
-				optimizationState: "optimizable",
-				severity: 2,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "polymorphic",
-				newState: "megamorphic",
-				key: "x",
-				map: "0x37cdf3b77021",
-				optimizationState: "optimizable",
-				severity: 3,
-				modifier: "",
-				slowReason: "",
-			},
-		],
-	});
+	validateEntry(
+		t,
+		"Matching ICS Entry",
+		result.ics,
+		expectedICSLogs["two-modules"]
+	);
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
 		type: "deopts",
@@ -268,50 +188,12 @@ test("runParser(html-inline.v8.log)", async (t) => {
 	t.equal(result.deopts.length, 6, "Number of deopts");
 	t.equal(result.ics.length, 33, "Number of ics");
 
-	validateEntry(t, "Matching ICS Entry", result.ics, {
-		type: "ics",
-		id: "19",
-		functionName: "addAny",
-		file: repoFileURL("examples/html-inline/adders.html"),
-		line: 98,
-		column: 33,
-		severity: 3,
-		updates: [
-			{
-				type: "LoadIC",
-				oldState: "unintialized",
-				newState: "monomorphic",
-				key: "x",
-				map: "0x14cd08283fc9",
-				optimizationState: "optimizable",
-				severity: 1,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "monomorphic",
-				newState: "polymorphic",
-				key: "x",
-				map: "0x14cd08284091",
-				optimizationState: "optimizable",
-				severity: 2,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "polymorphic",
-				newState: "megamorphic",
-				key: "x",
-				map: "0x14cd08284361",
-				optimizationState: "optimizable",
-				severity: 3,
-				modifier: "",
-				slowReason: "",
-			},
-		],
-	});
+	validateEntry(
+		t,
+		"Matching ICS Entry",
+		result.ics,
+		expectedICSLogs["html-inline"]
+	);
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
 		type: "deopts",
@@ -368,50 +250,12 @@ test("runParser(html-external.v8.log)", async (t) => {
 	t.equal(result.deopts.length, 6, "Number of deopts");
 	t.equal(result.ics.length, 33, "Number of ics");
 
-	validateEntry(t, "Matching ICS Entry", result.ics, {
-		type: "ics",
-		id: "20",
-		functionName: "addAny",
-		file: repoFileURL("examples/html-external/adders.js"),
-		line: 38,
-		column: 27,
-		severity: 3,
-		updates: [
-			{
-				type: "LoadIC",
-				oldState: "unintialized",
-				newState: "monomorphic",
-				key: "x",
-				map: "0x420708283f51",
-				optimizationState: "optimizable",
-				severity: 1,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "monomorphic",
-				newState: "polymorphic",
-				key: "x",
-				map: "0x420708284019",
-				optimizationState: "optimizable",
-				severity: 2,
-				modifier: "",
-				slowReason: "",
-			},
-			{
-				type: "LoadIC",
-				oldState: "polymorphic",
-				newState: "megamorphic",
-				key: "x",
-				map: "0x4207082842e9",
-				optimizationState: "optimizable",
-				severity: 3,
-				modifier: "",
-				slowReason: "",
-			},
-		],
-	});
+	validateEntry(
+		t,
+		"Matching ICS Entry",
+		result.ics,
+		expectedICSLogs["html-external"]
+	);
 
 	validateEntry(t, "Matching Deopt entry", result.deopts, {
 		type: "deopts",

@@ -408,10 +408,65 @@
         {
           "type": "LoadIC",
           "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "x",
+          "map": "0x37cdf3b77481",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "x",
+          "map": "0x37cdf3b76e41",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
           "newState": "megamorphic",
           "key": "x",
           "map": "0x37cdf3b77021",
           "optimizationState": "optimizable",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0x37cdf3b77251",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0x37cdf3b76bc1",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0x37cdf3b75d11",
+          "optimizationState": "optimized",
           "severity": 3,
           "modifier": "",
           "slowReason": ""
@@ -452,10 +507,65 @@
         {
           "type": "LoadIC",
           "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "y",
+          "map": "0x37cdf3b77481",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "y",
+          "map": "0x37cdf3b76e41",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
           "newState": "megamorphic",
           "key": "y",
           "map": "0x37cdf3b77021",
           "optimizationState": "optimizable",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0x37cdf3b77251",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0x37cdf3b76bc1",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0x37cdf3b75d11",
+          "optimizationState": "optimized",
           "severity": 3,
           "modifier": "",
           "slowReason": ""
