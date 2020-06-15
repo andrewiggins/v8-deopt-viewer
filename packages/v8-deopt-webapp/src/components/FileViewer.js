@@ -19,6 +19,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
 	const [showLowSevs, setShowLowSevs] = useState(defaultShowLowSevs);
 	const [hideLineNums, setHideLineNums] = useState(defaultHideLineNum);
+	const [showAllICs, setShowAllICs] = useState(false);
 
 	return (
 		<div class={fileViewer}>
@@ -28,6 +29,8 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				toggleShowLowSevs={() => setShowLowSevs((prev) => !prev)}
 				hideLineNums={hideLineNums}
 				toggleHideLineNums={() => setHideLineNums((prev) => !prev)}
+				showAllICs={showAllICs}
+				toggleShowAllICs={() => setShowAllICs((prev) => !prev)}
 			/>
 			<CodePanel
 				fileDeoptInfo={fileDeoptInfo}
@@ -41,6 +44,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
 				showLowSevs={showLowSevs}
+				showAllICs={showAllICs}
 			/>
 		</div>
 	);

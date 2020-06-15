@@ -11,7 +11,7 @@ export const defaultShowLowSevs = false;
 export const defaultHideLineNum = false;
 
 /**
- * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; hideLineNums: boolean; toggleHideLineNums: () => void; }} CodeSettingsProps
+ * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; hideLineNums: boolean; toggleHideLineNums: () => void; showAllICs: boolean; toggleShowAllICs: () => void; }} CodeSettingsProps
  * @param {CodeSettingsProps} props
  */
 export function CodeSettings(props) {
@@ -19,37 +19,52 @@ export function CodeSettings(props) {
 		props.showLowSevs !== defaultShowLowSevs ||
 		props.hideLineNums !== defaultHideLineNum;
 
+	const settings = [
+		{
+			key: "showLowSevs",
+			label: "Display Low Severities",
+			checked: props.showLowSevs,
+			onInput: () => props.toggleShowLowSevs(),
+		},
+		{
+			key: "hideLineNums",
+			label: "Hide Line Numbers",
+			checked: props.hideLineNums,
+			onInput: () => props.toggleHideLineNums(),
+		},
+		{
+			key: "showAllICs",
+			label: "Show All Inline Cache Entries",
+			checked: props.showAllICs,
+			onInput: () => props.toggleShowAllICs(),
+		},
+	];
+
+	const rootClass = [
+		codeSettings,
+		props.class,
+		(dirty && dirtyClass) || null,
+	].join(" ");
+
 	return (
-		<details
-			class={[codeSettings, props.class, (dirty && dirtyClass) || null].join(
-				" "
-			)}
-		>
+		<details class={rootClass}>
 			<summary aria-label="Settings">
 				<SettingsCog />
 			</summary>
 			<div class={settingsBody}>
 				<ul class={[menu, settingsMenu].join(" ")}>
-					<li class={menu_item}>
-						<label class={form_switch}>
-							<input
-								type="checkbox"
-								checked={props.showLowSevs}
-								onInput={() => props.toggleShowLowSevs()}
-							/>
-							<i class={form_icon}></i> Display Low Severities
-						</label>
-					</li>
-					<li class={menu_item}>
-						<label class={form_switch}>
-							<input
-								type="checkbox"
-								checked={props.hideLineNums}
-								onInput={() => props.toggleHideLineNums()}
-							/>
-							<i class={form_icon}></i> Hide Line Numbers
-						</label>
-					</li>
+					{settings.map((setting) => (
+						<li key={setting.key} class={menu_item}>
+							<label class={form_switch}>
+								<input
+									type="checkbox"
+									checked={setting.checked}
+									onInput={setting.onInput}
+								/>
+								<i class={form_icon}></i> {setting.label}
+							</label>
+						</li>
+					))}
 				</ul>
 			</div>
 		</details>

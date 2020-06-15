@@ -35,13 +35,14 @@ import {
 const defaultEntryKind = "codes";
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; showAllICs: boolean }} props
  */
 export function DeoptsList({
 	selectedEntry,
 	fileDeoptInfo,
 	fileId,
 	showLowSevs,
+	showAllICs,
 }) {
 	const selectedEntryType = selectedEntry?.type ?? defaultEntryKind;
 	const [entryKind, setEntryKind] = useState(selectedEntryType);
@@ -87,6 +88,7 @@ export function DeoptsList({
 			<ICEntry
 				entry={entry}
 				selected={entry.id == selectedId}
+				showAllICs={showAllICs}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -238,9 +240,9 @@ function DeoptEntry({ entry, selected, title }) {
 }
 
 /**
- * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; }} props
+ * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; showAllICs: boolean; }} props
  */
-function ICEntry({ entry, selected, title }) {
+function ICEntry({ entry, selected, title, showAllICs }) {
 	const ref = useScrollIntoView(selected);
 
 	return (
@@ -263,18 +265,24 @@ function ICEntry({ entry, selected, title }) {
 					</tr>
 				</thead>
 				<tbody>
-					{entry.updates.map((update) => (
-						<tr>
-							<td class={severityClass(severityIcState(update.oldState))}>
-								{update.oldState}
-							</td>
-							<td class={severityClass(severityIcState(update.newState))}>
-								{update.newState}
-							</td>
-							<td>{update.key}</td>
-							<td>{update.map}</td>
-						</tr>
-					))}
+					{entry.updates.map((update, i) => {
+						if (!showAllICs && update.newState === update.oldState) {
+							return null;
+						}
+
+						return (
+							<tr key={i}>
+								<td class={severityClass(severityIcState(update.oldState))}>
+									{update.oldState}
+								</td>
+								<td class={severityClass(severityIcState(update.newState))}>
+									{update.newState}
+								</td>
+								<td>{update.key}</td>
+								<td>{update.map}</td>
+							</tr>
+						);
+					})}
 				</tbody>
 			</table>
 		</div>
