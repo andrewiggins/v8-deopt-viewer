@@ -6,6 +6,7 @@
 
 packages/v8-deopt-viewer/README.md
 packages/v8-deopt-webapp/test/deoptInfo.js
+packages/v8-deopt-webapp/test/deoptInfoError.js
 
 
 ###########################################################
