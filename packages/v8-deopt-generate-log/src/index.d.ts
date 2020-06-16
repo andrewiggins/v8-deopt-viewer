@@ -7,6 +7,12 @@ interface Options {
 	 * closing the browser
 	 */
 	browserTimeoutMs?: number;
+
+	/**
+	 * Trace the creation of V8 object maps. Defaults to false. Greatly increases
+	 * the size of log files.
+	 */
+	traceMaps?: boolean;
 }
 
 /**

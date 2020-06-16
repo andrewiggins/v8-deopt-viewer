@@ -29,18 +29,34 @@ async function getPuppeteer() {
 }
 
 /**
+ * @param {string} logFilePath
+ * @param {boolean} [traceMaps]
+ * @returns {string[]}
+ */
+function getV8Flags(logFilePath, traceMaps = false) {
+	const flags = [
+		"--trace-ic",
+		// Could pipe log to stdout ("-" value) but doesn't work very well with
+		// Chromium. Chromium won't pipe v8 logs to a non-TTY pipe it seems :(
+		`--logfile=${logFilePath}`,
+		"--no-logfile-per-isolate",
+	];
+
+	if (traceMaps) {
+		flags.push("--trace-maps", "--trace-maps-details");
+	}
+
+	return flags;
+}
+
+/**
  * @param {string} srcUrl
  * @param {import('../').Options} options
  */
 async function runPuppeteer(srcUrl, options) {
 	const puppeteer = await getPuppeteer();
 	const logFilePath = options.logFilePath;
-	const v8Flags = [
-		"--trace-ic",
-		// Chrome won't pipe v8 logs to a non-TTY pipe it seems :(
-		`--logfile=${logFilePath}`,
-		"--no-logfile-per-isolate",
-	];
+	const v8Flags = getV8Flags(logFilePath, options.traceMaps);
 	const args = [
 		"--disable-extensions",
 		`--js-flags=${v8Flags.join(" ")}`,
@@ -85,12 +101,7 @@ async function generateForLocalHTML(srcPath, options) {
  */
 async function generateForNodeJS(srcPath, options) {
 	const logFilePath = options.logFilePath;
-	const args = [
-		"--trace-ic",
-		`--logfile=${logFilePath}`, // Could pipe log to stdout ("-" value) but doesn't work very well with Chromium
-		"--no-logfile-per-isolate",
-		srcPath,
-	];
+	const args = [...getV8Flags(logFilePath, options.traceMaps), srcPath];
 
 	await execFileAsync(process.execPath, args, {});
 
