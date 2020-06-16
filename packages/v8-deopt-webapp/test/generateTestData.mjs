@@ -19,7 +19,7 @@ async function main() {
 
 	const logPath = repoRoot(`packages/v8-deopt-parser/test/logs/${logFileName}`);
 
-	// Generate log using raw log which has invalid paths (/tmp/deoptigate)
+	// Generate log using raw log which has invalid paths (/tmp/v8-deopt-viewer)
 	// to simulate error output
 	spawnSync(
 		process.execPath,

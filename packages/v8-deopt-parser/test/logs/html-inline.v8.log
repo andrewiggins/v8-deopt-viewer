@@ -1545,111 +1545,111 @@ code-creation,BytecodeHandler,1,24457,0x7ff8d3fd0420,152,ResumeGenerator.ExtraWi
 code-creation,BytecodeHandler,1,24472,0x7ff8d3fd04c0,181,GetIterator.ExtraWide
 code-creation,BytecodeHandler,1,24488,0x7ff8d3fd0580,145,IncBlockCounter.ExtraWide
 code-creation,BytecodeHandler,1,24504,0x7ff8d3fd0620,69,Abort.ExtraWide
-code-creation,Script,12,225175,0x14cd08265cb6,735, file:///tmp/deoptigate/examples/html-inline/adders.html:9:27,0x14cd0826584c,~
-code-creation,LazyCompile,12,234096,0x14cd0826629e,25,addSmis file:///tmp/deoptigate/examples/html-inline/adders.html:80:23,0x14cd08265874,~
-code-creation,LazyCompile,12,234586,0x14cd08266352,61,processResult file:///tmp/deoptigate/examples/html-inline/adders.html:106:29,0x14cd08265954,~
-code-creation,LazyCompile,12,235580,0x14cd08266432,25,addNumbers file:///tmp/deoptigate/examples/html-inline/adders.html:85:26,0x14cd082658ac,~
-code-creation,LazyCompile,12,236234,0x14cd082664ee,25,addStrings file:///tmp/deoptigate/examples/html-inline/adders.html:90:26,0x14cd082658e4,~
-code-creation,LazyCompile,12,236381,0x14cd082665a2,44,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,~
+code-creation,Script,12,225175,0x14cd08265cb6,735, file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:9:27,0x14cd0826584c,~
+code-creation,LazyCompile,12,234096,0x14cd0826629e,25,addSmis file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:80:23,0x14cd08265874,~
+code-creation,LazyCompile,12,234586,0x14cd08266352,61,processResult file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:106:29,0x14cd08265954,~
+code-creation,LazyCompile,12,235580,0x14cd08266432,25,addNumbers file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:85:26,0x14cd082658ac,~
+code-creation,LazyCompile,12,236234,0x14cd082664ee,25,addStrings file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:90:26,0x14cd082658e4,~
+code-creation,LazyCompile,12,236381,0x14cd082665a2,44,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,~
 LoadIC,0x14cd08266369,109,17,0,1,0x14cd08281139,push,,
 LoadIC,0x14cd08266378,111,21,0,1,0x14cd08281139,length,,
 LoadIC,0x14cd08266439,86,29,0,1,0x14cd08283f01,flag,,
 LoadIC,0x14cd082665a9,96,29,0,1,0x14cd08283f01,flag,,
 LoadIC,0x14cd082662a5,81,29,0,1,0x14cd08283f01,flag,,
 LoadIC,0x14cd082664f5,91,29,0,1,0x14cd08283f01,flag,,
-code-creation,LazyCompile,0,280139,0x14cd000c2b20,418,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,0,280296,0x14cd000c2d20,736,processResult file:///tmp/deoptigate/examples/html-inline/adders.html:106:29,0x14cd08265954,*
-code-creation,LazyCompile,0,280422,0x14cd000c3040,494,addNumbers file:///tmp/deoptigate/examples/html-inline/adders.html:85:26,0x14cd082658ac,*
-code-creation,LazyCompile,0,282043,0x14cd000c3280,366,addSmis file:///tmp/deoptigate/examples/html-inline/adders.html:80:23,0x14cd08265874,*
-code-creation,LazyCompile,0,282271,0x14cd000c3440,314,addStrings file:///tmp/deoptigate/examples/html-inline/adders.html:90:26,0x14cd082658e4,*
-code-creation,LazyCompile,0,294878,0x14cd000c35c0,5096, file:///tmp/deoptigate/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
-code-deopt,295137,5184,0x14cd000c35c0,8,2033,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:109:17> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:117:11>,wrong map
+code-creation,LazyCompile,0,280139,0x14cd000c2b20,418,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,0,280296,0x14cd000c2d20,736,processResult file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:106:29,0x14cd08265954,*
+code-creation,LazyCompile,0,280422,0x14cd000c3040,494,addNumbers file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:85:26,0x14cd082658ac,*
+code-creation,LazyCompile,0,282043,0x14cd000c3280,366,addSmis file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:80:23,0x14cd08265874,*
+code-creation,LazyCompile,0,282271,0x14cd000c3440,314,addStrings file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:90:26,0x14cd082658e4,*
+code-creation,LazyCompile,0,294878,0x14cd000c35c0,5096, file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
+code-deopt,295137,5184,0x14cd000c35c0,8,2033,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:109:17> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:117:11>,wrong map
 LoadIC,0x14cd08266369,109,17,1,P,0x14cd08281049,push,,
 LoadIC,0x14cd08266378,111,21,1,P,0x14cd08281049,length,,
-code-deopt,295545,800,0x14cd000c2d20,-1,2033,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:109:17>,wrong map
-code-creation,LazyCompile,0,298104,0x14cd000c4a00,1037,processResult file:///tmp/deoptigate/examples/html-inline/adders.html:106:29,0x14cd08265954,*
-code-creation,LazyCompile,0,325692,0x14cd000c4e60,6888, file:///tmp/deoptigate/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
-code-deopt,464507,6976,0x14cd000c4e60,-1,2521,soft,<file:///tmp/deoptigate/examples/html-inline/adders.html:125:25>,Insufficient type feedback for compare operation
-code-deopt,464605,512,0x14cd000c2b20,-1,1843,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:99:18>,not a Smi
-code-creation,LazyCompile,0,466062,0x14cd000c69a0,550,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,0,471113,0x14cd000c6c20,2320, file:///tmp/deoptigate/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
-code-deopt,487666,2400,0x14cd000c6c20,-1,2698,soft,<file:///tmp/deoptigate/examples/html-inline/adders.html:132:25>,Insufficient type feedback for compare operation
-code-deopt,487768,640,0x14cd000c69a0,-1,1843,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:99:18>,not a Number or Oddball
-code-creation,LazyCompile,0,489164,0x14cd000c7580,238,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,0,495338,0x14cd000c76c0,2761, file:///tmp/deoptigate/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
-code-creation,LazyCompile,12,553072,0x14cd08270c52,80,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,~
-code-creation,LazyCompile,12,557134,0x14cd08270d52,15,Object1 file:///tmp/deoptigate/examples/html-inline/adders.html:11:20,0x14cd082659c4,~
+code-deopt,295545,800,0x14cd000c2d20,-1,2033,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:109:17>,wrong map
+code-creation,LazyCompile,0,298104,0x14cd000c4a00,1037,processResult file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:106:29,0x14cd08265954,*
+code-creation,LazyCompile,0,325692,0x14cd000c4e60,6888, file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
+code-deopt,464507,6976,0x14cd000c4e60,-1,2521,soft,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:125:25>,Insufficient type feedback for compare operation
+code-deopt,464605,512,0x14cd000c2b20,-1,1843,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:99:18>,not a Smi
+code-creation,LazyCompile,0,466062,0x14cd000c69a0,550,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,0,471113,0x14cd000c6c20,2320, file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
+code-deopt,487666,2400,0x14cd000c6c20,-1,2698,soft,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:132:25>,Insufficient type feedback for compare operation
+code-deopt,487768,640,0x14cd000c69a0,-1,1843,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:99:18>,not a Number or Oddball
+code-creation,LazyCompile,0,489164,0x14cd000c7580,238,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,0,495338,0x14cd000c76c0,2761, file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:9:27,0x14cd0826584c,*
+code-creation,LazyCompile,12,553072,0x14cd08270c52,80,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,~
+code-creation,LazyCompile,12,557134,0x14cd08270d52,15,Object1 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:11:20,0x14cd082659c4,~
 StoreIC,0x14cd08270d55,12,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd08270d5b,13,18,X,X,0x000000000000,y,,
-code-deopt,563989,320,0x14cd000c7580,-1,1818,soft,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33>,Insufficient type feedback for generic named access
+code-deopt,563989,320,0x14cd000c7580,-1,1818,soft,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33>,Insufficient type feedback for generic named access
 LoadIC,0x14cd082665ba,98,33,0,1,0x14cd08283fc9,x,,
 LoadIC,0x14cd082665c0,98,39,0,1,0x14cd08283fc9,y,,
 StoreIC,0x14cd08270d55,12,18,0,1,0x14cd08283f29,x,,
 StoreIC,0x14cd08270d5b,13,18,0,1,0x14cd08283fa1,y,,
-code-creation,LazyCompile,0,584013,0x14cd000c81e0,2195,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,0,584137,0x14cd000c8ac0,443,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,12,641763,0x14cd08271896,15,Object2 file:///tmp/deoptigate/examples/html-inline/adders.html:18:20,0x14cd082659fc,~
+code-creation,LazyCompile,0,584013,0x14cd000c81e0,2195,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,0,584137,0x14cd000c8ac0,443,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,12,641763,0x14cd08271896,15,Object2 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:18:20,0x14cd082659fc,~
 StoreIC,0x14cd08271899,19,18,X,X,0x000000000000,y,,
 StoreIC,0x14cd0827189f,20,18,X,X,0x000000000000,x,,
-code-deopt,641896,512,0x14cd000c8ac0,-1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33>,wrong map
+code-deopt,641896,512,0x14cd000c8ac0,-1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33>,wrong map
 LoadIC,0x14cd082665ba,98,33,1,P,0x14cd08284091,x,,
 LoadIC,0x14cd082665c0,98,39,1,P,0x14cd08284091,y,,
 StoreIC,0x14cd08271899,19,18,0,1,0x14cd08283ff1,y,,
 StoreIC,0x14cd0827189f,20,18,0,1,0x14cd08284069,x,,
-code-creation,LazyCompile,0,645005,0x14cd000c8cc0,523,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-deopt,645553,2272,0x14cd000c81e0,-1,3006,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:142:34>,wrong call target
-code-creation,LazyCompile,0,646718,0x14cd000c8f20,473,Object2 file:///tmp/deoptigate/examples/html-inline/adders.html:18:20,0x14cd082659fc,*
-code-creation,LazyCompile,0,650699,0x14cd000c9140,2258,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,0,711343,0x14cd000c9a60,1760,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,12,711577,0x14cd08272e2e,21,Object3 file:///tmp/deoptigate/examples/html-inline/adders.html:25:20,0x14cd08265a34,~
+code-creation,LazyCompile,0,645005,0x14cd000c8cc0,523,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-deopt,645553,2272,0x14cd000c81e0,-1,3006,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:34>,wrong call target
+code-creation,LazyCompile,0,646718,0x14cd000c8f20,473,Object2 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:18:20,0x14cd082659fc,*
+code-creation,LazyCompile,0,650699,0x14cd000c9140,2258,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,0,711343,0x14cd000c9a60,1760,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,12,711577,0x14cd08272e2e,21,Object3 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:25:20,0x14cd08265a34,~
 StoreIC,0x14cd08272e31,26,22,X,X,0x000000000000,hello,,
 StoreIC,0x14cd08272e37,27,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd08272e3d,28,18,X,X,0x000000000000,y,,
-code-deopt,711737,1824,0x14cd000c9a60,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
+code-deopt,711737,1824,0x14cd000c9a60,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
 LoadIC,0x14cd082665ba,98,33,P,P,0x14cd08284181,x,,
 LoadIC,0x14cd082665c0,98,39,P,P,0x14cd08284181,y,,
-code-deopt,711918,608,0x14cd000c8cc0,-1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33>,wrong map
+code-deopt,711918,608,0x14cd000c8cc0,-1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33>,wrong map
 StoreIC,0x14cd08272e31,26,22,0,1,0x14cd082840b9,hello,,
 StoreIC,0x14cd08272e37,27,18,0,1,0x14cd08284131,x,,
 StoreIC,0x14cd08272e3d,28,18,0,1,0x14cd08284159,y,,
-code-deopt,714252,2336,0x14cd000c9140,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
-code-creation,LazyCompile,0,715922,0x14cd000ca180,567,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,0,716075,0x14cd000ca400,677,Object3 file:///tmp/deoptigate/examples/html-inline/adders.html:25:20,0x14cd08265a34,*
-code-creation,LazyCompile,0,719093,0x14cd000ca700,2306,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,0,775331,0x14cd000cb060,1808,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,12,775520,0x14cd082744de,21,Object4 file:///tmp/deoptigate/examples/html-inline/adders.html:33:20,0x14cd08265a6c,~
+code-deopt,714252,2336,0x14cd000c9140,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
+code-creation,LazyCompile,0,715922,0x14cd000ca180,567,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,0,716075,0x14cd000ca400,677,Object3 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:25:20,0x14cd08265a34,*
+code-creation,LazyCompile,0,719093,0x14cd000ca700,2306,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,0,775331,0x14cd000cb060,1808,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,12,775520,0x14cd082744de,21,Object4 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:33:20,0x14cd08265a6c,~
 StoreIC,0x14cd082744e1,34,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd082744e7,35,22,X,X,0x000000000000,hello,,
 StoreIC,0x14cd082744ed,36,18,X,X,0x000000000000,y,,
-code-deopt,775629,1888,0x14cd000cb060,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
+code-deopt,775629,1888,0x14cd000cb060,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
 LoadIC,0x14cd082665ba,98,33,P,P,0x14cd08284271,x,,
 LoadIC,0x14cd082665c0,98,39,P,P,0x14cd08284271,y,,
-code-deopt,775747,640,0x14cd000ca180,-1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33>,wrong map
+code-deopt,775747,640,0x14cd000ca180,-1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33>,wrong map
 StoreIC,0x14cd082744e1,34,18,0,1,0x14cd082841a9,x,,
 StoreIC,0x14cd082744e7,35,22,0,1,0x14cd08284221,hello,,
 StoreIC,0x14cd082744ed,36,18,0,1,0x14cd08284249,y,,
-code-creation,LazyCompile,0,777623,0x14cd000cb7c0,599,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-deopt,779035,2400,0x14cd000ca700,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
-code-creation,LazyCompile,0,779214,0x14cd000cba60,577,Object4 file:///tmp/deoptigate/examples/html-inline/adders.html:33:20,0x14cd08265a6c,*
-code-creation,LazyCompile,0,782580,0x14cd000cbd00,2334,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,0,829773,0x14cd000cc660,1836,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,12,829880,0x14cd08275c72,21,Object5 file:///tmp/deoptigate/examples/html-inline/adders.html:41:20,0x14cd08265aa4,~
+code-creation,LazyCompile,0,777623,0x14cd000cb7c0,599,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-deopt,779035,2400,0x14cd000ca700,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
+code-creation,LazyCompile,0,779214,0x14cd000cba60,577,Object4 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:33:20,0x14cd08265a6c,*
+code-creation,LazyCompile,0,782580,0x14cd000cbd00,2334,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,0,829773,0x14cd000cc660,1836,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,12,829880,0x14cd08275c72,21,Object5 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:41:20,0x14cd08265aa4,~
 StoreIC,0x14cd08275c75,42,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd08275c7b,43,18,X,X,0x000000000000,y,,
 StoreIC,0x14cd08275c81,44,22,X,X,0x000000000000,hello,,
-code-deopt,829965,1920,0x14cd000cc660,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
+code-deopt,829965,1920,0x14cd000cc660,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
 LoadIC,0x14cd082665ba,98,33,P,N,0x14cd08284361,x,,
 LoadIC,0x14cd082665c0,98,39,P,N,0x14cd08284361,y,,
-code-deopt,830068,672,0x14cd000cb7c0,-1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33>,wrong map
+code-deopt,830068,672,0x14cd000cb7c0,-1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33>,wrong map
 StoreIC,0x14cd08275c75,42,18,0,1,0x14cd08284299,x,,
 StoreIC,0x14cd08275c7b,43,18,0,1,0x14cd08284311,y,,
 StoreIC,0x14cd08275c81,44,22,0,1,0x14cd08284339,hello,,
-code-deopt,831392,2400,0x14cd000cbd00,1,1818,eager,<file:///tmp/deoptigate/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/deoptigate/examples/html-inline/adders.html:142:27>,wrong map
-code-creation,LazyCompile,0,832395,0x14cd000ccde0,593,addAny file:///tmp/deoptigate/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
-code-creation,LazyCompile,0,832705,0x14cd000cd080,573,Object5 file:///tmp/deoptigate/examples/html-inline/adders.html:41:20,0x14cd08265aa4,*
-code-creation,LazyCompile,0,835281,0x14cd000cd300,2408,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,0,894375,0x14cd000cdcc0,1884,addObjects file:///tmp/deoptigate/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
-code-creation,LazyCompile,12,894478,0x14cd082772d2,27,Object6 file:///tmp/deoptigate/examples/html-inline/adders.html:49:20,0x14cd08265adc,~
+code-deopt,831392,2400,0x14cd000cbd00,1,1818,eager,<file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:98:33> inlined at <file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:142:27>,wrong map
+code-creation,LazyCompile,0,832395,0x14cd000ccde0,593,addAny file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:95:22,0x14cd0826591c,*
+code-creation,LazyCompile,0,832705,0x14cd000cd080,573,Object5 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:41:20,0x14cd08265aa4,*
+code-creation,LazyCompile,0,835281,0x14cd000cd300,2408,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,0,894375,0x14cd000cdcc0,1884,addObjects file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:139:26,0x14cd0826598c,*
+code-creation,LazyCompile,12,894478,0x14cd082772d2,27,Object6 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:49:20,0x14cd08265adc,~
 StoreIC,0x14cd082772d5,50,21,X,X,0x000000000000,hola,,
 StoreIC,0x14cd082772db,51,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd082772e1,52,18,X,X,0x000000000000,y,,
@@ -1660,8 +1660,8 @@ StoreIC,0x14cd082772d5,50,21,0,1,0x14cd08284389,hola,,
 StoreIC,0x14cd082772db,51,18,0,1,0x14cd08284401,x,,
 StoreIC,0x14cd082772e1,52,18,0,1,0x14cd08284429,y,,
 StoreIC,0x14cd082772e7,53,22,0,1,0x14cd08284451,hello,,
-code-creation,LazyCompile,0,896534,0x14cd000ce460,777,Object6 file:///tmp/deoptigate/examples/html-inline/adders.html:49:20,0x14cd08265adc,*
-code-creation,LazyCompile,12,950275,0x14cd0827768e,27,Object7 file:///tmp/deoptigate/examples/html-inline/adders.html:58:20,0x14cd08265b14,~
+code-creation,LazyCompile,0,896534,0x14cd000ce460,777,Object6 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:49:20,0x14cd08265adc,*
+code-creation,LazyCompile,12,950275,0x14cd0827768e,27,Object7 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:58:20,0x14cd08265b14,~
 StoreIC,0x14cd08277691,59,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd08277697,60,21,X,X,0x000000000000,hola,,
 StoreIC,0x14cd0827769d,61,18,X,X,0x000000000000,y,,
@@ -1672,8 +1672,8 @@ StoreIC,0x14cd08277691,59,18,0,1,0x14cd082844a1,x,,
 StoreIC,0x14cd08277697,60,21,0,1,0x14cd08284519,hola,,
 StoreIC,0x14cd0827769d,61,18,0,1,0x14cd08284541,y,,
 StoreIC,0x14cd082776a3,62,22,0,1,0x14cd08284569,hello,,
-code-creation,LazyCompile,0,952650,0x14cd000ce7c0,677,Object7 file:///tmp/deoptigate/examples/html-inline/adders.html:58:20,0x14cd08265b14,*
-code-creation,LazyCompile,12,1003289,0x14cd08277a46,27,Object8 file:///tmp/deoptigate/examples/html-inline/adders.html:67:20,0x14cd08265b4c,~
+code-creation,LazyCompile,0,952650,0x14cd000ce7c0,677,Object7 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:58:20,0x14cd08265b14,*
+code-creation,LazyCompile,12,1003289,0x14cd08277a46,27,Object8 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:67:20,0x14cd08265b4c,~
 StoreIC,0x14cd08277a49,68,18,X,X,0x000000000000,x,,
 StoreIC,0x14cd08277a4f,69,18,X,X,0x000000000000,y,,
 StoreIC,0x14cd08277a55,70,21,X,X,0x000000000000,hola,,
@@ -1684,5 +1684,5 @@ StoreIC,0x14cd08277a49,68,18,0,1,0x14cd082845b9,x,,
 StoreIC,0x14cd08277a4f,69,18,0,1,0x14cd08284631,y,,
 StoreIC,0x14cd08277a55,70,21,0,1,0x14cd08284659,hola,,
 StoreIC,0x14cd08277a5b,71,22,0,1,0x14cd08284681,hello,,
-code-creation,LazyCompile,0,1005371,0x14cd000ceac0,673,Object8 file:///tmp/deoptigate/examples/html-inline/adders.html:67:20,0x14cd08265b4c,*
+code-creation,LazyCompile,0,1005371,0x14cd000ceac0,673,Object8 file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html:67:20,0x14cd08265b4c,*
 LoadGlobalIC,0x14cd000c7b87,155,7,0,1,0x14cd08280171,console,,

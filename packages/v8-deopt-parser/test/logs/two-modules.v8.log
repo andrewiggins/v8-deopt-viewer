@@ -1926,10 +1926,10 @@ code-creation,LazyCompile,11,57749,0x1415aba8f486,23,isFileType fs.js:165:20,0x1
 LoadIC,0x1415aba8e071,1494,18,0,.,0x070e2c101ed1,length,,
 LoadIC,0x1415aba8e092,1499,22,0,.,0x070e2c101ed1,slice,,
 LoadIC,0x1415aba8e0b0,1502,15,.,1,0x070e2c101ed1,length,,
-KeyedLoadIC,0x1415aba8e0ed,1510,18,0,.,0x37cdf3b42a51,/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js,,
+KeyedLoadIC,0x1415aba8e0ed,1510,18,0,.,0x37cdf3b42a51,/tmp/v8-deopt-viewer/node_modules/ispawn/preload/soft-exit.js,,
 LoadIC,0x1415aba8e143,1519,48,.,1,0x37cdf3b40ed1,get,,
 StoreIC,0x1415aba8e174,1527,27,0,.,0x37cdf3b7cbb1,path,,
-KeyedStoreIC,0x1415aba8e1b6,1532,25,0,.,0x37cdf3b42a51,/tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js,,
+KeyedStoreIC,0x1415aba8e1b6,1532,25,0,.,0x37cdf3b42a51,/tmp/v8-deopt-viewer/node_modules/ispawn/preload/soft-exit.js,,
 LoadIC,0x1415aba8e353,1578,20,.,1,0x37cdf3b40ed1,set,,
 code-creation,LazyCompile,11,58004,0x1415aba8fc06,80,encodeRealpathResult fs.js:1419:30,0x1ba1f93f48c8,~
 code-creation,LazyCompile,11,58059,0x1415aba8fdae,59,loadNativeModule internal/modules/cjs/helpers.js:19:26,0x1415aba82640,~
@@ -1979,8 +1979,8 @@ code-creation,LazyCompile,11,60833,0x1415aba93df6,48,stripBOM internal/modules/c
 code-creation,LazyCompile,11,61014,0x1415aba942c6,740,Module._compile internal/modules/cjs/loader.js:865:37,0x1ba1f93ee8a8,~
 code-creation,LazyCompile,11,61074,0x1415aba9483e,129,stripShebang internal/modules/cjs/helpers.js:117:22,0x1415aba82770,~
 code-creation,LazyCompile,11,61178,0x1415aba94b9e,297,maybeCacheSourceMap internal/source_map/source_map_cache.js:23:29,0x1ba1f93f09a0,~
-code-creation,Eval,11,61248,0x1415aba94f66,6, /tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js:1:1,0x1415aba94e98,~
-code-creation,Eval,11,61283,0x1415aba9500e,35, /tmp/deoptigate/node_modules/ispawn/preload/soft-exit.js:1:1,0x1415aba94ed0,~
+code-creation,Eval,11,61248,0x1415aba94f66,6, /tmp/v8-deopt-viewer/node_modules/ispawn/preload/soft-exit.js:1:1,0x1415aba94e98,~
+code-creation,Eval,11,61283,0x1415aba9500e,35, /tmp/v8-deopt-viewer/node_modules/ispawn/preload/soft-exit.js:1:1,0x1415aba94ed0,~
 LoadIC,0x1415aba8ac45,1151,17,.,1,0x070e2c101f71,slice,,
 code-creation,LazyCompile,11,61418,0x1415aba95446,173,makeRequireFunction internal/modules/cjs/helpers.js:32:29,0x1415aba82690,~
 code-creation,LazyCompile,11,61471,0x1415aba9568e,6,get internal/bootstrap/pre_execution.js:295:8,0x1ba1f93eb928,~
@@ -1991,17 +1991,17 @@ LoadIC,0x1415aba8dfe6,1467,28,.,1,0x37cdf3b446c1,create,,
 LoadIC,0x1415aba8e013,1481,17,0,.,0x070e2c100439,length,,
 LoadIC,0x1415aba8e0b8,1504,20,.,1,0x070e2c101ed1,slice,,
 KeyedLoadIC,0x1415aba8e0ed,1510,18,.,1,0x37cdf3b42a51,/tmp,,
-KeyedLoadIC,0x1415aba8e0ed,1510,18,1,N,0x37cdf3b42a51,/tmp/deoptigate,,
+KeyedLoadIC,0x1415aba8e0ed,1510,18,1,N,0x37cdf3b42a51,/tmp/v8-deopt-viewer,,
 LoadIC,0x1415aba8e15f,1526,35,.,1,0x37cdf3b70e01,toNamespacedPath,,
 StoreIC,0x1415aba8e174,1527,27,.,1,0x37cdf3b7cbb1,path,,
 LoadIC,0x1415aba8e181,1528,29,.,1,0x37cdf3b77391,lstat,,
-KeyedStoreIC,0x1415aba8e1b6,1532,25,.,1,0x37cdf3b42a51,/tmp/deoptigate/examples,,
-KeyedStoreIC,0x1415aba8e1b6,1532,25,1,N,0x37cdf3b42a51,/tmp/deoptigate/examples/two-modules,,
+KeyedStoreIC,0x1415aba8e1b6,1532,25,.,1,0x37cdf3b42a51,/tmp/v8-deopt-viewer/examples,,
+KeyedStoreIC,0x1415aba8e1b6,1532,25,1,N,0x37cdf3b42a51,/tmp/v8-deopt-viewer/examples/two-modules,,
 LoadIC,0x1415aba8af85,598,21,0,.,0x070e2c101ed1,length,,
 LoadIC,0x1415aba8af8b,599,23,.,1,0x070e2c101ed1,length,,
 LoadIC,0x1415aba8afba,603,17,1,P,0x37cdf3b42af1,push,,
-code-creation,Eval,11,63038,0x1415aba96d06,6, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c38,~
-code-creation,Eval,11,63125,0x1415aba97096,470, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c70,~
+code-creation,Eval,11,63038,0x1415aba96d06,6, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c38,~
+code-creation,Eval,11,63125,0x1415aba97096,470, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c70,~
 code-creation,LazyCompile,11,63197,0x1415aba97516,17,require internal/modules/cjs/helpers.js:73:31,0x1415aba95310,~
 StoreInArrayLiteralIC,0x1415aba8c757,656,27,X,X,0x000000000000,0,,
 LoadIC,0x1415aba8dfa0,1458,18,.,1,0x37cdf3b70e01,resolve,,
@@ -2012,119 +2012,119 @@ LoadIC,0x1415aba90a5b,1209,19,0,.,0x070e2c101f71,length,,
 LoadIC,0x1415aba90a6b,1210,16,0,.,0x070e2c101f71,charCodeAt,,
 LoadIC,0x1415aba90a6b,1210,16,.,1,0x070e2c101f71,charCodeAt,,
 LoadIC,0x1415aba90ab4,1227,17,0,.,0x070e2c101f71,slice,,
-code-creation,Eval,11,64372,0x1415aba97986,6, /tmp/deoptigate/examples/two-modules/objects.js:1:1,0x1415aba978b8,~
-code-creation,Eval,11,64447,0x1415aba97ef6,343, /tmp/deoptigate/examples/two-modules/objects.js:1:1,0x1415aba978f0,~
-code-creation,LazyCompile,11,64554,0x1415aba98326,25,addSmis /tmp/deoptigate/examples/two-modules/adders.js:20:17,0x1415aba96d38,~
-code-creation,LazyCompile,11,64603,0x1415aba9844e,61,processResult /tmp/deoptigate/examples/two-modules/adders.js:46:23,0x1415aba96e78,~
-code-creation,LazyCompile,11,64640,0x1415aba98596,25,addNumbers /tmp/deoptigate/examples/two-modules/adders.js:25:20,0x1415aba96d88,~
-code-creation,LazyCompile,11,64685,0x1415aba986c6,25,addStrings /tmp/deoptigate/examples/two-modules/adders.js:30:20,0x1415aba96dd8,~
-code-creation,LazyCompile,11,64724,0x1415aba987ee,44,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,~
+code-creation,Eval,11,64372,0x1415aba97986,6, /tmp/v8-deopt-viewer/examples/two-modules/objects.js:1:1,0x1415aba978b8,~
+code-creation,Eval,11,64447,0x1415aba97ef6,343, /tmp/v8-deopt-viewer/examples/two-modules/objects.js:1:1,0x1415aba978f0,~
+code-creation,LazyCompile,11,64554,0x1415aba98326,25,addSmis /tmp/v8-deopt-viewer/examples/two-modules/adders.js:20:17,0x1415aba96d38,~
+code-creation,LazyCompile,11,64603,0x1415aba9844e,61,processResult /tmp/v8-deopt-viewer/examples/two-modules/adders.js:46:23,0x1415aba96e78,~
+code-creation,LazyCompile,11,64640,0x1415aba98596,25,addNumbers /tmp/v8-deopt-viewer/examples/two-modules/adders.js:25:20,0x1415aba96d88,~
+code-creation,LazyCompile,11,64685,0x1415aba986c6,25,addStrings /tmp/v8-deopt-viewer/examples/two-modules/adders.js:30:20,0x1415aba96dd8,~
+code-creation,LazyCompile,11,64724,0x1415aba987ee,44,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,~
 LoadIC,0x1415aba98465,49,11,.,1,0x37cdf3b42c81,push,,
 LoadIC,0x1415aba98474,51,15,.,1,0x37cdf3b42c81,length,,
 LoadIC,0x1415aba9859d,26,23,.,1,0x37cdf3b7cc01,flag,,
 LoadIC,0x1415aba987f5,36,23,.,1,0x37cdf3b7cc01,flag,,
 LoadIC,0x1415aba9832d,21,23,.,1,0x37cdf3b7cc01,flag,,
 LoadIC,0x1415aba986cd,31,23,.,1,0x37cdf3b7cc01,flag,,
-code-creation,LazyCompile,0,69899,0x11f132743d00,700,processResult /tmp/deoptigate/examples/two-modules/adders.js:46:23,0x1415aba96e78,*
-code-creation,LazyCompile,0,70607,0x11f132744000,294,addStrings /tmp/deoptigate/examples/two-modules/adders.js:30:20,0x1415aba96dd8,*
-code-creation,LazyCompile,0,71657,0x11f132744180,486,addNumbers /tmp/deoptigate/examples/two-modules/adders.js:25:20,0x1415aba96d88,*
-code-creation,LazyCompile,0,72320,0x11f1327443c0,273,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,75264,0x11f132744520,221,addSmis /tmp/deoptigate/examples/two-modules/adders.js:20:17,0x1415aba96d38,*
-code-creation,LazyCompile,0,79727,0x11f132744640,4594, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
-code-deopt,81888,4672,0x11f132744640,8,838,eager,</tmp/deoptigate/examples/two-modules/adders.js:49:11> inlined at </tmp/deoptigate/examples/two-modules/adders.js:57:5>,wrong map
-code-deopt,81971,768,0x11f132743d00,-1,838,eager,</tmp/deoptigate/examples/two-modules/adders.js:49:11>,wrong map
+code-creation,LazyCompile,0,69899,0x11f132743d00,700,processResult /tmp/v8-deopt-viewer/examples/two-modules/adders.js:46:23,0x1415aba96e78,*
+code-creation,LazyCompile,0,70607,0x11f132744000,294,addStrings /tmp/v8-deopt-viewer/examples/two-modules/adders.js:30:20,0x1415aba96dd8,*
+code-creation,LazyCompile,0,71657,0x11f132744180,486,addNumbers /tmp/v8-deopt-viewer/examples/two-modules/adders.js:25:20,0x1415aba96d88,*
+code-creation,LazyCompile,0,72320,0x11f1327443c0,273,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,75264,0x11f132744520,221,addSmis /tmp/v8-deopt-viewer/examples/two-modules/adders.js:20:17,0x1415aba96d38,*
+code-creation,LazyCompile,0,79727,0x11f132744640,4594, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
+code-deopt,81888,4672,0x11f132744640,8,838,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:49:11> inlined at </tmp/v8-deopt-viewer/examples/two-modules/adders.js:57:5>,wrong map
+code-deopt,81971,768,0x11f132743d00,-1,838,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:49:11>,wrong map
 LoadIC,0x1415aba98465,49,11,1,P,0x37cdf3b42af1,push,,
 LoadIC,0x1415aba98474,51,15,1,P,0x37cdf3b42af1,length,,
-code-creation,LazyCompile,0,84450,0x11f132745880,989,processResult /tmp/deoptigate/examples/two-modules/adders.js:46:23,0x1415aba96e78,*
-code-creation,LazyCompile,0,95832,0x11f132745ca0,6806, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
-code-deopt,326066,6880,0x11f132745ca0,-1,1242,soft,</tmp/deoptigate/examples/two-modules/adders.js:65:19>,Insufficient type feedback for compare operation
-code-deopt,326190,352,0x11f1327443c0,-1,690,eager,</tmp/deoptigate/examples/two-modules/adders.js:39:12>,not a Smi
-code-creation,LazyCompile,0,327432,0x11f132744640,538,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,331073,0x11f1327448a0,2316, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
-code-deopt,371823,2400,0x11f1327448a0,-1,1383,soft,</tmp/deoptigate/examples/two-modules/adders.js:72:19>,Insufficient type feedback for compare operation
-code-deopt,371931,608,0x11f132744640,-1,690,eager,</tmp/deoptigate/examples/two-modules/adders.js:39:12>,not a Number or Oddball
-code-creation,LazyCompile,0,373185,0x11f132745200,226,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,376587,0x11f132742f20,1491, /tmp/deoptigate/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
-code-deopt,450757,1568,0x11f132742f20,-1,1672,soft,</tmp/deoptigate/examples/two-modules/adders.js:86:1>,Insufficient type feedback for call
-code-creation,LazyCompile,11,450975,0x237255cebe56,80,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,~
-code-creation,LazyCompile,11,451045,0x237255cebfbe,15,Object1 /tmp/deoptigate/examples/two-modules/objects.js:2:14,0x1415aba979b8,~
-code-deopt,451114,320,0x11f132745200,-1,671,soft,</tmp/deoptigate/examples/two-modules/adders.js:38:27>,Insufficient type feedback for generic named access
+code-creation,LazyCompile,0,84450,0x11f132745880,989,processResult /tmp/v8-deopt-viewer/examples/two-modules/adders.js:46:23,0x1415aba96e78,*
+code-creation,LazyCompile,0,95832,0x11f132745ca0,6806, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
+code-deopt,326066,6880,0x11f132745ca0,-1,1242,soft,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:65:19>,Insufficient type feedback for compare operation
+code-deopt,326190,352,0x11f1327443c0,-1,690,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:39:12>,not a Smi
+code-creation,LazyCompile,0,327432,0x11f132744640,538,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,331073,0x11f1327448a0,2316, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
+code-deopt,371823,2400,0x11f1327448a0,-1,1383,soft,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:72:19>,Insufficient type feedback for compare operation
+code-deopt,371931,608,0x11f132744640,-1,690,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:39:12>,not a Number or Oddball
+code-creation,LazyCompile,0,373185,0x11f132745200,226,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,376587,0x11f132742f20,1491, /tmp/v8-deopt-viewer/examples/two-modules/adders.js:1:1,0x1415aba96c70,*
+code-deopt,450757,1568,0x11f132742f20,-1,1672,soft,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:86:1>,Insufficient type feedback for call
+code-creation,LazyCompile,11,450975,0x237255cebe56,80,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,~
+code-creation,LazyCompile,11,451045,0x237255cebfbe,15,Object1 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:2:14,0x1415aba979b8,~
+code-deopt,451114,320,0x11f132745200,-1,671,soft,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27>,Insufficient type feedback for generic named access
 LoadIC,0x1415aba98806,38,27,.,1,0x37cdf3b7a951,x,,
 LoadIC,0x1415aba9880c,38,33,.,1,0x37cdf3b7a951,y,,
 StoreIC,0x237255cebfc1,3,12,.,1,0x37cdf3b7a811,x,,
 StoreIC,0x237255cebfc7,4,12,.,1,0x37cdf3b7a901,y,,
-code-creation,LazyCompile,0,458268,0x11f132743540,1522,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,0,514018,0x11f132747780,1224,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-deopt,514196,1312,0x11f132747780,-1,1637,eager,</tmp/deoptigate/examples/two-modules/adders.js:82:28>,wrong call target
-code-creation,LazyCompile,11,514360,0x237255ced4be,15,Object2 /tmp/deoptigate/examples/two-modules/objects.js:9:14,0x1415aba97a08,~
+code-creation,LazyCompile,0,458268,0x11f132743540,1522,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,0,514018,0x11f132747780,1224,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-deopt,514196,1312,0x11f132747780,-1,1637,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:82:28>,wrong call target
+code-creation,LazyCompile,11,514360,0x237255ced4be,15,Object2 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:9:14,0x1415aba97a08,~
 LoadIC,0x1415aba98806,38,27,1,P,0x37cdf3b77b61,x,,
 LoadIC,0x1415aba9880c,38,33,1,P,0x37cdf3b77b61,y,,
 StoreIC,0x237255ced4c1,10,12,.,1,0x37cdf3b7a9a1,y,,
 StoreIC,0x237255ced4c7,11,12,.,1,0x37cdf3b77b11,x,,
-code-creation,LazyCompile,0,518027,0x11f132747ca0,394,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,521652,0x11f132747e80,1649,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,0,522493,0x11f132748540,453,Object2 /tmp/deoptigate/examples/two-modules/objects.js:9:14,0x1415aba97a08,*
-code-creation,LazyCompile,0,580846,0x11f132748760,1370,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,11,581019,0x237255cef296,21,Object3 /tmp/deoptigate/examples/two-modules/objects.js:16:14,0x1415aba97a58,~
-code-deopt,581085,1440,0x11f132748760,1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27> inlined at </tmp/deoptigate/examples/two-modules/adders.js:82:21>,wrong map
-code-deopt,581174,480,0x11f132747ca0,-1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27>,wrong map
+code-creation,LazyCompile,0,518027,0x11f132747ca0,394,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,521652,0x11f132747e80,1649,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,0,522493,0x11f132748540,453,Object2 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:9:14,0x1415aba97a08,*
+code-creation,LazyCompile,0,580846,0x11f132748760,1370,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,11,581019,0x237255cef296,21,Object3 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:16:14,0x1415aba97a58,~
+code-deopt,581085,1440,0x11f132748760,1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27> inlined at </tmp/v8-deopt-viewer/examples/two-modules/adders.js:82:21>,wrong map
+code-deopt,581174,480,0x11f132747ca0,-1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27>,wrong map
 LoadIC,0x1415aba98806,38,27,P,P,0x37cdf3b77481,x,,
 LoadIC,0x1415aba9880c,38,33,P,P,0x37cdf3b77481,y,,
 StoreIC,0x237255cef299,17,16,.,1,0x37cdf3b77bb1,hello,,
 StoreIC,0x237255cef29f,18,12,.,1,0x37cdf3b773e1,x,,
 StoreIC,0x237255cef2a5,19,12,.,1,0x37cdf3b77431,y,,
-code-creation,LazyCompile,0,582927,0x11f132748d00,446,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,583577,0x11f132748f00,649,Object3 /tmp/deoptigate/examples/two-modules/objects.js:16:14,0x1415aba97a58,*
-code-creation,LazyCompile,0,585692,0x11f1327491e0,1701,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,0,643262,0x11f1327498e0,1418,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,11,643446,0x237255cf123e,21,Object4 /tmp/deoptigate/examples/two-modules/objects.js:24:14,0x1415aba97aa8,~
-code-deopt,643519,1504,0x11f1327498e0,1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27> inlined at </tmp/deoptigate/examples/two-modules/adders.js:82:21>,wrong map
-code-deopt,643612,512,0x11f132748d00,-1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27>,wrong map
+code-creation,LazyCompile,0,582927,0x11f132748d00,446,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,583577,0x11f132748f00,649,Object3 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:16:14,0x1415aba97a58,*
+code-creation,LazyCompile,0,585692,0x11f1327491e0,1701,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,0,643262,0x11f1327498e0,1418,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,11,643446,0x237255cf123e,21,Object4 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:24:14,0x1415aba97aa8,~
+code-deopt,643519,1504,0x11f1327498e0,1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27> inlined at </tmp/v8-deopt-viewer/examples/two-modules/adders.js:82:21>,wrong map
+code-deopt,643612,512,0x11f132748d00,-1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27>,wrong map
 LoadIC,0x1415aba98806,38,27,P,P,0x37cdf3b76e41,x,,
 LoadIC,0x1415aba9880c,38,33,P,P,0x37cdf3b76e41,y,,
 StoreIC,0x237255cf1241,25,12,.,1,0x37cdf3b774d1,x,,
 StoreIC,0x237255cf1247,26,16,.,1,0x37cdf3b76da1,hello,,
 StoreIC,0x237255cf124d,27,12,.,1,0x37cdf3b76df1,y,,
-code-creation,LazyCompile,0,645085,0x11f132749ec0,490,addAny /tmp/deoptigate/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
-code-creation,LazyCompile,0,647877,0x11f13274a100,1745,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,0,648017,0x11f13274a820,553,Object4 /tmp/deoptigate/examples/two-modules/objects.js:24:14,0x1415aba97aa8,*
-code-creation,LazyCompile,0,705568,0x11f13274aaa0,1462,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,11,705742,0x237255cf33e6,21,Object5 /tmp/deoptigate/examples/two-modules/objects.js:32:14,0x1415aba97af8,~
-code-deopt,705815,1536,0x11f13274aaa0,1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27> inlined at </tmp/deoptigate/examples/two-modules/adders.js:82:21>,wrong map
-code-deopt,705913,576,0x11f132749ec0,-1,671,eager,</tmp/deoptigate/examples/two-modules/adders.js:38:27>,wrong map
+code-creation,LazyCompile,0,645085,0x11f132749ec0,490,addAny /tmp/v8-deopt-viewer/examples/two-modules/adders.js:35:16,0x1415aba96e28,*
+code-creation,LazyCompile,0,647877,0x11f13274a100,1745,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,0,648017,0x11f13274a820,553,Object4 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:24:14,0x1415aba97aa8,*
+code-creation,LazyCompile,0,705568,0x11f13274aaa0,1462,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,11,705742,0x237255cf33e6,21,Object5 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:32:14,0x1415aba97af8,~
+code-deopt,705815,1536,0x11f13274aaa0,1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27> inlined at </tmp/v8-deopt-viewer/examples/two-modules/adders.js:82:21>,wrong map
+code-deopt,705913,576,0x11f132749ec0,-1,671,eager,</tmp/v8-deopt-viewer/examples/two-modules/adders.js:38:27>,wrong map
 LoadIC,0x1415aba98806,38,27,P,N,0x37cdf3b77021,x,,
 LoadIC,0x1415aba9880c,38,33,P,N,0x37cdf3b77021,y,,
 StoreIC,0x237255cf33e9,33,12,.,1,0x37cdf3b76e91,x,,
 StoreIC,0x237255cf33ef,34,12,.,1,0x37cdf3b76f81,y,,
 StoreIC,0x237255cf33f5,35,16,.,1,0x37cdf3b76fd1,hello,,
-code-creation,LazyCompile,0,709845,0x11f13274b0a0,1759,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,0,710583,0x11f13274b7c0,549,Object5 /tmp/deoptigate/examples/two-modules/objects.js:32:14,0x1415aba97af8,*
-code-creation,LazyCompile,0,777697,0x11f13274ba40,1474,addObjects /tmp/deoptigate/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
-code-creation,LazyCompile,11,777869,0x237255cf4d46,27,Object6 /tmp/deoptigate/examples/two-modules/objects.js:40:14,0x1415aba97b48,~
+code-creation,LazyCompile,0,709845,0x11f13274b0a0,1759,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,0,710583,0x11f13274b7c0,549,Object5 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:32:14,0x1415aba97af8,*
+code-creation,LazyCompile,0,777697,0x11f13274ba40,1474,addObjects /tmp/v8-deopt-viewer/examples/two-modules/adders.js:79:20,0x1415aba96ec8,*
+code-creation,LazyCompile,11,777869,0x237255cf4d46,27,Object6 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:40:14,0x1415aba97b48,~
 LoadIC,0x11f13274bb68,38,27,N,N,0x37cdf3b77251,x,,
 LoadIC,0x11f13274bba2,38,33,N,N,0x37cdf3b77251,y,,
 StoreIC,0x237255cf4d49,41,15,.,1,0x37cdf3b77071,hola,,
 StoreIC,0x237255cf4d4f,42,12,.,1,0x37cdf3b77161,x,,
 StoreIC,0x237255cf4d55,43,12,.,1,0x37cdf3b771b1,y,,
 StoreIC,0x237255cf4d5b,44,16,.,1,0x37cdf3b77201,hello,,
-code-creation,LazyCompile,0,779674,0x11f13274c060,745,Object6 /tmp/deoptigate/examples/two-modules/objects.js:40:14,0x1415aba97b48,*
-code-creation,LazyCompile,11,845220,0x237255cf5376,27,Object7 /tmp/deoptigate/examples/two-modules/objects.js:49:14,0x1415aba97b98,~
+code-creation,LazyCompile,0,779674,0x11f13274c060,745,Object6 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:40:14,0x1415aba97b48,*
+code-creation,LazyCompile,11,845220,0x237255cf5376,27,Object7 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:49:14,0x1415aba97b98,~
 LoadIC,0x11f13274bb68,38,27,N,N,0x37cdf3b76bc1,x,,
 LoadIC,0x11f13274bba2,38,33,N,N,0x37cdf3b76bc1,y,,
 StoreIC,0x237255cf5379,50,12,.,1,0x37cdf3b772a1,x,,
 StoreIC,0x237255cf537f,51,15,.,1,0x37cdf3b76ad1,hola,,
 StoreIC,0x237255cf5385,52,12,.,1,0x37cdf3b76b21,y,,
 StoreIC,0x237255cf538b,53,16,.,1,0x37cdf3b76b71,hello,,
-code-creation,LazyCompile,0,847174,0x11f13274c3a0,649,Object7 /tmp/deoptigate/examples/two-modules/objects.js:49:14,0x1415aba97b98,*
-code-creation,LazyCompile,11,910451,0x237255cf59ae,27,Object8 /tmp/deoptigate/examples/two-modules/objects.js:58:14,0x1415aba97be8,~
+code-creation,LazyCompile,0,847174,0x11f13274c3a0,649,Object7 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:49:14,0x1415aba97b98,*
+code-creation,LazyCompile,11,910451,0x237255cf59ae,27,Object8 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:58:14,0x1415aba97be8,~
 LoadIC,0x11f13274bb68,38,27,N,N,0x37cdf3b75d11,x,,
 LoadIC,0x11f13274bba2,38,33,N,N,0x37cdf3b75d11,y,,
 StoreIC,0x237255cf59b1,59,12,.,1,0x37cdf3b75b31,x,,
 StoreIC,0x237255cf59b7,60,12,.,1,0x37cdf3b75c21,y,,
 StoreIC,0x237255cf59bd,61,15,.,1,0x37cdf3b75c71,hola,,
 StoreIC,0x237255cf59c3,62,16,.,1,0x37cdf3b75cc1,hello,,
-code-creation,LazyCompile,0,912413,0x11f13274c680,649,Object8 /tmp/deoptigate/examples/two-modules/objects.js:58:14,0x1415aba97be8,*
-code-creation,LazyCompile,11,974958,0x237255cf5fd6,34,log /tmp/deoptigate/examples/two-modules/adders.js:95:13,0x1415aba96f18,~
+code-creation,LazyCompile,0,912413,0x11f13274c680,649,Object8 /tmp/v8-deopt-viewer/examples/two-modules/objects.js:58:14,0x1415aba97be8,*
+code-creation,LazyCompile,11,974958,0x237255cf5fd6,34,log /tmp/v8-deopt-viewer/examples/two-modules/adders.js:95:13,0x1415aba96f18,~
 code-creation,LazyCompile,11,975082,0x237255cf60fe,45,log internal/console/constructor.js:281:6,0x1ba1f93c6038,~
 code-creation,LazyCompile,11,975127,0x237255cf6256,44,Console.<computed> internal/console/constructor.js:270:47,0x1ba1f93c5f98,~
 code-creation,LazyCompile,11,975166,0x237255cf637e,30,get internal/console/constructor.js:148:10,0x1ba1f93c8b88,~

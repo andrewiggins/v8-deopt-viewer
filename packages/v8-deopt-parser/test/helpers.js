@@ -15,33 +15,33 @@ export const repoFileURL = (...args) =>
 const logPathReplacements = {
 	["adders.v8.log"]: [
 		[
-			"/tmp/deoptigate/examples/simple/adders.js",
+			"/tmp/v8-deopt-viewer/examples/simple/adders.js",
 			repoRoot("examples/simple/adders.js"),
 		],
 	],
 	["two-modules.v8.log"]: [
 		[
-			"/tmp/deoptigate/examples/two-modules/adders.js",
+			"/tmp/v8-deopt-viewer/examples/two-modules/adders.js",
 			repoRoot("examples/two-modules/adders.js"),
 		],
 		[
-			"/tmp/deoptigate/examples/two-modules/objects.js",
+			"/tmp/v8-deopt-viewer/examples/two-modules/objects.js",
 			repoRoot("examples/two-modules/objects.js"),
 		],
 	],
 	["html-inline.v8.log"]: [
 		[
-			"file:///tmp/deoptigate/examples/html-inline/adders.html",
+			"file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
 			pathToFileURL(repoRoot("examples/html-inline/adders.html")).toString(),
 		],
 	],
 	["html-external.v8.log"]: [
 		[
-			"file:///tmp/deoptigate/examples/html-external/adders.js",
+			"file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
 			pathToFileURL(repoRoot("examples/html-external/adders.js")).toString(),
 		],
 		[
-			"file:///tmp/deoptigate/examples/html-external/objects.js",
+			"file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
 			pathToFileURL(repoRoot("examples/html-external/objects.js")).toString(),
 		],
 	],
