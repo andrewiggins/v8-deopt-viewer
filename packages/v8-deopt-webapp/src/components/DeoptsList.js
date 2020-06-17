@@ -1,6 +1,7 @@
 import { createElement, Fragment } from "preact";
 import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
+import { formatMapId } from "../utils/mapUtils";
 import {
 	panel,
 	panel_header,
@@ -279,7 +280,7 @@ function ICEntry({ entry, selected, title, showAllICs }) {
 									{update.newState}
 								</td>
 								<td>{update.key}</td>
-								<td>{update.map}</td>
+								<td>{formatMapId(update.map)}</td>
 							</tr>
 						);
 					})}
