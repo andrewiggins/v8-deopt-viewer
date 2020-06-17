@@ -2,26 +2,10 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { readFile } from "fs/promises";
 
-import { edgeToString } from "../src/mapUtils.js";
+import { edgeToString, getMapIdsFromICs } from "../src/mapUtils.js";
 
 // @ts-ignore
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-/**
- * @param {Array<import('..').ICEntry>} ics
- * @returns {number[]}
- */
-function getMapsFromICs(ics) {
-	/** @type {Set<number>} */
-	const mapIds = new Set([]);
-	for (const entry of ics) {
-		for (const update of entry.updates) {
-			mapIds.add(update.map);
-		}
-	}
-
-	return Array.from(mapIds);
-}
 
 /**
  * @param {import('..').MapData} data
@@ -38,6 +22,9 @@ function getRootMap(data, map) {
 	return map;
 }
 
+let edgeCount = 0;
+let mapCount = 0;
+
 const CROSS = " ├─";
 const CORNER = " └─";
 const VERTICAL = " │ ";
@@ -50,8 +37,9 @@ const SPACE = "   ";
  * @param {boolean} [isLast]
  */
 function printMapTree(data, map, indent = "", isLast = true) {
-	let line = indent;
+	mapCount += 1;
 
+	let line = indent;
 	if (isLast) {
 		line += CORNER;
 		indent += SPACE;
@@ -61,6 +49,7 @@ function printMapTree(data, map, indent = "", isLast = true) {
 	}
 
 	if (map.edge) {
+		edgeCount += 1;
 		const edge = data.edges[map.edge];
 		line += edgeToString(edge) + `\t[${map.id}]`;
 	} else {
@@ -83,8 +72,7 @@ async function main() {
 	const v8DeoptInfo = JSON.parse(await readFile(dataPath, "utf-8"));
 	const mapData = v8DeoptInfo.maps;
 
-	const icMapIds = getMapsFromICs(v8DeoptInfo.ics);
-
+	const icMapIds = Array.from(getMapIdsFromICs(v8DeoptInfo.ics));
 	const rootMap = getRootMap(mapData, mapData.nodes[icMapIds[0]]);
 	console.log("Root Map :", rootMap);
 
@@ -101,21 +89,23 @@ async function main() {
 	// printMapTree(mapData, mapData.nodes["1005159187241"]);
 	// console.log();
 
+	mapCount = 0;
+	edgeCount = 0;
+
 	for (let root of allRootMaps) {
 		console.log();
 		printMapTree(mapData, root);
 	}
 
 	console.log();
+	console.log("mapCount:", mapCount); // Expected 46 for html-inline log
+	console.log("edgeCount:", edgeCount); // Expected 43 for html-inline log
+	console.log();
 
 	// Learnings:
 	// - It seems array literals have maps that are directly created (no initial edge)
 	// - Each array literal creation gets its own map (i.e. MapOf([]) !== MapOf([]) )
 	// - Object literals transition off of a common map? first from a ReplaceDescriptors?
-
-	// TODO:
-	// 1. Optionally filter out unnecessary maps and edges in DeoptLogReader base
-	//    on keepInternals flag
 
 	console.log("IC Map ID count :", icMapIds.length);
 	console.log("Total Map count :", Object.keys(v8DeoptInfo.maps.nodes).length);

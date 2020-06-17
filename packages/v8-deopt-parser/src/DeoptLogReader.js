@@ -18,6 +18,7 @@ import {
 	UNKNOWN_OPT_STATE,
 } from "./optimizationStateParsers.js";
 import { sortEntries } from "./sortEntries.js";
+import { getMapIdsFromICs, getRootMap, visitAllMaps } from "./mapUtils.js";
 
 /** @type {import('.').Options} */
 const defaultOptions = {
@@ -509,6 +510,8 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
+		this.treeShakeMapsAndEdges();
+
 		const filterInternals = this.filterInternals.bind(this);
 		return {
 			ics: this.sortEntries(
@@ -548,6 +551,30 @@ export class DeoptLogReader extends LogReader {
 			return sortEntries(entries);
 		} else {
 			return entries;
+		}
+	}
+
+	treeShakeMapsAndEdges() {
+		if (this.options.keepInternals || this.entriesMap.size == 0) {
+			return;
+		}
+
+		const allMaps = this.entriesMap;
+		const allEdges = this.entriesEdges;
+
+		this.entriesMap = new Map();
+		this.entriesEdges = new Map();
+
+		const mapIdsFromIcs = getMapIdsFromICs(this.entriesIC.values());
+		for (let mapId of mapIdsFromIcs) {
+			const rootMap = getRootMap(allMaps, allEdges, allMaps.get(mapId));
+
+			visitAllMaps(allMaps, allEdges, rootMap, (map) => {
+				this.entriesMap.set(map.id, map);
+				if (map.edge) {
+					this.entriesEdges.set(map.edge, allEdges.get(map.edge));
+				}
+			});
 		}
 	}
 }
