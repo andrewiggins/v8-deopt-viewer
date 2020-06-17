@@ -24,50 +24,18 @@ function getMapsFromICs(ics) {
 }
 
 /**
- * @param {import('..').MapEntry | import('..').MapEdge} mapOrEdge
- * @returns {string | number | undefined}
- */
-function getParentId(mapOrEdge) {
-	if (mapOrEdge.type == "MapEntry") {
-		return mapOrEdge.edge;
-	} else {
-		return mapOrEdge.from;
-	}
-}
-
-/**
  * @param {import('..').MapData} data
- * @param {import('..').MapEntry | import('..').MapEdge} mapOrEdge
+ * @param {import('..').MapEntry} map
+ * @returns {import('..').MapEntry}
  */
-function getParent(data, mapOrEdge) {
-	if (mapOrEdge.type == "MapEntry") {
-		if (mapOrEdge.edge) {
-			return data.edges[mapOrEdge.edge];
-		}
-	} else {
-		if (mapOrEdge.from) {
-			return data.nodes[mapOrEdge.from];
-		}
-	}
-}
-
-/**
- * @param {import('..').MapData} data
- * @param {import('..').MapEntry | import('..').MapEdge} mapOrEdge
- * @returns {import('..').MapEntry | import('..').MapEdge}
- */
-function getRoot(data, mapOrEdge) {
-	/** @type {import('..').MapEntry | import('..').MapEdge} */
-	let current = mapOrEdge;
-	while (current && getParentId(current)) {
-		current = getParent(data, current);
+function getRootMap(data, map) {
+	let parentMapId = map.edge ? data.edges[map.edge]?.from : null;
+	while (parentMapId) {
+		map = data.nodes[parentMapId];
+		parentMapId = map.edge ? data.edges[map.edge]?.from : null;
 	}
 
-	// if (current.type == "MapEntry") {
-	// 	console.log("LOOK HERE:", mapOrEdge.id);
-	// }
-
-	return current;
+	return map;
 }
 
 const CROSS = " ├─";
@@ -116,35 +84,29 @@ async function main() {
 	const mapData = v8DeoptInfo.maps;
 
 	const icMapIds = getMapsFromICs(v8DeoptInfo.ics);
-	console.log("Interesting index:", icMapIds.indexOf(1005159202561));
 
-	const rootEdge = getRoot(mapData, mapData.nodes[icMapIds[0]]);
-	const rootMap = getRoot(mapData, mapData.nodes[icMapIds[25]]);
-	console.log("Root Edge:", rootEdge);
+	const rootMap = getRootMap(mapData, mapData.nodes[icMapIds[0]]);
 	console.log("Root Map :", rootMap);
 
-	const allRoots = Array.from(
-		new Set(icMapIds.map((mapId) => getRoot(mapData, mapData.nodes[mapId])))
+	const allRootMaps = Array.from(
+		new Set(icMapIds.map((mapId) => getRootMap(mapData, mapData.nodes[mapId])))
 	);
 	console.log(
 		"Root IDs:",
-		allRoots.map((root) => root.id)
+		allRootMaps.map((root) => root.id)
 	);
-	console.log("Root count:", allRoots.length);
+	console.log("Root count:", allRootMaps.length);
 
 	// console.log();
 	// printMapTree(mapData, mapData.nodes["1005159187241"]);
 	// console.log();
 
-	for (let root of allRoots) {
-		if (root.type == "MapEdge") {
-			root = mapData.nodes[root.to];
-		}
-
+	for (let root of allRootMaps) {
 		console.log();
 		printMapTree(mapData, root);
-		console.log();
 	}
+
+	console.log();
 
 	// Learnings:
 	// - It seems array literals have maps that are directly created (no initial edge)
@@ -152,8 +114,6 @@ async function main() {
 	// - Object literals transition off of a common map? first from a ReplaceDescriptors?
 
 	// TODO:
-	// 1. Consider defining the root as always the map that map.edge == undefined
-	//    or .edge.from == undefined
 	// 1. Optionally filter out unnecessary maps and edges in DeoptLogReader base
 	//    on keepInternals flag
 
