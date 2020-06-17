@@ -45,11 +45,11 @@ const SPACE = "   ";
 
 /**
  * @param {import('..').MapData} data
- * @param {import('..').MapEntry} node
+ * @param {import('..').MapEntry} map
  * @param {string} [indent]
  * @param {boolean} [isLast]
  */
-function printMapTree(data, node, indent = "", isLast = true) {
+function printMapTree(data, map, indent = "", isLast = true) {
 	let line = indent;
 
 	if (isLast) {
@@ -60,15 +60,15 @@ function printMapTree(data, node, indent = "", isLast = true) {
 		indent += VERTICAL;
 	}
 
-	if (node.edge) {
-		const edge = data.edges[node.edge];
-		line += edgeToString(edge);
+	if (map.edge) {
+		const edge = data.edges[map.edge];
+		line += edgeToString(edge) + `\t[${map.id}]`;
 	} else {
-		line += node.id;
+		line += map.id;
 	}
 	console.log(line);
 
-	const children = node.children.map(
+	const children = map.children.map(
 		(edgeId) => data.nodes[data.edges[edgeId].to]
 	);
 	for (const child of children) {
