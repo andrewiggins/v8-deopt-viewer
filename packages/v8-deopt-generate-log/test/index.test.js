@@ -130,11 +130,19 @@ test("generateV8Log(simple/adders.js, traceMaps: true)", async (t) => {
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(
-			matcher.test(logContent),
-			true,
-			"Content does not match " + matcher
-		);
+		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+	});
+});
+
+test("generateV8Log(two-modules/adders.js, traceMaps: true)", async (t) => {
+	const fullPath = repoRoot("examples/two-modules/adders.js");
+	const srcFilePath = path.relative(process.cwd(), fullPath);
+	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
+		traceMaps: true,
+	});
+
+	traceMapMatches.forEach((matcher) => {
+		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
 	});
 });
 
@@ -145,10 +153,17 @@ test("generateV8Log(html-inline/adders.html, traceMaps: true)", async (t) => {
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(
-			matcher.test(logContent),
-			true,
-			"Content does not match " + matcher
-		);
+		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+	});
+});
+
+test("generateV8Log(html-external/index.html, traceMaps: true)", async (t) => {
+	const srcFilePath = repoRoot("examples/html-external/index.html");
+	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
+		traceMaps: true,
+	});
+
+	traceMapMatches.forEach((matcher) => {
+		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
 	});
 });
