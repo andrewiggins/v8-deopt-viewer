@@ -418,7 +418,7 @@ export class DeoptLogReader extends LogReader {
 			to.filePosition = this.getInfoFromProfile(profileCode);
 		}
 
-		let newDepth = from?.depth ?? 0 + 1;
+		let newDepth = (from?.depth ?? 0) + 1;
 		if (to.depth > 0 && to.depth != newDepth) {
 			throw new Error("Depth has already been initialized");
 		}
