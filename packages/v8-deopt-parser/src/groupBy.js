@@ -3,12 +3,12 @@
  * @returns {import('.').PerFileV8DeoptInfo}
  */
 export function groupByFile(rawDeoptInfo) {
-	/** @type {import('.').PerFileV8DeoptInfo} */
+	/** @type {Record<string, import('.').V8DeoptInfo>} */
 	const files = Object.create(null);
 
-	/** @type {Array<keyof import('./index').V8DeoptInfo>} */
+	/** @type {Array<"codes" | "deopts" | "ics">} */
 	// @ts-ignore
-	const kinds = Object.keys(rawDeoptInfo);
+	const kinds = ["codes", "deopts", "ics"];
 	for (const kind of kinds) {
 		for (const entry of rawDeoptInfo[kind]) {
 			if (!(entry.file in files)) {
@@ -20,5 +20,8 @@ export function groupByFile(rawDeoptInfo) {
 		}
 	}
 
-	return files;
+	return {
+		files,
+		maps: rawDeoptInfo.maps,
+	};
 }

@@ -67,6 +67,10 @@ export class DeoptLogReader extends LogReader {
 		this.entriesDeopt = new Map();
 		/** @type {Map<string, import('./').CodeEntry>} */
 		this.entriesCode = new Map();
+		/** @type {Map<number, import('./').MapEntry>} */
+		this.entriesMap = new Map();
+		/** @type {Map<string, import('./').MapEdge>} */
+		this.entriesEdges = new Map();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
@@ -125,6 +129,38 @@ export class DeoptLogReader extends LogReader {
 			StoreInArrayLiteralIC: {
 				parsers: propertyICFieldParsers,
 				processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
+			},
+
+			// Collect map creation/transition info
+			"map-create": {
+				parsers: [
+					parseInt, // time
+					parseInt, // id
+					parseString, // description
+				],
+				processor: this.processMapCreate,
+			},
+			map: {
+				parsers: [
+					parseString, // type
+					parseInt, // time
+					parseInt, // from
+					parseInt, // to
+					parseInt, // profileCode
+					parseInt, // line
+					parseInt, // column
+					parseString, // reason
+					parseString, // name
+				],
+				processor: this.processMap,
+			},
+			"map-details": {
+				parsers: [
+					parseInt, // time
+					parseInt, // id
+					parseString, // description
+				],
+				processor: this.processMapDetails,
 			},
 		};
 	}
@@ -276,7 +312,7 @@ export class DeoptLogReader extends LogReader {
 		slow_reason
 	) {
 		// Skip unknown IC entries whose maps are 0. Not sure what these mean...
-		if (oldState == UNKNOWN && newState == UNKNOWN && parseInt(map) == 0) {
+		if (oldState == UNKNOWN && newState == UNKNOWN && map == 0) {
 			return;
 		}
 
@@ -323,6 +359,112 @@ export class DeoptLogReader extends LogReader {
 		if (severity > icEntry.severity) {
 			icEntry.severity = severity;
 		}
+	}
+
+	processMapCreate(time, id, desc) {
+		// map-create events might override existing maps if the addresses get
+		// recycled. Hence we do not check for existing maps.
+		let map = this.createMap(id, time);
+		map.description = desc;
+
+		this.entriesMap.set(id, map);
+	}
+
+	processMap(
+		type,
+		time,
+		fromId,
+		toId,
+		profileCode,
+		line,
+		column,
+		reason,
+		name
+	) {
+		// TODO: Is this okay??
+		if (profileCode == 0 || line == -1 || column == -1) {
+			return;
+		}
+
+		if (type === "Deprecate") {
+			this.getExistingMap(fromId, time).isDeprecated = true;
+			return;
+		}
+
+		if (toId == fromId) {
+			throw new Error("From and to must be distinct.");
+		}
+
+		/** @type {import('./').MapEdge} */
+		let edge = {
+			type: "MapEdge",
+			id: `${this._id++}`,
+			subtype: type,
+			name,
+			reason,
+			time,
+			from: fromId == 0 ? undefined : fromId,
+			to: toId,
+		};
+
+		this.entriesEdges.set(edge.id, edge);
+
+		const from = this.getExistingMap(fromId, time);
+		const to = this.getExistingMap(toId, time);
+
+		if (from) from.children.push(edge.id);
+		if (to) {
+			to.edge = edge.id;
+			to.filePosition = this.getInfoFromProfile(profileCode);
+		}
+
+		let newDepth = from?.depth ?? 0 + 1;
+		if (to.depth > 0 && to.depth != newDepth) {
+			throw new Error("Depth has already been initialized");
+		}
+
+		to.depth = newDepth;
+	}
+
+	processMapDetails(time, id, desc) {
+		// TODO: Do map-details come before map-create?
+		let map = this.getExistingMap(id, time);
+		if (!map.description) {
+			map.description = desc;
+		}
+	}
+
+	/**
+	 * @param {number} id
+	 * @param {number} time
+	 * @returns {import('../').MapEntry}
+	 */
+	createMap(id, time) {
+		// TODO: Likely inline into processMapCreate
+		return {
+			type: "MapEntry",
+			id,
+			time,
+			description: "",
+			children: [],
+			depth: 0,
+		};
+	}
+
+	getExistingMap(id, time) {
+		if (id === 0) return undefined;
+
+		const map = this.entriesMap.get(id);
+		if (map === undefined) {
+			throw new Error(`No map details provided: id=${id}`);
+
+			// TODO: Is this necessary?
+			// console.error("No map details provided: id=" + id);
+			// Manually patch in a map to continue running.
+			// return this.createMap(id, time);
+		}
+
+		return map;
 	}
 
 	/**
@@ -380,6 +522,17 @@ export class DeoptLogReader extends LogReader {
 			codes: this.sortEntries(
 				Array.from(this.entriesCode.values()).filter(filterInternals)
 			),
+			maps: {
+				// TODO: Implement filtering out of internal maps and edges
+				nodes: Array.from(this.entriesMap.values()).reduce((acc, map) => {
+					acc[map.id] = map;
+					return acc;
+				}, {}),
+				edges: Array.from(this.entriesEdges.values()).reduce((acc, edge) => {
+					acc[edge.id] = edge;
+					return acc;
+				}, {}),
+			},
 		};
 	}
 

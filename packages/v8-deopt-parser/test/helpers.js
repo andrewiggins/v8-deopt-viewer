@@ -35,6 +35,12 @@ const logPathReplacements = {
 			pathToFileURL(repoRoot("examples/html-inline/adders.html")).toString(),
 		],
 	],
+	["html-inline.traceMaps.v8.log"]: [
+		[
+			"file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+			pathToFileURL(repoRoot("examples/html-inline/adders.html")).toString(),
+		],
+	],
 	["html-external.v8.log"]: [
 		[
 			"file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
