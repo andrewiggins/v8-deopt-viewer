@@ -36,8 +36,10 @@ export function CodePanel({
 	hideLineNums,
 	showLowSevs,
 }) {
-	if (!fileDeoptInfo.src) {
+	if (fileDeoptInfo.srcError) {
 		return <CodeError srcError={fileDeoptInfo.srcError} />;
+	} else if (!fileDeoptInfo.src) {
+		return <CodeError srcError="No sources for the file were found." />;
 	}
 
 	const lang = determineLanguage(fileDeoptInfo.srcPath);

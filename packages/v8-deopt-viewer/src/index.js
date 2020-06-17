@@ -15,14 +15,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const templatePath = path.join(__dirname, "template.html");
 
 /**
- * @param {import('v8-deopt-parser').PerFileV8DeoptInfo} deoptInfo
- * @returns {Promise<Record<string, import('v8-deopt-webapp').V8DeoptInfoWithSources>>}
+ * @param {import('v8-deopt-parser').PerFileV8DeoptInfo["files"]} deoptInfo
+ * @returns {Promise<Record<string, import('v8-deopt-webapp/src/index').V8DeoptInfoWithSources>>}
  */
 async function addSources(deoptInfo) {
 	const files = Object.keys(deoptInfo);
 	const root = determineCommonRoot(files);
 
-	/** @type {Record<string, import('v8-deopt-webapp').V8DeoptInfoWithSources>} */
+	/** @type {Record<string, import('v8-deopt-webapp/src/index').V8DeoptInfoWithSources>} */
 	const result = Object.create(null);
 	for (let file of files) {
 		let srcPath;
@@ -112,7 +112,14 @@ export default async function run(srcFile, options) {
 	});
 
 	console.log("Adding sources...");
-	const deoptInfo = await addSources(groupByFile(rawDeoptInfo));
+
+	// Group DeoptInfo by files and extend the files data with sources
+	const groupDeoptInfo = groupByFile(rawDeoptInfo);
+	const deoptInfo = {
+		...groupDeoptInfo,
+		files: await addSources(groupDeoptInfo.files),
+	};
+
 	const deoptInfoString = JSON.stringify(deoptInfo, null, 2);
 	const jsContents = `window.V8Data = ${deoptInfoString};`;
 	await writeFile(path.join(options.out, "v8-data.js"), jsContents, "utf8");

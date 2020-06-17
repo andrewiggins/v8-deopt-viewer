@@ -10,7 +10,7 @@ import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
  * @param {import('..').AppProps} props
  */
 export function App({ deoptInfo }) {
-	const files = Object.keys(deoptInfo);
+	const files = Object.keys(deoptInfo.files);
 
 	return (
 		<Fragment>
@@ -26,7 +26,7 @@ export function App({ deoptInfo }) {
 								fileId: params.fileId || "0",
 								entryId: params.entryId || null,
 							}}
-							fileDeoptInfo={deoptInfo[files[params.fileId || 0]]}
+							fileDeoptInfo={deoptInfo.files[files[params.fileId || 0]]}
 						/>
 					)}
 				</Route>

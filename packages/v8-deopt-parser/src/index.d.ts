@@ -171,7 +171,7 @@ interface V8DeoptInfo {
 }
 
 interface PerFileV8DeoptInfo {
-	files: Record<string, V8DeoptInfo>;
+	files: Record<string, Omit<V8DeoptInfo, "maps">>;
 	maps?: MapData;
 }
 
