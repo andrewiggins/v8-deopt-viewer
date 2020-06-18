@@ -154,15 +154,18 @@ interface MapData {
 
 type Entry = ICEntry | DeoptEntry | CodeEntry;
 
-interface V8DeoptInfo {
+interface FileV8DeoptInfo {
 	ics: ICEntry[];
 	deopts: DeoptEntry[];
 	codes: CodeEntry[];
+}
+
+interface V8DeoptInfo extends FileV8DeoptInfo {
 	maps: MapData;
 }
 
 interface PerFileV8DeoptInfo {
-	files: Record<string, Omit<V8DeoptInfo, "maps">>;
+	files: Record<string, FileV8DeoptInfo>;
 	maps: MapData;
 }
 

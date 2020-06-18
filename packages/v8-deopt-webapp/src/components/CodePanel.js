@@ -27,7 +27,7 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; hideLineNums: boolean; showLowSevs: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; hideLineNums: boolean; showLowSevs: boolean; }} props
  */
 export function CodePanel({
 	fileDeoptInfo,

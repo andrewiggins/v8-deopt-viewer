@@ -1,5 +1,5 @@
 import { createElement } from "preact";
-import { useState, useCallback, useMemo } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { findEntry } from "v8-deopt-parser/src/findEntry";
 import { DeoptsList } from "./DeoptsList";
 import { CodePanel } from "./CodePanel";
@@ -12,7 +12,7 @@ import { fileViewer, codeSettings } from "./FileViewer.scss";
 
 /**
  * @typedef {{ fileId: string; entryId: string; }} RouteParams
- * @typedef {{ routeParams: RouteParams, fileDeoptInfo: import('..').V8DeoptInfoWithSources }} FileViewerProps
+ * @typedef {{ routeParams: RouteParams, fileDeoptInfo: import('..').FileV8DeoptInfoWithSources }} FileViewerProps
  * @param {FileViewerProps} props
  */
 export function FileViewer({ fileDeoptInfo, routeParams }) {

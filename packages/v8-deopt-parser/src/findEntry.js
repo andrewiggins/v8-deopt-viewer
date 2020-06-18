@@ -1,5 +1,5 @@
 /**
- * @param {import('v8-deopt-parser').V8DeoptInfo} deoptInfo
+ * @param {import('v8-deopt-parser').FileV8DeoptInfo} deoptInfo
  * @param {string} entryId
  * @returns {import('v8-deopt-parser').Entry}
  */

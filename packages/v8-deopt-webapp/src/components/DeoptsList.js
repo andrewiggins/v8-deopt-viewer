@@ -36,7 +36,7 @@ import {
 const defaultEntryKind = "codes";
 
 /**
- * @param {{ fileDeoptInfo: import("..").V8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; showAllICs: boolean }} props
+ * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; showAllICs: boolean }} props
  */
 export function DeoptsList({
 	selectedEntry,

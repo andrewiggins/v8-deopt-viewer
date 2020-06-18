@@ -95,7 +95,7 @@ function consumeMarkers(element, fileId, markers, curLine, curColumn) {
 
 /**
  * @typedef {Array<import('v8-deopt-parser').Entry>} Markers
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
+ * @param {import('..').FileV8DeoptInfoWithSources} deoptInfo
  * @returns {Markers}
  */
 function getMarkers(deoptInfo) {
@@ -109,7 +109,7 @@ function getMarkers(deoptInfo) {
 /**
  * @param {HTMLElement} root
  * @param {string} fileId
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
+ * @param {import('..').FileV8DeoptInfoWithSources} deoptInfo
  */
 export function addDeoptMarkers(root, fileId, deoptInfo) {
 	const markers = getMarkers(deoptInfo);
