@@ -14,9 +14,9 @@ function getPerFileStats(deoptInfo) {
 	/** @type {PerFileStats} */
 	const results = {};
 
-	const files = Object.keys(deoptInfo);
+	const files = Object.keys(deoptInfo.files);
 	for (let fileName of files) {
-		const fileDepotInfo = deoptInfo[fileName];
+		const fileDepotInfo = deoptInfo.files[fileName];
 		results[fileName] = {
 			codes: [0, 0, 0],
 			deopts: [0, 0, 0],
