@@ -94,6 +94,7 @@ export default async function run(srcFile, options) {
 		logFilePath = await generateV8Log(srcFile, {
 			logFilePath: path.join(options.out, "v8.log"),
 			browserTimeoutMs: options.timeout,
+			traceMaps: !options["skip-maps"],
 		});
 	} else if (options.input) {
 		logFilePath = path.isAbsolute(options.input)

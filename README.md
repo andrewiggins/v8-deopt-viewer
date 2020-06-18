@@ -38,6 +38,7 @@ $ npx v8-deopt-viewer --help
     -o, --out           The directory to output files too  (default current working directory)
     -t, --timeout       How long in milliseconds to keep the browser open while the webpage runs  (default 5000)
     --keep-internals    Don't remove NodeJS internals from the log
+    --skip-maps         Skip tracing internal maps of V8
     --open              Open the resulting webapp in a web browser
     -v, --version       Displays current version
     -h, --help          Displays this message
