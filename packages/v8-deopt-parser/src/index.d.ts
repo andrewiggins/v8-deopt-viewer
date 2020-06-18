@@ -167,12 +167,12 @@ interface V8DeoptInfo {
 	ics: ICEntry[];
 	deopts: DeoptEntry[];
 	codes: CodeEntry[];
-	maps?: MapData;
+	maps: MapData;
 }
 
 interface PerFileV8DeoptInfo {
 	files: Record<string, Omit<V8DeoptInfo, "maps">>;
-	maps?: MapData;
+	maps: MapData;
 }
 
 interface Options {
