@@ -362,11 +362,19 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
-	processMapCreate(time, id, desc) {
+	processMapCreate(time, id, description) {
 		// map-create events might override existing maps if the addresses get
 		// recycled. Hence we do not check for existing maps.
-		let map = this.createMap(id, time);
-		map.description = desc;
+
+		/** @type {import('.').MapEntry} */
+		let map = {
+			type: "MapEntry",
+			id,
+			time,
+			description,
+			children: [],
+			depth: 0,
+		};
 
 		this.entriesMap.set(id, map);
 	}
@@ -382,7 +390,6 @@ export class DeoptLogReader extends LogReader {
 		reason,
 		name
 	) {
-		// TODO: Is this okay??
 		if (profileCode == 0 || line == -1 || column == -1) {
 			return;
 		}
@@ -435,34 +442,12 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
-	/**
-	 * @param {number} id
-	 * @param {number} time
-	 * @returns {import('../').MapEntry}
-	 */
-	createMap(id, time) {
-		// TODO: Likely inline into processMapCreate
-		return {
-			type: "MapEntry",
-			id,
-			time,
-			description: "",
-			children: [],
-			depth: 0,
-		};
-	}
-
 	getExistingMap(id, time) {
 		if (id === 0) return undefined;
 
 		const map = this.entriesMap.get(id);
 		if (map === undefined) {
 			throw new Error(`No map details provided: id=${id}`);
-
-			// TODO: Is this necessary?
-			// console.error("No map details provided: id=" + id);
-			// Manually patch in a map to continue running.
-			// return this.createMap(id, time);
 		}
 
 		return map;
@@ -512,6 +497,16 @@ export class DeoptLogReader extends LogReader {
 	toJSON() {
 		this.treeShakeMapsAndEdges();
 
+		/** @type {import('.').MapData} */
+		const mapData = { nodes: {}, edges: {} };
+		for (let [id, mapEntry] of this.entriesMap.entries()) {
+			mapData.nodes[id] = mapEntry;
+		}
+
+		for (let [id, mapEdge] of this.entriesEdges.entries()) {
+			mapData.edges[id] = mapEdge;
+		}
+
 		const filterInternals = this.filterInternals.bind(this);
 		return {
 			ics: this.sortEntries(
@@ -525,17 +520,7 @@ export class DeoptLogReader extends LogReader {
 			codes: this.sortEntries(
 				Array.from(this.entriesCode.values()).filter(filterInternals)
 			),
-			maps: {
-				// TODO: Implement filtering out of internal maps and edges
-				nodes: Array.from(this.entriesMap.values()).reduce((acc, map) => {
-					acc[map.id] = map;
-					return acc;
-				}, {}),
-				edges: Array.from(this.entriesEdges.values()).reduce((acc, edge) => {
-					acc[edge.id] = edge;
-					return acc;
-				}, {}),
-			},
+			maps: mapData,
 		};
 	}
 

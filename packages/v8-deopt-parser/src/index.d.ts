@@ -105,22 +105,13 @@ interface MapEntry {
 	time: number;
 	description: string;
 
-	// Parent Edge? Or the edge that leads to this Map
-	// edge?: MapEdge; // Edge type
 	/** Parent Edge ID */
 	edge?: string;
 
-	// Children Edges
-	// children: MapEdge[]; // TODO: Edge ID?
 	/** Children Edge IDs */
 	children: string[];
-
 	depth: number;
-
 	isDeprecated?: boolean;
-	// deprecationTargets?: any; // ??
-	// leftId?: number;
-	// rightId?: number;
 	filePosition?: {
 		functionName: string;
 		file: string;

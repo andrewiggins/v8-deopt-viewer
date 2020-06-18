@@ -47,59 +47,6 @@ export function visitAllMaps(allMaps, allEdges, map, visitor) {
 	}
 }
 
-// TODO: Implement these if necessary
-
-/**
- * @param {import('./').MapEntry} map
- * @returns {boolean}
- */
-export function isRoot(map) {
-	return map.edge === undefined || map.edge.from === undefined;
-}
-
-/**
- * @param {import('./').MapEntry} map
- */
-export function getTransitions(map) {
-	let transitions = Object.create(null);
-	let current = map;
-	while (current) {
-		let edge = current.edge;
-		if (edge && edge.isTransition()) {
-			transitions[edge.name] = edge;
-		}
-		current = current.parent();
-	}
-	return transitions;
-}
-
-/**
- * @param {import('./').MapEntry} map
- */
-export function getParent(map) {
-	return map.edge?.from;
-}
-
-/**
- * @param {import('./').MapEntry} map
- */
-export function getParentChain(map) {
-	let parents = [];
-	let current = map.parent();
-	while (current) {
-		parents.push(current);
-		current = current.parent();
-	}
-	return parents;
-}
-
-/**
- * @param {import('./').MapEntry} map
- */
-export function getType(map) {
-	return map.edge?.type ?? "new";
-}
-
 /**
  * @param {import('./').MapEdge} edge
  */

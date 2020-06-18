@@ -242,24 +242,6 @@ test("runParser(html-inline.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
-test("runParser(html-inline.traceMaps.v8.log)", async (t) => {
-	const logFileName = "html-inline.traceMaps.v8.log";
-	const result = await runParser(t, logFileName);
-
-	t.equal(result.codes.length, 15, "Number of codes");
-	t.equal(result.deopts.length, 6, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
-
-	// No need to validate explicit entries since other tests cover that
-	// TODO: Ensure all maps referenced in ics exist in map.entries
-	// TODO: Ensure all edges references in maps.entries exist in maps.edges
-	// TODO: Ensure all maps references in maps.edges exists in maps.entries
-	// TODO: Ensure there are no superfluous maps or edges
-	// TODO: In summary, walk the entire map graph and ensure no missing nodes or unused nodes
-
-	await writeSnapshot(logFileName, result);
-});
-
 test("runParser(html-external.v8.log)", async (t) => {
 	const logFileName = "html-external.v8.log";
 	const result = await runParser(t, logFileName);
