@@ -59,7 +59,7 @@ function createMarkerElement(fileId, marker) {
 	mark.textContent = getIcon(marker.type);
 
 	const link = document.createElement("a");
-	const linkId = `/file/${fileId}/${marker.id}`;
+	const linkId = `/file/${fileId}/${marker.type}/${marker.id}`;
 	const classes = [deoptMarker, severityClass(marker.severity)];
 	if (location.hash == "#" + linkId) {
 		classes.push("active");

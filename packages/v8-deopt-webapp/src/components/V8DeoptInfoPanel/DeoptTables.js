@@ -15,7 +15,7 @@ import {
 
 /**
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
- * @typedef {{ fileDeoptInfo: FileV8DeoptInfo; entryKind: import('.').EntryKind; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; showAllICs: boolean; }} DeoptTablesProps
+ * @typedef {{ fileDeoptInfo: FileV8DeoptInfo; entryKind: import('../FileViewer').EntryKind; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; showAllICs: boolean; }} DeoptTablesProps
  * @param {DeoptTablesProps} props
  */
 export function DeoptTables({
@@ -36,7 +36,7 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase}
+						urlBase={urlBase + "/codes"}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -50,7 +50,7 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase}
+						urlBase={urlBase + "/deopts"}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -65,7 +65,7 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase}
+						urlBase={urlBase + "/ics"}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -75,7 +75,7 @@ export function DeoptTables({
 		throw new Error(`Unknown entry kind: "${entryKind}"`);
 	}
 
-	return entries.length == 0 ? <p>None!</p> : entries;
+	return <Fragment>{entries.length == 0 ? <p>None!</p> : entries}</Fragment>;
 }
 
 /**

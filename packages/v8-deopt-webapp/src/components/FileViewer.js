@@ -11,7 +11,8 @@ import {
 import { fileViewer, codeSettings } from "./FileViewer.scss";
 
 /**
- * @typedef {{ fileId: string; entryId: string; }} RouteParams
+ * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
+ * @typedef {{ fileId: string; entryKind: EntryKind; entryId: string; }} RouteParams
  * @typedef {{ routeParams: RouteParams, fileDeoptInfo: import('..').FileV8DeoptInfoWithSources }} FileViewerProps
  * @param {FileViewerProps} props
  */
@@ -41,6 +42,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 			/>
 			<V8DeoptInfoPanel
 				fileDeoptInfo={fileDeoptInfo}
+				routeParams={routeParams}
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}
 				showLowSevs={showLowSevs}

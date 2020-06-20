@@ -1,0 +1,15 @@
+.map_selectors {
+	display: flex;
+	// Explore more at: https://css-tricks.com/almanac/properties/b/box-shadow/
+	// box-shadow: 0 10px 6px -6px #ddd
+
+	> .grouping {
+		flex: 1 1 50%;
+		margin-right: 0.5rem;
+	}
+
+	> .group_value {
+		flex: 1 1 50%;
+		margin-left: 0.5rem;
+	}
+}

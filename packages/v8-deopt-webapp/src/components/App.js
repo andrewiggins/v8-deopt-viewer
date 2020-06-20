@@ -19,11 +19,12 @@ export function App({ deoptInfo }) {
 				<Route path="/">
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
-				<Route path="/file/:fileId?/:entryId?">
+				<Route path="/file/:fileId?/:entryKind?/:entryId?">
 					{(params) => (
 						<FileViewer
 							routeParams={{
 								fileId: params.fileId || "0",
+								entryKind: params.entryKind || "codes",
 								entryId: params.entryId || null,
 							}}
 							fileDeoptInfo={deoptInfo.files[files[params.fileId || 0]]}

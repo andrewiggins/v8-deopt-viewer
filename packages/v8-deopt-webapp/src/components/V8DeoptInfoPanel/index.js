@@ -13,14 +13,12 @@ import {
 import { v8deoptInfoPanel, panel_title, tabLink } from "./index.scss";
 import { showLowSevs as showLowSevsClass } from "./DeoptTables.scss";
 import { DeoptTables } from "./DeoptTables";
+import { MapExplorer } from "./MapExplorer";
 
 /**
- * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
- * @type {EntryKind}
+ * @typedef {import('../FileViewer').EntryKind} EntryKind
+ * @type {Array<{ title: string; entryKind: EntryKind }>}
  */
-const defaultEntryKind = "codes";
-
-/** @type {Array<{ title: string; entryKind: EntryKind }>} */
 const tabLinks = [
 	{
 		title: "Optimizations",
@@ -34,13 +32,18 @@ const tabLinks = [
 		title: "Inline Caches",
 		entryKind: "ics",
 	},
+	{
+		title: "Map Explorer",
+		entryKind: "maps",
+	},
 ];
 
 /**
- * @typedef {{ fileDeoptInfo: import("../..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; showLowSevs: boolean; showAllICs: boolean }} V8DeoptInfoPanelProps
+ * @typedef {{ routeParams: import('../FileViewer').RouteParams; selectedEntry: import("v8-deopt-parser").Entry; fileDeoptInfo: import("../..").FileV8DeoptInfoWithSources; fileId: string; showLowSevs: boolean; showAllICs: boolean }} V8DeoptInfoPanelProps
  * @param {V8DeoptInfoPanelProps} props
  */
 export function V8DeoptInfoPanel({
+	routeParams,
 	selectedEntry,
 	fileDeoptInfo,
 	fileId,
@@ -48,7 +51,7 @@ export function V8DeoptInfoPanel({
 	showAllICs,
 }) {
 	const urlBase = `#/file/${fileId}`;
-	const selectedEntryType = selectedEntry?.type ?? defaultEntryKind;
+	const selectedEntryType = selectedEntry?.type ?? routeParams.entryKind;
 	const [entryKind, setEntryKind] = useState(selectedEntryType);
 
 	useLayoutEffect(() => {
@@ -94,13 +97,17 @@ export function V8DeoptInfoPanel({
 				</ul>
 			</nav>
 			<div class={panel_body}>
-				<DeoptTables
-					fileDeoptInfo={fileDeoptInfo}
-					entryKind={entryKind}
-					selectedEntry={selectedEntry}
-					showAllICs={showAllICs}
-					urlBase={urlBase}
-				/>
+				{entryKind == "maps" ? (
+					<MapExplorer urlBase={urlBase} />
+				) : (
+					<DeoptTables
+						entryKind={entryKind}
+						selectedEntry={selectedEntry}
+						fileDeoptInfo={fileDeoptInfo}
+						urlBase={urlBase}
+						showAllICs={showAllICs}
+					/>
+				)}
 			</div>
 		</div>
 	);
