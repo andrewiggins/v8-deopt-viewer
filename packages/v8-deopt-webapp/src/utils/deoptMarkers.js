@@ -51,23 +51,24 @@ function locHasMarker(markers, curLine, curColumn) {
 }
 
 /**
+ * @param {string} urlBase
  * @param {import('v8-deopt-parser').Entry} marker
  * @returns {HTMLElement}
  */
-function createMarkerElement(fileId, marker) {
+function createMarkerElement(urlBase, marker) {
 	const mark = document.createElement("mark");
 	mark.textContent = getIcon(marker.type);
 
 	const link = document.createElement("a");
-	const linkId = `/file/${fileId}/${marker.type}/${marker.id}`;
+	const href = `${urlBase}/${marker.type}/${marker.id}`;
 	const classes = [deoptMarker, severityClass(marker.severity)];
-	if (location.hash == "#" + linkId) {
+	if (location.hash == href) {
 		classes.push("active");
 		setTimeout(() => link.scrollIntoView(), 0);
 	}
 
-	link.id = linkId;
-	link.href = "#" + link.id;
+	link.id = href.replace(/^#/, "");
+	link.href = href;
 	link.className = classes.join(" ");
 	link.appendChild(mark);
 
@@ -76,15 +77,16 @@ function createMarkerElement(fileId, marker) {
 
 /**
  * @param {Node} element
+ * @param {string} urlBase
  * @param {Markers} markers
  * @param {number} curLine
  * @param {number} curColumn
  */
-function consumeMarkers(element, fileId, markers, curLine, curColumn) {
+function consumeMarkers(element, urlBase, markers, curLine, curColumn) {
 	let refChild = element;
 	while (locHasMarker(markers, curLine, curColumn)) {
 		const marker = markers.shift();
-		const lastMark = createMarkerElement(fileId, marker);
+		const lastMark = createMarkerElement(urlBase, marker);
 
 		element.parentNode.insertBefore(lastMark, refChild.nextSibling);
 		refChild = lastMark;
@@ -108,10 +110,10 @@ function getMarkers(deoptInfo) {
 
 /**
  * @param {HTMLElement} root
- * @param {string} fileId
+ * @param {string} urlBase
  * @param {import('..').FileV8DeoptInfoWithSources} deoptInfo
  */
-export function addDeoptMarkers(root, fileId, deoptInfo) {
+export function addDeoptMarkers(root, urlBase, deoptInfo) {
 	const markers = getMarkers(deoptInfo);
 
 	let code = "";
@@ -150,7 +152,7 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 				if (locHasMarker(markers, curLine, curColumn)) {
 					element = consumeMarkers(
 						element,
-						fileId,
+						urlBase,
 						markers,
 						curLine,
 						curColumn

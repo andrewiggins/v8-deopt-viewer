@@ -27,12 +27,12 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string; hideLineNums: boolean; showLowSevs: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; hideLineNums: boolean; showLowSevs: boolean; }} props
  */
 export function CodePanel({
 	fileDeoptInfo,
 	selectedEntry,
-	fileId,
+	urlBase,
 	hideLineNums,
 	showLowSevs,
 }) {
@@ -47,8 +47,8 @@ export function CodePanel({
 	/** @type {import('preact').RefObject<HTMLElement>} */
 	const codeRef = useRef(null);
 	useLayoutEffect(() => {
-		addDeoptMarkers(codeRef.current, fileId, fileDeoptInfo);
-	}, [fileId, fileDeoptInfo]);
+		addDeoptMarkers(codeRef.current, urlBase, fileDeoptInfo);
+	}, [urlBase, fileDeoptInfo]);
 
 	return (
 		<div

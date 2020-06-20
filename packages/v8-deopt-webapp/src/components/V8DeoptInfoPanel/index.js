@@ -39,18 +39,17 @@ const tabLinks = [
 ];
 
 /**
- * @typedef {{ routeParams: import('../FileViewer').RouteParams; selectedEntry: import("v8-deopt-parser").Entry; fileDeoptInfo: import("../..").FileV8DeoptInfoWithSources; fileId: string; showLowSevs: boolean; showAllICs: boolean }} V8DeoptInfoPanelProps
+ * @typedef {{ routeParams: import('../FileViewer').RouteParams; urlBase: string; selectedEntry: import("v8-deopt-parser").Entry; fileDeoptInfo: import("../..").FileV8DeoptInfoWithSources; showLowSevs: boolean; showAllICs: boolean }} V8DeoptInfoPanelProps
  * @param {V8DeoptInfoPanelProps} props
  */
 export function V8DeoptInfoPanel({
 	routeParams,
+	urlBase,
 	selectedEntry,
 	fileDeoptInfo,
-	fileId,
 	showLowSevs,
 	showAllICs,
 }) {
-	const urlBase = `#/file/${fileId}`;
 	const selectedEntryType = selectedEntry?.type ?? routeParams.entryKind;
 	const [entryKind, setEntryKind] = useState(selectedEntryType);
 

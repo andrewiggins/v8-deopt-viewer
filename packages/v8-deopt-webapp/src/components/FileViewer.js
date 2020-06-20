@@ -12,12 +12,19 @@ import { fileViewer, codeSettings } from "./FileViewer.scss";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
- * @typedef {{ fileId: string; entryKind: EntryKind; entryId: string; }} RouteParams
- * @typedef {{ routeParams: RouteParams, fileDeoptInfo: import('..').FileV8DeoptInfoWithSources }} FileViewerProps
+ * @typedef {{ fileId: number; entryKind: EntryKind; entryId: string; }} RouteParams
+ * @typedef {{ routeParams: RouteParams, deoptInfo: import('..').PerFileDeoptInfoWithSources }} FileViewerProps
  * @param {FileViewerProps} props
  */
-export function FileViewer({ fileDeoptInfo, routeParams }) {
+export function FileViewer({ deoptInfo, routeParams }) {
+	// TODO: How to pass map data into MapExplorer
+
+	const files = Object.keys(deoptInfo.files);
+	const fileDeoptInfo = deoptInfo.files[files[routeParams.fileId]];
+
 	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
+	const urlBase = `#/file/${routeParams.fileId}`;
+
 	const [showLowSevs, setShowLowSevs] = useState(defaultShowLowSevs);
 	const [hideLineNums, setHideLineNums] = useState(defaultHideLineNum);
 	const [showAllICs, setShowAllICs] = useState(false);
@@ -36,7 +43,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 			<CodePanel
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}
-				fileId={routeParams.fileId}
+				urlBase={urlBase}
 				hideLineNums={hideLineNums}
 				showLowSevs={showLowSevs}
 			/>
@@ -44,7 +51,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				fileDeoptInfo={fileDeoptInfo}
 				routeParams={routeParams}
 				selectedEntry={selectedEntry}
-				fileId={routeParams.fileId}
+				urlBase={urlBase}
 				showLowSevs={showLowSevs}
 				showAllICs={showAllICs}
 			/>
