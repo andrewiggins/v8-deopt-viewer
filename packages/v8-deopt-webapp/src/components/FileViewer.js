@@ -1,7 +1,7 @@
 import { createElement } from "preact";
 import { useState } from "preact/hooks";
 import { findEntry } from "v8-deopt-parser/src/findEntry";
-import { DeoptsList } from "./DeoptsList";
+import { V8DeoptInfoPanel } from "./V8DeoptInfoPanel";
 import { CodePanel } from "./CodePanel";
 import {
 	defaultShowLowSevs,
@@ -39,7 +39,7 @@ export function FileViewer({ fileDeoptInfo, routeParams }) {
 				hideLineNums={hideLineNums}
 				showLowSevs={showLowSevs}
 			/>
-			<DeoptsList
+			<V8DeoptInfoPanel
 				fileDeoptInfo={fileDeoptInfo}
 				selectedEntry={selectedEntry}
 				fileId={routeParams.fileId}

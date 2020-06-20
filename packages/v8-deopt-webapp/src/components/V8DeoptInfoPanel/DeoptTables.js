@@ -1,25 +1,9 @@
 import { createElement, Fragment } from "preact";
-import { useState, useEffect, useRef, useLayoutEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
-import { formatMapId } from "../utils/mapUtils";
+import { formatMapId } from "../../utils/mapUtils";
+import { table, table_striped, table_hover } from "../../spectre.scss";
 import {
-	panel,
-	panel_header,
-	panel_nav,
-	tab,
-	tab_block,
-	tab_item,
-	active,
-	panel_body,
-	table,
-	table_striped,
-	table_hover,
-} from "../spectre.scss";
-import {
-	deoptsListPanel,
-	panel_title,
-	showLowSevs as showLowSevsClass,
-	tabLink,
 	entryTable,
 	selected as selectedClass,
 	entryId as entryIdClass,
@@ -27,33 +11,21 @@ import {
 	sev1,
 	sev2,
 	sev3,
-} from "./DeoptsList.scss";
+} from "./DeoptTables.scss";
 
 /**
- * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
- * @type {EntryKind}
+ * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
+ * @typedef {{ fileDeoptInfo: FileV8DeoptInfo; entryKind: import('.').EntryKind; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; showAllICs: boolean; }} DeoptTablesProps
+ * @param {DeoptTablesProps} props
  */
-const defaultEntryKind = "codes";
-
-/**
- * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; fileId: string;  showLowSevs: boolean; showAllICs: boolean }} props
- */
-export function DeoptsList({
+export function DeoptTables({
+	entryKind,
 	selectedEntry,
 	fileDeoptInfo,
-	fileId,
-	showLowSevs,
+	urlBase,
 	showAllICs,
 }) {
-	const selectedEntryType = selectedEntry?.type ?? defaultEntryKind;
-	const [entryKind, setEntryKind] = useState(selectedEntryType);
 	const selectedId = selectedEntry?.id;
-
-	useLayoutEffect(() => {
-		if (selectedEntryType !== entryKind) {
-			setEntryKind(selectedEntryType);
-		}
-	}, [selectedEntryType]);
 
 	let entries;
 	if (entryKind == "codes") {
@@ -64,7 +36,7 @@ export function DeoptsList({
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={fileId}
+						urlBase={urlBase}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -78,7 +50,7 @@ export function DeoptsList({
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={fileId}
+						urlBase={urlBase}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -93,7 +65,7 @@ export function DeoptsList({
 				title={
 					<EntryTitle
 						entry={entry}
-						fileId={fileId}
+						urlBase={urlBase}
 						relativePath={fileDeoptInfo.relativePath}
 					/>
 				}
@@ -103,63 +75,7 @@ export function DeoptsList({
 		throw new Error(`Unknown entry kind: "${entryKind}"`);
 	}
 
-	/** @type {Array<{ title: string; entryKind: EntryKind }>} */
-	const tabLinks = [
-		{
-			title: "Optimizations",
-			entryKind: "codes",
-		},
-		{
-			title: "Deoptimizations",
-			entryKind: "deopts",
-		},
-		{
-			title: "Inline Caches",
-			entryKind: "ics",
-		},
-	];
-
-	return (
-		<div
-			class={[
-				panel,
-				deoptsListPanel,
-				(showLowSevs && showLowSevsClass) || null,
-			].join(" ")}
-		>
-			<div class={panel_header}>
-				<h2 class={panel_title}>{fileDeoptInfo.relativePath}</h2>
-			</div>
-			<nav class={panel_nav}>
-				<ul class={[tab, tab_block].join(" ")}>
-					{tabLinks.map((link) => {
-						const liClass = [
-							tab_item,
-							link.entryKind == entryKind ? active : null,
-						].join(" ");
-
-						return (
-							<li class={liClass}>
-								<a
-									class={tabLink}
-									href="#"
-									onClick={(e) => {
-										e.preventDefault();
-										setEntryKind(link.entryKind);
-									}}
-								>
-									{link.title}
-								</a>
-							</li>
-						);
-					})}
-				</ul>
-			</nav>
-			<div class={panel_body}>
-				{entries.length == 0 ? <p>None!</p> : entries}
-			</div>
-		</div>
-	);
+	return entries.length == 0 ? <p>None!</p> : entries;
 }
 
 /**
@@ -291,10 +207,10 @@ function ICEntry({ entry, selected, title, showAllICs }) {
 }
 
 /**
- * @param {{ entry: import("v8-deopt-parser").Entry; relativePath: string; fileId: string; }} props
+ * @param {{ entry: import("v8-deopt-parser").Entry; relativePath: string; urlBase: string; }} props
  */
-function EntryTitle({ entry, relativePath, fileId }) {
-	const href = `#/file/${fileId}/${entry.id}`;
+function EntryTitle({ entry, relativePath, urlBase }) {
+	const href = `${urlBase}/${entry.id}`;
 	const linkText = `${entry.functionName} at ${relativePath}:${entry.line}:${entry.column}`;
 	return (
 		<Fragment>
