@@ -6,11 +6,15 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
-    "dev": "rollup -w -c ./rollup.config.js",
-    "start": "run-p dev",
+    "build:watch": "rollup -w -c ./rollup.config.js",
+    "dev": "run-p serve build:watch",
+    "start": "run-s dev",
+    "serve": "sirv --dev",
     "test": "node -e \"console.log('No tests')\"",
     "prepare": "run-s build"
   },
@@ -26,6 +30,7 @@
     "rollup-plugin-postcss": "^3.1.5",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-visualizer": "^4.1.0",
+    "sirv-cli": "^1.0.1",
     "spectre.css": "^0.5.9",
     "v8-deopt-parser": "^0.3.0",
     "wouter-preact": "^2.5.1"

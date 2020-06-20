@@ -1,4 +1,5 @@
 import { render, createElement } from "preact";
+import "preact/devtools";
 import { App } from "./components/App";
 import "./theme.scss";
 
