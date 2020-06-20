@@ -1,49 +1,76 @@
 import { createElement } from "preact";
+import { useReducer } from "preact/hooks";
 import { menu, menu_item, form_icon, form_switch } from "../spectre.scss";
 import {
 	codeSettings,
 	dirty as dirtyClass,
 	settingsBody,
-	settingsMenu,
+	settingsMenu
 } from "./CodeSettings.scss";
 
-export const defaultShowLowSevs = false;
-export const defaultHideLineNum = false;
+/**
+ * @typedef CodeSettingsState
+ * @property {boolean} showLowSevs
+ * @property {boolean} hideLineNums
+ * @property {boolean} showAllICs
+ */
 
 /**
- * @typedef {{ class?: string; showLowSevs: boolean; toggleShowLowSevs: () => void; hideLineNums: boolean; toggleHideLineNums: () => void; showAllICs: boolean; toggleShowAllICs: () => void; }} CodeSettingsProps
+ * @type {CodeSettingsState}
+ */
+const initialState = {
+	showLowSevs: false,
+	hideLineNums: false,
+	showAllICs: false
+};
+
+/**
+ * @returns {[CodeSettingsState, (setting: keyof CodeSettingsState) => void]}
+ */
+export function useCodeSettingsState() {
+	return useReducer((state, settingToToggle) => {
+		return {
+			...state,
+			[settingToToggle]: !state[settingToToggle]
+		};
+	}, initialState);
+}
+
+/**
+ * @typedef {{ class?: string; state: CodeSettingsState; toggle: (setting: keyof CodeSettingsState) => void; }} CodeSettingsProps
  * @param {CodeSettingsProps} props
  */
-export function CodeSettings(props) {
+export function CodeSettings({ class: className, state, toggle }) {
 	const dirty =
-		props.showLowSevs !== defaultShowLowSevs ||
-		props.hideLineNums !== defaultHideLineNum;
+		state.showLowSevs !== initialState.showLowSevs ||
+		state.hideLineNums !== initialState.hideLineNums ||
+		state.showAllICs !== initialState.showAllICs;
 
 	const settings = [
 		{
 			key: "showLowSevs",
 			label: "Display Low Severities",
-			checked: props.showLowSevs,
-			onInput: () => props.toggleShowLowSevs(),
+			checked: state.showLowSevs,
+			onInput: () => toggle("showLowSevs")
 		},
 		{
 			key: "hideLineNums",
 			label: "Hide Line Numbers",
-			checked: props.hideLineNums,
-			onInput: () => props.toggleHideLineNums(),
+			checked: state.hideLineNums,
+			onInput: () => toggle("hideLineNums")
 		},
 		{
 			key: "showAllICs",
 			label: "Show All Inline Cache Entries",
-			checked: props.showAllICs,
-			onInput: () => props.toggleShowAllICs(),
-		},
+			checked: state.showAllICs,
+			onInput: () => toggle("showAllICs")
+		}
 	];
 
 	const rootClass = [
 		codeSettings,
-		props.class,
-		(dirty && dirtyClass) || null,
+		className,
+		(dirty && dirtyClass) || null
 	].join(" ");
 
 	return (
@@ -53,7 +80,7 @@ export function CodeSettings(props) {
 			</summary>
 			<div class={settingsBody}>
 				<ul class={[menu, settingsMenu].join(" ")}>
-					{settings.map((setting) => (
+					{settings.map(setting => (
 						<li key={setting.key} class={menu_item}>
 							<label class={form_switch}>
 								<input
