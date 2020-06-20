@@ -6,7 +6,7 @@ import { CodePanel } from "./CodePanel";
 import { CodeSettings, useCodeSettingsState } from "./CodeSettings";
 import {
 	fileViewer,
-	codeSettings as codeSettingsClass
+	codeSettings as codeSettingsClass,
 } from "./FileViewer.scss";
 import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer";
 import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
@@ -59,10 +59,16 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 			<V8DeoptInfoPanel
 				title={fileDeoptInfo.relativePath}
 				selectedEntryKind={entryType}
-				onTabClick={newKind => setEntryType(newKind)}
+				onTabClick={(newKind) => setEntryType(newKind)}
 			>
 				{entryType == "maps" ? (
-					<MapExplorer urlBase={urlBase} />
+					<MapExplorer
+						mapData={deoptInfo.maps}
+						fileDeoptInfo={fileDeoptInfo}
+						selectedMap={selectedEntry}
+						settings={codeSettings}
+						urlBase={urlBase}
+					/>
 				) : (
 					<DeoptTables
 						entryKind={entryType}

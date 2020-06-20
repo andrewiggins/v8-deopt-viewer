@@ -31,6 +31,7 @@ export function DeoptTables({
 	if (entryKind == "codes") {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<CodeEntry
+				key={entry.id}
 				entry={entry}
 				selected={entry.id == selectedId}
 				title={
@@ -45,6 +46,7 @@ export function DeoptTables({
 	} else if (entryKind == "deopts") {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<DeoptEntry
+				key={entry.id}
 				entry={entry}
 				selected={entry.id == selectedId}
 				title={
@@ -59,6 +61,7 @@ export function DeoptTables({
 	} else if (entryKind == "ics") {
 		entries = fileDeoptInfo[entryKind].map((entry) => (
 			<ICEntry
+				key={entry.id}
 				entry={entry}
 				selected={entry.id == selectedId}
 				showAllICs={showAllICs}
