@@ -27,15 +27,9 @@ function determineLanguage(path) {
 }
 
 /**
- * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; hideLineNums: boolean; showLowSevs: boolean; }} props
+ * @param {{ fileDeoptInfo: import("..").FileV8DeoptInfoWithSources; selectedLine: number; urlBase: string; settings: import('./CodeSettings').CodeSettingsState; }} props
  */
-export function CodePanel({
-	fileDeoptInfo,
-	selectedEntry,
-	urlBase,
-	hideLineNums,
-	showLowSevs,
-}) {
+export function CodePanel({ fileDeoptInfo, selectedLine, urlBase, settings }) {
 	if (fileDeoptInfo.srcError) {
 		return <CodeError srcError={fileDeoptInfo.srcError} />;
 	} else if (!fileDeoptInfo.src) {
@@ -52,18 +46,18 @@ export function CodePanel({
 
 	return (
 		<div
-			class={[codePanel, (showLowSevs && showLowSevsClass) || null].join(" ")}
+			class={[
+				codePanel,
+				(settings.showLowSevs && showLowSevsClass) || null
+			].join(" ")}
 		>
 			<PrismCode
 				src={fileDeoptInfo.src}
 				lang={lang}
-				class={(!hideLineNums && "line-numbers") || null}
+				class={(!settings.hideLineNums && "line-numbers") || null}
 				ref={codeRef}
 			>
-				<LineNumbers
-					selectedLine={selectedEntry?.line ?? -1}
-					contents={fileDeoptInfo.src}
-				/>
+				<LineNumbers selectedLine={selectedLine} contents={fileDeoptInfo.src} />
 			</PrismCode>
 		</div>
 	);
@@ -76,6 +70,9 @@ export function CodePanel({
 const PrismCode = forwardRef((props, ref) => {
 	const className = [`language-${props.lang}`, props.class].join(" ");
 
+	// TODO: File route changes will unmount and delete this cache May be useful
+	// to cache across files so switching back and forth between files doesn't
+	// re-highlight the file each time
 	const __html = useMemo(
 		() => Prism.highlight(props.src, Prism.languages[props.lang], props.lang),
 		[props.src, props.lang]

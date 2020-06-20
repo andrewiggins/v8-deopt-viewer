@@ -1,5 +1,5 @@
 import { createElement } from "preact";
-import { useState } from "preact/hooks";
+import { useState, useLayoutEffect } from "preact/hooks";
 import { findEntry } from "v8-deopt-parser/src/findEntry";
 import { V8DeoptInfoPanel } from "./V8DeoptInfoPanel";
 import { CodePanel } from "./CodePanel";
@@ -8,21 +8,38 @@ import {
 	fileViewer,
 	codeSettings as codeSettingsClass
 } from "./FileViewer.scss";
+import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer";
+import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
- * @typedef {{ fileId: number; entryKind: EntryKind; entryId: string; }} RouteParams
- * @typedef {{ routeParams: RouteParams, deoptInfo: import('..').PerFileDeoptInfoWithSources }} FileViewerProps
+ * @typedef {{ fileId: number; entryType: EntryKind; entryId: string; }} RouteParams
+ * @typedef {{ routeParams: RouteParams; deoptInfo: import('..').PerFileDeoptInfoWithSources; files: string[]'' }} FileViewerProps
  * @param {FileViewerProps} props
  */
-export function FileViewer({ deoptInfo, routeParams }) {
+export function FileViewer({ files, deoptInfo, routeParams }) {
 	// TODO: How to pass map data into MapExplorer
 
-	const files = Object.keys(deoptInfo.files);
+	const urlBase = `#/file/${routeParams.fileId}`;
 	const fileDeoptInfo = deoptInfo.files[files[routeParams.fileId]];
 
-	const selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
-	const urlBase = `#/file/${routeParams.fileId}`;
+	let selectedEntry;
+	if (routeParams.entryId) {
+		if (routeParams.entryType == "maps") {
+			selectedEntry = deoptInfo.maps.nodes[routeParams.entryId];
+		} else {
+			selectedEntry = findEntry(fileDeoptInfo, routeParams.entryId);
+		}
+	}
+
+	const selectedEntryType = selectedEntry?.type ?? routeParams.entryType;
+	const [entryType, setEntryType] = useState(selectedEntryType);
+
+	useLayoutEffect(() => {
+		if (selectedEntryType !== entryType) {
+			setEntryType(selectedEntryType);
+		}
+	}, [selectedEntryType]);
 
 	const [codeSettings, toggleSetting] = useCodeSettingsState();
 
@@ -35,19 +52,27 @@ export function FileViewer({ deoptInfo, routeParams }) {
 			/>
 			<CodePanel
 				fileDeoptInfo={fileDeoptInfo}
-				selectedEntry={selectedEntry}
+				selectedLine={selectedEntry?.line ?? -1}
 				urlBase={urlBase}
-				hideLineNums={codeSettings.hideLineNums}
-				showLowSevs={codeSettings.showLowSevs}
+				settings={codeSettings}
 			/>
 			<V8DeoptInfoPanel
-				fileDeoptInfo={fileDeoptInfo}
-				routeParams={routeParams}
-				selectedEntry={selectedEntry}
-				urlBase={urlBase}
-				showLowSevs={codeSettings.showLowSevs}
-				showAllICs={codeSettings.showAllICs}
-			/>
+				title={fileDeoptInfo.relativePath}
+				selectedEntryKind={entryType}
+				onTabClick={newKind => setEntryType(newKind)}
+			>
+				{entryType == "maps" ? (
+					<MapExplorer urlBase={urlBase} />
+				) : (
+					<DeoptTables
+						entryKind={entryType}
+						selectedEntry={selectedEntry}
+						fileDeoptInfo={fileDeoptInfo}
+						urlBase={urlBase}
+						showAllICs={codeSettings.showAllICs}
+					/>
+				)}
+			</V8DeoptInfoPanel>
 		</div>
 	);
 }

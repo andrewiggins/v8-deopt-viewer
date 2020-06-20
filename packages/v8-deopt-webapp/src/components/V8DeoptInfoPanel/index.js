@@ -8,12 +8,9 @@ import {
 	tab_block,
 	tab_item,
 	active,
-	panel_body,
+	panel_body
 } from "../../spectre.scss";
 import { v8deoptInfoPanel, panel_title, tabLink } from "./index.scss";
-import { showLowSevs as showLowSevsClass } from "./DeoptTables.scss";
-import { DeoptTables } from "./DeoptTables";
-import { MapExplorer } from "./MapExplorer";
 
 /**
  * @typedef {import('../FileViewer').EntryKind} EntryKind
@@ -22,60 +19,43 @@ import { MapExplorer } from "./MapExplorer";
 const tabLinks = [
 	{
 		title: "Optimizations",
-		entryKind: "codes",
+		entryKind: "codes"
 	},
 	{
 		title: "Deoptimizations",
-		entryKind: "deopts",
+		entryKind: "deopts"
 	},
 	{
 		title: "Inline Caches",
-		entryKind: "ics",
+		entryKind: "ics"
 	},
 	{
 		title: "Map Explorer",
-		entryKind: "maps",
-	},
+		entryKind: "maps"
+	}
 ];
 
 /**
- * @typedef {{ routeParams: import('../FileViewer').RouteParams; urlBase: string; selectedEntry: import("v8-deopt-parser").Entry; fileDeoptInfo: import("../..").FileV8DeoptInfoWithSources; showLowSevs: boolean; showAllICs: boolean }} V8DeoptInfoPanelProps
+ * @typedef {{ selectedEntryKind: EntryKind; title: string; onTabClick: (entryKind: EntryKind) => void; children: import('preact').JSX.Element; }} V8DeoptInfoPanelProps
  * @param {V8DeoptInfoPanelProps} props
  */
 export function V8DeoptInfoPanel({
-	routeParams,
-	urlBase,
-	selectedEntry,
-	fileDeoptInfo,
-	showLowSevs,
-	showAllICs,
+	selectedEntryKind,
+	title,
+	children,
+	onTabClick
 }) {
-	const selectedEntryType = selectedEntry?.type ?? routeParams.entryKind;
-	const [entryKind, setEntryKind] = useState(selectedEntryType);
-
-	useLayoutEffect(() => {
-		if (selectedEntryType !== entryKind) {
-			setEntryKind(selectedEntryType);
-		}
-	}, [selectedEntryType]);
-
 	return (
-		<div
-			class={[
-				panel,
-				v8deoptInfoPanel,
-				(showLowSevs && showLowSevsClass) || null,
-			].join(" ")}
-		>
+		<div class={[panel, v8deoptInfoPanel].join(" ")}>
 			<div class={panel_header}>
-				<h2 class={panel_title}>{fileDeoptInfo.relativePath}</h2>
+				<h2 class={panel_title}>{title}</h2>
 			</div>
 			<nav class={panel_nav}>
 				<ul class={[tab, tab_block].join(" ")}>
-					{tabLinks.map((link) => {
+					{tabLinks.map(link => {
 						const liClass = [
 							tab_item,
-							link.entryKind == entryKind ? active : null,
+							link.entryKind == selectedEntryKind ? active : null
 						].join(" ");
 
 						return (
@@ -83,9 +63,9 @@ export function V8DeoptInfoPanel({
 								<a
 									class={tabLink}
 									href="#"
-									onClick={(e) => {
+									onClick={e => {
 										e.preventDefault();
-										setEntryKind(link.entryKind);
+										onTabClick(link.entryKind);
 									}}
 								>
 									{link.title}
@@ -95,19 +75,7 @@ export function V8DeoptInfoPanel({
 					})}
 				</ul>
 			</nav>
-			<div class={panel_body}>
-				{entryKind == "maps" ? (
-					<MapExplorer urlBase={urlBase} />
-				) : (
-					<DeoptTables
-						entryKind={entryKind}
-						selectedEntry={selectedEntry}
-						fileDeoptInfo={fileDeoptInfo}
-						urlBase={urlBase}
-						showAllICs={showAllICs}
-					/>
-				)}
-			</div>
+			<div class={panel_body}>{children}</div>
 		</div>
 	);
 }

@@ -10,6 +10,8 @@ import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
  * @param {import('..').AppProps} props
  */
 export function App({ deoptInfo }) {
+	const files = Object.keys(deoptInfo.files);
+
 	return (
 		<Fragment>
 			<Router hook={useHashLocation}>
@@ -17,14 +19,15 @@ export function App({ deoptInfo }) {
 				<Route path="/">
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
-				<Route path="/file/:fileId?/:entryKind?/:entryId?">
+				<Route path="/file/:fileId?/:entryType?/:entryId?">
 					{(params) => (
 						<FileViewer
 							routeParams={{
 								fileId: parseInt(params.fileId) || 0,
-								entryKind: params.entryKind || "codes",
+								entryType: params.entryType || "codes",
 								entryId: params.entryId || null,
 							}}
+							files={files}
 							deoptInfo={deoptInfo}
 						/>
 					)}
