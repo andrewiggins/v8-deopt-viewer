@@ -100,7 +100,7 @@ interface ICEntryUpdate {
 
 interface MapEntry {
 	// Add an artificial type property to differentiate between MapEntries and MapEdges
-	type: "MapEntry";
+	type: "maps";
 	id: number;
 	time: number;
 	description: string;
@@ -132,16 +132,14 @@ type MapEdgeType =
 	| "OptimizeAsPrototype";
 
 interface MapEdge {
-	type: "MapEdge";
+	type: "mapsEdge";
 	subtype: MapEdgeType;
 	id: string;
 	name: string;
 	reason: string;
 	time: number;
 	from: number;
-	// from: MapEntry;
 	to: number;
-	// to: MapEntry;
 }
 
 interface MapData {
@@ -200,6 +198,7 @@ export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
  * @param entryId The ID of the entry to find
  */
 export function findEntry(
+	// TODO: Either update to handle map entries or change type to FileV8DeoptInfo?
 	deoptInfo: V8DeoptInfo,
 	entryId: string
 ): Entry | null;
@@ -209,6 +208,7 @@ export function findEntry(
  * @param entries A list of V8 Deopt Entries
  * @returns The sorted entries
  */
+// TODO: Either update to handle map entries or change type to exclude map entries?
 export function sortEntries(entries: Entry[]): Entry[];
 
 /**

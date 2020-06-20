@@ -368,7 +368,7 @@ export class DeoptLogReader extends LogReader {
 
 		/** @type {import('.').MapEntry} */
 		let map = {
-			type: "MapEntry",
+			type: "maps",
 			id,
 			time,
 			description,
@@ -405,7 +405,7 @@ export class DeoptLogReader extends LogReader {
 
 		/** @type {import('./').MapEdge} */
 		let edge = {
-			type: "MapEdge",
+			type: "mapsEdge",
 			id: `${this._id++}`,
 			subtype: type,
 			name,
