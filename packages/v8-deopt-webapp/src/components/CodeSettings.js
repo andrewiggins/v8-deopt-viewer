@@ -73,6 +73,8 @@ export function CodeSettings({ class: className, state, toggle }) {
 		(dirty && dirtyClass) || null
 	].join(" ");
 
+	// TODO: Consider replacing <details> with a custom alternative that closes on
+	// Esc and clicking outside of it
 	return (
 		<details class={rootClass}>
 			<summary aria-label="Settings">

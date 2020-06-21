@@ -7,17 +7,13 @@ import {
 } from "./MapExplorer.scss";
 import { form_group, form_select, form_label } from "../../spectre.scss";
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
+import { formatMapId } from "../../utils/mapUtils";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping
  * @type {Record<MapGrouping, { label: string; valueLabel: string; value: MapGrouping }>}
  */
 const mapGroupings = {
-	create: {
-		label: "Creation location",
-		valueLabel: "Location",
-		value: "create",
-	},
 	loadic: {
 		label: "LoadIC location",
 		valueLabel: "Location",
@@ -28,6 +24,11 @@ const mapGroupings = {
 		valueLabel: "Property",
 		value: "property",
 	},
+	create: {
+		label: "Creation location",
+		valueLabel: "Location",
+		value: "create",
+	},
 	mapid: {
 		label: "Map ID",
 		valueLabel: "ID",
@@ -37,7 +38,7 @@ const mapGroupings = {
 
 /**
  * // State
- * @typedef {{ value: string; label: string, mapIds: number[] }} GroupingValue
+ * @typedef {{ id: string; label: string, mapIds: number[] }} GroupingValue
  * @typedef {{ grouping: MapGrouping; values: GroupingValue[]; selectedValue: GroupingValue; }} GroupingState
  * // Actions
  * @typedef {"SET_GROUPING" | "SET_GROUP_VALUE" } GroupingActionType
@@ -59,7 +60,7 @@ function mapGroupingReducer(state, action) {
 	} else if (action.type == "SET_GROUP_VALUE") {
 		return {
 			...state,
-			selectedValue: state.values.find((v) => v.value == action.newValue),
+			selectedValue: state.values.find((v) => v.id == action.newValue),
 		};
 	} else {
 		return state;
@@ -129,7 +130,7 @@ export function MapExplorer(props) {
 						{mapGroupings[state.grouping].valueLabel}:
 					</label>
 					<select
-						value={state.selectedValue.value}
+						value={state.selectedValue?.id ?? ""}
 						onChange={(e) => {
 							dispatch({
 								type: "SET_GROUP_VALUE",
@@ -139,19 +140,26 @@ export function MapExplorer(props) {
 						id="map-group"
 						class={form_select}
 					>
-						{state.values.map((value) => (
-							<option value={value.value}>{value.label}</option>
-						))}
+						{/* TODO: make this better - i.e. disable it, etc. */}
+						{state.values.length == 0 ? (
+							<option>No values available</option>
+						) : (
+							state.values.map((value) => (
+								<option value={value.id}>{value.label}</option>
+							))
+						)}
 					</select>
 				</div>
 			</div>
 			<p>
 				<a href={props.urlBase + "/maps"}>Link to Maps</a>
-				<ul>
-					{state.selectedValue.mapIds.map((mapId) => (
-						<li key={mapId}>{mapId}</li>
-					))}
-				</ul>
+				{state.selectedValue && (
+					<ul>
+						{state.selectedValue.mapIds.map((mapId) => (
+							<li key={mapId}>{mapId}</li>
+						))}
+					</ul>
+				)}
 			</p>
 		</Fragment>
 	);
@@ -163,31 +171,76 @@ export function MapExplorer(props) {
  * @returns {GroupingValue[]}
  */
 function getGroupingValues(props, grouping) {
+	const { mapData, fileDeoptInfo, settings } = props;
+
 	if (grouping == "loadic") {
-		return props.fileDeoptInfo.ics
+		return fileDeoptInfo.ics
 			.filter((icEntry) =>
-				props.settings.showLowSevs ? true : icEntry.severity > MIN_SEVERITY
+				settings.showLowSevs ? true : icEntry.severity > MIN_SEVERITY
 			)
 			.map((icEntry) => {
 				return {
-					value: "loadic-" + icEntry.id,
-					label: formatEntryLocation(icEntry),
+					id: `${grouping}-${icEntry.id}`,
+					label: formatLocation(icEntry),
 					mapIds: icEntry.updates.map((update) => update.map),
 				};
 			});
+	} else if (grouping == "property") {
+		/** @type {Map<string, GroupingValue>} */
+		const properties = new Map();
+
+		for (let mapKey in mapData.nodes) {
+			const map = mapData.nodes[mapKey];
+			const edge = map.edge ? mapData.edges[map.edge] : null;
+
+			if (edge && edge.subtype == "Transition") {
+				const propName = edge.name;
+
+				if (!properties.has(propName)) {
+					properties.set(edge.name, {
+						id: `${grouping}-${propName}`,
+						label: propName,
+						mapIds: [],
+					});
+				}
+
+				properties.get(propName).mapIds.push(map.id);
+			}
+		}
+
+		return Array.from(properties.values());
+	} else if (grouping == "create") {
+		/** @type {GroupingValue[]} */
+		const values = [];
+		for (let mapId in mapData.nodes) {
+			const map = mapData.nodes[mapId];
+			if (map.filePosition) {
+				values.push({
+					id: `${grouping}-${map.id}`,
+					label: formatLocation(map.filePosition),
+					mapIds: [map.id],
+				});
+			}
+		}
+		return values;
+	} else if (grouping == "mapid") {
+		return Object.keys(mapData.nodes).map((mapKey) => {
+			const mapId = parseInt(mapKey);
+			return {
+				id: `${grouping}-${mapId}`,
+				label: formatMapId(mapId),
+				mapIds: [mapId],
+			};
+		});
 	} else {
-		return [
-			{ value: "test1", label: "Test 1", mapIds: [] },
-			{ value: "test2", label: "Test 2", mapIds: [] },
-			{ value: "test3", label: "Test 3", mapIds: [] },
-		];
+		throw new Error(`Unknown map grouping value: ${grouping}`);
 	}
 }
 
 /**
- * @param {import('v8-deopt-parser').Entry} entry
+ * @param {{ functionName: string; line: number; column: number }} entry
  * @returns {string}
  */
-function formatEntryLocation(entry) {
+function formatLocation(entry) {
 	return `${entry.functionName}:${entry.line}:${entry.column}`;
 }

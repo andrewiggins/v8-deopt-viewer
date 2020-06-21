@@ -18,8 +18,6 @@ import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
  * @param {FileViewerProps} props
  */
 export function FileViewer({ files, deoptInfo, routeParams }) {
-	// TODO: How to pass map data into MapExplorer
-
 	const urlBase = `#/file/${routeParams.fileId}`;
 	const fileDeoptInfo = deoptInfo.files[files[routeParams.fileId]];
 
