@@ -45,6 +45,12 @@ export function V8DeoptInfoPanel({
 	children,
 	onTabClick
 }) {
+	// TODO: Turn the panel title into a file selector with a "show all files"
+	// option. Related to MapExplorer getting the ability to change the current
+	// file to show maps created in other files.
+	//
+	// Probably best to do this using links and normal URL routing?
+
 	return (
 		<div class={[panel, v8deoptInfoPanel].join(" ")}>
 			<div class={panel_header}>

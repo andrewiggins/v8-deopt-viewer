@@ -90,6 +90,29 @@ function initGroupingState(props) {
  * @param {MapExplorerProps} props
  */
 export function MapExplorer(props) {
+	// TODO: Make ICEntry maps linkable to the Map Explorer, that loads the loadic
+	// grouping for that location when the clicked map id selected
+
+	// TODO: Given all the above scenarios, what is the map explorer URL? Probably
+	// need to add some routing URL helper functions to generate URLs.
+
+	// TODO: Should selecting a creation or loadic location go to that location on
+	// the code panel? Need to handle cross file links since maps aren't file
+	// specific.
+	//
+	// Would be important to keep existing Map Explorer view/selection. Would not
+	// want to rebuild the DOM and lose focus. Would be nice to use normal links
+	// and routing for cross-file changes but it might be hard to keep focus on
+	// the existing element...
+
+	// TODO: ^^Related to the above, probably need to find a way to highlight
+	// markers not based on the fragment since multiple links (ICEntry and
+	// loadic-map entry) want to highlight the same marker.
+
+	// TODO: Render map trees. Selecting a map should display its formatted
+	// description. Perhaps as a baby step, turn the existing map ID list into an
+	// accordion that shows the map description when selected and updates the URL.
+
 	const [state, dispatch] = useReducer(
 		mapGroupingReducer,
 		props,

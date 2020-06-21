@@ -70,7 +70,7 @@ export function CodePanel({ fileDeoptInfo, selectedLine, urlBase, settings }) {
 const PrismCode = forwardRef((props, ref) => {
 	const className = [`language-${props.lang}`, props.class].join(" ");
 
-	// TODO: File route changes will unmount and delete this cache May be useful
+	// TODO: File route changes will unmount and delete this cache. May be useful
 	// to cache across files so switching back and forth between files doesn't
 	// re-highlight the file each time
 	const __html = useMemo(
