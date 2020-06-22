@@ -395,6 +395,7 @@ export class DeoptLogReader extends LogReader {
 		}
 
 		if (type === "Deprecate") {
+			// TODO: Investigate what this means...
 			this.getExistingMap(fromId, time).isDeprecated = true;
 			return;
 		}
@@ -428,6 +429,7 @@ export class DeoptLogReader extends LogReader {
 
 		let newDepth = (from?.depth ?? 0) + 1;
 		if (to.depth > 0 && to.depth != newDepth) {
+			// TODO: Investigate what makes this happen...
 			throw new Error("Depth has already been initialized");
 		}
 
@@ -547,17 +549,20 @@ export class DeoptLogReader extends LogReader {
 		const allMaps = this.entriesMap;
 		const allEdges = this.entriesEdges;
 
+		const getMap = (mapId) => allMaps.get(mapId);
+		const getEdge = (edgeId) => allEdges.get(edgeId);
+
 		this.entriesMap = new Map();
 		this.entriesEdges = new Map();
 
 		const mapIdsFromIcs = getMapIdsFromICs(this.entriesIC.values());
 		for (let mapId of mapIdsFromIcs) {
-			const rootMap = getRootMap(allMaps, allEdges, allMaps.get(mapId));
+			const rootMap = getRootMap(getMap, getEdge, getMap(mapId));
 
-			visitAllMaps(allMaps, allEdges, rootMap, (map) => {
+			visitAllMaps(rootMap, getMap, getEdge, (map) => {
 				this.entriesMap.set(map.id, map);
 				if (map.edge) {
-					this.entriesEdges.set(map.edge, allEdges.get(map.edge));
+					this.entriesEdges.set(map.edge, getEdge(map.edge));
 				}
 			});
 		}
