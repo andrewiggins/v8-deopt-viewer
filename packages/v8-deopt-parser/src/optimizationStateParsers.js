@@ -1,5 +1,7 @@
 import { Profile } from "./v8-tools-core/profile.js";
-import { MIN_SEVERITY } from "./utils.js";
+import { MIN_SEVERITY, UNKNOWN_SEVERITY } from "./utils.js";
+
+export const UNKNOWN_OPT_STATE = -1;
 
 export function parseOptimizationState(rawState) {
 	switch (rawState) {
@@ -26,7 +28,7 @@ export function nameOptimizationState(state) {
 			return "optimizable";
 		case Profile.CodeState.OPTIMIZED:
 			return "optimized";
-		case -1:
+		case UNKNOWN_OPT_STATE:
 			return "unknown";
 		default:
 			throw new Error("unknown code state: " + state);
@@ -41,8 +43,8 @@ export function severityOfOptimizationState(state) {
 			return MIN_SEVERITY + 1;
 		case Profile.CodeState.OPTIMIZED:
 			return MIN_SEVERITY;
-		case -1:
-			return MIN_SEVERITY + 2;
+		case UNKNOWN_OPT_STATE:
+			return UNKNOWN_SEVERITY;
 		default:
 			throw new Error("unknown code state: " + state);
 	}

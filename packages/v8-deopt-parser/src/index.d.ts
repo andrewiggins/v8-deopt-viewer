@@ -137,3 +137,6 @@ export function severityIcState(state: ICState): number;
 
 /** The minimum severity an update or entry can be. */
 export const MIN_SEVERITY = 1;
+
+/** The value used when severity cannot be determined. */
+export const UNKNOWN_SEVERITY = -1;

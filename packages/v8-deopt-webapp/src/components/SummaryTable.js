@@ -122,7 +122,9 @@ export function SeverityTableSummary(props) {
 }
 
 function severityClass(severity) {
-	if (severity == 1) {
+	if (severity < 1) {
+		return null;
+	} else if (severity == 1) {
 		return sev1;
 	} else if (severity == 2) {
 		return sev2;

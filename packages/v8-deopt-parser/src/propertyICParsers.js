@@ -1,5 +1,5 @@
 import { parseString } from "./v8-tools-core/logreader.js";
-import { MIN_SEVERITY } from "./utils.js";
+import { MIN_SEVERITY, UNKNOWN_SEVERITY } from "./utils.js";
 
 const UNINITIALIZED = "unintialized";
 const PREMONOMORPHIC = "premonomorphic";
@@ -58,6 +58,8 @@ export function severityIcState(state) {
 			return MIN_SEVERITY + 2;
 		case GENERIC:
 			return MIN_SEVERITY + 2;
+		case UNKNOWN:
+			return UNKNOWN_SEVERITY;
 		default:
 			throw new Error("severity: unknown ic code state : " + state);
 	}

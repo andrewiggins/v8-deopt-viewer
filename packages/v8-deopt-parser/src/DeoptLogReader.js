@@ -15,6 +15,7 @@ import {
 	nameOptimizationState,
 	severityOfOptimizationState,
 	parseOptimizationState,
+	UNKNOWN_OPT_STATE,
 } from "./optimizationStateParsers.js";
 import { sortEntries } from "./sortEntries.js";
 
@@ -332,6 +333,16 @@ export class DeoptLogReader extends LogReader {
 		const entry = this._profile.findEntry(code);
 		if (entry == null) {
 			throw new Error(`Could not find entry in Profile with code "${code}"`);
+		}
+
+		if (entry.type === "Builtin") {
+			return {
+				functionName: entry.name,
+				file: "",
+				line: -1,
+				column: -1,
+				optimizationState: nameOptimizationState(UNKNOWN_OPT_STATE),
+			};
 		}
 
 		const name = entry.func.getName();
