@@ -19,6 +19,8 @@ import {
  * @type {CodeSettingsState}
  */
 const initialState = {
+	// TODO: Consider replacing showLowSevs with a toggle
+	// to show each severity (e.g. to filter out optimizable)
 	showLowSevs: false,
 	hideLineNums: false,
 	showAllICs: false

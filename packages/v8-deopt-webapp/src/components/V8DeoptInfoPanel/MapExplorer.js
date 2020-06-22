@@ -5,7 +5,16 @@ import {
 	grouping as map_grouping,
 	group_value,
 } from "./MapExplorer.scss";
-import { form_group, form_select, form_label } from "../../spectre.scss";
+import {
+	form_group,
+	form_select,
+	form_label,
+	accordion,
+	accordion_header,
+	accordion_body,
+	icon,
+	icon_arrow_right,
+} from "../../spectre.scss";
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { formatMapId } from "../../utils/mapUtils";
 
@@ -124,7 +133,8 @@ export function MapExplorer(props) {
 			<div class={map_selectors}>
 				<div class={[form_group, map_grouping].join(" ")}>
 					<label for="map-grouping" class={form_label}>
-						Map grouping:
+						{/* "Find Maps by" or "Map grouping" */}
+						Group Maps by:
 					</label>
 					<select
 						value={state.grouping}
@@ -176,13 +186,23 @@ export function MapExplorer(props) {
 			</div>
 			<p>
 				<a href={props.urlBase + "/maps"}>Link to Maps</a>
-				{state.selectedValue && (
-					<ul>
-						{state.selectedValue.mapIds.map((mapId) => (
-							<li key={mapId}>{mapId}</li>
-						))}
-					</ul>
-				)}
+				{state.selectedValue &&
+					state.selectedValue.mapIds.map((mapId) => (
+						<details key={mapId} class={accordion}>
+							<summary class={accordion_header}>
+								<i
+									class={icon + " " + icon_arrow_right}
+									style="margin-right: .2rem;"
+								></i>
+								{formatMapId(mapId)}
+							</summary>
+							<div class={accordion_body}>
+								{props.mapData.nodes[mapId].description
+									.split("\n")
+									.map((line) => [line, <br />])}
+							</div>
+						</details>
+					))}
 			</p>
 		</Fragment>
 	);

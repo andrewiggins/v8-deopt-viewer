@@ -22,7 +22,7 @@
 // @import "~spectre.css/src/navbar";
 
 // Components
-// @import "~spectre.css/src/accordions";
+@import "~spectre.css/src/accordions";
 // @import "~spectre.css/src/avatars";
 // @import "~spectre.css/src/badges";
 // @import "~spectre.css/src/breadcrumbs";
@@ -75,6 +75,10 @@
 
 .form-switch .form-icon {
 	box-sizing: border-box; // Not sure why this isn't always inherited properly
+}
+
+summary.accordion-header {
+	cursor: pointer;
 }
 
 // ==========================
