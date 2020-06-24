@@ -63,15 +63,15 @@ export class DeoptLogReader extends LogReader {
 		this._profile = new Profile();
 
 		/** @type {Map<string, import('./').ICEntry>} */
-		this.entriesIC = new Map();
+		this.icEntries = new Map();
 		/** @type {Map<string, import('./').DeoptEntry>} */
-		this.entriesDeopt = new Map();
+		this.deoptEntries = new Map();
 		/** @type {Map<string, import('./').CodeEntry>} */
-		this.entriesCode = new Map();
+		this.codeEntries = new Map();
 		/** @type {Map<number, import('./').MapEntry>} */
-		this.entriesMap = new Map();
+		this.mapEntries = new Map();
 		/** @type {Map<string, import('./').MapEdge>} */
-		this.entriesEdges = new Map();
+		this.edgeEntries = new Map();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
@@ -196,8 +196,8 @@ export class DeoptLogReader extends LogReader {
 
 			let severity = severityOfOptimizationState(optimizationState);
 			const key = locationKey(functionName, file, line, column);
-			if (!this.entriesCode.has(key)) {
-				this.entriesCode.set(key, {
+			if (!this.codeEntries.has(key)) {
+				this.codeEntries.set(key, {
 					type: "codes",
 					id: `${this._id++}`,
 					functionName,
@@ -210,7 +210,7 @@ export class DeoptLogReader extends LogReader {
 				});
 			}
 
-			const code = this.entriesCode.get(key);
+			const code = this.codeEntries.get(key);
 			code.updates.push({
 				timestamp,
 				state: nameOptimizationState(optimizationState),
@@ -271,8 +271,8 @@ export class DeoptLogReader extends LogReader {
 		const key = locationKey("", file, line, column);
 
 		const severity = getOptimizationSeverity(bailoutType);
-		if (!this.entriesDeopt.has(key)) {
-			this.entriesDeopt.set(key, {
+		if (!this.deoptEntries.has(key)) {
+			this.deoptEntries.set(key, {
 				type: "deopts",
 				id: `${this._id++}`,
 				functionName,
@@ -284,7 +284,7 @@ export class DeoptLogReader extends LogReader {
 			});
 		}
 
-		const deoptEntry = this.entriesDeopt.get(key);
+		const deoptEntry = this.deoptEntries.get(key);
 		deoptEntry.updates.push({
 			timestamp,
 			bailoutType,
@@ -331,8 +331,8 @@ export class DeoptLogReader extends LogReader {
 		const key = locationKey("", file, line, column);
 
 		const severity = severityIcState(newState);
-		if (!this.entriesIC.has(key)) {
-			this.entriesIC.set(key, {
+		if (!this.icEntries.has(key)) {
+			this.icEntries.set(key, {
 				type: "ics",
 				id: `${this._id++}`,
 				functionName,
@@ -344,7 +344,7 @@ export class DeoptLogReader extends LogReader {
 			});
 		}
 
-		const icEntry = this.entriesIC.get(key);
+		const icEntry = this.icEntries.get(key);
 		icEntry.updates.push({
 			type,
 			oldState,
@@ -376,7 +376,7 @@ export class DeoptLogReader extends LogReader {
 			depth: 0,
 		};
 
-		this.entriesMap.set(id, map);
+		this.mapEntries.set(id, map);
 	}
 
 	processMap(
@@ -416,7 +416,7 @@ export class DeoptLogReader extends LogReader {
 			to: toId,
 		};
 
-		this.entriesEdges.set(edge.id, edge);
+		this.edgeEntries.set(edge.id, edge);
 
 		const from = this.getExistingMap(fromId, time);
 		const to = this.getExistingMap(toId, time);
@@ -447,7 +447,7 @@ export class DeoptLogReader extends LogReader {
 	getExistingMap(id, time) {
 		if (id === 0) return undefined;
 
-		const map = this.entriesMap.get(id);
+		const map = this.mapEntries.get(id);
 		if (map === undefined) {
 			throw new Error(`No map details provided: id=${id}`);
 		}
@@ -501,26 +501,26 @@ export class DeoptLogReader extends LogReader {
 
 		/** @type {import('.').MapData} */
 		const mapData = { nodes: {}, edges: {} };
-		for (let [id, mapEntry] of this.entriesMap.entries()) {
+		for (let [id, mapEntry] of this.mapEntries.entries()) {
 			mapData.nodes[id] = mapEntry;
 		}
 
-		for (let [id, mapEdge] of this.entriesEdges.entries()) {
+		for (let [id, mapEdge] of this.edgeEntries.entries()) {
 			mapData.edges[id] = mapEdge;
 		}
 
 		const filterInternals = this.filterInternals.bind(this);
 		return {
 			ics: this.sortEntries(
-				Array.from(this.entriesIC.values())
+				Array.from(this.icEntries.values())
 					.filter((entry) => entry.updates.length > 0)
 					.filter(filterInternals)
 			),
 			deopts: this.sortEntries(
-				Array.from(this.entriesDeopt.values()).filter(filterInternals)
+				Array.from(this.deoptEntries.values()).filter(filterInternals)
 			),
 			codes: this.sortEntries(
-				Array.from(this.entriesCode.values()).filter(filterInternals)
+				Array.from(this.codeEntries.values()).filter(filterInternals)
 			),
 			maps: mapData,
 		};
@@ -542,27 +542,27 @@ export class DeoptLogReader extends LogReader {
 	}
 
 	treeShakeMapsAndEdges() {
-		if (this.options.keepInternals || this.entriesMap.size == 0) {
+		if (this.options.keepInternals || this.mapEntries.size == 0) {
 			return;
 		}
 
-		const allMaps = this.entriesMap;
-		const allEdges = this.entriesEdges;
+		const allMaps = this.mapEntries;
+		const allEdges = this.edgeEntries;
 
 		const getMap = (mapId) => allMaps.get(mapId);
 		const getEdge = (edgeId) => allEdges.get(edgeId);
 
-		this.entriesMap = new Map();
-		this.entriesEdges = new Map();
+		this.mapEntries = new Map();
+		this.edgeEntries = new Map();
 
-		const mapIdsFromIcs = getMapIdsFromICs(this.entriesIC.values());
+		const mapIdsFromIcs = getMapIdsFromICs(this.icEntries.values());
 		for (let mapId of mapIdsFromIcs) {
 			const rootMap = getRootMap(getMap, getEdge, getMap(mapId));
 
 			visitAllMaps(rootMap, getMap, getEdge, (map) => {
-				this.entriesMap.set(map.id, map);
+				this.mapEntries.set(map.id, map);
 				if (map.edge) {
-					this.entriesEdges.set(map.edge, getEdge(map.edge));
+					this.edgeEntries.set(map.edge, getEdge(map.edge));
 				}
 			});
 		}

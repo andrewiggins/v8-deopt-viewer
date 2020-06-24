@@ -66,7 +66,7 @@ export function getEdgeSymbol(edge) {
 	switch (edge.subtype) {
 		case "Transition":
 			return "+";
-		case "Normalize":
+		case "Normalize": // FastToSlow
 			return "⊡";
 		case "SlowToFast":
 			return "⊛";
