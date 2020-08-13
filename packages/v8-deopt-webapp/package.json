@@ -15,19 +15,19 @@
     "prepare": "run-s build"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-node-resolve": "^7.1.3",
-    "@rollup/plugin-sucrase": "^3.0.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-sucrase": "^3.1.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "preact": "^10.4.1",
     "prismjs": "^1.21.0",
-    "rollup": "^2.9.0",
-    "rollup-plugin-postcss": "^3.1.1",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-visualizer": "^4.0.4",
-    "spectre.css": "^0.5.8",
+    "rollup": "^2.24.0",
+    "rollup-plugin-postcss": "^3.1.5",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-visualizer": "^4.1.0",
+    "spectre.css": "^0.5.9",
     "v8-deopt-parser": "^0.1.0",
-    "wouter-preact": "^2.4.0"
+    "wouter-preact": "^2.5.1"
   }
 }
