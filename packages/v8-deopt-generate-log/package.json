@@ -8,14 +8,16 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node test/index.test.js"
   },
   "peerDependencies": {
-    "puppeteer": "^3.0.4"
+    "puppeteer": "^5.2.1"
   },
   "devDependencies": {
-    "puppeteer": "^3.0.4"
+    "puppeteer": "^5.2.1"
   }
 }
