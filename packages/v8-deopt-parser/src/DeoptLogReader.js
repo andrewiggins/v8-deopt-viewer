@@ -68,10 +68,11 @@ export class DeoptLogReader extends LogReader {
 		this.deoptEntries = new Map();
 		/** @type {Map<string, import('./').CodeEntry>} */
 		this.codeEntries = new Map();
+
 		/** @type {Map<number, import('./').MapEntry>} */
-		this.mapEntries = new Map();
+		this.allMapEntries = new Map();
 		/** @type {Map<string, import('./').MapEdge>} */
-		this.edgeEntries = new Map();
+		this.allEdgeEntries = new Map();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
@@ -325,7 +326,7 @@ export class DeoptLogReader extends LogReader {
 		// inlined in funcB, any propertyIC related to the inlined funcA code would
 		// show up with the name funcB instead of funcA. This change in function
 		// name makes it harder to track PropertyIC all related to funcA. So to keep
-		// track of inline caches for funcA, we rely soley on the file, line, and
+		// track of inline caches for funcA, we rely solely on the file, line, and
 		// column from the profile (which is consistent across inlines) to track
 		// property inline caches
 		const key = locationKey("", file, line, column);
@@ -376,7 +377,7 @@ export class DeoptLogReader extends LogReader {
 			depth: 0,
 		};
 
-		this.mapEntries.set(id, map);
+		this.allMapEntries.set(id, map);
 	}
 
 	processMap(
@@ -416,7 +417,7 @@ export class DeoptLogReader extends LogReader {
 			to: toId,
 		};
 
-		this.edgeEntries.set(edge.id, edge);
+		this.allEdgeEntries.set(edge.id, edge);
 
 		const from = this.getExistingMap(fromId, time);
 		const to = this.getExistingMap(toId, time);
@@ -447,7 +448,7 @@ export class DeoptLogReader extends LogReader {
 	getExistingMap(id, time) {
 		if (id === 0) return undefined;
 
-		const map = this.mapEntries.get(id);
+		const map = this.allMapEntries.get(id);
 		if (map === undefined) {
 			throw new Error(`No map details provided: id=${id}`);
 		}
@@ -501,11 +502,11 @@ export class DeoptLogReader extends LogReader {
 
 		/** @type {import('.').MapData} */
 		const mapData = { nodes: {}, edges: {} };
-		for (let [id, mapEntry] of this.mapEntries.entries()) {
+		for (let [id, mapEntry] of this.allMapEntries.entries()) {
 			mapData.nodes[id] = mapEntry;
 		}
 
-		for (let [id, mapEdge] of this.edgeEntries.entries()) {
+		for (let [id, mapEdge] of this.allEdgeEntries.entries()) {
 			mapData.edges[id] = mapEdge;
 		}
 
@@ -542,27 +543,29 @@ export class DeoptLogReader extends LogReader {
 	}
 
 	treeShakeMapsAndEdges() {
-		if (this.options.keepInternals || this.mapEntries.size == 0) {
+		if (this.options.keepInternals || this.allMapEntries.size == 0) {
 			return;
 		}
 
-		const allMaps = this.mapEntries;
-		const allEdges = this.edgeEntries;
+		console.log("Treeshaking maps and edges...");
 
 		const getMap = (mapId) => allMaps.get(mapId);
 		const getEdge = (edgeId) => allEdges.get(edgeId);
 
-		this.mapEntries = new Map();
-		this.edgeEntries = new Map();
+		const allMaps = this.allMapEntries;
+		const allEdges = this.allEdgeEntries;
+
+		this.allMapEntries = new Map();
+		this.allEdgeEntries = new Map();
 
 		const mapIdsFromIcs = getMapIdsFromICs(this.icEntries.values());
 		for (let mapId of mapIdsFromIcs) {
 			const rootMap = getRootMap(getMap, getEdge, getMap(mapId));
 
 			visitAllMaps(rootMap, getMap, getEdge, (map) => {
-				this.mapEntries.set(map.id, map);
+				this.allMapEntries.set(map.id, map);
 				if (map.edge) {
-					this.edgeEntries.set(map.edge, getEdge(map.edge));
+					this.allEdgeEntries.set(map.edge, getEdge(map.edge));
 				}
 			});
 		}
