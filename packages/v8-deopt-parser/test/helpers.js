@@ -126,11 +126,14 @@ export async function writeSnapshot(logFileName, result) {
 	// Undo replacements when writing snapshots so they are consistent
 	const replacements = logPathReplacements[logFileName];
 	let contents = JSON.stringify(result, null, 2);
-	for (const [snapshotPath, template] of replacements) {
-		contents = contents.replace(
-			new RegExp(escapeRegex(template.replace(/\\/g, "\\\\")), "g"),
-			snapshotPath
-		);
+
+	if (replacements) {
+		for (const [snapshotPath, template] of replacements) {
+			contents = contents.replace(
+				new RegExp(escapeRegex(template.replace(/\\/g, "\\\\")), "g"),
+				snapshotPath
+			);
+		}
 	}
 
 	const outFileName = logFileName.replace(".v8.log", ".json");

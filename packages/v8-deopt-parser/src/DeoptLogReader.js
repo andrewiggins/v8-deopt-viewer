@@ -389,7 +389,8 @@ export class DeoptLogReader extends LogReader {
 		// recycled. Hence we do not check for existing maps.
 		//
 		// TODO: Maybe perhaps consider making this method upgrade the allMapEntry
-		// value to an array if an address was re-used?
+		// value to an array if an address was re-used? For example, 3055214391657
+		// in v8-deopt-parser.v8.log
 
 		/** @type {import('.').MapEntry} */
 		let map = {
@@ -415,7 +416,9 @@ export class DeoptLogReader extends LogReader {
 		reason,
 		name
 	) {
-		if (profileCode == 0 || line == -1 || column == -1) {
+		// Ignore line and column arguments. They can be invalid values (e.g. -1) if
+		// a map is created in an internal function of V8 (e.g. Object.assign)
+		if (profileCode == 0) {
 			return;
 		}
 
@@ -464,6 +467,8 @@ export class DeoptLogReader extends LogReader {
 
 	processMapDetails(time, id, desc) {
 		// TODO: Do map-details come before map-create?
+		//
+		// TODO: Some maps can get multiple detail entries. What should we do??
 		let map = this.getExistingMap(id, time);
 		if (!map.description) {
 			map.description = desc;
