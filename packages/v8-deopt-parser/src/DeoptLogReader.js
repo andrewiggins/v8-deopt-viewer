@@ -18,7 +18,6 @@ import {
 	UNKNOWN_OPT_STATE,
 } from "./optimizationStateParsers.js";
 import { sortEntries } from "./sortEntries.js";
-import { getMapIdsFromICs, getRootMap, visitAllMaps } from "./mapUtils.js";
 
 /** @type {import('.').Options} */
 const defaultOptions = {
@@ -391,7 +390,18 @@ export class DeoptLogReader extends LogReader {
 		//
 		// TODO: Maybe perhaps consider making this method upgrade the allMapEntry
 		// value to an array if an address was re-used? For example, 3055214391657
-		// in v8-deopt-parser.v8.log
+		// in v8-deopt-parser.v8.log. Or maybe we change add a new field to the root
+		// map indicating it has some reuses and creating the reuse under a new ID
+		// (1234_1? or 1234.1 so the type can remain a number). Or do we separate
+		// the map address and ID concepts and ensure the ID is always a string?
+		// With a new ID per re-use, each time we look up a map (i.e.
+		// getExistingMap) we'll need to make sure we understand what map we want.
+		// The latest use (e.g. original map has a uses array of other use IDs so
+		// could look it up using uses.length - 1)?
+
+		if (this.allMapEntries.has(id)) {
+			console.log("DUPLICATE MAP CREATE:", id);
+		}
 
 		/** @type {import('.').MapEntry} */
 		let map = {
@@ -460,16 +470,18 @@ export class DeoptLogReader extends LogReader {
 		if (to.depth > 0 && to.depth != newDepth) {
 			// TODO: Investigate what makes this happen... Could be a map getting
 			// reused? Or a circular reference?
-			throw new Error(`Depth has already been initialized for map ${to.id}`);
+			// throw new Error(`Depth has already been initialized for map ${to.id}`);
+			console.log(
+				`Depth has already been initialized for map ${to.id}. Was ${to.depth}. Now ${newDepth}.`
+			);
 		}
 
 		to.depth = newDepth;
 	}
 
 	processMapDetails(time, id, desc) {
-		// TODO: Do map-details come before map-create?
-		//
-		// TODO: Some maps can get multiple detail entries. What should we do??
+		// TODO: Some maps can get multiple detail entries (e.g. 3656044277313 in
+		// adders.traceMaps.v8.log). What should we do??
 		let map = this.getExistingMap(id, time);
 		if (!map.description) {
 			map.description = desc;

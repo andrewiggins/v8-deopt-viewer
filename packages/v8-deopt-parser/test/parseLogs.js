@@ -12,7 +12,7 @@ const t = {
 	 */
 	equal(actual, expected, message) {
 		if (actual !== expected) {
-			const errorMessage = ` ${message}: Actual (${actual}) does not equal expected (${expected}).`;
+			const errorMessage = `${message}: Actual (${actual}) does not equal expected (${expected}).`;
 			console.error(errorMessage);
 			// throw new Error(errorMessage);
 		}
@@ -25,7 +25,9 @@ async function main() {
 	// 	await runParser(t, logFileName);
 	// }
 
-	const logFileName = "v8-deopt-parser.v8.log";
+	// const logFileName = "html-inline.traceMaps.v8.log";
+	// const logFileName = "v8-deopt-parser.v8.log";
+	const logFileName = "adders.traceMaps.v8.log";
 	const results = await runParser(t, logFileName);
 	await writeSnapshot(logFileName, results);
 	await writeMapSnapshot(logFileName, results);

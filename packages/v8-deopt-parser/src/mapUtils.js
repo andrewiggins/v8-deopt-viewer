@@ -15,58 +15,6 @@ export function getMapIdsFromICs(ics) {
 }
 
 /**
- * @param {(mapId: number) => import('..').MapEntry} getMap
- * @param {(edgeId: string) => import('..').MapEdge} getEdge
- * @param {import('..').MapEntry} map
- * @returns {import('..').MapEntry}
- */
-export function getRootMap(getMap, getEdge, map) {
-	let parentMapId = map.edge ? getEdge(map.edge)?.from : null;
-	while (parentMapId) {
-		map = getMap(parentMapId);
-		parentMapId = map.edge ? getEdge(map.edge)?.from : null;
-	}
-
-	return map;
-}
-
-/**
- * @param {import('..').MapEntry} map
- * @param {(mapId: number) => import('..').MapEntry} getMap
- * @param {(edgeId: string) => import('..').MapEdge} getEdge
- * @param {(map: import('..').MapEntry) => void} visitor
- */
-export function visitAllMaps(map, getMap, getEdge, visitor) {
-	// TODO: Determine how to properly handle cycles. It appears maps can be
-	// circular (e.g. TypeScript deopt logs). Efficiently handle that.
-	const visited = new Set();
-
-	const stack = [map.id];
-	while (stack.length) {
-		const mapId = stack.pop();
-		if (visited.has(mapId)) {
-			console.log("Already visited map with id", mapId);
-			continue;
-		}
-
-		visited.add(mapId);
-		const map = getMap(mapId);
-
-		visitor(map);
-
-		if (map.children) {
-			// Add children to stack in reverse order to preserve left-to-right depth
-			// first traversal
-			let i = map.children.length;
-			while (i--) {
-				const edge = getEdge(map.children[i]);
-				stack.push(edge.to);
-			}
-		}
-	}
-}
-
-/**
  * @param {import('./').MapEdge} edge
  */
 export function getEdgeSymbol(edge) {
