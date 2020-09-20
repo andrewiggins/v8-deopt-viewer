@@ -37,12 +37,19 @@ export function getRootMap(getMap, getEdge, map) {
  * @param {(map: import('..').MapEntry) => void} visitor
  */
 export function visitAllMaps(map, getMap, getEdge, visitor) {
-	// TODO: It appears maps can be circular (e.g. TypeScript deopt logs).
-	// Efficiently handle that
+	// TODO: Determine how to properly handle cycles. It appears maps can be
+	// circular (e.g. TypeScript deopt logs). Efficiently handle that.
+	const visited = new Set();
 
 	const stack = [map.id];
 	while (stack.length) {
 		const mapId = stack.pop();
+		if (visited.has(mapId)) {
+			console.log("Already visited map with id", mapId);
+			continue;
+		}
+
+		visited.add(mapId);
 		const map = getMap(mapId);
 
 		visitor(map);
