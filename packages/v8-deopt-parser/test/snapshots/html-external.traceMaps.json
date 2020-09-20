@@ -1578,14 +1578,6 @@
         "children": [],
         "depth": 0
       },
-      "51402305441865": {
-        "type": "maps",
-        "id": 51402305441865,
-        "time": 56667,
-        "description": "Map=00002EC008281049\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_SMI_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors #1: 0x2ec00824c679 <DescriptorArray[1]>\n - transitions #1: 0x2ec00824c695 <TransitionArray[4]>\n - prototype: 0x2ec00824bff1 <JSArray[0]>\n - constructor: 0x2ec00824bec5 <JSFunction Array (sfi = 00002EC0081C9265)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec00804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x2ec008180165 <AccessorInfo>\n",
-        "children": [],
-        "depth": 0
-      },
       "51402305438505": {
         "type": "maps",
         "id": 51402305438505,
@@ -1765,6 +1757,14 @@
           "column": 1,
           "optimizationState": "optimizable"
         }
+      },
+      "51402305441865": {
+        "type": "maps",
+        "id": 51402305441865,
+        "time": 56667,
+        "description": "Map=00002EC008281049\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_SMI_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors #1: 0x2ec00824c679 <DescriptorArray[1]>\n - transitions #1: 0x2ec00824c695 <TransitionArray[4]>\n - prototype: 0x2ec00824bff1 <JSArray[0]>\n - constructor: 0x2ec00824bec5 <JSFunction Array (sfi = 00002EC0081C9265)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec00804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x2ec008180165 <AccessorInfo>\n",
+        "children": [],
+        "depth": 0
       },
       "51402305467665": {
         "type": "maps",

@@ -21,14 +21,29 @@ export function validateMapData(t, deoptInfo) {
 
 	// Ensure all maps referenced in ics exist in map.entries
 	let missingMaps = icMapIds.filter((id) => !mapEntryIds.includes(id));
+	if (missingMaps.length > 0) {
+		console.log("IC Map IDs with no map entry:", missingMaps);
+	}
 	t.equal(missingMaps.length, 0, "All IC map IDs have map entries");
 
 	// Ensure all maps references in maps.edges exists in maps.entries
 	missingMaps = mapIdsFromEdges.filter((id) => !mapEntryIds.includes(id));
+	if (missingMaps.length > 0) {
+		console.log(
+			"Map IDs referenced from an edge without an corresponding map entry:",
+			missingMaps
+		);
+	}
 	t.equal(missingMaps.length, 0, "All edge from/to map IDs have map entries");
 
 	// Ensure all edges references in maps.entries exist in maps.edges
 	let missingEdges = edgeIdsFromMaps.filter((id) => !edgeEntryIds.includes(id));
+	if (missingEdges.length > 0) {
+		console.log(
+			"Edge IDs referenced from a Map without an edge entry:",
+			missingEdges
+		);
+	}
 	t.equal(missingEdges.length, 0, "All map edge references have edge entries");
 
 	// Ensure there are no superfluous maps or edges. Walk the entire map graph

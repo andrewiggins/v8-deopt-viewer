@@ -74,6 +74,11 @@ export class DeoptLogReader extends LogReader {
 		/** @type {Map<string, import('./').MapEdge>} */
 		this.allEdgeEntries = new Map();
 
+		/** @type {Set<number>} */
+		this.rootMaps = new Set();
+		/** @type {Set<number>} */
+		this.usedMaps = new Set();
+
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
 		// dispatch table as an argument into `super` fails because it would
@@ -301,6 +306,18 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {number} code
+	 * @param {number} line
+	 * @param {number} column
+	 * @param {import('./index').ICState} oldState
+	 * @param {import('./index').ICState} newState
+	 * @param {number} mapId
+	 * @param {string} propertyKey
+	 * @param {string} modifier
+	 * @param {string} slow_reason
+	 */
 	_processPropertyIC(
 		type,
 		code,
@@ -308,13 +325,13 @@ export class DeoptLogReader extends LogReader {
 		column,
 		oldState,
 		newState,
-		map,
+		mapId,
 		propertyKey,
 		modifier,
 		slow_reason
 	) {
 		// Skip unknown IC entries whose maps are 0. Not sure what these mean...
-		if (oldState == UNKNOWN && newState == UNKNOWN && map == 0) {
+		if (oldState == UNKNOWN && newState == UNKNOWN && mapId == 0) {
 			return;
 		}
 
@@ -351,7 +368,7 @@ export class DeoptLogReader extends LogReader {
 			oldState,
 			newState,
 			key: propertyKey,
-			map,
+			map: mapId,
 			optimizationState,
 			severity,
 			modifier,
@@ -361,11 +378,18 @@ export class DeoptLogReader extends LogReader {
 		if (severity > icEntry.severity) {
 			icEntry.severity = severity;
 		}
+
+		if (mapId !== 0) {
+			this.markMapTreeUsed(mapId);
+		}
 	}
 
 	processMapCreate(time, id, description) {
 		// map-create events might override existing maps if the addresses get
 		// recycled. Hence we do not check for existing maps.
+		//
+		// TODO: Maybe perhaps consider making this method upgrade the allMapEntry
+		// value to an array if an address was re-used?
 
 		/** @type {import('.').MapEntry} */
 		let map = {
@@ -430,8 +454,9 @@ export class DeoptLogReader extends LogReader {
 
 		let newDepth = (from?.depth ?? 0) + 1;
 		if (to.depth > 0 && to.depth != newDepth) {
-			// TODO: Investigate what makes this happen...
-			throw new Error("Depth has already been initialized");
+			// TODO: Investigate what makes this happen... Could be a map getting
+			// reused? Or a circular reference?
+			throw new Error(`Depth has already been initialized for map ${to.id}`);
 		}
 
 		to.depth = newDepth;
@@ -446,6 +471,8 @@ export class DeoptLogReader extends LogReader {
 	}
 
 	getExistingMap(id, time) {
+		// For example, this a property IC log with a map ID of 0:
+		// StoreInArrayLiteralIC,0x2b4d5aeaf12,164,47,0,1,0x000000000000,0,,
 		if (id === 0) return undefined;
 
 		const map = this.allMapEntries.get(id);
@@ -498,16 +525,23 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
-		this.treeShakeMapsAndEdges();
+		const getMap = (mapId) => this.allMapEntries.get(mapId);
+		const getEdge = (edgeId) => this.allEdgeEntries.get(edgeId);
 
 		/** @type {import('.').MapData} */
 		const mapData = { nodes: {}, edges: {} };
-		for (let [id, mapEntry] of this.allMapEntries.entries()) {
-			mapData.nodes[id] = mapEntry;
-		}
+		for (let rootMapId of this.rootMaps) {
+			const rootMap = this.allMapEntries.get(rootMapId);
+			visitAllMaps(rootMap, getMap, getEdge, (map) => {
+				if (map.id in mapData.nodes) {
+					return;
+				}
 
-		for (let [id, mapEdge] of this.allEdgeEntries.entries()) {
-			mapData.edges[id] = mapEdge;
+				mapData.nodes[map.id] = map;
+				if (map.edge) {
+					mapData.edges[map.edge] = getEdge(map.edge);
+				}
+			});
 		}
 
 		const filterInternals = this.filterInternals.bind(this);
@@ -542,32 +576,40 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
-	treeShakeMapsAndEdges() {
-		if (this.options.keepInternals || this.allMapEntries.size == 0) {
+	/**
+	 * Add this map and all of its parents as "used"
+	 * @param {number} mapId
+	 */
+	markMapTreeUsed(mapId) {
+		if (this.usedMaps.has(mapId)) {
 			return;
 		}
 
-		console.log("Treeshaking maps and edges...");
+		try {
+			// Add this map and all of its parents to the usedMaps set
+			this.usedMaps.add(mapId);
+			let map = this.getExistingMap(mapId);
+			let parentMapId = map.edge
+				? this.allEdgeEntries.get(map.edge)?.from
+				: null;
 
-		const getMap = (mapId) => allMaps.get(mapId);
-		const getEdge = (edgeId) => allEdges.get(edgeId);
+			while (parentMapId && !this.usedMaps.has(parentMapId)) {
+				this.usedMaps.add(parentMapId);
 
-		const allMaps = this.allMapEntries;
-		const allEdges = this.allEdgeEntries;
+				map = this.getExistingMap(parentMapId);
+				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
+			}
 
-		this.allMapEntries = new Map();
-		this.allEdgeEntries = new Map();
-
-		const mapIdsFromIcs = getMapIdsFromICs(this.icEntries.values());
-		for (let mapId of mapIdsFromIcs) {
-			const rootMap = getRootMap(getMap, getEdge, getMap(mapId));
-
-			visitAllMaps(rootMap, getMap, getEdge, (map) => {
-				this.allMapEntries.set(map.id, map);
-				if (map.edge) {
-					this.allEdgeEntries.set(map.edge, getEdge(map.edge));
-				}
-			});
+			if (parentMapId == null) {
+				// We reached map with no parent. Add it to rootMaps
+				this.rootMaps.add(map.id);
+			}
+		} catch (error) {
+			// Sometimes, V8 logs will include property ICs on Maps with no create
+			// details (argh, why??). Ignore errors for those situations.
+			if (!error.message.includes("No map details provided")) {
+				throw error;
+			}
 		}
 	}
 }

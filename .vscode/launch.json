@@ -1,0 +1,24 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Parser: parseLogs.js",
+			"skipFiles": ["<node_internals>/**"],
+			"program": "${workspaceFolder}/packages/v8-deopt-parser/test/parseLogs.js",
+			"outFiles": ["${workspaceFolder}/packages/**/*.js", "!**/node_modules/**"]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Parser: traceMaps tests",
+			"skipFiles": ["<node_internals>/**"],
+			"program": "${workspaceFolder}/packages/v8-deopt-parser/test/parseV8Log.traceMaps.test.js",
+			"outFiles": ["${workspaceFolder}/packages/**/*.js", "!**/node_modules/**"]
+		}
+	]
+}
