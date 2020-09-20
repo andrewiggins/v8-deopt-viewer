@@ -5,6 +5,7 @@ import { edgeToString, getMapIdsFromICs } from "../src/mapUtils.js";
 
 // @ts-ignore
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const numberSorter = (a, b) => Number(a) - Number(b);
 
 /**
  * @param {import('..').V8DeoptInfo} deoptInfo
@@ -22,7 +23,10 @@ export function validateMapData(t, deoptInfo) {
 	// Ensure all maps referenced in ics exist in map.entries
 	let missingMaps = icMapIds.filter((id) => !mapEntryIds.includes(id));
 	if (missingMaps.length > 0) {
-		console.log("IC Map IDs with no map entry:", missingMaps);
+		console.log(
+			"IC Map IDs with no map entry:",
+			missingMaps.sort(numberSorter)
+		);
 	}
 	t.equal(missingMaps.length, 0, "All IC map IDs have map entries");
 
@@ -31,7 +35,7 @@ export function validateMapData(t, deoptInfo) {
 	if (missingMaps.length > 0) {
 		console.log(
 			"Map IDs referenced from an edge without an corresponding map entry:",
-			missingMaps
+			missingMaps.sort(numberSorter)
 		);
 	}
 	t.equal(missingMaps.length, 0, "All edge from/to map IDs have map entries");
@@ -41,7 +45,7 @@ export function validateMapData(t, deoptInfo) {
 	if (missingEdges.length > 0) {
 		console.log(
 			"Edge IDs referenced from a Map without an edge entry:",
-			missingEdges
+			missingEdges.sort(numberSorter)
 		);
 	}
 	t.equal(missingEdges.length, 0, "All map edge references have edge entries");
@@ -56,7 +60,9 @@ export function validateMapData(t, deoptInfo) {
 	const allEdgeIds = new Set([...edgeIdsFromMaps, ...edgeEntryIds]);
 
 	const rootMaps = new Set(
-		icMapIds.map((mapId) => getRootMap(mapData, mapData.nodes[mapId]))
+		icMapIds
+			.map((mapId) => getRootMap(mapData, mapData.nodes[mapId]))
+			.filter(Boolean)
 	);
 
 	for (const rootMap of rootMaps) {
@@ -79,7 +85,9 @@ export async function writeMapSnapshot(logFileName, deoptInfo) {
 	const mapData = deoptInfo.maps;
 	const icMapIds = Array.from(getMapIdsFromICs(deoptInfo.ics));
 	const rootMaps = new Set(
-		icMapIds.map((mapId) => getRootMap(mapData, mapData.nodes[mapId]))
+		icMapIds
+			.map((mapId) => getRootMap(mapData, mapData.nodes[mapId]))
+			.filter(Boolean)
 	);
 
 	let snapshot = "";
@@ -110,8 +118,12 @@ export async function writeMapSnapshot(logFileName, deoptInfo) {
  * @returns {import('../src').MapEntry}
  */
 function getRootMap(data, map) {
+	if (!map) {
+		return null;
+	}
+
 	let parentMapId = map.edge ? data.edges[map.edge]?.from : null;
-	while (parentMapId) {
+	while (parentMapId && parentMapId in data.nodes) {
 		map = data.nodes[parentMapId];
 		parentMapId = map.edge ? data.edges[map.edge]?.from : null;
 	}
@@ -164,6 +176,12 @@ const CORNER = " └─";
 const VERTICAL = " │ ";
 const SPACE = "   ";
 
+const prepareNewLine = (indent, isLast) =>
+	isLast ? indent + CORNER : indent + CROSS;
+
+const increaseIndent = (indent, isLast) =>
+	isLast ? indent + SPACE : indent + VERTICAL;
+
 /**
  * @typedef {{ tree: string; mapCount: number; edgeCount: number; }} Output
  * @param {import('../src').MapData} data
@@ -181,14 +199,8 @@ function generateMapTree(
 ) {
 	output.mapCount += 1;
 
-	let line = indent;
-	if (isLast) {
-		line += CORNER;
-		indent += SPACE;
-	} else {
-		line += CROSS;
-		indent += VERTICAL;
-	}
+	let line = prepareNewLine(indent, isLast);
+	indent = increaseIndent(indent, isLast);
 
 	if (map.edge) {
 		output.edgeCount += 1;
@@ -200,17 +212,25 @@ function generateMapTree(
 	// console.log(line);
 	output.tree += line + "\n";
 
-	const children = map.children.map(
-		(edgeId) => data.nodes[data.edges[edgeId].to]
-	);
-	for (const child of children) {
-		generateMapTree(
-			data,
-			child,
-			output,
-			indent,
-			children[children.length - 1] == child
-		);
+	const lastChildEdgeId = map.children[map.children.length - 1];
+	for (const childEdgeId of map.children) {
+		const isLastChild = childEdgeId == lastChildEdgeId;
+
+		const childEdge = data.edges[childEdgeId];
+		if (childEdge == null) {
+			output.tree +=
+				prepareNewLine(indent, isLastChild) + `MISSING EDGE: ${childEdgeId}\n`;
+			continue;
+		}
+
+		const childMap = data.nodes[childEdge.to];
+		if (childMap == null) {
+			output.tree +=
+				prepareNewLine(indent, isLastChild) + `MISSING MAP: ${childEdge.to}\n`;
+			continue;
+		}
+
+		generateMapTree(data, childMap, output, indent, isLastChild);
 	}
 
 	return output;
