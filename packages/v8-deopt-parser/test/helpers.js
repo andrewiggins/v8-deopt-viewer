@@ -1,6 +1,8 @@
 import { fileURLToPath, pathToFileURL } from "url";
 import * as path from "path";
-import { readFile, writeFile } from "fs/promises";
+import { createReadStream, createWriteStream } from "fs";
+import { readFile, writeFile, access } from "fs/promises";
+import zlib from "zlib";
 import escapeRegex from "escape-string-regexp";
 import { parseV8Log } from "../src/index.js";
 
@@ -14,6 +16,12 @@ export const repoFileURL = (...args) =>
 // Mapping of test paths in test logs to real paths
 const logPathReplacements = {
 	["adders.v8.log"]: [
+		[
+			"/tmp/v8-deopt-viewer/examples/simple/adders.js",
+			repoRoot("examples/simple/adders.js"),
+		],
+	],
+	["adders.traceMaps.v8.log"]: [
 		[
 			"/tmp/v8-deopt-viewer/examples/simple/adders.js",
 			repoRoot("examples/simple/adders.js"),
@@ -72,7 +80,28 @@ const logPathReplacements = {
  * @returns {Promise<string>}
  */
 export async function readLogFile(logFilename, logPath) {
-	const replacements = logPathReplacements[logFilename];
+	let error;
+	try {
+		await access(logPath);
+	} catch (e) {
+		error = e;
+	}
+
+	if (error) {
+		let brotliPath = logPath + ".br";
+		try {
+			error = null;
+			await access(brotliPath);
+		} catch (e) {
+			error = e;
+		}
+
+		if (error) {
+			throw new Error(`Could not access log file: ${logPath}[.br]: ` + error);
+		}
+
+		await decompress(brotliPath);
+	}
 
 	let contents = await readFile(logPath, "utf8");
 
@@ -80,6 +109,7 @@ export async function readLogFile(logFilename, logPath) {
 	// as required by v8 tooling
 	contents = contents.replace(/\r\n/g, "\n");
 
+	const replacements = logPathReplacements[logFilename];
 	if (replacements) {
 		for (const [template, realPath] of replacements) {
 			contents = contents.replace(
@@ -165,4 +195,18 @@ export function validateEntry(t, message, entries, expectedEntry) {
 	}
 
 	t.deepEqual(matches[0], expectedEntry, message);
+}
+
+export function decompress(inputPath) {
+	return new Promise((resolve, reject) => {
+		const stream = createReadStream(inputPath)
+			.pipe(zlib.createBrotliDecompress())
+			.pipe(createWriteStream(inputPath.replace(/.br$/, "")));
+
+		stream
+			.on("end", resolve)
+			.on("close", resolve)
+			.on("finish", resolve)
+			.on("error", reject);
+	});
 }
