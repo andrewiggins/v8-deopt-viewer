@@ -1,5 +1,6 @@
 import { readdir } from "fs/promises";
-import { pkgRoot, runParser } from "./helpers.js";
+import { pkgRoot, runParser, writeSnapshot } from "./helpers.js";
+import { validateMapData, writeMapSnapshot } from "./traceMapsHelpers.js";
 
 // This file is used to run v8-deopt-viewer on v8-deopt-parser itself :)
 
@@ -11,18 +12,24 @@ const t = {
 	 */
 	equal(actual, expected, message) {
 		if (actual !== expected) {
-			throw new Error(
-				`Actual (${actual}) does not equal expected (${expected}). Message: ${message}`
-			);
+			const errorMessage = ` ${message}: Actual (${actual}) does not equal expected (${expected}).`;
+			console.error(errorMessage);
+			// throw new Error(errorMessage);
 		}
 	},
 };
 
 async function main() {
-	const logFileNames = await readdir(pkgRoot("test/logs"));
-	for (let logFileName of logFileNames) {
-		await runParser(t, logFileName);
-	}
+	// const logFileNames = await readdir(pkgRoot("test/logs"));
+	// for (let logFileName of logFileNames) {
+	// 	await runParser(t, logFileName);
+	// }
+
+	const logFileName = "v8-deopt-parser.v8.log";
+	const results = await runParser(t, logFileName);
+	await writeSnapshot(logFileName, results);
+	await writeMapSnapshot(logFileName, results);
+	validateMapData(t, results);
 }
 
 main();
