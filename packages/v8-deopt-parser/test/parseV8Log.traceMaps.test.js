@@ -11,15 +11,14 @@ test("runParser(html-inline.traceMaps.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	const mapEntryIds = Object.keys(result.maps.nodes);
-	t.equal(mapEntryIds.length, 46, "Number of map entries");
+	t.equal(mapEntryIds.length, 38, "Number of map entries");
 
 	const mapEdgeIds = Object.keys(result.maps.edges);
-	t.equal(mapEdgeIds.length, 43, "Number of map edges");
-
-	validateMapData(t, result);
+	t.equal(mapEdgeIds.length, 35, "Number of map edges");
 
 	await writeSnapshot(logFileName, result);
 	await writeMapSnapshot(logFileName, result);
+	validateMapData(t, result);
 });
 
 test("runParser(html-external.traceMaps.v8.log)", async (t) => {
@@ -31,13 +30,12 @@ test("runParser(html-external.traceMaps.v8.log)", async (t) => {
 	t.equal(result.ics.length, 33, "Number of ics");
 
 	const mapEntryIds = Object.keys(result.maps.nodes);
-	t.equal(mapEntryIds.length, 46, "Number of map entries");
+	t.equal(mapEntryIds.length, 38, "Number of map entries");
 
 	const mapEdgeIds = Object.keys(result.maps.edges);
-	t.equal(mapEdgeIds.length, 43, "Number of map edges");
-
-	validateMapData(t, result);
+	t.equal(mapEdgeIds.length, 35, "Number of map edges");
 
 	await writeSnapshot(logFileName, result);
 	await writeMapSnapshot(logFileName, result);
+	validateMapData(t, result);
 });

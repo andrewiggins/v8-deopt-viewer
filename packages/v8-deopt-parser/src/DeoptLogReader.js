@@ -75,8 +75,6 @@ export class DeoptLogReader extends LogReader {
 		this.allEdgeEntries = new Map();
 
 		/** @type {Set<number>} */
-		this.rootMaps = new Set();
-		/** @type {Set<number>} */
 		this.usedMaps = new Set();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
@@ -379,7 +377,10 @@ export class DeoptLogReader extends LogReader {
 			icEntry.severity = severity;
 		}
 
-		if (mapId !== 0) {
+		if (
+			mapId !== 0 &&
+			(this.options.keepInternals || !this.isInternal(icEntry))
+		) {
 			this.markMapTreeUsed(mapId);
 		}
 	}
@@ -530,23 +531,38 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
-		const getMap = (mapId) => this.allMapEntries.get(mapId);
-		const getEdge = (edgeId) => this.allEdgeEntries.get(edgeId);
-
 		/** @type {import('.').MapData} */
 		const mapData = { nodes: {}, edges: {} };
-		for (let rootMapId of this.rootMaps) {
-			const rootMap = this.allMapEntries.get(rootMapId);
-			visitAllMaps(rootMap, getMap, getEdge, (map) => {
+
+		// Only include maps used by the user's code an their direct parents. No
+		// aunts or uncles are included by default.
+		for (let mapId of this.usedMaps) {
+			/** @type {number} */
+			let parentMapId = mapId;
+			let childEdgeId;
+
+			do {
+				let map = this.getExistingMap(parentMapId);
+
 				if (map.id in mapData.nodes) {
-					return;
+					if (childEdgeId) {
+						mapData.nodes[map.id].children.push(childEdgeId);
+					}
+					break;
 				}
 
-				mapData.nodes[map.id] = map;
+				mapData.nodes[map.id] = {
+					...map,
+					children: childEdgeId ? [childEdgeId] : [],
+				};
+
 				if (map.edge) {
-					mapData.edges[map.edge] = getEdge(map.edge);
+					childEdgeId = map.edge;
+					mapData.edges[map.edge] = this.allEdgeEntries.get(map.edge);
 				}
-			});
+
+				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
+			} while (parentMapId);
 		}
 
 		const filterInternals = this.filterInternals.bind(this);
@@ -566,11 +582,16 @@ export class DeoptLogReader extends LogReader {
 		};
 	}
 
+	/**
+	 * Determine if an entry is a reference to a internal V8 or NodeJS file
+	 * @param {import('./index').Entry} entry
+	 */
+	isInternal(entry) {
+		return !isAbsolutePath(entry.file) || ispawnRegex.test(entry.file);
+	}
+
 	filterInternals(entry) {
-		return (
-			this.options.keepInternals ||
-			(isAbsolutePath(entry.file) && !ispawnRegex.test(entry.file))
-		);
+		return this.options.keepInternals || !this.isInternal(entry);
 	}
 
 	sortEntries(entries) {
@@ -592,26 +613,22 @@ export class DeoptLogReader extends LogReader {
 
 		try {
 			// Add this map and all of its parents to the usedMaps set
-			this.usedMaps.add(mapId);
 			let map = this.getExistingMap(mapId);
+			this.usedMaps.add(mapId);
+
 			let parentMapId = map.edge
 				? this.allEdgeEntries.get(map.edge)?.from
 				: null;
 
 			while (parentMapId && !this.usedMaps.has(parentMapId)) {
-				this.usedMaps.add(parentMapId);
-
 				map = this.getExistingMap(parentMapId);
+				this.usedMaps.add(parentMapId);
 				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
-			}
-
-			if (parentMapId == null) {
-				// We reached map with no parent. Add it to rootMaps
-				this.rootMaps.add(map.id);
 			}
 		} catch (error) {
 			// Sometimes, V8 logs will include property ICs on Maps with no create
-			// details (argh, why??). Ignore errors for those situations.
+			// details (argh, why??). Ignore errors for those situations. For example,
+			// 3055214391657 in v8-deopt-parser.v8.log
 			if (!error.message.includes("No map details provided")) {
 				throw error;
 			}

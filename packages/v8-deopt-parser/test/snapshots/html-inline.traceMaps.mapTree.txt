@@ -40,14 +40,6 @@
              └─+hello	[1005159204521]
 
  └─1005159187241
-    ├─ReplaceDescriptors MapCreate 	[1005159201561]
-    ├─ReplaceDescriptors MapCreate 	[1005159201681]
-    ├─ReplaceDescriptors MapCreate 	[1005159201801]
-    ├─ReplaceDescriptors MapCreate 	[1005159201921]
-    ├─ReplaceDescriptors MapCreate 	[1005159202041]
-    ├─ReplaceDescriptors MapCreate 	[1005159202161]
-    ├─ReplaceDescriptors MapCreate 	[1005159202281]
-    ├─ReplaceDescriptors MapCreate 	[1005159202401]
     └─ReplaceDescriptors MapCreate 	[1005159202521]
        └─+flag	[1005159202561]
 
@@ -57,6 +49,6 @@
 
 
 
-Total Map Count : 46
-Total Edge Count: 43
+Total Map Count : 38
+Total Edge Count: 35
 
