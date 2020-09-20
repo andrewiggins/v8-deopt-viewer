@@ -1575,8 +1575,7 @@
         "id": 51402305442105,
         "time": 56374,
         "description": "Map=00002EC008281139\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x2ec008281111 <Map(HOLEY_DOUBLE_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors #1: 0x2ec00824c679 <DescriptorArray[1]>\n - transitions #1: 0x2ec00824c6f5 <TransitionArray[4]>\n - prototype: 0x2ec00824bff1 <JSArray[0]>\n - constructor: 0x2ec00824bec5 <JSFunction Array (sfi = 00002EC0081C9265)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec00804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x2ec008180165 <AccessorInfo>\n",
-        "children": [],
-        "depth": 0
+        "children": []
       },
       "51402305467585": {
         "type": "maps",
@@ -1584,7 +1583,6 @@
         "time": 155208,
         "description": "Map=00002EC0082874C1\n - type: JS_OBJECT_TYPE\n - instance size: 16\n - inobject properties: 1\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 1\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287499 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x2ec0080889e9 <DescriptorArray[1]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008241cd1 <JSFunction Object (sfi = 00002EC0081C4B45)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec0082cb0ad <String[#4]: flag> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 2,
         "edge": "27",
         "filePosition": {
           "functionName": "<anonymous>",
@@ -1602,7 +1600,6 @@
         "children": [
           "27"
         ],
-        "depth": 1,
         "edge": "26",
         "filePosition": {
           "functionName": "<anonymous>",
@@ -1619,16 +1616,14 @@
         "description": "Map=00002EC008280329\n - type: JS_OBJECT_TYPE\n - instance size: 28\n - inobject properties: 4\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 4\n - enum length: invalid\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008241cd1 <JSFunction Object (sfi = 00002EC0081C4B45)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
         "children": [
           "26"
-        ],
-        "depth": 0
+        ]
       },
       "51402305441865": {
         "type": "maps",
         "id": 51402305441865,
         "time": 56667,
         "description": "Map=00002EC008281049\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_SMI_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors #1: 0x2ec00824c679 <DescriptorArray[1]>\n - transitions #1: 0x2ec00824c695 <TransitionArray[4]>\n - prototype: 0x2ec00824bff1 <JSArray[0]>\n - constructor: 0x2ec00824bec5 <JSFunction Array (sfi = 00002EC0081C9265)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec00804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x2ec008180165 <AccessorInfo>\n",
-        "children": [],
-        "depth": 0
+        "children": []
       },
       "51402305467825": {
         "type": "maps",
@@ -1636,7 +1631,6 @@
         "time": 414469,
         "description": "Map=00002EC0082875B1\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287589 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x2ec009935b61 <DescriptorArray[2]>\n - prototype: 0x2ec008542809 <Object1 map = 00002EC008287561>\n - constructor: 0x2ec00854233d <JSFunction Object1 (sfi = 00002EC0082CAB89)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa61 <String[#1]: y> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 3,
         "edge": "50",
         "filePosition": {
           "functionName": "Object1",
@@ -1654,7 +1648,6 @@
         "children": [
           "50"
         ],
-        "depth": 2,
         "edge": "49",
         "filePosition": {
           "functionName": "Object1",
@@ -1672,7 +1665,6 @@
         "children": [
           "49"
         ],
-        "depth": 1,
         "edge": "47",
         "filePosition": {
           "functionName": "addObjects",
@@ -1688,7 +1680,6 @@
         "time": 446687,
         "description": "Map=00002EC008287679\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287651 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x2ec0088b97fd <DescriptorArray[2]>\n - prototype: 0x2ec0085427f1 <Object2 map = 00002EC008287629>\n - constructor: 0x2ec0085423b9 <JSFunction Object2 (sfi = 00002EC0082CABC1)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa61 <String[#1]: y> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa51 <String[#1]: x> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 3,
         "edge": "61",
         "filePosition": {
           "functionName": "Object2",
@@ -1706,7 +1697,6 @@
         "children": [
           "61"
         ],
-        "depth": 2,
         "edge": "60",
         "filePosition": {
           "functionName": "Object2",
@@ -1724,7 +1714,6 @@
         "children": [
           "60"
         ],
-        "depth": 1,
         "edge": "58",
         "filePosition": {
           "functionName": "addObjects",
@@ -1740,7 +1729,6 @@
         "time": 493712,
         "description": "Map=00002EC008287769\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287741 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec0080b5081 <DescriptorArray[3]>\n - prototype: 0x2ec0085427d9 <Object3 map = 00002EC0082876F1>\n - constructor: 0x2ec008542435 <JSFunction Object3 (sfi = 00002EC0082CABF9)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082d7635 <String[#5]: hello> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa51 <String[#1]: x> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s, p: 2, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 4,
         "edge": "71",
         "filePosition": {
           "functionName": "Object3",
@@ -1758,7 +1746,6 @@
         "children": [
           "71"
         ],
-        "depth": 3,
         "edge": "70",
         "filePosition": {
           "functionName": "Object3",
@@ -1776,7 +1763,6 @@
         "children": [
           "70"
         ],
-        "depth": 2,
         "edge": "69",
         "filePosition": {
           "functionName": "Object3",
@@ -1794,7 +1780,6 @@
         "children": [
           "69"
         ],
-        "depth": 1,
         "edge": "67",
         "filePosition": {
           "functionName": "addObjects",
@@ -1810,7 +1795,6 @@
         "time": 543639,
         "description": "Map=00002EC008287859\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287831 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec008e56add <DescriptorArray[3]>\n - prototype: 0x2ec0085427c1 <Object4 map = 00002EC0082877E1>\n - constructor: 0x2ec0085424b1 <JSFunction Object4 (sfi = 00002EC0082CAC31)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082d7635 <String[#5]: hello> (const data field 1:h, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s, p: 2, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 4,
         "edge": "81",
         "filePosition": {
           "functionName": "Object4",
@@ -1828,7 +1812,6 @@
         "children": [
           "81"
         ],
-        "depth": 3,
         "edge": "80",
         "filePosition": {
           "functionName": "Object4",
@@ -1846,7 +1829,6 @@
         "children": [
           "80"
         ],
-        "depth": 2,
         "edge": "79",
         "filePosition": {
           "functionName": "Object4",
@@ -1864,7 +1846,6 @@
         "children": [
           "79"
         ],
-        "depth": 1,
         "edge": "77",
         "filePosition": {
           "functionName": "addObjects",
@@ -1880,7 +1861,6 @@
         "time": 592248,
         "description": "Map=00002EC008287949\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287921 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec009287ecd <DescriptorArray[3]>\n - prototype: 0x2ec0085427a9 <Object5 map = 00002EC0082878D1>\n - constructor: 0x2ec00854252d <JSFunction Object5 (sfi = 00002EC0082CAC69)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa61 <String[#1]: y> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082d7635 <String[#5]: hello> (const data field 2:h, p: 1, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 4,
         "edge": "91",
         "filePosition": {
           "functionName": "Object5",
@@ -1898,7 +1878,6 @@
         "children": [
           "91"
         ],
-        "depth": 3,
         "edge": "90",
         "filePosition": {
           "functionName": "Object5",
@@ -1916,7 +1895,6 @@
         "children": [
           "90"
         ],
-        "depth": 2,
         "edge": "89",
         "filePosition": {
           "functionName": "Object5",
@@ -1934,7 +1912,6 @@
         "children": [
           "89"
         ],
-        "depth": 1,
         "edge": "87",
         "filePosition": {
           "functionName": "addObjects",
@@ -1950,7 +1927,6 @@
         "time": 665232,
         "description": "Map=00002EC008287A61\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287a39 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x2ec009c943c1 <DescriptorArray[4]>\n - prototype: 0x2ec008542791 <Object6 map = 00002EC0082879C1>\n - constructor: 0x2ec0085425a9 <JSFunction Object6 (sfi = 00002EC0082CACA1)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082db9ed <String[#4]: hola> (const data field 0:h, p: 3, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa51 <String[#1]: x> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s, p: 0, attrs: [WEC]) @ Any\n  [3]: 0x2ec0082d7635 <String[#5]: hello> (const data field 3:h, p: 2, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 5,
         "edge": "102",
         "filePosition": {
           "functionName": "Object6",
@@ -1968,7 +1944,6 @@
         "children": [
           "102"
         ],
-        "depth": 4,
         "edge": "101",
         "filePosition": {
           "functionName": "Object6",
@@ -1986,7 +1961,6 @@
         "children": [
           "101"
         ],
-        "depth": 3,
         "edge": "100",
         "filePosition": {
           "functionName": "Object6",
@@ -2004,7 +1978,6 @@
         "children": [
           "100"
         ],
-        "depth": 2,
         "edge": "99",
         "filePosition": {
           "functionName": "Object6",
@@ -2022,7 +1995,6 @@
         "children": [
           "99"
         ],
-        "depth": 1,
         "edge": "97",
         "filePosition": {
           "functionName": "addObjects",
@@ -2038,7 +2010,6 @@
         "time": 804808,
         "description": "Map=00002EC008287B79\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287b51 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x2ec00901ab41 <DescriptorArray[4]>\n - prototype: 0x2ec008542779 <Object7 map = 00002EC008287AD9>\n - constructor: 0x2ec008542625 <JSFunction Object7 (sfi = 00002EC0082CACD9)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s, p: 3, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082db9ed <String[#4]: hola> (const data field 1:h, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s, p: 1, attrs: [WEC]) @ Any\n  [3]: 0x2ec0082d7635 <String[#5]: hello> (const data field 3:h, p: 2, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 5,
         "edge": "114",
         "filePosition": {
           "functionName": "Object7",
@@ -2056,7 +2027,6 @@
         "children": [
           "114"
         ],
-        "depth": 4,
         "edge": "113",
         "filePosition": {
           "functionName": "Object7",
@@ -2074,7 +2044,6 @@
         "children": [
           "113"
         ],
-        "depth": 3,
         "edge": "112",
         "filePosition": {
           "functionName": "Object7",
@@ -2092,7 +2061,6 @@
         "children": [
           "112"
         ],
-        "depth": 2,
         "edge": "111",
         "filePosition": {
           "functionName": "Object7",
@@ -2110,7 +2078,6 @@
         "children": [
           "111"
         ],
-        "depth": 1,
         "edge": "109",
         "filePosition": {
           "functionName": "addObjects",
@@ -2126,7 +2093,6 @@
         "time": 879239,
         "description": "Map=00002EC008287C91\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287c69 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x2ec0088daa45 <DescriptorArray[4]>\n - prototype: 0x2ec008542761 <Object8 map = 00002EC008287BF1>\n - constructor: 0x2ec0085426a1 <JSFunction Object8 (sfi = 00002EC0082CAD11)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s, p: 3, attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa61 <String[#1]: y> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x2ec0082db9ed <String[#4]: hola> (const data field 2:h, p: 2, attrs: [WEC]) @ Any\n  [3]: 0x2ec0082d7635 <String[#5]: hello> (const data field 3:h, p: 1, attrs: [WEC]) @ Any\n",
         "children": [],
-        "depth": 5,
         "edge": "126",
         "filePosition": {
           "functionName": "Object8",
@@ -2144,7 +2110,6 @@
         "children": [
           "126"
         ],
-        "depth": 4,
         "edge": "125",
         "filePosition": {
           "functionName": "Object8",
@@ -2162,7 +2127,6 @@
         "children": [
           "125"
         ],
-        "depth": 3,
         "edge": "124",
         "filePosition": {
           "functionName": "Object8",
@@ -2180,7 +2144,6 @@
         "children": [
           "124"
         ],
-        "depth": 2,
         "edge": "123",
         "filePosition": {
           "functionName": "Object8",
@@ -2198,7 +2161,6 @@
         "children": [
           "123"
         ],
-        "depth": 1,
         "edge": "121",
         "filePosition": {
           "functionName": "addObjects",

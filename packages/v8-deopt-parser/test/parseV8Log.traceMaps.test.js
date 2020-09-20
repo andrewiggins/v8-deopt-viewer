@@ -40,8 +40,7 @@ test("runParser(html-external.traceMaps.v8.log)", async (t) => {
 	validateMapData(t, result);
 });
 
-// TODO: Fix test
-test.skip("runParser(adders.traceMaps.v8.log)", async (t) => {
+test("runParser(adders.traceMaps.v8.log)", async (t) => {
 	const logFileName = "adders.traceMaps.v8.log";
 	const result = await runParser(t, logFileName);
 

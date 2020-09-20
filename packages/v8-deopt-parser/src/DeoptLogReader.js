@@ -399,9 +399,9 @@ export class DeoptLogReader extends LogReader {
 		// The latest use (e.g. original map has a uses array of other use IDs so
 		// could look it up using uses.length - 1)?
 
-		if (this.allMapEntries.has(id)) {
-			console.log("DUPLICATE MAP CREATE:", id);
-		}
+		// if (this.allMapEntries.has(id)) {
+		// 	console.log("DUPLICATE MAP CREATE:", id);
+		// }
 
 		/** @type {import('.').MapEntry} */
 		let map = {
@@ -410,7 +410,6 @@ export class DeoptLogReader extends LogReader {
 			time,
 			description,
 			children: [],
-			depth: 0,
 		};
 
 		this.allMapEntries.set(id, map);
@@ -465,18 +464,6 @@ export class DeoptLogReader extends LogReader {
 			to.edge = edge.id;
 			to.filePosition = this.getInfoFromProfile(profileCode);
 		}
-
-		let newDepth = (from?.depth ?? 0) + 1;
-		if (to.depth > 0 && to.depth != newDepth) {
-			// TODO: Investigate what makes this happen... Could be a map getting
-			// reused? Or a circular reference?
-			// throw new Error(`Depth has already been initialized for map ${to.id}`);
-			console.log(
-				`Depth has already been initialized for map ${to.id}. Was ${to.depth}. Now ${newDepth}.`
-			);
-		}
-
-		to.depth = newDepth;
 	}
 
 	processMapDetails(time, id, desc) {
