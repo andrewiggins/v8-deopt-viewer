@@ -29,6 +29,18 @@ const defaultOptions = {
 const ispawnRegex = /ispawn\/preload\/\S+\.js$/;
 
 /**
+ * @param {import('./').MapEntry} map
+ * @param {string} childEdgeId
+ */
+function addEdgeChild(map, childEdgeId) {
+	if (Array.isArray(map.children)) {
+		map.children.push(childEdgeId);
+	} else {
+		map.children = [childEdgeId];
+	}
+}
+
+/**
  * @param {string} functionName
  * @param {string} file
  * @param {number} line
@@ -409,7 +421,6 @@ export class DeoptLogReader extends LogReader {
 			id,
 			time,
 			description,
-			children: [],
 		};
 
 		this.allMapEntries.set(id, map);
@@ -459,7 +470,10 @@ export class DeoptLogReader extends LogReader {
 		const from = this.getExistingMap(fromId, time);
 		const to = this.getExistingMap(toId, time);
 
-		if (from) from.children.push(edge.id);
+		if (from) {
+			addEdgeChild(from, edge.id);
+		}
+
 		if (to) {
 			to.edge = edge.id;
 			to.filePosition = this.getInfoFromProfile(profileCode);
@@ -545,15 +559,18 @@ export class DeoptLogReader extends LogReader {
 
 				if (map.id in mapData.nodes) {
 					if (childEdgeId) {
-						mapData.nodes[map.id].children.push(childEdgeId);
+						addEdgeChild(mapData.nodes[map.id], childEdgeId);
 					}
 					break;
 				}
 
-				mapData.nodes[map.id] = {
-					...map,
-					children: childEdgeId ? [childEdgeId] : [],
-				};
+				mapData.nodes[map.id] = { ...map };
+
+				// Clear the children array so that only children used by the maps in
+				// this application are included
+				mapData.nodes[map.id].children = childEdgeId
+					? [childEdgeId]
+					: undefined;
 
 				if (map.edge) {
 					childEdgeId = map.edge;

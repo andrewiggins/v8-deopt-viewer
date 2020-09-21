@@ -69,7 +69,9 @@ export function validateMapData(t, deoptInfo) {
 		visitAllMaps(mapData, rootMap, (map) => {
 			allMapIds.delete(map.id);
 			allEdgeIds.delete(map.edge);
-			map.children.forEach((edgeId) => allEdgeIds.delete(edgeId));
+			if (map.children) {
+				map.children.forEach((edgeId) => allEdgeIds.delete(edgeId));
+			}
 		});
 	}
 
@@ -144,7 +146,9 @@ function getAllEdgeIdsFromMaps(mapData) {
 			edgeIds.add(map.edge);
 		}
 
-		map.children.forEach((child) => edgeIds.add(child));
+		if (map.children) {
+			map.children.forEach((child) => edgeIds.add(child));
+		}
 	}
 
 	return edgeIds;
@@ -211,6 +215,10 @@ function generateMapTree(
 	}
 	// console.log(line);
 	output.tree += line + "\n";
+
+	if (!Array.isArray(map.children)) {
+		return output;
+	}
 
 	const lastChildEdgeId = map.children[map.children.length - 1];
 	for (const childEdgeId of map.children) {

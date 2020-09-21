@@ -109,7 +109,7 @@ interface MapEntry {
 	edge?: string;
 
 	/** Children Edge IDs */
-	children: string[];
+	children?: string[];
 	isDeprecated?: boolean;
 	filePosition?: {
 		functionName: string;
