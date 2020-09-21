@@ -16,11 +16,16 @@
 	<body>
 		<div id="root"></div>
 		<script src="deoptInfo.js" type="text/javascript"></script>
+		<script src="deoptInfoNoMaps.js" type="text/javascript"></script>
 		<script src="deoptInfoError.js" type="text/javascript"></script>
 		<script src="../dist/index.debug.js" type="text/javascript"></script>
 		<script type="module">
 			V8DeoptViewer.renderIntoDom(
-				location.search.includes("error") ? window.V8ErrorData : window.V8Data,
+				location.search.includes("error")
+					? window.V8ErrorData
+					: location.search.toLowerCase().includes("nomaps")
+					? window.V8NoMapData
+					: window.V8Data,
 				document.getElementById("root")
 			);
 		</script>

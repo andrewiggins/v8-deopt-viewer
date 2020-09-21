@@ -14,7 +14,7 @@ import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
  * @typedef {{ fileId: number; entryType: EntryKind; entryId: string; }} RouteParams
- * @typedef {{ routeParams: RouteParams; deoptInfo: import('..').PerFileDeoptInfoWithSources; files: string[]'' }} FileViewerProps
+ * @typedef {{ routeParams: RouteParams; deoptInfo: import('..').PerFileDeoptInfoWithSources; files: string[]; }} FileViewerProps
  * @param {FileViewerProps} props
  */
 export function FileViewer({ files, deoptInfo, routeParams }) {

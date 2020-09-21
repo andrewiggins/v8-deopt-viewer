@@ -16,7 +16,7 @@ import {
 	icon_arrow_right,
 } from "../../spectre.scss";
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
-import { formatMapId } from "../../utils/mapUtils";
+import { formatMapId, hasMapData } from "../../utils/mapUtils";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping
@@ -47,7 +47,7 @@ const mapGroupings = {
 
 /**
  * // State
- * @typedef {{ id: string; label: string, mapIds: number[] }} GroupingValue
+ * @typedef {{ id: string; label: string, mapIds: string[] }} GroupingValue
  * @typedef {{ grouping: MapGrouping; values: GroupingValue[]; selectedValue: GroupingValue; }} GroupingState
  * // Actions
  * @typedef {"SET_GROUPING" | "SET_GROUP_VALUE" } GroupingActionType
@@ -99,6 +99,19 @@ function initGroupingState(props) {
  * @param {MapExplorerProps} props
  */
 export function MapExplorer(props) {
+	const hasMaps = hasMapData(props.mapData);
+	if (!hasMaps) {
+		return (
+			<div>
+				<p>
+					No map data found in this log file. In order to explore maps, re-run
+					v8-deopt-viewer without the '--skipMaps' flag to include map data in
+					your log
+				</p>
+			</div>
+		);
+	}
+
 	// TODO: Make ICEntry maps linkable to the Map Explorer, that loads the loadic
 	// grouping for that location when the clicked map id selected
 
@@ -267,8 +280,7 @@ function getGroupingValues(props, grouping) {
 		}
 		return values;
 	} else if (grouping == "mapid") {
-		return Object.keys(mapData.nodes).map((mapKey) => {
-			const mapId = parseInt(mapKey);
+		return Object.keys(mapData.nodes).map((mapId) => {
 			return {
 				id: `${grouping}-${mapId}`,
 				label: formatMapId(mapId),
