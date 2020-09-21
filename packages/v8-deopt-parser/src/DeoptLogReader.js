@@ -647,26 +647,16 @@ export class DeoptLogReader extends LogReader {
 
 		try {
 			// Add this map and all of its parents to the usedMaps set
-			let map = this.allMapEntries.get(mapId);
-			if (!map) {
-				throw new Error(`No map details provided: id=${mapId}`);
-			}
-
-			this.usedMaps.add(mapId);
-
-			let parentMapId = map.edge
-				? this.allEdgeEntries.get(map.edge)?.from
-				: null;
-
-			while (parentMapId && !this.usedMaps.has(parentMapId)) {
-				map = this.allMapEntries.get(parentMapId);
+			let parentMapId = mapId;
+			do {
+				let map = this.allMapEntries.get(parentMapId);
 				if (!map) {
 					throw new Error(`No map details provided: id=${parentMapId}`);
 				}
 
 				this.usedMaps.add(parentMapId);
 				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
-			}
+			} while (parentMapId && !this.usedMaps.has(parentMapId));
 		} catch (error) {
 			// Sometimes, V8 logs will include property ICs on Maps with no create
 			// details (argh, why??). Ignore errors for those situations. For example,
