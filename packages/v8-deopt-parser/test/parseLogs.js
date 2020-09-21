@@ -28,6 +28,8 @@ async function main() {
 	// const logFileName = "html-inline.traceMaps.v8.log";
 	// const logFileName = "v8-deopt-parser.v8.log";
 	const logFileName = "adders.traceMaps.v8.log";
+
+	// @ts-ignore
 	const results = await runParser(t, logFileName);
 	await writeSnapshot(logFileName, results);
 	await writeMapSnapshot(logFileName, results);

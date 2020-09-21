@@ -1,9 +1,9 @@
 /**
  * @param {Iterable<import('..').ICEntry>} ics
- * @returns {Set<number>}
+ * @returns {Set<string>}
  */
 export function getMapIdsFromICs(ics) {
-	/** @type {Set<number>} */
+	/** @type {Set<string>} */
 	const mapIds = new Set();
 	for (const entry of ics) {
 		for (const update of entry.updates) {

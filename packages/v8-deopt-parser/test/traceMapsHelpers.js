@@ -14,7 +14,7 @@ export function validateMapData(t, deoptInfo) {
 	const mapData = deoptInfo.maps;
 
 	const icMapIds = Array.from(getMapIdsFromICs(deoptInfo.ics));
-	const mapEntryIds = Object.keys(mapData.nodes).map((id) => parseInt(id));
+	const mapEntryIds = Object.keys(mapData.nodes);
 	const mapIdsFromEdges = Array.from(getAllMapIdsFromEdges(mapData));
 
 	const edgeEntryIds = Object.keys(mapData.edges);
@@ -53,7 +53,7 @@ export function validateMapData(t, deoptInfo) {
 	// Ensure there are no superfluous maps or edges. Walk the entire map graph
 	// and ensure no missing nodes or unused nodes
 
-	/** @type {Set<number>} */
+	/** @type {Set<string>} */
 	const allMapIds = new Set([...icMapIds, ...mapIdsFromEdges, ...mapEntryIds]);
 
 	/** @type {Set<string>} */
@@ -156,10 +156,10 @@ function getAllEdgeIdsFromMaps(mapData) {
 
 /**
  * @param {import('../src').MapData} mapData
- * @returns {Iterable<number>}
+ * @returns {Iterable<string>}
  */
 function getAllMapIdsFromEdges(mapData) {
-	/** @type {Set<number>} */
+	/** @type {Set<string>} */
 	const mapIds = new Set();
 	for (let edgeId in mapData.edges) {
 		const edge = mapData.edges[edgeId];

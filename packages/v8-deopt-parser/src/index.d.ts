@@ -85,7 +85,7 @@ interface ICEntryUpdate {
 	oldState: ICState;
 	newState: ICState;
 	key: string;
-	map: number;
+	map: string;
 	optimizationState: string;
 	severity: number;
 	modifier: string;
@@ -101,7 +101,8 @@ interface ICEntryUpdate {
 interface MapEntry {
 	// Add an artificial type property to differentiate between MapEntries and MapEdges
 	type: "maps";
-	id: number;
+	id: string;
+	address: number;
 	time: number;
 	description: string;
 
@@ -137,12 +138,12 @@ interface MapEdge {
 	name: string;
 	reason: string;
 	time: number;
-	from: number;
-	to: number;
+	from: string;
+	to: string;
 }
 
 interface MapData {
-	nodes: Record<number, MapEntry>;
+	nodes: Record<string, MapEntry>;
 	edges: Record<string, MapEdge>;
 }
 
