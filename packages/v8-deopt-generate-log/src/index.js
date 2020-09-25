@@ -6,26 +6,64 @@ import { promisify } from "util";
 import { pathToFileURL } from "url";
 
 const execFileAsync = promisify(execFile);
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-const makeAbsolute = (filePath) =>
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const makeAbsolute = filePath =>
 	path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath);
 
-async function getPuppeteer() {
-	return import("puppeteer")
-		.then((module) => module.default)
-		.catch((error) => {
-			if (
-				error.message.includes("Cannot find module") ||
-				error.message.includes("Cannot find package")
-			) {
+/**
+ * @typedef {(options: import('puppeteer-core').LaunchOptions) => Promise<import('puppeteer-core').Browser>} Launcher
+ * @type {Launcher}
+ */
+let launcher = null;
+
+/**
+ * @returns {Promise<Launcher>}
+ */
+async function getLauncher() {
+	if (!launcher) {
+		// 1. Try puppeteer
+		try {
+			const puppeteer = (await import("puppeteer")).default;
+			launcher = puppeteer.launch;
+		} catch (error) {
+			if (error.code !== "ERR_MODULE_NOT_FOUND") {
+				// console.error(error);
+			}
+		}
+
+		// 2. Try chrome-launcher
+		if (!launcher) {
+			const [chromeLauncher, puppeteer] = await Promise.all([
+				import("chrome-launcher").then(m => m.default),
+				import("puppeteer-core").then(m => m.default)
+			]);
+
+			const chromePath = chromeLauncher.Launcher.getFirstInstallation();
+			if (!chromePath) {
 				console.error(
-					'Could not find "puppeteer" package. Please install "puppeteer" as a peer dependency to this package to generate logs for HTML files and URLs'
+					'Could not find the "puppeteer" package or a local chrome installation. Try installing Chrome or Chromium locally to run v8-deopt-viewer'
 				);
 				process.exit(1);
-			} else {
-				throw error;
 			}
-		});
+
+			// console.log("Using Chrome installed at:", chromePath);
+			launcher = options =>
+				puppeteer.launch({
+					...options,
+					executablePath: chromePath
+				});
+		}
+	}
+
+	return launcher;
+}
+
+/**
+ * @param {import('puppeteer-core').LaunchOptions} options
+ * @returns {Promise<import('puppeteer-core').Browser>}
+ */
+async function launchBrowser(options) {
+	return (await getLauncher())(options);
 }
 
 /**
@@ -39,7 +77,7 @@ function getV8Flags(logFilePath, traceMaps = false) {
 		// Could pipe log to stdout ("-" value) but doesn't work very well with
 		// Chromium. Chromium won't pipe v8 logs to a non-TTY pipe it seems :(
 		`--logfile=${logFilePath}`,
-		"--no-logfile-per-isolate",
+		"--no-logfile-per-isolate"
 	];
 
 	if (traceMaps) {
@@ -54,21 +92,20 @@ function getV8Flags(logFilePath, traceMaps = false) {
  * @param {import('../').Options} options
  */
 async function runPuppeteer(srcUrl, options) {
-	const puppeteer = await getPuppeteer();
 	const logFilePath = options.logFilePath;
 	const v8Flags = getV8Flags(logFilePath, options.traceMaps);
 	const args = [
 		"--disable-extensions",
 		`--js-flags=${v8Flags.join(" ")}`,
 		`--no-sandbox`,
-		srcUrl,
+		srcUrl
 	];
 
 	let browser;
 	try {
-		browser = await puppeteer.launch({
+		browser = await launchBrowser({
 			ignoreDefaultArgs: ["about:blank"],
-			args,
+			args
 		});
 
 		await browser.pages();
@@ -111,7 +148,7 @@ async function generateForNodeJS(srcPath, options) {
 /** @type {import('.').Options} */
 const defaultOptions = {
 	logFilePath: `${tmpdir()}/v8-deopt-generate-log/v8.log`,
-	browserTimeoutMs: 5000,
+	browserTimeoutMs: 5000
 };
 
 /**

@@ -14,10 +14,8 @@
   "scripts": {
     "test": "node test/index.test.js"
   },
-  "peerDependencies": {
-    "puppeteer": "^5.2.1"
-  },
-  "devDependencies": {
-    "puppeteer": "^5.2.1"
+  "dependencies": {
+    "chrome-launcher": "^0.13.4",
+    "puppeteer-core": "^5.3.1"
   }
 }
