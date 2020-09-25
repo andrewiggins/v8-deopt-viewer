@@ -1,5 +1,13 @@
 # v8-deopt-viewer
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [42f4223]
+  - v8-deopt-webapp@0.3.0
+  - v8-deopt-parser@0.3.0
+
 ## 0.1.3
 
 ### Patch Changes

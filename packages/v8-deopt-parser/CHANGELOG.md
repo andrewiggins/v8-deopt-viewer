@@ -1,5 +1,11 @@
 # v8-deopt-parser
 
+## 0.3.0
+
+### Minor Changes
+
+- 42f4223: Handle and expose IC entries with unknown severity
+
 ## 0.2.0
 
 ### Minor Changes
