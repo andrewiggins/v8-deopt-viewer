@@ -15,7 +15,15 @@ import {
 
 /**
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
- * @typedef {{ fileDeoptInfo: FileV8DeoptInfo; entryKind: import('../FileViewer').EntryKind; selectedEntry: import("v8-deopt-parser").Entry; urlBase: string; showAllICs: boolean; }} DeoptTablesProps
+ *
+ * @typedef DeoptTablesProps
+ * @property {FileV8DeoptInfo} fileDeoptInfo
+ * @property {import('../FileViewer').EntryKind} entryKind
+ * @property {import('v8-deopt-parser').Entry} selectedEntry
+ * @property {string} urlBase
+ * @property {boolean} showAllICs
+ * @property {boolean} hasMapData
+ *
  * @param {DeoptTablesProps} props
  */
 export function DeoptTables({
@@ -24,6 +32,7 @@ export function DeoptTables({
 	fileDeoptInfo,
 	urlBase,
 	showAllICs,
+	hasMapData,
 }) {
 	const selectedId = selectedEntry?.id;
 
@@ -65,6 +74,7 @@ export function DeoptTables({
 				entry={entry}
 				selected={entry.id == selectedId}
 				showAllICs={showAllICs}
+				hasMapData={hasMapData}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -160,9 +170,9 @@ function DeoptEntry({ entry, selected, title }) {
 }
 
 /**
- * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; showAllICs: boolean; }} props
+ * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; showAllICs: boolean; hasMapData: boolean; }} props
  */
-function ICEntry({ entry, selected, title, showAllICs }) {
+function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
 	const ref = useScrollIntoView(selected);
 
 	return (
@@ -199,7 +209,13 @@ function ICEntry({ entry, selected, title, showAllICs }) {
 									{update.newState}
 								</td>
 								<td>{update.key}</td>
-								<td>{formatMapId(update.map)}</td>
+								<td>
+									{hasMapData ? (
+										<a href="">{formatMapId(update.map)}</a>
+									) : (
+										formatMapId(update.map)
+									)}
+								</td>
 							</tr>
 						);
 					})}

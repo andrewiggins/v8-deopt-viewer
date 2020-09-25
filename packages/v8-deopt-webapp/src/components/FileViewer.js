@@ -10,6 +10,7 @@ import {
 } from "./FileViewer.scss";
 import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer";
 import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
+import { hasMapData } from "../utils/mapUtils";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
@@ -40,6 +41,8 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 	}, [selectedEntryType]);
 
 	const [codeSettings, toggleSetting] = useCodeSettingsState();
+
+	const hasMaps = hasMapData(deoptInfo.maps);
 
 	return (
 		<div class={fileViewer}>
@@ -74,6 +77,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 						fileDeoptInfo={fileDeoptInfo}
 						urlBase={urlBase}
 						showAllICs={codeSettings.showAllICs}
+						hasMapData={hasMaps}
 					/>
 				)}
 			</V8DeoptInfoPanel>
