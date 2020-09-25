@@ -1,5 +1,16 @@
 # v8-deopt-webapp
 
+## 0.2.0
+
+### Minor Changes
+
+- 65358c9: Add ability to view all IC loads for a specific location
+
+### Patch Changes
+
+- 701d23c: Fix hiding line numbers
+- c946b7a: Add selected filename to FileView
+
 ## 0.1.0
 
 ### Minor Changes
