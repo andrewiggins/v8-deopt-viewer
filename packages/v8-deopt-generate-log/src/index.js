@@ -24,7 +24,7 @@ async function getLauncher() {
 		// 1. Try puppeteer
 		try {
 			const puppeteer = (await import("puppeteer")).default;
-			launcher = puppeteer.launch;
+			launcher = (options) => puppeteer.launch(options);
 		} catch (error) {
 			if (error.code !== "ERR_MODULE_NOT_FOUND") {
 				// console.error(error);
