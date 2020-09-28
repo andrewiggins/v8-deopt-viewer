@@ -1,5 +1,11 @@
 # v8-deopt-generate-log
 
+## 0.2.1
+
+### Patch Changes
+
+- b55a8d1: Fix puppeteer integration
+
 ## 0.2.0
 
 ### Minor Changes
