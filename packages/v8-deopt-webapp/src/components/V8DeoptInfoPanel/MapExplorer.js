@@ -112,6 +112,28 @@ export function MapExplorer(props) {
 		);
 	}
 
+	// TODO: Since map explorer is across files, re-consider how general nav works.
+	// Some Spectre components/experiments that may be useful:
+	// - https://picturepan2.github.io/spectre/experimentals/filters.html
+	// 		- filter entries by file
+	// - https://picturepan2.github.io/spectre/experimentals/autocomplete.html
+	// 		- filter entries by file
+	// 		- select which file's code to show
+	// 		- select which data tables to show (Summary, Opts, Deopts, IC Entries, etc.)
+	// - https://picturepan2.github.io/spectre/components/breadcrumbs.html
+	// 		- Display which file is shown and filter file results
+	// - https://picturepan2.github.io/spectre/components/cards.html
+	// 		- File summary organizer
+	// - https://picturepan2.github.io/spectre/components/modals.html
+	// 		- More advanced settings menu
+	// - https://picturepan2.github.io/spectre/components/panels.html
+	// 		- File summary organizer
+	// 		- Data view organizer
+	// - https://picturepan2.github.io/spectre/components/tiles.html
+	// 		- ?
+	// - https://picturepan2.github.io/spectre/components/tabs.html
+	// 		- ?
+
 	// TODO: Make ICEntry maps linkable to the Map Explorer, that loads the loadic
 	// grouping for that location when the clicked map id selected
 
@@ -119,8 +141,9 @@ export function MapExplorer(props) {
 	// need to add some routing URL helper functions to generate URLs.
 
 	// TODO: Should selecting a creation or loadic location go to that location on
-	// the code panel? Need to handle cross file links since maps aren't file
-	// specific.
+	// the code panel? Probably not but perhaps each map transition associated
+	// with a source location should have a link to "show location" or "go to
+	// location". Need to handle cross file links since maps aren't file specific.
 	//
 	// Would be important to keep existing Map Explorer view/selection. Would not
 	// want to rebuild the DOM and lose focus. Would be nice to use normal links
@@ -134,6 +157,21 @@ export function MapExplorer(props) {
 	// TODO: Render map trees. Selecting a map should display its formatted
 	// description. Perhaps as a baby step, turn the existing map ID list into an
 	// accordion that shows the map description when selected and updates the URL.
+	// Consider using Spectre's
+	// [Timeline](https://picturepan2.github.io/spectre/experimentals/timelines.html)
+	// component to display Map transitions, but it can't show the map graph when
+	// maps share the same parent...
+
+	// TODO: Maybe I just just re-design the entire UI lol. Initial drawings I
+	// like:
+	//
+	// File selector and viewer on the left with inline dropdown as well as link
+	// to replace file viewer with a file list. Also includes toggle to filter
+	// data entries by the selected file.
+	//
+	// On the right, a VSCode- or Teams-like UI with icons running down the right
+	// side (with labels underneath or tooltips) for various views: 📄Summary, 🔺Opts,
+	// 🔻Deopts, ☎Inline Caches, 🌐Map explorer, ⚙Settings, ❔Help.
 
 	const [state, dispatch] = useReducer(
 		mapGroupingReducer,
