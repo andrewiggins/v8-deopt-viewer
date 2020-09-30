@@ -3,7 +3,8 @@
  * @returns {string}
  */
 export function formatMapId(mapId) {
-	return "0x" + mapId.padStart(12, "0");
+	// return "0x" + mapId.padStart(12, "0");
+	return mapId; // Don't do any formatting for now
 }
 
 /**

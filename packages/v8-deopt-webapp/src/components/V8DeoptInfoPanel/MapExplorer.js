@@ -4,16 +4,21 @@ import {
 	map_selectors,
 	grouping as map_grouping,
 	group_value,
+	map_ids,
+	map_details,
 } from "./MapExplorer.scss";
 import {
 	form_group,
 	form_select,
 	form_label,
-	accordion,
-	accordion_header,
-	accordion_body,
 	icon,
-	icon_arrow_right,
+	icon_lg,
+	icon_plus,
+	timeline,
+	timeline_item,
+	timeline_left,
+	timeline_icon,
+	timeline_content,
 } from "../../spectre.scss";
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { formatMapId, hasMapData } from "../../utils/mapUtils";
@@ -48,28 +53,43 @@ const mapGroupings = {
 /**
  * // State
  * @typedef {{ id: string; label: string, mapIds: string[] }} GroupingValue
- * @typedef {{ grouping: MapGrouping; values: GroupingValue[]; selectedValue: GroupingValue; }} GroupingState
+ * @typedef State
+ * @property {MapGrouping} grouping
+ * @property {GroupingValue[]} groupValues
+ * @property {GroupingValue} selectedGroup
+ * @property {MapEntry["id"]} selectedMapId
  * // Actions
- * @typedef {"SET_GROUPING" | "SET_GROUP_VALUE" } GroupingActionType
+ * @typedef {"SET_GROUPING" | "SET_GROUP_VALUE" | "SET_MAP_ID"} GroupingActionType
  * @typedef {{ type: "SET_GROUPING"; newGrouping: MapGrouping; newGroupValues: GroupingValue[] }} SetGroupingAction
  * @typedef {{ type: "SET_GROUP_VALUE"; newValue: string; }} SetGroupValueAction
- * @typedef {SetGroupingAction | SetGroupValueAction} GroupingAction
+ * @typedef {{ type: "SET_MAP_ID"; newMapId: string; }} SetMapIDAction
+ * @typedef {SetGroupingAction | SetGroupValueAction | SetMapIDAction} Action
  * // Reducer params
- * @param {GroupingState} state
- * @param {GroupingAction} action
- * @returns {GroupingState}
+ * @param {State} state
+ * @param {Action} action
+ * @returns {State}
  */
 function mapGroupingReducer(state, action) {
 	if (action.type == "SET_GROUPING") {
 		return {
 			grouping: action.newGrouping,
-			values: action.newGroupValues,
-			selectedValue: action.newGroupValues[0],
+			groupValues: action.newGroupValues,
+			selectedGroup: action.newGroupValues[0],
+			selectedMapId: action.newGroupValues[0].mapIds[0],
 		};
 	} else if (action.type == "SET_GROUP_VALUE") {
+		const selectedGroup = state.groupValues.find(
+			(v) => v.id == action.newValue
+		);
 		return {
 			...state,
-			selectedValue: state.values.find((v) => v.id == action.newValue),
+			selectedGroup,
+			selectedMapId: selectedGroup.mapIds[0],
+		};
+	} else if (action.type == "SET_MAP_ID") {
+		return {
+			...state,
+			selectedMapId: action.newMapId,
 		};
 	} else {
 		return state;
@@ -78,15 +98,16 @@ function mapGroupingReducer(state, action) {
 
 /**
  * @param {MapExplorerProps} props
- * @returns {GroupingState}
+ * @returns {State}
  */
 function initGroupingState(props) {
 	const grouping = "loadic";
 	const values = getGroupingValues(props, grouping);
 	return {
 		grouping,
-		values,
-		selectedValue: values[0],
+		groupValues: values,
+		selectedGroup: values[0],
+		selectedMapId: values[0].mapIds[0],
 	};
 }
 
@@ -95,7 +116,14 @@ function initGroupingState(props) {
  * @typedef {import('v8-deopt-parser').MapEntry} MapEntry
  * @typedef {import('v8-deopt-parser').MapEdge} MapEdge
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
- * @typedef {{ mapData: MapData; fileDeoptInfo: FileV8DeoptInfo; selectedMap: MapEntry; settings: import('../CodeSettings').CodeSettingsState; urlBase: string; }} MapExplorerProps
+ *
+ * @typedef MapExplorerProps
+ * @property {MapData} mapData
+ * @property {FileV8DeoptInfo} fileDeoptInfo
+ * @property {MapEntry} selectedMap
+ * @property {import('../CodeSettings').CodeSettingsState} settings;
+ * @property {string} urlBase
+ *
  * @param {MapExplorerProps} props
  */
 export function MapExplorer(props) {
@@ -111,6 +139,14 @@ export function MapExplorer(props) {
 			</div>
 		);
 	}
+
+	// IMMEDIATE TODOS:
+	//  - setup routing
+	// 	- setup links
+	//  - Fix timeline icon links
+	//  - How to make timeline item titles look clickable?
+	// 	- Setup button/link in timeline to show creation location of a map in src
+	//  - Look at other TODOs in this file
 
 	// TODO: Since map explorer is across files, re-consider how general nav works.
 	// Some Spectre components/experiments that may be useful:
@@ -179,6 +215,8 @@ export function MapExplorer(props) {
 		initGroupingState
 	);
 
+	const mapIds = state.selectedGroup.mapIds;
+
 	return (
 		<Fragment>
 			<div class={map_selectors}>
@@ -214,7 +252,7 @@ export function MapExplorer(props) {
 						{mapGroupings[state.grouping].valueLabel}:
 					</label>
 					<select
-						value={state.selectedValue?.id ?? ""}
+						value={state.selectedGroup?.id ?? ""}
 						onChange={(e) => {
 							dispatch({
 								type: "SET_GROUP_VALUE",
@@ -224,12 +262,37 @@ export function MapExplorer(props) {
 						id="map-group"
 						class={form_select}
 					>
-						{/* TODO: make this better - i.e. disable it, etc. */}
-						{state.values.length == 0 ? (
+						{/* TODO: make this better handle no group values - i.e. disable it, etc. */}
+						{state.groupValues.length == 0 ? (
 							<option>No values available</option>
 						) : (
-							state.values.map((value) => (
+							state.groupValues.map((value) => (
 								<option value={value.id}>{value.label}</option>
+							))
+						)}
+					</select>
+				</div>
+				<div class={[form_group, map_ids].join(" ")}>
+					<label for="map-id" class={form_label}>
+						Map:
+					</label>
+					<select
+						value={state.selectedMapId}
+						id="map-id"
+						class={form_select}
+						disabled={mapIds.length < 2}
+						onChange={(e) => {
+							dispatch({
+								type: "SET_MAP_ID",
+								newMapId: e.currentTarget.value,
+							});
+						}}
+					>
+						{mapIds.length == 0 ? (
+							<option>No values available</option>
+						) : (
+							mapIds.map((mapId) => (
+								<option value={mapId}>{formatMapId(mapId)}</option>
 							))
 						)}
 					</select>
@@ -237,25 +300,81 @@ export function MapExplorer(props) {
 			</div>
 			<p>
 				<a href={props.urlBase + "/maps"}>Link to Maps</a>
-				{state.selectedValue &&
-					state.selectedValue.mapIds.map((mapId) => (
-						<details key={mapId} class={accordion}>
-							<summary class={accordion_header}>
-								<i
-									class={icon + " " + icon_arrow_right}
-									style="margin-right: .2rem;"
-								></i>
-								{formatMapId(mapId)}
-							</summary>
-							<div class={accordion_body}>
-								{props.mapData.nodes[mapId].description
-									.split("\n")
-									.map((line) => [line, <br />])}
-							</div>
-						</details>
-					))}
+				<MapTimeline
+					mapData={props.mapData}
+					selectedEntry={props.mapData.nodes[state.selectedMapId]}
+				/>
 			</p>
 		</Fragment>
+	);
+}
+
+/**
+ * @typedef MapTimelineProps
+ * @property {MapData} mapData
+ * @property {MapEntry} selectedEntry
+ *
+ * @param {MapTimelineProps} props
+ */
+function MapTimeline({ mapData, selectedEntry }) {
+	const mapParents = getMapParents(mapData, selectedEntry);
+
+	return (
+		<div class={timeline}>
+			{mapParents.reverse().map((map) => (
+				<MapTimelineItem key={map.id} mapData={mapData} map={map} />
+			))}
+			<MapTimelineItem mapData={mapData} map={selectedEntry} selected />
+		</div>
+	);
+}
+
+/**
+ * @param {{ mapData: MapData; map: MapEntry, selected?: boolean }} props
+ */
+function MapTimelineItem({ mapData, map, selected = false }) {
+	const map_timeline_item = "";
+	const selected_class = "";
+	const map_icon = "";
+
+	const parentEdge = map.edge ? mapData.edges[map.edge] : null;
+	return (
+		<div
+			class={`${timeline_item} ${map_timeline_item} ${
+				selected ? selected_class : ""
+			}`}
+			id="timeline-example-1"
+		>
+			<div class={timeline_left}>
+				<a
+					class={`${timeline_icon} ${selected ? icon_lg : ""} ${map_icon}`}
+					href="#timeline-example-1"
+				>
+					{selected ? <i class={`${icon} ${getEdgeIcon(parentEdge)}`}></i> : ""}
+				</a>
+			</div>
+			<div class={timeline_content}>
+				<details class={map_details} open={selected}>
+					<summary>
+						{selected ? (
+							<strong>
+								{parentEdge ? edgeToString(parentEdge) : map.address}
+							</strong>
+						) : parentEdge ? (
+							edgeToString(parentEdge)
+						) : (
+							map.address
+						)}
+					</summary>
+					<div>{formatDescription(map)}</div>
+					{/* TODO: Figure out what to do with the map's position */}
+					{/* <p>
+						{map.filePosition.functionName} {map.filePosition.file}:
+						{map.filePosition.line}:{map.filePosition.column}
+					</p> */}
+				</details>
+			</div>
+		</div>
 	);
 }
 
@@ -336,4 +455,77 @@ function getGroupingValues(props, grouping) {
  */
 function formatLocation(entry) {
 	return `${entry.functionName}:${entry.line}:${entry.column}`;
+}
+
+/**
+ * @param {MapEntry} map
+ * @returns {string}
+ */
+function formatDescription(map) {
+	return (
+		map.description
+			.trim()
+			.split("\n")
+			.map((line) => [line, <br />])
+			// @ts-ignore
+			.flat()
+	);
+}
+
+/**
+ * @param {MapData} mapData
+ * @param {MapEntry} map
+ */
+function getMapParents(mapData, map) {
+	const parents = [];
+	while (map?.edge) {
+		const edge = mapData.edges[map.edge];
+
+		map = null;
+		if (edge?.from) {
+			map = mapData.nodes[edge.from];
+			if (map) {
+				parents.push(map);
+			}
+		}
+	}
+
+	return parents;
+}
+
+/**
+ * @param {MapEdge} edge
+ */
+function edgeToString(edge) {
+	switch (edge.subtype) {
+		case "Transition":
+			return "Transition: " + edge.name;
+		case "SlowToFast":
+			return edge.reason;
+		case "CopyAsPrototype":
+			return "Copy as Prototype";
+		case "OptimizeAsPrototype":
+			return "Optimize as Prototype";
+		default:
+			return `${edge.subtype} ${edge?.reason ?? ""} ${edge?.name ?? ""}`;
+	}
+}
+
+/**
+ * @param {MapEdge | null} edge
+ */
+function getEdgeIcon(edge) {
+	// TODO: Fill out
+	switch (edge?.subtype) {
+		case "Transition":
+			return icon_plus; // "+"
+		case "Normalize": // FastToSlow
+			return "⊡"; // down triangle
+		case "SlowToFast":
+			return "⊛"; // up triangle
+		case "ReplaceDescriptors":
+			return edge.name ? "+" : "∥"; // plus or two bars
+		default:
+			return "";
+	}
 }

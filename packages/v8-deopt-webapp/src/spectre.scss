@@ -51,7 +51,7 @@
 // Icons
 @import "~spectre.css/src/icons/icons-core";
 @import "~spectre.css/src/icons/icons-navigation";
-// @import "~spectre.css/src/icons/icons-action";
+@import "~spectre.css/src/icons/icons-action"; // TODO: This includes a LOT of icons tha may not be used...
 // @import "~spectre.css/src/icons/icons-object";
 
 /*! Spectre.css Experimentals | MIT License | github.com/picturepan2/spectre */
@@ -66,7 +66,7 @@
 // @import "~spectre.css/src/parallax";
 // @import "~spectre.css/src/progress";
 // @import "~spectre.css/src/sliders";
-// @import "~spectre.css/src/timelines";
+@import "~spectre.css/src/timelines";
 // @import "~spectre.css/src/viewer-360";
 
 // ==========================
