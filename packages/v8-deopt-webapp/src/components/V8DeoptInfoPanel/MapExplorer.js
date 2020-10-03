@@ -1,5 +1,5 @@
 import { createElement, Fragment } from "preact";
-import { useReducer } from "preact/hooks";
+import { useEffect, useReducer } from "preact/hooks";
 import {
 	map_selectors,
 	grouping as map_grouping,
@@ -23,6 +23,7 @@ import {
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { mapsRoute } from "../../routes";
 import { formatMapId, hasMapData } from "../../utils/mapUtils";
+import { useCodePanelDispatch } from "../CodePanel";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping
@@ -52,8 +53,13 @@ const mapGroupings = {
 };
 
 /**
+ * // GroupingValues
+ * @typedef {{ group: "loadic"; id: string; label: string, mapIds: string[]; entry: import("v8-deopt-parser").ICEntry; }} LoadICGroupingValue
+ * @typedef {{ group: "property"; id: string; label: string, mapIds: string[] }} PropertyGroupingValue
+ * @typedef {{ group: "create"; id: string; label: string, mapIds: string[]; filePosition: import("../CodePanel").FilePosition; }} CreateGroupingValue
+ * @typedef {{ group: "mapid"; id: string; label: string, mapIds: string[] }} MapIdGroupingValue
+ * @typedef {LoadICGroupingValue | PropertyGroupingValue | CreateGroupingValue | MapIdGroupingValue} GroupingValue
  * // State
- * @typedef {{ id: string; label: string, mapIds: string[] }} GroupingValue
  * @typedef State
  * @property {MapGrouping} grouping
  * @property {GroupingValue[]} groupValues
@@ -102,13 +108,22 @@ function mapGroupingReducer(state, action) {
  * @returns {State}
  */
 function initGroupingState(props) {
-	const grouping = "loadic";
-	const values = getGroupingValues(props, grouping);
+	const routeParams = props.routeParams;
+	const grouping = routeParams.grouping ?? "loadic";
+	const groupValues = getGroupingValues(props, grouping);
+
+	let selectedGroup = groupValues[0];
+	if (routeParams.groupValue) {
+		selectedGroup = groupValues.find(
+			(value) => value.id == routeParams.groupValue
+		);
+	}
+
 	return {
 		grouping,
-		groupValues: values,
-		selectedGroup: values[0],
-		selectedMapId: values[0].mapIds[0],
+		groupValues,
+		selectedGroup,
+		selectedMapId: routeParams.mapId ?? selectedGroup.mapIds[0],
 	};
 }
 
@@ -118,11 +133,17 @@ function initGroupingState(props) {
  * @typedef {import('v8-deopt-parser').MapEdge} MapEdge
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
  *
+ * @typedef MapExplorerRouteParams
+ * @property {string} fileId
+ * @property {MapGrouping} [grouping]
+ * @property {string} [groupValue]
+ * @property {string} [mapId]
+ *
  * @typedef MapExplorerProps
  * @property {MapData} mapData
  * @property {FileV8DeoptInfo} fileDeoptInfo
- * @property {MapEntry["id"]} initialMapId
- * @property {import('../CodeSettings').CodeSettingsState} settings;
+ * @property {MapExplorerRouteParams} routeParams
+ * @property {import('../CodeSettings').CodeSettingsState} settings
  * @property {number} fileId
  *
  * @param {MapExplorerProps} props
@@ -142,11 +163,22 @@ export function MapExplorer(props) {
 	}
 
 	// IMMEDIATE TODOS:
-	//  - setup routing
-	// 	- setup links
+	//  - Changing the MapExplorer toggles should update the URL
+	//  - Hmm should switching tabs loose state in Map Explorer? Probs not :(
+	//  - Can selecting a loadIC location also highlight that IC entry in the IC
+	//    Explorer tab to maintain context between the two?
+	//
+	//  Re: the above - perhaps FileViewer should on initial render read the URL
+	//  param to determine the initial deopt panel to display (pass it into the
+	//  initialState arg of useState) but use local state when changing tabs. Then
+	//  each deopt panel can use the `useRoute` hook to determine if it is the
+	//  active route and read it's state from that route, else rely on local or
+	//  global shared state.
+	//
 	//  - Fix timeline icon links
 	//  - How to make timeline item titles look clickable?
-	// 	- Setup button/link in timeline to show creation location of a map in src
+	//  - Setup button/link in timeline to show creation location of a map in src
+	//    and scroll it into view
 	//  - Look at other TODOs in this file
 
 	// TODO: Since map explorer is across files, re-consider how general nav works.
@@ -218,6 +250,17 @@ export function MapExplorer(props) {
 
 	const mapIds = state.selectedGroup.mapIds;
 
+	const { setSelectedEntry, setSelectedPosition } = useCodePanelDispatch();
+	useEffect(() => {
+		if (state.selectedGroup.group == "loadic") {
+			setSelectedEntry(state.selectedGroup.entry);
+		} else if (state.selectedGroup.group == "create") {
+			setSelectedPosition(state.selectedGroup.filePosition);
+		} else {
+			setSelectedEntry(null);
+		}
+	}, [state.selectedGroup, props.fileDeoptInfo]);
+
 	return (
 		<Fragment>
 			<div class={map_selectors}>
@@ -248,7 +291,7 @@ export function MapExplorer(props) {
 						))}
 					</select>
 				</div>
-				<div key={state.grouping} class={[form_group, group_value].join(" ")}>
+				<div class={[form_group, group_value].join(" ")}>
 					<label for="map-group" class={form_label}>
 						{mapGroupings[state.grouping].valueLabel}:
 					</label>
@@ -394,9 +437,11 @@ function getGroupingValues(props, grouping) {
 			)
 			.map((icEntry) => {
 				return {
-					id: `${grouping}-${icEntry.id}`,
+					group: "loadic",
+					id: icEntry.id,
 					label: formatLocation(icEntry),
 					mapIds: icEntry.updates.map((update) => update.map),
+					entry: icEntry,
 				};
 			});
 	} else if (grouping == "property") {
@@ -412,7 +457,8 @@ function getGroupingValues(props, grouping) {
 
 				if (!properties.has(propName)) {
 					properties.set(edge.name, {
-						id: `${grouping}-${propName}`,
+						group: "property",
+						id: propName,
 						label: propName,
 						mapIds: [],
 					});
@@ -430,9 +476,11 @@ function getGroupingValues(props, grouping) {
 			const map = mapData.nodes[mapId];
 			if (map.filePosition) {
 				values.push({
+					group: "create",
 					id: `${grouping}-${map.id}`,
 					label: formatLocation(map.filePosition),
 					mapIds: [map.id],
+					filePosition: map.filePosition,
 				});
 			}
 		}
@@ -440,7 +488,8 @@ function getGroupingValues(props, grouping) {
 	} else if (grouping == "mapid") {
 		return Object.keys(mapData.nodes).map((mapId) => {
 			return {
-				id: `${grouping}-${mapId}`,
+				group: "mapid",
+				id: mapId,
 				label: formatMapId(mapId),
 				mapIds: [mapId],
 			};
@@ -455,7 +504,7 @@ function getGroupingValues(props, grouping) {
  * @returns {string}
  */
 function formatLocation(entry) {
-	return `${entry.functionName}:${entry.line}:${entry.column}`;
+	return `${entry.functionName} ${entry.line}:${entry.column}`;
 }
 
 /**

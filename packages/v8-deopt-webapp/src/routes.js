@@ -46,12 +46,26 @@ export const icsRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number, string?]>} */
+/** @type {import('./').Route<[number, string?, string?, string?]>} */
 export const mapsRoute = {
 	id: "maps",
 	title: "Map Explorer",
-	route: "/file/:fileId/maps/:entryId?",
-	getHref(fileId, entryId = "") {
-		return `#/file/${fileId}/maps/${entryId}`;
+	route: "/file/:fileId/maps/:grouping?/:groupValue?/:mapId?",
+	getHref(fileId, grouping = null, groupValue = null, mapId = null) {
+		let url = `#/file/${fileId}/maps/`;
+		// Only add subsequent paths if parent path is provided
+		if (grouping) {
+			url += encodeURIComponent(grouping) + "/";
+
+			if (groupValue) {
+				url += encodeURIComponent(groupValue) + "/";
+
+				if (mapId) {
+					url += encodeURIComponent(mapId);
+				}
+			}
+		}
+
+		return url;
 	},
 };

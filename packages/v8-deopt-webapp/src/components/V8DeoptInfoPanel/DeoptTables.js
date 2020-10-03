@@ -2,7 +2,7 @@ import { createElement, Fragment } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
 import { formatMapId } from "../../utils/mapUtils";
-import { codeRoute, deoptsRoute, icsRoute } from "../../routes";
+import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes";
 import { table, table_striped, table_hover } from "../../spectre.scss";
 import {
 	entryTable,
@@ -79,6 +79,7 @@ export function DeoptTables({
 				selected={entry.id == selectedId}
 				showAllICs={showAllICs}
 				hasMapData={hasMapData}
+				fileId={fileId}
 				title={
 					<EntryTitle
 						entry={entry}
@@ -177,9 +178,16 @@ function DeoptEntry({ entry, selected, title }) {
 }
 
 /**
- * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; showAllICs: boolean; hasMapData: boolean; }} props
+ * @typedef ICEntryProps
+ * @property {import("v8-deopt-parser").ICEntry} entry
+ * @property {boolean} selected
+ * @property {any} title
+ * @property {boolean} showAllICs
+ * @property {boolean} hasMapData
+ * @property {number} fileId
+ * @param {ICEntryProps} props
  */
-function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
+function ICEntry({ entry, selected, title, showAllICs, hasMapData, fileId }) {
 	useHighlightEntry(entry, selected);
 	const ref = useScrollIntoView(selected);
 
@@ -208,6 +216,16 @@ function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
 							return null;
 						}
 
+						let mapHref;
+						if (hasMapData) {
+							mapHref = mapsRoute.getHref(
+								fileId,
+								"loadic",
+								entry.id,
+								update.map
+							);
+						}
+
 						return (
 							<tr key={i}>
 								<td class={severityClass(severityIcState(update.oldState))}>
@@ -219,7 +237,7 @@ function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
 								<td>{update.key}</td>
 								<td>
 									{hasMapData ? (
-										<a href="">{formatMapId(update.map)}</a>
+										<a href={mapHref}>{formatMapId(update.map)}</a>
 									) : (
 										formatMapId(update.map)
 									)}

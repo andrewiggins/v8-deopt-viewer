@@ -84,7 +84,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 								<MapExplorer
 									mapData={deoptInfo.maps}
 									fileDeoptInfo={fileDeoptInfo}
-									initialMapId={params.entryId}
+									routeParams={params}
 									settings={codeSettings}
 									fileId={routeParams.fileId}
 								/>

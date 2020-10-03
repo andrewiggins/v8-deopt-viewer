@@ -82,13 +82,13 @@ function codeContextReducer(state, action) {
 			return {
 				prevPosition: state.selectedPosition,
 				prevMarkerId: state.selectedMarkerId,
-				selectedPosition: {
+				selectedPosition: entry && {
 					functionName: entry.functionName,
 					file: entry.file,
 					line: entry.line,
 					column: entry.column,
 				},
-				selectedMarkerId: getMarkerId(entry),
+				selectedMarkerId: entry && getMarkerId(entry),
 			};
 		default:
 			return state;
@@ -132,7 +132,7 @@ export function CodePanelProvider(props) {
 }
 
 const useCodePanelState = () => useContext(CodePanelStateContext);
-const useCodePanelDispatch = () => useContext(CodePanelDispatchContext);
+export const useCodePanelDispatch = () => useContext(CodePanelDispatchContext);
 
 /**
  * @param {Entry} entry
@@ -191,6 +191,9 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 			// the first or last call to scrollIntoView with behavior smooth works?
 			target.scrollIntoView({ block: "center", behavior: "smooth" });
 		}
+
+		// TODO: Figure out how to scroll line number into view when
+		// selectedPosition is set but selectedMarkerId is not
 	}, [state]);
 
 	return (
