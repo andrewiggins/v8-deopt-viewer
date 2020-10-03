@@ -1,3 +1,11 @@
+interface FilePosition {
+	functionName: string;
+	file: string;
+	line: number;
+	column: number;
+	optimizationState?: CodeState;
+}
+
 // ======================================
 // #region Code types
 
@@ -112,13 +120,7 @@ interface MapEntry {
 	/** Children Edge IDs */
 	children?: string[];
 	isDeprecated?: boolean;
-	filePosition?: {
-		functionName: string;
-		file: string;
-		line: number;
-		column: number;
-		optimizationState: CodeState;
-	};
+	filePosition?: FilePosition;
 }
 
 type MapEdgeType =

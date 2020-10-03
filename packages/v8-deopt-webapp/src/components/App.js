@@ -2,6 +2,7 @@ import { createElement, Fragment } from "preact";
 import { Router, Route, useRoute } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
+import { fileRoute, summaryRoute } from "../routes";
 import { FileViewer } from "./FileViewer";
 import { btn, icon, icon_back } from "../spectre.scss";
 import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
@@ -16,16 +17,14 @@ export function App({ deoptInfo }) {
 		<Fragment>
 			<Router hook={useHashLocation}>
 				<Header />
-				<Route path="/">
+				<Route path={summaryRoute.route}>
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
-				<Route path="/file/:fileId?/:entryType?/:entryId?">
+				<Route path={fileRoute.route}>
 					{(params) => (
 						<FileViewer
 							routeParams={{
 								fileId: parseInt(params.fileId) || 0,
-								entryType: params.entryType || "codes",
-								entryId: params.entryId || null,
 							}}
 							files={files}
 							deoptInfo={deoptInfo}

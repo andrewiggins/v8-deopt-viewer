@@ -2,6 +2,7 @@ import { createElement, Fragment } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
 import { formatMapId } from "../../utils/mapUtils";
+import { codeRoute, deoptsRoute, icsRoute } from "../../routes";
 import { table, table_striped, table_hover } from "../../spectre.scss";
 import {
 	entryTable,
@@ -12,6 +13,7 @@ import {
 	sev2,
 	sev3,
 } from "./DeoptTables.scss";
+import { useHighlightEntry } from "../CodePanel";
 
 /**
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
@@ -19,8 +21,8 @@ import {
  * @typedef DeoptTablesProps
  * @property {FileV8DeoptInfo} fileDeoptInfo
  * @property {import('../FileViewer').EntryKind} entryKind
- * @property {import('v8-deopt-parser').Entry} selectedEntry
- * @property {string} urlBase
+ * @property {string} selectedEntryId
+ * @property {number} fileId
  * @property {boolean} showAllICs
  * @property {boolean} hasMapData
  *
@@ -28,13 +30,13 @@ import {
  */
 export function DeoptTables({
 	entryKind,
-	selectedEntry,
+	selectedEntryId,
 	fileDeoptInfo,
-	urlBase,
+	fileId,
 	showAllICs,
 	hasMapData,
 }) {
-	const selectedId = selectedEntry?.id;
+	const selectedId = selectedEntryId;
 
 	let entries;
 	if (entryKind == "codes") {
@@ -46,8 +48,9 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase + "/codes"}
+						route={codeRoute}
 						relativePath={fileDeoptInfo.relativePath}
+						fileId={fileId}
 					/>
 				}
 			/>
@@ -61,8 +64,9 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase + "/deopts"}
+						route={deoptsRoute}
 						relativePath={fileDeoptInfo.relativePath}
+						fileId={fileId}
 					/>
 				}
 			/>
@@ -78,8 +82,9 @@ export function DeoptTables({
 				title={
 					<EntryTitle
 						entry={entry}
-						urlBase={urlBase + "/ics"}
+						route={icsRoute}
 						relativePath={fileDeoptInfo.relativePath}
+						fileId={fileId}
 					/>
 				}
 			/>
@@ -95,6 +100,7 @@ export function DeoptTables({
  * @param {{ entry: import("v8-deopt-parser").CodeEntry; selected: boolean; title: any }} props
  */
 function CodeEntry({ entry, selected, title }) {
+	useHighlightEntry(entry, selected);
 	const ref = useScrollIntoView(selected);
 
 	return (
@@ -131,6 +137,7 @@ function CodeEntry({ entry, selected, title }) {
  * @param {{ entry: import("v8-deopt-parser").DeoptEntry; selected: boolean; title: any }} props
  */
 function DeoptEntry({ entry, selected, title }) {
+	useHighlightEntry(entry, selected);
 	const ref = useScrollIntoView(selected);
 
 	return (
@@ -173,6 +180,7 @@ function DeoptEntry({ entry, selected, title }) {
  * @param {{ entry: import("v8-deopt-parser").ICEntry; selected: boolean; title: any; showAllICs: boolean; hasMapData: boolean; }} props
  */
 function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
+	useHighlightEntry(entry, selected);
 	const ref = useScrollIntoView(selected);
 
 	return (
@@ -226,11 +234,17 @@ function ICEntry({ entry, selected, title, showAllICs, hasMapData }) {
 }
 
 /**
- * @param {{ entry: import("v8-deopt-parser").Entry; relativePath: string; urlBase: string; }} props
+ * @typedef EntryTitleProps
+ * @property {import('v8-deopt-parser').Entry} entry
+ * @property {string} relativePath
+ * @property {import('../../').Route<[number, string]>} route
+ * @property {number} fileId
+ * @param {EntryTitleProps} props
  */
-function EntryTitle({ entry, relativePath, urlBase }) {
-	const href = `${urlBase}/${entry.id}`;
+function EntryTitle({ entry, relativePath, route, fileId }) {
+	const href = route.getHref(fileId, entry.id);
 	const linkText = `${entry.functionName} at ${relativePath}:${entry.line}:${entry.column}`;
+
 	return (
 		<Fragment>
 			<span class={entryIdClass}>{entry.id} </span>
@@ -262,7 +276,9 @@ function useScrollIntoView(selected) {
 	const ref = useRef(null);
 	useEffect(() => {
 		if (selected) {
-			ref.current.scrollIntoView({ behavior: "smooth" });
+			// TODO: Why doesn't the smooth behavior always work? It seems that only
+			// the first or last call to scrollIntoView with behavior smooth works?
+			ref.current.scrollIntoView({ block: "center" });
 		}
 	}, [selected]);
 

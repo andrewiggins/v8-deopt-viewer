@@ -20,7 +20,12 @@
 		border: 1px solid var($sevColor);
 	}
 
-	&:target mark {
+	// &:target mark {
+	// 	background-color: yellow;
+	// 	border: 2px solid var($sevColor);
+	// }
+
+	&.active mark {
 		background-color: yellow;
 		border: 2px solid var($sevColor);
 	}

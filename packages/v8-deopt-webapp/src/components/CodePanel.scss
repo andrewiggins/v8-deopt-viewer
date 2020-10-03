@@ -52,7 +52,7 @@
 	border-right: none;
 	border-radius: 0.1rem;
 	border-top-right-radius: 0;
-	scroll-padding-top: 50%;
+	// scroll-padding-top: 50%; // Using scrollIntoView + block:center option instead
 
 	background-color: #f5f2f0; // Make sure background is consistent on very small and very large screens.
 }

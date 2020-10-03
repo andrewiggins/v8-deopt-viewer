@@ -21,6 +21,7 @@ import {
 	timeline_content,
 } from "../../spectre.scss";
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
+import { mapsRoute } from "../../routes";
 import { formatMapId, hasMapData } from "../../utils/mapUtils";
 
 /**
@@ -120,9 +121,9 @@ function initGroupingState(props) {
  * @typedef MapExplorerProps
  * @property {MapData} mapData
  * @property {FileV8DeoptInfo} fileDeoptInfo
- * @property {MapEntry} selectedMap
+ * @property {MapEntry["id"]} initialMapId
  * @property {import('../CodeSettings').CodeSettingsState} settings;
- * @property {string} urlBase
+ * @property {number} fileId
  *
  * @param {MapExplorerProps} props
  */
@@ -299,7 +300,7 @@ export function MapExplorer(props) {
 				</div>
 			</div>
 			<p>
-				<a href={props.urlBase + "/maps"}>Link to Maps</a>
+				<a href={mapsRoute.getHref(props.fileId)}>Link to Maps</a>
 				<MapTimeline
 					mapData={props.mapData}
 					selectedEntry={props.mapData.nodes[state.selectedMapId]}
