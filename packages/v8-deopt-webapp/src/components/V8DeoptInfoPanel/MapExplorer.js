@@ -23,7 +23,7 @@ import {
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { mapsRoute } from "../../routes";
 import { formatMapId, hasMapData } from "../../utils/mapUtils";
-import { useCodePanelDispatch } from "../CodePanel";
+import { useAppDispatch } from "../appState";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping
@@ -56,7 +56,7 @@ const mapGroupings = {
  * // GroupingValues
  * @typedef {{ group: "loadic"; id: string; label: string, mapIds: string[]; entry: import("v8-deopt-parser").ICEntry; }} LoadICGroupingValue
  * @typedef {{ group: "property"; id: string; label: string, mapIds: string[] }} PropertyGroupingValue
- * @typedef {{ group: "create"; id: string; label: string, mapIds: string[]; filePosition: import("../CodePanel").FilePosition; }} CreateGroupingValue
+ * @typedef {{ group: "create"; id: string; label: string, mapIds: string[]; filePosition: import("v8-deopt-parser").FilePosition; }} CreateGroupingValue
  * @typedef {{ group: "mapid"; id: string; label: string, mapIds: string[] }} MapIdGroupingValue
  * @typedef {LoadICGroupingValue | PropertyGroupingValue | CreateGroupingValue | MapIdGroupingValue} GroupingValue
  * // State
@@ -250,7 +250,7 @@ export function MapExplorer(props) {
 
 	const mapIds = state.selectedGroup.mapIds;
 
-	const { setSelectedEntry, setSelectedPosition } = useCodePanelDispatch();
+	const { setSelectedEntry, setSelectedPosition } = useAppDispatch();
 	useEffect(() => {
 		if (state.selectedGroup.group == "loadic") {
 			setSelectedEntry(state.selectedGroup.entry);

@@ -16,6 +16,7 @@ import {
 	showLowSevs as showLowSevsClass,
 	active,
 } from "../utils/deoptMarkers.scss";
+import { useAppDispatch, useAppState } from "./appState";
 
 // Turn on auto highlighting by Prism
 Prism.manual = true;
@@ -38,108 +39,11 @@ function determineLanguage(path) {
 }
 
 /**
- * @typedef {import('v8-deopt-parser').FilePosition} FilePosition
- *
- * @typedef CodePanelDispatchContextValue
- * @property {(newPos: FilePosition) => void} setSelectedPosition
- * @property {(newEntry: import('v8-deopt-parser').Entry) => void} setSelectedEntry
- */
-
-/** @type {import('preact').PreactContext<CodeContextState>} */
-const CodePanelStateContext = createContext(null);
-
-/** @type {import('preact').PreactContext<CodePanelDispatchContextValue>} */
-const CodePanelDispatchContext = createContext(null);
-
-/**
- * @typedef {import('v8-deopt-parser').Entry} Entry
- * // State
- * @typedef CodeContextState
- * @property {FilePosition} prevPosition
- * @property {string} prevMarkerId
- * @property {FilePosition} selectedPosition
- * @property {string} selectedMarkerId
- * // Actions
- * @typedef {{ type: "SET_SELECTED_POSITION"; newPosition: FilePosition; }} SetSelectedPosition
- * @typedef {{ type: "SET_SELECTED_ENTRY"; entry: Entry; }} SetSelectedEntry
- * @typedef {SetSelectedPosition | SetSelectedEntry} CodeContextAction
- * // Reducer
- * @param {CodeContextState} state
- * @param {CodeContextAction} action
- * @returns {CodeContextState}
- */
-function codeContextReducer(state, action) {
-	switch (action.type) {
-		case "SET_SELECTED_POSITION":
-			return {
-				prevPosition: state.selectedPosition,
-				prevMarkerId: state.selectedMarkerId,
-				selectedPosition: action.newPosition,
-				selectedMarkerId: null,
-			};
-		case "SET_SELECTED_ENTRY":
-			const entry = action.entry;
-			return {
-				prevPosition: state.selectedPosition,
-				prevMarkerId: state.selectedMarkerId,
-				selectedPosition: entry && {
-					functionName: entry.functionName,
-					file: entry.file,
-					line: entry.line,
-					column: entry.column,
-				},
-				selectedMarkerId: entry && getMarkerId(entry),
-			};
-		default:
-			return state;
-	}
-}
-
-/** @type {(props: any) => CodeContextState} */
-const initialState = (props) => ({
-	prevPosition: null,
-	prevMarkerId: null,
-	selectedPosition: null,
-	selectedMarkerId: null,
-});
-
-/**
- * @typedef CodePanelProviderProps
- * @property {import('preact').JSX.Element | import('preact').JSX.Element[]} children
- * @param {CodePanelProviderProps} props
- */
-export function CodePanelProvider(props) {
-	const [state, dispatch] = useReducer(codeContextReducer, props, initialState);
-	const dispatchers = useMemo(
-		() => ({
-			setSelectedPosition(newPosition) {
-				dispatch({ type: "SET_SELECTED_POSITION", newPosition });
-			},
-			setSelectedEntry(entry) {
-				dispatch({ type: "SET_SELECTED_ENTRY", entry });
-			},
-		}),
-		[dispatch]
-	);
-
-	return (
-		<CodePanelDispatchContext.Provider value={dispatchers}>
-			<CodePanelStateContext.Provider value={state}>
-				{props.children}
-			</CodePanelStateContext.Provider>
-		</CodePanelDispatchContext.Provider>
-	);
-}
-
-const useCodePanelState = () => useContext(CodePanelStateContext);
-export const useCodePanelDispatch = () => useContext(CodePanelDispatchContext);
-
-/**
- * @param {Entry} entry
+ * @param {import('v8-deopt-parser').Entry} entry
  * @param {boolean} shouldHighlight
  */
 export function useHighlightEntry(entry, shouldHighlight) {
-	const { setSelectedEntry } = useCodePanelDispatch();
+	const { setSelectedEntry } = useAppDispatch();
 	useEffect(() => {
 		if (shouldHighlight) {
 			setSelectedEntry(entry);
@@ -163,7 +67,7 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 
 	const lang = determineLanguage(fileDeoptInfo.srcPath);
 
-	const state = useCodePanelState();
+	const state = useAppState();
 	const selectedLine = state.selectedPosition?.line;
 
 	/**
@@ -181,11 +85,13 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 	}, [fileId, fileDeoptInfo]);
 
 	useEffect(() => {
-		if (state.prevMarkerId) {
-			markers.get(state.prevMarkerId)?.classList.remove(active);
+		if (state.prevSelectedEntry) {
+			markers
+				.get(getMarkerId(state.prevSelectedEntry))
+				?.classList.remove(active);
 		}
-		if (state.selectedMarkerId) {
-			const target = markers.get(state.selectedMarkerId);
+		if (state.selectedEntry) {
+			const target = markers.get(getMarkerId(state.selectedEntry));
 			target.classList.add(active);
 			// TODO: Why doesn't the smooth behavior always work? It seems that only
 			// the first or last call to scrollIntoView with behavior smooth works?
@@ -219,7 +125,7 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
  * @typedef {{ lang: string; src: string; class?: string; children?: any }} PrismCodeProps
  * @type {import('preact').FunctionComponent<PrismCodeProps>}
  */
-const PrismCode = forwardRef((props, ref) => {
+const PrismCode = forwardRef(function PrismCode(props, ref) {
 	const className = [`language-${props.lang}`, props.class].join(" ");
 
 	// TODO: File route changes will unmount and delete this cache. May be useful

@@ -10,9 +10,18 @@ export const summaryRoute = {
 /** @type {import('./').Route<[number]>} */
 export const fileRoute = {
 	id: "file",
-	route: "/file/:fileId/:path*",
-	getHref(fileId = null) {
-		return `#/file/${fileId ? fileId : ""}`;
+	route: "/file/:fileId/:tabId?/:path*",
+	getHref(fileId = null, tabId = null) {
+		let url = "#/file/";
+		if (fileId) {
+			url += fileId + "/";
+
+			if (tabId) {
+				url += tabId + "/";
+			}
+		}
+
+		return url;
 	},
 };
 

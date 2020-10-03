@@ -25,6 +25,7 @@ export function App({ deoptInfo }) {
 						<FileViewer
 							routeParams={{
 								fileId: parseInt(params.fileId) || 0,
+								tabId: params.tabId,
 							}}
 							files={files}
 							deoptInfo={deoptInfo}

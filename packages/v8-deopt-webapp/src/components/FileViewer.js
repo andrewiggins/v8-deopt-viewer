@@ -1,7 +1,8 @@
-import { createElement } from "preact";
+import { createElement, createContext } from "preact";
+import { useState, useReducer, useMemo, useContext } from "preact/hooks";
 import { Route, Switch } from "wouter-preact";
 import { V8DeoptInfoPanel } from "./V8DeoptInfoPanel";
-import { CodePanel, CodePanelProvider } from "./CodePanel";
+import { CodePanel } from "./CodePanel";
 import { CodeSettings, useCodeSettingsState } from "./CodeSettings";
 import {
 	fileViewer,
@@ -11,15 +12,19 @@ import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer";
 import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
 import { hasMapData } from "../utils/mapUtils";
 import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../routes";
+import { AppProvider } from "./appState";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind
- * @typedef {{ fileId: number; }} RouteParams
+ * @typedef {{ fileId: number; tabId?: string }} RouteParams
  * @typedef {{ routeParams: RouteParams; deoptInfo: import('..').PerFileDeoptInfoWithSources; files: string[]; }} FileViewerProps
  * @param {FileViewerProps} props
  */
 export function FileViewer({ files, deoptInfo, routeParams }) {
-	const fileDeoptInfo = deoptInfo.files[files[routeParams.fileId]];
+	const { fileId, tabId } = routeParams;
+	// TODO: COnsider using local state for tab navigation
+	// const selectedTab = useState(tabId);
+	const fileDeoptInfo = deoptInfo.files[files[fileId]];
 
 	const [codeSettings, toggleSetting] = useCodeSettingsState();
 
@@ -27,7 +32,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 
 	return (
 		<div class={fileViewer}>
-			<CodePanelProvider>
+			<AppProvider>
 				<CodeSettings
 					class={codeSettingsClass}
 					state={codeSettings}
@@ -35,13 +40,10 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 				/>
 				<CodePanel
 					fileDeoptInfo={fileDeoptInfo}
-					fileId={routeParams.fileId}
+					fileId={fileId}
 					settings={codeSettings}
 				/>
-				<V8DeoptInfoPanel
-					fileId={routeParams.fileId}
-					title={fileDeoptInfo.relativePath}
-				>
+				<V8DeoptInfoPanel fileId={fileId} title={fileDeoptInfo.relativePath}>
 					<Switch>
 						<Route path={codeRoute.route}>
 							{(params) => (
@@ -49,7 +51,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									entryKind="codes"
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
-									fileId={routeParams.fileId}
+									fileId={fileId}
 									showAllICs={codeSettings.showAllICs}
 									hasMapData={hasMaps}
 								/>
@@ -61,7 +63,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									entryKind="deopts"
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
-									fileId={routeParams.fileId}
+									fileId={fileId}
 									showAllICs={codeSettings.showAllICs}
 									hasMapData={hasMaps}
 								/>
@@ -73,7 +75,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									entryKind="ics"
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
-									fileId={routeParams.fileId}
+									fileId={fileId}
 									showAllICs={codeSettings.showAllICs}
 									hasMapData={hasMaps}
 								/>
@@ -86,13 +88,13 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									fileDeoptInfo={fileDeoptInfo}
 									routeParams={params}
 									settings={codeSettings}
-									fileId={routeParams.fileId}
+									fileId={fileId}
 								/>
 							)}
 						</Route>
 					</Switch>
 				</V8DeoptInfoPanel>
-			</CodePanelProvider>
+			</AppProvider>
 		</div>
 	);
 }
