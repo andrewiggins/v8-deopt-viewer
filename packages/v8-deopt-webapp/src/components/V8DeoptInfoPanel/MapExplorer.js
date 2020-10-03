@@ -203,33 +203,16 @@ export function MapExplorer(props) {
 	// - https://picturepan2.github.io/spectre/components/tabs.html
 	// 		- ?
 
-	// TODO: Make ICEntry maps linkable to the Map Explorer, that loads the loadic
-	// grouping for that location when the clicked map id selected
-
-	// TODO: Given all the above scenarios, what is the map explorer URL? Probably
-	// need to add some routing URL helper functions to generate URLs.
-
-	// TODO: Should selecting a creation or loadic location go to that location on
-	// the code panel? Probably not but perhaps each map transition associated
-	// with a source location should have a link to "show location" or "go to
-	// location". Need to handle cross file links since maps aren't file specific.
+	// TODO: Each map transition associated with a source location should have a
+	// link to "show location" or "go to location". Need to handle cross file
+	// links since maps aren't file specific.
 	//
 	// Would be important to keep existing Map Explorer view/selection. Would not
 	// want to rebuild the DOM and lose focus. Would be nice to use normal links
 	// and routing for cross-file changes but it might be hard to keep focus on
 	// the existing element...
 
-	// TODO: ^^Related to the above, probably need to find a way to highlight
-	// markers not based on the fragment since multiple links (ICEntry and
-	// loadic-map entry) want to highlight the same marker.
-
-	// TODO: Render map trees. Selecting a map should display its formatted
-	// description. Perhaps as a baby step, turn the existing map ID list into an
-	// accordion that shows the map description when selected and updates the URL.
-	// Consider using Spectre's
-	// [Timeline](https://picturepan2.github.io/spectre/experimentals/timelines.html)
-	// component to display Map transitions, but it can't show the map graph when
-	// maps share the same parent...
+	// TODO: Show entire tree (all children) for selected map
 
 	// TODO: Maybe I just just re-design the entire UI lol. Initial drawings I
 	// like:
