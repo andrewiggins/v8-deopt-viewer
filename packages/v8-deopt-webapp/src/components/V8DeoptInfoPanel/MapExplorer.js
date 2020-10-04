@@ -1,5 +1,5 @@
 import { createElement, Fragment } from "preact";
-import { useEffect, useReducer } from "preact/hooks";
+import { useEffect, useReducer, useState } from "preact/hooks";
 import { useLocation } from "wouter-preact";
 import {
 	map_selectors,
@@ -175,7 +175,6 @@ export function MapExplorer(props) {
 	//  active route and read it's state from that route, else rely on local or
 	//  global shared state.
 	//
-	//  - Fix timeline icon links
 	//  - How to make timeline item titles look clickable?
 	//  - Setup button/link in timeline to show creation location of a map in src
 	//    and scroll it into view
@@ -373,9 +372,12 @@ function MapTimeline({ mapData, selectedEntry }) {
  * @param {{ mapData: MapData; map: MapEntry, selected?: boolean }} props
  */
 function MapTimelineItem({ mapData, map, selected = false }) {
+	const detailsId = `${map.id}-details`;
 	const map_timeline_item = "";
 	const selected_class = "";
 	const map_icon = "";
+
+	const [open, setOpen] = useState(selected);
 
 	const parentEdge = map.edge ? mapData.edges[map.edge] : null;
 	return (
@@ -383,19 +385,30 @@ function MapTimelineItem({ mapData, map, selected = false }) {
 			class={`${timeline_item} ${map_timeline_item} ${
 				selected ? selected_class : ""
 			}`}
-			id="timeline-example-1"
 		>
 			<div class={timeline_left}>
-				<a
+				<button
 					class={`${timeline_icon} ${selected ? icon_lg : ""} ${map_icon}`}
-					href="#timeline-example-1"
+					aria-controls={detailsId}
+					style={{
+						padding: 0,
+						border: 0,
+						cursor: "pointer",
+						background: selected ? "#5755d9" : "inherit",
+					}}
+					onClick={() => setOpen((opened) => !opened)}
 				>
 					{selected ? <i class={`${icon} ${getEdgeIcon(parentEdge)}`}></i> : ""}
-				</a>
+				</button>
 			</div>
 			<div class={timeline_content}>
-				<details class={map_details} open={selected}>
-					<summary>
+				<details id={detailsId} class={map_details} open={open}>
+					<summary
+						onClick={(ev) => {
+							ev.preventDefault();
+							setOpen((opened) => !opened);
+						}}
+					>
 						{selected ? (
 							<strong>
 								{parentEdge ? edgeToString(parentEdge) : map.address}
