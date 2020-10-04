@@ -7,6 +7,8 @@ import {
 	group_value,
 	map_ids,
 	map_details,
+	map_title,
+	selected as selected_class,
 } from "./MapExplorer.scss";
 import {
 	form_group,
@@ -175,9 +177,12 @@ export function MapExplorer(props) {
 	//  active route and read it's state from that route, else rely on local or
 	//  global shared state.
 	//
-	//  - How to make timeline item titles look clickable?
 	//  - Setup button/link in timeline to show creation location of a map in src
 	//    and scroll it into view
+	//    <p>
+	// 	    {map.filePosition.functionName} {map.filePosition.file}:
+	// 	    {map.filePosition.line}:{map.filePosition.column}
+	//    </p>
 	//  - Look at other TODOs in this file
 
 	// TODO: Since map explorer is across files, re-consider how general nav works.
@@ -373,19 +378,15 @@ function MapTimeline({ mapData, selectedEntry }) {
  */
 function MapTimelineItem({ mapData, map, selected = false }) {
 	const detailsId = `${map.id}-details`;
+	const selectedClass = selected ? selected_class : "";
 	const map_timeline_item = "";
-	const selected_class = "";
 	const map_icon = "";
 
 	const [open, setOpen] = useState(selected);
 
 	const parentEdge = map.edge ? mapData.edges[map.edge] : null;
 	return (
-		<div
-			class={`${timeline_item} ${map_timeline_item} ${
-				selected ? selected_class : ""
-			}`}
-		>
+		<div class={`${timeline_item} ${map_timeline_item} ${selectedClass}`}>
 			<div class={timeline_left}>
 				<button
 					class={`${timeline_icon} ${selected ? icon_lg : ""} ${map_icon}`}
@@ -404,27 +405,15 @@ function MapTimelineItem({ mapData, map, selected = false }) {
 			<div class={timeline_content}>
 				<details id={detailsId} class={map_details} open={open}>
 					<summary
+						class={`${selectedClass} ${map_title}`}
 						onClick={(ev) => {
 							ev.preventDefault();
 							setOpen((opened) => !opened);
 						}}
 					>
-						{selected ? (
-							<strong>
-								{parentEdge ? edgeToString(parentEdge) : map.address}
-							</strong>
-						) : parentEdge ? (
-							edgeToString(parentEdge)
-						) : (
-							map.address
-						)}
+						{parentEdge ? edgeToString(parentEdge) : map.address}
 					</summary>
 					<div>{formatDescription(map)}</div>
-					{/* TODO: Figure out what to do with the map's position */}
-					{/* <p>
-						{map.filePosition.functionName} {map.filePosition.file}:
-						{map.filePosition.line}:{map.filePosition.column}
-					</p> */}
 				</details>
 			</div>
 		</div>

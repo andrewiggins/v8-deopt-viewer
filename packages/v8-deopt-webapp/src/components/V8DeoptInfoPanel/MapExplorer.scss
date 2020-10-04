@@ -21,3 +21,15 @@
 .map_details > summary {
 	cursor: pointer;
 }
+
+.map_details > summary.map_title {
+	&:hover,
+	&:focus {
+		color: #5755d9;
+		text-decoration: underline;
+	}
+
+	&.selected {
+		font-weight: bold;
+	}
+}
