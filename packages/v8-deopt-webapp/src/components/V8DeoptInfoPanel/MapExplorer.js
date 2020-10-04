@@ -1,5 +1,6 @@
 import { createElement, Fragment } from "preact";
 import { useEffect, useReducer } from "preact/hooks";
+import { useLocation } from "wouter-preact";
 import {
 	map_selectors,
 	grouping as map_grouping,
@@ -163,7 +164,6 @@ export function MapExplorer(props) {
 	}
 
 	// IMMEDIATE TODOS:
-	//  - Changing the MapExplorer toggles should update the URL
 	//  - Hmm should switching tabs loose state in Map Explorer? Probs not :(
 	//  - Can selecting a loadIC location also highlight that IC entry in the IC
 	//    Explorer tab to maintain context between the two?
@@ -231,6 +231,8 @@ export function MapExplorer(props) {
 		initGroupingState
 	);
 
+	const [_, setLocation] = useLocation();
+
 	const mapIds = state.selectedGroup.mapIds;
 
 	const { setSelectedEntry, setSelectedPosition } = useAppDispatch();
@@ -263,6 +265,7 @@ export function MapExplorer(props) {
 								newGrouping: grouping,
 								newGroupValues: getGroupingValues(props, grouping),
 							});
+							setLocation(mapsRoute.getHref(props.fileId, grouping));
 						}}
 						id="map-grouping"
 						class={form_select}
@@ -281,10 +284,14 @@ export function MapExplorer(props) {
 					<select
 						value={state.selectedGroup?.id ?? ""}
 						onChange={(e) => {
+							const newGroupValue = e.currentTarget.value;
 							dispatch({
 								type: "SET_GROUP_VALUE",
-								newValue: e.currentTarget.value,
+								newValue: newGroupValue,
 							});
+							setLocation(
+								mapsRoute.getHref(props.fileId, state.grouping, newGroupValue)
+							);
 						}}
 						id="map-group"
 						class={form_select}
@@ -309,10 +316,19 @@ export function MapExplorer(props) {
 						class={form_select}
 						disabled={mapIds.length < 2}
 						onChange={(e) => {
+							const newMapId = e.currentTarget.value;
 							dispatch({
 								type: "SET_MAP_ID",
-								newMapId: e.currentTarget.value,
+								newMapId,
 							});
+							setLocation(
+								mapsRoute.getHref(
+									props.fileId,
+									state.grouping,
+									state.selectedGroup.id,
+									newMapId
+								)
+							);
 						}}
 					>
 						{mapIds.length == 0 ? (
@@ -325,13 +341,10 @@ export function MapExplorer(props) {
 					</select>
 				</div>
 			</div>
-			<p>
-				<a href={mapsRoute.getHref(props.fileId)}>Link to Maps</a>
-				<MapTimeline
-					mapData={props.mapData}
-					selectedEntry={props.mapData.nodes[state.selectedMapId]}
-				/>
-			</p>
+			<MapTimeline
+				mapData={props.mapData}
+				selectedEntry={props.mapData.nodes[state.selectedMapId]}
+			/>
 		</Fragment>
 	);
 }
