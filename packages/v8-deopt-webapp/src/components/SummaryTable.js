@@ -61,7 +61,7 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 					return (
 						<tr key={fileName}>
 							<td class={fileNameClass}>
-								<a href={`#/file/${i}`} title={fileName}>
+								<a href={`#/file/${i}/codes`} title={fileName}>
 									{deoptInfo.files[fileName].relativePath}
 								</a>
 							</td>
