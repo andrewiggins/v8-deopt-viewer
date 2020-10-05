@@ -90,12 +90,18 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 				.get(getMarkerId(state.prevSelectedEntry))
 				?.classList.remove(active);
 		}
+
+		/** @type {ScrollIntoViewOptions} */
+		const scrollIntoViewOpts = { block: "center", behavior: "smooth" };
 		if (state.selectedEntry) {
 			const target = markers.get(getMarkerId(state.selectedEntry));
 			target.classList.add(active);
 			// TODO: Why doesn't the smooth behavior always work? It seems that only
 			// the first or last call to scrollIntoView with behavior smooth works?
-			target.scrollIntoView({ block: "center", behavior: "smooth" });
+			target.scrollIntoView(scrollIntoViewOpts);
+		} else if (state.selectedPosition) {
+			const lineSelector = `.line-numbers-rows > span:nth-child(${state.selectedPosition.line})`;
+			document.querySelector(lineSelector)?.scrollIntoView(scrollIntoViewOpts);
 		}
 
 		// TODO: Figure out how to scroll line number into view when

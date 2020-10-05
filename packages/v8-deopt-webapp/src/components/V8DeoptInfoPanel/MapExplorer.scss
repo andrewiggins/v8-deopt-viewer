@@ -22,6 +22,12 @@
 	cursor: pointer;
 }
 
+.goto_loc_btn {
+	padding: 0;
+	float: right;
+	height: auto;
+}
+
 .map_details > summary.map_title {
 	&:hover,
 	&:focus {

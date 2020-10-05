@@ -9,8 +9,11 @@ import {
 	map_details,
 	map_title,
 	selected as selected_class,
+	goto_loc_btn,
 } from "./MapExplorer.scss";
 import {
+	btn,
+	btn_link,
 	form_group,
 	form_select,
 	form_label,
@@ -26,7 +29,7 @@ import {
 import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { mapsRoute } from "../../routes";
 import { formatMapId, hasMapData } from "../../utils/mapUtils";
-import { useAppDispatch } from "../appState";
+import { useAppDispatch, useAppState } from "../appState";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping
@@ -239,7 +242,13 @@ export function MapExplorer(props) {
 
 	const mapIds = state.selectedGroup.mapIds;
 
+	const appState = useAppState();
 	const { setSelectedEntry, setSelectedPosition } = useAppDispatch();
+	const showICLocation =
+		appState.selectedEntry == null &&
+		appState.selectedPosition != null &&
+		state.grouping == "loadic";
+
 	useEffect(() => {
 		if (state.selectedGroup.group == "loadic") {
 			setSelectedEntry(state.selectedGroup.entry);
@@ -345,9 +354,25 @@ export function MapExplorer(props) {
 					</select>
 				</div>
 			</div>
+			<p style={{ marginBottom: "1.5rem" }}>
+				{showICLocation && (
+					<button
+						class={`${btn} ${btn_link} ${goto_loc_btn}`}
+						style={{ float: "right" }}
+						onClick={() => {
+							if (state.selectedGroup.group == "loadic") {
+								setSelectedEntry(state.selectedGroup.entry);
+							}
+						}}
+					>
+						Show IC location
+					</button>
+				)}
+			</p>
 			<MapTimeline
 				mapData={props.mapData}
 				selectedEntry={props.mapData.nodes[state.selectedMapId]}
+				selectedPosition={appState.selectedPosition}
 			/>
 		</Fragment>
 	);
@@ -357,32 +382,49 @@ export function MapExplorer(props) {
  * @typedef MapTimelineProps
  * @property {MapData} mapData
  * @property {MapEntry} selectedEntry
+ * @property {import("../appState").FilePosition} selectedPosition
  *
  * @param {MapTimelineProps} props
  */
-function MapTimeline({ mapData, selectedEntry }) {
+function MapTimeline({ mapData, selectedEntry, selectedPosition }) {
 	const mapParents = getMapParents(mapData, selectedEntry);
 
 	return (
 		<div class={timeline}>
 			{mapParents.reverse().map((map) => (
-				<MapTimelineItem key={map.id} mapData={mapData} map={map} />
+				<MapTimelineItem
+					key={map.id}
+					mapData={mapData}
+					map={map}
+					selectedPosition={selectedPosition}
+				/>
 			))}
-			<MapTimelineItem mapData={mapData} map={selectedEntry} selected />
+			<MapTimelineItem
+				mapData={mapData}
+				map={selectedEntry}
+				selectedPosition={selectedPosition}
+				selected
+			/>
 		</div>
 	);
 }
 
 /**
- * @param {{ mapData: MapData; map: MapEntry, selected?: boolean }} props
+ * @typedef MapTimelineItemProps
+ * @property {MapData} mapData
+ * @property {MapEntry} map
+ * @property {boolean} [selected]
+ * @property {import("../appState").FilePosition} selectedPosition
+ * @param {MapTimelineItemProps} props
  */
-function MapTimelineItem({ mapData, map, selected = false }) {
+function MapTimelineItem({ mapData, map, selected = false, selectedPosition }) {
 	const detailsId = `${map.id}-details`;
 	const selectedClass = selected ? selected_class : "";
 	const map_timeline_item = "";
 	const map_icon = "";
 
 	const [open, setOpen] = useState(selected);
+	const { setSelectedPosition } = useAppDispatch();
 
 	const parentEdge = map.edge ? mapData.edges[map.edge] : null;
 	return (
@@ -413,7 +455,16 @@ function MapTimelineItem({ mapData, map, selected = false }) {
 					>
 						{parentEdge ? edgeToString(parentEdge) : map.address}
 					</summary>
-					<div>{formatDescription(map)}</div>
+					<div>
+						<button
+							class={`${btn} ${btn_link} ${goto_loc_btn}`}
+							disabled={isSameLocation(map.filePosition, selectedPosition)}
+							onClick={() => setSelectedPosition(map.filePosition)}
+						>
+							Show creation location
+						</button>
+						{formatDescription(map)}
+					</div>
 				</details>
 			</div>
 		</div>
@@ -576,4 +627,20 @@ function getEdgeIcon(edge) {
 		default:
 			return "";
 	}
+}
+
+/**
+ * @param {import('../appState').FilePosition} loc1
+ * @param {import('../appState').FilePosition} loc2
+ * @returns {boolean}
+ */
+function isSameLocation(loc1, loc2) {
+	return (
+		loc1 !== null &&
+		loc2 !== null &&
+		loc1.file == loc2.file &&
+		loc1.functionName == loc2.functionName &&
+		loc1.line == loc2.line &&
+		loc1.column == loc2.column
+	);
 }
