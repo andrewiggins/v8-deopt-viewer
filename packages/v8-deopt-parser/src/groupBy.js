@@ -12,7 +12,7 @@ export function groupByFile(rawDeoptInfo) {
 	for (const kind of kinds) {
 		for (const entry of rawDeoptInfo[kind]) {
 			if (!(entry.file in files)) {
-				files[entry.file] = { ics: [], deopts: [], codes: [] };
+				files[entry.file] = { id: entry.file, ics: [], deopts: [], codes: [] };
 			}
 
 			// @ts-ignore

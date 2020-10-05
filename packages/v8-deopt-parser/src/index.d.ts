@@ -155,6 +155,7 @@ interface MapData {
 type Entry = ICEntry | DeoptEntry | CodeEntry;
 
 interface FileV8DeoptInfo {
+	id: string;
 	ics: ICEntry[];
 	deopts: DeoptEntry[];
 	codes: CodeEntry[];
