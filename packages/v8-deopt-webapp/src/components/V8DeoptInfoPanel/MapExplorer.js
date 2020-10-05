@@ -519,21 +519,27 @@ function getGroupingValues(props, grouping) {
 
 		return Array.from(properties.values());
 	} else if (grouping == "create") {
-		/** @type {GroupingValue[]} */
-		const values = [];
+		/** @type {Map<string, GroupingValue>} */
+		const createLocs = new Map();
 		for (let mapId in mapData.nodes) {
 			const map = mapData.nodes[mapId];
 			if (map.filePosition) {
-				values.push({
-					group: "create",
-					id: `${grouping}-${map.id}`,
-					label: formatLocation(map.filePosition),
-					mapIds: [map.id],
-					filePosition: map.filePosition,
-				});
+				const key = formatLocation(map.filePosition);
+				if (createLocs.has(key)) {
+					createLocs.get(key).mapIds.push(map.id);
+				} else {
+					createLocs.set(key, {
+						group: "create",
+						id: `${grouping}-${map.id}`,
+						label: key,
+						mapIds: [map.id],
+						filePosition: map.filePosition,
+					});
+				}
 			}
 		}
-		return values;
+
+		return Array.from(createLocs.values());
 	} else if (grouping == "mapid") {
 		return Object.keys(mapData.nodes).map((mapId) => {
 			return {
@@ -636,8 +642,8 @@ function getEdgeIcon(edge) {
  */
 function isSameLocation(loc1, loc2) {
 	return (
-		loc1 !== null &&
-		loc2 !== null &&
+		loc1 != null &&
+		loc2 != null &&
 		loc1.file == loc2.file &&
 		loc1.functionName == loc2.functionName &&
 		loc1.line == loc2.line &&
