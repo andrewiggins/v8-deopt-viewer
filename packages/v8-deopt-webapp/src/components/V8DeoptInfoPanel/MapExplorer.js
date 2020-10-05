@@ -10,6 +10,9 @@ import {
 	map_title,
 	selected as selected_class,
 	goto_loc_btn,
+	icon_triangle_up,
+	icon_triangle_down,
+	icon_double_bars,
 } from "./MapExplorer.scss";
 import {
 	btn,
@@ -168,7 +171,7 @@ export function MapExplorer(props) {
 		);
 	}
 
-	// IMMEDIATE TODOS:
+	// TODO:
 	//  - Hmm should switching tabs loose state in Map Explorer? Probs not :(
 	//  - Can selecting a loadIC location also highlight that IC entry in the IC
 	//    Explorer tab to maintain context between the two?
@@ -179,8 +182,6 @@ export function MapExplorer(props) {
 	//  each deopt panel can use the `useRoute` hook to determine if it is the
 	//  active route and read it's state from that route, else rely on local or
 	//  global shared state.
-	//
-	//  - Look at other TODOs in this file
 
 	// TODO: Handle cross file map source links since maps aren't file specific.
 
@@ -627,16 +628,15 @@ function edgeToString(edge) {
  * @param {MapEdge | null} edge
  */
 function getEdgeIcon(edge) {
-	// TODO: Fill out
 	switch (edge?.subtype) {
 		case "Transition":
 			return icon_plus; // "+"
 		case "Normalize": // FastToSlow
-			return "⊡"; // down triangle
+			return icon_triangle_down; // ⊡
 		case "SlowToFast":
-			return "⊛"; // up triangle
+			return icon_triangle_up; // ⊛
 		case "ReplaceDescriptors":
-			return edge.name ? "+" : "∥"; // plus or two bars
+			return edge.name ? icon_plus : icon_double_bars; // + or ∥
 		default:
 			return "";
 	}

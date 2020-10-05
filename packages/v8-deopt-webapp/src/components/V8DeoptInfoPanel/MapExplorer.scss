@@ -39,3 +39,26 @@
 		font-weight: bold;
 	}
 }
+
+.icon_triangle_up::before {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 12px solid white;
+}
+
+.icon_triangle_down::before {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 12px solid white;
+}
+
+.icon_double_bars::before {
+	width: 8px;
+	height: 0.8rem;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}
