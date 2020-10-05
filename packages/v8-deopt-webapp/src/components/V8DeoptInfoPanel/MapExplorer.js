@@ -180,44 +180,9 @@ export function MapExplorer(props) {
 	//  active route and read it's state from that route, else rely on local or
 	//  global shared state.
 	//
-	//  - Setup button/link in timeline to show creation location of a map in src
-	//    and scroll it into view
-	//    <p>
-	// 	    {map.filePosition.functionName} {map.filePosition.file}:
-	// 	    {map.filePosition.line}:{map.filePosition.column}
-	//    </p>
 	//  - Look at other TODOs in this file
 
-	// TODO: Since map explorer is across files, re-consider how general nav works.
-	// Some Spectre components/experiments that may be useful:
-	// - https://picturepan2.github.io/spectre/experimentals/filters.html
-	// 		- filter entries by file
-	// - https://picturepan2.github.io/spectre/experimentals/autocomplete.html
-	// 		- filter entries by file
-	// 		- select which file's code to show
-	// 		- select which data tables to show (Summary, Opts, Deopts, IC Entries, etc.)
-	// - https://picturepan2.github.io/spectre/components/breadcrumbs.html
-	// 		- Display which file is shown and filter file results
-	// - https://picturepan2.github.io/spectre/components/cards.html
-	// 		- File summary organizer
-	// - https://picturepan2.github.io/spectre/components/modals.html
-	// 		- More advanced settings menu
-	// - https://picturepan2.github.io/spectre/components/panels.html
-	// 		- File summary organizer
-	// 		- Data view organizer
-	// - https://picturepan2.github.io/spectre/components/tiles.html
-	// 		- ?
-	// - https://picturepan2.github.io/spectre/components/tabs.html
-	// 		- ?
-
-	// TODO: Each map transition associated with a source location should have a
-	// link to "show location" or "go to location". Need to handle cross file
-	// links since maps aren't file specific.
-	//
-	// Would be important to keep existing Map Explorer view/selection. Would not
-	// want to rebuild the DOM and lose focus. Would be nice to use normal links
-	// and routing for cross-file changes but it might be hard to keep focus on
-	// the existing element...
+	// TODO: Handle cross file map source links since maps aren't file specific.
 
 	// TODO: Show entire tree (all children) for selected map
 
@@ -229,8 +194,31 @@ export function MapExplorer(props) {
 	// data entries by the selected file.
 	//
 	// On the right, a VSCode- or Teams-like UI with icons running down the right
-	// side (with labels underneath or tooltips) for various views: 📄Summary, 🔺Opts,
-	// 🔻Deopts, ☎Inline Caches, 🌐Map explorer, ⚙Settings, ❔Help.
+	// side (with labels underneath or tooltips) for various views: 📄Summary,
+	// 🔺Opts, 🔻Deopts, ☎Inline Caches, 🌐Map explorer, ⚙Settings, ❔Help.
+	//
+	// Since map explorer is across files, re-consider how general nav works. Some
+	// Spectre components/experiments that may be useful:
+	// - https://picturepan2.github.io/spectre/experimentals/filters.html
+	//    - filter entries by file
+	// - https://picturepan2.github.io/spectre/experimentals/autocomplete.html
+	//    - filter entries by file
+	//    - select which file's code to show
+	//    - select which data tables to show (Summary, Opts, Deopts, IC Entries,
+	//      etc.)
+	// - https://picturepan2.github.io/spectre/components/breadcrumbs.html
+	//    - Display which file is shown and filter file results
+	// - https://picturepan2.github.io/spectre/components/cards.html
+	//    - File summary organizer
+	// - https://picturepan2.github.io/spectre/components/modals.html
+	//    - More advanced settings menu
+	// - https://picturepan2.github.io/spectre/components/panels.html
+	//    - File summary organizer
+	//    - Data view organizer
+	// - https://picturepan2.github.io/spectre/components/tiles.html
+	//    - ?
+	// - https://picturepan2.github.io/spectre/components/tabs.html
+	//    - ?
 
 	const [state, dispatch] = useReducer(
 		mapGroupingReducer,
@@ -296,6 +284,7 @@ export function MapExplorer(props) {
 					</label>
 					<select
 						value={state.selectedGroup?.id ?? ""}
+						disabled={state.groupValues.length == 0}
 						onChange={(e) => {
 							const newGroupValue = e.currentTarget.value;
 							dispatch({
@@ -309,7 +298,6 @@ export function MapExplorer(props) {
 						id="map-group"
 						class={form_select}
 					>
-						{/* TODO: make this better handle no group values - i.e. disable it, etc. */}
 						{state.groupValues.length == 0 ? (
 							<option>No values available</option>
 						) : (
@@ -373,6 +361,7 @@ export function MapExplorer(props) {
 				mapData={props.mapData}
 				selectedEntry={props.mapData.nodes[state.selectedMapId]}
 				selectedPosition={appState.selectedPosition}
+				currentFile={props.fileDeoptInfo.id}
 			/>
 		</Fragment>
 	);
@@ -383,10 +372,16 @@ export function MapExplorer(props) {
  * @property {MapData} mapData
  * @property {MapEntry} selectedEntry
  * @property {import("../appState").FilePosition} selectedPosition
+ * @property {string} currentFile
  *
  * @param {MapTimelineProps} props
  */
-function MapTimeline({ mapData, selectedEntry, selectedPosition }) {
+function MapTimeline({
+	mapData,
+	selectedEntry,
+	selectedPosition,
+	currentFile,
+}) {
 	const mapParents = getMapParents(mapData, selectedEntry);
 
 	return (
@@ -397,12 +392,14 @@ function MapTimeline({ mapData, selectedEntry, selectedPosition }) {
 					mapData={mapData}
 					map={map}
 					selectedPosition={selectedPosition}
+					currentFile={currentFile}
 				/>
 			))}
 			<MapTimelineItem
 				mapData={mapData}
 				map={selectedEntry}
 				selectedPosition={selectedPosition}
+				currentFile={currentFile}
 				selected
 			/>
 		</div>
@@ -415,9 +412,16 @@ function MapTimeline({ mapData, selectedEntry, selectedPosition }) {
  * @property {MapEntry} map
  * @property {boolean} [selected]
  * @property {import("../appState").FilePosition} selectedPosition
+ * @property {string} currentFile
  * @param {MapTimelineItemProps} props
  */
-function MapTimelineItem({ mapData, map, selected = false, selectedPosition }) {
+function MapTimelineItem({
+	mapData,
+	map,
+	selected = false,
+	selectedPosition,
+	currentFile,
+}) {
 	const detailsId = `${map.id}-details`;
 	const selectedClass = selected ? selected_class : "";
 	const map_timeline_item = "";
@@ -458,7 +462,10 @@ function MapTimelineItem({ mapData, map, selected = false, selectedPosition }) {
 					<div>
 						<button
 							class={`${btn} ${btn_link} ${goto_loc_btn}`}
-							disabled={isSameLocation(map.filePosition, selectedPosition)}
+							disabled={
+								map.filePosition.file !== currentFile ||
+								isSameLocation(map.filePosition, selectedPosition)
+							}
 							onClick={() => setSelectedPosition(map.filePosition)}
 						>
 							Show creation location
