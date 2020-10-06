@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-webapp",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "View the deoptimizations in a V8 log",
   "main": "dist/index.js",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",

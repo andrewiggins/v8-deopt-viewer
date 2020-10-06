@@ -1,5 +1,11 @@
 # v8-deopt-webapp
 
+## 0.4.1
+
+### Patch Changes
+
+- 7846cf9: Fix ICEntry MapExplorer links
+
 ## 0.4.0
 
 ### Minor Changes
