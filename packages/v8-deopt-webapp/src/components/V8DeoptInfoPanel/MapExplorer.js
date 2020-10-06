@@ -87,11 +87,16 @@ const mapGroupings = {
  */
 function mapGroupingReducer(state, action) {
 	if (action.type == "SET_GROUPING") {
+		const groupValues = action.newGroupValues;
+		const selectedGroup =
+			groupValues.length == 0 ? null : action.newGroupValues[0];
+		const mapIds = selectedGroup?.mapIds;
+
 		return {
 			grouping: action.newGrouping,
-			groupValues: action.newGroupValues,
-			selectedGroup: action.newGroupValues[0],
-			selectedMapId: action.newGroupValues[0].mapIds[0],
+			groupValues,
+			selectedGroup,
+			selectedMapId: mapIds?.length > 0 ? mapIds[0] : null,
 		};
 	} else if (action.type == "SET_GROUP_VALUE") {
 		const selectedGroup = state.groupValues.find(
@@ -121,18 +126,25 @@ function initGroupingState(props) {
 	const grouping = routeParams.grouping ?? "loadic";
 	const groupValues = getGroupingValues(props, grouping);
 
-	let selectedGroup = groupValues[0];
-	if (routeParams.groupValue) {
-		selectedGroup = groupValues.find(
-			(value) => value.id == routeParams.groupValue
-		);
+	let selectedGroup = null;
+	if (groupValues.length > 0) {
+		selectedGroup = groupValues[0];
+		if (routeParams.groupValue) {
+			selectedGroup = groupValues.find(
+				(value) => value.id == routeParams.groupValue
+			);
+		}
 	}
 
 	return {
 		grouping,
 		groupValues,
 		selectedGroup,
-		selectedMapId: routeParams.mapId ?? selectedGroup.mapIds[0],
+		selectedMapId:
+			routeParams.mapId ??
+			((selectedGroup?.mapIds.length ?? 0) > 0
+				? selectedGroup.mapIds[0]
+				: null),
 	};
 }
 
@@ -229,7 +241,7 @@ export function MapExplorer(props) {
 
 	const [_, setLocation] = useLocation();
 
-	const mapIds = state.selectedGroup.mapIds;
+	const mapIds = state.selectedGroup?.mapIds ?? [];
 
 	const appState = useAppState();
 	const { setSelectedEntry, setSelectedPosition } = useAppDispatch();
@@ -239,12 +251,14 @@ export function MapExplorer(props) {
 		state.grouping == "loadic";
 
 	useEffect(() => {
-		if (state.selectedGroup.group == "loadic") {
-			setSelectedEntry(state.selectedGroup.entry);
-		} else if (state.selectedGroup.group == "create") {
-			setSelectedPosition(state.selectedGroup.filePosition);
-		} else {
-			setSelectedEntry(null);
+		if (state.selectedGroup) {
+			if (state.selectedGroup.group == "loadic") {
+				setSelectedEntry(state.selectedGroup.entry);
+			} else if (state.selectedGroup.group == "create") {
+				setSelectedPosition(state.selectedGroup.filePosition);
+			} else {
+				setSelectedEntry(null);
+			}
 		}
 	}, [state.selectedGroup, props.fileDeoptInfo]);
 
@@ -358,12 +372,14 @@ export function MapExplorer(props) {
 					</button>
 				)}
 			</p>
-			<MapTimeline
-				mapData={props.mapData}
-				selectedEntry={props.mapData.nodes[state.selectedMapId]}
-				selectedPosition={appState.selectedPosition}
-				currentFile={props.fileDeoptInfo.id}
-			/>
+			{state.selectedMapId && (
+				<MapTimeline
+					mapData={props.mapData}
+					selectedEntry={props.mapData.nodes[state.selectedMapId]}
+					selectedPosition={appState.selectedPosition}
+					currentFile={props.fileDeoptInfo.id}
+				/>
+			)}
 		</Fragment>
 	);
 }
@@ -464,7 +480,7 @@ function MapTimelineItem({
 						<button
 							class={`${btn} ${btn_link} ${goto_loc_btn}`}
 							disabled={
-								map.filePosition.file !== currentFile ||
+								map.filePosition?.file !== currentFile ||
 								isSameLocation(map.filePosition, selectedPosition)
 							}
 							onClick={() => setSelectedPosition(map.filePosition)}
