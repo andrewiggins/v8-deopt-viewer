@@ -124,7 +124,12 @@ function mapGroupingReducer(state, action) {
 function initGroupingState(props) {
 	const routeParams = props.routeParams;
 	const grouping = routeParams.grouping ?? "loadic";
-	const groupValues = getGroupingValues(props, grouping);
+	const groupValues = getGroupingValues(
+		grouping,
+		props.mapData,
+		props.fileDeoptInfo,
+		props.settings
+	);
 
 	let selectedGroup = null;
 	if (groupValues.length > 0) {
@@ -237,11 +242,30 @@ export function MapExplorer(props) {
 	// - https://picturepan2.github.io/spectre/components/tabs.html
 	//    - ?
 
+	const { mapData, fileDeoptInfo, routeParams, settings, fileId } = props;
+
 	const [state, dispatch] = useReducer(
 		mapGroupingReducer,
 		props,
 		initGroupingState
 	);
+
+	useEffect(() => {
+		if (state.grouping == "loadic") {
+			// Re-use SET_GROUPING action to recompute groupingValues. Currently this
+			// only needs to happen on the loadic grouping
+			dispatch({
+				type: "SET_GROUPING",
+				newGrouping: state.grouping,
+				newGroupValues: getGroupingValues(
+					state.grouping,
+					mapData,
+					fileDeoptInfo,
+					settings
+				),
+			});
+		}
+	}, [mapData, fileDeoptInfo, settings]);
 
 	const [_, setLocation] = useLocation();
 
@@ -258,19 +282,19 @@ export function MapExplorer(props) {
 		if (state.selectedGroup) {
 			if (
 				state.selectedGroup.group == "loadic" &&
-				state.selectedGroup.entry.file == props.fileDeoptInfo.id
+				state.selectedGroup.entry.file == fileDeoptInfo.id
 			) {
 				setSelectedEntry(state.selectedGroup.entry);
 			} else if (
 				state.selectedGroup.group == "create" &&
-				state.selectedGroup.filePosition.file == props.fileDeoptInfo.id
+				state.selectedGroup.filePosition.file == fileDeoptInfo.id
 			) {
 				setSelectedPosition(state.selectedGroup.filePosition);
 			} else {
 				setSelectedEntry(null);
 			}
 		}
-	}, [state.selectedGroup, props.fileDeoptInfo]);
+	}, [state.selectedGroup, fileDeoptInfo]);
 
 	return (
 		<Fragment>
@@ -289,9 +313,14 @@ export function MapExplorer(props) {
 							dispatch({
 								type: "SET_GROUPING",
 								newGrouping: grouping,
-								newGroupValues: getGroupingValues(props, grouping),
+								newGroupValues: getGroupingValues(
+									grouping,
+									mapData,
+									fileDeoptInfo,
+									settings
+								),
 							});
-							setLocation(mapsRoute.getHref(props.fileId, grouping));
+							setLocation(mapsRoute.getHref(fileId, grouping));
 						}}
 						id="map-grouping"
 						class={form_select}
@@ -317,7 +346,7 @@ export function MapExplorer(props) {
 								newValue: newGroupValue,
 							});
 							setLocation(
-								mapsRoute.getHref(props.fileId, state.grouping, newGroupValue)
+								mapsRoute.getHref(fileId, state.grouping, newGroupValue)
 							);
 						}}
 						id="map-group"
@@ -349,7 +378,7 @@ export function MapExplorer(props) {
 							});
 							setLocation(
 								mapsRoute.getHref(
-									props.fileId,
+									fileId,
 									state.grouping,
 									state.selectedGroup.id,
 									newMapId
@@ -384,10 +413,10 @@ export function MapExplorer(props) {
 			</p>
 			{state.selectedMapId && (
 				<MapTimeline
-					mapData={props.mapData}
-					selectedEntry={props.mapData.nodes[state.selectedMapId]}
+					mapData={mapData}
+					selectedEntry={mapData.nodes[state.selectedMapId]}
 					selectedPosition={appState.selectedPosition}
-					currentFile={props.fileDeoptInfo.id}
+					currentFile={fileDeoptInfo.id}
 				/>
 			)}
 		</Fragment>
@@ -423,6 +452,7 @@ function MapTimeline({
 				/>
 			))}
 			<MapTimelineItem
+				key={selectedEntry.id}
 				mapData={mapData}
 				map={selectedEntry}
 				selectedPosition={selectedPosition}
@@ -514,13 +544,13 @@ function MapTimelineItem({
 }
 
 /**
- * @param {MapExplorerProps} props
  * @param {MapGrouping} grouping
+ * @param {MapExplorerProps["mapData"]} mapData
+ * @param {MapExplorerProps["fileDeoptInfo"]} fileDeoptInfo
+ * @param {MapExplorerProps["settings"]} settings
  * @returns {GroupingValue[]}
  */
-function getGroupingValues(props, grouping) {
-	const { mapData, fileDeoptInfo, settings } = props;
-
+function getGroupingValues(grouping, mapData, fileDeoptInfo, settings) {
 	if (grouping == "loadic") {
 		return fileDeoptInfo.ics
 			.filter((icEntry) =>
