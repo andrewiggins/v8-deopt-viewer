@@ -28,6 +28,10 @@
 	height: auto;
 }
 
+.goto_loc_btn:disabled {
+	pointer-events: auto;
+}
+
 .map_details > summary.map_title {
 	&:hover,
 	&:focus {

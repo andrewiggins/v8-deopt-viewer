@@ -196,6 +196,10 @@ export function MapExplorer(props) {
 	//  global shared state.
 
 	// TODO: Handle cross file map source links since maps aren't file specific.
+	// Consider where currentFile id should be stored. Currently it is a prop to
+	// MapExplorer but should probably live somewhere central and managed there.
+
+	// TODO: Consider showing map details inline on the ICEntry table
 
 	// TODO: Show entire tree (all children) for selected map
 
@@ -252,9 +256,15 @@ export function MapExplorer(props) {
 
 	useEffect(() => {
 		if (state.selectedGroup) {
-			if (state.selectedGroup.group == "loadic") {
+			if (
+				state.selectedGroup.group == "loadic" &&
+				state.selectedGroup.entry.file == props.fileDeoptInfo.id
+			) {
 				setSelectedEntry(state.selectedGroup.entry);
-			} else if (state.selectedGroup.group == "create") {
+			} else if (
+				state.selectedGroup.group == "create" &&
+				state.selectedGroup.filePosition.file == props.fileDeoptInfo.id
+			) {
 				setSelectedPosition(state.selectedGroup.filePosition);
 			} else {
 				setSelectedEntry(null);
@@ -448,6 +458,10 @@ function MapTimelineItem({
 	const { setSelectedPosition } = useAppDispatch();
 
 	const parentEdge = map.edge ? mapData.edges[map.edge] : null;
+
+	const isInCurrentFile = map.filePosition?.file === currentFile;
+	const isSelectedPosition = isSameLocation(map.filePosition, selectedPosition);
+
 	return (
 		<div class={`${timeline_item} ${map_timeline_item} ${selectedClass}`}>
 			<div class={timeline_left}>
@@ -479,9 +493,13 @@ function MapTimelineItem({
 					<div>
 						<button
 							class={`${btn} ${btn_link} ${goto_loc_btn}`}
-							disabled={
-								map.filePosition?.file !== currentFile ||
-								isSameLocation(map.filePosition, selectedPosition)
+							disabled={!isInCurrentFile || isSelectedPosition}
+							title={
+								!isInCurrentFile
+									? "Location is not in current file"
+									: isSelectedPosition
+									? "Location is currently highlighted"
+									: null
 							}
 							onClick={() => setSelectedPosition(map.filePosition)}
 						>
