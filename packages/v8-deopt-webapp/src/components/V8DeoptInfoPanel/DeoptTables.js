@@ -1,6 +1,7 @@
 import { createElement, Fragment } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
+import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
 import { formatMapId } from "../../utils/mapUtils";
 import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes";
 import {
@@ -56,13 +57,13 @@ export function DeoptTables({
 	function filterEntries(entry) {
 		totalCount++;
 
-		if (entry.severity <= 1) {
+		if (entry.severity <= MIN_SEVERITY) {
 			lowSevCount++;
 		}
 
 		if (settings.showLowSevs) {
 			return true;
-		} else if (entry.severity > 1) {
+		} else if (entry.severity > MIN_SEVERITY) {
 			return true;
 		} else {
 			hiddenCount++;
@@ -135,7 +136,7 @@ export function DeoptTables({
 	let toggleElements = null;
 	if (totalCount > 0) {
 		let text = `Hiding ${hiddenCount} entries. Show all`;
-		if (hiddenCount == 0 && lowSevCount > 1) {
+		if (hiddenCount == 0 && lowSevCount > MIN_SEVERITY) {
 			text = `Hide ${lowSevCount} low severity entries.`;
 		}
 
