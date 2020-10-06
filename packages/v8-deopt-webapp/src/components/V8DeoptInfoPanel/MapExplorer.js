@@ -244,28 +244,30 @@ export function MapExplorer(props) {
 
 	const { mapData, fileDeoptInfo, routeParams, settings, fileId } = props;
 
-	const [state, dispatch] = useReducer(
-		mapGroupingReducer,
-		props,
-		initGroupingState
-	);
+	// const [state, dispatch] = useReducer(
+	// 	mapGroupingReducer,
+	// 	props,
+	// 	initGroupingState
+	// );
 
-	useEffect(() => {
-		if (state.grouping == "loadic") {
-			// Re-use SET_GROUPING action to recompute groupingValues. Currently this
-			// only needs to happen on the loadic grouping
-			dispatch({
-				type: "SET_GROUPING",
-				newGrouping: state.grouping,
-				newGroupValues: getGroupingValues(
-					state.grouping,
-					mapData,
-					fileDeoptInfo,
-					settings
-				),
-			});
-		}
-	}, [mapData, fileDeoptInfo, settings]);
+	// useEffect(() => {
+	// 	if (state.grouping == "loadic") {
+	// 		// Re-use SET_GROUPING action to recompute groupingValues. Currently this
+	// 		// only needs to happen on the loadic grouping
+	// 		dispatch({
+	// 			type: "SET_GROUPING",
+	// 			newGrouping: state.grouping,
+	// 			newGroupValues: getGroupingValues(
+	// 				state.grouping,
+	// 				mapData,
+	// 				fileDeoptInfo,
+	// 				settings
+	// 			),
+	// 		});
+	// 	}
+	// }, [mapData, fileDeoptInfo, settings]);
+
+	const state = initGroupingState(props);
 
 	const [_, setLocation] = useLocation();
 
@@ -310,16 +312,16 @@ export function MapExplorer(props) {
 							/** @type {MapGrouping} */
 							// @ts-ignore
 							const grouping = e.currentTarget.value;
-							dispatch({
-								type: "SET_GROUPING",
-								newGrouping: grouping,
-								newGroupValues: getGroupingValues(
-									grouping,
-									mapData,
-									fileDeoptInfo,
-									settings
-								),
-							});
+							// dispatch({
+							// 	type: "SET_GROUPING",
+							// 	newGrouping: grouping,
+							// 	newGroupValues: getGroupingValues(
+							// 		grouping,
+							// 		mapData,
+							// 		fileDeoptInfo,
+							// 		settings
+							// 	),
+							// });
 							setLocation(mapsRoute.getHref(fileId, grouping));
 						}}
 						id="map-grouping"
@@ -341,10 +343,10 @@ export function MapExplorer(props) {
 						disabled={state.groupValues.length == 0}
 						onChange={(e) => {
 							const newGroupValue = e.currentTarget.value;
-							dispatch({
-								type: "SET_GROUP_VALUE",
-								newValue: newGroupValue,
-							});
+							// dispatch({
+							// 	type: "SET_GROUP_VALUE",
+							// 	newValue: newGroupValue,
+							// });
 							setLocation(
 								mapsRoute.getHref(fileId, state.grouping, newGroupValue)
 							);
@@ -372,10 +374,10 @@ export function MapExplorer(props) {
 						disabled={mapIds.length < 2}
 						onChange={(e) => {
 							const newMapId = e.currentTarget.value;
-							dispatch({
-								type: "SET_MAP_ID",
-								newMapId,
-							});
+							// dispatch({
+							// 	type: "SET_MAP_ID",
+							// 	newMapId,
+							// });
 							setLocation(
 								mapsRoute.getHref(
 									fileId,
