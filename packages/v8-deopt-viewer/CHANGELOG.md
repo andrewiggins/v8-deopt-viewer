@@ -1,5 +1,11 @@
 # v8-deopt-viewer
 
+## 0.2.1
+
+### Patch Changes
+
+- Ensure output directory exists before writing to it
+
 ## 0.2.0
 
 ### Minor Changes

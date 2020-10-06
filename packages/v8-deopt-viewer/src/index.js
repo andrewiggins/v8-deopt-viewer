@@ -1,5 +1,5 @@
 import * as path from "path";
-import { readFile, writeFile, copyFile } from "fs/promises";
+import { readFile, writeFile, copyFile, mkdir } from "fs/promises";
 import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
@@ -105,6 +105,9 @@ export default async function run(srcFile, options) {
 			'Either a file/url to generate a log or the "--input" flag pointing to a v8.log must be provided'
 		);
 	}
+
+	// Ensure output directory exists
+	await mkdir(options.out, { recursive: true });
 
 	console.log("Parsing log...");
 	const logContents = await readFile(logFilePath, "utf8");
