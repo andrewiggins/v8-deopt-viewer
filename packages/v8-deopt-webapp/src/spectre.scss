@@ -92,3 +92,27 @@ body {
 a:visited {
 	color: #5755d9;
 }
+
+// ==========================
+// Spectre Extensions
+// ==========================
+
+.btn_inline {
+	display: inline;
+	padding: 0;
+	height: auto;
+	padding: 0;
+	vertical-align: inherit;
+
+	color: #5755d9;
+	background: transparent;
+	border-color: transparent;
+
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: underline;
+		background: transparent;
+		border-color: transparent;
+	}
+}

@@ -3,7 +3,13 @@ import { useEffect, useRef } from "preact/hooks";
 import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
 import { formatMapId } from "../../utils/mapUtils";
 import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes";
-import { table, table_striped, table_hover } from "../../spectre.scss";
+import {
+	btn,
+	btn_inline,
+	table,
+	table_striped,
+	table_hover,
+} from "../../spectre.scss";
 import {
 	entryTable,
 	selected as selectedClass,
@@ -20,10 +26,11 @@ import { useHighlightEntry } from "../CodePanel";
  *
  * @typedef DeoptTablesProps
  * @property {FileV8DeoptInfo} fileDeoptInfo
- * @property {import('../FileViewer').EntryKind} entryKind
+ * @property {"codes" | "deopts" | "ics"} entryKind
  * @property {string} selectedEntryId
  * @property {number} fileId
- * @property {boolean} showAllICs
+ * @property {import('../CodeSettings').CodeSettingsState} settings
+ * @property {() => void} toggleShowLowSevs
  * @property {boolean} hasMapData
  *
  * @param {DeoptTablesProps} props
@@ -33,68 +40,124 @@ export function DeoptTables({
 	selectedEntryId,
 	fileDeoptInfo,
 	fileId,
-	showAllICs,
+	settings,
+	toggleShowLowSevs,
 	hasMapData,
 }) {
 	const selectedId = selectedEntryId;
 
+	let totalCount = 0;
+	let lowSevCount = 0;
+	let hiddenCount = 0;
+
+	/**
+	 * @param {import('v8-deopt-parser').Entry} entry
+	 */
+	function filterEntries(entry) {
+		totalCount++;
+
+		if (entry.severity <= 1) {
+			lowSevCount++;
+		}
+
+		if (settings.showLowSevs) {
+			return true;
+		} else if (entry.severity > 1) {
+			return true;
+		} else {
+			hiddenCount++;
+			return false;
+		}
+	}
+
 	let entries;
 	if (entryKind == "codes") {
-		entries = fileDeoptInfo[entryKind].map((entry) => (
-			<CodeEntry
-				key={entry.id}
-				entry={entry}
-				selected={entry.id == selectedId}
-				title={
-					<EntryTitle
-						entry={entry}
-						route={codeRoute}
-						relativePath={fileDeoptInfo.relativePath}
-						fileId={fileId}
-					/>
-				}
-			/>
-		));
+		entries = fileDeoptInfo[entryKind]
+			.filter(filterEntries)
+			.map((entry) => (
+				<CodeEntry
+					key={entry.id}
+					entry={entry}
+					selected={entry.id == selectedId}
+					title={
+						<EntryTitle
+							entry={entry}
+							route={codeRoute}
+							relativePath={fileDeoptInfo.relativePath}
+							fileId={fileId}
+						/>
+					}
+				/>
+			));
 	} else if (entryKind == "deopts") {
-		entries = fileDeoptInfo[entryKind].map((entry) => (
-			<DeoptEntry
-				key={entry.id}
-				entry={entry}
-				selected={entry.id == selectedId}
-				title={
-					<EntryTitle
-						entry={entry}
-						route={deoptsRoute}
-						relativePath={fileDeoptInfo.relativePath}
-						fileId={fileId}
-					/>
-				}
-			/>
-		));
+		entries = fileDeoptInfo[entryKind]
+			.filter(filterEntries)
+			.map((entry) => (
+				<DeoptEntry
+					key={entry.id}
+					entry={entry}
+					selected={entry.id == selectedId}
+					title={
+						<EntryTitle
+							entry={entry}
+							route={deoptsRoute}
+							relativePath={fileDeoptInfo.relativePath}
+							fileId={fileId}
+						/>
+					}
+				/>
+			));
 	} else if (entryKind == "ics") {
-		entries = fileDeoptInfo[entryKind].map((entry) => (
-			<ICEntry
-				key={entry.id}
-				entry={entry}
-				selected={entry.id == selectedId}
-				showAllICs={showAllICs}
-				hasMapData={hasMapData}
-				fileId={fileId}
-				title={
-					<EntryTitle
-						entry={entry}
-						route={icsRoute}
-						relativePath={fileDeoptInfo.relativePath}
-						fileId={fileId}
-					/>
-				}
-			/>
-		));
+		entries = fileDeoptInfo[entryKind]
+			.filter(filterEntries)
+			.map((entry) => (
+				<ICEntry
+					key={entry.id}
+					entry={entry}
+					selected={entry.id == selectedId}
+					showAllICs={settings.showAllICs}
+					hasMapData={hasMapData}
+					fileId={fileId}
+					title={
+						<EntryTitle
+							entry={entry}
+							route={icsRoute}
+							relativePath={fileDeoptInfo.relativePath}
+							fileId={fileId}
+						/>
+					}
+				/>
+			));
 	} else {
 		throw new Error(`Unknown entry kind: "${entryKind}"`);
 	}
 
-	return <Fragment>{entries.length == 0 ? <p>None!</p> : entries}</Fragment>;
+	let toggleElements = null;
+	if (totalCount > 0) {
+		let text = `Hiding ${hiddenCount} entries. Show all`;
+		if (hiddenCount == 0 && lowSevCount > 1) {
+			text = `Hide ${lowSevCount} low severity entries.`;
+		}
+
+		toggleElements = (
+			<p>
+				<button
+					type="button"
+					class={`${btn} ${btn_inline}`}
+					onClick={toggleShowLowSevs}
+				>
+					{text}
+				</button>
+			</p>
+		);
+	}
+
+	return (
+		<Fragment>
+			{entries.length == 0 ? <p>None!</p> : entries}
+			{toggleElements}
+		</Fragment>
+	);
 }
 
 /**

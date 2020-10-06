@@ -27,6 +27,7 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 	const fileDeoptInfo = deoptInfo.files[files[fileId]];
 
 	const [codeSettings, toggleSetting] = useCodeSettingsState();
+	const toggleShowLowSevs = () => toggleSetting("showLowSevs");
 
 	const hasMaps = hasMapData(deoptInfo.maps);
 
@@ -52,7 +53,8 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
 									fileId={fileId}
-									showAllICs={codeSettings.showAllICs}
+									settings={codeSettings}
+									toggleShowLowSevs={toggleShowLowSevs}
 									hasMapData={hasMaps}
 								/>
 							)}
@@ -64,7 +66,8 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
 									fileId={fileId}
-									showAllICs={codeSettings.showAllICs}
+									settings={codeSettings}
+									toggleShowLowSevs={toggleShowLowSevs}
 									hasMapData={hasMaps}
 								/>
 							)}
@@ -76,7 +79,8 @@ export function FileViewer({ files, deoptInfo, routeParams }) {
 									selectedEntryId={params.entryId}
 									fileDeoptInfo={fileDeoptInfo}
 									fileId={fileId}
-									showAllICs={codeSettings.showAllICs}
+									settings={codeSettings}
+									toggleShowLowSevs={toggleShowLowSevs}
 									hasMapData={hasMaps}
 								/>
 							)}
