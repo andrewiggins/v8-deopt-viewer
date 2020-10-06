@@ -1,5 +1,12 @@
 # v8-deopt-webapp
 
+## 0.4.0
+
+### Minor Changes
+
+- 80b75d3: Add MapExplorer tab to v8-deopt-viewer
+- b227331: Handle and expose IC entries with unknown severity
+
 ## 0.3.0
 
 ### Minor Changes

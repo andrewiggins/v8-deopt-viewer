@@ -1,5 +1,21 @@
 # v8-deopt-viewer
 
+## 0.2.0
+
+### Minor Changes
+
+- 80b75d3: Add MapExplorer tab to v8-deopt-viewer
+
+### Patch Changes
+
+- Updated dependencies [80b75d3]
+- Updated dependencies [8dd3f03]
+- Updated dependencies [b227331]
+- Updated dependencies [8dd3f03]
+- Updated dependencies [70e4a2b]
+  - v8-deopt-webapp@0.4.0
+  - v8-deopt-parser@0.4.0
+
 ## 0.1.4
 
 ### Patch Changes
