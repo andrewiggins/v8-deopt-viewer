@@ -2,6 +2,7 @@ import { createElement, Fragment } from "preact";
 import { Router, Route, useRoute } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
+import { fileRoute, summaryRoute } from "../routes";
 import { FileViewer } from "./FileViewer";
 import { btn, icon, icon_back } from "../spectre.scss";
 import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
@@ -10,23 +11,24 @@ import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
  * @param {import('..').AppProps} props
  */
 export function App({ deoptInfo }) {
-	const files = Object.keys(deoptInfo);
+	const files = Object.keys(deoptInfo.files);
 
 	return (
 		<Fragment>
 			<Router hook={useHashLocation}>
 				<Header />
-				<Route path="/">
+				<Route path={summaryRoute.route}>
 					<Summary deoptInfo={deoptInfo} />
 				</Route>
-				<Route path="/file/:fileId?/:entryId?">
+				<Route path={fileRoute.route}>
 					{(params) => (
 						<FileViewer
 							routeParams={{
-								fileId: params.fileId || "0",
-								entryId: params.entryId || null,
+								fileId: parseInt(params.fileId) || 0,
+								tabId: params.tabId,
 							}}
-							fileDeoptInfo={deoptInfo[files[params.fileId || 0]]}
+							files={files}
+							deoptInfo={deoptInfo}
 						/>
 					)}
 				</Route>

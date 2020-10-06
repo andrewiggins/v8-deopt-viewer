@@ -1,0 +1,2545 @@
+{
+  "ics": [
+    {
+      "type": "ics",
+      "id": "56",
+      "functionName": "Object1",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 12,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08283f29",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "57",
+      "functionName": "Object1",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 13,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08283fa1",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "64",
+      "functionName": "Object2",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 19,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08283ff1",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "65",
+      "functionName": "Object2",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 20,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08284069",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "74",
+      "functionName": "Object3",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 26,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea082840b9",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "75",
+      "functionName": "Object3",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 27,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08284131",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "76",
+      "functionName": "Object3",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 28,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284159",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "84",
+      "functionName": "Object4",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 34,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea082841a9",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "85",
+      "functionName": "Object4",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 35,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea08284221",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "86",
+      "functionName": "Object4",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 36,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284249",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "94",
+      "functionName": "Object5",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 42,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08284299",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "95",
+      "functionName": "Object5",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 43,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284311",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "96",
+      "functionName": "Object5",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 44,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea08284339",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "105",
+      "functionName": "Object6",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 50,
+      "column": 21,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hola",
+          "map": "0xea08284389",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "106",
+      "functionName": "Object6",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 51,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08284401",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "107",
+      "functionName": "Object6",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 52,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284429",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "108",
+      "functionName": "Object6",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 53,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea08284451",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "117",
+      "functionName": "Object7",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 59,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea082844a1",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "118",
+      "functionName": "Object7",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 60,
+      "column": 21,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hola",
+          "map": "0xea08284519",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "119",
+      "functionName": "Object7",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 61,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284541",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "120",
+      "functionName": "Object7",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 62,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea08284569",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "129",
+      "functionName": "Object8",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 68,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea082845b9",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "130",
+      "functionName": "Object8",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 69,
+      "column": 18,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08284631",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "131",
+      "functionName": "Object8",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 70,
+      "column": 21,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hola",
+          "map": "0xea08284659",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "132",
+      "functionName": "Object8",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 71,
+      "column": 22,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "StoreIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "hello",
+          "map": "0xea08284681",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "39",
+      "functionName": "addSmis",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 81,
+      "column": 29,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "flag",
+          "map": "0xea08283f01",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "37",
+      "functionName": "addNumbers",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 86,
+      "column": 29,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "flag",
+          "map": "0xea08283f01",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "40",
+      "functionName": "addStrings",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 91,
+      "column": 29,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "flag",
+          "map": "0xea08283f01",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "38",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 96,
+      "column": 29,
+      "severity": 1,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "flag",
+          "map": "0xea08283f01",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "54",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 33,
+      "severity": 3,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "x",
+          "map": "0xea08283fc9",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
+          "key": "x",
+          "map": "0xea08284091",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "x",
+          "map": "0xea08284181",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "x",
+          "map": "0xea08284271",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0xea08284361",
+          "optimizationState": "optimizable",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0xea08284479",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0xea08284591",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "x",
+          "map": "0xea082846a9",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "55",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 39,
+      "severity": 3,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "y",
+          "map": "0xea08283fc9",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
+          "key": "y",
+          "map": "0xea08284091",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "y",
+          "map": "0xea08284181",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "polymorphic",
+          "key": "y",
+          "map": "0xea08284271",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "polymorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0xea08284361",
+          "optimizationState": "optimizable",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0xea08284479",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0xea08284591",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "megamorphic",
+          "newState": "megamorphic",
+          "key": "y",
+          "map": "0xea082846a9",
+          "optimizationState": "optimized",
+          "severity": 3,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "35",
+      "functionName": "processResult",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 109,
+      "column": 17,
+      "severity": 2,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "push",
+          "map": "0xea08281139",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
+          "key": "push",
+          "map": "0xea08281049",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    },
+    {
+      "type": "ics",
+      "id": "36",
+      "functionName": "processResult",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 111,
+      "column": 21,
+      "severity": 2,
+      "updates": [
+        {
+          "type": "LoadIC",
+          "oldState": "unintialized",
+          "newState": "monomorphic",
+          "key": "length",
+          "map": "0xea08281139",
+          "optimizationState": "optimizable",
+          "severity": 1,
+          "modifier": "",
+          "slowReason": ""
+        },
+        {
+          "type": "LoadIC",
+          "oldState": "monomorphic",
+          "newState": "polymorphic",
+          "key": "length",
+          "map": "0xea08281049",
+          "optimizationState": "optimizable",
+          "severity": 2,
+          "modifier": "",
+          "slowReason": ""
+        }
+      ]
+    }
+  ],
+  "deopts": [
+    {
+      "type": "deopts",
+      "id": "53",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 98,
+      "column": 33,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 346976,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for generic named access",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 1
+        },
+        {
+          "timestamp": 368520,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 414186,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 414297,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 415755,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 462745,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 462867,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 465142,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 509799,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        },
+        {
+          "timestamp": 509908,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 511469,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 142,
+            "column": 27
+          }
+        }
+      ]
+    },
+    {
+      "type": "deopts",
+      "id": "44",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 99,
+      "column": 18,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 264282,
+          "bailoutType": "eager",
+          "deoptReason": "not a Smi",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        },
+        {
+          "timestamp": 288276,
+          "bailoutType": "eager",
+          "deoptReason": "not a Number or Oddball",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "type": "deopts",
+      "id": "42",
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 109,
+      "column": 17,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 139858,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": true,
+          "severity": 3,
+          "inlinedAt": {
+            "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+            "line": 117,
+            "column": 11
+          }
+        },
+        {
+          "timestamp": 140008,
+          "bailoutType": "eager",
+          "deoptReason": "wrong map",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "type": "deopts",
+      "id": "43",
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 125,
+      "column": 25,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 264187,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "deopts",
+      "id": "45",
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 132,
+      "column": 25,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 288177,
+          "bailoutType": "soft",
+          "deoptReason": "Insufficient type feedback for compare operation",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "deopts",
+      "id": "66",
+      "functionName": "addObjects",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 142,
+      "column": 34,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 370616,
+          "bailoutType": "eager",
+          "deoptReason": "wrong call target",
+          "optimizationState": "optimized",
+          "inlined": false,
+          "severity": 3
+        }
+      ]
+    }
+  ],
+  "codes": [
+    {
+      "type": "codes",
+      "id": "41",
+      "functionName": "<anonymous>",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 9,
+      "column": 27,
+      "isScript": false,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 139562,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 156289,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 270492,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 295416,
+          "state": "optimized",
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "47",
+      "functionName": "Object1",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 11,
+      "column": 20,
+      "isScript": false,
+      "severity": 2,
+      "updates": [
+        {
+          "timestamp": 346451,
+          "state": "optimizable",
+          "severity": 2
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "58",
+      "functionName": "Object2",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 18,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 367896,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 374236,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "67",
+      "functionName": "Object3",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 25,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 413552,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 416800,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "77",
+      "functionName": "Object4",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 33,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 462050,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 465290,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "87",
+      "functionName": "Object5",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 41,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 509167,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 512369,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "97",
+      "functionName": "Object6",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 49,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 563254,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 566107,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "109",
+      "functionName": "Object7",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 58,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 612327,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 615245,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "121",
+      "functionName": "Object8",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 67,
+      "column": 20,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 679672,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 683071,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "30",
+      "functionName": "addSmis",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 80,
+      "column": 23,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 114198,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 127505,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "32",
+      "functionName": "addNumbers",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 85,
+      "column": 26,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 114318,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 122735,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "33",
+      "functionName": "addStrings",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 90,
+      "column": 26,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 114374,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 127970,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "34",
+      "functionName": "addAny",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 95,
+      "column": 22,
+      "isScript": false,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 114431,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 125808,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 265717,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 289659,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 351197,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 370485,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 416382,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 464467,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 511998,
+          "state": "optimized",
+          "severity": 3
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "31",
+      "functionName": "processResult",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 106,
+      "column": 29,
+      "isScript": false,
+      "severity": 1,
+      "updates": [
+        {
+          "timestamp": 114265,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 119069,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 141879,
+          "state": "optimized",
+          "severity": 1
+        }
+      ]
+    },
+    {
+      "type": "codes",
+      "id": "46",
+      "functionName": "addObjects",
+      "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+      "line": 139,
+      "column": 26,
+      "isScript": false,
+      "severity": 3,
+      "updates": [
+        {
+          "timestamp": 346369,
+          "state": "optimizable",
+          "severity": 2
+        },
+        {
+          "timestamp": 351119,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 374152,
+          "state": "optimized",
+          "severity": 1
+        },
+        {
+          "timestamp": 413407,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 420564,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 461861,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 468295,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 509056,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 514942,
+          "state": "optimized",
+          "severity": 3
+        },
+        {
+          "timestamp": 563147,
+          "state": "optimized",
+          "severity": 3
+        }
+      ]
+    }
+  ],
+  "maps": {
+    "nodes": {
+      "0xea08281139": {
+        "type": "maps",
+        "id": "0xea08281139",
+        "address": 1005159190841,
+        "time": 68408,
+        "description": "Map=000000EA08281139\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x00ea08281111 <Map(HOLEY_DOUBLE_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors #1: 0x00ea0824c679 <DescriptorArray[1]>\n - transitions #1: 0x00ea0824c6f5 <TransitionArray[4]>\n - prototype: 0x00ea0824bff1 <JSArray[0]>\n - constructor: 0x00ea0824bec5 <JSFunction Array (sfi = 000000EA081C9265)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x00ea0804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x00ea08180165 <AccessorInfo>\n"
+      },
+      "0xea08283f01": {
+        "type": "maps",
+        "id": "0xea08283f01",
+        "address": 1005159202561,
+        "time": 114024,
+        "description": "Map=000000EA08283F01\n - type: JS_OBJECT_TYPE\n - instance size: 16\n - inobject properties: 1\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 1\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08283ed9 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea08085855 <DescriptorArray[1]>\n - prototype: 0x00ea08241cb5 <Object map = 000000EA08280211>\n - constructor: 0x00ea08241cd1 <JSFunction Object (sfi = 000000EA081C4B45)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x00ea082656e1 <String[#4]: flag> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "29",
+        "filePosition": {
+          "functionName": "<anonymous>",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 9,
+          "column": 27,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08283ed9": {
+        "type": "maps",
+        "id": "0xea08283ed9",
+        "address": 1005159202521,
+        "time": 113941,
+        "description": "Map=000000EA08283ED9\n - type: JS_OBJECT_TYPE\n - instance size: 28\n - inobject properties: 4\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 4\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea08241cb5 <Object map = 000000EA08280211>\n - constructor: 0x00ea08241cd1 <JSFunction Object (sfi = 000000EA081C4B45)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "28",
+        "filePosition": {
+          "functionName": "<anonymous>",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 9,
+          "column": 27,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "29"
+        ]
+      },
+      "0xea08280329": {
+        "type": "maps",
+        "id": "0xea08280329",
+        "address": 1005159187241,
+        "time": 51207,
+        "description": "Map=000000EA08280329\n - type: JS_OBJECT_TYPE\n - instance size: 28\n - inobject properties: 4\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 4\n - enum length: invalid\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea08241cb5 <Object map = 000000EA08280211>\n - constructor: 0x00ea08241cd1 <JSFunction Object (sfi = 000000EA081C4B45)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "children": [
+          "28"
+        ]
+      },
+      "0xea08281049": {
+        "type": "maps",
+        "id": "0xea08281049",
+        "address": 1005159190601,
+        "time": 68743,
+        "description": "Map=000000EA08281049\n - type: JS_ARRAY_TYPE\n - instance size: 16\n - inobject properties: 0\n - elements kind: PACKED_SMI_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors #1: 0x00ea0824c679 <DescriptorArray[1]>\n - transitions #1: 0x00ea0824c695 <TransitionArray[4]>\n - prototype: 0x00ea0824bff1 <JSArray[0]>\n - constructor: 0x00ea0824bec5 <JSFunction Array (sfi = 000000EA081C9265)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x00ea0804257d <String[#6]: length> (const accessor descriptor, p: 0, attrs: [W__]) @ 0x00ea08180165 <AccessorInfo>\n"
+      },
+      "0xea08283fc9": {
+        "type": "maps",
+        "id": "0xea08283fc9",
+        "address": 1005159202761,
+        "time": 346879,
+        "description": "Map=000000EA08283FC9\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08283fa1 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea08d8f7c9 <DescriptorArray[2]>\n - prototype: 0x00ea085a644d <Object1 map = 000000EA08283F79>\n - constructor: 0x00ea085002f5 <JSFunction Object1 (sfi = 000000EA082659C5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "52",
+        "filePosition": {
+          "functionName": "Object1",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 11,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08283fa1": {
+        "type": "maps",
+        "id": "0xea08283fa1",
+        "address": 1005159202721,
+        "time": 346783,
+        "description": "Map=000000EA08283FA1\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08283f29 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea08d8f7ad <DescriptorArray[1]>\n - prototype: 0x00ea085a644d <Object1 map = 000000EA08283F79>\n - constructor: 0x00ea085002f5 <JSFunction Object1 (sfi = 000000EA082659C5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "51",
+        "filePosition": {
+          "functionName": "Object1",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 11,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "52"
+        ]
+      },
+      "0xea08283f29": {
+        "type": "maps",
+        "id": "0xea08283f29",
+        "address": 1005159202601,
+        "time": 346475,
+        "description": "Map=000000EA08283F29\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a644d <Object1 map = 000000EA08283F51>\n - constructor: 0x00ea085002f5 <JSFunction Object1 (sfi = 000000EA082659C5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "49",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "51"
+        ]
+      },
+      "0xea08284091": {
+        "type": "maps",
+        "id": "0xea08284091",
+        "address": 1005159202961,
+        "time": 368339,
+        "description": "Map=000000EA08284091\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284069 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea0816ea7d <DescriptorArray[2]>\n - prototype: 0x00ea085a6465 <Object2 map = 000000EA08284041>\n - constructor: 0x00ea085002d5 <JSFunction Object2 (sfi = 000000EA082659FD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265629 <String[#1]: y> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "63",
+        "filePosition": {
+          "functionName": "Object2",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 18,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284069": {
+        "type": "maps",
+        "id": "0xea08284069",
+        "address": 1005159202921,
+        "time": 368242,
+        "description": "Map=000000EA08284069\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08283ff1 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea0816ea61 <DescriptorArray[1]>\n - prototype: 0x00ea085a6465 <Object2 map = 000000EA08284041>\n - constructor: 0x00ea085002d5 <JSFunction Object2 (sfi = 000000EA082659FD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265629 <String[#1]: y> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "62",
+        "filePosition": {
+          "functionName": "Object2",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 18,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "63"
+        ]
+      },
+      "0xea08283ff1": {
+        "type": "maps",
+        "id": "0xea08283ff1",
+        "address": 1005159202801,
+        "time": 367944,
+        "description": "Map=000000EA08283FF1\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a6465 <Object2 map = 000000EA08284019>\n - constructor: 0x00ea085002d5 <JSFunction Object2 (sfi = 000000EA082659FD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "60",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "62"
+        ]
+      },
+      "0xea08284181": {
+        "type": "maps",
+        "id": "0xea08284181",
+        "address": 1005159203201,
+        "time": 414084,
+        "description": "Map=000000EA08284181\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284159 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea098f5071 <DescriptorArray[3]>\n - prototype: 0x00ea085a647d <Object3 map = 000000EA08284109>\n - constructor: 0x00ea085002b5 <JSFunction Object3 (sfi = 000000EA08265A35)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08272d95 <String[#5]: hello> (const data field 0:h, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "73",
+        "filePosition": {
+          "functionName": "Object3",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 25,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284159": {
+        "type": "maps",
+        "id": "0xea08284159",
+        "address": 1005159203161,
+        "time": 413984,
+        "description": "Map=000000EA08284159\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284131 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea098f5049 <DescriptorArray[2]>\n - prototype: 0x00ea085a647d <Object3 map = 000000EA08284109>\n - constructor: 0x00ea085002b5 <JSFunction Object3 (sfi = 000000EA08265A35)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08272d95 <String[#5]: hello> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "72",
+        "filePosition": {
+          "functionName": "Object3",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 25,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "73"
+        ]
+      },
+      "0xea08284131": {
+        "type": "maps",
+        "id": "0xea08284131",
+        "address": 1005159203121,
+        "time": 413888,
+        "description": "Map=000000EA08284131\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea082840b9 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea098f5005 <DescriptorArray[1]>\n - prototype: 0x00ea085a647d <Object3 map = 000000EA08284109>\n - constructor: 0x00ea085002b5 <JSFunction Object3 (sfi = 000000EA08265A35)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08272d95 <String[#5]: hello> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "71",
+        "filePosition": {
+          "functionName": "Object3",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 25,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "72"
+        ]
+      },
+      "0xea082840b9": {
+        "type": "maps",
+        "id": "0xea082840b9",
+        "address": 1005159203001,
+        "time": 413576,
+        "description": "Map=000000EA082840B9\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a647d <Object3 map = 000000EA082840E1>\n - constructor: 0x00ea085002b5 <JSFunction Object3 (sfi = 000000EA08265A35)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "69",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "71"
+        ]
+      },
+      "0xea08284271": {
+        "type": "maps",
+        "id": "0xea08284271",
+        "address": 1005159203441,
+        "time": 462640,
+        "description": "Map=000000EA08284271\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284249 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea0866538d <DescriptorArray[3]>\n - prototype: 0x00ea085a6495 <Object4 map = 000000EA082841F9>\n - constructor: 0x00ea08500295 <JSFunction Object4 (sfi = 000000EA08265A6D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08272d95 <String[#5]: hello> (const data field 1:h, p: 1, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "83",
+        "filePosition": {
+          "functionName": "Object4",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 33,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284249": {
+        "type": "maps",
+        "id": "0xea08284249",
+        "address": 1005159203401,
+        "time": 462529,
+        "description": "Map=000000EA08284249\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284221 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea08665365 <DescriptorArray[2]>\n - prototype: 0x00ea085a6495 <Object4 map = 000000EA082841F9>\n - constructor: 0x00ea08500295 <JSFunction Object4 (sfi = 000000EA08265A6D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08272d95 <String[#5]: hello> (const data field 1:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "82",
+        "filePosition": {
+          "functionName": "Object4",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 33,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "83"
+        ]
+      },
+      "0xea08284221": {
+        "type": "maps",
+        "id": "0xea08284221",
+        "address": 1005159203361,
+        "time": 462411,
+        "description": "Map=000000EA08284221\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea082841a9 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea08665349 <DescriptorArray[1]>\n - prototype: 0x00ea085a6495 <Object4 map = 000000EA082841F9>\n - constructor: 0x00ea08500295 <JSFunction Object4 (sfi = 000000EA08265A6D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "81",
+        "filePosition": {
+          "functionName": "Object4",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 33,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "82"
+        ]
+      },
+      "0xea082841a9": {
+        "type": "maps",
+        "id": "0xea082841a9",
+        "address": 1005159203241,
+        "time": 462082,
+        "description": "Map=000000EA082841A9\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a6495 <Object4 map = 000000EA082841D1>\n - constructor: 0x00ea08500295 <JSFunction Object4 (sfi = 000000EA08265A6D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "79",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "81"
+        ]
+      },
+      "0xea08284361": {
+        "type": "maps",
+        "id": "0xea08284361",
+        "address": 1005159203681,
+        "time": 509694,
+        "description": "Map=000000EA08284361\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284339 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea08e87ecd <DescriptorArray[3]>\n - prototype: 0x00ea085a64ad <Object5 map = 000000EA082842E9>\n - constructor: 0x00ea08500275 <JSFunction Object5 (sfi = 000000EA08265AA5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 2, attrs: [WEC]) @ Any\n  [2]: 0x00ea08272d95 <String[#5]: hello> (const data field 2:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "93",
+        "filePosition": {
+          "functionName": "Object5",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 41,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284339": {
+        "type": "maps",
+        "id": "0xea08284339",
+        "address": 1005159203641,
+        "time": 509589,
+        "description": "Map=000000EA08284339\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284311 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea08e87ea5 <DescriptorArray[2]>\n - prototype: 0x00ea085a64ad <Object5 map = 000000EA082842E9>\n - constructor: 0x00ea08500275 <JSFunction Object5 (sfi = 000000EA08265AA5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "92",
+        "filePosition": {
+          "functionName": "Object5",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 41,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "93"
+        ]
+      },
+      "0xea08284311": {
+        "type": "maps",
+        "id": "0xea08284311",
+        "address": 1005159203601,
+        "time": 509494,
+        "description": "Map=000000EA08284311\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284299 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea08e87e89 <DescriptorArray[1]>\n - prototype: 0x00ea085a64ad <Object5 map = 000000EA082842E9>\n - constructor: 0x00ea08500275 <JSFunction Object5 (sfi = 000000EA08265AA5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "91",
+        "filePosition": {
+          "functionName": "Object5",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 41,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "92"
+        ]
+      },
+      "0xea08284299": {
+        "type": "maps",
+        "id": "0xea08284299",
+        "address": 1005159203481,
+        "time": 509200,
+        "description": "Map=000000EA08284299\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a64ad <Object5 map = 000000EA082842C1>\n - constructor: 0x00ea08500275 <JSFunction Object5 (sfi = 000000EA08265AA5)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "89",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "91"
+        ]
+      },
+      "0xea08284479": {
+        "type": "maps",
+        "id": "0xea08284479",
+        "address": 1005159203961,
+        "time": 563987,
+        "description": "Map=000000EA08284479\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284451 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x00ea096943c1 <DescriptorArray[4]>\n - prototype: 0x00ea085a64c5 <Object6 map = 000000EA082843D9>\n - constructor: 0x00ea08500255 <JSFunction Object6 (sfi = 000000EA08265ADD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08277235 <String[#4]: hola> (const data field 0:h, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 3, attrs: [WEC]) @ Any\n  [3]: 0x00ea08272d95 <String[#5]: hello> (const data field 3:h, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "104",
+        "filePosition": {
+          "functionName": "Object6",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 49,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284451": {
+        "type": "maps",
+        "id": "0xea08284451",
+        "address": 1005159203921,
+        "time": 563876,
+        "description": "Map=000000EA08284451\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284429 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea0969438d <DescriptorArray[3]>\n - prototype: 0x00ea085a64c5 <Object6 map = 000000EA082843D9>\n - constructor: 0x00ea08500255 <JSFunction Object6 (sfi = 000000EA08265ADD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08277235 <String[#4]: hola> (const data field 0:h, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "103",
+        "filePosition": {
+          "functionName": "Object6",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 49,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "104"
+        ]
+      },
+      "0xea08284429": {
+        "type": "maps",
+        "id": "0xea08284429",
+        "address": 1005159203881,
+        "time": 563776,
+        "description": "Map=000000EA08284429\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284401 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea09694365 <DescriptorArray[2]>\n - prototype: 0x00ea085a64c5 <Object6 map = 000000EA082843D9>\n - constructor: 0x00ea08500255 <JSFunction Object6 (sfi = 000000EA08265ADD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08277235 <String[#4]: hola> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265619 <String[#1]: x> (const data field 1:s, p: 1, attrs: [WEC]) @ Any\n",
+        "edge": "102",
+        "filePosition": {
+          "functionName": "Object6",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 49,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "103"
+        ]
+      },
+      "0xea08284401": {
+        "type": "maps",
+        "id": "0xea08284401",
+        "address": 1005159203841,
+        "time": 563671,
+        "description": "Map=000000EA08284401\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284389 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea0969430d <DescriptorArray[1]>\n - prototype: 0x00ea085a64c5 <Object6 map = 000000EA082843D9>\n - constructor: 0x00ea08500255 <JSFunction Object6 (sfi = 000000EA08265ADD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08277235 <String[#4]: hola> (const data field 0:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "101",
+        "filePosition": {
+          "functionName": "Object6",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 49,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "102"
+        ]
+      },
+      "0xea08284389": {
+        "type": "maps",
+        "id": "0xea08284389",
+        "address": 1005159203721,
+        "time": 563277,
+        "description": "Map=000000EA08284389\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a64c5 <Object6 map = 000000EA082843B1>\n - constructor: 0x00ea08500255 <JSFunction Object6 (sfi = 000000EA08265ADD)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "99",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "101"
+        ]
+      },
+      "0xea08284591": {
+        "type": "maps",
+        "id": "0xea08284591",
+        "address": 1005159204241,
+        "time": 612984,
+        "description": "Map=000000EA08284591\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284569 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x00ea08c5ab41 <DescriptorArray[4]>\n - prototype: 0x00ea085a64dd <Object7 map = 000000EA082844F1>\n - constructor: 0x00ea08500235 <JSFunction Object7 (sfi = 000000EA08265B15)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08277235 <String[#4]: hola> (const data field 1:h, p: 1, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 3, attrs: [WEC]) @ Any\n  [3]: 0x00ea08272d95 <String[#5]: hello> (const data field 3:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "116",
+        "filePosition": {
+          "functionName": "Object7",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 58,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284569": {
+        "type": "maps",
+        "id": "0xea08284569",
+        "address": 1005159204201,
+        "time": 612875,
+        "description": "Map=000000EA08284569\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284541 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea08c5ab0d <DescriptorArray[3]>\n - prototype: 0x00ea085a64dd <Object7 map = 000000EA082844F1>\n - constructor: 0x00ea08500235 <JSFunction Object7 (sfi = 000000EA08265B15)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 2, attrs: [WEC]) @ Any\n  [1]: 0x00ea08277235 <String[#4]: hola> (const data field 1:h, p: 1, attrs: [WEC]) @ Any\n  [2]: 0x00ea08265629 <String[#1]: y> (const data field 2:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "115",
+        "filePosition": {
+          "functionName": "Object7",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 58,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "116"
+        ]
+      },
+      "0xea08284541": {
+        "type": "maps",
+        "id": "0xea08284541",
+        "address": 1005159204161,
+        "time": 612774,
+        "description": "Map=000000EA08284541\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284519 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea08c5aae5 <DescriptorArray[2]>\n - prototype: 0x00ea085a64dd <Object7 map = 000000EA082844F1>\n - constructor: 0x00ea08500235 <JSFunction Object7 (sfi = 000000EA08265B15)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08277235 <String[#4]: hola> (const data field 1:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "114",
+        "filePosition": {
+          "functionName": "Object7",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 58,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "115"
+        ]
+      },
+      "0xea08284519": {
+        "type": "maps",
+        "id": "0xea08284519",
+        "address": 1005159204121,
+        "time": 612677,
+        "description": "Map=000000EA08284519\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea082844a1 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea08c5aac9 <DescriptorArray[1]>\n - prototype: 0x00ea085a64dd <Object7 map = 000000EA082844F1>\n - constructor: 0x00ea08500235 <JSFunction Object7 (sfi = 000000EA08265B15)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "113",
+        "filePosition": {
+          "functionName": "Object7",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 58,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "114"
+        ]
+      },
+      "0xea082844a1": {
+        "type": "maps",
+        "id": "0xea082844a1",
+        "address": 1005159204001,
+        "time": 612372,
+        "description": "Map=000000EA082844A1\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a64dd <Object7 map = 000000EA082844C9>\n - constructor: 0x00ea08500235 <JSFunction Object7 (sfi = 000000EA08265B15)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "111",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "113"
+        ]
+      },
+      "0xea082846a9": {
+        "type": "maps",
+        "id": "0xea082846a9",
+        "address": 1005159204521,
+        "time": 680777,
+        "description": "Map=000000EA082846A9\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284681 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #4: 0x00ea0815aa45 <DescriptorArray[4]>\n - prototype: 0x00ea085a64f5 <Object8 map = 000000EA08284609>\n - constructor: 0x00ea08500215 <JSFunction Object8 (sfi = 000000EA08265B4D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 2, attrs: [WEC]) @ Any\n  [2]: 0x00ea08277235 <String[#4]: hola> (const data field 2:h, p: 3, attrs: [WEC]) @ Any\n  [3]: 0x00ea08272d95 <String[#5]: hello> (const data field 3:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "128",
+        "filePosition": {
+          "functionName": "Object8",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 67,
+          "column": 20,
+          "optimizationState": "optimizable"
+        }
+      },
+      "0xea08284681": {
+        "type": "maps",
+        "id": "0xea08284681",
+        "address": 1005159204481,
+        "time": 680660,
+        "description": "Map=000000EA08284681\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 10\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284659 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x00ea0815aa11 <DescriptorArray[3]>\n - prototype: 0x00ea085a64f5 <Object8 map = 000000EA08284609>\n - constructor: 0x00ea08500215 <JSFunction Object8 (sfi = 000000EA08265B4D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 2, attrs: [WEC]) @ Any\n  [2]: 0x00ea08277235 <String[#4]: hola> (const data field 2:h, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "127",
+        "filePosition": {
+          "functionName": "Object8",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 67,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "128"
+        ]
+      },
+      "0xea08284659": {
+        "type": "maps",
+        "id": "0xea08284659",
+        "address": 1005159204441,
+        "time": 680470,
+        "description": "Map=000000EA08284659\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 11\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea08284631 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x00ea0815a9e9 <DescriptorArray[2]>\n - prototype: 0x00ea085a64f5 <Object8 map = 000000EA08284609>\n - constructor: 0x00ea08500215 <JSFunction Object8 (sfi = 000000EA08265B4D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 1, attrs: [WEC]) @ Any\n  [1]: 0x00ea08265629 <String[#1]: y> (const data field 1:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "126",
+        "filePosition": {
+          "functionName": "Object8",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 67,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "127"
+        ]
+      },
+      "0xea08284631": {
+        "type": "maps",
+        "id": "0xea08284631",
+        "address": 1005159204401,
+        "time": 680293,
+        "description": "Map=000000EA08284631\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea082845b9 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x00ea0815a9cd <DescriptorArray[1]>\n - prototype: 0x00ea085a64f5 <Object8 map = 000000EA08284609>\n - constructor: 0x00ea08500215 <JSFunction Object8 (sfi = 000000EA08265B4D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x00ea08265619 <String[#1]: x> (const data field 0:s, p: 0, attrs: [WEC]) @ Any\n",
+        "edge": "125",
+        "filePosition": {
+          "functionName": "Object8",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 67,
+          "column": 20,
+          "optimizationState": "optimizable"
+        },
+        "children": [
+          "126"
+        ]
+      },
+      "0xea082845b9": {
+        "type": "maps",
+        "id": "0xea082845b9",
+        "address": 1005159204281,
+        "time": 679737,
+        "description": "Map=000000EA082845B9\n - type: JS_OBJECT_TYPE\n - instance size: 60\n - inobject properties: 12\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 12\n - enum length: invalid\n - stable_map\n - back pointer: 0x00ea0804030d <undefined>\n - prototype_validity cell: 0x00ea08180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x00ea080401b5 <DescriptorArray[0]>\n - prototype: 0x00ea085a64f5 <Object8 map = 000000EA082845E1>\n - constructor: 0x00ea08500215 <JSFunction Object8 (sfi = 000000EA08265B4D)>\n - dependent code: 0x00ea080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n",
+        "edge": "123",
+        "filePosition": {
+          "functionName": "addObjects",
+          "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
+          "line": 139,
+          "column": 26,
+          "optimizationState": "optimized"
+        },
+        "children": [
+          "125"
+        ]
+      }
+    },
+    "edges": {
+      "28": {
+        "type": "mapsEdge",
+        "id": "28",
+        "subtype": "ReplaceDescriptors",
+        "name": "",
+        "reason": "MapCreate",
+        "time": 114010,
+        "from": "0xea08280329",
+        "to": "0xea08283ed9"
+      },
+      "29": {
+        "type": "mapsEdge",
+        "id": "29",
+        "subtype": "Transition",
+        "name": "flag",
+        "reason": "",
+        "time": 114099,
+        "from": "0xea08283ed9",
+        "to": "0xea08283f01"
+      },
+      "49": {
+        "type": "mapsEdge",
+        "id": "49",
+        "subtype": "InitialMap",
+        "name": "Object1",
+        "reason": "",
+        "time": 346646,
+        "to": "0xea08283f29"
+      },
+      "51": {
+        "type": "mapsEdge",
+        "id": "51",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 346858,
+        "from": "0xea08283f29",
+        "to": "0xea08283fa1"
+      },
+      "52": {
+        "type": "mapsEdge",
+        "id": "52",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 346962,
+        "from": "0xea08283fa1",
+        "to": "0xea08283fc9"
+      },
+      "60": {
+        "type": "mapsEdge",
+        "id": "60",
+        "subtype": "InitialMap",
+        "name": "Object2",
+        "reason": "",
+        "time": 368124,
+        "to": "0xea08283ff1"
+      },
+      "62": {
+        "type": "mapsEdge",
+        "id": "62",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 368318,
+        "from": "0xea08283ff1",
+        "to": "0xea08284069"
+      },
+      "63": {
+        "type": "mapsEdge",
+        "id": "63",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 368502,
+        "from": "0xea08284069",
+        "to": "0xea08284091"
+      },
+      "69": {
+        "type": "mapsEdge",
+        "id": "69",
+        "subtype": "InitialMap",
+        "name": "Object3",
+        "reason": "",
+        "time": 413765,
+        "to": "0xea082840b9"
+      },
+      "71": {
+        "type": "mapsEdge",
+        "id": "71",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 413963,
+        "from": "0xea082840b9",
+        "to": "0xea08284131"
+      },
+      "72": {
+        "type": "mapsEdge",
+        "id": "72",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 414066,
+        "from": "0xea08284131",
+        "to": "0xea08284159"
+      },
+      "73": {
+        "type": "mapsEdge",
+        "id": "73",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 414173,
+        "from": "0xea08284159",
+        "to": "0xea08284181"
+      },
+      "79": {
+        "type": "mapsEdge",
+        "id": "79",
+        "subtype": "InitialMap",
+        "name": "Object4",
+        "reason": "",
+        "time": 462278,
+        "to": "0xea082841a9"
+      },
+      "81": {
+        "type": "mapsEdge",
+        "id": "81",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 462504,
+        "from": "0xea082841a9",
+        "to": "0xea08284221"
+      },
+      "82": {
+        "type": "mapsEdge",
+        "id": "82",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 462622,
+        "from": "0xea08284221",
+        "to": "0xea08284249"
+      },
+      "83": {
+        "type": "mapsEdge",
+        "id": "83",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 462730,
+        "from": "0xea08284249",
+        "to": "0xea08284271"
+      },
+      "89": {
+        "type": "mapsEdge",
+        "id": "89",
+        "subtype": "InitialMap",
+        "name": "Object5",
+        "reason": "",
+        "time": 509376,
+        "to": "0xea08284299"
+      },
+      "91": {
+        "type": "mapsEdge",
+        "id": "91",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 509568,
+        "from": "0xea08284299",
+        "to": "0xea08284311"
+      },
+      "92": {
+        "type": "mapsEdge",
+        "id": "92",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 509673,
+        "from": "0xea08284311",
+        "to": "0xea08284339"
+      },
+      "93": {
+        "type": "mapsEdge",
+        "id": "93",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 509784,
+        "from": "0xea08284339",
+        "to": "0xea08284361"
+      },
+      "99": {
+        "type": "mapsEdge",
+        "id": "99",
+        "subtype": "InitialMap",
+        "name": "Object6",
+        "reason": "",
+        "time": 563538,
+        "to": "0xea08284389"
+      },
+      "101": {
+        "type": "mapsEdge",
+        "id": "101",
+        "subtype": "Transition",
+        "name": "hola",
+        "reason": "",
+        "time": 563755,
+        "from": "0xea08284389",
+        "to": "0xea08284401"
+      },
+      "102": {
+        "type": "mapsEdge",
+        "id": "102",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 563858,
+        "from": "0xea08284401",
+        "to": "0xea08284429"
+      },
+      "103": {
+        "type": "mapsEdge",
+        "id": "103",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 563967,
+        "from": "0xea08284429",
+        "to": "0xea08284451"
+      },
+      "104": {
+        "type": "mapsEdge",
+        "id": "104",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 564084,
+        "from": "0xea08284451",
+        "to": "0xea08284479"
+      },
+      "111": {
+        "type": "mapsEdge",
+        "id": "111",
+        "subtype": "InitialMap",
+        "name": "Object7",
+        "reason": "",
+        "time": 612549,
+        "to": "0xea082844a1"
+      },
+      "113": {
+        "type": "mapsEdge",
+        "id": "113",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 612752,
+        "from": "0xea082844a1",
+        "to": "0xea08284519"
+      },
+      "114": {
+        "type": "mapsEdge",
+        "id": "114",
+        "subtype": "Transition",
+        "name": "hola",
+        "reason": "",
+        "time": 612857,
+        "from": "0xea08284519",
+        "to": "0xea08284541"
+      },
+      "115": {
+        "type": "mapsEdge",
+        "id": "115",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 612966,
+        "from": "0xea08284541",
+        "to": "0xea08284569"
+      },
+      "116": {
+        "type": "mapsEdge",
+        "id": "116",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 613084,
+        "from": "0xea08284569",
+        "to": "0xea08284591"
+      },
+      "123": {
+        "type": "mapsEdge",
+        "id": "123",
+        "subtype": "InitialMap",
+        "name": "Object8",
+        "reason": "",
+        "time": 680037,
+        "to": "0xea082845b9"
+      },
+      "125": {
+        "type": "mapsEdge",
+        "id": "125",
+        "subtype": "Transition",
+        "name": "x",
+        "reason": "",
+        "time": 680432,
+        "from": "0xea082845b9",
+        "to": "0xea08284631"
+      },
+      "126": {
+        "type": "mapsEdge",
+        "id": "126",
+        "subtype": "Transition",
+        "name": "y",
+        "reason": "",
+        "time": 680627,
+        "from": "0xea08284631",
+        "to": "0xea08284659"
+      },
+      "127": {
+        "type": "mapsEdge",
+        "id": "127",
+        "subtype": "Transition",
+        "name": "hola",
+        "reason": "",
+        "time": 680757,
+        "from": "0xea08284659",
+        "to": "0xea08284681"
+      },
+      "128": {
+        "type": "mapsEdge",
+        "id": "128",
+        "subtype": "Transition",
+        "name": "hello",
+        "reason": "",
+        "time": 680881,
+        "from": "0xea08284681",
+        "to": "0xea082846a9"
+      }
+    }
+  }
+}

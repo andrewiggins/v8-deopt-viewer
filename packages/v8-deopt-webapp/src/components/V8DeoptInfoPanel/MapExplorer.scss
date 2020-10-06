@@ -1,0 +1,68 @@
+.map_selectors {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1rem;
+	// Explore more at: https://css-tricks.com/almanac/properties/b/box-shadow/
+	// box-shadow: 0 10px 6px -6px #ddd
+
+	> .grouping {
+		flex: 1 1 auto;
+	}
+
+	> .group_value {
+		flex: 1 1 auto;
+	}
+
+	> .map_ids {
+		flex: 1 1 auto;
+	}
+}
+
+.map_details > summary {
+	cursor: pointer;
+}
+
+.goto_loc_btn {
+	padding: 0;
+	float: right;
+	height: auto;
+}
+
+.goto_loc_btn:disabled {
+	pointer-events: auto;
+}
+
+.map_details > summary.map_title {
+	&:hover,
+	&:focus {
+		color: #5755d9;
+		text-decoration: underline;
+	}
+
+	&.selected {
+		font-weight: bold;
+	}
+}
+
+.icon_triangle_up::before {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 12px solid white;
+}
+
+.icon_triangle_down::before {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 12px solid white;
+}
+
+.icon_double_bars::before {
+	width: 8px;
+	height: 0.8rem;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+}

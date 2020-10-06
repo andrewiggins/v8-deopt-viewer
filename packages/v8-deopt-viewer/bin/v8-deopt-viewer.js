@@ -29,6 +29,7 @@ sade("v8-deopt-viewer [file]", true)
 		"Don't remove NodeJS internals from the log",
 		false
 	)
+	.option("--skip-maps", "Skip tracing internal maps of V8", false)
 	.option("--open", "Open the resulting webapp in a web browser", false)
 	.action(run)
 	.parse(process.argv);

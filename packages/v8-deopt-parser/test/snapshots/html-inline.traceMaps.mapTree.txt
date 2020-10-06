@@ -1,0 +1,54 @@
+ └─InitialMap  Object1	[0xea08283f29]
+    └─+x	[0xea08283fa1]
+       └─+y	[0xea08283fc9]
+
+ └─InitialMap  Object2	[0xea08283ff1]
+    └─+y	[0xea08284069]
+       └─+x	[0xea08284091]
+
+ └─InitialMap  Object3	[0xea082840b9]
+    └─+hello	[0xea08284131]
+       └─+x	[0xea08284159]
+          └─+y	[0xea08284181]
+
+ └─InitialMap  Object4	[0xea082841a9]
+    └─+x	[0xea08284221]
+       └─+hello	[0xea08284249]
+          └─+y	[0xea08284271]
+
+ └─InitialMap  Object5	[0xea08284299]
+    └─+x	[0xea08284311]
+       └─+y	[0xea08284339]
+          └─+hello	[0xea08284361]
+
+ └─InitialMap  Object6	[0xea08284389]
+    └─+hola	[0xea08284401]
+       └─+x	[0xea08284429]
+          └─+y	[0xea08284451]
+             └─+hello	[0xea08284479]
+
+ └─InitialMap  Object7	[0xea082844a1]
+    └─+x	[0xea08284519]
+       └─+hola	[0xea08284541]
+          └─+y	[0xea08284569]
+             └─+hello	[0xea08284591]
+
+ └─InitialMap  Object8	[0xea082845b9]
+    └─+x	[0xea08284631]
+       └─+y	[0xea08284659]
+          └─+hola	[0xea08284681]
+             └─+hello	[0xea082846a9]
+
+ └─0xea08280329
+    └─ReplaceDescriptors MapCreate 	[0xea08283ed9]
+       └─+flag	[0xea08283f01]
+
+ └─0xea08281139
+
+ └─0xea08281049
+
+
+
+Total Map Count : 38
+Total Edge Count: 35
+

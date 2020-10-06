@@ -1,14 +1,23 @@
-import { V8DeoptInfo } from "v8-deopt-parser";
+import { PerFileV8DeoptInfo, FileV8DeoptInfo } from "v8-deopt-parser";
 
-type PerFileDeoptInfoWithSources = Record<string, V8DeoptInfoWithSources>;
-
-interface AppProps {
+export interface AppProps {
 	deoptInfo: PerFileDeoptInfoWithSources;
 }
 
-interface V8DeoptInfoWithSources extends V8DeoptInfo {
+export interface PerFileDeoptInfoWithSources extends PerFileV8DeoptInfo {
+	files: Record<string, FileV8DeoptInfoWithSources>;
+}
+
+export type FileV8DeoptInfoWithSources = FileV8DeoptInfo & {
 	relativePath: string;
 	srcPath: string;
 	src?: string;
 	srcError?: string;
+};
+
+export interface Route<Args> {
+	id: string;
+	title?: string;
+	route: string;
+	getHref(...args: Args): string;
 }

@@ -81,7 +81,8 @@ function getV8Flags(logFilePath, traceMaps = false) {
 	];
 
 	if (traceMaps) {
-		flags.push("--trace-maps", "--trace-maps-details");
+		// --trace-maps-details doesn't seem to change output so leaving it out
+		flags.push("--trace-maps");
 	}
 
 	return flags;

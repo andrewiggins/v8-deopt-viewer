@@ -1,3 +1,14 @@
+interface FilePosition {
+	functionName: string;
+	file: string;
+	line: number;
+	column: number;
+	optimizationState?: CodeState;
+}
+
+// ======================================
+// #region Code types
+
 type CodeState = "compiled" | "optimizable" | "optimized" | "unknown";
 
 interface CodeEntry {
@@ -17,6 +28,12 @@ interface CodeEntryUpdate {
 	state: CodeState;
 	severity: number;
 }
+
+// #endregion
+// ======================================
+
+// ======================================
+// #region Deopt types
 
 interface DeoptEntry {
 	type: "deopts";
@@ -45,6 +62,11 @@ interface InlinedLocation {
 	column: number;
 }
 
+// #endregion
+// ======================================
+
+// ======================================
+// #region Inline Cache types
 type ICState =
 	| "unintialized"
 	| "premonomorphic"
@@ -78,22 +100,83 @@ interface ICEntryUpdate {
 	slowReason: string;
 }
 
+// #endregion
+// ======================================
+
+// ======================================
+// #region V8 Map types
+
+interface MapEntry {
+	// Add an artificial type property to differentiate between MapEntries and MapEdges
+	type: "maps";
+	id: string;
+	address: number;
+	time: number;
+	description: string;
+
+	/** Parent Edge ID */
+	edge?: string;
+
+	/** Children Edge IDs */
+	children?: string[];
+	isDeprecated?: boolean;
+	filePosition?: FilePosition;
+}
+
+type MapEdgeType =
+	| "Transition"
+	| "Normalize" // FastToSlow
+	| "SlowToFast"
+	| "InitialMap"
+	| "new"
+	| "ReplaceDescriptors"
+	| "CopyAsPrototype"
+	| "OptimizeAsPrototype";
+
+interface MapEdge {
+	type: "mapsEdge";
+	subtype: MapEdgeType;
+	id: string;
+	name: string;
+	reason: string;
+	time: number;
+	from: string;
+	to: string;
+}
+
+interface MapData {
+	nodes: Record<string, MapEntry>;
+	edges: Record<string, MapEdge>;
+}
+
+// #endregion
+// ======================================
+
 type Entry = ICEntry | DeoptEntry | CodeEntry;
 
-interface V8DeoptInfo {
+interface FileV8DeoptInfo {
+	id: string;
 	ics: ICEntry[];
 	deopts: DeoptEntry[];
 	codes: CodeEntry[];
 }
 
+interface V8DeoptInfo extends FileV8DeoptInfo {
+	maps: MapData;
+}
+
 interface PerFileV8DeoptInfo {
-	[filePath: string]: V8DeoptInfo;
+	files: Record<string, FileV8DeoptInfo>;
+	maps: MapData;
 }
 
 interface Options {
 	keepInternals?: boolean;
 	sortEntries?: boolean;
 }
+
+// ======================================
+// #region Exports
 
 /**
  * Parse the deoptimizations from a v8.log file
@@ -118,6 +201,7 @@ export function groupByFile(rawDeoptInfo: V8DeoptInfo): PerFileV8DeoptInfo;
  * @param entryId The ID of the entry to find
  */
 export function findEntry(
+	// TODO: Either update to handle map entries or change type to FileV8DeoptInfo?
 	deoptInfo: V8DeoptInfo,
 	entryId: string
 ): Entry | null;
@@ -127,6 +211,7 @@ export function findEntry(
  * @param entries A list of V8 Deopt Entries
  * @returns The sorted entries
  */
+// TODO: Either update to handle map entries or change type to exclude map entries?
 export function sortEntries(entries: Entry[]): Entry[];
 
 /**
@@ -140,3 +225,6 @@ export const MIN_SEVERITY = 1;
 
 /** The value used when severity cannot be determined. */
 export const UNKNOWN_SEVERITY = -1;
+
+// #endregion
+// ======================================

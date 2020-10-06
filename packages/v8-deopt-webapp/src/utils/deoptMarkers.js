@@ -1,4 +1,5 @@
 import { sortEntries } from "v8-deopt-parser/src/sortEntries";
+import { codeRoute, deoptsRoute, icsRoute } from "../routes";
 import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.scss";
 
 const DEBUG = location.search.includes("debug");
@@ -37,54 +38,72 @@ function getIcon(type) {
 }
 
 /**
- * @param {Markers} markers
+ * @param {Entries} entries
  * @param {number} curLine
  * @param {number} curColumn
  */
-function locHasMarker(markers, curLine, curColumn) {
-	const nextMarker = markers[0];
+function locHasMarker(entries, curLine, curColumn) {
+	const nextEntry = entries[0];
 	return (
-		markers.length > 0 &&
-		curLine == nextMarker.line &&
-		curColumn >= nextMarker.column
+		entries.length > 0 &&
+		curLine == nextEntry.line &&
+		curColumn >= nextEntry.column
 	);
 }
 
 /**
- * @param {import('v8-deopt-parser').Entry} marker
- * @returns {HTMLElement}
+ * @param {Entry} entry
  */
-function createMarkerElement(fileId, marker) {
-	const mark = document.createElement("mark");
-	mark.textContent = getIcon(marker.type);
+export function getMarkerId(entry) {
+	return `${entry.type}-${entry.id}`;
+}
 
-	const link = document.createElement("a");
-	const linkId = `/file/${fileId}/${marker.id}`;
-	const classes = [deoptMarker, severityClass(marker.severity)];
-	if (location.hash == "#" + linkId) {
+const routes = {
+	codes: codeRoute,
+	deopts: deoptsRoute,
+	ics: icsRoute,
+};
+
+/**
+ * @typedef {HTMLAnchorElement} Marker
+ * @param {number} fileId
+ * @param {import('v8-deopt-parser').Entry} entry
+ * @returns {Marker}
+ */
+function createMarkerElement(fileId, entry) {
+	const mark = document.createElement("mark");
+	mark.textContent = getIcon(entry.type);
+
+	const marker = document.createElement("a");
+	const href = routes[entry.type].getHref(fileId, entry.id);
+	const classes = [deoptMarker, severityClass(entry.severity)];
+	if (location.hash == href) {
 		classes.push("active");
-		setTimeout(() => link.scrollIntoView(), 0);
+		setTimeout(() => marker.scrollIntoView(), 0);
 	}
 
-	link.id = linkId;
-	link.href = "#" + link.id;
-	link.className = classes.join(" ");
-	link.appendChild(mark);
+	marker.id = getMarkerId(entry);
+	marker.href = href;
+	marker.className = classes.join(" ");
+	marker.appendChild(mark);
 
-	return link;
+	return marker;
 }
 
 /**
  * @param {Node} element
- * @param {Markers} markers
+ * @param {number} fileId
+ * @param {Entries} entries
+ * @param {Marker[]} markers
  * @param {number} curLine
  * @param {number} curColumn
  */
-function consumeMarkers(element, fileId, markers, curLine, curColumn) {
+function consumeEntries(element, fileId, entries, markers, curLine, curColumn) {
 	let refChild = element;
-	while (locHasMarker(markers, curLine, curColumn)) {
-		const marker = markers.shift();
-		const lastMark = createMarkerElement(fileId, marker);
+	while (locHasMarker(entries, curLine, curColumn)) {
+		const entry = entries.shift();
+		const lastMark = createMarkerElement(fileId, entry);
+		markers.push(lastMark);
 
 		element.parentNode.insertBefore(lastMark, refChild.nextSibling);
 		refChild = lastMark;
@@ -94,11 +113,12 @@ function consumeMarkers(element, fileId, markers, curLine, curColumn) {
 }
 
 /**
- * @typedef {Array<import('v8-deopt-parser').Entry>} Markers
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
- * @returns {Markers}
+ * @typedef {import('v8-deopt-parser').Entry} Entry
+ * @typedef {Entry[]} Entries
+ * @param {import('..').FileV8DeoptInfoWithSources} deoptInfo
+ * @returns {Entries}
  */
-function getMarkers(deoptInfo) {
+function getEntries(deoptInfo) {
 	return sortEntries([
 		...deoptInfo.codes,
 		...deoptInfo.deopts,
@@ -108,11 +128,14 @@ function getMarkers(deoptInfo) {
 
 /**
  * @param {HTMLElement} root
- * @param {string} fileId
- * @param {import('..').V8DeoptInfoWithSources} deoptInfo
+ * @param {number} fileId
+ * @param {import('..').FileV8DeoptInfoWithSources} deoptInfo
+ * @returns {Marker[]}
  */
 export function addDeoptMarkers(root, fileId, deoptInfo) {
-	const markers = getMarkers(deoptInfo);
+	/** @type {Marker[]} */
+	const markers = [];
+	const entries = getEntries(deoptInfo);
 
 	let code = "";
 	let fullText = DEBUG ? root.textContent : "";
@@ -147,10 +170,11 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 				const line = lines[i];
 				curColumn += line.length;
 
-				if (locHasMarker(markers, curLine, curColumn)) {
-					element = consumeMarkers(
+				if (locHasMarker(entries, curLine, curColumn)) {
+					element = consumeEntries(
 						element,
 						fileId,
+						entries,
 						markers,
 						curLine,
 						curColumn
@@ -170,6 +194,8 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 	if (DEBUG) {
 		console.log("code == fullText:", code == fullText);
 	}
+
+	return markers;
 }
 
 function severityClass(severity) {

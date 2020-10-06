@@ -29,6 +29,21 @@ const defaultOptions = {
 const ispawnRegex = /ispawn\/preload\/\S+\.js$/;
 
 /**
+ * @param {import('./').MapEntry} map
+ * @param {string} childEdgeId
+ */
+function addEdgeChild(map, childEdgeId) {
+	if (Array.isArray(map.children)) {
+		map.children.push(childEdgeId);
+	} else {
+		map.children = [childEdgeId];
+	}
+}
+
+/** @type {(address: number) => string} */
+const getMapIdBase = (addr) => "0x" + addr.toString(16);
+
+/**
  * @param {string} functionName
  * @param {string} file
  * @param {number} line
@@ -62,11 +77,19 @@ export class DeoptLogReader extends LogReader {
 		this._profile = new Profile();
 
 		/** @type {Map<string, import('./').ICEntry>} */
-		this.entriesIC = new Map();
+		this.icEntries = new Map();
 		/** @type {Map<string, import('./').DeoptEntry>} */
-		this.entriesDeopt = new Map();
+		this.deoptEntries = new Map();
 		/** @type {Map<string, import('./').CodeEntry>} */
-		this.entriesCode = new Map();
+		this.codeEntries = new Map();
+
+		/** @type {Map<string, import('./').MapEntry>} */
+		this.allMapEntries = new Map();
+		/** @type {Map<string, import('./').MapEdge>} */
+		this.allEdgeEntries = new Map();
+
+		/** @type {Set<string>} */
+		this.usedMaps = new Set();
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
@@ -126,6 +149,38 @@ export class DeoptLogReader extends LogReader {
 				parsers: propertyICFieldParsers,
 				processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
 			},
+
+			// Collect map creation/transition info
+			"map-create": {
+				parsers: [
+					parseInt, // time
+					parseInt, // id
+					parseString, // description
+				],
+				processor: this.processMapCreate,
+			},
+			map: {
+				parsers: [
+					parseString, // type
+					parseInt, // time
+					parseInt, // from
+					parseInt, // to
+					parseInt, // profileCode
+					parseInt, // line
+					parseInt, // column
+					parseString, // reason
+					parseString, // name
+				],
+				processor: this.processMap,
+			},
+			"map-details": {
+				parsers: [
+					parseInt, // time
+					parseInt, // id
+					parseString, // description
+				],
+				processor: this.processMapDetails,
+			},
 		};
 	}
 
@@ -159,8 +214,8 @@ export class DeoptLogReader extends LogReader {
 
 			let severity = severityOfOptimizationState(optimizationState);
 			const key = locationKey(functionName, file, line, column);
-			if (!this.entriesCode.has(key)) {
-				this.entriesCode.set(key, {
+			if (!this.codeEntries.has(key)) {
+				this.codeEntries.set(key, {
 					type: "codes",
 					id: `${this._id++}`,
 					functionName,
@@ -173,7 +228,7 @@ export class DeoptLogReader extends LogReader {
 				});
 			}
 
-			const code = this.entriesCode.get(key);
+			const code = this.codeEntries.get(key);
 			code.updates.push({
 				timestamp,
 				state: nameOptimizationState(optimizationState),
@@ -234,8 +289,8 @@ export class DeoptLogReader extends LogReader {
 		const key = locationKey("", file, line, column);
 
 		const severity = getOptimizationSeverity(bailoutType);
-		if (!this.entriesDeopt.has(key)) {
-			this.entriesDeopt.set(key, {
+		if (!this.deoptEntries.has(key)) {
+			this.deoptEntries.set(key, {
 				type: "deopts",
 				id: `${this._id++}`,
 				functionName,
@@ -247,7 +302,7 @@ export class DeoptLogReader extends LogReader {
 			});
 		}
 
-		const deoptEntry = this.entriesDeopt.get(key);
+		const deoptEntry = this.deoptEntries.get(key);
 		deoptEntry.updates.push({
 			timestamp,
 			bailoutType,
@@ -263,6 +318,18 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {number} code
+	 * @param {number} line
+	 * @param {number} column
+	 * @param {import('./index').ICState} oldState
+	 * @param {import('./index').ICState} newState
+	 * @param {number} mapAddress
+	 * @param {string} propertyKey
+	 * @param {string} modifier
+	 * @param {string} slow_reason
+	 */
 	_processPropertyIC(
 		type,
 		code,
@@ -270,13 +337,13 @@ export class DeoptLogReader extends LogReader {
 		column,
 		oldState,
 		newState,
-		map,
+		mapAddress,
 		propertyKey,
 		modifier,
 		slow_reason
 	) {
 		// Skip unknown IC entries whose maps are 0. Not sure what these mean...
-		if (oldState == UNKNOWN && newState == UNKNOWN && parseInt(map) == 0) {
+		if (oldState == UNKNOWN && newState == UNKNOWN && mapAddress == 0) {
 			return;
 		}
 
@@ -288,14 +355,14 @@ export class DeoptLogReader extends LogReader {
 		// inlined in funcB, any propertyIC related to the inlined funcA code would
 		// show up with the name funcB instead of funcA. This change in function
 		// name makes it harder to track PropertyIC all related to funcA. So to keep
-		// track of inline caches for funcA, we rely soley on the file, line, and
+		// track of inline caches for funcA, we rely solely on the file, line, and
 		// column from the profile (which is consistent across inlines) to track
 		// property inline caches
 		const key = locationKey("", file, line, column);
 
 		const severity = severityIcState(newState);
-		if (!this.entriesIC.has(key)) {
-			this.entriesIC.set(key, {
+		if (!this.icEntries.has(key)) {
+			this.icEntries.set(key, {
 				type: "ics",
 				id: `${this._id++}`,
 				functionName,
@@ -307,13 +374,18 @@ export class DeoptLogReader extends LogReader {
 			});
 		}
 
-		const icEntry = this.entriesIC.get(key);
+		let mapId;
+		try {
+			mapId = this.getExistingMap(mapAddress)?.id;
+		} catch (e) {}
+
+		const icEntry = this.icEntries.get(key);
 		icEntry.updates.push({
 			type,
 			oldState,
 			newState,
 			key: propertyKey,
-			map,
+			map: mapId ?? getMapIdBase(mapAddress),
 			optimizationState,
 			severity,
 			modifier,
@@ -323,6 +395,130 @@ export class DeoptLogReader extends LogReader {
 		if (severity > icEntry.severity) {
 			icEntry.severity = severity;
 		}
+
+		if (mapId && (this.options.keepInternals || !this.isInternal(icEntry))) {
+			this.markMapTreeUsed(mapId);
+		}
+	}
+
+	processMapCreate(time, address, description) {
+		// map-create events might override existing maps if the addresses get
+		// recycled. Hence we do not check for existing maps.
+		//
+		// TODO: Maybe perhaps consider making this method upgrade the allMapEntry
+		// value to an array if an address was re-used?
+		//
+		// For example, 3055214391657 in v8-deopt-parser.v8.log.
+		//
+		// Or maybe we change add a new field to the root map indicating it has some
+		// reuses and creating the reuse under a new ID (1234_1? or 1234.1 so the
+		// type can remain a number). Or do we separate the map address and ID
+		// concepts and ensure the ID is always a string? With a new ID per re-use,
+		// each time we look up a map (i.e. getExistingMap) we'll need to make sure
+		// we understand what map we want. It seems the V8 map-processor does this
+		// using time. Based on the time of the look up, you can determine what map
+		// version is used.
+
+		// if (this.allMapEntries.has(id)) {
+		// 	console.log("DUPLICATE MAP CREATE:", id);
+		// }
+
+		/** @type {import('.').MapEntry} */
+		let map = {
+			type: "maps",
+			// TODO: Arbitrarily make this the hex form of the address to flush out
+			// any bugs. Eventually this will likely need to become something map
+			// address + time to accommodate map addresses that get re-used.
+			id: getMapIdBase(address),
+			address: address,
+			time,
+			description,
+		};
+
+		this.allMapEntries.set(map.id, map);
+	}
+
+	processMap(
+		type,
+		time,
+		fromAddress,
+		toAddress,
+		profileCode,
+		line,
+		column,
+		reason,
+		name
+	) {
+		// Ignore line and column arguments. They can be invalid values (e.g. -1) if
+		// a map is created in an internal function of V8 (e.g. Object.assign)
+		if (profileCode == 0) {
+			return;
+		}
+
+		if (type === "Deprecate") {
+			// TODO: Investigate what this means...
+			this.getExistingMap(fromAddress, time).isDeprecated = true;
+			return;
+		}
+
+		if (toAddress == fromAddress) {
+			throw new Error("From and to must be distinct.");
+		}
+
+		const from = this.getExistingMap(fromAddress, time);
+		const to = this.getExistingMap(toAddress, time);
+
+		/** @type {import('./').MapEdge} */
+		let edge = {
+			type: "mapsEdge",
+			id: `${this._id++}`,
+			subtype: type,
+			name,
+			reason,
+			time,
+			from: fromAddress == 0 ? undefined : from.id,
+			to: to.id,
+		};
+
+		this.allEdgeEntries.set(edge.id, edge);
+
+		if (from) {
+			addEdgeChild(from, edge.id);
+		}
+
+		if (to) {
+			to.edge = edge.id;
+			to.filePosition = this.getInfoFromProfile(profileCode);
+		}
+	}
+
+	processMapDetails(time, id, desc) {
+		// TODO: Some maps can get multiple detail entries (e.g. 3656044277313 in
+		// adders.traceMaps.v8.log). What should we do??
+		let map = this.getExistingMap(id, time);
+		if (!map.description) {
+			map.description = desc;
+		}
+	}
+
+	/**
+	 * Given the address of a map and the time of the look up, return the
+	 * appropriate map details. Assumes latest map if time is not given
+	 * @param {number} address
+	 * @param {number} [time]
+	 */
+	getExistingMap(address, time) {
+		// For example, this a property IC log with a map ID of 0:
+		// StoreInArrayLiteralIC,0x2b4d5aeaf12,164,47,0,1,0x000000000000,0,,
+		if (address === 0) return undefined;
+
+		const id = getMapIdBase(address);
+		const map = this.allMapEntries.get(id);
+		if (map === undefined) {
+			throw new Error(`No map details provided: id=${id}`);
+		}
+
+		return map;
 	}
 
 	/**
@@ -367,27 +563,69 @@ export class DeoptLogReader extends LogReader {
 
 	/** @returns {import('./').V8DeoptInfo} */
 	toJSON() {
+		/** @type {import('.').MapData} */
+		const mapData = { nodes: {}, edges: {} };
+
+		// Only include maps used by the user's code an their direct parents. No
+		// aunts or uncles are included by default.
+		for (let mapId of this.usedMaps) {
+			/** @type {string} */
+			let parentMapId = mapId;
+			let childEdgeId;
+
+			do {
+				let map = this.allMapEntries.get(parentMapId);
+				if (map.id in mapData.nodes) {
+					if (childEdgeId) {
+						addEdgeChild(mapData.nodes[map.id], childEdgeId);
+					}
+					break;
+				}
+
+				mapData.nodes[map.id] = { ...map };
+
+				// Clear the children array so that only children used by the maps in
+				// this application are included
+				mapData.nodes[map.id].children = childEdgeId
+					? [childEdgeId]
+					: undefined;
+
+				if (map.edge) {
+					childEdgeId = map.edge;
+					mapData.edges[map.edge] = this.allEdgeEntries.get(map.edge);
+				}
+
+				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
+			} while (parentMapId);
+		}
+
 		const filterInternals = this.filterInternals.bind(this);
 		return {
 			ics: this.sortEntries(
-				Array.from(this.entriesIC.values())
+				Array.from(this.icEntries.values())
 					.filter((entry) => entry.updates.length > 0)
 					.filter(filterInternals)
 			),
 			deopts: this.sortEntries(
-				Array.from(this.entriesDeopt.values()).filter(filterInternals)
+				Array.from(this.deoptEntries.values()).filter(filterInternals)
 			),
 			codes: this.sortEntries(
-				Array.from(this.entriesCode.values()).filter(filterInternals)
+				Array.from(this.codeEntries.values()).filter(filterInternals)
 			),
+			maps: mapData,
 		};
 	}
 
+	/**
+	 * Determine if an entry is a reference to a internal V8 or NodeJS file
+	 * @param {import('./index').Entry} entry
+	 */
+	isInternal(entry) {
+		return !isAbsolutePath(entry.file) || ispawnRegex.test(entry.file);
+	}
+
 	filterInternals(entry) {
-		return (
-			this.options.keepInternals ||
-			(isAbsolutePath(entry.file) && !ispawnRegex.test(entry.file))
-		);
+		return this.options.keepInternals || !this.isInternal(entry);
 	}
 
 	sortEntries(entries) {
@@ -395,6 +633,37 @@ export class DeoptLogReader extends LogReader {
 			return sortEntries(entries);
 		} else {
 			return entries;
+		}
+	}
+
+	/**
+	 * Add this map and all of its parents as "used"
+	 * @param {string} mapId
+	 */
+	markMapTreeUsed(mapId) {
+		if (this.usedMaps.has(mapId)) {
+			return;
+		}
+
+		try {
+			// Add this map and all of its parents to the usedMaps set
+			let parentMapId = mapId;
+			do {
+				let map = this.allMapEntries.get(parentMapId);
+				if (!map) {
+					throw new Error(`No map details provided: id=${parentMapId}`);
+				}
+
+				this.usedMaps.add(parentMapId);
+				parentMapId = map.edge ? this.allEdgeEntries.get(map.edge)?.from : null;
+			} while (parentMapId && !this.usedMaps.has(parentMapId));
+		} catch (error) {
+			// Sometimes, V8 logs will include property ICs on Maps with no create
+			// details (argh, why??). Ignore errors for those situations. For example,
+			// 3055214391657 in v8-deopt-parser.v8.log
+			if (!error.message.includes("No map details provided")) {
+				throw error;
+			}
 		}
 	}
 }
