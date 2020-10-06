@@ -296,7 +296,7 @@ export function MapExplorer(props) {
 				setSelectedEntry(null);
 			}
 		}
-	}, [state.selectedGroup, fileDeoptInfo]);
+	}, [state.selectedGroup.id, fileDeoptInfo]);
 
 	return (
 		<Fragment>
@@ -322,7 +322,9 @@ export function MapExplorer(props) {
 							// 		settings
 							// 	),
 							// });
-							setLocation(mapsRoute.getHref(fileId, grouping));
+							if (grouping !== state.grouping) {
+								setLocation(mapsRoute.getHref(fileId, grouping));
+							}
 						}}
 						id="map-grouping"
 						class={form_select}
@@ -347,9 +349,11 @@ export function MapExplorer(props) {
 							// 	type: "SET_GROUP_VALUE",
 							// 	newValue: newGroupValue,
 							// });
-							setLocation(
-								mapsRoute.getHref(fileId, state.grouping, newGroupValue)
-							);
+							if (newGroupValue.id !== state.selectedGroup.id) {
+								setLocation(
+									mapsRoute.getHref(fileId, state.grouping, newGroupValue)
+								);
+							}
 						}}
 						id="map-group"
 						class={form_select}

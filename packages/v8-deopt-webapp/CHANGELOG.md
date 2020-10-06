@@ -1,5 +1,11 @@
 # v8-deopt-webapp
 
+## 0.4.2
+
+### Patch Changes
+
+- Fix infinite loop in MapExplorer
+
 ## 0.4.1
 
 ### Patch Changes
