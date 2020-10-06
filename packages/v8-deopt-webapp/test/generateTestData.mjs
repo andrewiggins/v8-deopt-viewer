@@ -5,10 +5,12 @@ import { fileURLToPath } from "url";
 import { readLogFile } from "../../v8-deopt-parser/test/helpers.js";
 
 // const logFileName = "adders.v8.log";
+
+const logFileName = "html-external.v8.log";
+const logWithMapsFileName = "html-external.traceMaps.v8.log";
+
 // const logFileName = "html-inline.v8.log";
-// const logFileName = "html-external.v8.log";
-const logFileName = "html-inline.v8.log";
-const logWithMapsFileName = "html-inline.traceMaps.v8.log";
+// const logWithMapsFileName = "html-inline.traceMaps.v8.log";
 
 // @ts-ignore
 const __dirname = path.join(fileURLToPath(import.meta.url));
