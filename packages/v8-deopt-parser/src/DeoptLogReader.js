@@ -9,6 +9,7 @@ import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
 	NO_FEEDBACK,
 	propertyICFieldParsers,
+	propertyIcFieldParsersNew,
 	severityIcState,
 } from "./propertyICParsers.js";
 import {
@@ -91,6 +92,13 @@ export class DeoptLogReader extends LogReader {
 		/** @type {Set<string>} */
 		this.usedMaps = new Set();
 
+		const processIc = this.options.hasNewIcFormat
+			? this._processPropertyICNew
+			: this._processPropertyIC;
+		const parseIcField = this.options.hasNewIcFormat
+			? propertyIcFieldParsersNew
+			: propertyICFieldParsers;
+
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
 		// dispatch table as an argument into `super` fails because it would
@@ -130,24 +138,24 @@ export class DeoptLogReader extends LogReader {
 
 			// Collect IC info
 			LoadIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "LoadIC"),
+				parsers: parseIcField,
+				processor: processIc.bind(this, "LoadIC"),
 			},
 			StoreIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "StoreIC"),
+				parsers: parseIcField,
+				processor: processIc.bind(this, "StoreIC"),
 			},
 			KeyedLoadIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "KeyedLoadIC"),
+				parsers: parseIcField,
+				processor: processIc.bind(this, "KeyedLoadIC"),
 			},
 			KeyedStoreIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "KeyedStoreIC"),
+				parsers: parseIcField,
+				processor: processIc.bind(this, "KeyedStoreIC"),
 			},
 			StoreInArrayLiteralIC: {
-				parsers: propertyICFieldParsers,
-				processor: this._processPropertyIC.bind(this, "StoreInArrayLiteralIC"),
+				parsers: parseIcField,
+				processor: processIc.bind(this, "StoreInArrayLiteralIC"),
 			},
 
 			// Collect map creation/transition info
@@ -316,6 +324,46 @@ export class DeoptLogReader extends LogReader {
 		if (severity > deoptEntry.severity) {
 			deoptEntry.severity = severity;
 		}
+	}
+
+	/**
+	 * @param {string} type
+	 * @param {number} code
+	 * @param {number} time
+	 * @param {number} line
+	 * @param {number} column
+	 * @param {import('./index').ICState} oldState
+	 * @param {import('./index').ICState} newState
+	 * @param {number} mapAddress
+	 * @param {string} propertyKey
+	 * @param {string} modifier
+	 * @param {string} slow_reason
+	 */
+	_processPropertyICNew(
+		type,
+		code,
+		time, // unused
+		line,
+		column,
+		oldState,
+		newState,
+		mapAddress,
+		propertyKey,
+		modifier,
+		slow_reason
+	) {
+		return this._processPropertyIC(
+			type,
+			code,
+			line,
+			column,
+			oldState,
+			newState,
+			mapAddress,
+			propertyKey,
+			modifier,
+			slow_reason
+		);
 	}
 
 	/**

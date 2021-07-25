@@ -313,6 +313,15 @@ test("runParser(adders.v8.log, keepInternals)", async (t) => {
 	t.equal(result.ics.length, 182, "Number of ics");
 });
 
+test("runParser(adders.newIc.v8.log, keepInternals)", async (t) => {
+	const logFileName = "adders.v8.log";
+	const result = await runParser(t, logFileName, { keepInternals: true });
+
+	t.equal(result.codes.length, 253, "Number of codes");
+	t.equal(result.deopts.length, 7, "Number of deopts");
+	t.equal(result.ics.length, 182, "Number of ics");
+});
+
 test("runParser(two-modules.v8.log, keepInternals)", async (t) => {
 	const logFileName = "two-modules.v8.log";
 	const result = await runParser(t, logFileName, { keepInternals: true });

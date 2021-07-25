@@ -88,3 +88,15 @@ export const propertyICFieldParsers = [
 	parseString, // modifier
 	parseString, // slow_reason
 ];
+export const propertyIcFieldParsersNew = [
+	parseInt, // profile code
+	parseInt, // time
+	parseInt, // line
+	parseInt, // column
+	parseIcState, // old_state
+	parseIcState, // new_state
+	parseInt, // map ID
+	parseString, // propertyKey
+	parseString, // modifier
+	parseString, // slow_reason
+];

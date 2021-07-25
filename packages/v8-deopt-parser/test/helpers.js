@@ -132,6 +132,8 @@ export async function runParser(t, logFileName, options) {
 	const logPath = pkgRoot("test", "logs", logFileName);
 
 	const logContents = await readLogFile(logFileName, logPath);
+	// New IC format has 10 values instead of 9
+	const hasNewIcFormat = /\w+IC(,.*){10}/gm.test(logContents);
 
 	const origConsoleError = console.error;
 	const errorArgs = [];
@@ -142,7 +144,7 @@ export async function runParser(t, logFileName, options) {
 
 	let result;
 	try {
-		result = await parseV8Log(logContents, options);
+		result = await parseV8Log(logContents, { ...options, hasNewIcFormat });
 	} finally {
 		console.error = origConsoleError;
 	}
