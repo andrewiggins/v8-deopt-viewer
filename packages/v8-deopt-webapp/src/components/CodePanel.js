@@ -29,7 +29,7 @@ function determineLanguage(path) {
 		return "html";
 	} else if (
 		(path.startsWith("http:") || path.startsWith("https:")) &&
-		!path.endsWith(".js")
+		!path.match(/\.[mc]?jsx?$/)
 	) {
 		// Assume URLs without .js extensions are HTML pages
 		return "html";
