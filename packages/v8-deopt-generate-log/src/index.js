@@ -98,9 +98,13 @@ function getV8Flags(logFilePath, hasNewCliArgs = false, traceMaps = false) {
  */
 async function runPuppeteer(srcUrl, options) {
 	const logFilePath = options.logFilePath;
-	// TODO: Check which chrome revision switched to the new
-	// arguments.
-	const hasNewCliArgs = false;
+
+	// Our GitHub actions started failing after the release of Chrome 90 so let's
+	// assume Chrome 90 contains the new V8 version that requires the new flags.
+	// Consider in the future trying to detect the version of chrome being used,
+	// but for now let's just always use the new flags since most people
+	// auto-update Chrome to the latest.
+	const hasNewCliArgs = true;
 	const v8Flags = getV8Flags(logFilePath, hasNewCliArgs, options.traceMaps);
 	const args = [
 		"--disable-extensions",
