@@ -74,7 +74,7 @@ async function launchBrowser(options) {
  */
 function getV8Flags(logFilePath, hasNewCliArgs = false, traceMaps = false) {
 	const flags = [
-		"--trace-ic",
+		hasNewCliArgs ? "--log-ic" : "--trace-ic",
 		// Could pipe log to stdout ("-" value) but doesn't work very well with
 		// Chromium. Chromium won't pipe v8 logs to a non-TTY pipe it seems :(
 		`--logfile=${logFilePath}`,

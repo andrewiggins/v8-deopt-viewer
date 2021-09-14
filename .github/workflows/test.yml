@@ -18,13 +18,14 @@ jobs:
         # TODO: fix tests on ubuntu
         #os: [ubuntu-latest, windows-latest]
         os: [windows-latest]
+        node: [14.x, 16.x]
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 14.x
+      - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: ${{ matrix.node }}
       - name: yarn install & test
         run: |
           yarn
