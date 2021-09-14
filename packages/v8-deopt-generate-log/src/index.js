@@ -6,8 +6,8 @@ import { promisify } from "util";
 import { pathToFileURL } from "url";
 
 const execFileAsync = promisify(execFile);
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-const makeAbsolute = filePath =>
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const makeAbsolute = (filePath) =>
 	path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath);
 
 /**
@@ -34,8 +34,8 @@ async function getLauncher() {
 		// 2. Try chrome-launcher
 		if (!launcher) {
 			const [chromeLauncher, puppeteer] = await Promise.all([
-				import("chrome-launcher").then(m => m.default),
-				import("puppeteer-core").then(m => m.default)
+				import("chrome-launcher").then((m) => m.default),
+				import("puppeteer-core").then((m) => m.default),
 			]);
 
 			const chromePath = chromeLauncher.Launcher.getFirstInstallation();
@@ -47,10 +47,10 @@ async function getLauncher() {
 			}
 
 			// console.log("Using Chrome installed at:", chromePath);
-			launcher = options =>
+			launcher = (options) =>
 				puppeteer.launch({
 					...options,
-					executablePath: chromePath
+					executablePath: chromePath,
 				});
 		}
 	}
@@ -68,21 +68,25 @@ async function launchBrowser(options) {
 
 /**
  * @param {string} logFilePath
+ * @param {boolean} [hasNewCliArgs]
  * @param {boolean} [traceMaps]
  * @returns {string[]}
  */
-function getV8Flags(logFilePath, traceMaps = false) {
+function getV8Flags(logFilePath, hasNewCliArgs = false, traceMaps = false) {
 	const flags = [
 		"--trace-ic",
 		// Could pipe log to stdout ("-" value) but doesn't work very well with
 		// Chromium. Chromium won't pipe v8 logs to a non-TTY pipe it seems :(
 		`--logfile=${logFilePath}`,
-		"--no-logfile-per-isolate"
+		"--no-logfile-per-isolate",
 	];
 
 	if (traceMaps) {
 		// --trace-maps-details doesn't seem to change output so leaving it out
-		flags.push("--trace-maps");
+		// Note: Newer versions of V8 renamed flags from `--log-maps` to
+		// `--trace-maps`. Same for `--trace-maps-details` vs
+		// `--log-maps-details`
+		flags.push(hasNewCliArgs ? "--log-maps" : "--trace-maps");
 	}
 
 	return flags;
@@ -94,19 +98,22 @@ function getV8Flags(logFilePath, traceMaps = false) {
  */
 async function runPuppeteer(srcUrl, options) {
 	const logFilePath = options.logFilePath;
-	const v8Flags = getV8Flags(logFilePath, options.traceMaps);
+	// TODO: Check which chrome revision switched to the new
+	// arguments.
+	const hasNewCliArgs = false;
+	const v8Flags = getV8Flags(logFilePath, hasNewCliArgs, options.traceMaps);
 	const args = [
 		"--disable-extensions",
 		`--js-flags=${v8Flags.join(" ")}`,
 		`--no-sandbox`,
-		srcUrl
+		srcUrl,
 	];
 
 	let browser;
 	try {
 		browser = await launchBrowser({
 			ignoreDefaultArgs: ["about:blank"],
-			args
+			args,
 		});
 
 		await browser.pages();
@@ -139,7 +146,11 @@ async function generateForLocalHTML(srcPath, options) {
  */
 async function generateForNodeJS(srcPath, options) {
 	const logFilePath = options.logFilePath;
-	const args = [...getV8Flags(logFilePath, options.traceMaps), srcPath];
+	const hasNewCliArgs = +process.versions.node.match(/^(\d+)/)[0] >= 16;
+	const args = [
+		...getV8Flags(logFilePath, hasNewCliArgs, options.traceMaps),
+		srcPath,
+	];
 
 	await execFileAsync(process.execPath, args, {});
 
@@ -149,7 +160,7 @@ async function generateForNodeJS(srcPath, options) {
 /** @type {import('.').Options} */
 const defaultOptions = {
 	logFilePath: `${tmpdir()}/v8-deopt-generate-log/v8.log`,
-	browserTimeoutMs: 5000
+	browserTimeoutMs: 5000,
 };
 
 /**
