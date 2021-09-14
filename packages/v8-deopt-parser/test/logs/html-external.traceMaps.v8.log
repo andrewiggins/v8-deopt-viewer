@@ -3121,7 +3121,7 @@ map,Normalize,149574,0x2ec008283ca9,0x2ec008287089,0x000000000000,-1,-1,Normaliz
 map-create,149586,0x2ec0082870b1
 map-details,149593,0x2ec0082870b1,Map=00002EC0082870B1\n - type: JS_FUNCTION_TYPE\n - instance size: 32\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - callable\n - constructor\n - has_prototype_slot\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008265a65 <JSFunction (sfi = 00002EC008181E81)>\n - constructor: 0x2ec008265b99 <JSFunction Function (sfi = 00002EC0081C45A1)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
 map,ReplaceDescriptors,149655,0x2ec008287089,0x2ec0082870b1,0x000000000000,-1,-1,CopyAsPrototype,
-code-creation,Script,12,151151,0x2ec0082cae1e,224, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:1:1,0x2ec0082cab60,~
+code-creation,Script,12,151151,0x2ec0082cae1e,224, file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:1:1,0x2ec0082cab60,~
 map-create,151255,0x2ec0082870d9
 map-details,151270,0x2ec0082870d9,Map=00002EC0082870D9\n - type: JS_OBJECT_TYPE\n - instance size: 28\n - inobject properties: 4\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 4\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008241cd1 <JSFunction Object (sfi = 00002EC0081C4B45)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
 map,ReplaceDescriptors,151355,0x2ec008280329,0x2ec0082870d9,0x2ec0082cae33,1,1,MapCreate,
@@ -3194,7 +3194,7 @@ map-details,153332,0x2ec008287449,Map=00002EC008287449\n - type: JS_FUNCTION_TYP
 map,InitialMap,153432,0x000000000000,0x2ec008287449,0x2ec0082caef0,50,1,init class constructor,Object8
 map-details,153442,0x2ec008287471,Map=00002EC008287471\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - stable_map\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #1: 0x2ec0080887ad <DescriptorArray[1]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008088735 <JSFunction Object8 (sfi = 00002EC0082CAD11)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n  [0]: 0x2ec00804202d <String[#11]: constructor> (const data field 0:h\x2C p: 0\x2C attrs: [W_C]) @ Any\n
 map,InitialMap,153508,0x000000000000,0x2ec008287471,0x2ec0082caef0,50,1,init class prototype,
-code-creation,Script,12,155034,0x2ec0082cb436,528, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,~
+code-creation,Script,12,155034,0x2ec0082cb436,528, file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,~
 map-create,155112,0x2ec008287499
 map-details,155122,0x2ec008287499,Map=00002EC008287499\n - type: JS_OBJECT_TYPE\n - instance size: 28\n - inobject properties: 4\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 4\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec00804030d <undefined>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008241cd1 <JSFunction Object (sfi = 00002EC0081C4B45)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
 map,ReplaceDescriptors,155194,0x2ec008280329,0x2ec008287499,0x2ec0082cb44b,16,25,MapCreate,
@@ -3207,13 +3207,13 @@ map,SlowToFast,155442,0x2ec0082801e9,0x2ec0082874e9,0x2ec0082cb465,44,15,Optimiz
 StoreGlobalIC,0x2ec0082cb465,44,15,X,X,0x000000000000,results,,
 LoadGlobalIC,0x2ec0082cb47e,56,5,X,X,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082cb483,56,5,X,X,0x2ec008280171,addSmis,,
-code-creation,LazyCompile,12,155555,0x2ec0082cba4a,25,addSmis file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:20:17,0x2ec0082cb23c,~
-code-creation,LazyCompile,12,155614,0x2ec0082cbb02,64,processResult file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,~
+code-creation,LazyCompile,12,155555,0x2ec0082cba4a,25,addSmis file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:20:17,0x2ec0082cb23c,~
+code-creation,LazyCompile,12,155614,0x2ec0082cbb02,64,processResult file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,~
 LoadGlobalIC,0x2ec0082cbb15,49,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cbb25,51,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cb493,57,5,X,X,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082cb498,57,5,X,X,0x2ec008280171,addNumbers,,
-code-creation,LazyCompile,12,155711,0x2ec0082cbbea,25,addNumbers file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:25:20,0x2ec0082cb274,~
+code-creation,LazyCompile,12,155711,0x2ec0082cbbea,25,addNumbers file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:25:20,0x2ec0082cb274,~
 LoadGlobalIC,0x2ec0082cbb15,49,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cbb25,51,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cb4a8,58,5,X,X,0x2ec008280171,processResult,,
@@ -3222,12 +3222,12 @@ LoadGlobalIC,0x2ec0082cbb15,49,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cbb25,51,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cb4cb,59,5,X,X,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082cb4d0,59,5,X,X,0x2ec008280171,addStrings,,
-code-creation,LazyCompile,12,155870,0x2ec0082cbca6,25,addStrings file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:30:20,0x2ec0082cb2ac,~
+code-creation,LazyCompile,12,155870,0x2ec0082cbca6,25,addStrings file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:30:20,0x2ec0082cb2ac,~
 LoadGlobalIC,0x2ec0082cbb15,49,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cbb25,51,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cb4ea,61,5,X,X,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082cb4ef,61,5,X,X,0x2ec008280171,addAny,,
-code-creation,LazyCompile,12,155953,0x2ec0082cbd5a,44,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,~
+code-creation,LazyCompile,12,155953,0x2ec0082cbd5a,44,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,~
 LoadGlobalIC,0x2ec0082cbb15,49,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cbb25,51,3,X,X,0x2ec008280171,results,,
 LoadGlobalIC,0x2ec0082cb47e,56,5,X,X,0x2ec008280171,processResult,,
@@ -3346,32 +3346,32 @@ LoadIC,0x2ec0082cbbf1,26,23,0,1,0x2ec0082874c1,flag,,
 LoadIC,0x2ec0082cbd61,36,23,0,1,0x2ec0082874c1,flag,,
 LoadIC,0x2ec0082cba51,21,23,0,1,0x2ec0082874c1,flag,,
 LoadIC,0x2ec0082cbcad,31,23,0,1,0x2ec0082874c1,flag,,
-code-creation,LazyCompile,0,160765,0x2ec0000c2b20,665,processResult file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,*
-code-creation,LazyCompile,0,162484,0x2ec0000c2e00,494,addNumbers file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:25:20,0x2ec0082cb274,*
-code-creation,LazyCompile,0,163885,0x2ec0000c3040,418,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,164890,0x2ec0000c3240,366,addSmis file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:20:17,0x2ec0082cb23c,*
-code-creation,LazyCompile,0,165248,0x2ec0000c3400,314,addStrings file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:30:20,0x2ec0082cb2ac,*
-code-creation,LazyCompile,0,170364,0x2ec0000c3580,4628, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
+code-creation,LazyCompile,0,160765,0x2ec0000c2b20,665,processResult file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,*
+code-creation,LazyCompile,0,162484,0x2ec0000c2e00,494,addNumbers file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:25:20,0x2ec0082cb274,*
+code-creation,LazyCompile,0,163885,0x2ec0000c3040,418,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,164890,0x2ec0000c3240,366,addSmis file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:20:17,0x2ec0082cb23c,*
+code-creation,LazyCompile,0,165248,0x2ec0000c3400,314,addStrings file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:30:20,0x2ec0082cb2ac,*
+code-creation,LazyCompile,0,170364,0x2ec0000c3580,4628, file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
 StoreGlobalIC,0x2ec0000c44fe,54,19,0,1,0x2ec008280171,results,,
-code-deopt,173314,4704,0x2ec0000c3580,9,981,lazy,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:51:37> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:56:5>,(unknown)
+code-deopt,173314,4704,0x2ec0000c3580,9,981,lazy,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:51:37> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:56:5>,(unknown)
 LoadIC,0x2ec0082cbb1a,49,11,1,P,0x2ec008281049,push,,
 LoadIC,0x2ec0082cbb2a,51,15,1,P,0x2ec008281049,length,,
-code-creation,LazyCompile,0,175424,0x2ec0000c47e0,1037,processResult file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,*
-code-creation,LazyCompile,0,186751,0x2ec0000c4c40,6628, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
-code-deopt,305919,6720,0x2ec0000c4c40,-1,1324,soft,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:65:19>,Insufficient type feedback for compare operation
-code-deopt,306061,512,0x2ec0000c3040,-1,746,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:39:12>,not a Smi
-code-creation,LazyCompile,0,309270,0x2ec0000c6680,550,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,315631,0x2ec0000c6900,2212, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
-code-deopt,334766,2304,0x2ec0000c6900,-1,1472,soft,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:72:19>,Insufficient type feedback for compare operation
-code-deopt,334871,640,0x2ec0000c6680,-1,746,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:39:12>,not a Number or Oddball
-code-creation,LazyCompile,0,336285,0x2ec0000c7200,238,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,342041,0x2ec0000c7340,3730, file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
+code-creation,LazyCompile,0,175424,0x2ec0000c47e0,1037,processResult file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:46:23,0x2ec0082cb31c,*
+code-creation,LazyCompile,0,186751,0x2ec0000c4c40,6628, file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
+code-deopt,305919,6720,0x2ec0000c4c40,-1,1324,soft,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:65:19>,Insufficient type feedback for compare operation
+code-deopt,306061,512,0x2ec0000c3040,-1,746,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:39:12>,not a Smi
+code-creation,LazyCompile,0,309270,0x2ec0000c6680,550,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,315631,0x2ec0000c6900,2212, file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
+code-deopt,334766,2304,0x2ec0000c6900,-1,1472,soft,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:72:19>,Insufficient type feedback for compare operation
+code-deopt,334871,640,0x2ec0000c6680,-1,746,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:39:12>,not a Number or Oddball
+code-creation,LazyCompile,0,336285,0x2ec0000c7200,238,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,342041,0x2ec0000c7340,3730, file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:1:1,0x2ec0082cb1d8,*
 LoadGlobalIC,0x2ec0000c7670,86,1,0,1,0x2ec008280171,addObjects,,
 LoadGlobalIC,0x2ec0000c769c,86,12,0,1,0x2ec008280171,Object1,,
-code-creation,LazyCompile,12,413564,0x2ec0082d570a,82,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,~
+code-creation,LazyCompile,12,413564,0x2ec0082d570a,82,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,~
 LoadGlobalIC,0x2ec0082d5725,82,7,X,X,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082d572a,82,7,X,X,0x2ec008280171,addAny,,
-code-creation,LazyCompile,12,413739,0x2ec0082d580e,15,Object1 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:4:14,0x2ec0082cab88,~
+code-creation,LazyCompile,12,413739,0x2ec0082d580e,15,Object1 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:4:14,0x2ec0082cab88,~
 map-create,413789,0x2ec008287511
 map-create,413802,0x2ec008287539
 map-details,413813,0x2ec008287539,Map=00002EC008287539\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec00854233d <JSFunction Object1 (sfi = 00002EC0082CAB89)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3389,7 +3389,7 @@ StoreIC,0x2ec0082d5817,6,12,X,X,0x000000000000,y,,
 map-create,414469,0x2ec0082875b1
 map-details,414480,0x2ec0082875b1,Map=00002EC0082875B1\n - type: JS_OBJECT_TYPE\n - instance size: 52\n - inobject properties: 10\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287589 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #2: 0x2ec009935b61 <DescriptorArray[2]>\n - prototype: 0x2ec008542809 <Object1 map = 00002EC008287561>\n - constructor: 0x2ec00854233d <JSFunction Object1 (sfi = 00002EC0082CAB89)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s\x2C p: 0\x2C attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa61 <String[#1]: y> (const data field 1:s\x2C p: 1\x2C attrs: [WEC]) @ Any\n
 map,Transition,414634,0x2ec008287589,0x2ec0082875b1,0x2ec0082d5817,6,12,,y
-code-deopt,414663,320,0x2ec0000c7200,-1,726,soft,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27>,Insufficient type feedback for generic named access
+code-deopt,414663,320,0x2ec0000c7200,-1,726,soft,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27>,Insufficient type feedback for generic named access
 LoadIC,0x2ec0082cbd72,38,27,0,1,0x2ec0082875b1,x,,
 LoadIC,0x2ec0082cbd78,38,33,0,1,0x2ec0082875b1,y,,
 LoadGlobalIC,0x2ec0082d5725,82,7,X,X,0x2ec008280171,processResult,,
@@ -3436,9 +3436,9 @@ LoadGlobalIC,0x2ec0082d5725,82,7,0,1,0x2ec008280171,processResult,,
 LoadGlobalIC,0x2ec0082d572a,82,7,0,1,0x2ec008280171,addAny,,
 StoreIC,0x2ec0082d5811,5,12,0,1,0x2ec008287511,x,,
 StoreIC,0x2ec0082d5817,6,12,0,1,0x2ec008287589,y,,
-code-creation,LazyCompile,0,424224,0x2ec0000c8220,2123,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,0,424224,0x2ec0000c8220,2123,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
 LoadGlobalIC,0x2ec0000c7717,87,12,0,1,0x2ec008280171,Object2,,
-code-creation,LazyCompile,12,446277,0x2ec0082d617e,15,Object2 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:11:14,0x2ec0082cabc0,~
+code-creation,LazyCompile,12,446277,0x2ec0082d617e,15,Object2 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:11:14,0x2ec0082cabc0,~
 map-create,446306,0x2ec0082875d9
 map-create,446316,0x2ec008287601
 map-details,446323,0x2ec008287601,Map=00002EC008287601\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec0085423b9 <JSFunction Object2 (sfi = 00002EC0082CABC1)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3460,13 +3460,13 @@ LoadIC,0x2ec0082cbd72,38,27,1,P,0x2ec008287679,x,,
 LoadIC,0x2ec0082cbd78,38,33,1,P,0x2ec008287679,y,,
 StoreIC,0x2ec0082d6181,12,12,0,1,0x2ec0082875d9,y,,
 StoreIC,0x2ec0082d6187,13,12,0,1,0x2ec008287651,x,,
-code-deopt,448211,2208,0x2ec0000c8220,-1,1736,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:28>,wrong call target
-code-creation,LazyCompile,0,451469,0x2ec0000c8ac0,2194,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,0,451551,0x2ec0000c93a0,523,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,452351,0x2ec0000c9600,473,Object2 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:11:14,0x2ec0082cabc0,*
+code-deopt,448211,2208,0x2ec0000c8220,-1,1736,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:28>,wrong call target
+code-creation,LazyCompile,0,451469,0x2ec0000c8ac0,2194,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,0,451551,0x2ec0000c93a0,523,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,452351,0x2ec0000c9600,473,Object2 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:11:14,0x2ec0082cabc0,*
 LoadGlobalIC,0x2ec0000c778f,88,12,0,1,0x2ec008280171,Object3,,
-code-creation,LazyCompile,0,493096,0x2ec0000c9820,1680,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,12,493200,0x2ec0082d76ce,21,Object3 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:18:14,0x2ec0082cabf8,~
+code-creation,LazyCompile,0,493096,0x2ec0000c9820,1680,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,12,493200,0x2ec0082d76ce,21,Object3 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:18:14,0x2ec0082cabf8,~
 map-create,493223,0x2ec0082876a1
 map-create,493233,0x2ec0082876c9
 map-details,493239,0x2ec0082876c9,Map=00002EC0082876C9\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008542435 <JSFunction Object3 (sfi = 00002EC0082CABF9)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3488,20 +3488,20 @@ StoreIC,0x2ec0082d76dd,21,12,X,X,0x000000000000,y,,
 map-create,493712,0x2ec008287769
 map-details,493719,0x2ec008287769,Map=00002EC008287769\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287741 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec0080b5081 <DescriptorArray[3]>\n - prototype: 0x2ec0085427d9 <Object3 map = 00002EC0082876F1>\n - constructor: 0x2ec008542435 <JSFunction Object3 (sfi = 00002EC0082CABF9)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082d7635 <String[#5]: hello> (const data field 0:h\x2C p: 0\x2C attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa51 <String[#1]: x> (const data field 1:s\x2C p: 1\x2C attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s\x2C p: 2\x2C attrs: [WEC]) @ Any\n
 map,Transition,493814,0x2ec008287741,0x2ec008287769,0x2ec0082d76dd,21,12,,y
-code-deopt,493828,1760,0x2ec0000c9820,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-deopt,493828,1760,0x2ec0000c9820,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
 LoadIC,0x2ec0082cbd72,38,27,P,P,0x2ec008287769,x,,
 LoadIC,0x2ec0082cbd78,38,33,P,P,0x2ec008287769,y,,
-code-deopt,493930,608,0x2ec0000c93a0,-1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
+code-deopt,493930,608,0x2ec0000c93a0,-1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
 StoreIC,0x2ec0082d76d1,19,16,0,1,0x2ec0082876a1,hello,,
 StoreIC,0x2ec0082d76d7,20,12,0,1,0x2ec008287719,x,,
 StoreIC,0x2ec0082d76dd,21,12,0,1,0x2ec008287741,y,,
-code-deopt,495296,2272,0x2ec0000c8ac0,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
-code-creation,LazyCompile,0,499064,0x2ec0000c9f00,2238,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,0,499148,0x2ec0000ca800,567,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,499269,0x2ec0000caa80,677,Object3 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:18:14,0x2ec0082cabf8,*
+code-deopt,495296,2272,0x2ec0000c8ac0,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-creation,LazyCompile,0,499064,0x2ec0000c9f00,2238,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,0,499148,0x2ec0000ca800,567,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,499269,0x2ec0000caa80,677,Object3 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:18:14,0x2ec0082cabf8,*
 LoadGlobalIC,0x2ec0000c7807,89,12,0,1,0x2ec008280171,Object4,,
-code-creation,LazyCompile,0,542930,0x2ec0000cad80,1728,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,12,543110,0x2ec0082d8d6e,21,Object4 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:26:14,0x2ec0082cac30,~
+code-creation,LazyCompile,0,542930,0x2ec0000cad80,1728,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,12,543110,0x2ec0082d8d6e,21,Object4 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:26:14,0x2ec0082cac30,~
 map-create,543147,0x2ec008287791
 map-create,543160,0x2ec0082877b9
 map-details,543168,0x2ec0082877b9,Map=00002EC0082877B9\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec0085424b1 <JSFunction Object4 (sfi = 00002EC0082CAC31)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3523,20 +3523,20 @@ StoreIC,0x2ec0082d8d7d,29,12,X,X,0x000000000000,y,,
 map-create,543639,0x2ec008287859
 map-details,543646,0x2ec008287859,Map=00002EC008287859\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287831 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec008e56add <DescriptorArray[3]>\n - prototype: 0x2ec0085427c1 <Object4 map = 00002EC0082877E1>\n - constructor: 0x2ec0085424b1 <JSFunction Object4 (sfi = 00002EC0082CAC31)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s\x2C p: 1\x2C attrs: [WEC]) @ Any\n  [1]: 0x2ec0082d7635 <String[#5]: hello> (const data field 1:h\x2C p: 0\x2C attrs: [WEC]) @ Any\n  [2]: 0x2ec0082caa61 <String[#1]: y> (const data field 2:s\x2C p: 2\x2C attrs: [WEC]) @ Any\n
 map,Transition,543730,0x2ec008287831,0x2ec008287859,0x2ec0082d8d7d,29,12,,y
-code-deopt,543744,1792,0x2ec0000cad80,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-deopt,543744,1792,0x2ec0000cad80,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
 LoadIC,0x2ec0082cbd72,38,27,P,P,0x2ec008287859,x,,
 LoadIC,0x2ec0082cbd78,38,33,P,P,0x2ec008287859,y,,
-code-deopt,543858,640,0x2ec0000ca800,-1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
+code-deopt,543858,640,0x2ec0000ca800,-1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
 StoreIC,0x2ec0082d8d71,27,12,0,1,0x2ec008287791,x,,
 StoreIC,0x2ec0082d8d77,28,16,0,1,0x2ec008287809,hello,,
 StoreIC,0x2ec0082d8d7d,29,12,0,1,0x2ec008287831,y,,
-code-deopt,544925,2304,0x2ec0000c9f00,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
-code-creation,LazyCompile,0,546659,0x2ec0000cb480,577,Object4 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:26:14,0x2ec0082cac30,*
-code-creation,LazyCompile,0,546805,0x2ec0000cb720,599,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-creation,LazyCompile,0,549617,0x2ec0000cb9c0,2270,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-deopt,544925,2304,0x2ec0000c9f00,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-creation,LazyCompile,0,546659,0x2ec0000cb480,577,Object4 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:26:14,0x2ec0082cac30,*
+code-creation,LazyCompile,0,546805,0x2ec0000cb720,599,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-creation,LazyCompile,0,549617,0x2ec0000cb9c0,2270,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
 LoadGlobalIC,0x2ec0000c787f,90,12,0,1,0x2ec008280171,Object5,,
-code-creation,LazyCompile,0,591510,0x2ec0000cc2e0,1756,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,12,591667,0x2ec0082da472,21,Object5 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:34:14,0x2ec0082cac68,~
+code-creation,LazyCompile,0,591510,0x2ec0000cc2e0,1756,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,12,591667,0x2ec0082da472,21,Object5 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:34:14,0x2ec0082cac68,~
 map-create,591692,0x2ec008287881
 map-create,591702,0x2ec0082878a9
 map-details,591708,0x2ec0082878a9,Map=00002EC0082878A9\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec00854252d <JSFunction Object5 (sfi = 00002EC0082CAC69)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3558,20 +3558,20 @@ StoreIC,0x2ec0082da481,37,16,X,X,0x000000000000,hello,,
 map-create,592248,0x2ec008287949
 map-details,592255,0x2ec008287949,Map=00002EC008287949\n - type: JS_OBJECT_TYPE\n - instance size: 56\n - inobject properties: 11\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 9\n - enum length: invalid\n - stable_map\n - back pointer: 0x2ec008287921 <Map(HOLEY_ELEMENTS)>\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #3: 0x2ec009287ecd <DescriptorArray[3]>\n - prototype: 0x2ec0085427a9 <Object5 map = 00002EC0082878D1>\n - constructor: 0x2ec00854252d <JSFunction Object5 (sfi = 00002EC0082CAC69)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 6\n\n  [0]: 0x2ec0082caa51 <String[#1]: x> (const data field 0:s\x2C p: 2\x2C attrs: [WEC]) @ Any\n  [1]: 0x2ec0082caa61 <String[#1]: y> (const data field 1:s\x2C p: 0\x2C attrs: [WEC]) @ Any\n  [2]: 0x2ec0082d7635 <String[#5]: hello> (const data field 2:h\x2C p: 1\x2C attrs: [WEC]) @ Any\n
 map,Transition,592339,0x2ec008287921,0x2ec008287949,0x2ec0082da481,37,16,,hello
-code-deopt,592354,1824,0x2ec0000cc2e0,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-deopt,592354,1824,0x2ec0000cc2e0,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
 LoadIC,0x2ec0082cbd72,38,27,P,N,0x2ec008287949,x,,
 LoadIC,0x2ec0082cbd78,38,33,P,N,0x2ec008287949,y,,
-code-deopt,592458,672,0x2ec0000cb720,-1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
+code-deopt,592458,672,0x2ec0000cb720,-1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27>,wrong map
 StoreIC,0x2ec0082da475,35,12,0,1,0x2ec008287881,x,,
 StoreIC,0x2ec0082da47b,36,12,0,1,0x2ec0082878f9,y,,
 StoreIC,0x2ec0082da481,37,16,0,1,0x2ec008287921,hello,,
-code-creation,LazyCompile,0,594113,0x2ec0000cca00,593,addAny file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
-code-deopt,594969,2336,0x2ec0000cb9c0,1,726,eager,<file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
-code-creation,LazyCompile,0,595108,0x2ec0000ccca0,573,Object5 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:34:14,0x2ec0082cac68,*
-code-creation,LazyCompile,0,598059,0x2ec0000ccf20,2324,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,0,594113,0x2ec0000cca00,593,addAny file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:35:16,0x2ec0082cb2e4,*
+code-deopt,594969,2336,0x2ec0000cb9c0,1,726,eager,<file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:38:27> inlined at <file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:82:21>,wrong map
+code-creation,LazyCompile,0,595108,0x2ec0000ccca0,573,Object5 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:34:14,0x2ec0082cac68,*
+code-creation,LazyCompile,0,598059,0x2ec0000ccf20,2324,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
 LoadGlobalIC,0x2ec0000c78f7,91,12,0,1,0x2ec008280171,Object6,,
-code-creation,LazyCompile,0,663941,0x2ec0000cd880,1804,addObjects file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
-code-creation,LazyCompile,12,664088,0x2ec0082dba8a,27,Object6 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:42:14,0x2ec0082caca0,~
+code-creation,LazyCompile,0,663941,0x2ec0000cd880,1804,addObjects file:///tmp/v8-deopt-viewer/examples/html-external/adders.js:79:20,0x2ec0082cb354,*
+code-creation,LazyCompile,12,664088,0x2ec0082dba8a,27,Object6 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:42:14,0x2ec0082caca0,~
 map-create,664123,0x2ec008287971
 map-create,664137,0x2ec008287999
 map-details,664148,0x2ec008287999,Map=00002EC008287999\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec0085425a9 <JSFunction Object6 (sfi = 00002EC0082CACA1)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3603,9 +3603,9 @@ StoreIC,0x2ec0082dba8d,43,15,0,1,0x2ec008287971,hola,,
 StoreIC,0x2ec0082dba93,44,12,0,1,0x2ec0082879e9,x,,
 StoreIC,0x2ec0082dba99,45,12,0,1,0x2ec008287a11,y,,
 StoreIC,0x2ec0082dba9f,46,16,0,1,0x2ec008287a39,hello,,
-code-creation,LazyCompile,0,668942,0x2ec0000cdfe0,777,Object6 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:42:14,0x2ec0082caca0,*
+code-creation,LazyCompile,0,668942,0x2ec0000cdfe0,777,Object6 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:42:14,0x2ec0082caca0,*
 LoadGlobalIC,0x2ec0000c796f,92,12,0,1,0x2ec008280171,Object7,,
-code-creation,LazyCompile,12,803687,0x2ec0082dbe46,27,Object7 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:51:14,0x2ec0082cacd8,~
+code-creation,LazyCompile,12,803687,0x2ec0082dbe46,27,Object7 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:51:14,0x2ec0082cacd8,~
 map-create,803730,0x2ec008287a89
 map-create,803744,0x2ec008287ab1
 map-details,803761,0x2ec008287ab1,Map=00002EC008287AB1\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec008542625 <JSFunction Object7 (sfi = 00002EC0082CACD9)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3637,9 +3637,9 @@ StoreIC,0x2ec0082dbe49,52,12,0,1,0x2ec008287a89,x,,
 StoreIC,0x2ec0082dbe4f,53,15,0,1,0x2ec008287b01,hola,,
 StoreIC,0x2ec0082dbe55,54,12,0,1,0x2ec008287b29,y,,
 StoreIC,0x2ec0082dbe5b,55,16,0,1,0x2ec008287b51,hello,,
-code-creation,LazyCompile,0,812330,0x2ec0000ce340,677,Object7 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:51:14,0x2ec0082cacd8,*
+code-creation,LazyCompile,0,812330,0x2ec0000ce340,677,Object7 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:51:14,0x2ec0082cacd8,*
 LoadGlobalIC,0x2ec0000c79e7,93,12,0,1,0x2ec008280171,Object8,,
-code-creation,LazyCompile,12,878419,0x2ec0082dc1fe,27,Object8 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:60:14,0x2ec0082cad10,~
+code-creation,LazyCompile,12,878419,0x2ec0082dc1fe,27,Object8 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:60:14,0x2ec0082cad10,~
 map-create,878451,0x2ec008287ba1
 map-create,878464,0x2ec008287bc9
 map-details,878471,0x2ec008287bc9,Map=00002EC008287BC9\n - type: JS_OBJECT_TYPE\n - instance size: 12\n - inobject properties: 0\n - elements kind: HOLEY_ELEMENTS\n - unused property fields: 0\n - enum length: invalid\n - dictionary_map\n - may_have_interesting_symbols\n - prototype_map\n - prototype info: 0\n - prototype_validity cell: 0x2ec008180451 <Cell value= 1>\n - instance descriptors (own) #0: 0x2ec0080401b5 <DescriptorArray[0]>\n - prototype: 0x2ec008241cb5 <Object map = 00002EC008280211>\n - constructor: 0x2ec0085426a1 <JSFunction Object8 (sfi = 00002EC0082CAD11)>\n - dependent code: 0x2ec0080401ed <Other heap object (WEAK_FIXED_ARRAY_TYPE)>\n - construction counter: 0\n\n
@@ -3671,6 +3671,6 @@ StoreIC,0x2ec0082dc201,61,12,0,1,0x2ec008287ba1,x,,
 StoreIC,0x2ec0082dc207,62,12,0,1,0x2ec008287c19,y,,
 StoreIC,0x2ec0082dc20d,63,15,0,1,0x2ec008287c41,hola,,
 StoreIC,0x2ec0082dc213,64,16,0,1,0x2ec008287c69,hello,,
-code-creation,LazyCompile,0,881929,0x2ec0000ce640,673,Object8 file:///C:/code/github/andrewiggins/v8-deopt-viewer/examples/html-external/objects.js:60:14,0x2ec0082cad10,*
+code-creation,LazyCompile,0,881929,0x2ec0000ce640,673,Object8 file:///tmp/v8-deopt-viewer/examples/html-external/objects.js:60:14,0x2ec0082cad10,*
 LoadGlobalIC,0x2ec0000c7a36,95,1,0,1,0x2ec008280171,console,,
 LoadGlobalIC,0x2ec0000c7a87,95,13,0,1,0x2ec008280171,results,,
