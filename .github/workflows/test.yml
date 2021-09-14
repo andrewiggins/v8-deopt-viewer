@@ -15,9 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # TODO: fix tests on ubuntu
-        #os: [ubuntu-latest, windows-latest]
-        os: [windows-latest]
+        os: [ubuntu-latest, windows-latest]
         node: [14, 16]
 
     steps:
