@@ -75,6 +75,8 @@ type ICState =
 	| "polymorphic"
 	| "megamorphic"
 	| "generic"
+	| "megadom"
+	| "no_feedback"
 	| "unknown";
 
 interface ICEntry {
