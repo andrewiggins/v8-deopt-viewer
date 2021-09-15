@@ -19,8 +19,7 @@ const MEGADOM = "megadom";
 /** A generic handler is installed and no extra typefeedback is recorded */
 const GENERIC = "generic";
 /** No feedback will be collected */
-const NO_FEEDBACK = "no_feedback";
-export const UNKNOWN = "unknown";
+export const NO_FEEDBACK = "no_feedback";
 
 /**
  * @param {string} rawState Raw Inline Cache state from V8
@@ -70,7 +69,6 @@ export function severityIcState(state) {
 		case MEGAMORPHIC:
 		case GENERIC:
 			return MIN_SEVERITY + 2;
-		case UNKNOWN:
 		case NO_FEEDBACK:
 			return UNKNOWN_SEVERITY;
 		default:

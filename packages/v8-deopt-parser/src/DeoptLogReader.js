@@ -7,9 +7,9 @@ import { Profile } from "./v8-tools-core/profile.js";
 import { parseSourcePosition, isAbsolutePath } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
+	NO_FEEDBACK,
 	propertyICFieldParsers,
 	severityIcState,
-	UNKNOWN,
 } from "./propertyICParsers.js";
 import {
 	nameOptimizationState,
@@ -342,8 +342,8 @@ export class DeoptLogReader extends LogReader {
 		modifier,
 		slow_reason
 	) {
-		// Skip unknown IC entries whose maps are 0. Not sure what these mean...
-		if (oldState == UNKNOWN && newState == UNKNOWN && mapAddress == 0) {
+		// Skip no_feedback IC entries whose maps are 0. Not sure what these mean...
+		if (oldState == NO_FEEDBACK && newState == NO_FEEDBACK && mapAddress == 0) {
 			return;
 		}
 
@@ -601,6 +601,7 @@ export class DeoptLogReader extends LogReader {
 
 		const filterInternals = this.filterInternals.bind(this);
 		return {
+			id: undefined, // TODO: define if useful
 			ics: this.sortEntries(
 				Array.from(this.icEntries.values())
 					.filter((entry) => entry.updates.length > 0)
