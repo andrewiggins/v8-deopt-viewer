@@ -2,7 +2,7 @@
   "ics": [
     {
       "type": "ics",
-      "id": "21",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 12,
@@ -24,7 +24,7 @@
     },
     {
       "type": "ics",
-      "id": "22",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 13,
@@ -46,7 +46,7 @@
     },
     {
       "type": "ics",
-      "id": "24",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 19,
@@ -68,7 +68,7 @@
     },
     {
       "type": "ics",
-      "id": "25",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 20,
@@ -90,7 +90,7 @@
     },
     {
       "type": "ics",
-      "id": "28",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 26,
@@ -112,7 +112,7 @@
     },
     {
       "type": "ics",
-      "id": "29",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 27,
@@ -134,7 +134,7 @@
     },
     {
       "type": "ics",
-      "id": "30",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 28,
@@ -156,7 +156,7 @@
     },
     {
       "type": "ics",
-      "id": "32",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 34,
@@ -178,7 +178,7 @@
     },
     {
       "type": "ics",
-      "id": "33",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 35,
@@ -200,7 +200,7 @@
     },
     {
       "type": "ics",
-      "id": "34",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 36,
@@ -222,7 +222,7 @@
     },
     {
       "type": "ics",
-      "id": "36",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 42,
@@ -244,7 +244,7 @@
     },
     {
       "type": "ics",
-      "id": "37",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 43,
@@ -266,7 +266,7 @@
     },
     {
       "type": "ics",
-      "id": "38",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 44,
@@ -288,7 +288,7 @@
     },
     {
       "type": "ics",
-      "id": "40",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 50,
@@ -310,7 +310,7 @@
     },
     {
       "type": "ics",
-      "id": "41",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 51,
@@ -332,7 +332,7 @@
     },
     {
       "type": "ics",
-      "id": "42",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 52,
@@ -354,7 +354,7 @@
     },
     {
       "type": "ics",
-      "id": "43",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 53,
@@ -376,7 +376,7 @@
     },
     {
       "type": "ics",
-      "id": "45",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 59,
@@ -398,7 +398,7 @@
     },
     {
       "type": "ics",
-      "id": "46",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 60,
@@ -420,7 +420,7 @@
     },
     {
       "type": "ics",
-      "id": "47",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 61,
@@ -442,7 +442,7 @@
     },
     {
       "type": "ics",
-      "id": "48",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 62,
@@ -464,7 +464,7 @@
     },
     {
       "type": "ics",
-      "id": "50",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 68,
@@ -486,7 +486,7 @@
     },
     {
       "type": "ics",
-      "id": "51",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 69,
@@ -508,7 +508,7 @@
     },
     {
       "type": "ics",
-      "id": "52",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 70,
@@ -530,7 +530,7 @@
     },
     {
       "type": "ics",
-      "id": "53",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 71,
@@ -552,7 +552,7 @@
     },
     {
       "type": "ics",
-      "id": "9",
+      "id": "<redacted>",
       "functionName": "addSmis",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 81,
@@ -574,7 +574,7 @@
     },
     {
       "type": "ics",
-      "id": "7",
+      "id": "<redacted>",
       "functionName": "addNumbers",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 86,
@@ -596,7 +596,7 @@
     },
     {
       "type": "ics",
-      "id": "10",
+      "id": "<redacted>",
       "functionName": "addStrings",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 91,
@@ -618,7 +618,7 @@
     },
     {
       "type": "ics",
-      "id": "8",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 96,
@@ -640,7 +640,7 @@
     },
     {
       "type": "ics",
-      "id": "19",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 98,
@@ -739,7 +739,7 @@
     },
     {
       "type": "ics",
-      "id": "20",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 98,
@@ -838,7 +838,7 @@
     },
     {
       "type": "ics",
-      "id": "5",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 109,
@@ -871,7 +871,7 @@
     },
     {
       "type": "ics",
-      "id": "6",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 111,
@@ -906,7 +906,7 @@
   "deopts": [
     {
       "type": "deopts",
-      "id": "18",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 98,
@@ -1035,7 +1035,7 @@
     },
     {
       "type": "deopts",
-      "id": "14",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 99,
@@ -1062,7 +1062,7 @@
     },
     {
       "type": "deopts",
-      "id": "12",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 109,
@@ -1094,7 +1094,7 @@
     },
     {
       "type": "deopts",
-      "id": "13",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 125,
@@ -1113,7 +1113,7 @@
     },
     {
       "type": "deopts",
-      "id": "15",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 132,
@@ -1132,7 +1132,7 @@
     },
     {
       "type": "deopts",
-      "id": "26",
+      "id": "<redacted>",
       "functionName": "addObjects",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 142,
@@ -1153,7 +1153,7 @@
   "codes": [
     {
       "type": "codes",
-      "id": "11",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 9,
@@ -1185,7 +1185,7 @@
     },
     {
       "type": "codes",
-      "id": "17",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 11,
@@ -1202,7 +1202,7 @@
     },
     {
       "type": "codes",
-      "id": "23",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 18,
@@ -1224,7 +1224,7 @@
     },
     {
       "type": "codes",
-      "id": "27",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 25,
@@ -1246,7 +1246,7 @@
     },
     {
       "type": "codes",
-      "id": "31",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 33,
@@ -1268,7 +1268,7 @@
     },
     {
       "type": "codes",
-      "id": "35",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 41,
@@ -1290,7 +1290,7 @@
     },
     {
       "type": "codes",
-      "id": "39",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 49,
@@ -1312,7 +1312,7 @@
     },
     {
       "type": "codes",
-      "id": "44",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 58,
@@ -1334,7 +1334,7 @@
     },
     {
       "type": "codes",
-      "id": "49",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 67,
@@ -1356,7 +1356,7 @@
     },
     {
       "type": "codes",
-      "id": "0",
+      "id": "<redacted>",
       "functionName": "addSmis",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 80,
@@ -1378,7 +1378,7 @@
     },
     {
       "type": "codes",
-      "id": "2",
+      "id": "<redacted>",
       "functionName": "addNumbers",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 85,
@@ -1400,7 +1400,7 @@
     },
     {
       "type": "codes",
-      "id": "3",
+      "id": "<redacted>",
       "functionName": "addStrings",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 90,
@@ -1422,7 +1422,7 @@
     },
     {
       "type": "codes",
-      "id": "4",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 95,
@@ -1479,7 +1479,7 @@
     },
     {
       "type": "codes",
-      "id": "1",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 106,
@@ -1506,7 +1506,7 @@
     },
     {
       "type": "codes",
-      "id": "16",
+      "id": "<redacted>",
       "functionName": "addObjects",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-inline/adders.html",
       "line": 139,

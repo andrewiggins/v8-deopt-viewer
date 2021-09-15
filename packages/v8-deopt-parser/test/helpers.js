@@ -152,10 +152,22 @@ export async function runParser(t, logFileName, options) {
 	return result;
 }
 
+/** Redact some properties from the result to keep snapshots clean */
+function redactResult(key, value) {
+	switch (key) {
+		case "id":
+		case "edge":
+		case "children":
+			return value ? "<redacted>" : undefined;
+		default:
+			return value;
+	}
+}
+
 export async function writeSnapshot(logFileName, result) {
 	// Undo replacements when writing snapshots so they are consistent
 	const replacements = logPathReplacements[logFileName];
-	let contents = JSON.stringify(result, null, 2);
+	let contents = JSON.stringify(result, redactResult, 2);
 
 	if (replacements) {
 		for (const [snapshotPath, template] of replacements) {

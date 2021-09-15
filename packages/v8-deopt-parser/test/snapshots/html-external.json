@@ -2,7 +2,7 @@
   "ics": [
     {
       "type": "ics",
-      "id": "22",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 5,
@@ -24,7 +24,7 @@
     },
     {
       "type": "ics",
-      "id": "23",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 6,
@@ -46,7 +46,7 @@
     },
     {
       "type": "ics",
-      "id": "25",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 12,
@@ -68,7 +68,7 @@
     },
     {
       "type": "ics",
-      "id": "26",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 13,
@@ -90,7 +90,7 @@
     },
     {
       "type": "ics",
-      "id": "29",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 19,
@@ -112,7 +112,7 @@
     },
     {
       "type": "ics",
-      "id": "30",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 20,
@@ -134,7 +134,7 @@
     },
     {
       "type": "ics",
-      "id": "31",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 21,
@@ -156,7 +156,7 @@
     },
     {
       "type": "ics",
-      "id": "11",
+      "id": "<redacted>",
       "functionName": "addSmis",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 21,
@@ -178,7 +178,7 @@
     },
     {
       "type": "ics",
-      "id": "9",
+      "id": "<redacted>",
       "functionName": "addNumbers",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 26,
@@ -200,7 +200,7 @@
     },
     {
       "type": "ics",
-      "id": "33",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 27,
@@ -222,7 +222,7 @@
     },
     {
       "type": "ics",
-      "id": "34",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 28,
@@ -244,7 +244,7 @@
     },
     {
       "type": "ics",
-      "id": "35",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 29,
@@ -266,7 +266,7 @@
     },
     {
       "type": "ics",
-      "id": "12",
+      "id": "<redacted>",
       "functionName": "addStrings",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 31,
@@ -288,7 +288,7 @@
     },
     {
       "type": "ics",
-      "id": "37",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 35,
@@ -310,7 +310,7 @@
     },
     {
       "type": "ics",
-      "id": "38",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 36,
@@ -332,7 +332,7 @@
     },
     {
       "type": "ics",
-      "id": "10",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 36,
@@ -354,7 +354,7 @@
     },
     {
       "type": "ics",
-      "id": "39",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 37,
@@ -376,7 +376,7 @@
     },
     {
       "type": "ics",
-      "id": "20",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 38,
@@ -475,7 +475,7 @@
     },
     {
       "type": "ics",
-      "id": "21",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 38,
@@ -574,7 +574,7 @@
     },
     {
       "type": "ics",
-      "id": "41",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 43,
@@ -596,7 +596,7 @@
     },
     {
       "type": "ics",
-      "id": "42",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 44,
@@ -618,7 +618,7 @@
     },
     {
       "type": "ics",
-      "id": "43",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 45,
@@ -640,7 +640,7 @@
     },
     {
       "type": "ics",
-      "id": "44",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 46,
@@ -662,7 +662,7 @@
     },
     {
       "type": "ics",
-      "id": "7",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 49,
@@ -695,7 +695,7 @@
     },
     {
       "type": "ics",
-      "id": "8",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 51,
@@ -728,7 +728,7 @@
     },
     {
       "type": "ics",
-      "id": "46",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 52,
@@ -750,7 +750,7 @@
     },
     {
       "type": "ics",
-      "id": "47",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 53,
@@ -772,7 +772,7 @@
     },
     {
       "type": "ics",
-      "id": "48",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 54,
@@ -794,7 +794,7 @@
     },
     {
       "type": "ics",
-      "id": "49",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 55,
@@ -816,7 +816,7 @@
     },
     {
       "type": "ics",
-      "id": "51",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 61,
@@ -838,7 +838,7 @@
     },
     {
       "type": "ics",
-      "id": "52",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 62,
@@ -860,7 +860,7 @@
     },
     {
       "type": "ics",
-      "id": "53",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 63,
@@ -882,7 +882,7 @@
     },
     {
       "type": "ics",
-      "id": "54",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 64,
@@ -906,7 +906,7 @@
   "deopts": [
     {
       "type": "deopts",
-      "id": "19",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 38,
@@ -1027,7 +1027,7 @@
     },
     {
       "type": "deopts",
-      "id": "15",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 39,
@@ -1054,7 +1054,7 @@
     },
     {
       "type": "deopts",
-      "id": "13",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 51,
@@ -1078,7 +1078,7 @@
     },
     {
       "type": "deopts",
-      "id": "14",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 65,
@@ -1097,7 +1097,7 @@
     },
     {
       "type": "deopts",
-      "id": "16",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 72,
@@ -1116,7 +1116,7 @@
     },
     {
       "type": "deopts",
-      "id": "27",
+      "id": "<redacted>",
       "functionName": "addObjects",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 82,
@@ -1137,7 +1137,7 @@
   "codes": [
     {
       "type": "codes",
-      "id": "0",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 1,
@@ -1154,7 +1154,7 @@
     },
     {
       "type": "codes",
-      "id": "1",
+      "id": "<redacted>",
       "functionName": "<anonymous>",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 1,
@@ -1191,7 +1191,7 @@
     },
     {
       "type": "codes",
-      "id": "18",
+      "id": "<redacted>",
       "functionName": "Object1",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 4,
@@ -1208,7 +1208,7 @@
     },
     {
       "type": "codes",
-      "id": "24",
+      "id": "<redacted>",
       "functionName": "Object2",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 11,
@@ -1230,7 +1230,7 @@
     },
     {
       "type": "codes",
-      "id": "28",
+      "id": "<redacted>",
       "functionName": "Object3",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 18,
@@ -1252,7 +1252,7 @@
     },
     {
       "type": "codes",
-      "id": "2",
+      "id": "<redacted>",
       "functionName": "addSmis",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 20,
@@ -1274,7 +1274,7 @@
     },
     {
       "type": "codes",
-      "id": "4",
+      "id": "<redacted>",
       "functionName": "addNumbers",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 25,
@@ -1296,7 +1296,7 @@
     },
     {
       "type": "codes",
-      "id": "32",
+      "id": "<redacted>",
       "functionName": "Object4",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 26,
@@ -1318,7 +1318,7 @@
     },
     {
       "type": "codes",
-      "id": "5",
+      "id": "<redacted>",
       "functionName": "addStrings",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 30,
@@ -1340,7 +1340,7 @@
     },
     {
       "type": "codes",
-      "id": "36",
+      "id": "<redacted>",
       "functionName": "Object5",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 34,
@@ -1362,7 +1362,7 @@
     },
     {
       "type": "codes",
-      "id": "6",
+      "id": "<redacted>",
       "functionName": "addAny",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 35,
@@ -1414,7 +1414,7 @@
     },
     {
       "type": "codes",
-      "id": "40",
+      "id": "<redacted>",
       "functionName": "Object6",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 42,
@@ -1436,7 +1436,7 @@
     },
     {
       "type": "codes",
-      "id": "3",
+      "id": "<redacted>",
       "functionName": "processResult",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 46,
@@ -1463,7 +1463,7 @@
     },
     {
       "type": "codes",
-      "id": "45",
+      "id": "<redacted>",
       "functionName": "Object7",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 51,
@@ -1485,7 +1485,7 @@
     },
     {
       "type": "codes",
-      "id": "50",
+      "id": "<redacted>",
       "functionName": "Object8",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/objects.js",
       "line": 60,
@@ -1507,7 +1507,7 @@
     },
     {
       "type": "codes",
-      "id": "17",
+      "id": "<redacted>",
       "functionName": "addObjects",
       "file": "file:///tmp/v8-deopt-viewer/examples/html-external/adders.js",
       "line": 79,
