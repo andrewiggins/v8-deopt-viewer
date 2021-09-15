@@ -175,6 +175,7 @@ interface PerFileV8DeoptInfo {
 interface Options {
 	keepInternals?: boolean;
 	sortEntries?: boolean;
+	hasNewIcFormat?: boolean;
 }
 
 // ======================================

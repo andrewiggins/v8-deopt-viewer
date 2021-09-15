@@ -111,8 +111,12 @@ export default async function run(srcFile, options) {
 
 	console.log("Parsing log...");
 	const logContents = await readFile(logFilePath, "utf8");
+
+	// New IC format has 10 values instead of 9
+	const hasNewIcFormat = /\w+IC(,.*){10}/.test(logContents);
 	const rawDeoptInfo = await parseV8Log(logContents, {
 		keepInternals: options["keep-internals"],
+		hasNewIcFormat,
 	});
 
 	console.log("Adding sources...");
