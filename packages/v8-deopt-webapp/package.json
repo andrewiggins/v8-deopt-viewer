@@ -6,26 +6,29 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "build:watch": "rollup -w -c ./rollup.config.js",
     "dev": "run-p serve build:watch",
     "start": "run-s dev",
     "serve": "sirv --dev",
-    "test": "node -e \"console.log('No tests')\"",
+    "test": "run-s build",
     "prepare": "run-s build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-sucrase": "^3.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^6.0.1",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
     "preact": "^10.4.1",
     "prismjs": "^1.24.0",
     "rollup": "^2.24.0",
-    "rollup-plugin-postcss": "^3.1.5",
+    "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-visualizer": "^4.1.0",
     "sirv-cli": "^1.0.1",
