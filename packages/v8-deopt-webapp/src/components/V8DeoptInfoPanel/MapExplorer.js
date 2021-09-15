@@ -296,7 +296,7 @@ export function MapExplorer(props) {
 				setSelectedEntry(null);
 			}
 		}
-	}, [state.selectedGroup.id, fileDeoptInfo]);
+	}, [state.selectedGroup, fileDeoptInfo]);
 
 	return (
 		<Fragment>
@@ -471,6 +471,7 @@ function MapTimeline({
 
 /**
  * @typedef MapTimelineItemProps
+ * @property {any} key To make TS happy, sigh
  * @property {MapData} mapData
  * @property {MapEntry} map
  * @property {boolean} [selected]
@@ -642,17 +643,14 @@ function formatLocation(entry) {
 
 /**
  * @param {MapEntry} map
- * @returns {string}
+ * @returns {string[]}
  */
 function formatDescription(map) {
-	return (
-		map.description
-			.trim()
-			.split("\n")
-			.map((line) => [line, <br />])
-			// @ts-ignore
-			.flat()
-	);
+	return map.description
+		.trim()
+		.split("\n")
+		.map((line) => [line, <br />])
+		.flat();
 }
 
 /**
