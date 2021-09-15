@@ -1,5 +1,13 @@
 # v8-deopt-parser
 
+## 0.4.1
+
+### Patch Changes
+
+- a05fe6b: Add support for parsing v8 >= 8.6 IC format with ten fields (PR #25, thanks @marvinhagemeister)
+- 861659f: Update parser to handle more IC states
+- 648c759: Replace UNKNOWN IC State with NO_FEEDBACK IC State
+
 ## 0.4.0
 
 ### Minor Changes

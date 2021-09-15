@@ -1,5 +1,12 @@
 # v8-deopt-webapp
 
+## 0.4.3
+
+### Patch Changes
+
+- 861659f: Fix highlight + annotation of .mjs files (PR #27, thanks @developit!)
+- 307360f: Handle file with no maps correctly
+
 ## 0.4.2
 
 ### Patch Changes

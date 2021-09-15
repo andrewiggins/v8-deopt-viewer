@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-webapp",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "View the deoptimizations in a V8 log",
   "main": "dist/index.js",
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
@@ -33,7 +33,7 @@
     "rollup-plugin-visualizer": "^4.1.0",
     "sirv-cli": "^1.0.1",
     "spectre.css": "^0.5.9",
-    "v8-deopt-parser": "^0.4.0",
+    "v8-deopt-parser": "^0.4.1",
     "wouter-preact": "^2.5.1"
   }
 }

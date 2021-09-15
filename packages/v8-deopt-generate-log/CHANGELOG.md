@@ -1,5 +1,13 @@
 # v8-deopt-generate-log
 
+## 0.2.2
+
+### Patch Changes
+
+- 861659f: Fix "bad argument" with Node 16.x (PR #23, thanks @marvinhagemeister!)
+- 861659f: Update --trace-ic flag to new --log-ic flag
+- b444fb4: Use new V8 flags with Chromium
+
 ## 0.2.1
 
 ### Patch Changes

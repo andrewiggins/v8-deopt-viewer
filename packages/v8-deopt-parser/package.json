@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-parser",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Parse a v8.log file for deoptimizations",
   "type": "module",
   "main": "src/index.js",
@@ -8,7 +8,9 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node test/index.test.js",
     "deopts": "v8-deopt-viewer -i test/deopt-results/out-of-memory.v8.log -o test/deopt-results  --open"
