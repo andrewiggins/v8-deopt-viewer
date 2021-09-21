@@ -5,6 +5,9 @@
   "repository": "https://github.com/andrewiggins/v8-deopt-viewer",
   "author": "Andre Wiggins",
   "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "bugs": {
     "url": "https://github.com/andrewiggins/v8-deopt-viewer/issues"
   },
@@ -18,15 +21,10 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "@changesets/cli": "^2.17.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.1.2"
   }
 }
