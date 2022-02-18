@@ -118,6 +118,15 @@ test("runParser(adders.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
+test("runParser(adders.node16_14.v8.log)", async (t) => {
+	const logFileName = "adders.node16_14.v8.log";
+	const result = await runParser(t, logFileName);
+
+	t.equal(result.codes.length, 16, "Number of codes");
+	t.equal(result.deopts.length, 0, "Number of deopts");
+	t.equal(result.ics.length, 34, "Number of ics");
+});
+
 test("runParser(two-modules.v8.log)", async (t) => {
 	const logFileName = "two-modules.v8.log";
 	const result = await runParser(t, logFileName);

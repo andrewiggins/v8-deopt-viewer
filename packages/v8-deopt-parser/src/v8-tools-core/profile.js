@@ -25,7 +25,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import CodeMap from './codemap.js'; 
+import CodeMap from './codemap.js';
 
 /**
  * Creates a profile object for processing profiling-related events
@@ -74,7 +74,8 @@ Profile.Operation = {
 Profile.CodeState = {
   COMPILED: 0,
   OPTIMIZABLE: 1,
-  OPTIMIZED: 2
+  OPTIMIZED: 2,
+	BASELINE: 3,
 };
 
 
