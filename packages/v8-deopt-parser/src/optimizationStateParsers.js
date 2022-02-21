@@ -48,7 +48,6 @@ export function severityOfOptimizationState(state) {
 		case Profile.CodeState.OPTIMIZED:
 			return MIN_SEVERITY;
 		case Profile.CodeState.BASELINE:
-			return MIN_SEVERITY + 2; // Not entirely sure about this
 		case UNKNOWN_OPT_STATE:
 			return UNKNOWN_SEVERITY;
 		default:
