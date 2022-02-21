@@ -11,6 +11,8 @@ export function parseOptimizationState(rawState) {
 			return Profile.CodeState.OPTIMIZABLE;
 		case "*":
 			return Profile.CodeState.OPTIMIZED;
+		case "^":
+			return Profile.CodeState.BASELINE;
 		default:
 			throw new Error("unknown code state: " + rawState);
 	}
@@ -28,6 +30,8 @@ export function nameOptimizationState(state) {
 			return "optimizable";
 		case Profile.CodeState.OPTIMIZED:
 			return "optimized";
+		case Profile.CodeState.BASELINE:
+			return "baseline";
 		case UNKNOWN_OPT_STATE:
 			return "unknown";
 		default:
@@ -43,6 +47,7 @@ export function severityOfOptimizationState(state) {
 			return MIN_SEVERITY + 1;
 		case Profile.CodeState.OPTIMIZED:
 			return MIN_SEVERITY;
+		case Profile.CodeState.BASELINE:
 		case UNKNOWN_OPT_STATE:
 			return UNKNOWN_SEVERITY;
 		default:
