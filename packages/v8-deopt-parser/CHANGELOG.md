@@ -1,5 +1,11 @@
 # v8-deopt-parser
 
+## 0.4.2
+
+### Patch Changes
+
+- e0fea98: Fix parsing baseline tier symbol in newer v8 versions
+
 ## 0.4.1
 
 ### Patch Changes
