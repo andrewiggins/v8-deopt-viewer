@@ -1,6 +1,6 @@
 import test from "tape";
 import { groupByFile } from "../src/index.js";
-import { runParser, repoRoot, repoFileURL } from "./helpers.js";
+import { runParserNonStream as runParser, repoRoot, repoFileURL } from "./helpers.js";
 
 test("groupByFile(adders.v8.log)", async (t) => {
 	const rawData = await runParser(t, "adders.v8.log");

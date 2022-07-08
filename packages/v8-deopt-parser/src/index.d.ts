@@ -1,3 +1,5 @@
+/// <reference lib="es2015.generator" />
+
 interface FilePosition {
 	functionName: string;
 	file: string;
@@ -188,6 +190,15 @@ interface Options {
  */
 export function parseV8Log(
 	v8LogContent: string,
+	options?: Options
+): Promise<V8DeoptInfo>;
+/**
+ * Parse the deoptimizations from a v8.log file, but this version does it from stream
+ * @param v8LogContent The contents of a v8.log file
+ * @param options Options to influence the parsing of the V8 log
+ */
+export function parseV8LogStream(
+	v8LogContent: Generator<Promise<string> | string>,
 	options?: Options
 ): Promise<V8DeoptInfo>;
 

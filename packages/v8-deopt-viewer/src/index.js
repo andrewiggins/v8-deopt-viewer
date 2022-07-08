@@ -1,10 +1,11 @@
 import * as path from "path";
-import { readFile, writeFile, copyFile, mkdir } from "fs/promises";
+import { open as openFile, readFile, writeFile, copyFile, mkdir } from "fs/promises";
+import { createReadStream } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
 import { generateV8Log } from "v8-deopt-generate-log";
-import { parseV8Log, groupByFile } from "v8-deopt-parser";
+import { parseV8LogStream, groupByFile } from "v8-deopt-parser";
 import { determineCommonRoot } from "./determineCommonRoot.js";
 
 // TODO: Replace with import.meta.resolve when stable
@@ -110,11 +111,23 @@ export default async function run(srcFile, options) {
 	await mkdir(options.out, { recursive: true });
 
 	console.log("Parsing log...");
-	const logContents = await readFile(logFilePath, "utf8");
+
+	const fd = await openFile(logFilePath);
+	const { buffer: logContentsSlice } = await fd.read({length: 64 * 1024 * 1024});
+	await fd.close();
 
 	// New IC format has 10 values instead of 9
-	const hasNewIcFormat = /\w+IC(,.*){10}/.test(logContents);
-	const rawDeoptInfo = await parseV8Log(logContents, {
+	// todo parse first line - v8-version,8,4,371,19,-node.18,0, instead
+	const hasNewIcFormat = /\w+IC(,.*){10}/.test(logContentsSlice.toString());
+
+	// Error: Cannot create a string longer than 0x1fffffe8 characters
+	// 0x1fffffe8 = ~512 * 2 ** 20
+	// 64 * 2 ** 20 seems to be safe enough
+	const logContentsStream = await createReadStream(
+		logFilePath,
+		{ encoding: 'utf8', highWaterMark: 64 * 1024 * 1024},
+	);
+	const rawDeoptInfo = await parseV8LogStream(logContentsStream, {
 		keepInternals: options["keep-internals"],
 		hasNewIcFormat,
 	});
