@@ -215,7 +215,7 @@ export const expectedICSLogs = {
 		updates: [
 			{
 				type: "LoadIC",
-				oldState: "unintialized",
+				oldState: "uninitialized",
 				newState: "monomorphic",
 				key: "x",
 				map: "0x14cd08283fc9",
@@ -315,7 +315,7 @@ export const expectedICSLogs = {
 		updates: [
 			{
 				type: "LoadIC",
-				oldState: "unintialized",
+				oldState: "uninitialized",
 				newState: "monomorphic",
 				key: "x",
 				map: "0x420708283f51",

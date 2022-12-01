@@ -4,7 +4,7 @@ import { MIN_SEVERITY, UNKNOWN_SEVERITY } from "./utils.js";
 // Comments from: https://github.com/v8/v8/blob/23dace88f658c44b5346eb0858fdc2c6b52e9089/src/common/globals.h#L852
 
 /** Has never been executed */
-const UNINITIALIZED = "unintialized";
+const UNINITIALIZED = "uninitialized";
 const PREMONOMORPHIC = "premonomorphic";
 /** Has been executed and only on receiver has been seen */
 const MONOMORPHIC = "monomorphic";
