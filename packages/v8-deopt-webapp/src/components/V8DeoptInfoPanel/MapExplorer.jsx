@@ -296,7 +296,12 @@ export function MapExplorer(props) {
 				setSelectedEntry(null);
 			}
 		}
-	}, [state.selectedGroup, fileDeoptInfo]);
+	}, [
+		state.selectedGroup.group,
+		state.selectedGroup.id,
+		state.selectedGroup.label,
+		fileDeoptInfo,
+	]);
 
 	return (
 		<Fragment>
