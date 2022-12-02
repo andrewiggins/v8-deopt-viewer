@@ -5,27 +5,44 @@ import { useReducer, useMemo, useContext } from "preact/hooks";
  * @typedef {import('v8-deopt-parser').FilePosition} FilePosition
  *
  * @typedef AppDispatchContextValue
- * @property {(newPos: FilePosition) => void} setSelectedPosition
- * @property {(newEntry: import('v8-deopt-parser').Entry) => void} setSelectedEntry
+ * @property {(newPos: FilePosition | null) => void} setSelectedPosition
+ * @property {(newEntry: import('v8-deopt-parser').Entry | null) => void} setSelectedEntry
  */
 
+/** @type {(props: any) => AppContextState} */
+const initialState = (props) => ({
+	prevPosition: null,
+	prevSelectedEntry: null,
+	selectedPosition: null,
+	selectedEntry: null,
+});
+
 /** @type {import('preact').PreactContext<AppContextState>} */
-const AppStateContext = createContext(null);
+const AppStateContext = createContext(initialState(null));
 
 /** @type {import('preact').PreactContext<AppDispatchContextValue>} */
-const AppDispatchContext = createContext(null);
+const AppDispatchContext = createContext(
+	/** @type {AppDispatchContextValue} */ ({
+		setSelectedEntry() {
+			throw new Error("AppDispatchContext was not properly provided");
+		},
+		setSelectedPosition() {
+			throw new Error("AppDispatchContext was not properly provided");
+		},
+	})
+);
 
 /**
  * @typedef {import('v8-deopt-parser').Entry} Entry
  * // State
  * @typedef AppContextState
- * @property {Entry} prevSelectedEntry
- * @property {Entry} selectedEntry
- * @property {FilePosition} prevPosition
- * @property {FilePosition} selectedPosition
+ * @property {Entry | null} prevSelectedEntry
+ * @property {Entry | null} selectedEntry
+ * @property {FilePosition | null} prevPosition
+ * @property {FilePosition | null} selectedPosition
  * // Actions
- * @typedef {{ type: "SET_SELECTED_POSITION"; newPosition: FilePosition; }} SetSelectedPosition
- * @typedef {{ type: "SET_SELECTED_ENTRY"; entry: Entry; }} SetSelectedEntry
+ * @typedef {{ type: "SET_SELECTED_POSITION"; newPosition: FilePosition | null; }} SetSelectedPosition
+ * @typedef {{ type: "SET_SELECTED_ENTRY"; entry: Entry | null; }} SetSelectedEntry
  * @typedef {SetSelectedPosition | SetSelectedEntry} AppContextAction
  * // Reducer
  * @param {AppContextState} state
@@ -59,14 +76,6 @@ function appContextReducer(state, action) {
 	}
 }
 
-/** @type {(props: any) => AppContextState} */
-const initialState = (props) => ({
-	prevPosition: null,
-	prevSelectedEntry: null,
-	selectedPosition: null,
-	selectedEntry: null,
-});
-
 /**
  * @typedef AppProviderProps
  * @property {import('preact').JSX.Element | import('preact').JSX.Element[]} children
@@ -74,6 +83,8 @@ const initialState = (props) => ({
  */
 export function AppProvider(props) {
 	const [state, dispatch] = useReducer(appContextReducer, props, initialState);
+
+	/** @type {AppDispatchContextValue} */
 	const dispatchers = useMemo(
 		() => ({
 			setSelectedPosition(newPosition) {

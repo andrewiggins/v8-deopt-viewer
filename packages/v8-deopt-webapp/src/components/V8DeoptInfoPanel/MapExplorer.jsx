@@ -72,8 +72,8 @@ const mapGroupings = {
  * @typedef State
  * @property {MapGrouping} grouping
  * @property {GroupingValue[]} groupValues
- * @property {GroupingValue} selectedGroup
- * @property {MapEntry["id"]} selectedMapId
+ * @property {GroupingValue | null} selectedGroup
+ * @property {MapEntry["id"] | null} selectedMapId
  * // Actions
  * @typedef {"SET_GROUPING" | "SET_GROUP_VALUE" | "SET_MAP_ID"} GroupingActionType
  * @typedef {{ type: "SET_GROUPING"; newGrouping: MapGrouping; newGroupValues: GroupingValue[] }} SetGroupingAction
@@ -96,16 +96,15 @@ function mapGroupingReducer(state, action) {
 			grouping: action.newGrouping,
 			groupValues,
 			selectedGroup,
-			selectedMapId: mapIds?.length > 0 ? mapIds[0] : null,
+			selectedMapId: mapIds && mapIds?.length > 0 ? mapIds[0] : null,
 		};
 	} else if (action.type == "SET_GROUP_VALUE") {
-		const selectedGroup = state.groupValues.find(
-			(v) => v.id == action.newValue
-		);
+		const selectedGroup =
+			state.groupValues.find((v) => v.id == action.newValue) ?? null;
 		return {
 			...state,
 			selectedGroup,
-			selectedMapId: selectedGroup.mapIds[0],
+			selectedMapId: selectedGroup?.mapIds[0] ?? null,
 		};
 	} else if (action.type == "SET_MAP_ID") {
 		return {
@@ -123,7 +122,9 @@ function mapGroupingReducer(state, action) {
  */
 function initGroupingState(props) {
 	const routeParams = props.routeParams;
-	const grouping = routeParams.grouping ?? "loadic";
+	const grouping = /** @type {MapGrouping} */ (
+		routeParams.grouping ?? "loadic"
+	);
 	const groupValues = getGroupingValues(
 		grouping,
 		props.mapData,
@@ -135,9 +136,8 @@ function initGroupingState(props) {
 	if (groupValues.length > 0) {
 		selectedGroup = groupValues[0];
 		if (routeParams.groupValue) {
-			selectedGroup = groupValues.find(
-				(value) => value.id == routeParams.groupValue
-			);
+			selectedGroup =
+				groupValues.find((value) => value.id == routeParams.groupValue) ?? null;
 		}
 	}
 
@@ -148,7 +148,7 @@ function initGroupingState(props) {
 		selectedMapId:
 			routeParams.mapId ??
 			((selectedGroup?.mapIds.length ?? 0) > 0
-				? selectedGroup.mapIds[0]
+				? selectedGroup?.mapIds[0] ?? null
 				: null),
 	};
 }
@@ -161,7 +161,7 @@ function initGroupingState(props) {
  *
  * @typedef MapExplorerRouteParams
  * @property {string} fileId
- * @property {MapGrouping} [grouping]
+ * @property {string} [grouping]
  * @property {string} [groupValue]
  * @property {string} [mapId]
  *
@@ -354,7 +354,7 @@ export function MapExplorer(props) {
 							// 	type: "SET_GROUP_VALUE",
 							// 	newValue: newGroupValue,
 							// });
-							if (newGroupValue.id !== state.selectedGroup.id) {
+							if (newGroupValue !== state.selectedGroup?.id) {
 								setLocation(
 									mapsRoute.getHref(fileId, state.grouping, newGroupValue)
 								);
@@ -377,7 +377,7 @@ export function MapExplorer(props) {
 						Map:
 					</label>
 					<select
-						value={state.selectedMapId}
+						value={state.selectedMapId ?? ""}
 						id="map-id"
 						class={form_select}
 						disabled={mapIds.length < 2}
@@ -391,7 +391,7 @@ export function MapExplorer(props) {
 								mapsRoute.getHref(
 									fileId,
 									state.grouping,
-									state.selectedGroup.id,
+									state.selectedGroup?.id,
 									newMapId
 								)
 							);
@@ -413,7 +413,7 @@ export function MapExplorer(props) {
 						class={`${btn} ${btn_link} ${goto_loc_btn}`}
 						style={{ float: "right" }}
 						onClick={() => {
-							if (state.selectedGroup.group == "loadic") {
+							if (state.selectedGroup?.group == "loadic") {
 								setSelectedEntry(state.selectedGroup.entry);
 							}
 						}}
@@ -438,7 +438,7 @@ export function MapExplorer(props) {
  * @typedef MapTimelineProps
  * @property {MapData} mapData
  * @property {MapEntry} selectedEntry
- * @property {import("../appState").FilePosition} selectedPosition
+ * @property {import("../appState").FilePosition | null} selectedPosition
  * @property {string} currentFile
  *
  * @param {MapTimelineProps} props
@@ -480,7 +480,7 @@ function MapTimeline({
  * @property {MapData} mapData
  * @property {MapEntry} map
  * @property {boolean} [selected]
- * @property {import("../appState").FilePosition} selectedPosition
+ * @property {import("../appState").FilePosition | null} selectedPosition
  * @property {string} currentFile
  * @param {MapTimelineItemProps} props
  */
@@ -541,9 +541,9 @@ function MapTimelineItem({
 									? "Location is not in current file"
 									: isSelectedPosition
 									? "Location is currently highlighted"
-									: null
+									: ""
 							}
-							onClick={() => setSelectedPosition(map.filePosition)}
+							onClick={() => setSelectedPosition(map.filePosition ?? null)}
 						>
 							Show creation location
 						</button>
@@ -597,7 +597,7 @@ function getGroupingValues(grouping, mapData, fileDeoptInfo, settings) {
 					});
 				}
 
-				properties.get(propName).mapIds.push(map.id);
+				properties.get(propName)?.mapIds.push(map.id);
 			}
 		}
 
@@ -610,7 +610,7 @@ function getGroupingValues(grouping, mapData, fileDeoptInfo, settings) {
 			if (map.filePosition) {
 				const key = formatLocation(map.filePosition);
 				if (createLocs.has(key)) {
-					createLocs.get(key).mapIds.push(map.id);
+					createLocs.get(key)?.mapIds.push(map.id);
 				} else {
 					createLocs.set(key, {
 						group: "create",
@@ -648,7 +648,7 @@ function formatLocation(entry) {
 
 /**
  * @param {MapEntry} map
- * @returns {string[]}
+ * @returns {import('preact').ComponentChildren}
  */
 function formatDescription(map) {
 	return map.description
@@ -660,9 +660,11 @@ function formatDescription(map) {
 
 /**
  * @param {MapData} mapData
- * @param {MapEntry} map
+ * @param {MapEntry} initialMap
  */
-function getMapParents(mapData, map) {
+function getMapParents(mapData, initialMap) {
+	/** @type {MapEntry | null} */
+	let map = initialMap;
 	const parents = [];
 	while (map?.edge) {
 		const edge = mapData.edges[map.edge];
@@ -716,8 +718,8 @@ function getEdgeIcon(edge) {
 }
 
 /**
- * @param {import('../appState').FilePosition} loc1
- * @param {import('../appState').FilePosition} loc2
+ * @param {import('../appState').FilePosition | null | undefined} loc1
+ * @param {import('../appState').FilePosition | null | undefined} loc2
  * @returns {boolean}
  */
 function isSameLocation(loc1, loc2) {

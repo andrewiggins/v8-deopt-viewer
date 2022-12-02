@@ -28,7 +28,7 @@ import { useHighlightEntry } from "../CodePanel.jsx";
  * @typedef DeoptTablesProps
  * @property {FileV8DeoptInfo} fileDeoptInfo
  * @property {"codes" | "deopts" | "ics"} entryKind
- * @property {string} selectedEntryId
+ * @property {string | undefined} selectedEntryId
  * @property {number} fileId
  * @property {import('../CodeSettings').CodeSettingsState} settings
  * @property {() => void} toggleShowLowSevs
@@ -319,7 +319,7 @@ function ICEntry({ entry, selected, title, showAllICs, hasMapData, fileId }) {
  * @typedef EntryTitleProps
  * @property {import('v8-deopt-parser').Entry} entry
  * @property {string} relativePath
- * @property {import('../..').Route<[number, string]>} route
+ * @property {import('../..').Route<any, [number, string]>} route
  * @property {number} fileId
  * @param {EntryTitleProps} props
  */
@@ -351,7 +351,7 @@ function severityClass(severity) {
 
 /**
  * @param {boolean} selected
- * @returns {import("preact").RefObject<HTMLDivElement>}
+ * @returns {import("preact").RefObject<HTMLDivElement> | null}
  */
 function useScrollIntoView(selected) {
 	/** @type {import("preact").RefObject<HTMLDivElement>} */
@@ -360,7 +360,7 @@ function useScrollIntoView(selected) {
 		if (selected) {
 			// TODO: Why doesn't the smooth behavior always work? It seems that only
 			// the first or last call to scrollIntoView with behavior smooth works?
-			ref.current.scrollIntoView({ block: "center" });
+			ref.current?.scrollIntoView({ block: "center" });
 		}
 	}, [selected]);
 

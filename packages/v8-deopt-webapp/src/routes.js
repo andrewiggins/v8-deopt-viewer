@@ -1,4 +1,4 @@
-/** @type {import('./').Route<[]>} */
+/** @type {import('./').Route<"/", []>} */
 export const summaryRoute = {
 	id: "summary",
 	route: "/",
@@ -7,11 +7,11 @@ export const summaryRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number]>} */
+/** @type {import('./').Route<"/file/:fileId/:tabId?/:path*", [number?, string?]>} */
 export const fileRoute = {
 	id: "file",
 	route: "/file/:fileId/:tabId?/:path*",
-	getHref(fileId = null, tabId = null) {
+	getHref(fileId, tabId) {
 		let url = "#/file/";
 		if (fileId) {
 			url += fileId + "/";
@@ -25,7 +25,7 @@ export const fileRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number, string?]>} */
+/** @type {import('./').Route<"/file/:fileId/codes/:entryId?", [number, string?]>} */
 export const codeRoute = {
 	id: "codes",
 	title: "Optimizations",
@@ -35,7 +35,7 @@ export const codeRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number, string?]>} */
+/** @type {import('./').Route<"/file/:fileId/deopts/:entryId?", [number, string?]>} */
 export const deoptsRoute = {
 	id: "deopts",
 	title: "Deoptimizations",
@@ -45,7 +45,7 @@ export const deoptsRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number, string?]>} */
+/** @type {import('./').Route<"/file/:fileId/ics/:entryId?", [number, string?]>} */
 export const icsRoute = {
 	id: "ics",
 	title: "Inline Caches",
@@ -55,12 +55,12 @@ export const icsRoute = {
 	},
 };
 
-/** @type {import('./').Route<[number, string?, string?, string?]>} */
+/** @type {import('./').Route<"/file/:fileId/maps/:grouping?/:groupValue?/:mapId?", [number, string?, string?, string?]>} */
 export const mapsRoute = {
 	id: "maps",
 	title: "Map Explorer",
 	route: "/file/:fileId/maps/:grouping?/:groupValue?/:mapId?",
-	getHref(fileId, grouping = null, groupValue = null, mapId = null) {
+	getHref(fileId, grouping, groupValue, mapId) {
 		let url = `#/file/${fileId}/maps/`;
 		// Only add subsequent paths if parent path is provided
 		if (grouping) {

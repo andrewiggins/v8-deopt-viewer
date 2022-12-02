@@ -71,11 +71,14 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 	 * @typedef {Map<string, import('../utils/deoptMarkers').Marker>} MarkerMap
 	 * @type {[MarkerMap, import('preact/hooks').StateUpdater<MarkerMap>]}
 	 */
-	const [markers, setMarkers] = useState(null);
+	const [markers, setMarkers] = useState(new Map());
 
-	/** @type {import('preact').RefObject<HTMLElement>} */
 	const codeRef = useRef(null);
 	useLayoutEffect(() => {
+		if (!codeRef.current) {
+			return;
+		}
+
 		// Saved the new markers so we can select them when CodePanelContext changes
 		const markers = addDeoptMarkers(codeRef.current, fileId, fileDeoptInfo);
 		setMarkers(new Map(markers.map((marker) => [marker.id, marker])));
@@ -92,6 +95,15 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 		const scrollIntoViewOpts = { block: "center", behavior: "smooth" };
 		if (state.selectedEntry) {
 			const target = markers.get(getMarkerId(state.selectedEntry));
+			if (!target) {
+				console.error(
+					`Could not locate marker with id ${getMarkerId(
+						state.selectedEntry
+					)} for entry ${state.selectedEntry.id}.`
+				);
+				return;
+			}
+
 			target.classList.add(active);
 			// TODO: Why doesn't the smooth behavior always work? It seems that only
 			// the first or last call to scrollIntoView with behavior smooth works?
@@ -115,7 +127,7 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 			<PrismCode
 				src={fileDeoptInfo.src}
 				lang={lang}
-				class={(!settings.hideLineNums && "line-numbers") || null}
+				class={(!settings.hideLineNums && "line-numbers") || undefined}
 				ref={codeRef}
 			>
 				<LineNumbers selectedLine={selectedLine} contents={fileDeoptInfo.src} />
@@ -124,11 +136,10 @@ export function CodePanel({ fileDeoptInfo, fileId, settings }) {
 	);
 }
 
-/**
- * @typedef {{ lang: string; src: string; class?: string; children?: any }} PrismCodeProps
- * @type {import('preact').FunctionComponent<PrismCodeProps>}
- */
-const PrismCode = forwardRef(function PrismCode(props, ref) {
+/** @typedef {{ lang: string; src: string; class?: string; children?: any }} PrismCodeProps */
+const PrismCode = forwardRef(PrismCodeImpl);
+/** @param {PrismCodeProps} props */
+function PrismCodeImpl(props, ref) {
 	const className = [`language-${props.lang}`, props.class].join(" ");
 
 	// TODO: File route changes will unmount and delete this cache. May be useful
@@ -145,21 +156,21 @@ const PrismCode = forwardRef(function PrismCode(props, ref) {
 			{props.children}
 		</pre>
 	);
-});
+}
 
 const NEW_LINE_EXP = /\n(?!$)/g;
 
 /**
- * @param {{ selectedLine: number; contents: string }} props
+ * @type {import('preact').FunctionComponent<{ selectedLine: number | undefined; contents: string }>}
  */
-const LineNumbers = memo(function LineNumbers({ selectedLine, contents }) {
+const LineNumbers = memo(function LineNumbers({ selectedLine = 0, contents }) {
 	// TODO: Do we want to cache these results beyond renders and for all
 	// combinations? memo will only remember the last combination.
 	const lines = useMemo(() => contents.split(NEW_LINE_EXP), [contents]);
 	return (
 		<span class="line-numbers-rows" aria-hidden="true">
 			{lines.map((_, i) => (
-				<span class={i == selectedLine - 1 ? "active" : null} />
+				<span class={i == selectedLine - 1 ? "active" : ""} />
 			))}
 		</span>
 	);

@@ -5,11 +5,13 @@ import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.module.scss";
 const DEBUG = location.search.includes("debug");
 
 /**
- * @param {Node} element
+ * @param {Node | null} element
  * @param {Node} root
  */
 function nextElement(element, root) {
-	if (element == root) {
+	if (!element) {
+		return null;
+	} else if (element == root) {
 		return null;
 	} else if (element.firstChild) {
 		return element.firstChild;
@@ -20,7 +22,7 @@ function nextElement(element, root) {
 			element = element.parentNode;
 		} while (element && element != root && !element.nextSibling);
 
-		return element === root ? null : element.nextSibling;
+		return element === root ? null : element?.nextSibling;
 	}
 }
 
@@ -102,10 +104,14 @@ function consumeEntries(element, fileId, entries, markers, curLine, curColumn) {
 	let refChild = element;
 	while (locHasMarker(entries, curLine, curColumn)) {
 		const entry = entries.shift();
+		if (!entry) {
+			throw new Error("Expected an entry to create a marker with");
+		}
+
 		const lastMark = createMarkerElement(fileId, entry);
 		markers.push(lastMark);
 
-		element.parentNode.insertBefore(lastMark, refChild.nextSibling);
+		element.parentNode?.insertBefore(lastMark, refChild.nextSibling);
 		refChild = lastMark;
 	}
 
@@ -140,7 +146,7 @@ export function addDeoptMarkers(root, fileId, deoptInfo) {
 	let code = "";
 	let fullText = DEBUG ? root.textContent : "";
 
-	/** @type {Node} */
+	/** @type {Node | null | undefined} */
 	let element = root.firstChild;
 	let curLine = 1;
 	let curColumn = 1;
@@ -213,11 +219,15 @@ function severityClass(severity) {
 /**
  * @param {number} lineCount
  * @param {number} columnCount
- * @param {string} fullText
+ * @param {string | null} fullText
  * @param {Node} element
  * @param {HTMLElement} root
  */
 function validateLoc(lineCount, columnCount, fullText, element, root) {
+	if (!fullText) {
+		return;
+	}
+
 	const lineLengths = fullText.split("\n").map((l) => l.length);
 	const expectedColCount = lineLengths[lineCount - 1] + 1;
 	if (!root.contains(element)) {

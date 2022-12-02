@@ -15,9 +15,9 @@ export type FileV8DeoptInfoWithSources = FileV8DeoptInfo & {
 	srcError?: string;
 };
 
-export interface Route<Args> {
+export interface Route<RoutePath, Args> {
 	id: string;
 	title?: string;
-	route: string;
+	route: RoutePath;
 	getHref(...args: Args): string;
 }

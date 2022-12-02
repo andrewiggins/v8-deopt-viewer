@@ -2,9 +2,26 @@
 	"compilerOptions": {
 		"target": "ES2019",
 		"checkJs": true,
+		"strict": true,
+		"noImplicitAny": false,
 		"jsx": "react-jsx",
 		"jsxImportSource": "preact",
 		"moduleResolution": "node",
 		"resolveJsonModule": true
-	}
+	},
+	"include": [
+		"src/**/*.js",
+		"src/**/*.jsx",
+		"src/**/*.d.ts",
+		"test/**/*.js",
+		"vite.config.mjs"
+	],
+	"exclude": [
+		"**/node_modules/**",
+		"../../node_modules",
+		"test/logs/**/*.js",
+		"test/deoptInfo.js",
+		"test/DeoptInfoError.js",
+		"test/deoptInfoNoMaps.js"
+	]
 }
