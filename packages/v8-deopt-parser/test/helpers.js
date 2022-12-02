@@ -1,3 +1,4 @@
+import assert from "node:assert";
 import { fileURLToPath, pathToFileURL } from "url";
 import * as path from "path";
 import { createReadStream, createWriteStream } from "fs";
@@ -124,11 +125,10 @@ export async function readLogFile(logFilename, logPath) {
 }
 
 /**
- * @param {import('tape').Test} t
  * @param {string} logFileName
  * @param {import('../').Options} [options]
  */
-export async function runParser(t, logFileName, options) {
+export async function runParser(logFileName, options) {
 	const logPath = pkgRoot("test", "logs", logFileName);
 
 	const logContents = await readLogFile(logFileName, logPath);
@@ -149,7 +149,7 @@ export async function runParser(t, logFileName, options) {
 		console.error = origConsoleError;
 	}
 
-	t.equal(errorArgs.length, 0, "No console.error calls");
+	assert.equal(errorArgs.length, 0, "No console.error calls");
 
 	return result;
 }
@@ -186,12 +186,11 @@ export async function writeSnapshot(logFileName, result) {
 }
 
 /**
- * @param {import('tape').Test} t
  * @param {string} message
  * @param {Array<import('../').Entry>} entries
  * @param {import('../').Entry} expectedEntry
  */
-export function validateEntry(t, message, entries, expectedEntry) {
+export function validateEntry(message, entries, expectedEntry) {
 	const { functionName, file, line, column } = expectedEntry;
 	const matches = entries.filter((entry) => {
 		return (
@@ -208,7 +207,7 @@ export function validateEntry(t, message, entries, expectedEntry) {
 		);
 	}
 
-	t.deepEqual(matches[0], expectedEntry, message);
+	assert.deepEqual(matches[0], expectedEntry, message);
 }
 
 export function decompress(inputPath) {

@@ -1,7 +1,8 @@
-import test from "tape";
+import assert from "assert";
+import test from "node:test";
 import { isAbsolutePath, parseSourcePosition } from "../src/utils.js";
 
-test("parseSourcePosition", (t) => {
+test("parseSourcePosition", () => {
 	const validSourcePositions = [
 		["/path/to/file", 11, 22],
 		["C:\\path\\to\\file", 11, 22],
@@ -16,7 +17,7 @@ test("parseSourcePosition", (t) => {
 		const result = parseSourcePosition(position);
 
 		const expected = { file: inputs[0], line: inputs[1], column: inputs[2] };
-		t.deepEqual(result, expected, "valid: " + position);
+		assert.deepEqual(result, expected, "valid: " + position);
 	});
 
 	const invalidSourcePositions = [
@@ -39,13 +40,11 @@ test("parseSourcePosition", (t) => {
 			didCatch = true;
 		}
 
-		t.equal(didCatch, true, "invalid: " + position);
+		assert.equal(didCatch, true, "invalid: " + position);
 	});
-
-	t.end();
 });
 
-test("isAbsolutePath", (t) => {
+test("isAbsolutePath", () => {
 	const areAbsolute = [
 		"/",
 		"/tmp",
@@ -63,9 +62,10 @@ test("isAbsolutePath", (t) => {
 		"https://a.com/path",
 	];
 	areAbsolute.forEach((path) => {
-		t.equal(isAbsolutePath(path), true, `Absolute path: ${path}`);
+		assert.equal(isAbsolutePath(path), true, `Absolute path: ${path}`);
 	});
 
+	/** @type {any[]} */
 	const notAbsolute = [
 		null,
 		undefined,
@@ -81,8 +81,6 @@ test("isAbsolutePath", (t) => {
 		"2",
 	];
 	notAbsolute.forEach((path) => {
-		t.equal(isAbsolutePath(path), false, `Relative path: ${path}`);
+		assert.equal(isAbsolutePath(path), false, `Relative path: ${path}`);
 	});
-
-	t.end();
 });

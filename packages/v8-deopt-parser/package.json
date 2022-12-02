@@ -12,7 +12,7 @@
     "src"
   ],
   "scripts": {
-    "test": "node test/index.test.js",
+    "test": "node --test test/index.test.js",
     "deopts": "v8-deopt-viewer -i test/deopt-results/out-of-memory.v8.log -o test/deopt-results  --open"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
-import test from "tape";
+import assert from "assert";
+import test from "node:test";
 import {
 	runParser,
 	writeSnapshot,
@@ -8,17 +9,17 @@ import {
 } from "./helpers.js";
 import { expectedICSLogs } from "./constants.js";
 
-test("runParser(adders.v8.log)", async (t) => {
+test("runParser(adders.v8.log)", async () => {
 	const logFileName = "adders.v8.log";
-	const result = await runParser(t, logFileName);
+	const result = await runParser(logFileName);
 
-	t.equal(result.codes.length, 16, "Number of codes");
-	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 16, "Number of codes");
+	assert.equal(result.deopts.length, 7, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 
-	validateEntry(t, "Matching ICS Entry", result.ics, expectedICSLogs.adders);
+	validateEntry("Matching ICS Entry", result.ics, expectedICSLogs.adders);
 
-	validateEntry(t, "Matching Deopt entry", result.deopts, {
+	validateEntry("Matching Deopt entry", result.deopts, {
 		type: "deopts",
 		id: "331",
 		functionName: "addObjects",
@@ -39,7 +40,7 @@ test("runParser(adders.v8.log)", async (t) => {
 		],
 	});
 
-	validateEntry(t, "Matching Code entry", result.codes, {
+	validateEntry("Matching Code entry", result.codes, {
 		type: "codes",
 		id: "309",
 		functionName: "addNumbers",
@@ -62,7 +63,7 @@ test("runParser(adders.v8.log)", async (t) => {
 		],
 	});
 
-	validateEntry(t, "Matching Sev 3 Code entry", result.codes, {
+	validateEntry("Matching Sev 3 Code entry", result.codes, {
 		type: "codes",
 		id: "311",
 		functionName: "addAny",
@@ -118,31 +119,30 @@ test("runParser(adders.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
-test("runParser(adders.node16_14.v8.log)", async (t) => {
+test("runParser(adders.node16_14.v8.log)", async () => {
 	const logFileName = "adders.node16_14.v8.log";
-	const result = await runParser(t, logFileName);
+	const result = await runParser(logFileName);
 
-	t.equal(result.codes.length, 16, "Number of codes");
-	t.equal(result.deopts.length, 0, "Number of deopts");
-	t.equal(result.ics.length, 34, "Number of ics");
+	assert.equal(result.codes.length, 16, "Number of codes");
+	assert.equal(result.deopts.length, 0, "Number of deopts");
+	assert.equal(result.ics.length, 34, "Number of ics");
 });
 
-test("runParser(two-modules.v8.log)", async (t) => {
+test("runParser(two-modules.v8.log)", async () => {
 	const logFileName = "two-modules.v8.log";
-	const result = await runParser(t, logFileName);
+	const result = await runParser(logFileName);
 
-	t.equal(result.codes.length, 16, "Number of codes");
-	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 16, "Number of codes");
+	assert.equal(result.deopts.length, 7, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(
-		t,
 		"Matching ICS Entry",
 		result.ics,
 		expectedICSLogs["two-modules"]
 	);
 
-	validateEntry(t, "Matching Deopt entry", result.deopts, {
+	validateEntry("Matching Deopt entry", result.deopts, {
 		type: "deopts",
 		id: "337",
 		functionName: "addObjects",
@@ -163,7 +163,7 @@ test("runParser(two-modules.v8.log)", async (t) => {
 		],
 	});
 
-	validateEntry(t, "Matching Code entry", result.codes, {
+	validateEntry("Matching Code entry", result.codes, {
 		type: "codes",
 		id: "315",
 		functionName: "addNumbers",
@@ -189,22 +189,21 @@ test("runParser(two-modules.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
-test("runParser(html-inline.v8.log)", async (t) => {
+test("runParser(html-inline.v8.log)", async () => {
 	const logFileName = "html-inline.v8.log";
-	const result = await runParser(t, logFileName);
+	const result = await runParser(logFileName);
 
-	t.equal(result.codes.length, 15, "Number of codes");
-	t.equal(result.deopts.length, 6, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 15, "Number of codes");
+	assert.equal(result.deopts.length, 6, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(
-		t,
 		"Matching ICS Entry",
 		result.ics,
 		expectedICSLogs["html-inline"]
 	);
 
-	validateEntry(t, "Matching Deopt entry", result.deopts, {
+	validateEntry("Matching Deopt entry", result.deopts, {
 		type: "deopts",
 		id: "26",
 		functionName: "addObjects",
@@ -225,7 +224,7 @@ test("runParser(html-inline.v8.log)", async (t) => {
 		],
 	});
 
-	validateEntry(t, "Matching Code entry", result.codes, {
+	validateEntry("Matching Code entry", result.codes, {
 		type: "codes",
 		id: "2",
 		functionName: "addNumbers",
@@ -251,22 +250,21 @@ test("runParser(html-inline.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
-test("runParser(html-external.v8.log)", async (t) => {
+test("runParser(html-external.v8.log)", async () => {
 	const logFileName = "html-external.v8.log";
-	const result = await runParser(t, logFileName);
+	const result = await runParser(logFileName);
 
-	t.equal(result.codes.length, 16, "Number of codes");
-	t.equal(result.deopts.length, 6, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 16, "Number of codes");
+	assert.equal(result.deopts.length, 6, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 
 	validateEntry(
-		t,
 		"Matching ICS Entry",
 		result.ics,
 		expectedICSLogs["html-external"]
 	);
 
-	validateEntry(t, "Matching Deopt entry", result.deopts, {
+	validateEntry("Matching Deopt entry", result.deopts, {
 		type: "deopts",
 		id: "27",
 		functionName: "addObjects",
@@ -287,7 +285,7 @@ test("runParser(html-external.v8.log)", async (t) => {
 		],
 	});
 
-	validateEntry(t, "Matching Code entry", result.codes, {
+	validateEntry("Matching Code entry", result.codes, {
 		type: "codes",
 		id: "4",
 		functionName: "addNumbers",
@@ -313,47 +311,47 @@ test("runParser(html-external.v8.log)", async (t) => {
 	await writeSnapshot(logFileName, result);
 });
 
-test("runParser(adders.v8.log, keepInternals)", async (t) => {
+test("runParser(adders.v8.log, keepInternals)", async () => {
 	const logFileName = "adders.v8.log";
-	const result = await runParser(t, logFileName, { keepInternals: true });
+	const result = await runParser(logFileName, { keepInternals: true });
 
-	t.equal(result.codes.length, 253, "Number of codes");
-	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 182, "Number of ics");
+	assert.equal(result.codes.length, 253, "Number of codes");
+	assert.equal(result.deopts.length, 7, "Number of deopts");
+	assert.equal(result.ics.length, 182, "Number of ics");
 });
 
-test("runParser(adders.node16.v8.log, keepInternals)", async (t) => {
+test("runParser(adders.node16.v8.log, keepInternals)", async () => {
 	const logFileName = "adders.node16.v8.log";
-	const result = await runParser(t, logFileName, { keepInternals: true });
+	const result = await runParser(logFileName, { keepInternals: true });
 
-	t.equal(result.codes.length, 251, "Number of codes");
-	t.equal(result.deopts.length, 0, "Number of deopts");
-	t.equal(result.ics.length, 112, "Number of ics");
+	assert.equal(result.codes.length, 251, "Number of codes");
+	assert.equal(result.deopts.length, 0, "Number of deopts");
+	assert.equal(result.ics.length, 112, "Number of ics");
 });
 
-test("runParser(two-modules.v8.log, keepInternals)", async (t) => {
+test("runParser(two-modules.v8.log, keepInternals)", async () => {
 	const logFileName = "two-modules.v8.log";
-	const result = await runParser(t, logFileName, { keepInternals: true });
+	const result = await runParser(logFileName, { keepInternals: true });
 
-	t.equal(result.codes.length, 254, "Number of codes");
-	t.equal(result.deopts.length, 7, "Number of deopts");
-	t.equal(result.ics.length, 187, "Number of ics");
+	assert.equal(result.codes.length, 254, "Number of codes");
+	assert.equal(result.deopts.length, 7, "Number of deopts");
+	assert.equal(result.ics.length, 187, "Number of ics");
 });
 
-test("runParser(html-inline.v8.log, keepInternals)", async (t) => {
+test("runParser(html-inline.v8.log, keepInternals)", async () => {
 	const logFileName = "html-inline.v8.log";
-	const result = await runParser(t, logFileName, { keepInternals: true });
+	const result = await runParser(logFileName, { keepInternals: true });
 
-	t.equal(result.codes.length, 15, "Number of codes");
-	t.equal(result.deopts.length, 6, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 15, "Number of codes");
+	assert.equal(result.deopts.length, 6, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 });
 
-test("runParser(html-external.v8.log, keepInternals)", async (t) => {
+test("runParser(html-external.v8.log, keepInternals)", async () => {
 	const logFileName = "html-external.v8.log";
-	const result = await runParser(t, logFileName, { keepInternals: true });
+	const result = await runParser(logFileName, { keepInternals: true });
 
-	t.equal(result.codes.length, 16, "Number of codes");
-	t.equal(result.deopts.length, 6, "Number of deopts");
-	t.equal(result.ics.length, 33, "Number of ics");
+	assert.equal(result.codes.length, 16, "Number of codes");
+	assert.equal(result.deopts.length, 6, "Number of deopts");
+	assert.equal(result.ics.length, 33, "Number of ics");
 });
