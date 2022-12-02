@@ -11,7 +11,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287511",
@@ -33,7 +33,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287589",
@@ -55,7 +55,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec0082875d9",
@@ -77,7 +77,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287651",
@@ -99,7 +99,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec0082876a1",
@@ -121,7 +121,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287719",
@@ -143,7 +143,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287741",
@@ -165,7 +165,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "flag",
           "map": "0x2ec0082874c1",
@@ -187,7 +187,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "flag",
           "map": "0x2ec0082874c1",
@@ -209,7 +209,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287791",
@@ -231,7 +231,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec008287809",
@@ -253,7 +253,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287831",
@@ -275,7 +275,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "flag",
           "map": "0x2ec0082874c1",
@@ -297,7 +297,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287881",
@@ -319,7 +319,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec0082878f9",
@@ -341,7 +341,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "flag",
           "map": "0x2ec0082874c1",
@@ -363,7 +363,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec008287921",
@@ -385,7 +385,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec0082875b1",
@@ -484,7 +484,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec0082875b1",
@@ -583,7 +583,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hola",
           "map": "0x2ec008287971",
@@ -605,7 +605,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec0082879e9",
@@ -627,7 +627,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287a11",
@@ -649,7 +649,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec008287a39",
@@ -671,7 +671,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "push",
           "map": "0x2ec008281139",
@@ -704,7 +704,7 @@
       "updates": [
         {
           "type": "LoadIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "length",
           "map": "0x2ec008281139",
@@ -737,7 +737,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287a89",
@@ -759,7 +759,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hola",
           "map": "0x2ec008287b01",
@@ -781,7 +781,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287b29",
@@ -803,7 +803,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec008287b51",
@@ -825,7 +825,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "x",
           "map": "0x2ec008287ba1",
@@ -847,7 +847,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "y",
           "map": "0x2ec008287c19",
@@ -869,7 +869,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hola",
           "map": "0x2ec008287c41",
@@ -891,7 +891,7 @@
       "updates": [
         {
           "type": "StoreIC",
-          "oldState": "unintialized",
+          "oldState": "uninitialized",
           "newState": "monomorphic",
           "key": "hello",
           "map": "0x2ec008287c69",

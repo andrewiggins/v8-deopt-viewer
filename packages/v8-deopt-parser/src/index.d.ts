@@ -68,7 +68,7 @@ interface InlinedLocation {
 // ======================================
 // #region Inline Cache types
 type ICState =
-	| "unintialized"
+	| "uninitialized"
 	| "premonomorphic"
 	| "monomorphic"
 	| "recompute_handler"
