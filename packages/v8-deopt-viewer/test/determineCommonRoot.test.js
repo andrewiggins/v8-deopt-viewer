@@ -1,7 +1,8 @@
-import test from "tape";
+import assert from "node:assert";
+import test from "node:test";
 import { determineCommonRoot } from "../src/determineCommonRoot.js";
 
-test("determineCommonRoot(absolute paths)", (t) => {
+test("determineCommonRoot(absolute paths)", () => {
 	// Windows paths
 	let result = determineCommonRoot([
 		"C:\\a\\b\\c2\\d\\e",
@@ -9,15 +10,15 @@ test("determineCommonRoot(absolute paths)", (t) => {
 		"C:\\a\\b\\c",
 		"C:\\a\\b\\c\\",
 	]);
-	t.equal(result, "C:\\a\\b\\", "Windows paths");
+	assert.equal(result, "C:\\a\\b\\", "Windows paths");
 
 	// Single path
 	result = determineCommonRoot(["C:\\a\\b\\c\\d\\e"]);
-	t.equal(result, "C:\\a\\b\\c\\d\\", "Single path");
+	assert.equal(result, "C:\\a\\b\\c\\d\\", "Single path");
 
 	// Linux paths with ending '/'
 	result = determineCommonRoot(["/a/b/c2/d/e/", "/a/b/c/", "/a/b/c2/f/g/"]);
-	t.equal(result, "/a/b/", "Linux paths with ending '/'");
+	assert.equal(result, "/a/b/", "Linux paths with ending '/'");
 
 	// URLs with mixed endings
 	result = determineCommonRoot([
@@ -25,27 +26,25 @@ test("determineCommonRoot(absolute paths)", (t) => {
 		"https://a.com/a/b/c",
 		"https://a.com/a/b/c/f/g",
 	]);
-	t.equal(result, "https://a.com/a/b/", "URLs with mixed endings");
+	assert.equal(result, "https://a.com/a/b/", "URLs with mixed endings");
 
 	// Single URL
 	result = determineCommonRoot(["https://a.com/a/b/c/d/e"]);
-	t.equal(result, "https://a.com/a/b/c/d/", "Single URL");
+	assert.equal(result, "https://a.com/a/b/c/d/", "Single URL");
 
 	// Single URL with no path
 	result = determineCommonRoot(["https://a.com/"]);
-	t.equal(result, "https://", "Single URL with no path");
+	assert.equal(result, "https://", "Single URL with no path");
 
 	// Different domains
 	result = determineCommonRoot([
 		"https://a.com/a/b/c/d",
 		"https://b.com/a/b/c/e",
 	]);
-	t.equal(result, null, "Different domains");
-
-	t.end();
+	assert.equal(result, null, "Different domains");
 });
 
-test("determineCommonRoot(mixed paths and URLs)", (t) => {
+test("determineCommonRoot(mixed paths and URLs)", () => {
 	// Windows & Linux
 	let result = determineCommonRoot([
 		"/a/b/c/d/e/",
@@ -53,15 +52,15 @@ test("determineCommonRoot(mixed paths and URLs)", (t) => {
 		"C:\\a\\b\\c",
 		"C:\\a\\b\\c\\f\\g",
 	]);
-	t.equal(result, null, "Windows & Linux");
+	assert.equal(result, null, "Windows & Linux");
 
 	// Windows & URLs
 	result = determineCommonRoot(["C:\\a\\b\\c", "https://a.com/b/c/d/"]);
-	t.equal(result, null, "Windows & URLs");
+	assert.equal(result, null, "Windows & URLs");
 
 	// Linux & URLs
 	result = determineCommonRoot(["https://a.com/b/c/d/", "/a/b/c"]);
-	t.equal(result, null, "Linux & URLs");
+	assert.equal(result, null, "Linux & URLs");
 
 	// Windows & Linux & URLs
 	result = determineCommonRoot([
@@ -69,23 +68,19 @@ test("determineCommonRoot(mixed paths and URLs)", (t) => {
 		"/a/b/c",
 		"https://a.com/b/c/d",
 	]);
-	t.equal(result, null, "Windows & Linux & URLs");
-
-	t.end();
+	assert.equal(result, null, "Windows & Linux & URLs");
 });
 
-test("determineCommonRoot(relative paths)", (t) => {
+test("determineCommonRoot(relative paths)", () => {
 	// Relative Windows paths
 	let result = determineCommonRoot([
 		"a\\b\\c2\\d\\e",
 		"a\\b\\c\\",
 		"a\\b\\c2\\d\\f\\g",
 	]);
-	t.equal(result, "a\\b\\", "Relative Windows paths");
+	assert.equal(result, "a\\b\\", "Relative Windows paths");
 
 	// Relative Linux paths
 	result = determineCommonRoot(["a/b/c", "a/b/c2/d/e/", "a/b/c2/d/f/g/"]);
-	t.equal(result, "a/b/", "Relative Linux paths");
-
-	t.end();
+	assert.equal(result, "a/b/", "Relative Linux paths");
 });
