@@ -1,5 +1,5 @@
-import { createElement, Fragment } from "preact";
-import { useEffect, useReducer, useState } from "preact/hooks";
+import { Fragment } from "preact";
+import { useEffect, useState } from "preact/hooks";
 import { useLocation } from "wouter-preact";
 import {
 	map_selectors,
@@ -13,7 +13,7 @@ import {
 	icon_triangle_up,
 	icon_triangle_down,
 	icon_double_bars,
-} from "./MapExplorer.scss";
+} from "./MapExplorer.module.scss";
 import {
 	btn,
 	btn_link,
@@ -28,11 +28,11 @@ import {
 	timeline_left,
 	timeline_icon,
 	timeline_content,
-} from "../../spectre.scss";
-import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
-import { mapsRoute } from "../../routes";
-import { formatMapId, hasMapData } from "../../utils/mapUtils";
-import { useAppDispatch, useAppState } from "../appState";
+} from "../../spectre.module.scss";
+import { MIN_SEVERITY } from "v8-deopt-parser/src/utils.js";
+import { mapsRoute } from "../../routes.js";
+import { formatMapId, hasMapData } from "../../utils/mapUtils.js";
+import { useAppDispatch, useAppState } from "../appState.jsx";
 
 /**
  * @typedef {"create" | "loadic" | "property" | "mapid"} MapGrouping

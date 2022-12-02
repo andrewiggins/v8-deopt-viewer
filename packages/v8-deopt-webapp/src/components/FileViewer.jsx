@@ -1,18 +1,16 @@
-import { createElement, createContext } from "preact";
-import { useState, useReducer, useMemo, useContext } from "preact/hooks";
 import { Route, Switch } from "wouter-preact";
-import { V8DeoptInfoPanel } from "./V8DeoptInfoPanel";
-import { CodePanel } from "./CodePanel";
-import { CodeSettings, useCodeSettingsState } from "./CodeSettings";
+import { V8DeoptInfoPanel } from "./V8DeoptInfoPanel/index.jsx";
+import { CodePanel } from "./CodePanel.jsx";
+import { CodeSettings, useCodeSettingsState } from "./CodeSettings.jsx";
 import {
 	fileViewer,
 	codeSettings as codeSettingsClass,
-} from "./FileViewer.scss";
-import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer";
-import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables";
-import { hasMapData } from "../utils/mapUtils";
-import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../routes";
-import { AppProvider } from "./appState";
+} from "./FileViewer.module.scss";
+import { MapExplorer } from "./V8DeoptInfoPanel/MapExplorer.jsx";
+import { DeoptTables } from "./V8DeoptInfoPanel/DeoptTables.jsx";
+import { hasMapData } from "../utils/mapUtils.js";
+import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../routes.js";
+import { AppProvider } from "./appState.jsx";
 
 /**
  * @typedef {keyof import('v8-deopt-parser').V8DeoptInfo} EntryKind

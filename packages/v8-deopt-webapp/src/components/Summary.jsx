@@ -1,7 +1,7 @@
-import { createElement, Fragment } from "preact";
+import { Fragment } from "preact";
 import { useMemo } from "preact/hooks";
-// import { SummaryList } from "./SummaryList";
-import { SummaryTable } from "./SummaryTable";
+// import { SummaryList } from "./SummaryList.jsx";
+import { SummaryTable } from "./SummaryTable.jsx";
 
 /**
  * @typedef {[number, number, number]} SeveritySummary

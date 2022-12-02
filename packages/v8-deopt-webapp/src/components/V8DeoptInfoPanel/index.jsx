@@ -1,6 +1,5 @@
-import { createElement } from "preact";
 import { useRoute } from "wouter-preact";
-import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes";
+import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes.js";
 import {
 	panel,
 	panel_header,
@@ -10,8 +9,8 @@ import {
 	tab_item,
 	active,
 	panel_body,
-} from "../../spectre.scss";
-import { v8deoptInfoPanel, panel_title, tabLink } from "./index.scss";
+} from "../../spectre.module.scss";
+import { v8deoptInfoPanel, panel_title, tabLink } from "./index.module.scss";
 
 const routes = [codeRoute, deoptsRoute, icsRoute, mapsRoute];
 
@@ -38,7 +37,7 @@ export function V8DeoptInfoPanel({ title, fileId, children }) {
 }
 
 /**
- * @param {{ fileId: number; route: import('../../').Route; }} props
+ * @param {{ fileId: number; route: import('../..').Route; }} props
  */
 function TabLink({ fileId, route }) {
 	const href = route.getHref(fileId);

@@ -1,10 +1,10 @@
-import { createElement, Fragment } from "preact";
+import { Fragment } from "preact";
 import {
 	table,
 	table_scroll,
 	table_striped,
 	table_hover,
-} from "../spectre.scss";
+} from "../spectre.module.scss";
 import {
 	summaryTable,
 	grid,
@@ -17,7 +17,7 @@ import {
 	sev1,
 	sev2,
 	sev3,
-} from "./SummaryTable.scss";
+} from "./SummaryTable.module.scss";
 
 /**
  * @param {import('./Summary').SummaryProps} props
@@ -37,13 +37,13 @@ export function SummaryTable({ deoptInfo, perFileStats }) {
 			<thead>
 				<tr class={headers}>
 					<th>File</th>
-					<th class={codes} colspan="3">
+					<th class={codes} colSpan={3}>
 						Optimizations
 					</th>
-					<th class={deopts} colspan="3">
+					<th class={deopts} colSpan={3}>
 						Deoptimizations
 					</th>
-					<th class={ics} colspan="3">
+					<th class={ics} colSpan={3}>
 						Inline Caches
 					</th>
 				</tr>

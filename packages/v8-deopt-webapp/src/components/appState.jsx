@@ -1,4 +1,4 @@
-import { createElement, createContext } from "preact";
+import { createContext } from "preact";
 import { useReducer, useMemo, useContext } from "preact/hooks";
 
 /**
