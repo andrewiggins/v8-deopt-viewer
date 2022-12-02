@@ -18,7 +18,7 @@ const pkgRoot = (...args) => path.join(__dirname, "..", "..", ...args);
 const repoRoot = (...args) => pkgRoot("..", "..", ...args);
 const outDir = (...args) => pkgRoot("test/logs", ...args);
 
-async function main() {
+export async function generateTestData() {
 	await mkdir(outDir(), { recursive: true });
 
 	const logPath = (filename) =>
@@ -70,7 +70,11 @@ async function main() {
 		/^window\.V8Data =/,
 		"window.V8NoMapData ="
 	);
-	await writeFile(pkgRoot("test/deoptInfoNoMaps.js"), newNoMapsContents, "utf8");
+	await writeFile(
+		pkgRoot("test/deoptInfoNoMaps.js"),
+		newNoMapsContents,
+		"utf8"
+	);
 
 	// Generate logs with maps
 	console.log("Generating output with maps & sources...");
@@ -96,5 +100,3 @@ async function main() {
 
 	await copyFile(outDir("v8-data.js"), pkgRoot("test/deoptInfo.js"));
 }
-
-main();

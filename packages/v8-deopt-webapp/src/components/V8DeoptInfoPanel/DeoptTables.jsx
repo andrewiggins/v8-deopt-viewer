@@ -1,16 +1,16 @@
-import { createElement, Fragment } from "preact";
+import { Fragment } from "preact";
 import { useEffect, useRef } from "preact/hooks";
-import { severityIcState } from "v8-deopt-parser/src/propertyICParsers";
-import { MIN_SEVERITY } from "v8-deopt-parser/src/utils";
-import { formatMapId } from "../../utils/mapUtils";
-import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes";
+import { severityIcState } from "v8-deopt-parser/src/propertyICParsers.js";
+import { MIN_SEVERITY } from "v8-deopt-parser/src/utils.js";
+import { formatMapId } from "../../utils/mapUtils.js";
+import { codeRoute, deoptsRoute, icsRoute, mapsRoute } from "../../routes.js";
 import {
 	btn,
 	btn_inline,
 	table,
 	table_striped,
 	table_hover,
-} from "../../spectre.scss";
+} from "../../spectre.module.scss";
 import {
 	entryTable,
 	selected as selectedClass,
@@ -19,8 +19,8 @@ import {
 	sev1,
 	sev2,
 	sev3,
-} from "./DeoptTables.scss";
-import { useHighlightEntry } from "../CodePanel";
+} from "./DeoptTables.module.scss";
+import { useHighlightEntry } from "../CodePanel.jsx";
 
 /**
  * @typedef {import("../..").FileV8DeoptInfoWithSources} FileV8DeoptInfo
@@ -319,7 +319,7 @@ function ICEntry({ entry, selected, title, showAllICs, hasMapData, fileId }) {
  * @typedef EntryTitleProps
  * @property {import('v8-deopt-parser').Entry} entry
  * @property {string} relativePath
- * @property {import('../../').Route<[number, string]>} route
+ * @property {import('../..').Route<[number, string]>} route
  * @property {number} fileId
  * @param {EntryTitleProps} props
  */

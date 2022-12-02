@@ -1,11 +1,11 @@
-import { createElement, Fragment } from "preact";
+import { Fragment } from "preact";
 import { Router, Route, useRoute } from "wouter-preact";
 import { Summary } from "./Summary";
 import { useHashLocation } from "../utils/useHashLocation";
 import { fileRoute, summaryRoute } from "../routes";
 import { FileViewer } from "./FileViewer";
-import { btn, icon, icon_back } from "../spectre.scss";
-import { pageHeader, backButton, subRoute, pageTitle } from "./App.scss";
+import { btn, icon, icon_back } from "../spectre.module.scss";
+import { pageHeader, backButton, subRoute, pageTitle } from "./App.module.scss";
 
 /**
  * @param {import('..').AppProps} props

@@ -1,12 +1,16 @@
-import { createElement } from "preact";
 import { useReducer } from "preact/hooks";
-import { menu, menu_item, form_icon, form_switch } from "../spectre.scss";
+import {
+	menu,
+	menu_item,
+	form_icon,
+	form_switch,
+} from "../spectre.module.scss";
 import {
 	codeSettings,
 	dirty as dirtyClass,
 	settingsBody,
 	settingsMenu,
-} from "./CodeSettings.scss";
+} from "./CodeSettings.module.scss";
 
 /**
  * @typedef CodeSettingsState

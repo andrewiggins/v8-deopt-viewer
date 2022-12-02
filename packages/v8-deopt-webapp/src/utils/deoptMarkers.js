@@ -1,6 +1,6 @@
-import { sortEntries } from "v8-deopt-parser/src/sortEntries";
-import { codeRoute, deoptsRoute, icsRoute } from "../routes";
-import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.scss";
+import { sortEntries } from "v8-deopt-parser/src/sortEntries.js";
+import { codeRoute, deoptsRoute, icsRoute } from "../routes.js";
+import { deoptMarker, sev1, sev2, sev3 } from "./deoptMarkers.module.scss";
 
 const DEBUG = location.search.includes("debug");
 

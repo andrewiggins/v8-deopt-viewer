@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"target": "ES2019",
+		"checkJs": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"moduleResolution": "node",
+		"resolveJsonModule": true
+	}
+}

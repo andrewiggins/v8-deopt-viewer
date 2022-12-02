@@ -1,21 +1,18 @@
-import { createElement, createContext } from "preact";
 import {
 	useState,
 	useMemo,
 	useRef,
 	useLayoutEffect,
-	useContext,
-	useReducer,
 	useEffect,
 } from "preact/hooks";
 import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers, getMarkerId } from "../utils/deoptMarkers";
-import { codePanel, error as errorClass } from "./CodePanel.scss";
+import { codePanel, error as errorClass } from "./CodePanel.module.scss";
 import {
 	showLowSevs as showLowSevsClass,
 	active,
-} from "../utils/deoptMarkers.scss";
+} from "../utils/deoptMarkers.module.scss";
 import { useAppDispatch, useAppState } from "./appState";
 
 // Turn on auto highlighting by Prism
@@ -53,7 +50,7 @@ export function useHighlightEntry(entry, shouldHighlight) {
 
 /**
  * @typedef CodePanelProps
- * @property {import("../").FileV8DeoptInfoWithSources} fileDeoptInfo
+ * @property {import("..").FileV8DeoptInfoWithSources} fileDeoptInfo
  * @property {number} fileId
  * @property {import('./CodeSettings').CodeSettingsState} settings
  * @param {CodePanelProps} props

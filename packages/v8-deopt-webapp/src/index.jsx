@@ -1,7 +1,7 @@
-import { render, createElement } from "preact";
+import { render } from "preact";
 import "preact/devtools";
-import { App } from "./components/App";
-import "./theme.scss";
+import { App } from "./components/App.jsx";
+import "./theme.module.scss";
 
 // VSCode max file limits (https://git.io/JfAp3):
 // MODEL_SYNC_LIMIT = 50 * 1024 * 1024; // 50 MB

@@ -140,8 +140,14 @@ export default async function run(srcFile, options) {
 	// @ts-ignore
 	const require = createRequire(import.meta.url);
 	const webAppIndexPath = require.resolve("v8-deopt-webapp");
-	const webAppStylesPath = webAppIndexPath.replace(/.js$/g, ".css");
-	await copyFile(webAppIndexPath, path.join(options.out, "v8-deopt-webapp.js"));
+	const webAppStylesPath = webAppIndexPath.replace(
+		path.basename(webAppIndexPath),
+		"style.css"
+	);
+	await copyFile(
+		webAppIndexPath,
+		path.join(options.out, "v8-deopt-webapp.umd.js")
+	);
 	await copyFile(
 		webAppStylesPath,
 		path.join(options.out, "v8-deopt-webapp.css")

@@ -1,10 +1,10 @@
-import { createElement, Fragment } from "preact";
+import { Fragment } from "preact";
 import {
 	CodeTableHeaders,
 	SeverityTableHeaders,
 	SeverityTableSummary,
-} from "./SummaryTable";
-import { table } from "../spectre.scss";
+} from "./SummaryTable.jsx";
+import { table } from "../spectre.module.scss";
 import {
 	globalHeaders,
 	summaryList,
@@ -12,7 +12,7 @@ import {
 	deopts,
 	ics,
 	severityTable,
-} from "./SummaryList.scss";
+} from "./SummaryList.module.scss";
 
 // TODO:
 // - Consider putting each file into a Spectre Panel.

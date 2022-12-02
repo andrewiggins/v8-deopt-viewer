@@ -1,5 +1,5 @@
 @function getHeaderMargin($headerFontSize) {
-	@return $headerFontSize / 2; // From Spectre for all headers (.5em)
+	@return calc($headerFontSize / 2); // From Spectre for all headers (.5em)
 }
 
 @function getHeaderHeight($headerFontSize) {

@@ -1,0 +1,118 @@
+/*! Spectre.css | MIT License | github.com/picturepan2/spectre */
+@import "spectre.css/src/variables";
+@import "spectre.css/src/mixins";
+
+// Reset and dependencies
+@import "spectre.css/src/normalize";
+@import "spectre.css/src/base";
+
+// Elements
+@import "spectre.css/src/typography";
+// @import "spectre.css/src/asian";
+@import "spectre.css/src/tables";
+@import "spectre.css/src/buttons";
+@import "spectre.css/src/forms";
+// @import "spectre.css/src/labels";
+// @import "spectre.css/src/codes";
+// @import "spectre.css/src/media";
+
+// Layout
+// @import "spectre.css/src/layout";
+// @import "spectre.css/src/hero";
+// @import "spectre.css/src/navbar";
+
+// Components
+@import "spectre.css/src/accordions";
+// @import "spectre.css/src/avatars";
+// @import "spectre.css/src/badges";
+// @import "spectre.css/src/breadcrumbs";
+// @import "spectre.css/src/bars";
+// @import "spectre.css/src/cards";
+// @import "spectre.css/src/chips";
+// @import "spectre.css/src/dropdowns";
+// @import "spectre.css/src/empty";
+@import "spectre.css/src/menus";
+// @import "spectre.css/src/modals";
+// @import "spectre.css/src/navs";
+// @import "spectre.css/src/pagination";
+@import "spectre.css/src/panels";
+// @import "spectre.css/src/popovers";
+// @import "spectre.css/src/steps";
+@import "spectre.css/src/tabs";
+// @import "spectre.css/src/tiles";
+// @import "spectre.css/src/toasts";
+// @import "spectre.css/src/tooltips";
+
+// Utility classes
+// @import "spectre.css/src/animations";
+// @import "spectre.css/src/utilities";
+
+/*! Spectre.css Icons | MIT License | github.com/picturepan2/spectre */
+// Icons
+@import "spectre.css/src/icons/icons-core";
+@import "spectre.css/src/icons/icons-navigation";
+@import "spectre.css/src/icons/icons-action"; // TODO: This includes a LOT of icons tha may not be used...
+// @import "spectre.css/src/icons/icons-object";
+
+/*! Spectre.css Experimentals | MIT License | github.com/picturepan2/spectre */
+// Experimentals
+// @import "spectre.css/src/autocomplete";
+// @import "spectre.css/src/calendars";
+// @import "spectre.css/src/carousels";
+// @import "spectre.css/src/comparison-sliders";
+// @import "spectre.css/src/filters";
+// @import "spectre.css/src/meters";
+// @import "spectre.css/src/off-canvas";
+// @import "spectre.css/src/parallax";
+// @import "spectre.css/src/progress";
+// @import "spectre.css/src/sliders";
+@import "spectre.css/src/timelines";
+// @import "spectre.css/src/viewer-360";
+
+// ==========================
+// Spectre fixes
+// ==========================
+
+.form-switch .form-icon {
+	box-sizing: border-box; // Not sure why this isn't always inherited properly
+}
+
+summary.accordion-header {
+	cursor: pointer;
+}
+
+// ==========================
+// Spectre Overrides
+// ==========================
+
+body {
+	overflow-x: initial !important;
+}
+
+a:visited {
+	color: #5755d9;
+}
+
+// ==========================
+// Spectre Extensions
+// ==========================
+
+.btn_inline {
+	display: inline;
+	padding: 0;
+	height: auto;
+	padding: 0;
+	vertical-align: inherit;
+
+	color: #5755d9;
+	background: transparent;
+	border-color: transparent;
+
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: underline;
+		background: transparent;
+		border-color: transparent;
+	}
+}
