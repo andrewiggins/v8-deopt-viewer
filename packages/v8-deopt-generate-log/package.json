@@ -12,7 +12,7 @@
     "src"
   ],
   "scripts": {
-    "test": "node test/index.test.js"
+    "test": "node --test test"
   },
   "dependencies": {
     "chrome-launcher": "^0.15.1",
