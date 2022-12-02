@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 16.x
       - name: Install
-        run: yarn --frozen-lockfile
+        run: npm ci
       - name: Create Release Pull Request
         uses: changesets/action@master
         env:

@@ -2,8 +2,11 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import sucrase from "@rollup/plugin-sucrase";
 import postcss from "rollup-plugin-postcss";
-import visualizer from "rollup-plugin-visualizer";
+import visualizerPkg from "rollup-plugin-visualizer";
 import { terser } from "rollup-plugin-terser";
+
+// @ts-ignore Types are wrong
+const visualizer = visualizerPkg.default;
 
 /**
  * @param {string} outputFile

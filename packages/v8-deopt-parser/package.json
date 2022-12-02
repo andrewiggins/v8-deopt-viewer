@@ -16,7 +16,6 @@
     "deopts": "v8-deopt-viewer -i test/deopt-results/out-of-memory.v8.log -o test/deopt-results  --open"
   },
   "devDependencies": {
-    "escape-string-regexp": "^4.0.0",
-    "tape": "^5.0.0"
+    "escape-string-regexp": "^5.0.0"
   }
 }
