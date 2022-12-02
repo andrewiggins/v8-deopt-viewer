@@ -4,7 +4,7 @@ Basic process for contributing:
 
 1. Fork repo and create local branch
 2. Make and commit changes
-3. If you think a change you make should have a changelog entry (can run multiple times for multiple entries), run `yarn changeset` and answer the questions about the changes you are making
+3. If you think a change you make should have a changelog entry (can run multiple times for multiple entries), run `npm run changeset` and answer the questions about the changes you are making
 4. Open a pull request with your changes
 
 ## Organization
@@ -25,9 +25,9 @@ Quick thoughts:
 
 ## Releasing
 
-1. Run `yarn changeset version`
+1. Run `npm run changeset -- version`
 2. Commit changes and push to master
-3. Run `yarn changeset publish` to publish changes
+3. Run `npm run changeset -- publish` to publish changes
    Make sure no commits exist between the commit in step 2 and the publish command
 4. Run `git push --follow-tags` to publish the new tags
 5. Create a GitHub release from the new tag
