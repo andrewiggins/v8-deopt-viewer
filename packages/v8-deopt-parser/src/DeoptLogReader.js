@@ -395,9 +395,8 @@ export class DeoptLogReader extends LogReader {
 			return;
 		}
 
-		const { functionName, file, optimizationState } = this.getInfoFromProfile(
-			code
-		);
+		const { functionName, file, optimizationState } =
+			this.getInfoFromProfile(code);
 
 		// PropertyIC doesn't use the functionName as the key because if funcA is
 		// inlined in funcB, any propertyIC related to the inlined funcA code would
