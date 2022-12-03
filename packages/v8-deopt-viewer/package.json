@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "prepare": "node ./scripts/prepare.js",
-    "test": "node ./test/determineCommonRoot.test.js"
+    "test": "node --test ./test/determineCommonRoot.test.js"
   },
   "dependencies": {
     "httpie": "^1.1.2",

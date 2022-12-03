@@ -1,7 +1,8 @@
+import assert from "assert";
 import * as path from "path";
 import { readFile } from "fs/promises";
 import { pathToFileURL, fileURLToPath } from "url";
-import test from "tape";
+import test from "node:test";
 import { generateV8Log } from "../src/index.js";
 
 // @ts-ignore
@@ -48,81 +49,88 @@ async function runGenerateV8Log(
 }
 
 /**
- * @param {import('tape').Test} t
  * @param {string} content
  * @param {string[]} srcFiles
  */
-function verifySrcFiles(t, content, srcFiles) {
+function verifySrcFiles(content, srcFiles) {
 	for (let srcFile of srcFiles) {
 		srcFile = srcFile.replace(/\\/g, "\\\\");
-		t.equal(content.includes(srcFile), true, `Content contains ${srcFile}`);
+		assert.equal(
+			content.includes(srcFile),
+			true,
+			`Content contains ${srcFile}`
+		);
 	}
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(matcher.test(content), false, "Content does not match " + matcher);
+		assert.equal(
+			matcher.test(content),
+			false,
+			"Content does not match " + matcher
+		);
 	});
 }
 
-test("generateV8Log(simple/adders.js)", async (t) => {
+test("generateV8Log(simple/adders.js)", async () => {
 	const srcFilePath = repoRoot("examples/simple/adders.js");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [srcFilePath]);
+	verifySrcFiles(logContent, [srcFilePath]);
 });
 
-test("generateV8Log(simple/adders.js) relative path", async (t) => {
+test("generateV8Log(simple/adders.js) relative path", async () => {
 	const fullPath = repoRoot("examples/simple/adders.js");
 	const srcFilePath = path.relative(process.cwd(), fullPath);
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [fullPath]);
+	verifySrcFiles(logContent, [fullPath]);
 });
 
-test("generateV8Log(two-modules/adders.js)", async (t) => {
+test("generateV8Log(two-modules/adders.js)", async () => {
 	const srcFilePath = repoRoot("examples/two-modules/adders.js");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [
+	verifySrcFiles(logContent, [
 		srcFilePath,
 		repoRoot("examples/two-modules/objects.js"),
 	]);
 });
 
-test("generateV8Log(html-inline/adders.html)", async (t) => {
+test("generateV8Log(html-inline/adders.html)", async () => {
 	const srcFilePath = repoRoot("examples/html-inline/adders.html");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [pathToFileURL(srcFilePath).toString()]);
+	verifySrcFiles(logContent, [pathToFileURL(srcFilePath).toString()]);
 });
 
-test("generateV8Log(html-external/index.html)", async (t) => {
+test("generateV8Log(html-external/index.html)", async () => {
 	const srcFilePath = repoRoot("examples/html-external/index.html");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [
+	verifySrcFiles(logContent, [
 		pathToFileURL(repoRoot("examples/html-external/adders.js")).toString(),
 		pathToFileURL(repoRoot("examples/html-external/objects.js")).toString(),
 	]);
 });
 
-test("generateV8Log(GitHub Pages html-inline/adders.html)", async (t) => {
+test("generateV8Log(GitHub Pages html-inline/adders.html)", async () => {
 	const srcFilePath = getGHPageUrl("html-inline/adders.html");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [srcFilePath]);
+	verifySrcFiles(logContent, [srcFilePath]);
 });
 
-test("generateV8Log(GitHub Pages html-external/index.html)", async (t) => {
+test("generateV8Log(GitHub Pages html-external/index.html)", async () => {
 	const srcFilePath = getGHPageUrl("html-external/index.html");
 	const logContent = await runGenerateV8Log(srcFilePath);
 
-	verifySrcFiles(t, logContent, [
+	verifySrcFiles(logContent, [
 		getGHPageUrl("html-external/adders.js"),
 		getGHPageUrl("html-external/objects.js"),
 	]);
 });
 
-test("generateV8Log(simple/adders.js, traceMaps: true)", async (t) => {
+test("generateV8Log(simple/adders.js, traceMaps: true)", async () => {
 	const fullPath = repoRoot("examples/simple/adders.js");
 	const srcFilePath = path.relative(process.cwd(), fullPath);
 	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
@@ -130,11 +138,15 @@ test("generateV8Log(simple/adders.js, traceMaps: true)", async (t) => {
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+		assert.equal(
+			matcher.test(logContent),
+			true,
+			"Content does match " + matcher
+		);
 	});
 });
 
-test("generateV8Log(two-modules/adders.js, traceMaps: true)", async (t) => {
+test("generateV8Log(two-modules/adders.js, traceMaps: true)", async () => {
 	const fullPath = repoRoot("examples/two-modules/adders.js");
 	const srcFilePath = path.relative(process.cwd(), fullPath);
 	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
@@ -142,28 +154,40 @@ test("generateV8Log(two-modules/adders.js, traceMaps: true)", async (t) => {
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+		assert.equal(
+			matcher.test(logContent),
+			true,
+			"Content does match " + matcher
+		);
 	});
 });
 
-test("generateV8Log(html-inline/adders.html, traceMaps: true)", async (t) => {
+test("generateV8Log(html-inline/adders.html, traceMaps: true)", async () => {
 	const srcFilePath = repoRoot("examples/html-inline/adders.html");
 	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
 		traceMaps: true,
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+		assert.equal(
+			matcher.test(logContent),
+			true,
+			"Content does match " + matcher
+		);
 	});
 });
 
-test("generateV8Log(html-external/index.html, traceMaps: true)", async (t) => {
+test("generateV8Log(html-external/index.html, traceMaps: true)", async () => {
 	const srcFilePath = repoRoot("examples/html-external/index.html");
 	const logContent = await runGenerateV8Log(srcFilePath, ".traceMaps", {
 		traceMaps: true,
 	});
 
 	traceMapMatches.forEach((matcher) => {
-		t.equal(matcher.test(logContent), true, "Content does match " + matcher);
+		assert.equal(
+			matcher.test(logContent),
+			true,
+			"Content does match " + matcher
+		);
 	});
 });
