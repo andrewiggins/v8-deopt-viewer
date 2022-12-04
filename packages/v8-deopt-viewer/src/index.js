@@ -1,10 +1,11 @@
 import * as path from "path";
-import { readFile, writeFile, copyFile, mkdir } from "fs/promises";
+import { open as openFile, readFile, writeFile, copyFile, mkdir } from "fs/promises";
+import { createReadStream } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
 import { generateV8Log } from "v8-deopt-generate-log";
-import { parseV8Log, groupByFile } from "v8-deopt-parser";
+import { parseV8LogStream, groupByFile } from "v8-deopt-parser";
 import { determineCommonRoot } from "./determineCommonRoot.js";
 
 // TODO: Replace with import.meta.resolve when stable
@@ -110,13 +111,16 @@ export default async function run(srcFile, options) {
 	await mkdir(options.out, { recursive: true });
 
 	console.log("Parsing log...");
-	const logContents = await readFile(logFilePath, "utf8");
 
-	// New IC format has 10 values instead of 9
-	const hasNewIcFormat = /\w+IC(,.*){10}/.test(logContents);
-	const rawDeoptInfo = await parseV8Log(logContents, {
+	// using 16mb highWaterMark instead of default 64kb, it's not saving what much, like 1 second or less,
+	// but why not
+	// Also not setting big values because of default max-old-space=512mb
+	const logContentsStream = await createReadStream(
+		logFilePath,
+		{ encoding: 'utf8', highWaterMark: 16 * 1024 * 1024},
+	);
+	const rawDeoptInfo = await parseV8LogStream(logContentsStream, {
 		keepInternals: options["keep-internals"],
-		hasNewIcFormat,
 	});
 
 	console.log("Adding sources...");
