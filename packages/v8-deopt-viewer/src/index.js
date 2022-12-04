@@ -112,25 +112,15 @@ export default async function run(srcFile, options) {
 
 	console.log("Parsing log...");
 
-	const fd = await openFile(logFilePath);
-	const { buffer: logContentsSlice } = await fd.read({length: 64 * 1024 * 1024});
-	await fd.close();
-
-	// New IC format has 10 values instead of 9
-	// todo parse first line - v8-version,8,4,371,19,-node.18,0, instead 
-	// https://github.com/andrewiggins/v8-deopt-viewer/issues/47
-	const hasNewIcFormat = /\w+IC(,.*){10}/.test(logContentsSlice.toString());
-
-	// Error: Cannot create a string longer than 0x1fffffe8 characters
-	// 0x1fffffe8 = ~512 * 2 ** 20
-	// 64 * 2 ** 20 (~64 mb) seems to be safe enough
+	// using 16mb highWaterMark instead of default 64kb, it's not saving what much, like 1 second or less,
+	// but why not
+	// Also not setting big values because of default max-old-space=512mb
 	const logContentsStream = await createReadStream(
 		logFilePath,
-		{ encoding: 'utf8', highWaterMark: 64 * 1024 * 1024},
+		{ encoding: 'utf8', highWaterMark: 16 * 1024 * 1024},
 	);
 	const rawDeoptInfo = await parseV8LogStream(logContentsStream, {
 		keepInternals: options["keep-internals"],
-		hasNewIcFormat,
 	});
 
 	console.log("Adding sources...");

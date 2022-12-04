@@ -14,7 +14,7 @@ export async function parseV8Log(v8LogContent, options = {}) {
 }
 
 /**
- * @param {Generator<string>} v8LogStream
+ * @param {Generator<Promise<string>>} v8LogStream
  * @param {import('.').Options} [options]
  * @returns {Promise<import('.').V8DeoptInfo>}
  */

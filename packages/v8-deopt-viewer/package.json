@@ -25,5 +25,8 @@
     "v8-deopt-generate-log": "^0.2.0",
     "v8-deopt-parser": "^0.4.0",
     "v8-deopt-webapp": "^0.4.0"
+  },
+  "devDependencies": {
+    "tape": "^5.0.0"
   }
 }

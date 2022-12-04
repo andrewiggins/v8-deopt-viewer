@@ -1,10 +1,6 @@
-import {
-	LogReader,
-	parseString,
-	parseVarArgs,
-} from "./v8-tools-core/logreader.js";
+import { LogReader, parseString, parseVarArgs, } from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
-import { parseSourcePosition, isAbsolutePath } from "./utils.js";
+import { isAbsolutePath, parseSourcePosition } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
 import {
 	NO_FEEDBACK,
@@ -14,8 +10,8 @@ import {
 } from "./propertyICParsers.js";
 import {
 	nameOptimizationState,
-	severityOfOptimizationState,
 	parseOptimizationState,
+	severityOfOptimizationState,
 	UNKNOWN_OPT_STATE,
 } from "./optimizationStateParsers.js";
 import { sortEntries } from "./sortEntries.js";
@@ -92,12 +88,7 @@ export class DeoptLogReader extends LogReader {
 		/** @type {Set<string>} */
 		this.usedMaps = new Set();
 
-		const processIc = this.options.hasNewIcFormat
-			? this._processPropertyICNew
-			: this._processPropertyIC;
-		const parseIcField = this.options.hasNewIcFormat
-			? propertyIcFieldParsersNew
-			: propertyICFieldParsers;
+		this.isNewICFormat_ = undefined;
 
 		// Define the V8 log entries we care about, specifying how to parse the CSV
 		// fields, and the function to process the parsed fields with. Passing this
@@ -136,28 +127,6 @@ export class DeoptLogReader extends LogReader {
 				processor: this._processCodeDeopt.bind(this),
 			},
 
-			// Collect IC info
-			LoadIC: {
-				parsers: parseIcField,
-				processor: processIc.bind(this, "LoadIC"),
-			},
-			StoreIC: {
-				parsers: parseIcField,
-				processor: processIc.bind(this, "StoreIC"),
-			},
-			KeyedLoadIC: {
-				parsers: parseIcField,
-				processor: processIc.bind(this, "KeyedLoadIC"),
-			},
-			KeyedStoreIC: {
-				parsers: parseIcField,
-				processor: processIc.bind(this, "KeyedStoreIC"),
-			},
-			StoreInArrayLiteralIC: {
-				parsers: parseIcField,
-				processor: processIc.bind(this, "StoreInArrayLiteralIC"),
-			},
-
 			// Collect map creation/transition info
 			"map-create": {
 				parsers: [
@@ -190,6 +159,55 @@ export class DeoptLogReader extends LogReader {
 				processor: this.processMapDetails,
 			},
 		};
+	}
+
+	_updateICDispatchTable() {
+		const processIc = this.isNewICFormat_
+			? this._processPropertyICNew
+			: this._processPropertyIC;
+		const parseIcField = this.isNewICFormat_
+			? propertyIcFieldParsersNew
+			: propertyICFieldParsers;
+
+		Object.assign(this.dispatchTable_, {
+			// Collect IC info
+			LoadIC: {
+				parsers: parseIcField,
+				processor: processIc.bind(this, "LoadIC"),
+			},
+			StoreIC: {
+				parsers: parseIcField,
+				processor: processIc.bind(this, "StoreIC"),
+			},
+			KeyedLoadIC: {
+				parsers: parseIcField,
+				processor: processIc.bind(this, "KeyedLoadIC"),
+			},
+			KeyedStoreIC: {
+				parsers: parseIcField,
+				processor: processIc.bind(this, "KeyedStoreIC"),
+			},
+			StoreInArrayLiteralIC: {
+				parsers: parseIcField,
+				processor: processIc.bind(this, "StoreInArrayLiteralIC"),
+			},
+		});
+	}
+
+	/**
+	 * @param {string} chunk
+	 * @returns {void}
+	 */
+	processLogChunk(chunk) {
+		if (this.isNewICFormat_ === undefined && /\n\w+IC,/.test(chunk)) {
+			// New IC format has 10 values instead of 9
+			// todo drop when old IC format become old enough
+			this.isNewICFormat_ = /\n\w+IC(,.*){10}/.test(chunk.toString());
+
+			this._updateICDispatchTable();
+		}
+
+		super.processLogChunk(chunk);
 	}
 
 	_processCodeCreation(type, kind, timestamp, start, size, name, varArgs) {
