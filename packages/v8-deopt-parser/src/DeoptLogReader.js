@@ -202,6 +202,7 @@ export class DeoptLogReader extends LogReader {
 		if (this.isNewICFormat_ === undefined && /\n\w+IC,/.test(chunk)) {
 			// New IC format has 10 values instead of 9
 			// todo drop when old IC format become old enough
+			// https://github.com/andrewiggins/v8-deopt-viewer/issues/47
 			this.isNewICFormat_ = /\n\w+IC(,.*){10}/.test(chunk.toString());
 
 			this._updateICDispatchTable();
