@@ -297,9 +297,9 @@ export function MapExplorer(props) {
 			}
 		}
 	}, [
-		state.selectedGroup.group,
-		state.selectedGroup.id,
-		state.selectedGroup.label,
+		state.selectedGroup?.group,
+		state.selectedGroup?.id,
+		state.selectedGroup?.label,
 		fileDeoptInfo,
 	]);
 
@@ -541,7 +541,7 @@ function MapTimelineItem({
 									? "Location is not in current file"
 									: isSelectedPosition
 									? "Location is currently highlighted"
-									: ""
+									: undefined
 							}
 							onClick={() => setSelectedPosition(map.filePosition ?? null)}
 						>

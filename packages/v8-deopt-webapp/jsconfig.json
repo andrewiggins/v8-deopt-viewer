@@ -9,16 +9,9 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true
 	},
-	"include": [
-		"src/**/*.js",
-		"src/**/*.jsx",
-		"src/**/*.d.ts",
-		"test/**/*.js",
-		"vite.config.mjs"
-	],
+	"include": ["src", "test"],
 	"exclude": [
-		"**/node_modules/**",
-		"../../node_modules",
+		"node_modules",
 		"test/logs/**/*.js",
 		"test/deoptInfo.js",
 		"test/DeoptInfoError.js",
