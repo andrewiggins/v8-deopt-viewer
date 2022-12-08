@@ -25,6 +25,7 @@
     "spectre.css": "^0.5.9",
     "v8-deopt-parser": "^0.4.1",
     "vite": "^3.2.4",
-    "wouter-preact": "^2.9.0"
+    "wouter-preact": "^2.9.0",
+    "sass": "^1.56.1"
   }
 }
