@@ -6,7 +6,7 @@ import { generateTestData } from "./test/generateTestData.mjs";
 export default defineConfig({
 	plugins: [
 		preact(),
-		// @ts-ignore Types are wrong
+		// @ts-expect-error Types are wrong
 		visualizer.default({
 			filename: "stats.html",
 			gzipSize: true,
