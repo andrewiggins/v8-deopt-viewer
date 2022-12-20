@@ -14,8 +14,11 @@ export default defineConfig({
 		}),
 		{
 			name: "v8-deopt-webapp:generate-test-data",
-			async buildEnd() {
-				await generateTestData();
+			async writeBundle() {
+				if(arguments[1].filename == "v8-deopt-webapp.umd.js") {
+					await generateTestData();
+				}
+				
 			},
 		},
 	],
