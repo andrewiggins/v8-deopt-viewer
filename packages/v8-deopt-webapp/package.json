@@ -15,7 +15,7 @@
     "dev": "vite",
     "start": "vite",
     "serve": "vite preview",
-    "test": "vite build"
+    "test": "vite build && node test/generateTestData.mjs"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",

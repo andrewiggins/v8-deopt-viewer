@@ -1,7 +1,6 @@
 import preact from "@preact/preset-vite";
 import visualizer from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
-import { generateTestData } from "./test/generateTestData.mjs";
 
 export default defineConfig({
 	plugins: [
@@ -12,15 +11,6 @@ export default defineConfig({
 			gzipSize: true,
 			// brotliSize: true,
 		}),
-		{
-			name: "v8-deopt-webapp:generate-test-data",
-			async writeBundle() {
-				if(arguments[1].filename == "v8-deopt-webapp.umd.js") {
-					await generateTestData();
-				}
-				
-			},
-		},
 	],
 	css: {
 		modules: {
@@ -29,6 +19,7 @@ export default defineConfig({
 				return name.replace(/-/g, "_");
 			},
 		},
+		
 	},
 	build: {
 		lib: {

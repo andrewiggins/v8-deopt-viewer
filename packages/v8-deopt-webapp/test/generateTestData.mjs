@@ -100,3 +100,5 @@ export async function generateTestData() {
 
 	await copyFile(outDir("v8-data.js"), pkgRoot("test/deoptInfo.js"));
 }
+
+generateTestData();
