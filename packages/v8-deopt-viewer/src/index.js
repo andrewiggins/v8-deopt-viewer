@@ -1,5 +1,11 @@
 import * as path from "path";
-import { open as openFile, readFile, writeFile, copyFile, mkdir } from "fs/promises";
+import {
+	open as openFile,
+	readFile,
+	writeFile,
+	copyFile,
+	mkdir,
+} from "fs/promises";
 import { createReadStream } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
@@ -115,10 +121,10 @@ export default async function run(srcFile, options) {
 	// using 16mb highWaterMark instead of default 64kb, it's not saving what much, like 1 second or less,
 	// but why not
 	// Also not setting big values because of default max-old-space=512mb
-	const logContentsStream = await createReadStream(
-		logFilePath,
-		{ encoding: 'utf8', highWaterMark: 16 * 1024 * 1024},
-	);
+	const logContentsStream = await createReadStream(logFilePath, {
+		encoding: "utf8",
+		highWaterMark: 16 * 1024 * 1024,
+	});
 	const rawDeoptInfo = await parseV8LogStream(logContentsStream, {
 		keepInternals: options["keep-internals"],
 	});
@@ -148,10 +154,7 @@ export default async function run(srcFile, options) {
 		path.basename(webAppIndexPath),
 		"style.css"
 	);
-	await copyFile(
-		webAppIndexPath,
-		path.join(options.out, "v8-deopt-webapp.umd.js")
-	);
+	await copyFile(webAppIndexPath, path.join(options.out, "v8-deopt-webapp.js"));
 	await copyFile(
 		webAppStylesPath,
 		path.join(options.out, "v8-deopt-webapp.css")
