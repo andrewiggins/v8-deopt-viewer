@@ -8,12 +8,16 @@ import {
 import { memo, forwardRef } from "preact/compat";
 import Prism from "prismjs";
 import { addDeoptMarkers, getMarkerId } from "../utils/deoptMarkers";
+import { useAppDispatch, useAppState } from "./appState";
+
+// Styles - order matters. prism.scss must come first so its styles can be
+// overridden by other files
+import "../prism.scss";
 import { codePanel, error as errorClass } from "./CodePanel.module.scss";
 import {
 	showLowSevs as showLowSevsClass,
 	active,
 } from "../utils/deoptMarkers.module.scss";
-import { useAppDispatch, useAppState } from "./appState";
 
 // Turn on auto highlighting by Prism
 Prism.manual = true;
