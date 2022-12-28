@@ -7,6 +7,7 @@ import {
 	mkdir,
 } from "fs/promises";
 import { createReadStream } from "fs";
+import { Packr } from "msgpackr";
 import { fileURLToPath, pathToFileURL } from "url";
 import open from "open";
 import { get } from "httpie/dist/httpie.mjs";
@@ -138,9 +139,10 @@ export default async function run(srcFile, options) {
 		files: await addSources(groupDeoptInfo.files),
 	};
 
-	const deoptInfoString = JSON.stringify(deoptInfo, null, 2);
-	const jsContents = `window.V8Data = ${deoptInfoString};`;
-	await writeFile(path.join(options.out, "v8-data.js"), jsContents, "utf8");
+	const packr = new Packr({ variableMapSize: true, bundleStrings: true });
+	const deoptInfoString = packr.encode(deoptInfo);
+	const jsContents = deoptInfoString;
+	await writeFile(path.join(options.out, "v8-data.bin"), jsContents, "utf8");
 
 	console.log("Generating webapp...");
 	const template = await readFile(templatePath, "utf8");

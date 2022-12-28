@@ -22,10 +22,13 @@
     "preact": "^10.11.3",
     "prismjs": "^1.29.0",
     "rollup-plugin-visualizer": "^5.8.3",
+    "sass": "^1.56.1",
     "spectre.css": "^0.5.9",
     "v8-deopt-parser": "^0.4.1",
     "vite": "^3.2.4",
-    "wouter-preact": "^2.9.0",
-    "sass": "^1.56.1"
+    "wouter-preact": "^2.9.0"
+  },
+  "dependencies": {
+    "msgpackr": "^1.8.1"
   }
 }
