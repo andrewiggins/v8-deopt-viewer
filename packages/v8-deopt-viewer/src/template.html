@@ -18,10 +18,12 @@
 		<script src="v8-deopt-webapp.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			fetch("/v8-data.bin")
-				.then((response) => response.blob())
-				.then((blobs) => blobs.arrayBuffer())
-				.then((blobs) =>
-					V8DeoptViewer.renderIntoDom(blobs, document.getElementById("root"))
+				.then((response) => response.arrayBuffer())
+				.then((buffer) =>
+					V8DeoptViewer.renderIntoDom(
+						new Uint8Array(buffer),
+						document.getElementById("root")
+					)
 				);
 		</script>
 	</body>

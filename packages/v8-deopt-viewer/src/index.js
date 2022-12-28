@@ -141,8 +141,11 @@ export default async function run(srcFile, options) {
 
 	const packr = new Packr({ variableMapSize: true, bundleStrings: true });
 	const deoptInfoString = packr.encode(deoptInfo);
-	const jsContents = deoptInfoString;
-	await writeFile(path.join(options.out, "v8-data.bin"), jsContents, "utf8");
+	await writeFile(
+		path.join(options.out, "v8-data.bin"),
+		deoptInfoString,
+		"utf8"
+	);
 
 	console.log("Generating webapp...");
 	const template = await readFile(templatePath, "utf8");
