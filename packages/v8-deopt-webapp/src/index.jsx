@@ -2,7 +2,7 @@ import { render } from "preact";
 import "preact/devtools";
 import { App } from "./components/App.jsx";
 import "./theme.module.scss";
-import { unpack } from "msgpackr";
+import { Packr } from "msgpackr";
 // VSCode max file limits (https://git.io/JfAp3):
 // MODEL_SYNC_LIMIT = 50 * 1024 * 1024; // 50 MB
 // LARGE_FILE_SIZE_THRESHOLD = 20 * 1024 * 1024; // 20 MB;
@@ -16,6 +16,6 @@ export function renderIntoDom(buffer, container) {
 	/**
 	 * @type {import('.').AppProps["deoptInfo"]}
 	 */
-	let deoptInfo = unpack(buffer);
+	let deoptInfo = new Packr({ variableMapSize: true }).unpack(buffer);
 	render(<App deoptInfo={deoptInfo} />, container);
 }

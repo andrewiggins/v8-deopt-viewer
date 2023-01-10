@@ -139,8 +139,9 @@ export default async function run(srcFile, options) {
 		files: await addSources(groupDeoptInfo.files),
 	};
 
-	const packr = new Packr({ variableMapSize: true, bundleStrings: true });
-	const deoptInfoString = packr.encode(deoptInfo);
+	const deoptInfoString = new Packr({ variableMapSize: true }).encode(
+		deoptInfo
+	);
 	await writeFile(
 		path.join(options.out, "v8-data.bin"),
 		deoptInfoString,
