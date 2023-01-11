@@ -23,19 +23,23 @@
 		<script type="module">
 			import { renderIntoDom } from "./src/index.jsx";
 
-			let data;
+			let fileName;
 			if (location.search.includes("error")) {
-				await import("./test/deoptInfo.js");
-				data = window.V8ErrorData;
+				fileName = "./test/deoptInfoError.bin";
 			} else if (location.search.toLowerCase().includes("nomaps")) {
-				await import("./test/deoptInfoError.js");
-				data = window.V8NoMapData;
+				fileName = "./test/deoptInfoNoMaps.js";
 			} else {
-				await import("./test/deoptInfo.js");
-				data = window.V8Data;
+				fileName = "./test/deoptInfo.bin";
 			}
 
-			renderIntoDom(data, document.getElementById("root"));
+			fetch(fileName)
+				.then((response) => response.arrayBuffer())
+				.then((buffer) =>
+					V8DeoptViewer.renderIntoDom(
+						new Uint8Array(buffer),
+						document.getElementById("root")
+					)
+				);
 		</script>
 	</body>
 </html>

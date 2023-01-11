@@ -39,12 +39,7 @@ export async function generateTestData() {
 		{ stdio: "inherit" }
 	);
 
-	const errorContents = await readFile(outDir("v8-data.js"), "utf8");
-	const newErrorContents = errorContents.replace(
-		/^window\.V8Data =/,
-		"window.V8ErrorData ="
-	);
-	await writeFile(pkgRoot("test/deoptInfoError.js"), newErrorContents, "utf8");
+    await copyFile(outDir("v8-data.bin"), pkgRoot("test/deoptInfoError.bin"));
 
 	// Now generate log using modified log with correct src paths
 	console.log("Generating output with sources...");
@@ -65,16 +60,7 @@ export async function generateTestData() {
 		{ stdio: "inherit" }
 	);
 
-	const noMapsContents = await readFile(outDir("v8-data.js"), "utf8");
-	const newNoMapsContents = noMapsContents.replace(
-		/^window\.V8Data =/,
-		"window.V8NoMapData ="
-	);
-	await writeFile(
-		pkgRoot("test/deoptInfoNoMaps.js"),
-		newNoMapsContents,
-		"utf8"
-	);
+	await copyFile(outDir("v8-data.bin"), pkgRoot("test/deoptInfoNoMaps.bin"));
 
 	// Generate logs with maps
 	console.log("Generating output with maps & sources...");
@@ -98,7 +84,7 @@ export async function generateTestData() {
 		{ stdio: "inherit" }
 	);
 
-	await copyFile(outDir("v8-data.js"), pkgRoot("test/deoptInfo.js"));
+	await copyFile(outDir("v8-data.bin"), pkgRoot("test/deoptInfo.bin"));
 }
 
 generateTestData();
