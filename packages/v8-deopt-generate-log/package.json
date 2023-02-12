@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-generate-log",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Generate a V8 log given a JS or HTML file",
   "type": "module",
   "main": "src/index.js",

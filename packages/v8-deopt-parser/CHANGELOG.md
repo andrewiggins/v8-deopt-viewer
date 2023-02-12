@@ -1,5 +1,11 @@
 # v8-deopt-parser
 
+## 0.4.3
+
+### Patch Changes
+
+- 5692a95: Fix typo "unintialized" -> "uninitialized" (thanks @victor-homyakov)
+
 ## 0.4.2
 
 ### Patch Changes

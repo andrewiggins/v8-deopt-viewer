@@ -1,5 +1,12 @@
 # v8-deopt-generate-log
 
+## 0.2.3
+
+### Patch Changes
+
+- 5692a95: Update dependencies
+- 3331e33: Add support for parsing a v8.log stream by adding new `parseV8LogStream` API (thanks @maximelkin)
+
 ## 0.2.2
 
 ### Patch Changes
