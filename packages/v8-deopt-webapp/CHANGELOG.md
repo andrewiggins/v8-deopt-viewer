@@ -1,5 +1,19 @@
 # v8-deopt-webapp
 
+## 0.5.0
+
+### Minor Changes
+
+- d9b96e8: Fix log big size #62 (thanks @Nadya2002)
+
+### Patch Changes
+
+- 5692a95: Update dependencies
+- d9b96e8: Fix the search for "v8-deopt-webapp" module #59 (thanks @Nadya2002)
+- 71d5625: Fix Prism.css styles
+- 5692a95: Fix endless rerenders in MapExplorer (thanks @victor-homyakov)
+- 5692a95: Build webapp using vite
+
 ## 0.4.3
 
 ### Patch Changes

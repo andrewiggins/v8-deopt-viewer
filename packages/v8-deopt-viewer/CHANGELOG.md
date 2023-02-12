@@ -1,5 +1,27 @@
 # v8-deopt-viewer
 
+## 0.3.0
+
+### Minor Changes
+
+- d9b96e8: Fix log big size #62 (thanks @Nadya2002)
+
+### Patch Changes
+
+- 5692a95: Update dependencies
+- d9b96e8: Fix the search for "v8-deopt-webapp" module #59 (thanks @Nadya2002)
+- Updated dependencies [5692a95]
+- Updated dependencies [d9b96e8]
+- Updated dependencies [5692a95]
+- Updated dependencies [3331e33]
+- Updated dependencies [71d5625]
+- Updated dependencies [5692a95]
+- Updated dependencies [d9b96e8]
+- Updated dependencies [5692a95]
+  - v8-deopt-generate-log@0.2.3
+  - v8-deopt-webapp@0.5.0
+  - v8-deopt-parser@0.4.3
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "v8-deopt-webapp",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "View the deoptimizations in a V8 log",
   "main": "dist/v8-deopt-webapp.umd.js",
   "module": "dist/v8-deopt-webapp.mjs",
@@ -24,7 +24,7 @@
     "rollup-plugin-visualizer": "^5.8.3",
     "sass": "^1.56.1",
     "spectre.css": "^0.5.9",
-    "v8-deopt-parser": "^0.4.1",
+    "v8-deopt-parser": "^0.4.3",
     "vite": "^3.2.4",
     "wouter-preact": "^2.9.0"
   },
