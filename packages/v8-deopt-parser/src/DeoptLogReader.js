@@ -1,4 +1,8 @@
-import { LogReader, parseString, parseVarArgs, } from "./v8-tools-core/logreader.js";
+import {
+	LogReader,
+	parseString,
+	parseVarArgs,
+} from "./v8-tools-core/logreader.js";
 import { Profile } from "./v8-tools-core/profile.js";
 import { isAbsolutePath, parseSourcePosition } from "./utils.js";
 import { deoptFieldParsers, getOptimizationSeverity } from "./deoptParsers.js";
@@ -36,9 +40,6 @@ function addEdgeChild(map, childEdgeId) {
 		map.children = [childEdgeId];
 	}
 }
-
-/** @type {(address: number) => string} */
-const getMapIdBase = (addr) => "0x" + addr.toString(16);
 
 /**
  * @param {string} functionName
@@ -131,7 +132,8 @@ export class DeoptLogReader extends LogReader {
 			"map-create": {
 				parsers: [
 					parseInt, // time
-					parseInt, // id
+					parseString, // id
+					// TODO: not available in newer v8
 					parseString, // description
 				],
 				processor: this.processMapCreate,
@@ -140,8 +142,8 @@ export class DeoptLogReader extends LogReader {
 				parsers: [
 					parseString, // type
 					parseInt, // time
-					parseInt, // from
-					parseInt, // to
+					parseString, // from
+					parseString, // to
 					parseInt, // profileCode
 					parseInt, // line
 					parseInt, // column
@@ -153,7 +155,7 @@ export class DeoptLogReader extends LogReader {
 			"map-details": {
 				parsers: [
 					parseInt, // time
-					parseInt, // id
+					parseString, // id
 					parseString, // description
 				],
 				processor: this.processMapDetails,
@@ -392,7 +394,7 @@ export class DeoptLogReader extends LogReader {
 	 * @param {number} column
 	 * @param {import('./index').ICState} oldState
 	 * @param {import('./index').ICState} newState
-	 * @param {number} mapAddress
+	 * @param {string} mapAddress
 	 * @param {string} propertyKey
 	 * @param {string} modifier
 	 * @param {string} slow_reason
@@ -410,9 +412,17 @@ export class DeoptLogReader extends LogReader {
 		slow_reason
 	) {
 		// Skip no_feedback IC entries whose maps are 0. Not sure what these mean...
-		if (oldState == NO_FEEDBACK && newState == NO_FEEDBACK && mapAddress == 0) {
+		if (
+			oldState == NO_FEEDBACK &&
+			newState == NO_FEEDBACK &&
+			mapAddress == "0x000000000000"
+		) {
 			return;
 		}
+
+		const codeEntry = this._profile.findEntry(code);
+		// TODO: These seem like unknown IC entries. Maybe for internal code?
+		if (codeEntry === null) return;
 
 		const { functionName, file, optimizationState } =
 			this.getInfoFromProfile(code);
@@ -451,7 +461,7 @@ export class DeoptLogReader extends LogReader {
 			oldState,
 			newState,
 			key: propertyKey,
-			map: mapId ?? getMapIdBase(mapAddress),
+			map: mapId ?? mapAddress,
 			optimizationState,
 			severity,
 			modifier,
@@ -467,7 +477,7 @@ export class DeoptLogReader extends LogReader {
 		}
 	}
 
-	processMapCreate(time, address, description) {
+	processMapCreate(time, address, description = "unknown") {
 		// map-create events might override existing maps if the addresses get
 		// recycled. Hence we do not check for existing maps.
 		//
@@ -495,7 +505,7 @@ export class DeoptLogReader extends LogReader {
 			// TODO: Arbitrarily make this the hex form of the address to flush out
 			// any bugs. Eventually this will likely need to become something map
 			// address + time to accommodate map addresses that get re-used.
-			id: getMapIdBase(address),
+			id: address,
 			address: address,
 			time,
 			description,
@@ -542,7 +552,7 @@ export class DeoptLogReader extends LogReader {
 			name,
 			reason,
 			time,
-			from: fromAddress == 0 ? undefined : from.id,
+			from: fromAddress == "0x000000000000" ? undefined : from.id,
 			to: to.id,
 		};
 
@@ -554,7 +564,11 @@ export class DeoptLogReader extends LogReader {
 
 		if (to) {
 			to.edge = edge.id;
-			to.filePosition = this.getInfoFromProfile(profileCode);
+			try {
+				to.filePosition = this.getInfoFromProfile(profileCode);
+			} catch (err) {
+				// The source position has become optional in newer v8
+			}
 		}
 	}
 
@@ -570,18 +584,17 @@ export class DeoptLogReader extends LogReader {
 	/**
 	 * Given the address of a map and the time of the look up, return the
 	 * appropriate map details. Assumes latest map if time is not given
-	 * @param {number} address
+	 * @param {string} address
 	 * @param {number} [time]
 	 */
 	getExistingMap(address, time) {
 		// For example, this a property IC log with a map ID of 0:
 		// StoreInArrayLiteralIC,0x2b4d5aeaf12,164,47,0,1,0x000000000000,0,,
-		if (address === 0) return undefined;
+		if (address === "0x000000000000") return undefined;
 
-		const id = getMapIdBase(address);
-		const map = this.allMapEntries.get(id);
+		const map = this.allMapEntries.get(address);
 		if (map === undefined) {
-			throw new Error(`No map details provided: id=${id}`);
+			throw new Error(`No map details provided: id=${address}`);
 		}
 
 		return map;

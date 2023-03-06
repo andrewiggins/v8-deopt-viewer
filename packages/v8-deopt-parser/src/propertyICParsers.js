@@ -83,7 +83,7 @@ export const propertyICFieldParsers = [
 	parseInt, // column
 	parseIcState, // old_state
 	parseIcState, // new_state
-	parseInt, // map ID
+	parseString, // map ID
 	parseString, // propertyKey
 	parseString, // modifier
 	parseString, // slow_reason
@@ -95,7 +95,7 @@ export const propertyIcFieldParsersNew = [
 	parseInt, // column
 	parseIcState, // old_state
 	parseIcState, // new_state
-	parseInt, // map ID
+	parseString, // map ID
 	parseString, // propertyKey
 	parseString, // modifier
 	parseString, // slow_reason
