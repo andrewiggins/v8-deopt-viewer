@@ -4,6 +4,8 @@ View deoptimizations of your JavaScript in V8
 
 ![Sample image of the results of running v8-deopt-viewer](examples/v8-deopt-webapp.png)
 
+Also consider checking out [Deopt Explorer](https://devblogs.microsoft.com/typescript/introducing-deopt-explorer/) from the TypeScript team!
+
 ## You may not need this tool...
 
 V8 only optimizes code that runs repeatedly. Often for websites this code is your framework's code and not your app code. If you are looking to improve your website's performance, first check out tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse/) or [webhint](https://webhint.io/), and follow other general website performance guidance.
